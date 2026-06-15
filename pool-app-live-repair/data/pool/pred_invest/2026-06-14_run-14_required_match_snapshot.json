@@ -1,0 +1,14 @@
+{
+  "version": "pred_invest_required_match_snapshot.v1",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "created_at": "2026-06-14T20:05:00Z",
+  "source": "2026-06-14_run-14_quality_gate.json#audit.required_match_ids",
+  "reason": "Freeze the publish-gate contract for run-14 single-seat repair. The daily SOP prompt pack may refresh with additional fixtures, but repair gate must not retroactively invalidate seats already collected for the original run-14 contract.",
+  "required_match_ids": [
+    "WCAPI-20260614-GERMANY-CURA-AO",
+    "WCAPI-20260614-NETHERLANDS-JAPAN",
+    "WCAPI-20260614-IVORY-COAST-ECUADOR",
+    "WCAPI-20260615-SWEDEN-TUNISIA"
+  ]
+}

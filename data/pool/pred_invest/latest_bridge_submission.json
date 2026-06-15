@@ -1,0 +1,65 @@
+{
+  "version": "pred_invest_bridge_submission.v2",
+  "generated_at": "2026-06-15T11:01:40.948871+00:00",
+  "base_url": "http://127.0.0.1:8501",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "selected_seats": [
+    "doubao"
+  ],
+  "requested_seats": [
+    "doubao"
+  ],
+  "wanted_seats": [
+    "doubao"
+  ],
+  "blocked_seats": [],
+  "prompt_chars": 2217,
+  "required_match_source": "quality_gate:2026-06-15_run-15_quality_gate.json",
+  "required_match_ids": [
+    "WC-H1",
+    "WC-K1",
+    "WCAPI-20260615-BELGIUM-EGYPT",
+    "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+    "WCAPI-20260616-IRAN-NEW-ZEALAND"
+  ],
+  "missing_required_match_ids": [],
+  "dry_run": true,
+  "compact": false,
+  "ultra_compact": true,
+  "attempt_no": 3,
+  "judge_mode": "quick_judge",
+  "payload": {
+    "question": "AI_JUDGE_RERUN_MARKER:POOL_RUN_15_ATTEMPT_3_DOUBAO_110140_\n[PRED_INVEST_RECEIPT_ONLY]\ndate: 2026-06-15\nround_id: run-15\nproduct_mode: worldcup_pool\nanswer_contract: compact_line_receipt\n不要输出 JSON。不要 Markdown。不要解释。只输出下面的行协议。\n这是世界杯 AI 预测池研究游戏，不是真实投注建议。\n当前席位：doubao。只代表你自己的 seat。\n账号：[{\"model\": \"doubao\", \"seat\": \"doubao\", \"rank\": 5, \"bal\": 1400.0, \"net\": 1100.0, \"loan\": 300.0, \"credit\": \"B\"}]\n赛事：[{\"id\": \"WC-H1\", \"h\": \"Spain\", \"a\": \"Cape Verde\", \"odds\": [{\"m\": \"h2h\", \"s\": \"Spain\", \"l\": null, \"o\": 1.08}, {\"m\": \"h2h\", \"s\": \"Draw\", \"l\": null, \"o\": 10.0}]}, {\"id\": \"WC-K1\", \"h\": \"Portugal\", \"a\": \"Colombia\", \"odds\": [{\"m\": \"h2h\", \"s\": \"Portugal\", \"l\": null, \"o\": 1.75}, {\"m\": \"h2h\", \"s\": \"Draw\", \"l\": null, \"o\": 3.6}]}, {\"id\": \"WCAPI-20260615-BELGIUM-EGYPT\", \"h\": \"Belgium\", \"a\": \"Egypt\", \"odds\": [{\"m\": \"handicap\", \"s\": \"Belgium\", \"l\": null, \"o\": 2.81}, {\"m\": \"handicap\", \"s\": \"Belgium\", \"l\": null, \"o\": 2.27}]}, {\"id\": \"WCAPI-20260615-SAUDI-ARABIA-URUGUAY\", \"h\": \"Saudi Arabia\", \"a\": \"Uruguay\", \"odds\": [{\"m\": \"handicap\", \"s\": \"Saudi Arabia\", \"l\": null, \"o\": 1.62}, {\"m\": \"handicap\", \"s\": \"Saudi Arabia\", \"l\": null, \"o\": 2.24}]}, {\"id\": \"WCAPI-20260616-IRAN-NEW-ZEALAND\", \"h\": \"Iran\", \"a\": \"New Zealand\", \"odds\": [{\"m\": \"handicap\", \"s\": \"Iran\", \"l\": null, \"o\": 3.34}, {\"m\": \"handicap\", \"s\": \"Iran\", \"l\": null, \"o\": 1.83}]}]\n必须覆盖：[\"WC-H1\", \"WC-K1\", \"WCAPI-20260615-BELGIUM-EGYPT\", \"WCAPI-20260615-SAUDI-ARABIA-URUGUAY\", \"WCAPI-20260616-IRAN-NEW-ZEALAND\"]\n规则：每个 match_id 必须同时出现在 forecasts 与 investments；可 no_bet，但不能缺行。贷款会先计息偿还再排名；前五奖励，末三罚款。\n身份硬门禁：model_account 必须等于 \"doubao\"；seat_id 必须等于 \"doubao\"。禁止沿用旧会话身份，禁止输出空字符串身份。\n\n输出要求：\n- 第一行必须是 PRED_INVEST_RECEIPT。\n- 总长度必须控制在 900 字以内；不要长分析。\n- 必须严格按以下格式逐行输出，不能增加其他行：\n  PRED_INVEST_RECEIPT\n  model_account=doubao\n  seat_id=doubao\n  strategy=18字内策略\n  F|match_id|home/draw/away|比分|0-100|bet/no_bet/lean|信息缺口\n  B|match_id|bet/no_bet|moneyline/handicap/total/none|selection|line|odds|stake_gp|loan_used_gp|8字理由\n  LOAN|borrow_gp|8字理由|8字还款\n  RISK|风险1;风险2\n  AUDIT|逗号连接全部match_id||true\n- F 行必须刚好 5 条，且覆盖全部 match_id。\n- B 行必须刚好 5 条，且覆盖全部 match_id。\n- AUDIT 第一栏必须等于 WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND；第二栏必须留空；第三栏必须 true。",
+    "mode": "quick_judge",
+    "engine": "web",
+    "seat_config": {
+      "selected": [
+        "doubao"
+      ],
+      "partial_policy": "allow",
+      "round2_policy": "all_valid_first_round"
+    },
+    "round2_policy": "all_valid_first_round",
+    "report_style": "audit",
+    "answer_contract": {
+      "kind": "sports_worldcup_pool_prediction_complete_answer",
+      "response_format": "compact_line_receipt",
+      "structured_json_required": false,
+      "required_top_level_fields": [
+        "model_account",
+        "seat_id",
+        "one_sentence_strategy",
+        "forecasts",
+        "investments",
+        "loan_decision",
+        "risk_notes",
+        "self_audit"
+      ],
+      "min_required_response_chars": 0,
+      "reason": "pred_invest_compact_receipt_required"
+    }
+  },
+  "ok": true,
+  "status": "dry_run"
+}

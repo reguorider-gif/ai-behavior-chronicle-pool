@@ -1,0 +1,3226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美加墨世界杯 · AI 预测池</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318273f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+
+:root {
+  --bg-page: #0c1222;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2332;
+  --bg-panel: rgba(17,24,39,0.96);
+  --text-primary: #f1f5f9;
+  --text-body: #dbe4f0;
+  --text-muted: #b6c2d1;
+  --text-faint: #a8b3c4;
+  --blue: #3b82f6;
+  --blue-soft: rgba(59,130,246,0.12);
+  --cyan: #22d3ee;
+  --red: #ef4444;
+  --violet-soft: rgba(167,139,250,0.14);
+  --green: #10b981;
+  --green-soft: rgba(16,185,129,0.12);
+  --orange: #f59e0b;
+  --orange-soft: rgba(245,158,11,0.12);
+  --gold: #eab308;
+  --purple: #a78bfa;
+  --line: rgba(148,163,184,0.12);
+  --line-strong: rgba(148,163,184,0.22);
+  --shadow: 0 4px 24px rgba(0,0,0,0.25);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --lh-body: 1.7;
+  --sidebar-w: 300px;
+  --content-max-w: 974px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{
+  font-family:var(--font);background:var(--bg-page);color:var(--text-body);
+  line-height:var(--lh-body);min-height:100vh;font-size:14px;
+  font-feature-settings:'cv11','cv02','cv03','cv04';
+  transition:color 180ms ease, background-color 180ms ease;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(34,211,238,0.12), transparent 28%),
+    radial-gradient(circle at 92% 8%, rgba(234,179,8,0.10), transparent 24%),
+    linear-gradient(180deg,#0b1020 0%,#0c1222 44%,#080d19 100%);
+}
+
+nav.topbar{
+  position:sticky;top:0;z-index:300;
+  background:rgba(12,18,34,0.88);
+  backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  border-bottom:1px solid var(--line);height:56px;
+  display:flex;align-items:center;padding:0 40px;justify-content:space-between;
+}
+.topbar-left{display:flex;align-items:center;gap:12px;min-width:0}
+.topbar-pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.25;transform:scale(1.35)}}
+.topbar-title{font-size:14px;font-weight:700;letter-spacing:-0.02em;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar-right{display:flex;gap:12px;align-items:center;flex-shrink:0}
+.topbar-mark{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:10px;background:linear-gradient(135deg,rgba(59,130,246,0.95),rgba(167,139,250,0.95));box-shadow:0 8px 24px rgba(59,130,246,0.24);font-size:16px}
+.run-pill{display:inline-flex;align-items:center;gap:6px;min-height:32px;border-radius:var(--radius-pill);border:1px solid var(--line);padding:0 12px;color:var(--text-muted);font-size:12px;font-weight:700;background:rgba(17,24,39,0.45)}
+.run-pill strong{color:var(--green);font-weight:800}
+
+.btn-icon{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:44px;min-height:44px;border-radius:var(--radius-sm);border:1px solid var(--line);
+  background:transparent;color:var(--text-muted);cursor:pointer;
+  font-size:14px;font-family:var(--font);transition:all 200ms var(--ease-out-expo);
+}
+.btn-icon:hover{border-color:var(--line-strong);color:var(--text-primary);background:rgba(17,24,39,0.5)}
+.btn-icon.active{background:var(--blue-soft);border-color:var(--blue);color:var(--blue)}
+button:focus-visible,[role="button"]:focus-visible,summary:focus-visible,a:focus-visible,
+.date-chip:focus-visible,.match-card:focus-visible,.rank-row:focus-visible,.match-view-btn:focus-visible,
+.sidebar-action:focus-visible,.detail-close:focus-visible,.btn-icon:focus-visible{
+  outline:2px solid rgba(96,165,250,0.96);outline-offset:3px;
+  box-shadow:0 0 0 5px rgba(59,130,246,0.2),0 10px 28px rgba(0,0,0,0.26);
+}
+.btn-text{font-size:12px;font-weight:600;letter-spacing:-0.01em;padding:0 16px;gap:4px}
+.contact-wrap{position:relative}
+.contact-btn{white-space:nowrap}
+.contact-panel{
+  position:absolute;right:0;top:52px;width:260px;z-index:500;
+  background:rgba(17,24,39,0.98);border:1px solid var(--line-strong);
+  border-radius:var(--radius-md);box-shadow:0 20px 60px rgba(0,0,0,0.38);
+  padding:16px;color:var(--text-body)
+}
+.contact-panel[hidden]{display:none}
+.contact-panel b{display:block;font-size:13px;color:var(--text-primary);margin-bottom:8px}
+.contact-methods{display:grid;gap:10px;margin-bottom:8px}
+.contact-method-label{font-size:12px;color:var(--text-faint);font-weight:800;margin-bottom:5px}
+.contact-email,.contact-method-value{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:44px;border-radius:var(--radius-sm);background:rgba(59,130,246,0.08);
+  border:1px solid rgba(59,130,246,0.18);padding:0 12px;
+  color:var(--text-primary);font-size:12px;font-weight:800
+}
+.contact-email button,.contact-method-value button{
+  border:0;background:transparent;color:var(--text-muted);cursor:pointer;
+  min-width:44px;min-height:44px;font:inherit
+}
+.contact-panel a{display:inline-flex;align-items:center;min-height:44px;color:#93c5fd;text-decoration:none;font-size:12px;font-weight:800}
+.contact-panel small{display:block;color:var(--text-faint);font-size:12px;line-height:1.55}
+
+.layout{
+  display:grid;grid-template-columns:var(--sidebar-w) minmax(0,1fr);
+  max-width:calc(var(--sidebar-w) + var(--content-max-w) + 80px);
+  margin:0 auto;padding:0 40px;min-height:calc(100vh - 56px);gap:48px;
+}
+.sidebar{
+  padding-top:24px;padding-bottom:80px;position:sticky;top:76px;align-self:start;max-height:calc(100vh - 100px);overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:rgba(148,163,184,0.26) transparent;
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-track{background:transparent}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(148,163,184,0.22);border-radius:999px}
+.sidebar::-webkit-scrollbar-thumb:hover{background:rgba(148,163,184,0.36)}
+.main-content{padding-top:24px;padding-bottom:80px;max-width:var(--content-max-w)}
+
+.sidebar-brand{margin-bottom:28px}
+.sidebar-brand-icon{width:48px;height:48px;border-radius:16px;background:
+  linear-gradient(145deg,rgba(255,255,255,0.18),transparent 38%),
+  linear-gradient(135deg,#2563eb,#7c3aed 62%,#f59e0b);
+  display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:12px;
+  box-shadow:0 18px 40px rgba(37,99,235,0.22), inset 0 1px 0 rgba(255,255,255,0.25);
+  position:relative;overflow:hidden;
+}
+.sidebar-brand-icon::after{content:"⚽";position:absolute;right:-3px;bottom:-4px;font-size:16px;filter:drop-shadow(0 3px 8px rgba(0,0,0,0.45))}
+.sidebar-brand-name{font-size:18px;font-weight:850;letter-spacing:-0.04em;color:var(--text-primary);line-height:1.15}
+.sidebar-brand-sub{margin-top:5px;font-size:12px;color:var(--text-faint);font-weight:600}
+
+.sidebar-section{margin-bottom:28px}
+.sidebar-kicker{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-faint);margin-bottom:12px}
+.sidebar-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sidebar-stat{background:rgba(17,24,39,0.85);border-radius:var(--radius-sm);padding:16px 14px;cursor:pointer;transition:all 200ms var(--ease-out-expo);border:1px solid var(--line)}
+.sidebar-stat:hover{background:var(--bg-card-hover);transform:translateY(-1px);box-shadow:var(--shadow)}
+.sidebar-stat-val{font-size:18px;font-weight:800;line-height:1.15;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:var(--text-primary);margin-bottom:4px}
+.sidebar-stat-val.gold{color:var(--gold)}
+.sidebar-stat-lbl{font-size:12px;color:var(--text-faint);font-weight:600;line-height:1.4}
+.rank-list{display:flex;flex-direction:column;gap:4px}
+.rank-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:var(--radius-sm);min-height:44px;border:1px solid transparent;cursor:pointer}
+.rank-row:hover{background:rgba(17,24,39,0.6);border-color:var(--line)}
+.rank-row.selected{background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.38);box-shadow:inset 3px 0 0 var(--blue)}
+.rank-pos{font-size:12px;font-weight:800;width:20px;color:var(--text-faint);font-variant-numeric:tabular-nums}
+.rank-pos.top{color:var(--gold)}
+.model-avatar{
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  width:30px;height:30px;border-radius:10px;font-size:13px;font-weight:850;color:white;
+  background:linear-gradient(135deg,var(--avatar-a,#3b82f6),var(--avatar-b,#8b5cf6));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.24),0 8px 18px rgba(0,0,0,0.18);
+}
+.model-avatar.sm{width:26px;height:26px;border-radius:9px;font-size:12px}
+.model-avatar.lg{width:34px;height:34px;border-radius:12px;font-size:14px}
+.rank-main{flex:1;min-width:0}
+.rank-name{display:block;font-size:13px;font-weight:750;color:var(--text-body);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-tag{display:block;font-size:12px;color:var(--text-faint);line-height:1.2;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-gp{font-size:12px;font-weight:800;color:var(--text-muted);font-variant-numeric:tabular-nums}
+
+.sidebar-footer{margin-top:auto;padding-top:20px;border-top:1px solid var(--line)}
+.sidebar-action{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  min-height:44px;margin-bottom:14px;padding:0 14px;border-radius:var(--radius-sm);
+  border:1px solid var(--line);background:rgba(17,24,39,0.62);color:var(--text-body);
+  font-family:var(--font);font-size:12px;font-weight:850;cursor:pointer;
+  transition:all 220ms var(--ease-out-expo);
+}
+.sidebar-action:hover{border-color:rgba(59,130,246,0.42);background:rgba(59,130,246,0.10);transform:translateY(-1px)}
+.sidebar-action span:first-child{display:inline-flex;align-items:center;gap:8px}
+.sidebar-action small{color:var(--text-faint);font-size:12px;font-weight:800}
+.sidebar-footer-text{font-size:12px;color:var(--text-faint);font-weight:500;line-height:1.6}
+.sidebar-footer-text span{color:var(--text-muted)}
+.ops-link-row{display:flex;gap:8px;flex-wrap:wrap}
+.ops-link{
+  display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 12px;
+  border-radius:var(--radius-sm);border:1px solid rgba(96,165,250,0.34);
+  color:#bfdbfe;background:rgba(59,130,246,0.10);text-decoration:none;font-size:12px;font-weight:850;
+}
+.ops-link:hover{background:rgba(59,130,246,0.18);border-color:rgba(147,197,253,0.5)}
+
+.main-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
+.main-header-title{font-size:22px;font-weight:850;letter-spacing:-0.04em;color:var(--text-primary)}
+
+.date-swiper{display:flex;gap:8px;margin-bottom:28px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.date-swiper::-webkit-scrollbar{display:none}
+.date-chip{
+  display:inline-flex;flex-direction:column;align-items:center;gap:2px;
+  padding:8px 18px;border-radius:var(--radius-sm);border:1px solid transparent;
+  background:transparent;color:var(--text-muted);cursor:pointer;
+  font-family:var(--font);font-size:12px;font-weight:600;line-height:1.3;
+  transition:all 200ms var(--ease-out-expo);min-width:72px;text-align:center;min-height:44px;justify-content:center;
+}
+.date-chip:hover{color:var(--text-body);border-color:var(--line)}
+.date-chip.active{background:var(--blue-soft);border-color:transparent;color:var(--blue);font-weight:600}
+.date-chip-day{font-size:18px;font-weight:800;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+
+.stat-ribbon{display:flex;gap:0;margin-bottom:48px;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+.stat-cell{flex:1;text-align:center;padding:14px 12px;border-right:1px solid var(--line);background:rgba(17,24,39,0.3)}
+.stat-cell:last-child{border-right:none}
+.stat-cell.highlight{background:rgba(59,130,246,0.04)}
+.stat-cell-val{font-size:16px;font-weight:850;line-height:1.15;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:var(--text-primary)}
+.stat-cell-val.gold{color:var(--gold)}
+.stat-cell-val.green{color:var(--green)}
+.stat-cell-lbl{font-size:12px;color:var(--text-faint);font-weight:700;margin-top:4px;letter-spacing:0.02em}
+
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px}
+.section-head-title{font-size:14px;font-weight:800;color:var(--text-muted);letter-spacing:-0.01em}
+.section-head-meta{font-size:12px;color:var(--text-faint);font-weight:600}
+
+.match-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:64px}
+
+.match-card{
+  background:rgba(17,24,39,0.85);border-radius:var(--radius-md);padding:22px;
+  cursor:pointer;transition:all 250ms var(--ease-out-expo);
+  border:1px solid var(--line);position:relative;overflow:hidden;
+}
+.match-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--cyan));opacity:0.28;transition:opacity 220ms var(--ease-out-expo),width 220ms var(--ease-out-expo)}
+.match-card:hover{background:var(--bg-card-hover);transform:translateY(-2px);box-shadow:var(--shadow);border-color:rgba(59,130,246,0.38)}
+.match-card:hover::before{opacity:1;width:4px}
+.match-card.done{background:rgba(17,24,39,0.74)}
+.match-card.done .match-card-score-val{color:var(--gold)}
+
+.match-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:18px}
+.match-stage{font-size:12px;font-weight:700;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.04em}
+.match-badge{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.02em;padding:3px 10px;border-radius:var(--radius-pill)}
+.badge-upcoming{background:var(--orange-soft);color:var(--orange)}
+.badge-live{background:var(--green-soft);color:var(--green)}
+.badge-done{background:rgba(59,130,246,0.16);color:#bfdbfe}
+
+.match-card-core{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.match-card-team{display:flex;flex-direction:column;align-items:center;gap:8px;width:40%}
+.match-card-flag{font-size:32px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.flag-scotland{
+  display:inline-block;width:1.28em;height:.86em;border-radius:.12em;
+  background:
+    linear-gradient(34deg,transparent 42%,#fff 43%,#fff 57%,transparent 58%),
+    linear-gradient(146deg,transparent 42%,#fff 43%,#fff 57%,transparent 58%),
+    #005eb8;
+  box-shadow:0 2px 8px rgba(0,0,0,.24), inset 0 0 0 1px rgba(255,255,255,.12);
+  vertical-align:-.08em;
+}
+.match-card-team-name{font-size:14px;font-weight:750;color:var(--text-primary);letter-spacing:-0.01em;text-align:center}
+.match-card-score{display:flex;flex-direction:column;align-items:center;gap:2px;width:20%}
+.match-card-score-val{font-size:20px;font-weight:800;line-height:1.15;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:var(--text-primary)}
+.match-card-score-time{font-size:13px;color:var(--text-muted);font-weight:650}
+
+.match-card-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.match-ai-tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:var(--radius-pill);font-size:12px;font-weight:750;background:var(--blue-soft);color:var(--blue)}
+.match-odds-row{display:flex;gap:8px;font-size:12px;color:var(--text-muted);font-weight:650;align-items:center}
+.match-odds-row span{font-variant-numeric:tabular-nums}
+.match-odds-sep{font-size:12px;color:rgba(168,179,196,0.42);font-weight:400;opacity:.36;margin:0 1px}
+.market-pending{display:inline-flex;align-items:center;min-height:24px;padding:2px 9px;border-radius:var(--radius-pill);border:1px solid rgba(245,158,11,0.18);background:rgba(245,158,11,0.08);color:#fbbf24;font-weight:850}
+.match-view-btn{
+  font-size:12px;font-weight:750;color:var(--text-muted);
+  padding:6px 14px;border-radius:var(--radius-pill);border:1px solid var(--line);
+  background:transparent;cursor:pointer;font-family:var(--font);
+  transition:all 200ms ease;min-height:44px;white-space:nowrap;
+}
+.match-card:hover .match-view-btn{color:var(--blue);border-color:var(--blue-soft)}
+
+.empty-state{text-align:center;padding:64px 24px;color:var(--text-faint);font-size:14px;font-weight:500}
+.loading-stack{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;grid-column:1/-1}
+.loading-header{grid-column:1/-1;display:flex;align-items:center;gap:10px;min-height:44px;color:var(--text-muted);font-size:12px;font-weight:850;letter-spacing:0.02em}
+.loading-spinner{width:16px;height:16px;border-radius:50%;border:2px solid rgba(148,163,184,0.18);border-top-color:var(--blue);animation:spin 780ms linear infinite}
+.skeleton-card{
+  min-height:202px;border-radius:var(--radius-md);border:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(17,24,39,.62),rgba(30,41,59,.72),rgba(17,24,39,.62));
+  background-size:220% 100%;animation:skeletonPulse 1.15s ease-in-out infinite;
+}
+
+.data-center-overlay{
+  position:fixed;inset:0;z-index:410;background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  display:flex;justify-content:flex-end;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 300ms var(--ease-out-expo),visibility 300ms var(--ease-out-expo);
+}
+.data-center-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
+.data-center-panel{
+  width:min(820px,100%);height:100%;overflow-y:auto;background:var(--bg-panel);
+  border-left:1px solid var(--line);padding:40px 48px;
+  transform:translateX(32px);transition:transform 350ms var(--ease-out-expo);
+}
+.data-center-overlay.open .data-center-panel{transform:translateX(0)}
+.data-center-toolbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}
+.data-center-toolbar h2{font-size:22px;line-height:1.25;letter-spacing:-0.04em;color:var(--text-primary)}
+.data-center-toolbar p{font-size:12px;color:var(--text-faint);font-weight:750;margin-top:4px}
+.data-center{border-top:0;padding-top:0;margin-bottom:0}
+.data-center .section-head{display:none}
+.data-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.data-card{
+  background:rgba(17,24,39,0.72);border:1px solid var(--line);
+  border-radius:var(--radius-md);padding:0;min-width:0;overflow:hidden
+}
+.data-card.wide{grid-row:auto}
+.data-card summary{
+  min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 18px;cursor:pointer;list-style:none;
+}
+.data-card summary::-webkit-details-marker{display:none}
+.data-card summary::after{content:"＋";color:var(--text-faint);font-size:14px;font-weight:900}
+.data-card[open] summary{border-bottom:1px solid var(--line);background:rgba(59,130,246,0.04)}
+.data-card[open] summary::after{content:"−";color:var(--blue)}
+.data-card-body{padding:18px}
+.data-card-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.data-card summary .data-card-title{margin-bottom:0}
+.data-card-title h3{font-size:14px;font-weight:800;color:var(--text-body);letter-spacing:-0.02em}
+.data-card-title span{font-size:12px;color:var(--text-faint);font-weight:750}
+.data-card-summary{font-size:13px;color:var(--text-muted);font-weight:850;text-align:right}
+.ratio-val{display:inline-flex;align-items:baseline;gap:2px;white-space:nowrap}
+.ratio-main{font-weight:900;color:var(--text-primary)}
+.ratio-sep{font-weight:650;color:var(--text-faint)}
+.ratio-total{font-size:.78em;font-weight:650;color:var(--text-faint)}
+.data-card-summary .ratio-main{font-size:14px;color:var(--text-primary)}
+.data-card-summary .ratio-total,.data-card-summary .ratio-sep{color:var(--text-faint)}
+.mini-chart{height:174px;margin-bottom:12px}
+.mini-chart svg{width:100%;height:100%;display:block}
+.chart-axis{stroke:rgba(148,163,184,0.16);stroke-width:1}
+.chart-line{fill:none;stroke:url(#curveStroke);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chart-area{fill:url(#curveFill);opacity:.9}
+.chart-dot{fill:#facc15;stroke:#111827;stroke-width:2}
+.chart-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.chart-label{border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px;min-width:0}
+.chart-label b{display:block;font-size:13px;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chart-label small{display:block;font-size:12px;color:var(--text-faint);margin-top:3px}
+.metric-list{display:grid;gap:8px}
+.metric-line{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;border-bottom:1px solid var(--line);font-size:12px}
+.metric-line:last-child{border-bottom:0}
+.metric-line span{color:var(--text-faint);font-weight:700;min-width:0}
+.metric-line b{color:var(--text-primary);font-size:13px;font-variant-numeric:tabular-nums;text-align:right;min-width:0;overflow-wrap:anywhere}
+.observer-summary-grid{display:grid;gap:10px;margin-bottom:14px}
+.observer-note{border:1px solid var(--line);border-radius:12px;background:rgba(15,23,42,.48);padding:12px 14px}
+.observer-note span{display:block;font-size:11px;font-weight:850;color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.observer-note p{font-size:13px;line-height:1.65;color:var(--text-body)}
+.comic-preview{display:grid;gap:12px;margin-bottom:14px}
+.comic-cover{border:1px solid rgba(34,197,94,.22);border-radius:16px;background:linear-gradient(135deg,rgba(16,185,129,.14),rgba(59,130,246,.08));padding:16px}
+.comic-cover small{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);margin-bottom:8px}
+.comic-cover h3{font-size:20px;line-height:1.22;color:var(--text-primary);margin-bottom:8px}
+.comic-cover p{font-size:13px;line-height:1.65;color:var(--text-muted)}
+.comic-pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.comic-pill{border:1px solid rgba(148,163,184,.18);border-radius:999px;background:rgba(255,255,255,.045);padding:5px 9px;font-size:12px;font-weight:850;color:var(--text-body)}
+.comic-scene{border:1px solid var(--line);border-radius:14px;background:rgba(15,23,42,.52);padding:13px 14px}
+.comic-scene small{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-faint);margin-bottom:6px}
+.comic-scene b{display:block;font-size:14px;color:var(--text-primary);margin-bottom:7px}
+.comic-scene p{font-size:13px;line-height:1.65;color:var(--text-body)}
+.comic-scene ul{margin:8px 0 0;padding-left:17px;color:var(--text-muted);font-size:12px;line-height:1.6}
+.comic-mini-cards{display:grid;gap:8px;margin-top:10px}
+.comic-mini-card{border-top:1px solid var(--line);padding-top:8px;font-size:12px;color:var(--text-muted)}
+.comic-mini-card:first-child{border-top:0;padding-top:0}
+.comic-mini-card strong{display:block;color:var(--text-primary);font-size:13px}
+.seat-commentary-list{display:grid;gap:8px}
+.seat-commentary-item{display:grid;grid-template-columns:minmax(84px,120px) 1fr;gap:10px;align-items:start;border-top:1px solid var(--line);padding-top:8px;font-size:13px;color:var(--text-muted)}
+.seat-commentary-item:first-child{border-top:0;padding-top:0}
+.seat-commentary-item b{color:var(--text-primary)}
+.watchlist-status{border:1px solid rgba(245,158,11,.32);background:rgba(245,158,11,.08);border-radius:12px;padding:12px 14px;margin-top:12px;color:var(--text-body);font-size:13px;line-height:1.65}
+.loan-list-compact{display:grid;gap:8px}
+.loan-mini-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;min-height:44px}
+.loan-mini-row b{display:block;font-size:13px;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.loan-mini-row small{display:block;font-size:12px;color:var(--text-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.loan-mini-row strong{font-size:12px;color:var(--orange);font-variant-numeric:tabular-nums}
+.loan-mini-row strong.debt-low{color:#fbbf24}
+.loan-mini-row strong.debt-warning{color:var(--orange)}
+.loan-mini-row strong.debt-severe{color:var(--red)}
+.data-note{font-size:12px;line-height:1.6;color:var(--text-faint);margin-top:16px;padding:12px;border:1px solid var(--line);border-radius:var(--radius-sm);background:rgba(148,163,184,0.035)}
+.data-action-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:12px;border:1px solid rgba(59,130,246,.35);background:rgba(59,130,246,.1);color:#bfdbfe;text-decoration:none;font-size:13px;font-weight:850;padding:0 14px;margin-top:12px}
+.product-data-shell{display:grid;gap:16px}
+.product-data-head{border:1px solid rgba(59,130,246,.24);border-radius:16px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(16,185,129,.055));padding:16px 18px}
+.product-data-head h3{font-size:18px;line-height:1.25;color:var(--text-primary);letter-spacing:-.03em;margin-bottom:6px}
+.product-data-head p{font-size:13px;line-height:1.65;color:var(--text-muted);max-width:760px}
+.product-entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.product-entry-card{
+  min-height:96px;border:1px solid var(--line);border-radius:14px;background:rgba(15,23,42,.52);
+  padding:14px;text-align:left;color:var(--text-body);font:inherit;cursor:pointer;
+  display:grid;gap:8px;transition:all 180ms var(--ease-out-expo)
+}
+.product-entry-card:hover{border-color:rgba(96,165,250,.45);background:rgba(59,130,246,.075);transform:translateY(-1px)}
+.product-entry-card.active{border-color:rgba(59,130,246,.72);background:rgba(59,130,246,.14);box-shadow:inset 3px 0 0 var(--blue)}
+.product-entry-card b{font-size:14px;color:var(--text-primary)}
+.product-entry-card span{font-size:12px;line-height:1.55;color:var(--text-faint)}
+.product-entry-card small{font-size:12px;color:#93c5fd;font-weight:850}
+.product-view-panel{border:1px solid var(--line);border-radius:16px;background:rgba(15,23,42,.58);padding:16px}
+.product-view-title{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.product-view-title h3{font-size:16px;color:var(--text-primary);letter-spacing:-.02em}
+.product-view-title p{font-size:12px;line-height:1.6;color:var(--text-faint);margin-top:3px}
+.product-view-actions{display:flex;gap:8px;flex-wrap:wrap}
+.product-list{display:grid;gap:10px}
+.product-row{border:1px solid var(--line);border-radius:13px;background:rgba(17,24,39,.54);padding:13px 14px}
+.product-row-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.product-row-head b{font-size:14px;color:var(--text-primary)}
+.product-row-head span{font-size:12px;color:#bfdbfe;font-weight:850}
+.product-row p{font-size:13px;line-height:1.72;color:var(--text-body)}
+.product-row-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.product-mini{border:1px solid rgba(148,163,184,.14);border-radius:10px;padding:9px;background:rgba(2,6,23,.22)}
+.product-mini span{display:block;font-size:11px;color:var(--text-faint);font-weight:800;margin-bottom:3px}
+.product-mini b{display:block;font-size:13px;color:var(--text-primary);font-variant-numeric:tabular-nums}
+.product-audit{border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
+.product-audit summary{cursor:pointer;color:var(--text-faint);font-size:12px;font-weight:850;min-height:44px;display:flex;align-items:center}
+.product-audit .metric-list{margin-top:4px}
+@media(max-width:760px){
+  .product-entry-grid{grid-template-columns:1fr}
+  .product-row-grid{grid-template-columns:1fr}
+}
+
+.detail-overlay{
+  position:fixed;inset:0;z-index:400;background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  display:flex;justify-content:flex-end;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 300ms var(--ease-out-expo),visibility 300ms var(--ease-out-expo);
+}
+.detail-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
+.detail-panel{
+  width:min(720px,100%);height:100%;background:var(--bg-panel);
+  border-left:1px solid var(--line);overflow-y:auto;padding:40px 48px;
+  transform:translateX(32px);transition:transform 350ms var(--ease-out-expo);
+}
+.detail-overlay.open .detail-panel{transform:translateX(0)}
+
+.detail-close{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:14px;color:var(--text-muted);cursor:pointer;font-weight:700;margin-bottom:28px;background:none;border:none;font-family:var(--font);padding:8px 0;transition:color 200ms ease;min-height:44px;min-width:44px}
+.detail-close:hover{color:var(--text-primary)}
+
+.detail-hero{background:linear-gradient(135deg,#111827 0%,#141d30 50%,#111827 100%);border-radius:var(--radius-lg);padding:32px 40px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:48px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.detail-hero-team{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.detail-hero-flag{font-size:40px;line-height:1}
+.detail-hero-team-name{font-size:18px;font-weight:800;letter-spacing:-0.03em;color:var(--text-primary)}
+.detail-hero-vs{font-size:13px;color:var(--text-faint);font-weight:700;letter-spacing:0.06em;padding:6px 14px;border:1px solid var(--line);border-radius:var(--radius-pill);background:rgba(148,163,184,0.04)}
+.detail-hero-score{font-size:26px;font-weight:800;line-height:1.1;letter-spacing:-0.04em;color:var(--text-primary);font-variant-numeric:tabular-nums}
+
+.detail-summary{background:rgba(17,24,39,0.5);border-radius:var(--radius-md);padding:22px 28px;margin-bottom:36px;border:1px solid var(--line);font-size:14px;color:var(--text-body);line-height:1.8}
+
+.detail-odds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:36px}
+.detail-odd-cell{background:rgba(17,24,39,0.5);border-radius:var(--radius-sm);padding:16px;text-align:center;border:1px solid var(--line)}
+.detail-odd-val{font-size:18px;font-weight:800;line-height:1.15;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;color:var(--text-primary);margin-bottom:4px}
+.detail-odd-lbl{font-size:12px;color:var(--text-faint);font-weight:700;text-transform:uppercase}
+
+.model-grid{display:flex;flex-direction:column;gap:6px;margin-bottom:28px}
+.model-row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--radius-sm);cursor:pointer;transition:all 180ms ease;border:1px solid transparent;background:rgba(17,24,39,0.35);min-height:52px}
+.model-row:hover{background:var(--bg-card-hover);border-color:var(--line)}
+.model-row.expanded{background:var(--bg-card-hover);border-color:var(--line-strong);margin-bottom:6px}
+.model-row-pos{font-size:12px;font-weight:800;color:var(--text-faint);width:20px;font-variant-numeric:tabular-nums}
+.model-row-name{font-size:14px;font-weight:750;color:var(--text-primary);width:100px;flex-shrink:0}
+.model-row-market{font-size:12px;color:var(--text-muted);flex:1}
+.model-row-points{font-size:12px;font-weight:700;color:var(--text-body);width:70px;text-align:right;font-variant-numeric:tabular-nums}
+.model-row-ret{font-size:12px;font-weight:600;width:60px;text-align:right;font-variant-numeric:tabular-nums}
+.model-row-ret.up{color:var(--green)}
+.model-row-status{font-size:12px;font-weight:800;border-radius:var(--radius-pill);padding:3px 9px;min-width:64px;text-align:center}
+.model-row-status.active{color:var(--green);background:var(--green-soft)}
+.model-row-status.pending{color:var(--orange);background:var(--orange-soft)}
+.model-row-status.timeout{color:var(--text-faint);background:rgba(148,163,184,0.08)}
+.model-detail{background:rgba(17,24,39,0.5);border-radius:var(--radius-sm);padding:18px 22px;margin:0 0 10px;border:1px solid var(--line);display:none}
+.model-detail.show{display:block;animation:fadeIn 250ms var(--ease-out-expo)}
+.model-detail-section{margin-bottom:16px}
+.model-detail-section:last-child{margin-bottom:0}
+.model-detail-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-faint);margin-bottom:6px}
+.model-detail-text{font-size:14px;color:var(--text-body);line-height:1.8;font-weight:500}
+.model-detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.archive-action{
+  min-height:44px;border-radius:var(--radius-sm);border:1px solid rgba(59,130,246,0.35);
+  background:rgba(59,130,246,0.10);color:#bfdbfe;padding:0 14px;
+  font:inherit;font-size:12px;font-weight:850;cursor:pointer;
+}
+.seat-archive-panel{margin-top:14px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:rgba(12,18,34,0.62);padding:16px}
+.seat-archive-title{font-size:14px;font-weight:850;color:var(--text-primary);margin-bottom:12px}
+.seat-archive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.seat-archive-pill{border:1px solid var(--line);border-radius:var(--radius-sm);padding:10px 12px;background:rgba(17,24,39,0.58)}
+.seat-archive-pill span{display:block;font-size:12px;color:var(--text-faint);font-weight:800;margin-bottom:2px}
+.seat-archive-pill b{display:block;font-size:13px;color:var(--text-body);font-weight:850}
+.archive-section{margin-top:14px}
+.archive-section h4{font-size:12px;color:var(--text-faint);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
+.archive-section p,.archive-section li{font-size:13px;color:var(--text-body);line-height:1.75;font-weight:500}
+.archive-section ul{display:grid;gap:8px;list-style:none}
+.archive-bet-item{border-left:2px solid rgba(59,130,246,0.5);padding-left:10px}
+
+.profit-table{width:100%;border-collapse:collapse;margin-bottom:28px}
+.profit-table th{text-align:left;font-size:12px;font-weight:700;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.06em;padding:0 0 8px;border-bottom:1px solid var(--line)}
+.profit-table th:last-child{text-align:right}
+.profit-table td{padding:12px 0;font-size:12px;font-weight:600;color:var(--text-body);border-bottom:1px solid var(--line)}
+.profit-table td:last-child{text-align:right}
+.profit-table tr:hover td{background:rgba(17,24,39,0.35)}
+.tone-positive{color:var(--green)!important}
+.tone-warning{color:var(--orange)!important}
+.tone-negative{color:var(--red)!important}
+.tone-neutral{color:var(--text-faint)!important}
+
+.disclaimer{font-size:12px;color:var(--text-faint);text-align:center;padding:10px 0 0;line-height:1.6;opacity:0.65;font-weight:500}
+
+.sim-badge{display:inline-block;font-size:12px;font-weight:800;color:#fbbf24;border:1px solid rgba(251,191,36,0.42);border-radius:var(--radius-pill);padding:2px 8px;vertical-align:middle;margin-left:6px;letter-spacing:0.02em;background:rgba(12,18,34,0.72)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@keyframes skeletonPulse{0%{background-position:100% 0}100%{background-position:-100% 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media(max-width:1100px){
+  .layout{grid-template-columns:260px minmax(0,1fr);gap:32px;padding:0 24px}
+  :root{--sidebar-w:260px}
+  .match-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr;padding:0 16px;gap:20px;max-width:100%;width:100%;overflow:hidden}
+  .sidebar{position:static;max-height:none;padding:16px 0 0;width:100%;max-width:100%}
+  .sidebar-stats{grid-template-columns:repeat(4,1fr);gap:6px;width:100%}
+  .sidebar-stat{padding:12px 8px}
+  .sidebar-stat-val{font-size:14px}
+  .sidebar-stat-lbl{font-size:12px}
+  .sidebar .ranking-section{display:none}
+  .sidebar-footer{display:block}
+  .sidebar-brand{max-width:100%}
+  .main-content{padding-top:16px;max-width:100%;width:100%;overflow:hidden}
+  .main-header{width:100%}
+  .main-header-title{font-size:16px}
+  .match-grid{grid-template-columns:1fr;width:100%}
+  .loading-stack{grid-template-columns:1fr}
+  .match-card{padding:18px;max-width:100%}
+  .match-card-bottom{flex-wrap:wrap}
+  .match-ai-tag{max-width:100%;white-space:normal}
+  .match-odds-row{width:100%;order:3;flex-wrap:wrap}
+  .match-card-flag{font-size:26px}
+  .match-card-team-name{font-size:12px}
+  .match-card-score-val{font-size:17px}
+  .detail-panel{width:100%;padding:24px 16px}
+  .detail-hero{padding:24px 16px;gap:20px;flex-wrap:wrap}
+  .detail-hero-flag{font-size:28px}
+  nav.topbar{padding:0 16px}
+  .topbar-mark{width:26px;height:26px}
+  .topbar-title{max-width:220px}
+  .sim-badge{display:none}
+  .run-pill{display:none}
+  .contact-btn span:last-child{display:none}
+  .contact-panel{right:-46px;width:min(260px,calc(100vw - 32px))}
+  .date-chip{padding:8px 14px;min-width:60px;min-height:44px}
+  .date-chip-day{font-size:16px}
+  .stat-ribbon{flex-wrap:wrap;width:100%}
+  .stat-cell{min-width:50%;padding:12px 8px;flex:1 1 auto}
+  .stat-cell:nth-child(2){border-right:none}
+  .stat-cell-val{font-size:13px}
+  .model-row{display:grid;grid-template-columns:20px 30px minmax(0,1fr) auto;gap:10px}
+  .model-row-name{width:auto}
+  .model-row-market,.model-row-points,.model-row-ret{grid-column:3 / -1;width:auto;text-align:left}
+  .model-row-status{grid-column:4;grid-row:1;min-width:52px}
+  .data-center-panel{width:100%;padding:24px 16px}
+  .data-center-toolbar h2{font-size:18px}
+  .data-grid{grid-template-columns:1fr}
+  .data-card.wide{grid-row:auto}
+  .chart-labels{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-pulse"></div>
+    <div class="topbar-mark" aria-hidden="true">🏆</div>
+    <span class="topbar-title" data-i18n="topbarTitle">美加墨世界杯 · AI 预测池</span>
+    <span class="sim-badge" data-i18n="simBadge">模拟积分赛</span>
+  </div>
+  <div class="topbar-right">
+    <div class="run-pill" id="runPill">run-15 · <strong>运营中</strong></div>
+    <div class="contact-wrap" id="contactWrap">
+      <button class="btn-icon btn-text contact-btn" id="contactToggle" type="button" aria-expanded="false" aria-controls="contactPanel">
+        <span aria-hidden="true">✉️</span><span data-i18n="contact">联系方式</span>
+      </button>
+      <div class="contact-panel" id="contactPanel" hidden>
+        <b data-i18n="contactTitle">联系方式</b>
+        <div class="contact-methods">
+          <div>
+            <div class="contact-method-label" data-i18n="emailLabel">邮箱</div>
+            <div class="contact-method-value"><span>reguorider@gmail.com</span><button type="button" id="copyEmailBtn" aria-label="Copy email">⧉</button></div>
+          </div>
+          <div>
+            <div class="contact-method-label" data-i18n="wechatLabel">微信 ID</div>
+            <div class="contact-method-value"><span>598615675</span><button type="button" id="copyWechatBtn" aria-label="Copy WeChat ID">⧉</button></div>
+          </div>
+        </div>
+        <a href="mailto:reguorider@gmail.com" data-i18n="sendEmail">发送邮件</a>
+        <small id="contactHint" data-i18n="contactHint">点击复制邮箱地址，或直接发送邮件。</small>
+      </div>
+    </div>
+    <button class="btn-icon btn-text" id="langToggle" onclick="toggleLang()" data-i18n="langLabel">EN</button>
+  </div>
+</nav>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-icon">🏆</div>
+    <div class="sidebar-brand-name" data-i18n="brandName">世界杯预测池</div>
+    <div class="sidebar-brand-sub" data-i18n="brandSub">AI 模型积分赛</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-kicker" data-i18n="sidebarOverview">Overview</div>
+    <div class="sidebar-stats" id="sidebarStats"></div>
+  </div>
+  <div class="sidebar-section ranking-section">
+    <div class="sidebar-kicker" data-i18n="sbRanking">模型积分排名</div>
+    <div id="sidebarRankList" style="display:flex;flex-direction:column;gap:2px"></div>
+  </div>
+  <div class="sidebar-footer">
+    <button class="sidebar-action" type="button" onclick="openDataCenter()">
+      <span><span aria-hidden="true">📊</span><span data-i18n="dataCenterEntry">数据中心</span></span>
+      <small>↗</small>
+    </button>
+    <div class="sidebar-footer-text" data-i18n="disclaimer">* 所有积分均为模拟游戏化数据，不涉及真实交易</div>
+  </div>
+</aside>
+
+<main class="main-content">
+
+  <div class="main-header">
+    <h1 class="main-header-title" data-i18n="pageTitle">赛事日历</h1>
+  </div>
+
+  <div class="date-swiper" id="dateSwiper"></div>
+
+  <div class="stat-ribbon" id="statRibbon"></div>
+  <button type="button" data-retry-refresh onclick="init()" style="display:none">Retry</button>
+
+  <div class="section-head"><span class="section-head-title" data-i18n="matchListTitle">比赛列表</span><span class="section-head-meta" id="matchCount"></span></div>
+  <div class="match-grid" id="matchGrid"></div>
+  <section id="view-ranking" hidden></section>
+
+</main>
+</div>
+
+<div class="detail-overlay" id="detailOverlay" onclick="if(event.target===this)closeDetail()">
+  <div class="detail-panel" id="detailPanel"></div>
+</div>
+
+<div class="data-center-overlay" id="dataCenterOverlay" onclick="if(event.target===this)closeDataCenter()">
+  <div class="data-center-panel" id="dataCenterPanel">
+    <div class="data-center-toolbar">
+      <div>
+        <h2 data-i18n="dataCenterTitle">📊 数据中心</h2>
+        <p data-i18n="dataCenterMeta">运营日志 · 信用 / 分账 / 日报</p>
+      </div>
+      <button class="detail-close" type="button" onclick="closeDataCenter()" data-i18n="dataCenterClose">关闭</button>
+    </div>
+    <section class="data-center" id="dataCenter"></section>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   DATA LAYER — Simulated API Endpoints
+   Replace fetch() calls below with real endpoints when available.
+   ================================================================== */
+const API_BASE = window.WORLDCUP_POOL_API_BASE || "";
+const CONTACT_EMAIL = "reguorider@gmail.com";
+const WECHAT_ID = "598615675";
+const DEFAULT_DATE = '';
+const DEFAULT_ROUND = '';
+const DATE_TO_ISO = {"6/11":"2026-06-11","6/12":"2026-06-12","6/13":"2026-06-13","6/14":"2026-06-14","6/15":"2026-06-15"};
+let staticArtifacts={currentGame:null,dailySop:null,qualityGate:null,observerLedger:null,observerLedgerIndex:null,alignmentAudit:null,strictGodReport:null,scoreSync:null,behaviorSummary:null,creditLedger:null,forecastReceipts:null,investmentReceipts:null,godReportV2:null,survivalLedger:null,latestSettlement:null,seatJournals:{}};
+let activeDataCenterView="journal";
+const TEAM_ALIASES = {
+  "Bosnia":"Bosnia & Herzegovina","Curacao":"Curaçao","Czechia":"Czech Republic","DRC":"DR Congo",
+  "Democratic Republic of Congo":"DR Congo","Cote d'Ivoire":"Ivory Coast","Côte d'Ivoire":"Ivory Coast",
+  "CapeVerde":"Cape Verde","CostaRica":"Costa Rica","NewZealand":"New Zealand","SouthAfrica":"South Africa",
+  "SouthKorea":"South Korea","SaudiArabia":"Saudi Arabia","UnitedStates":"USA","United States":"USA","United States of America":"USA",
+};
+const TEAM_ZH = {
+  "Algeria":"阿尔及利亚","Argentina":"阿根廷","Australia":"澳大利亚","Austria":"奥地利","Belgium":"比利时",
+  "Bosnia & Herzegovina":"波黑","Brazil":"巴西","Canada":"加拿大","Cape Verde":"佛得角","Colombia":"哥伦比亚",
+  "Costa Rica":"哥斯达黎加","Croatia":"克罗地亚","Curaçao":"库拉索","Czech Republic":"捷克","DR Congo":"刚果（金）",
+  "Denmark":"丹麦","Ecuador":"厄瓜多尔","Egypt":"埃及","England":"英格兰","Finland":"芬兰","France":"法国","Germany":"德国",
+  "Ghana":"加纳","Haiti":"海地","Iran":"伊朗","Iraq":"伊拉克","Ivory Coast":"科特迪瓦","Japan":"日本",
+  "Jordan":"约旦","Mexico":"墨西哥","Morocco":"摩洛哥","Netherlands":"荷兰","New Zealand":"新西兰",
+  "Norway":"挪威","Panama":"巴拿马","Paraguay":"巴拉圭","Peru":"秘鲁","Portugal":"葡萄牙","Qatar":"卡塔尔",
+  "Russia":"俄罗斯","Saudi Arabia":"沙特阿拉伯","Scotland":"苏格兰","Senegal":"塞内加尔","Serbia":"塞尔维亚","South Africa":"南非",
+  "South Korea":"韩国","Spain":"西班牙","Sweden":"瑞典","Switzerland":"瑞士","Tunisia":"突尼斯","Turkey":"土耳其",
+  "USA":"美国","Uruguay":"乌拉圭","Uzbekistan":"乌兹别克斯坦","Wales":"威尔士",
+};
+const TEAM_FLAGS = {
+  "Algeria":"🇩🇿","Argentina":"🇦🇷","Australia":"🇦🇺","Austria":"🇦🇹","Belgium":"🇧🇪","Bosnia & Herzegovina":"🇧🇦",
+  "Brazil":"🇧🇷","Canada":"🇨🇦","Cape Verde":"🇨🇻","Colombia":"🇨🇴","Costa Rica":"🇨🇷","Croatia":"🇭🇷",
+  "Curaçao":"🇨🇼","Czech Republic":"🇨🇿","Denmark":"🇩🇰","DR Congo":"🇨🇩","Ecuador":"🇪🇨","Egypt":"🇪🇬","England":"\u{1F3F4}\u{E0067}\u{E0062}\u{E0065}\u{E006E}\u{E0067}\u{E007F}",
+  "Finland":"🇫🇮","France":"🇫🇷","Germany":"🇩🇪","Ghana":"🇬🇭","Haiti":"🇭🇹","Iran":"🇮🇷","Iraq":"🇮🇶",
+  "Ivory Coast":"🇨🇮","Japan":"🇯🇵","Jordan":"🇯🇴","Mexico":"🇲🇽","Morocco":"🇲🇦","Netherlands":"🇳🇱",
+  "New Zealand":"🇳🇿","Norway":"🇳🇴","Panama":"🇵🇦","Paraguay":"🇵🇾","Peru":"🇵🇪","Portugal":"🇵🇹",
+  "Qatar":"🇶🇦","Russia":"🇷🇺","Saudi Arabia":"🇸🇦","Scotland":"<span class=\"flag-scotland\" role=\"img\" aria-label=\"Scotland\"></span>","Senegal":"🇸🇳","Serbia":"🇷🇸",
+  "South Africa":"🇿🇦","South Korea":"🇰🇷","Spain":"🇪🇸","Sweden":"🇸🇪","Switzerland":"🇨🇭","Tunisia":"🇹🇳",
+  "Turkey":"🇹🇷","USA":"🇺🇸","Uruguay":"🇺🇾","Uzbekistan":"🇺🇿","Wales":"\u{1F3F4}\u{E0067}\u{E0062}\u{E0077}\u{E006C}\u{E0073}\u{E007F}",
+};
+
+function canonicalTeamName(teamName){
+  const raw = String(teamName || "").trim();
+  return TEAM_ALIASES[raw] || raw;
+}
+
+function teamZhName(teamName){
+  const canonical = canonicalTeamName(teamName);
+  return TEAM_ZH[canonical] || canonical || "主队";
+}
+
+function isFullFlag(value){
+  if(!value || typeof value !== "string")return false;
+  if(value === "🏳️")return false;
+  if(value === "🏴")return false;
+  const codePoints = Array.from(value.trim());
+  return codePoints.length >= 2;
+}
+
+function teamFlag(rawFlag, teamName){
+  const canonical = canonicalTeamName(teamName);
+  return isFullFlag(rawFlag) ? rawFlag : (TEAM_FLAGS[canonical] || "🏳️");
+}
+
+function isoToKey(iso){
+  if(!iso || typeof iso !== "string")return iso;
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${Number(m[2])}/${Number(m[3])}` : iso;
+}
+
+function weekdayIndex(iso){
+  const d = new Date(`${iso}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? 0 : d.getUTCDay();
+}
+
+function normalizeDatePayload(remote){
+  const rows = Array.isArray(remote) ? remote : remote?.dates;
+  if(!Array.isArray(rows) || !rows.length)return null;
+  const todayIso = hkDateFromKickoff(new Date().toISOString());
+  const dates = rows.map((row)=>{
+    const iso = row.date || row.key || row.iso || "";
+    const key = isoToKey(iso);
+    return {
+      key,
+      iso,
+      labelZh: iso ? `${Number(iso.slice(5,7))}月${Number(iso.slice(8,10))}日` : key,
+      labelEn: iso ? new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"}) : key,
+      wday: typeof row.wday === "number" ? row.wday : weekdayIndex(iso),
+      count: row.count,
+    };
+  }).filter(d=>d.key);
+  return {today: dates.find(d=>d.iso===todayIso)?.key || dates[0]?.key, dates};
+}
+
+function formatKickoff(value){
+  if(!value)return "";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime()))return String(value).slice(11,16);
+  return d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",hour12:false,timeZone:"Asia/Hong_Kong"});
+}
+
+function hkDateFromKickoff(value){
+  if(!value)return "";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime()))return "";
+  const parts = new Intl.DateTimeFormat("en-CA",{
+    timeZone:"Asia/Hong_Kong",year:"numeric",month:"2-digit",day:"2-digit"
+  }).formatToParts(d).reduce((acc,p)=>{acc[p.type]=p.value;return acc;},{});
+  return parts.year && parts.month && parts.day ? `${parts.year}-${parts.month}-${parts.day}` : "";
+}
+
+function matchDateKeys(m){
+  const keys = new Set();
+  [m?.matchday_hk,m?.date_hk,m?.automation_date,m?.official_date,m?.date].forEach(v=>{
+    if(v)keys.add(String(v).slice(0,10));
+  });
+  const hk = hkDateFromKickoff(m?.kickoff_at || m?.commence_time);
+  if(hk)keys.add(hk);
+  return Array.from(keys).filter(Boolean);
+}
+
+function matchBelongsToDate(m,targetIso){
+  if(!targetIso)return true;
+  return matchDateKeys(m).includes(targetIso);
+}
+
+function matchHasDateSignal(m){
+  return Boolean(
+    m?.matchday_hk || m?.date_hk || m?.automation_date || m?.official_date ||
+    m?.date || m?.kickoff_at || m?.commence_time
+  );
+}
+
+const STORE = {get date(){return isoForDateKey(activeDate);}};
+
+function matchBelongsToBetDate(match,target){
+  return matchBelongsToDate(match,target);
+}
+
+function dateBetRows(allRows,target){
+  const exactRows = allRows.filter(row=>matchBelongsToBetDate(row.match, target));
+  return exactRows;
+}
+
+function currentDateMatchRows(rows){
+  return rows.filter(m=>matchBelongsToDate(m, STORE.date));
+}
+
+function guardedMatchesForDate(rows,dateKey){
+  if(!Array.isArray(rows) || !dateKey)return Array.isArray(rows) ? rows : [];
+  const iso = isoForDateKey(dateKey);
+  if(!iso)return rows;
+  const hasSignals = rows.some(m=>{
+    const keys = Array.isArray(m?.dateKeys) ? m.dateKeys : matchDateKeys(m);
+    return keys.length > 0;
+  });
+  if(!hasSignals)return rows;
+  return rows.filter(m=>{
+    const keys = Array.isArray(m?.dateKeys) ? m.dateKeys : matchDateKeys(m);
+    return !keys.length || keys.includes(iso);
+  });
+}
+
+function modelPickPercent(m){
+  if(m.ai?.pct !== undefined)return Number(m.ai.pct) || 0;
+  if(m.ai_pct !== undefined)return Number(m.ai_pct) || 0;
+  if(m.prob_home !== undefined && m.prob_home !== null)return Math.round(Number(m.prob_home) * 100);
+  return null;
+}
+
+function normalizedTeamKey(value){
+  return teamKey(canonicalTeamName(value));
+}
+
+function scoreDateKeys(row){
+  const keys=new Set(matchDateKeys(row));
+  [row?.matchday_hk,row?.source_date_query,row?.date,row?.official_date,row?.automation_date].forEach(value=>{
+    if(value)keys.add(String(value).slice(0,10));
+  });
+  return Array.from(keys).filter(Boolean);
+}
+
+function knownScoreRows(){
+  const rows=staticArtifacts.scoreSync?.known_scores;
+  return Array.isArray(rows)?rows:[];
+}
+
+function findKnownScore(match){
+  const rows=knownScoreRows();
+  if(!rows.length || !match)return null;
+  const matchId=String(match.match_id || match.id || "").trim();
+  if(matchId){
+    const direct=rows.find(row=>String(row.match_id || "").trim()===matchId);
+    if(direct)return direct;
+  }
+  const home=normalizedTeamKey(match.home_team || match.home || match.home_name);
+  const away=normalizedTeamKey(match.away_team || match.away || match.away_name);
+  if(!home || !away)return null;
+  const matchDates=new Set(matchDateKeys(match));
+  return rows.find(row=>{
+    const rowHome=normalizedTeamKey(row.home_team || row.home || row.home_name);
+    const rowAway=normalizedTeamKey(row.away_team || row.away || row.away_name);
+    if(rowHome!==home || rowAway!==away)return false;
+    const rowDates=scoreDateKeys(row);
+    if(!matchDates.size || !rowDates.length)return true;
+    return rowDates.some(date=>matchDates.has(date));
+  }) || null;
+}
+
+function applyKnownScore(match){
+  const known=findKnownScore(match);
+  if(!known)return match || {};
+  const homeScore=Number(known.home_score);
+  const awayScore=Number(known.away_score);
+  if(!Number.isFinite(homeScore) || !Number.isFinite(awayScore))return match || {};
+  const scoreText=known.score || `${homeScore}–${awayScore}`;
+  const merged={
+    ...(match || {}),
+    home_score:homeScore,
+    away_score:awayScore,
+    score:scoreText,
+    status:"settled",
+    result_state:"finished",
+    matchday_hk:known.matchday_hk || match?.matchday_hk,
+    score_source:known.source || match?.score_source || "latest_score_sync",
+    source_note:[match?.source_note,`score:${known.source || "score_sync"}`].filter(Boolean).join(" · "),
+  };
+  if(!merged.kickoff_at && known.kickoff_at)merged.kickoff_at=known.kickoff_at;
+  return merged;
+}
+
+function isScoreValue(value){
+  if(value === null || value === undefined || value === "")return false;
+  return Number.isFinite(Number(value));
+}
+
+function normalizedScore(m){
+  const raw = String(m?.score ?? "").trim();
+  if(raw && !/null|undefined|nan/i.test(raw))return raw;
+  if(isScoreValue(m?.home_score) && isScoreValue(m?.away_score)){
+    return `${Number(m.home_score)}–${Number(m.away_score)}`;
+  }
+  return "";
+}
+
+function normalizeMatchStatus(m,score){
+  const raw = String(m.status || "").toLowerCase();
+  const result = String(m.result_state || "").toLowerCase();
+  const hasScore = Boolean(score) || (isScoreValue(m.home_score) && isScoreValue(m.away_score));
+  if(hasScore)return "done";
+  if(["settled","finished","done","final","completed","closed"].includes(raw) || ["finished","settled","completed"].includes(result))return "result_pending";
+  if(resultSyncDue(m))return "result_pending";
+  if(["live","in_play","running","started"].includes(raw) || ["live","in_play","running"].includes(result))return "live";
+  return "upcoming";
+}
+
+function matchMergeKey(match){
+  const id=String(match?.match_id || match?.id || "").trim();
+  if(id)return `id:${id}`;
+  const home=normalizedTeamKey(match?.home_team || match?.home || match?.home_name);
+  const away=normalizedTeamKey(match?.away_team || match?.away || match?.away_name);
+  const date=(Array.isArray(match?.dateKeys)?match.dateKeys:matchDateKeys(match))[0] || "";
+  return `teams:${home}:${away}:${date}`;
+}
+
+function mergeMatchRecord(base,incoming){
+  if(!base)return incoming;
+  if(!incoming)return base;
+  const merged={...base,...incoming};
+  const baseScore=normalizedScore(base);
+  const incomingScore=normalizedScore(incoming);
+  if(baseScore && !incomingScore){
+    merged.score=base.score;
+    merged.home_score=base.home_score;
+    merged.away_score=base.away_score;
+    merged.status=base.status;
+    merged.result_state=base.result_state;
+    merged.score_source=base.score_source;
+  }
+  if(incomingScore){
+    merged.score=incoming.score;
+    merged.home_score=incoming.home_score;
+    merged.away_score=incoming.away_score;
+    merged.status=incoming.status;
+    merged.result_state=incoming.result_state;
+    merged.score_source=incoming.score_source;
+  }
+  merged.odds={...(base.odds || {}),...(incoming.odds || {})};
+  merged.market_snapshot=(incoming.market_snapshot || []).length >= (base.market_snapshot || []).length ? incoming.market_snapshot : base.market_snapshot;
+  merged.dateKeys=Array.from(new Set([...(base.dateKeys || matchDateKeys(base)),...(incoming.dateKeys || matchDateKeys(incoming))])).filter(Boolean);
+  return merged;
+}
+
+function mergeMatchLists(rows){
+  const map=new Map();
+  (rows || []).filter(Boolean).forEach(row=>{
+    const key=matchMergeKey(row);
+    map.set(key,mergeMatchRecord(map.get(key),row));
+  });
+  return Array.from(map.values()).sort((a,b)=>{
+    const ak=String(a.kickoff_at || a.time || "");
+    const bk=String(b.kickoff_at || b.time || "");
+    return ak.localeCompare(bk);
+  });
+}
+
+function scoreMatchesForDate(dateKey){
+  const iso=isoForDateKey(dateKey);
+  return knownScoreRows()
+    .filter(row=>!iso || scoreDateKeys(row).includes(iso))
+    .map((row,index)=>normalizeStaticMatch({
+      ...row,
+      id:row.match_id || `score-${index}`,
+      match_id:row.match_id || `score-${index}`,
+      status:"settled",
+      result_state:"finished",
+      source_note:"latest_score_sync",
+    },index));
+}
+
+function resultSyncDue(m){
+  const value = m?.kickoff_at || m?.commence_time || "";
+  if(!value)return false;
+  const kickoff = new Date(value);
+  if(Number.isNaN(kickoff.getTime()))return false;
+  return Date.now() >= kickoff.getTime() + 120 * 60 * 1000;
+}
+
+async function fetchJsonSafe(path){
+  if(location.protocol === "file:" && !API_BASE)return null;
+  const url = API_BASE ? new URL(path, API_BASE).toString() : path;
+  for(const timeoutMs of [14000,22000]){
+    const controller = new AbortController();
+    const timer = setTimeout(()=>controller.abort(), timeoutMs);
+    try{
+      const res = await fetch(url,{cache:"no-store",signal:controller.signal});
+      if(!res.ok)return null;
+      const json = await res.json();
+      if(!json || (typeof json === "object" && !Array.isArray(json) && Object.keys(json).length===0))return null;
+      return json;
+    }catch(_err){
+      // Vercel cold starts occasionally exceed the first budget; retry once before showing an empty state.
+    }finally{
+      clearTimeout(timer);
+    }
+  }
+  return null;
+}
+
+async function fetchStaticJson(path){
+  try{
+    const res = await fetch(path,{cache:"no-store"});
+    if(!res.ok)return null;
+    return await res.json();
+  }catch(_err){
+    return null;
+  }
+}
+
+async function loadStaticArtifacts(){
+  const [currentGame,dailySop,qualityGate,observerLedger,observerLedgerIndex,alignmentAudit,strictGodReport,scoreSync,behaviorSummary] = await Promise.all([
+    fetchStaticJson("data/pool/pred_invest/latest_current_game.json"),
+    fetchStaticJson("data/pool/pred_invest/latest_daily_sop.json"),
+    fetchStaticJson("data/pool/pred_invest/latest_quality_gate.json"),
+    fetchStaticJson("data/pool/observer_ledgers/latest.json"),
+    fetchStaticJson("data/pool/observer_ledgers/index.json"),
+    fetchStaticJson("data/pool/pred_invest/latest_match_data_alignment_audit.json"),
+    fetchStaticJson("data/pool/pred_invest/latest_god_report_strict.json"),
+    fetchStaticJson("data/pool/pred_invest/latest_score_sync.json"),
+    fetchStaticJson("data/pool/behavior_summary/latest.json"),
+  ]);
+  const refs=behaviorSummary?.artifact_refs || {};
+  const settlementPath = staticArtifacts?.dailySop?.settlement_trigger?.path || dailySop?.settlement_trigger?.path || (dailySop?.round_id ? `data/pool/settlements/${dailySop.round_id}.json` : "");
+  const [creditLedger,forecastReceipts,investmentReceipts,godReportV2,survivalLedger,latestSettlement] = await Promise.all([
+    refs.credit_ledger ? fetchStaticJson(refs.credit_ledger) : null,
+    refs.forecast_receipts ? fetchStaticJson(refs.forecast_receipts) : null,
+    refs.investment_receipts ? fetchStaticJson(refs.investment_receipts) : null,
+    refs.god_report_v2_json ? fetchStaticJson(refs.god_report_v2_json) : null,
+    refs.survival_ledger ? fetchStaticJson(refs.survival_ledger) : null,
+    settlementPath ? fetchStaticJson(settlementPath) : null,
+  ]);
+  const seatIds=Object.keys(creditLedger?.seats || forecastReceipts?.seats || investmentReceipts?.seats || {}).slice(0,24);
+  const seatJournalPairs=await Promise.all(seatIds.map(async seatId=>[
+    seatId,
+    await fetchStaticJson(`data/pool/seat_journals/${encodeURIComponent(seatId)}/summary.json`)
+  ]));
+  const seatJournals=Object.fromEntries(seatJournalPairs.filter(([,summary])=>summary));
+  staticArtifacts={currentGame,dailySop,qualityGate,observerLedger,observerLedgerIndex,alignmentAudit,strictGodReport,scoreSync,behaviorSummary,creditLedger,forecastReceipts,investmentReceipts,godReportV2,survivalLedger,latestSettlement,seatJournals};
+}
+
+function staticRoundId(){
+  return staticArtifacts.currentGame?.round_id || staticArtifacts.dailySop?.round_id || DEFAULT_ROUND || "run-14";
+}
+
+function staticDateIso(){
+  return staticArtifacts.currentGame?.date || staticArtifacts.dailySop?.date || "";
+}
+
+function h2hOddsFromSnapshot(match){
+  const rows=Array.isArray(match?.market_snapshot)?match.market_snapshot:[];
+  const home=teamKey(match?.home_team || match?.home);
+  const away=teamKey(match?.away_team || match?.away);
+  const odds={h:"--",d:"--",a:"--"};
+  rows.forEach(row=>{
+    if(String(row?.market || "").toLowerCase()!=="h2h")return;
+    const selection=teamKey(row.selection);
+    if(selection==="draw" || selection==="tie")odds.d=row.odds;
+    else if(selection && home && selection.includes(home))odds.h=row.odds;
+    else if(selection && away && selection.includes(away))odds.a=row.odds;
+  });
+  return odds;
+}
+
+function normalizeStaticMatch(match,index=0){
+  const enriched=applyKnownScore(match);
+  const homeName=enriched.home_team || enriched.home || "Home";
+  const awayName=enriched.away_team || enriched.away || "Away";
+  const home=canonicalTeamName(homeName);
+  const away=canonicalTeamName(awayName);
+  const score=normalizedScore(enriched);
+  const kickoff=enriched.kickoff_at || enriched.commence_time || "";
+  return {
+    id:enriched.match_id || enriched.id || `static-match-${index}`,
+    match_id:enriched.match_id || enriched.id || `static-match-${index}`,
+    dateKeys:matchDateKeys(enriched),
+    stageZh:enriched.stage_zh || enriched.stageZh || enriched.stage || "小组赛",
+    stageEn:enriched.stage_en || enriched.stageEn || enriched.stage || "Group",
+    status:normalizeMatchStatus(enriched,score),
+    home,
+    homeZh:enriched.home_zh || enriched.homeZh || teamZhName(home),
+    away,
+    awayZh:enriched.away_zh || enriched.awayZh || teamZhName(away),
+    hf:teamFlag(enriched.home_flag || enriched.hf, home),
+    af:teamFlag(enriched.away_flag || enriched.af, away),
+    kickoff_at:kickoff,
+    score,
+    time:enriched.time || enriched.kickoff_time || formatKickoff(kickoff),
+    odds:enriched.odds || h2hOddsFromSnapshot(enriched),
+    market_snapshot:enriched.market_snapshot || [],
+    sourceNote:enriched.source_note || "latest_current_game",
+    ai:enriched.ai || {pref:"home",pct:null},
+  };
+}
+
+function staticMatchesForDate(dateKey){
+  const matches=staticArtifacts.currentGame?.matches;
+  if(!Array.isArray(matches))return [];
+  return guardedMatchesForDate(matches.map(normalizeStaticMatch),dateKey);
+}
+
+function staticMatchDates(){
+  const matches=staticArtifacts.currentGame?.matches;
+  if(!Array.isArray(matches) || !matches.length)return [];
+  const counts=new Map();
+  matches.map(normalizeStaticMatch).forEach(match=>{
+    matchDateKeys(match).forEach(iso=>{
+      counts.set(iso,(counts.get(iso)||0)+1);
+    });
+  });
+  return Array.from(counts.entries()).sort(([a],[b])=>a.localeCompare(b)).map(([iso,count])=>({
+    key:isoToKey(iso),
+    iso,
+    labelZh:`${Number(iso.slice(5,7))}月${Number(iso.slice(8,10))}日`,
+    labelEn:new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"}),
+    wday:weekdayIndex(iso),
+    count,
+  }));
+}
+
+function scoreSyncMatchDates(){
+  const counts=new Map();
+  knownScoreRows().forEach(row=>{
+    scoreDateKeys(row).forEach(iso=>{
+      counts.set(iso,(counts.get(iso)||0)+1);
+    });
+  });
+  return Array.from(counts.entries()).sort(([a],[b])=>a.localeCompare(b)).map(([iso,count])=>({
+    key:isoToKey(iso),
+    iso,
+    labelZh:`${Number(iso.slice(5,7))}月${Number(iso.slice(8,10))}日`,
+    labelEn:new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US",{month:"short",day:"numeric",timeZone:"UTC"}),
+    wday:weekdayIndex(iso),
+    count,
+  }));
+}
+
+function preferredDateKey(dates){
+  if(!Array.isArray(dates) || !dates.length)return "6/14";
+  const todayIso=hkDateFromKickoff(new Date().toISOString());
+  const bundleIso=staticDateIso();
+  return dates.find(d=>d.iso===todayIso)?.key || dates.find(d=>d.iso===bundleIso)?.key || dates[0].key;
+}
+
+function requestedDateKey(dates){
+  const value=new URLSearchParams(location.search).get("date");
+  if(!value)return "";
+  const iso=isoForDateKey(value);
+  const found=(dates || []).find(d=>d.iso===iso || d.key===value);
+  return found?.key || "";
+}
+
+function staticCompactDecisions(){
+  const rows=[];
+  const current=staticArtifacts.currentGame || {};
+  const strictSeats = Array.isArray(staticArtifacts.strictGodReport?.seat_summaries) ? staticArtifacts.strictGodReport.seat_summaries : [];
+  if(strictSeats.length){
+    strictSeats.forEach(model=>{
+      const seatId=model.seat || model.model_account || model.display_name;
+      const displayName=model.display_name || model.seat || model.model_account;
+      (model.investments || []).forEach(bet=>{
+        rows.push({
+          round_id:staticArtifacts.strictGodReport?.round_id || current.round_id,
+          seat_id:seatId,
+          model_account:seatId,
+          display_name:displayName,
+          match_id:bet.match_id,
+          action:bet.action || "no_bet",
+          market:bet.market,
+          selection:bet.selection || bet.pick,
+          line:bet.line,
+          odds:bet.odds,
+          stake_gp:Number(bet.stake_gp ?? bet.original_stake_gp ?? bet.converted_stake_gp ?? 0),
+          loan_used_gp:Number(bet.loan_used_gp || 0),
+          one_line:bet.one_line || model.one_sentence_strategy || model.required_next_action || "",
+          one_line_full:bet.one_line || model.one_sentence_strategy || model.required_next_action || "",
+          reason_short:bet.reason || bet.rationale || model.required_next_action || "",
+          reason_full:bet.reason || bet.rationale || model.required_next_action || "",
+          risk_short:bet.risk || (model.warnings || []).join("; "),
+          risk_full:bet.risk || (model.warnings || []).join("; "),
+        });
+      });
+    });
+    return rows;
+  }
+  (current.model_summaries || []).forEach(model=>{
+    (model.bets || []).forEach(bet=>{
+      rows.push({
+        round_id:current.round_id,
+        seat_id:model.model_account || model.display_name,
+        model_account:model.model_account || model.display_name,
+        display_name:model.display_name || model.model_account,
+        match_id:bet.match_id,
+        market:bet.market,
+        selection:bet.selection || bet.pick,
+        line:bet.line,
+        odds:bet.odds,
+        stake_gp:Number(bet.original_stake_gp ?? bet.stake_gp ?? bet.converted_stake_gp ?? 0),
+        loan_used_gp:Number(bet.loan_used_gp || 0),
+        one_line:model.required_next_action || model.one_sentence_strategy || "",
+        one_line_full:model.required_next_action || model.one_sentence_strategy || "",
+        reason_short:model.required_next_action || "",
+        reason_full:model.required_next_action || "",
+        risk_short:(model.warnings || []).join("; "),
+        risk_full:(model.warnings || []).join("; "),
+      });
+    });
+  });
+  return rows;
+}
+
+function latestSettlementRowsForMatch(matchId){
+  const rows = staticArtifacts.latestSettlement?.settlements;
+  if(!Array.isArray(rows) || !matchId)return [];
+  return rows.filter(row=>String(row?.match_id || "") === String(matchId));
+}
+
+function settlementBySeatForMatch(matchId){
+  const map = new Map();
+  latestSettlementRowsForMatch(matchId).forEach(row=>{
+    const seatId = String(row.seat_id || row.seat || row.model_account || "").toLowerCase();
+    if(!seatId)return;
+    const prev = map.get(seatId);
+    if(prev){
+      prev.stake_gp = Number(prev.stake_gp || 0) + Number(row.stake_gp || 0);
+      prev.payout_gp = Number(prev.payout_gp || 0) + Number(row.payout_gp || 0);
+      prev.profit_gp = Number(prev.profit_gp || 0) + Number(row.profit_gp || 0);
+      prev.status = prev.status === row.status ? prev.status : "mixed";
+    }else{
+      map.set(seatId,{...row});
+    }
+  });
+  return map;
+}
+
+function staticRankingRows(){
+  const dailyRows=staticArtifacts.dailySop?.shadow_rerun?.models_detail || [];
+  const quality=staticArtifacts.qualityGate || {};
+  const valid=new Set(quality.valid_seats || []);
+  const needs=new Set(quality.needs_rerun || []);
+  const rows=dailyRows.map((model,i)=>{
+    const terms=model.loan_terms || {};
+    const account=String(model.model_account || model.seat_id || model.display_name || "").toLowerCase();
+    const net=Number(terms.net_worth_gp ?? 0);
+    const loan=Number(terms.outstanding_loan_gp ?? 0);
+    return {
+      model_account:account,
+      seat_id:account,
+      display_name:model.display_name || account,
+      rank:model.rank || i+1,
+      computed_rank:model.rank || i+1,
+      balance_gp:net+loan,
+      net_worth_gp:net,
+      loan_gp:loan,
+      credit_grade:terms.credit_grade,
+      credit_score:terms.credit_score,
+      required_next_action:needs.has(account) ? "needs_targeted_rerun" : (valid.has(account) ? "validated" : model.required_next_action),
+    };
+  });
+  ["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao"].forEach((seat)=>{
+    if(rows.some(row=>row.model_account===seat))return;
+    rows.push({model_account:seat,seat_id:seat,display_name:seat==="grok"?"xAI Grok":seat,rank:rows.length+1,balance_gp:0,loan_gp:0,required_next_action:"missing_account_state"});
+  });
+  return rows;
+}
+
+function buildStaticRuntime(dateKey){
+  const current=staticArtifacts.currentGame;
+  if(!current)return null;
+  const matches=staticMatchesForDate(dateKey);
+  const marketRows=(current.matches || []).reduce((sum,match)=>sum+(match.market_snapshot || []).length,0);
+  const compact=staticCompactDecisions();
+  const quality=staticArtifacts.qualityGate || current.quality_gate || {};
+  const rankings=staticRankingRows();
+  return {
+    ok:true,
+    version:"pred_invest_static_runtime.v1",
+    date:staticDateIso(),
+    round_id:staticRoundId(),
+    current_round:staticRoundId(),
+    provider:{provider:"static_latest_current_game",valid_odds_rows:marketRows,matches_with_odds:current.scoreboard?.matches_with_odds,forecast_matches:current.scoreboard?.forecast_matches,overall:current.verdict},
+    betting:{accepted_bets:compact.length,compact_decisions:compact,summary:{accepted_bets:compact.length,provider_covered_accepted_bets:compact.length,candidate_bets:compact.length,models_without_bets:current.scoreboard?.models_without_bets || []}},
+    automation:{verdict:current.verdict,pipeline_status:current.verdict === "READY" ? "ready" : "attention_required",warnings:current.missing_data?.sop_warnings || [],errors:current.missing_data?.sop_errors || []},
+    matches,
+    match_dates:staticMatchDates().map(d=>({date:d.iso,count:d.count})),
+    current_ranking:rankings,
+    historical_ranking:rankings,
+    active_models:rankings,
+    quality_gate:quality,
+    active_models_count:12,
+    reports:{current_game_html:"data/pool/pred_invest/latest_current_game.html",daily_sop_md:"data/pool/pred_invest/latest_daily_sop.md"},
+  };
+}
+
+function normalizeSummary(raw,dateKey){
+  const ranking = raw?.historical_ranking || raw?.current_ranking || raw?.ranking || raw?.rankings;
+  const quality = raw?.quality_gate || staticArtifacts.qualityGate || {};
+  const validSeats = Array.isArray(quality.valid_seats) ? quality.valid_seats.length : null;
+  const needsSeats = Array.isArray(quality.needs_rerun) ? quality.needs_rerun.length : 0;
+  const qualityRatio = validSeats !== null ? `${validSeats}/${Math.max(12, validSeats + needsSeats)}` : null;
+  if(Array.isArray(ranking) && ranking.length){
+    const balances = ranking.map(r=>Number(r.balance_gp ?? r.gp ?? r.balance ?? 0)).filter(Number.isFinite);
+    const total = balances.reduce((sum,n)=>sum+n,0);
+    const loans = ranking.filter(r=>Number(r.loan_gp ?? r.loan ?? 0)>0).length;
+    return {
+      total_pool: total || 0,
+      net_pl: raw?.net_pl || raw?.summary?.net_pl || "—",
+      loan_seats: Number(raw?.loan_seats ?? raw?.summary?.loan_seats ?? loans ?? 0),
+      verified_ratio: qualityRatio || raw?.verified_ratio || raw?.summary?.verified_ratio || `${ranking.length}/12`,
+      model_count: ranking.length,
+    };
+  }
+  if(raw?.total_pool || raw?.summary?.total_pool){
+    return {
+      total_pool:Number(raw.total_pool ?? raw.summary.total_pool),
+      net_pl:raw.net_pl || raw.summary?.net_pl || "—",
+      loan_seats:Number(raw.loan_seats ?? raw.summary?.loan_seats ?? 0),
+      verified_ratio:qualityRatio || raw.verified_ratio || raw.summary?.verified_ratio || "0/12",
+      model_count:Number(raw.model_count ?? raw.summary?.model_count ?? 12),
+    };
+  }
+  return null;
+}
+
+async function apiGetMatchDates(){
+  const remote = await fetchJsonSafe(`/api/match-dates?date_basis=automation_hk&_=${Date.now()}`);
+  const normalized = normalizeDatePayload(remote);
+  const staticDates=staticMatchDates();
+  const scoreDates=scoreSyncMatchDates();
+  const merged = new Map();
+  [...(normalized?.dates || []), ...staticDates, ...scoreDates].forEach(item=>{
+    if(item?.key)merged.set(item.key,item);
+  });
+  const dates = Array.from(merged.values()).sort((a,b)=>String(a.iso || "").localeCompare(String(b.iso || "")));
+  if(dates.length)return {today:preferredDateKey(dates),dates};
+  return {today:"",dates:[]};
+}
+
+async function fetchPoolSummary(dateKey=activeDate){
+  dateKey = dateKey || preferredDateKey(staticMatchDates());
+  const iso = isoForDateKey(dateKey);
+  const roundId = staticRoundId();
+  const roundParam = roundId ? `round_id=${encodeURIComponent(roundId)}&` : "";
+  const remote = await fetchJsonSafe(`/api/pool/runtime-summary?${roundParam}date=${encodeURIComponent(iso)}&_=${Date.now()}`);
+  if(remote){
+    return {raw:remote,summary:normalizeSummary(remote,dateKey)};
+  }
+  const staticRuntime=buildStaticRuntime(dateKey);
+  if(staticRuntime)return {raw:staticRuntime,summary:normalizeSummary(staticRuntime,dateKey)};
+  return {
+    raw: null,
+    summary: {total_pool:0,net_pl:"—",loan_seats:0,verified_ratio:"0/12",model_count:12},
+  };
+}
+
+async function apiGetPoolSummary(dateKey=activeDate){
+  const result = await fetchPoolSummary(dateKey);
+  runtimeRaw = result.raw;
+  return result.summary;
+}
+
+async function apiGetMatches(dateKey){
+  const iso = isoForDateKey(dateKey);
+  const remote = await fetchJsonSafe(`/api/matches?date=${encodeURIComponent(iso)}&date_basis=public_or_automation&_=${Date.now()}`);
+  const remoteList = Array.isArray(remote) ? remote : remote?.matches;
+  const staticRows = staticArtifacts.currentGame ? staticMatchesForDate(dateKey) : [];
+  const scoreRows = scoreMatchesForDate(dateKey);
+  if(Array.isArray(remoteList) && remoteList.length){
+    const filtered = remoteList.filter(m=>matchBelongsToDate(m,iso));
+    const hasDateSignals = remoteList.some(matchHasDateSignal);
+    const sourceRows = filtered.length || hasDateSignals ? filtered : remoteList;
+    const normalized = sourceRows.map((m,i)=>{
+      const enriched = applyKnownScore(m);
+      const score = normalizedScore(enriched);
+      const homeName = enriched.home || enriched.home_team || enriched.home_name || "Home";
+      const awayName = enriched.away || enriched.away_team || enriched.away_name || "Away";
+      const homeCanonical = canonicalTeamName(homeName);
+      const awayCanonical = canonicalTeamName(awayName);
+      return {
+        id:enriched.id || enriched.match_id || `remote-${dateKey}-${i}`,
+        match_id:enriched.match_id || enriched.id || `remote-${dateKey}-${i}`,
+        dateKeys:matchDateKeys(enriched),
+        stageZh:enriched.stageZh || enriched.stage_zh || enriched.stage || "小组赛",
+        stageEn:enriched.stageEn || enriched.stage_en || enriched.stage || "Group",
+        status:normalizeMatchStatus(enriched,score),
+        home:homeCanonical,
+        homeZh:enriched.homeZh || enriched.home_zh || enriched.home_team_zh || teamZhName(homeName),
+        away:awayCanonical,
+        awayZh:enriched.awayZh || enriched.away_zh || enriched.away_team_zh || teamZhName(awayName),
+        hf:teamFlag(enriched.hf || enriched.home_flag, homeName),
+        af:teamFlag(enriched.af || enriched.away_flag, awayName),
+        kickoff_at:enriched.kickoff_at || enriched.commence_time || "",
+        score,
+        time:enriched.time || enriched.kickoff_time || formatKickoff(enriched.kickoff_at),
+        odds:enriched.odds || {h:enriched.home_price ?? enriched.odds_home ?? "--",d:enriched.draw_price ?? enriched.odds_draw ?? "--",a:enriched.away_price ?? enriched.odds_away ?? "--"},
+        market_snapshot:enriched.market_snapshot || [],
+        sourceNote:enriched.source_note,
+        ai:enriched.ai || {pref:"home",pct:modelPickPercent(enriched)},
+      };
+    });
+    const guarded = guardedMatchesForDate(mergeMatchLists([...normalized,...staticRows,...scoreRows]),dateKey);
+    return {matches:guarded,total:guarded.length};
+  }
+  if(staticRows.length || scoreRows.length){
+    const rows=guardedMatchesForDate(mergeMatchLists([...staticRows,...scoreRows]),dateKey);
+    return {matches:rows,total:rows.length};
+  }
+  return {matches:[],total:0};
+}
+
+function recoveryMatchesForDate(dateKey){
+  const iso = DATE_TO_ISO[dateKey] || dateKey;
+  const rows = {
+    "6/11":[
+      {id:"mex-rsa",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"Mexico",homeZh:"墨西哥",away:"SouthAfrica",awayZh:"南非",hf:"🇲🇽",af:"🇿🇦",score:"2–0",time:"19:00",odds:{h:1.65,d:3.80,a:5.50},ai:{pref:"home",pct:71}},
+      {id:"kor-cze",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"SouthKorea",homeZh:"韩国",away:"Czechia",awayZh:"捷克",hf:"🇰🇷",af:"🇨🇿",score:"2–1",time:"02:00",odds:{h:2.71,d:3.16,a:2.92},ai:{pref:"home",pct:54}},
+    ],
+    "6/12":[
+      {id:"mex-rsa",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"Mexico",homeZh:"墨西哥",away:"SouthAfrica",awayZh:"南非",hf:"🇲🇽",af:"🇿🇦",score:"2–0",time:"19:00",odds:{h:1.65,d:3.80,a:5.50},ai:{pref:"home",pct:71}},
+      {id:"kor-cze",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"SouthKorea",homeZh:"韩国",away:"Czechia",awayZh:"捷克",hf:"🇰🇷",af:"🇨🇿",score:"2–1",time:"02:00",odds:{h:2.71,d:3.16,a:2.92},ai:{pref:"home",pct:54}},
+      {id:"can-bih",match_id:"WC-B1",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"Canada",homeZh:"加拿大",away:"Bosnia",awayZh:"波黑",hf:"🇨🇦",af:"🇧🇦",score:"1–1",time:"03:00",odds:{h:1.82,d:3.56,a:4.94},ai:{pref:"home",pct:62}},
+      {id:"usa-par",match_id:"WC-D1",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"USA",homeZh:"美国",away:"Paraguay",awayZh:"巴拉圭",hf:"🇺🇸",af:"🇵🇾",score:"4–1",time:"09:00",odds:{h:1.45,d:4.20,a:7.50},ai:{pref:"home",pct:78}},
+    ],
+    "6/13":[
+      {id:"can-bih",match_id:"WC-B1",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"Canada",homeZh:"加拿大",away:"Bosnia",awayZh:"波黑",hf:"🇨🇦",af:"🇧🇦",score:"1–1",time:"03:00",odds:{h:1.82,d:3.56,a:4.94},ai:{pref:"home",pct:62}},
+      {id:"usa-par",match_id:"WC-D1",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"done",home:"USA",homeZh:"美国",away:"Paraguay",awayZh:"巴拉圭",hf:"🇺🇸",af:"🇵🇾",score:"4–1",time:"09:00",odds:{h:1.45,d:4.20,a:7.50},ai:{pref:"home",pct:78}},
+      {id:"hti-sco",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"result_pending",home:"Haiti",homeZh:"海地",away:"Scotland",awayZh:"苏格兰",hf:"🇭🇹",af:"🏴",time:"18:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:58}},
+      {id:"aus-sui",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"result_pending",home:"Australia",homeZh:"澳大利亚",away:"Switzerland",awayZh:"瑞士",hf:"🇦🇺",af:"🇨🇭",time:"21:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:61}},
+      {id:"bra-mar",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"result_pending",home:"Brazil",homeZh:"巴西",away:"Morocco",awayZh:"摩洛哥",hf:"🇧🇷",af:"🇲🇦",time:"00:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"home",pct:74}},
+      {id:"qat-por",stageZh:"小组赛·第1轮",stageEn:"Group · Round 1",status:"result_pending",home:"Qatar",homeZh:"卡塔尔",away:"Portugal",awayZh:"葡萄牙",hf:"🇶🇦",af:"🇵🇹",time:"03:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:83}},
+    ],
+    "6/14":[
+      {id:"hti-sco",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Haiti",homeZh:"海地",away:"Scotland",awayZh:"苏格兰",hf:"🇭🇹",af:"🏴",time:"18:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:58}},
+      {id:"bra-mar",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Brazil",homeZh:"巴西",away:"Morocco",awayZh:"摩洛哥",hf:"🇧🇷",af:"🇲🇦",time:"20:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"home",pct:74}},
+      {id:"ger-cur",match_id:"WCAPI-20260614-GERMANY-CURA-AO",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Germany",homeZh:"德国",away:"Curacao",awayZh:"库拉索",hf:"🇩🇪",af:"🇨🇼",time:"01:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"home",pct:88}},
+      {id:"ned-jpn",match_id:"WCAPI-20260614-NETHERLANDS-JAPAN",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Netherlands",homeZh:"荷兰",away:"Japan",awayZh:"日本",hf:"🇳🇱",af:"🇯🇵",time:"04:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"home",pct:57}},
+      {id:"civ-ecu",match_id:"WCAPI-20260614-IVORY-COAST-ECUADOR",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Ivory Coast",homeZh:"科特迪瓦",away:"Ecuador",awayZh:"厄瓜多尔",hf:"🇨🇮",af:"🇪🇨",time:"07:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:55}},
+      {id:"swe-tun",match_id:"WCAPI-20260615-SWEDEN-TUNISIA",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Sweden",homeZh:"瑞典",away:"Tunisia",awayZh:"突尼斯",hf:"🇸🇪",af:"🇹🇳",time:"10:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"home",pct:64}},
+      {id:"aus-sui",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Australia",homeZh:"澳大利亚",away:"Switzerland",awayZh:"瑞士",hf:"🇦🇺",af:"🇨🇭",time:"12:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:61}},
+      {id:"qat-por",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Qatar",homeZh:"卡塔尔",away:"Portugal",awayZh:"葡萄牙",hf:"🇶🇦",af:"🇵🇹",time:"15:00",odds:{h:"--",d:"--",a:"--"},ai:{pref:"away",pct:83}},
+      {id:"esp-cpv",match_id:"WC-H1",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"Spain",homeZh:"西班牙",away:"Cape Verde",awayZh:"佛得角",hf:"🇪🇸",af:"🇨🇻",time:"18:00",odds:{h:1.08,d:10,a:29},ai:{pref:"home",pct:82}},
+      {id:"fra-aus",stageZh:"小组赛·第2轮",stageEn:"Group · Round 2",status:"upcoming",home:"France",homeZh:"法国",away:"Australia",awayZh:"澳大利亚",hf:"🇫🇷",af:"🇦🇺",time:"21:00",odds:{h:1.22,d:6.2,a:12},ai:{pref:"home",pct:91}},
+    ],
+  }[dateKey] || [];
+  return rows.map(m=>{
+    const home = canonicalTeamName(m.home);
+    const away = canonicalTeamName(m.away);
+    return {
+      ...m,
+      match_id:m.match_id || m.id,
+      dateKeys:[iso],
+      home,
+      away,
+      homeZh:m.homeZh || teamZhName(home),
+      awayZh:m.awayZh || teamZhName(away),
+      hf:teamFlag(m.hf, home),
+      af:teamFlag(m.af, away),
+    };
+  });
+}
+
+function dateSignatureOk(rows,dateKey){
+  if(!["6/11","6/12","6/13","6/14"].includes(dateKey))return true;
+  if(!Array.isArray(rows))return false;
+  if(rows.some(m=>m?.score || m?.score_registry_applied || m?.registry_only))return true;
+  if(dateKey === "6/11" && rows.length !== 2)return false;
+  if(dateKey === "6/12" && rows.length < 4)return false;
+  if(dateKey === "6/13" && rows.length < 6)return false;
+  if(dateKey === "6/14" && rows.length < 4)return false;
+  if(["6/12","6/13"].includes(dateKey) && rows.every(m=>m.status === "upcoming"))return false;
+  const ids = rows.map(m=>String(m.id || m.match_id || "")).sort().join("|");
+  if(dateKey === "6/11")return ids === "kor-cze|mex-rsa";
+  if(dateKey === "6/12")return ids.includes("can-bih") && ids.includes("usa-par");
+  if(dateKey === "6/13")return ids.includes("hti-sco") && ids.includes("usa-par");
+  if(dateKey === "6/14")return (ids.includes("hti-sco") || ids.includes("WC-C1")) && (ids.includes("ger-cur") || ids.includes("WCAPI-20260614-GERMANY-CURA-AO") || rows.every(m=>m.status === "done"));
+  return true;
+}
+
+function enforceDateSignature(rows,dateKey){
+  const guarded = guardedMatchesForDate(rows,dateKey);
+  if(dateSignatureOk(guarded,dateKey))return guarded;
+  const recovery = recoveryMatchesForDate(dateKey);
+  return recovery.length ? recovery : guarded;
+}
+
+/* ==================================================================
+   MODEL VIEWS DATA (per-match)
+   ================================================================== */
+function escapeRegExpText(value){
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+}
+
+function stripDiacritics(value){
+  return String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+}
+
+function teamNameTextVariants(teamName){
+  const canonical = canonicalTeamName(teamName);
+  const variants = [teamName,canonical,stripDiacritics(teamName),stripDiacritics(canonical)];
+  for(const [alias,target] of Object.entries(TEAM_ALIASES)){
+    if(target === canonical){
+      variants.push(alias,stripDiacritics(alias));
+    }
+  }
+  return Array.from(new Set(variants.map(v=>String(v || "").trim()).filter(Boolean)));
+}
+
+function localizeTeamNamesInText(value,match){
+  if(currentLang !== "zh")return String(value || "");
+  let out = String(value || "");
+  if(!out || !match)return out;
+  const pairs = [
+    {raw:match.home,zh:localizedTeam(match,"home")},
+    {raw:match.away,zh:localizedTeam(match,"away")},
+  ];
+  for(const pair of pairs){
+    if(!pair.zh)continue;
+    for(const variant of teamNameTextVariants(pair.raw)){
+      if(!variant || variant === pair.zh)continue;
+      out = out.replace(new RegExp(escapeRegExpText(variant),"gi"),pair.zh);
+    }
+  }
+  return out;
+}
+
+function isTeamNameOnly(value,teamName){
+  const raw = String(value || "").trim().toLowerCase();
+  const plain = stripDiacritics(raw);
+  return teamNameTextVariants(teamName).some(variant=>{
+    const candidate = String(variant || "").trim().toLowerCase();
+    return raw === candidate || plain === stripDiacritics(candidate);
+  });
+}
+
+function localizeReceiptSelection(value,match){
+  const raw = String(value || "").trim();
+  const key = teamKey(raw);
+  if(currentLang !== "zh")return raw;
+  if(!raw)return "";
+  if(["draw","tie"].includes(key))return "平";
+  if(["over","o"].includes(key))return "大";
+  if(["under","u"].includes(key))return "小";
+  if(match){
+    if(isTeamNameOnly(raw,match.home))return localizedTeam(match,"home");
+    if(isTeamNameOnly(raw,match.away))return localizedTeam(match,"away");
+  }
+  return localizeTeamNamesInText(raw,match);
+}
+
+function receiptMarketText(row,match,lang){
+  const odds = Number(row?.odds || 0);
+  const selection = lang === "zh" ? localizeReceiptSelection(row?.selection,match) : String(row?.selection || "").trim();
+  const line = row?.line !== undefined && row?.line !== null && String(row.line) !== "" ? String(row.line) : "";
+  const pick = [selection,line].filter(Boolean).join(" ");
+  const market = pick || row?.market || "pick";
+  return `${market}${odds ? " @ "+odds : ""}`;
+}
+
+function runtimeModelViews(matchId,match){
+  const rows = runtimeRaw?.betting?.compact_decisions || [];
+  if(!Array.isArray(rows) || !rows.length || !matchId)return null;
+  const hits = rows.filter(r=>String(r.match_id || "")===String(matchId));
+  if(!hits.length)return null;
+  const settlementMap = settlementBySeatForMatch(matchId);
+  const ranking = rankingRowsForDisplay();
+  const seen = new Set();
+  const models = hits.map((r,i)=>{
+    const seatId = r.seat_id || r.model_account || "";
+    const roundId = r.round_id || runtimeRoundLabel(runtimeRaw || {});
+    const name = canonicalModelName(r.display_name || seatId,seatId);
+    seen.add(name);
+    const rankRow = ranking.find(item=>item.name===name) || {};
+    const settlement = settlementMap.get(String(seatId || "").toLowerCase());
+    const stake = settlement ? Number(settlement.stake_gp || 0) : Number(r.stake_gp || 0);
+    const odds = Number(r.odds || 0);
+    const projectedRet = Number.isFinite(odds) && odds > 0 ? Math.round(stake * Math.max(0, odds - 1)) : 0;
+    const ret = settlement ? Number(settlement.payout_gp || 0) : projectedRet;
+    const settledProfit = settlement ? Number(settlement.profit_gp || 0) : null;
+    const marketSource = settlement ? {...r,...settlement,odds:settlement.odds || r.odds} : r;
+    const noBet = String(r.action || "").toLowerCase() === "no_bet" || (!settlement && stake <= 0);
+    const market = noBet ? "no-bet" : receiptMarketText(marketSource,match,"en");
+    const marketZh = noBet ? "观望 / no-bet" : localizeTeamNamesInText(r.market_zh || receiptMarketText(marketSource,match,"zh"),match);
+    const oneLine = (currentLang==='zh' ? localizeTeamNamesInText((r.one_line_zh || r.one_line_full || r.one_line),match) : (r.one_line_full || r.one_line)) || `${name}: ${market}`;
+    const oneLineFull = (currentLang==='zh' ? localizeTeamNamesInText((r.one_line_zh || r.one_line_full || oneLine),match) : (r.one_line_full || oneLine));
+    const reasonFull = currentLang==='zh' ? localizeTeamNamesInText((r.reason_full_zh || r.reason_full || r.reason_short_zh || r.reason_short || oneLineFull),match) : (r.reason_full || r.reason_short || oneLineFull);
+    const riskFull = currentLang==='zh' ? localizeTeamNamesInText((r.risk_full_zh || r.risk_full || r.risk_short_zh || r.risk_short || ""),match) : (r.risk_full || r.risk_short || "");
+    const resultSuffix = settlement
+      ? (currentLang === "zh" ? `已结算：${gpSigned(settledProfit)}。` : `Settled: ${gpSigned(settledProfit)}.`)
+      : "";
+    return {
+      pos:Number(rankRow.pos || i+1),
+      seatId,
+      roundId,
+      name,
+      gp:Number(rankRow.gp || 0),
+      marketZh,
+      marketEn:market,
+      points:stake,
+      ret,
+      settlementProfit:settledProfit,
+      settlementStatus:settlement?.status || "",
+      status:settlement ? "active" : (noBet ? "pending" : "active"),
+      reasoning:{
+        thinking:[reasonFull,resultSuffix].filter(Boolean).join(" "),
+        judgment:settlement ? `${oneLineFull} ${resultSuffix}`.trim() : oneLineFull,
+        risk:riskFull || (currentLang==='zh' ? "按本轮结构化回执展示；完整思考见席位档案。" : "Structured receipt view; full reasoning lives in the seat archive.")
+      },
+      archiveApi:r.seat_archive_api || `/api/pool/seat-archives/${encodeURIComponent(roundId)}/${encodeURIComponent(seatId)}`
+    };
+  });
+  ranking.forEach((row)=>{
+    if(seen.has(row.name))return;
+    models.push({
+      pos:row.pos,
+      name:row.name,
+      gp:row.gp,
+      marketZh:"缺少本场投注",
+      marketEn:"Missing this match",
+      points:0,
+      ret:0,
+      status:"pending",
+      reasoning:{
+        thinking:currentLang==='zh' ? "该席位本轮有结构化回执，但未覆盖当前 match_id，已作为补跑缺口暴露。" : "This seat has a structured receipt, but this match_id is not covered and is flagged for repair.",
+        judgment:currentLang==='zh' ? "需要定向补跑本场下注。" : "Targeted repair required for this match.",
+        risk:currentLang==='zh' ? "缺口会影响全赛事策略和排名公平性。" : "The gap weakens full-slate fairness."
+      }
+    });
+  });
+  models.sort((a,b)=>a.pos-b.pos);
+  const totalPoints=models.reduce((s,m)=>s+Number(m.points||0),0);
+  const totalRet=models.filter(m=>m.ret>0).reduce((s,m)=>s+m.ret,0);
+  const profitList=modelProfitList(models);
+  return {models,totalPoints,totalRet,profitList};
+}
+
+function emptyModelViews(match){
+  const ranking = rankingRowsForDisplay();
+  const rows = ranking.length ? ranking : fallbackRankingRows();
+  const homeName = currentLang === "zh" ? (match?.homeZh || teamZhName(match?.home)) : canonicalTeamName(match?.home);
+  const awayName = currentLang === "zh" ? (match?.awayZh || teamZhName(match?.away)) : canonicalTeamName(match?.away);
+  const gapText = currentLang === "zh"
+    ? `${homeName || "本场"} vs ${awayName || "对手"} 没有真实结构化下注回执。前端不再生成模拟投注，SOP 巡检必须把缺口交给定向补跑。`
+    : `${homeName || "This fixture"} vs ${awayName || "opponent"} has no real structured betting receipt. The UI no longer fabricates bets; SOP audit must route this to targeted rerun.`;
+  const models = rows.slice(0,12).map((row,i)=>({
+    pos:row.pos || i+1,
+    name:row.name,
+    gp:Number(row.gp || 0),
+    marketZh:"缺少本场投注",
+    marketEn:"Missing this match",
+    points:0,
+    ret:0,
+    status:"pending",
+    reasoning:{
+      thinking:gapText,
+      judgment:currentLang === "zh" ? "未入库真实投注单，不展示下注结论。" : "No stored receipt; no betting conclusion is shown.",
+      risk:currentLang === "zh" ? "这是数据链缺口，不是模型策略选择。" : "This is a data-chain gap, not a model strategy choice."
+    }
+  }));
+  return {models,totalPoints:0,totalRet:0,profitList:[]};
+}
+
+function observerSeatRowsForMatch(matchId,match){
+  const ledger=observerLedgerForDate(activeDate);
+  const rows=Array.isArray(ledger.seat_commentaries)?ledger.seat_commentaries:[];
+  if(!rows.length)return [];
+  const id=String(matchId || match?.match_id || match?.id || "");
+  const home=teamKey(match?.home);
+  const away=teamKey(match?.away);
+  return rows.filter(row=>{
+    if(id && String(row.main_match_id || "") === id)return true;
+    const main=String(row.main_match || "");
+    if(!main || !home || !away)return false;
+    return teamKey(main).includes(home) && teamKey(main).includes(away);
+  });
+}
+
+function ledgerModelViews(matchId,match){
+  const rows=observerSeatRowsForMatch(matchId,match);
+  if(!rows.length)return null;
+  const ranking=rankingRowsForDisplay();
+  const seen=new Set();
+  const models=rows.map((row,i)=>{
+    const name=canonicalModelName(row.display_name || row.model_account || `seat-${i+1}`,row.model_account);
+    seen.add(name);
+    const rankRow=ranking.find(item=>item.name===name) || {};
+    const stake=Number(row.stake_gp || 0);
+    const profit=Number(row.profit_gp || 0);
+    const marketZh=ledgerPositionText(row.primary_position || (Number(row.bet_count || 0) ? "" : "全场观望"),"zh",row);
+    const marketEn=ledgerPositionText(row.primary_position || (Number(row.bet_count || 0) ? "" : "No allocation"),"en",row);
+    const hasBet=Number(row.bet_count || 0)>0 || stake>0;
+    const cnThinking=ledgerCnText(row.perspectives?.data_analyst || row.strategy_excerpt || row.one_line || "");
+    const enThinking=`Archived ledger view: ${ledgerSeatNote(row)}`;
+    const cnRisk=ledgerCnText(row.risk_excerpt || row.perspectives?.pro_bettor || "赛后结算前仅作归档观点展示。");
+    const enRisk="Archive risk note: settlement variance can affect the final point delta for this position.";
+    return {
+      pos:Number(rankRow.pos || i+1),
+      seatId:row.model_account || name.toLowerCase(),
+      roundId:observerLedgerForDate(activeDate)?.round_id || displayRoundId(),
+      name,
+      gp:Number(rankRow.gp || row.balance_gp || 0),
+      marketZh,
+      marketEn,
+      points:stake,
+      ret:profit,
+      status:hasBet?"active":"pending",
+      reasoning:{
+        thinking:currentLang === "zh" ? cnThinking : enThinking,
+        judgment:currentLang === "zh" ? `归档观点：${marketZh}；本席位投入 ${pointsText(stake)}。` : `Archived view: ${marketEn}; allocated ${pointsText(stake)}.`,
+        risk:currentLang === "zh" ? cnRisk : enRisk,
+      }
+    };
+  });
+  ranking.forEach(row=>{
+    if(seen.has(row.name))return;
+    models.push({
+      pos:row.pos,
+      name:row.name,
+      gp:row.gp,
+      marketZh:"缺少本场投注",
+      marketEn:"Missing this match",
+      points:0,
+      ret:0,
+      status:"pending",
+      reasoning:{
+        thinking:currentLang === "zh" ? "Observer Ledger 未覆盖该席位，本场仍需补档。" : "Observer Ledger does not cover this seat for the selected fixture.",
+        judgment:currentLang === "zh" ? "暂无可展示归档观点。" : "No archived view available.",
+        risk:currentLang === "zh" ? "缺口会影响全赛事策略和排名公平性。" : "The gap weakens full-slate fairness.",
+      }
+    });
+  });
+  models.sort((a,b)=>a.pos-b.pos);
+  const totalPoints=models.reduce((s,m)=>s+Number(m.points||0),0);
+  const totalRet=models.filter(m=>m.ret>0).reduce((s,m)=>s+m.ret,0);
+  return {models,totalPoints,totalRet,profitList:modelProfitList(models)};
+}
+
+function getModelViews(matchId,match){
+  const dynamic = runtimeModelViews(matchId,match);
+  if(dynamic)return dynamic;
+  const ledger = ledgerModelViews(matchId,match);
+  if(ledger)return ledger;
+  if(match)return emptyModelViews(match);
+  return {models:[],totalPoints:0,totalRet:0,profitList:[]};
+}
+
+function genericMatchSummary(match,hName,aName,market){
+  const pct = clampPercent(match.ai?.pct || 58);
+  const favored = match.ai?.pref === "away" ? aName : hName;
+  if(currentLang === 'zh'){
+    return `${hName} vs ${aName}：当前模型倾向看好 ${favored} ${pct}%。${market ? `市场参考为胜 ${market.h}、平 ${market.d}、负 ${market.a}。` : '胜平负市场参考暂未补齐。'}本层只展示当前赛事的分析、积分分配和模型观点，避免复用其他比赛的历史判断。`;
+  }
+  return `${hName} vs ${aName}: current model lean favors ${favored} at ${pct}%. ${market ? `Market reference is W ${market.h}, D ${market.d}, L ${market.a}.` : 'W/D/L market reference is pending.'} This layer is scoped to the selected fixture and does not reuse another match's reasoning.`;
+}
+
+/* ==================================================================
+   I18N
+   ================================================================== */
+let currentLang=(typeof location !== "undefined" && new URLSearchParams(location.search).get("lang")==="en")?'en':'zh';
+const i18n={
+  zh:{
+    topbarTitle:"美加墨世界杯 · AI 预测池",simBadge:"模拟积分赛",langLabel:"EN",brandName:"世界杯预测池",brandSub:"AI 模型积分赛",
+    contact:"联系方式",contactTitle:"联系方式",emailLabel:"邮箱",wechatLabel:"微信 ID",sendEmail:"发送邮件",contactHint:"点击复制邮箱或微信 ID。",emailCopied:"邮箱已复制",wechatCopied:"微信 ID 已复制",emailCopyFailed:"复制失败，可手动复制",
+    pageTitle:"⚽ 赛事日历",matchListTitle:"🏟️ 比赛列表",
+    statFocus:"今日焦点",statPool:"总积分池",statNetPL:"积分变化",statLoan:"借用积分",statToday:"赛程赛事",
+    sidebarOverview:"📊 概览",sbPool:"总积分池",sbMatches:"赛程赛事",sbLoan:"借用积分",sbVerified:"已验证",sbRanking:"🏆 模型积分排名",
+    upcoming:"未开始",live:"进行中",done:"已结束",
+    aiPick:"🧠 模型倾向",resultRecorded:"✅ 赛果已入账",resultSyncPending:"⏳ 赛果同步中",resultPendingShort:"待赛果",modelPending:"🧠 等待模型记录",analyze:"查看模型分析",
+    oddsW:"胜",oddsD:"平",oddsL:"负",marketPending:"盘口待同步",aiFavors:"🧠 AI 看好",aiCoverage:"🧠 模型覆盖",
+    detailClose:"← 返回赛程",detailSummary:"⚽ 比赛解读",detailOdds:"📈 市场参考",detailModels:"🧠 模型观点",detailProfit:"🏅 积分变化榜",detailCompare:"🧾 模型分布",
+    thinking:"分析过程",judgment:"判断结论",risk:"风险提示",
+    noMatches:"今日无赛事",loadingMatches:"正在更新赛程…",
+    colModel:"模型",colPL:"积分变化",colROI:"回报率",colStrategy:"策略",colBets:"场次",
+    activeLabel:"已分配",pendingLabel:"待回执",timeoutLabel:"超时",
+    returnLabel:"预计回报",
+    dataCenterTitle:"📊 数据中心",dataCenterMeta:"运营日志 · 信用 / 分账 / 日报",dataCenterEntry:"数据中心",dataCenterClose:"关闭",
+    opsContractTitle:"V2 运营契约",opsRuleVersionLabel:"规则版本",opsSeatJournalLabel:"行为日志",opsCreditLedgerLabel:"信用账本",opsSplitLedgerLabel:"预测/投资分账",opsReadable:"可查看",opsNoBet:"合法动作",opsRecovery:"已接入",
+    fullAiComparison:"完整 AI 对比",latestAccountState:"最新账户状态",importedDelta:"导入Δ",importedDeltaNote:"导入Δ反映导入前历史轮次累计结果（Run #3-#5），非当前实验的独立盈亏。",
+    accountCurve:"账户价值图",accountCurveMeta:"真实接口快照",currentSnapshot:"当前快照",
+    runArchive:"Run 档案",loanWatch:"贷款观察",dataQuality:"数据完整度",systemCoverage:"系统覆盖",archiveFlow:"归档流水",observerLedger:"解说日志",observerLedgerMeta:"上帝视角战报 / 逐席点评",behaviorSummary:"行为连续日志",behaviorSummaryMeta:"规则 / 信用 / 分账 / 重整",
+    analystView:"数据分析师",footballView:"足球专家",bettorView:"职业赌徒",seatCommentary:"逐席一句话点评",bettingStatus:"下注状态",marketSource:"盘口来源",
+    receipts:"结构化回执",marketRows:"市场参考行",acceptedRecords:"结构化记录",
+    settledMatches:"已结算赛事",historyRecords:"历史记录",pendingRounds:"待应用轮次",
+    outputGate:"模型输出",missingOutputs:"缺席输出",providerCoverage:"赔率覆盖",mappingFailed:"映射失败",
+    bettingGate:"结构化门禁",qualityGate:"结算门禁",rankingAuthority:"排名口径",settlementResult:"结算结果",
+    automation:"自动化",targetedRepair:"定向修复",archiveRecords:"归档记录",futureMatches:"未来赛程",
+    blockers:"阻塞项",manualReview:"人工复核",analysisOnly:"仅分析",rejected:"拒绝",
+    outstandingLoan:"未偿借用",loanInterest:"已生利息",principalRepaid:"已还本金",rankAfterDebt:"偿债后排名",noLoans:"暂无借用积分席位",sourceNote:"来自 runtime-summary 与 matches API，复杂分析收纳在比赛详情和数据中心。",
+    disclaimer:"* 所有积分均为模拟游戏化数据，不涉及真实交易",
+    GP:"积分",
+  },
+  en:{
+    topbarTitle:"World Cup · AI Prediction Pool",simBadge:"Sim points",langLabel:"中",brandName:"World Cup Pool",brandSub:"AI model points game",
+    contact:"Contact",contactTitle:"Contact",emailLabel:"Email",wechatLabel:"WeChat ID",sendEmail:"Send email",contactHint:"Click to copy email or WeChat ID.",emailCopied:"Email copied",wechatCopied:"WeChat ID copied",emailCopyFailed:"Copy failed; copy manually",
+    pageTitle:"⚽ Match Calendar",matchListTitle:"🏟️ Matches",
+    statFocus:"Today's Focus",statPool:"Total Points",statNetPL:"Point Δ",statLoan:"Borrowed",statToday:"Schedule Matches",
+    sidebarOverview:"📊 Overview",sbPool:"Total Points",sbMatches:"Schedule Matches",sbLoan:"Borrowed",sbVerified:"Verified",sbRanking:"🏆 V2 Behavioral Rankings",
+    upcoming:"Upcoming",live:"Live",done:"Done",
+    aiPick:"🧠 Model Pick",resultRecorded:"✅ Result recorded",resultSyncPending:"⏳ Result syncing",resultPendingShort:"Result due",modelPending:"🧠 Awaiting model record",analyze:"Model Analysis",
+    oddsW:"W",oddsD:"D",oddsL:"L",marketPending:"Market syncing",aiFavors:"🧠 AI favors",aiCoverage:"🧠 Model coverage",
+    detailClose:"← Back",detailSummary:"⚽ Match Analysis",detailOdds:"📈 Market Reference",detailModels:"🧠 Model Views",detailProfit:"🏅 Point Δ Board",detailCompare:"🧾 Model Distribution",
+    thinking:"Analysis",judgment:"Conclusion",risk:"Risk Note",
+    noMatches:"No matches today",loadingMatches:"Updating matches…",
+    colModel:"Model",colPL:"Point Δ",colROI:"ROI",colStrategy:"Strategy",colBets:"Matches",
+    activeLabel:"Allocated",pendingLabel:"Pending",timeoutLabel:"Timeout",
+    returnLabel:"Projected Return",
+    dataCenterTitle:"📊 Data Center",dataCenterMeta:"Ops logs · credit / split / report",dataCenterEntry:"Data Center",dataCenterClose:"Close",
+    opsContractTitle:"V2 Ops Contract",opsRuleVersionLabel:"Rule Version",opsSeatJournalLabel:"Seat Journal",opsCreditLedgerLabel:"Credit Ledger",opsSplitLedgerLabel:"Forecast/Investment Split",opsReadable:"Readable",opsNoBet:"Legal",opsRecovery:"Connected",
+    fullAiComparison:"Full AI Comparison",latestAccountState:"Latest account state",importedDelta:"Imported Δ",importedDeltaNote:"Imported Δ reflects cumulative results before this import (Run #3-#5), not standalone P/L for the current experiment.",
+    accountCurve:"Account Value Chart",accountCurveMeta:"API snapshot",currentSnapshot:"Current snapshot",
+    runArchive:"Run Archive",loanWatch:"Loan Watch",dataQuality:"Data Health",systemCoverage:"System Coverage",archiveFlow:"Archive Flow",observerLedger:"Commentary Log",observerLedgerMeta:"God-view report / seat-by-seat notes",behaviorSummary:"Seat Journal",behaviorSummaryMeta:"Rules / credit / split ledger / recovery",
+    analystView:"Data analyst",footballView:"Football expert",bettorView:"Pro bettor",seatCommentary:"One-line seat notes",bettingStatus:"Betting status",marketSource:"Market source",
+    receipts:"Structured Receipts",marketRows:"Market Rows",acceptedRecords:"Structured Records",
+    settledMatches:"Settled Matches",historyRecords:"History Records",pendingRounds:"Pending Rounds",
+    outputGate:"Model Outputs",missingOutputs:"Missing Outputs",providerCoverage:"Provider Coverage",mappingFailed:"Mapping Failed",
+    bettingGate:"Structured Gate",qualityGate:"Settlement Gate",rankingAuthority:"Ranking Source",settlementResult:"Settlement",
+    automation:"Automation",targetedRepair:"Targeted Repair",archiveRecords:"Archive Records",futureMatches:"Future Matches",
+    blockers:"Blockers",manualReview:"Manual Review",analysisOnly:"Analysis Only",rejected:"Rejected",
+    outstandingLoan:"Outstanding",loanInterest:"Interest",principalRepaid:"Principal repaid",rankAfterDebt:"Rank after debt",noLoans:"No borrowed-point seats",sourceNote:"Powered by runtime-summary and matches APIs; deeper analysis lives in match detail and data center.",
+    disclaimer:"* All points are simulated gamification data — no real transactions involved",
+    GP:"pts",
+  }
+};
+function t(key){return i18n[currentLang][key]||key}
+function pointsLabel(){return t('GP')}
+function pointsText(value){
+  return `${Number(value || 0).toLocaleString()} ${pointsLabel()}`;
+}
+function displayRoundId(){
+  return staticRoundId() || runtimeRaw?.current_round || "run-14";
+}
+function ledgerUnitText(value,lang=currentLang){
+  return String(value ?? "").replace(/\bGP\b/g,lang === "zh" ? "积分" : "pts");
+}
+function ledgerTeamText(value,lang=currentLang){
+  let out=String(value ?? "");
+  if(lang === "zh"){
+    for(const [team,zh] of Object.entries(TEAM_ZH)){
+      out = out.replace(new RegExp(escapeRegExpText(team),"gi"),zh);
+      const plain = stripDiacritics(team);
+      if(plain !== team)out = out.replace(new RegExp(escapeRegExpText(plain),"gi"),zh);
+    }
+    for(const [alias,target] of Object.entries(TEAM_ALIASES)){
+      const zh=TEAM_ZH[target];
+      if(zh)out = out.replace(new RegExp(escapeRegExpText(alias),"gi"),zh);
+    }
+  }
+  return ledgerUnitText(out,lang);
+}
+function ledgerCnText(value){
+  return ledgerTeamText(value,"zh")
+    .replace(/no_bet/g,"观望")
+    .replace(/\bbet\b/g,"下注");
+}
+const LEDGER_SCENE_EN = {
+  cover:{
+    title:"Models learned when to stand down",
+    commentary:"This round produced structured strategies from 11 seats, with 2,590 pts planned and zero loan exposure. This is a pre-match operating report, not a results report.",
+  },
+  evolution:{
+    title:"From heavy chasing to selective allocation",
+    commentary:"The most important change this round is not who the models picked, but that they started treating no-allocation as a valid strategy. Eighteen allocations and twenty-six no-bet calls show the system moving from forced action toward edge-only selection.",
+  },
+  zero_bet_club:{
+    title:"Three models, zero allocation",
+    commentary:"Zero allocation is not absence; it is a recorded action. A structured no-bet means the model did not see enough edge, or its capital state did not allow more risk.",
+  },
+  selective_bettors:{
+    title:"Selective allocators: who carries the risk",
+    commentary:"The largest staking seats are not automatically the smartest, but they are the most exposed. Post-match review should ask whether they captured positive expected value or merely bought visibility with size.",
+  },
+  focus_match:{
+    title:"Focus match",
+    commentary:"The focus match is the slate's main pressure point. It is not a score prediction; it is the clearest shared exposure point for testing whether the models read the market correctly.",
+  },
+  gap_watch:{
+    title:"Empty seats on the sideline",
+    commentary:"This must remain visible in the commentary: it is not decoration, it is product credibility. When Grok misses the gate, the report is only a partial god-view report and cannot pretend the full slate is complete.",
+    bullets:[
+      "Missing seat: Grok",
+      "Data gaps: 0",
+      "Hard gate: until 12/12 seats are present, do not label the report as fully complete.",
+    ],
+  },
+  summary:{
+    eyebrow:"COMMENTARY · CLOSING NOTES",
+    title:"Five things to watch",
+    commentary:"This round is less about picking one winner and more about model behavior splitting into attack, defense, and disciplined no-action.",
+    bullets:[
+      "Allocation quality matters more than count: 18 allocations and 26 no-bet calls.",
+      "Total exposure is 2,590 pts with zero loan exposure.",
+      "The main narrative hinge is Netherlands vs Japan.",
+      "Quality gate is PARTIAL_NOT_READY with 11/12 valid seats.",
+      "Post-match closure still needs score backfill, loan handling, ranking re-ordering, and model self-review.",
+    ],
+  },
+};
+const LEDGER_CARD_EN = {
+  meta:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"Conservative capital control: conflicting information or low confidence across the slate, so every match was passed to preserve capital and prioritize debt discipline."},
+  mimo:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"Focus on value bets only when the edge is clear; this slate did not justify exposure, so the seat preserved bankroll instead of forcing action."},
+  qwen:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"With weak credit state and high debt pressure, Qwen chose a survival-first no-allocation policy and avoided all unclear edges."},
+  doubao:{role:"Moderate exposure · 3 decisions",quote:"Prioritized lower-volatility lines: Germany spread protection, Sweden not to lose, and Ecuador with a cushion, while staying cautious on Netherlands vs Japan."},
+  kimi:{role:"Distributed high-frequency · 4 decisions",quote:"Spread four allocations while keeping liquidity, with Japan handicap and Sweden spread as the main positions and only a small high-price Ecuador shot."},
+  gemini:{role:"Moderate exposure · 2 decisions",quote:"Defended rank 2 with conservative bankroll control and looked for underdog spread value without overextending the account."},
+  deepseek:{role:"Moderate exposure · 1 decision",quote:"Leader defense: one small self-funded position on a higher-confidence market edge, keeping transparency high and avoidable risk low."},
+  minimax:{role:"Moderate exposure · 2 decisions",quote:"Selective value-hunting on mispriced Asian and European handicaps, using small stakes to preserve bankroll while keeping upside alive."},
+  chatgpt:{role:"Moderate exposure · 1 decision",quote:"Low-leverage rank protection: one line with stronger downside cover, while lower-information matches were skipped."},
+  yuanbao:{role:"Distributed high-frequency · 4 decisions",quote:"Anchor picks first, with handicap positions used as support."},
+  wenxin:{role:"Distributed high-frequency · 4 decisions",quote:"Strong-team preference with steady execution and controlled risk."},
+};
+function ledgerEnText(value){
+  return ledgerUnitText(value,"en")
+    .replace(/(\d+)\/12\s*有效/g,"$1/12 valid")
+    .replace(/(\d+)\s*笔下注/g,"$1 allocations")
+    .replace(/(\d+)\s*次观望/g,"$1 no-bet calls")
+    .replace(/(\d+)\s*个模型集中在/g,"$1 models clustered on")
+    .replace(/总投入/g,"total stake")
+    .replace(/贷款暴露/g,"loan exposure")
+    .replace(/贷款/g,"loan")
+    .replace(/下注席位/g,"Allocated seats")
+    .replace(/本轮最集中/g,"Most concentrated match")
+    .replace(/集中暴露/g,"Shared exposure")
+    .replace(/胜平负\s*(?:none|0)?/gi,"WDL")
+    .replace(/让球/g,"handicap")
+    .replace(/全场观望/g,"No allocation")
+    .replace(/观望/g,"no-bet")
+    .replace(/待补席位/g,"Missing seat")
+    .replace(/数据缺口/g,"Data gaps")
+    .replace(/硬门禁/g,"Hard gate")
+    .replace(/下注从数量转向质量/g,"Allocation quality matters more than count")
+    .replace(/赛后闭环要继续看/g,"Post-match closure still needs review")
+    .replace(/\bnone\b/gi,"")
+    .replace(/\s{2,}/g," ")
+    .trim();
+}
+function ledgerSceneText(scene,field){
+  if(currentLang === "en"){
+    const custom=LEDGER_SCENE_EN[scene?.key || ""];
+    if(custom?.[field])return custom[field];
+    return ledgerEnText(scene?.[field] || "");
+  }
+  return ledgerCnText(scene?.[field] || "");
+}
+function ledgerStoryText(story,cover,field,fallback){
+  if(currentLang === "en"){
+    const custom=LEDGER_SCENE_EN.cover;
+    if(custom?.[field])return custom[field];
+    return ledgerEnText(story?.[field] || cover?.[field] || fallback || "");
+  }
+  return ledgerCnText(story?.[field] || cover?.[field] || fallback || "");
+}
+function ledgerPills(cover){
+  if(currentLang === "en")return (cover?.pills || []).map(ledgerEnText);
+  return (cover?.pills || []).map(ledgerCnText);
+}
+function ledgerSceneStats(scene){
+  if(currentLang === "en"){
+    const stats = (scene?.stats || []).map(stat=>({
+      label:ledgerEnText(stat.label),
+      value:ledgerEnText(stat.value),
+      desc:ledgerEnText(stat.desc),
+    }));
+    if(stats.length)return stats;
+    if(LEDGER_SCENE_EN[scene?.key || ""]?.stats)return LEDGER_SCENE_EN[scene.key].stats;
+  }
+  return (scene?.stats || []).map(stat=>({
+    label:ledgerCnText(stat.label),
+    value:ledgerCnText(stat.value),
+    desc:ledgerCnText(stat.desc),
+  }));
+}
+function ledgerSceneBullets(scene){
+  if(currentLang === "en"){
+    if(scene?.key === "focus_match")return (scene?.bullets || []).map(ledgerEnText);
+    if(LEDGER_SCENE_EN[scene?.key || ""]?.bullets)return LEDGER_SCENE_EN[scene.key].bullets;
+    return (scene?.bullets || []).map(ledgerEnText);
+  }
+  return (scene?.bullets || []).map(ledgerCnText);
+}
+function ledgerCardText(sceneKey,card,field){
+  if(currentLang === "en"){
+    const custom=LEDGER_CARD_EN[String(card?.name || "").toLowerCase()];
+    if(custom?.[field])return custom[field];
+  }
+  return ledgerCnText(card?.[field] || "");
+}
+function ledgerMainTeams(row){
+  const raw=String(row?.main_match || "");
+  const parts=raw.split(/\s+vs\s+/i);
+  return {home:parts[0] || "",away:parts[1] || ""};
+}
+function ledgerPositionText(value,lang=currentLang,row=null){
+  const teams=ledgerMainTeams(row);
+  let raw=String(value || "");
+  if(/^home\b/i.test(raw))raw=raw.replace(/^home\b/i,lang === "zh" ? teamZhName(teams.home) : canonicalTeamName(teams.home));
+  if(/^away\b/i.test(raw))raw=raw.replace(/^away\b/i,lang === "zh" ? teamZhName(teams.away) : canonicalTeamName(teams.away));
+  if(lang === "zh")raw=raw.replace(/^Draw\b/i,"平").replace(/\s*(?:none|0)\s*@/i," @");
+  let out=lang === "en" ? ledgerEnText(raw) : ledgerTeamText(raw,lang).replace(/\s*(?:none|0)\s*@/i," @");
+  if(lang === "en"){
+    out = out
+      .replace(/全场观望/g,"No allocation")
+      .replace(/观望/g,"No allocation");
+  }
+  return out;
+}
+function ledgerRiskLabel(row){
+  if(currentLang === "en"){
+    if(Number(row?.bet_count || 0) === 0)return "no allocation";
+    if(Number(row?.bet_count || 0) >= 4)return "distributed exposure";
+    return "moderate exposure";
+  }
+  return ledgerCnText(row?.risk_label || "");
+}
+function ledgerGrade(row){
+  if(currentLang === "en")return "Pending";
+  return ledgerCnText(row?.grade || "待评");
+}
+function ledgerSeatNote(row){
+  const name=row?.display_name || row?.model_account || "—";
+  const decisions=Number(row?.decision_count || 0);
+  const bets=Number(row?.bet_count || 0);
+  const mainLine=ledgerPositionText(row?.primary_position || (bets ? "" : "全场观望"),currentLang,row);
+  if(currentLang === "en"){
+    return `${name}: pending; ${decisions} decisions, ${bets} allocations, main line ${mainLine}. Overall posture: ${ledgerRiskLabel(row)}.`;
+  }
+  return `${name}：待赛；${name}本轮${decisions}条决策，其中下注${bets}笔，主线是${mainLine}，整体属于${ledgerRiskLabel(row)}。`;
+}
+function ledgerSummaryLine(ledger,field){
+  const board=ledger?.scoreboard || {};
+  if(currentLang === "en"){
+    if(field === "data_analyst")return `Data view: ${Number(board.accepted_bets || 0).toLocaleString()} structured allocations; settlement ROI ${percent(Number(board.roi || 0))}.`;
+    if(field === "football_expert")return "Football view: this is a pre-match report covering Germany vs Curaçao, Ivory Coast vs Ecuador, Netherlands vs Japan, and Sweden vs Tunisia.";
+    if(field === "pro_bettor")return `Bankroll view: loan exposure ${pointsText(board.total_loan_gp || 0)}; monitor whether high-exposure seats can cover variance after settlement.`;
+  }
+  return ledgerCnText(ledger?.observer_summary?.[field] || ledger?.lead || "");
+}
+function ledgerHeadline(ledger){
+  if(currentLang === "en")return `${ledger?.date || "2026-06-14"} ${ledger?.round_id || displayRoundId()} pre-match report: ${Number(ledger?.scoreboard?.models || 0)}/12 seats recorded, awaiting settlement`;
+  return ledgerCnText(ledger?.headline || "");
+}
+function commentaryLogHref(){
+  return `commentary-log.html?lang=${currentLang}`;
+}
+const weekDaysZH=["周日","周一","周二","周三","周四","周五","周六"];
+const weekDaysEN=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const modelProfiles={
+  "DeepSeek":{initial:"D",initialEn:"DS",emoji:"🧠",tagZh:"领跑席",tagEn:"Leader",a:"#2563eb",b:"#06b6d4"},
+  "Gemini":{initial:"G",emoji:"💎",tagZh:"稳健席",tagEn:"Steady",a:"#7c3aed",b:"#ec4899"},
+  "Qwen":{initial:"Q",emoji:"🟢",tagZh:"量化席",tagEn:"Quant",a:"#059669",b:"#22c55e"},
+  "Yuanbao":{initial:"元",initialEn:"Y",emoji:"🧧",tagZh:"串关席",tagEn:"Combo",a:"#f59e0b",b:"#ef4444"},
+  "Doubao":{initial:"豆",initialEn:"DB",emoji:"🎯",tagZh:"价值席",tagEn:"Value",a:"#ef4444",b:"#f97316"},
+  "Meta AI":{initial:"MA",initialEn:"MA",emoji:"🔵",tagZh:"组合席",tagEn:"Blend",a:"#2563eb",b:"#4f46e5"},
+  "MiniMax":{initial:"N",emoji:"🌸",tagZh:"冷门席",tagEn:"Scout",a:"#ec4899",b:"#8b5cf6"},
+  "MiMo":{initial:"MM",initialEn:"MM",emoji:"✨",tagZh:"观察席",tagEn:"Watch",a:"#64748b",b:"#3b82f6"},
+  "Wenxin":{initial:"文",initialEn:"W",emoji:"📚",tagZh:"文本席",tagEn:"Text",a:"#0ea5e9",b:"#6366f1"},
+  "Kimi":{initial:"K",emoji:"🌙",tagZh:"长文席",tagEn:"Long",a:"#4f46e5",b:"#7c3aed"},
+  "ChatGPT":{initial:"C",emoji:"💬",tagZh:"通用席",tagEn:"General",a:"#10b981",b:"#14b8a6"},
+  "xAI Grok":{initial:"X",emoji:"⚡",tagZh:"激进席",tagEn:"Bold",a:"#8b5cf6",b:"#ec4899"},
+};
+function modelAvatar(name,size=""){
+  const canonicalName = canonicalModelName(name,name);
+  const p=modelProfiles[canonicalName]||modelProfiles[name]||{initial:String(name || "M").slice(0,1),emoji:"🤖",a:"#3b82f6",b:"#8b5cf6"};
+  const initial = currentLang==='en' ? (p.initialEn || p.initial || canonicalName.slice(0,1)) : (p.initial || canonicalName.slice(0,1));
+  return `<span class="model-avatar ${size}" style="--avatar-a:${p.a};--avatar-b:${p.b}" aria-hidden="true">${esc(initial)}</span>`;
+}
+function modelTag(name){
+  const p=modelProfiles[name];
+  if(!p)return currentLang==='zh'?'模型席':'Model';
+  return currentLang==='zh'?`${p.emoji} ${p.tagZh}`:`${p.emoji} ${p.tagEn}`;
+}
+function esc(value){
+  return String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+function hasCjkText(value){
+  return /[\u3400-\u9fff]/.test(String(value || ""));
+}
+function zhDisplay(primaryZh,raw,fallback){
+  if(currentLang!=='zh')return raw || primaryZh || fallback || "";
+  if(primaryZh)return primaryZh;
+  if(hasCjkText(raw))return raw;
+  return fallback || "";
+}
+function canonicalModelName(value,account){
+  const raw = String(value || account || "").trim();
+  const byAccount = {
+    deepseek:"DeepSeek",gemini:"Gemini",qwen:"Qwen",yuanbao:"Yuanbao",doubao:"Doubao",meta:"Meta AI",
+    mimo:"MiMo",chatgpt:"ChatGPT",kimi:"Kimi",minimax:"MiniMax",wenxin:"Wenxin",xai:"xAI Grok"
+  };
+  const byDisplay = {"通义":"Qwen","元宝":"Yuanbao","豆包":"Doubao","文心":"Wenxin","xAI":"xAI Grok"};
+  return byDisplay[raw] || byAccount[String(account || raw).toLowerCase()] || raw || "Model";
+}
+function fallbackRankingRows(){
+  return ["ChatGPT","DeepSeek","MiMo","MiniMax","Gemini","Qwen","Yuanbao","Doubao","Meta AI","Wenxin","Kimi","xAI Grok"].map((name,index)=>({
+    pos:index+1,
+    name,
+    gp:0,
+    loan:0,
+    delta:0,
+    dataMissing:true,
+  }));
+}
+function rankingRowsForDisplay(){
+  const rows = runtimeRaw?.historical_ranking || runtimeRaw?.current_ranking || runtimeRaw?.ranking || [];
+  if(!Array.isArray(rows) || !rows.length)return fallbackRankingRows();
+  return rows.map((r,i)=>({
+    pos:Number(r.rank ?? r.computed_rank ?? i+1),
+    name:canonicalModelName(r.display_name || r.model_account || r.seat_id,r.model_account || r.seat_id),
+    gp:Number(r.balance_gp ?? r.confirmed_current_balance_gp ?? r.gp ?? r.balance ?? 0),
+    loan:Number(r.loan_gp ?? r.imported_snapshot_loan_gp ?? r.loan ?? 0),
+    loanInterest:Number(r.loan_interest_gp ?? 0),
+    principalRepaid:Number(r.loan_principal_repaid_gp ?? 0),
+    remainingLoan:Number(r.remaining_loan_gp ?? r.loan_gp ?? 0),
+    dailyReward:Number(r.daily_reward_gp ?? 0),
+    stageReward:Number(r.stage_reward_gp ?? 0),
+    bottomPenalty:Number(r.bottom_penalty_gp ?? 0),
+    penaltyLoan:Number(r.penalty_loan_gp ?? 0),
+    rankBasis:Number(r.rank_basis_balance_gp ?? r.balance_before_rewards_gp ?? r.balance_gp ?? 0),
+    delta:Number(r.current_delta_from_starting_gp ?? r.imported_snapshot_delta_gp ?? r.delta_gp ?? 0),
+  })).sort((a,b)=>a.pos-b.pos);
+}
+
+function runtimeRoundLabel(runtime){
+  return runtime.current_round || runtime.round_id || DEFAULT_ROUND;
+}
+
+function rankingContextNotice(){
+  return currentLang === 'zh'
+    ? '排行榜显示最新账户状态；导入Δ反映导入前历史轮次累计结果，非当前比赛日独立盈亏。'
+    : 'Leaderboard uses the latest account state; imported delta reflects prior imported rounds, not this matchday alone.';
+}
+
+function accountBreakdownHtml(row){
+  if(!row)return '';
+  const importedDelta = Number(row.delta || 0);
+  const signed = gpSigned(importedDelta);
+  return `<div class="account-breakdown">
+    <div class="metric-line"><span>${t('latestAccountState')}</span><b>${Math.round(row.gp).toLocaleString()} ${t('GP')}</b></div>
+    <div class="metric-line"><span>${t('importedDelta')}</span><b>${signed} ${t('GP')}</b></div>
+    <div class="metric-line"><span>${t('loanInterest')}</span><b>${Math.round(row.loanInterest || 0).toLocaleString()} ${t('GP')}</b></div>
+    <div class="metric-line"><span>${t('principalRepaid')}</span><b>${Math.round(row.principalRepaid || 0).toLocaleString()} ${t('GP')}</b></div>
+    <div class="metric-line"><span>${t('rankAfterDebt')}</span><b>#${row.pos} · ${Math.round(row.rankBasis || row.gp).toLocaleString()} ${t('GP')}</b></div>
+    <p class="data-note">${t('importedDeltaNote')}</p>
+  </div>`;
+}
+
+function loanRiskMeta(row){
+  const interest = Number(row?.loanInterest || 0);
+  const principal = Number(row?.principalRepaid || 0);
+  const outstanding = Number(row?.remainingLoan || row?.loan || 0);
+  return {
+    interest,
+    principal,
+    outstanding,
+    label: `${t('loanInterest')} ${Math.round(interest).toLocaleString()} ${t('GP')} · ${t('principalRepaid')} ${Math.round(principal).toLocaleString()} ${t('GP')}`,
+  };
+}
+
+function oddsMarketDetails(match){
+  const marketRows = Array.isArray(match?.market_snapshot) ? match.market_snapshot.length : 0;
+  const rows = runtimeRaw?.provider?.valid_odds_rows ?? runtimeRaw?.provider?.odds_rows ?? 0;
+  const round = runtimeRoundLabel(runtimeRaw || {});
+  return currentLang === 'zh'
+    ? `本场盘口快照 ${Number(marketRows || 0).toLocaleString()} 行 · 总盘口池 ${Number(rows || 0).toLocaleString()} 行 · ${round || 'current'}`
+    : `Fixture market snapshot ${Number(marketRows || 0).toLocaleString()} rows · total market pool ${Number(rows || 0).toLocaleString()} rows · ${round || 'current'}`;
+}
+
+function observerLedgersForDate(dateKey){
+  const iso = isoForDateKey(dateKey) || dateKey;
+  const items = Array.isArray(staticArtifacts.observerLedgerIndex?.items) ? staticArtifacts.observerLedgerIndex.items : [];
+  const matches = items.filter(item=>String(item?.date || "") === String(iso));
+  if(staticArtifacts.observerLedger && String(staticArtifacts.observerLedger.date || "") === String(iso)){
+    matches.push(staticArtifacts.observerLedger);
+  }
+  return matches.sort((a,b)=>{
+    const phaseScore = phase => phase === "post" ? 2 : 1;
+    return phaseScore(b.phase) - phaseScore(a.phase) || String(b.generated_at || "").localeCompare(String(a.generated_at || ""));
+  });
+}
+
+function observerLedgerForDate(dateKey){
+  return observerLedgersForDate(dateKey)[0] || staticArtifacts.observerLedger || {};
+}
+
+function observerMatchNote(match){
+  if(!match)return null;
+  const id = String(match.match_id || match.id || "");
+  const ledger = observerLedgerForDate(activeDate);
+  const notes = Array.isArray(ledger.match_notes) ? ledger.match_notes : [];
+  return notes.find(note=>String(note.match_id || "") === id) || null;
+}
+
+function alignmentGapForMatch(match){
+  const id = String(match?.match_id || match?.id || "");
+  const rows = Array.isArray(staticArtifacts.alignmentAudit?.score_missing_after_due) ? staticArtifacts.alignmentAudit.score_missing_after_due : [];
+  return rows.find(row=>String(row.match_id || "") === id) || null;
+}
+
+function compactMarketSnapshotLine(match){
+  const rows = Array.isArray(match?.market_snapshot) ? match.market_snapshot : [];
+  if(!rows.length)return "";
+  const preferred = rows.find(row=>String(row?.provider || "").toLowerCase().includes("pinnacle")) || rows[0];
+  const market = String(preferred.market || "").toLowerCase();
+  const selection = currentLang === "zh" ? localizeReceiptSelection(preferred.selection,match) : String(preferred.selection || "");
+  const line = preferred.line !== undefined && preferred.line !== null && String(preferred.line) !== "" ? ` ${preferred.line}` : "";
+  const odds = preferred.odds !== undefined && preferred.odds !== null ? ` @ ${preferred.odds}` : "";
+  const label = market === "handicap" ? (currentLang === "zh" ? "让球" : "Handicap") : (market || (currentLang === "zh" ? "盘口" : "Market"));
+  return `${label} ${selection}${line}${odds}`.trim();
+}
+
+function matchDataLine(match,receiptRows){
+  const market = formatWdlMarket(match.odds);
+  if(market){
+    return `<span>${t('oddsW')} ${market.h}</span><span class="match-odds-sep">·</span><span>${t('oddsD')} ${market.d}</span><span class="match-odds-sep">·</span><span>${t('oddsL')} ${market.a}</span>`;
+  }
+  const note = observerMatchNote(match);
+  if(note){
+    const profit = Number(note.profit_gp || 0);
+    const profitText = Number.isFinite(profit) ? gpSigned(profit) : "—";
+    return `<span class="market-pending">${currentLang === "zh" ? `已结算 ${profitText}` : `Settled ${profitText}`}</span>`;
+  }
+  const snapshotLine = compactMarketSnapshotLine(match);
+  if(snapshotLine){
+    return `<span>${esc(snapshotLine)}</span>`;
+  }
+  if(Array.isArray(receiptRows) && receiptRows.length){
+    return `<span class="market-pending">${currentLang === "zh" ? `模型记录 ${receiptRows.length} 条` : `${receiptRows.length} model records`}</span>`;
+  }
+  if(alignmentGapForMatch(match)){
+    return `<span class="market-pending">${currentLang === "zh" ? "赛果待回填" : "Result sync due"}</span>`;
+  }
+  return `<span class="market-pending">${t('marketPending')}</span>`;
+}
+
+function decisionRecordHtml(record){
+  const stage = record?.decision_pre_match_thinking || record?.stages?.pre_match_thinking;
+  if(!stage)return '';
+  return `<div class="decision-record">${esc(stage.summary || stage.status || 'decision_pre_match_thinking')}</div>`;
+}
+
+function renderSelectedRankingPanel(){
+  if(!selectedSeatName)return;
+  const rows = rankingRowsForDisplay();
+  const selectedRanking = rows.find(r=>r.name===selectedSeatName) || rows[0];
+  const view = document.getElementById('view-ranking');
+  if(view && selectedRanking){
+    view.hidden = false;
+    view.innerHTML = `<div class="section-head"><span class="section-head-title">${t('fullAiComparison')}</span><span class="section-head-meta">${rankingContextNotice()}</span></div>${accountBreakdownHtml(selectedRanking)}`;
+  }
+}
+
+function handleSeatSelection(seatName){
+  const rows = rankingRowsForDisplay();
+  const selectedRanking = rows.find(r=>r.name===seatName) || rows[0];
+  const selectedName = seatName || selectedRanking?.name || '';
+  selectedSeatName = selectedName;
+  document.querySelectorAll('.rank-row.selected').forEach(row=>row.classList.remove('selected'));
+  Array.from(document.querySelectorAll('.rank-row')).find(row=>row.dataset.seatJump===selectedName)?.classList.add('selected');
+  renderSelectedRankingPanel();
+  openModelFromRank(encodeURIComponent(selectedName));
+}
+
+function compactStatus(value){
+  if(value === true)return currentLang === 'zh' ? '通过' : 'Pass';
+  if(value === false)return currentLang === 'zh' ? '未通过' : 'Fail';
+  return String(value ?? '—').replace(/_/g,' ');
+}
+function gpSigned(value){
+  const n = Number(value);
+  if(!Number.isFinite(n))return '—';
+  return `${n >= 0 ? '+' : ''}${n.toLocaleString(undefined,{maximumFractionDigits:1})}`;
+}
+function signedTone(value,warningAt=-0.01){
+  const n = Number(value);
+  if(!Number.isFinite(n) || n === 0)return 'tone-neutral';
+  if(n > 0)return 'tone-positive';
+  return n <= warningAt ? 'tone-negative' : 'tone-warning';
+}
+function percent(value){
+  const n = Number(value);
+  if(!Number.isFinite(n))return '—';
+  return `${(n*100).toFixed(1)}%`;
+}
+function percentSigned(value){
+  const n = Number(value);
+  if(!Number.isFinite(n))return '—';
+  return `${n >= 0 ? '+' : ''}${Math.round(n * 100)}%`;
+}
+function ratioHtml(value){
+  const raw=String(value ?? '—').trim();
+  const m=raw.match(/^(\d+)\s*\/\s*(\d+)$/);
+  if(!m)return esc(raw);
+  return `<span class="ratio-val"><span class="ratio-main">${m[1]}</span><span class="ratio-sep">/</span><span class="ratio-total">${m[2]}</span></span>`;
+}
+function modelProfitList(models){
+  return models
+    .filter(m=>Number(m.points)>0)
+    .map(m=>{
+      const points=Number(m.points)||0;
+      const hasSettlementProfit = m.settlementProfit !== null && m.settlementProfit !== undefined && Number.isFinite(Number(m.settlementProfit));
+      const net=hasSettlementProfit ? Number(m.settlementProfit) : (Number(m.ret)||0)-points;
+      const roi=points>0 ? net/points : null;
+      return {
+        pos:m.pos,
+        name:m.name,
+        net,
+        pl:gpSigned(net),
+        roi:roi===null?'—':percentSigned(roi),
+        plTone:signedTone(net),
+        roiTone:signedTone(roi),
+      };
+    })
+    .sort((a,b)=>b.net-a.net)
+    .slice(0,5);
+}
+
+function isoForDateKey(dateKey){
+  const hit = matchDates.find(d=>d.key===dateKey);
+  return hit?.iso || DATE_TO_ISO[dateKey] || dateKey;
+}
+
+function betRowsForMatch(matchId){
+  const rows = runtimeRaw?.betting?.compact_decisions || [];
+  if(!Array.isArray(rows) || !matchId)return [];
+  return rows.filter(r=>String(r.match_id || "")===String(matchId));
+}
+
+function hasMarketValue(value){
+  if(value === null || value === undefined)return false;
+  const raw = String(value).trim();
+  return raw !== "" && raw !== "--" && raw.toLowerCase() !== "null";
+}
+
+function formatMarketValue(value){
+  const n = Number(value);
+  if(!Number.isFinite(n) || n <= 0)return "—";
+  return Number(n.toFixed(3)).toLocaleString(undefined,{maximumFractionDigits:3});
+}
+
+function clampPercent(value){
+  const n=Number(value);
+  if(!Number.isFinite(n))return 0;
+  return Math.max(0,Math.min(100,Math.round(n)));
+}
+
+function hasFullWdlMarket(odds){
+  return [odds?.h,odds?.d,odds?.a].every(hasMarketValue);
+}
+
+function formatWdlMarket(odds){
+  if(!hasFullWdlMarket(odds))return null;
+  return {
+    h:formatMarketValue(odds.h),
+    d:formatMarketValue(odds.d),
+    a:formatMarketValue(odds.a),
+  };
+}
+
+function localizedTeam(m, side){
+  if(side === "away")return currentLang === "zh" ? (m.awayZh || teamZhName(m.away)) : canonicalTeamName(m.away);
+  return currentLang === "zh" ? (m.homeZh || teamZhName(m.home)) : canonicalTeamName(m.home);
+}
+
+function selectionSide(row,m){
+  const text = teamKey([row?.selection,row?.market,row?.line,row?.one_line,row?.reason_short].filter(Boolean).join(" "));
+  const home = teamKey(m.home);
+  const away = teamKey(m.away);
+  if(home && text.includes(home))return "home";
+  if(away && text.includes(away))return "away";
+  return null;
+}
+
+function aiPreferenceLabel(m,receiptRows,expectedModels){
+  if(receiptRows.length){
+    const counts = receiptRows.reduce((acc,row)=>{
+      const side = selectionSide(row,m);
+      if(side)acc[side] += 1;
+      return acc;
+    },{home:0,away:0});
+    const side = counts.away > counts.home ? "away" : "home";
+    const maxVotes = Math.max(counts.home,counts.away);
+    if(maxVotes > 0){
+      return `${t('aiFavors')} ${localizedTeam(m,side)} ${clampPercent(maxVotes / Math.max(1,expectedModels) * 100)}%`;
+    }
+    return `${t('aiCoverage')} ${clampPercent(receiptRows.length / Math.max(1,expectedModels) * 100)}%`;
+  }
+  const aiPct = Number(m.ai?.pct);
+  const prefSide = m.ai?.pref === "away" ? "away" : "home";
+  if(Number.isFinite(aiPct) && aiPct > 0){
+    return `${t('aiFavors')} ${localizedTeam(m,prefSide)} ${clampPercent(aiPct)}%`;
+  }
+  if(m.status === "done")return t('resultRecorded');
+  if(resultSyncDue(m))return t('resultSyncPending');
+  return t('modelPending');
+}
+
+function teamKey(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g,"and")
+    .replace(/[^a-z0-9]+/g,"");
+}
+
+function runtimeMatchCandidates(){
+  const buckets = [
+    runtimeRaw?.matches,
+    runtimeRaw?.future_matches,
+    runtimeRaw?.settled_matches,
+    runtimeRaw?.archives?.matches,
+    runtimeRaw?.archives?.future_matches,
+    runtimeRaw?.archives?.settled_matches,
+  ];
+  return buckets.flatMap(x=>Array.isArray(x)?x:[]).filter(Boolean);
+}
+
+function runtimeMatchHasMarket(m){
+  return hasMarketValue(m?.odds_home) || hasMarketValue(m?.odds_draw) || hasMarketValue(m?.odds_away);
+}
+
+function findRuntimeMatch(m){
+  if(!runtimeRaw || !m)return null;
+  const candidates = runtimeMatchCandidates().filter(runtimeMatchHasMarket);
+  const id = String(m.match_id || m.id || "");
+  const byId = candidates.find(x=>String(x.match_id || x.id || "") === id);
+  if(byId)return byId;
+  const home = teamKey(m.home);
+  const away = teamKey(m.away);
+  return candidates.find(x=>{
+    const sameTeams = teamKey(x.home_team || x.home) === home && teamKey(x.away_team || x.away) === away;
+    if(!sameTeams)return false;
+    const sourceDate = String(x.date || x.official_date || x.matchday_hk || x.kickoff_at || "").slice(0,10);
+    return !activeDate || !sourceDate || sourceDate === (DATE_TO_ISO[activeDate] || activeDate);
+  }) || null;
+}
+
+function enrichMatchFromRuntime(m){
+  const source = findRuntimeMatch(m);
+  if(!source)return m;
+  const odds = m.odds || {};
+  const enriched = {
+    ...m,
+    odds:{
+      h:hasMarketValue(odds.h) ? odds.h : formatMarketValue(source.odds_home),
+      d:hasMarketValue(odds.d) ? odds.d : formatMarketValue(source.odds_draw),
+      a:hasMarketValue(odds.a) ? odds.a : formatMarketValue(source.odds_away),
+    },
+  };
+  if((!enriched.ai || !Number.isFinite(Number(enriched.ai.pct))) && source.prob_home !== null && source.prob_home !== undefined){
+    enriched.ai = {pref:"home",pct:Math.round(Number(source.prob_home) * 100)};
+  }
+  return enriched;
+}
+
+/* ==================================================================
+   GLOBAL STATE
+   ================================================================== */
+let matchDates=[], poolSummary=null, activeDate=null, currentMatches=[], runtimeRaw=null, activeDetailId=null, selectedSeatName=null, lastRefreshFailed=false, isRefreshing=false, refreshSeq=0;
+
+/* ==================================================================
+   INIT
+   ================================================================== */
+function applyInitialDataCenterRoute(){
+  const params=new URLSearchParams(location.search);
+  const requestedDataView=params.get("view");
+  if(["journal","credit","split","god"].includes(requestedDataView))activeDataCenterView=requestedDataView;
+  const wantsDataCenter = params.get("dataCenter")==="1"
+    || params.get("datacenter")==="1"
+    || params.get("panel")==="data-center"
+    || ["journal","credit","split","god"].includes(requestedDataView)
+    || location.hash==="#data-center";
+  if(wantsDataCenter)openDataCenter();
+}
+
+async function init(){
+  try{
+    await loadStaticArtifacts();
+    const datesData = await apiGetMatchDates();
+    matchDates = datesData.dates;
+    activeDate = requestedDateKey(matchDates) || datesData.today || datesData.dates[0]?.key;
+    await Promise.all([loadMatches(), loadPoolSummary()]);
+    lastRefreshFailed = !runtimeRaw && currentMatches.length === 0;
+    renderAll();
+    applyInitialDataCenterRoute();
+  }catch(_err){
+    lastRefreshFailed = true;
+    renderAll();
+    applyInitialDataCenterRoute();
+  }
+}
+
+async function loadMatches(){
+  const dateKey = activeDate;
+  const {matches:list} = await apiGetMatches(dateKey);
+  const enforced = enforceDateSignature(list,dateKey);
+  if(dateKey === activeDate)currentMatches = enforced;
+  return enforced;
+}
+
+async function loadPoolSummary(){
+  const dateKey = activeDate;
+  const result = await fetchPoolSummary(dateKey);
+  if(dateKey === activeDate){
+    runtimeRaw = result.raw;
+    poolSummary = result.summary;
+  }
+  return result.summary;
+}
+
+async function apiGetFrontendArchives(){
+  return await fetchJsonSafe("/api/pool/frontend-archives");
+}
+
+/* ==================================================================
+   RENDER
+   ================================================================== */
+function renderAll(){
+  currentMatches = enforceDateSignature(currentMatches,activeDate);
+  if(runtimeRaw && Array.isArray(currentMatches)){
+    currentMatches = enforceDateSignature(currentMatches.map(enrichMatchFromRuntime),activeDate);
+  }
+  renderRunPill();
+  renderDateSwiper();
+  renderStats();
+  renderSidebar();
+  renderMatchList();
+  renderSelectedRankingPanel();
+  renderDataCenter();
+  applyI18n();
+}
+
+function renderRunPill(){
+  const el=document.getElementById('runPill');
+  if(!el)return;
+  const round=displayRoundId();
+  const state=runtimeRaw?.automation?.sop_latest?.status || runtimeRaw?.automation?.status || "running";
+  el.innerHTML=`${esc(round)} · <strong>${esc(compactStatus(state))}</strong>`;
+}
+
+function renderLoadingState(){
+  renderDateSwiper();
+  const countEl=document.getElementById('matchCount');
+  const grid=document.getElementById('matchGrid');
+  if(countEl)countEl.textContent=t('loadingMatches');
+  if(grid){
+    grid.innerHTML=`<div class="loading-stack" aria-live="polite" aria-label="${esc(t('loadingMatches'))}">
+      <div class="loading-header"><span class="loading-spinner" aria-hidden="true"></span><span>${esc(t('loadingMatches'))}</span></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>`;
+  }
+}
+
+function renderDateSwiper(){
+  document.getElementById('dateSwiper').innerHTML=matchDates.map(d=>{
+    const active=d.key===activeDate?' active':'';
+    const wd=currentLang==='zh'?weekDaysZH[d.wday]:weekDaysEN[d.wday];
+    const lbl=currentLang==='zh'?d.labelZh:d.labelEn;
+    return `<button class="date-chip${active}" data-date-key="${esc(d.key)}" data-date-iso="${esc(d.iso)}" aria-pressed="${d.key===activeDate?'true':'false'}" onclick="switchDate('${d.key}')"><span class="date-chip-day">${d.key}</span><span>${wd}</span></button>`;
+  }).join('');
+}
+
+function renderStats(){
+  const focusMatch=currentMatches.length>0?currentMatches[0]:null;
+  const focusText=focusMatch
+    ?(`${localizedTeam(focusMatch,"home")} vs ${localizedTeam(focusMatch,"away")}`)
+    :'—';
+  document.getElementById('statRibbon').innerHTML=`
+    <div class="stat-cell highlight"><div class="stat-cell-val" id="statFocus">${focusText}</div><div class="stat-cell-lbl" data-i18n="statFocus">${t('statFocus')}</div></div>
+    <div class="stat-cell"><div class="stat-cell-val gold">${poolSummary.total_pool.toLocaleString()}</div><div class="stat-cell-lbl" data-i18n="statPool">${t('statPool')}</div></div>
+    <div class="stat-cell"><div class="stat-cell-val green">${poolSummary.net_pl}</div><div class="stat-cell-lbl" data-i18n="statNetPL">${t('statNetPL')}</div></div>
+    <div class="stat-cell"><div class="stat-cell-val">${poolSummary.loan_seats}</div><div class="stat-cell-lbl" data-i18n="statLoan">${t('statLoan')}</div></div>
+    <div class="stat-cell"><div class="stat-cell-val" id="statTodayCount">${currentMatches.length}</div><div class="stat-cell-lbl" data-i18n="statToday">${t('statToday')}</div></div>
+  `;
+  document.getElementById('matchCount').textContent=currentMatches.length+' '+(currentLang==='zh'?'场比赛':' matches');
+}
+
+function renderSidebar(){
+  document.getElementById('sidebarStats').innerHTML=`
+    <div class="sidebar-stat"><div class="sidebar-stat-val gold">${poolSummary.total_pool.toLocaleString()}</div><div class="sidebar-stat-lbl" data-i18n="sbPool">${t('sbPool')}</div></div>
+    <div class="sidebar-stat"><div class="sidebar-stat-val">${currentMatches.length}</div><div class="sidebar-stat-lbl" data-i18n="sbMatches">${t('sbMatches')}</div></div>
+    <div class="sidebar-stat"><div class="sidebar-stat-val">${poolSummary.loan_seats}</div><div class="sidebar-stat-lbl" data-i18n="sbLoan">${t('sbLoan')}</div></div>
+    <div class="sidebar-stat"><div class="sidebar-stat-val">${ratioHtml(poolSummary.verified_ratio)}</div><div class="sidebar-stat-lbl" data-i18n="sbVerified">${t('sbVerified')}</div></div>
+  `;
+
+  const rankData=rankingRowsForDisplay();
+  document.getElementById('sidebarRankList').className='rank-list';
+  document.getElementById('sidebarRankList').innerHTML=rankData.map(r=>`
+    <div class="rank-row${r.name===selectedSeatName?' selected':''}" role="button" tabindex="0" data-seat-jump="${esc(r.name)}" onclick="handleSeatSelection(this.dataset.seatJump)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleSeatSelection(this.dataset.seatJump)}">
+      <span class="rank-pos ${r.pos<=3?'top':''}">${r.pos}</span>
+      ${modelAvatar(r.name,'sm')}
+      <span class="rank-main">
+        <span class="rank-name">${r.name}</span>
+        <span class="rank-tag">${modelTag(r.name)}</span>
+      </span>
+      <span class="rank-gp">${r.gp.toLocaleString()}</span>
+    </div>
+  `).join('');
+}
+
+function renderMatchList(){
+  const grid=document.getElementById('matchGrid');
+  grid.dataset.activeDateKey = activeDate || '';
+  grid.dataset.activeDateIso = isoForDateKey(activeDate) || '';
+  grid.dataset.matchCount = String(currentMatches.length);
+  if(currentMatches.length===0){
+    grid.innerHTML=`<div class="empty-state" style="grid-column:1/-1">${t('noMatches')}</div>`;
+    return;
+  }
+  grid.innerHTML=currentMatches.map(m=>{
+    const badgeMap={done:{cls:'badge-done',txt:t('done')},result_pending:{cls:'badge-upcoming',txt:t('resultPendingShort')},upcoming:{cls:'badge-upcoming',txt:t('upcoming')},live:{cls:'badge-live',txt:t('live')}};
+    const b=badgeMap[m.status]||badgeMap.upcoming;
+    const scoreHTML=m.score?`<span class="match-card-score-val">${m.score}</span>`:(m.status==="result_pending"?`<span class="match-card-score-time">${t('resultPendingShort')}</span>`:`<span class="match-card-score-time">${m.time}<br>CST</span>`);
+    const hName=localizedTeam(m,"home");
+    const aName=localizedTeam(m,"away");
+    const receiptRows=betRowsForMatch(m.match_id || m.id);
+    const expectedModels=Number(runtimeRaw?.active_models_count || poolSummary?.model_count || 12);
+    const aiTag=aiPreferenceLabel(m,receiptRows,expectedModels);
+    const marketLine = matchDataLine(m,receiptRows);
+    const stageText=currentLang==='zh'?m.stageZh:m.stageEn;
+    return `<div class="match-card ${m.status}" role="button" tabindex="0" data-match="${esc(m.id)}" onclick="openDetail('${m.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openDetail('${m.id}')}">
+      <div class="match-card-top">
+        <span class="match-stage">${stageText}</span>
+        <span class="match-badge ${b.cls}">${b.txt}</span>
+      </div>
+      <div class="match-card-core">
+        <div class="match-card-team"><span class="match-card-flag">${m.hf}</span><span class="match-card-team-name match-row-title">${hName}</span></div>
+        <div class="match-card-score">${scoreHTML}</div>
+        <div class="match-card-team"><span class="match-card-flag">${m.af}</span><span class="match-card-team-name">${aName}</span></div>
+      </div>
+      <div class="match-card-bottom">
+        <span class="match-ai-tag">${aiTag}</span>
+        <div class="match-odds-row">${marketLine}</div>
+        <button class="match-view-btn" onclick="event.stopPropagation();openDetail('${m.id}')">${t('analyze')}</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderAccountCurve(rows){
+  const topRows = rows.slice(0,6);
+  const values = topRows.map(r=>Number(r.gp)||0);
+  const max = Math.max(...values,1000);
+  const min = Math.min(...values,1000);
+  const span = Math.max(1,max-min);
+  const points = values.map((v,i)=>{
+    const x = 20 + i * (260 / Math.max(1,values.length-1));
+    const y = 130 - ((v-min)/span)*96;
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  }).join(' ');
+  const area = points ? `20,150 ${points} 280,150` : "";
+  return `
+    <div class="mini-chart" aria-label="${esc(t('accountCurve'))}">
+      <svg viewBox="0 0 300 170" role="img">
+        <defs>
+          <linearGradient id="curveStroke" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#facc15"/><stop offset="0.5" stop-color="#22d3ee"/><stop offset="1" stop-color="#10b981"/>
+          </linearGradient>
+          <linearGradient id="curveFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="rgba(34,211,238,.26)"/><stop offset="1" stop-color="rgba(16,185,129,0)"/>
+          </linearGradient>
+        </defs>
+        <line class="chart-axis" x1="20" y1="34" x2="280" y2="34"></line>
+        <line class="chart-axis" x1="20" y1="82" x2="280" y2="82"></line>
+        <line class="chart-axis" x1="20" y1="130" x2="280" y2="130"></line>
+        ${area?`<polygon class="chart-area" points="${area}"></polygon><polyline class="chart-line" points="${points}"></polyline>`:""}
+        ${values.map((v,i)=>{
+          const x = 20 + i * (260 / Math.max(1,values.length-1));
+          const y = 130 - ((v-min)/span)*96;
+          return `<circle class="chart-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"></circle>`;
+        }).join('')}
+      </svg>
+    </div>
+    <div class="chart-labels">
+      ${topRows.slice(0,3).map(r=>`<div class="chart-label"><b>${esc(r.name)}</b><small>#${r.pos} · ${Math.round(r.gp).toLocaleString()} ${t('GP')}</small></div>`).join('')}
+    </div>
+  `;
+}
+
+function observerLedgerBody(){
+  const ledger=observerLedgerForDate(activeDate);
+  const summary=ledger.observer_summary || {};
+  const board=ledger.scoreboard || {};
+  const story=ledger.comic_story || {};
+  const scenes=Array.isArray(story.scenes)?story.scenes:[];
+  const cover=scenes.find(scene=>scene && scene.key==='cover') || {};
+  const scenePreview=scenes.filter(scene=>scene && scene.key && scene.key!=='cover').slice(0,4);
+  const seats=Array.isArray(ledger.seat_commentaries)?ledger.seat_commentaries:[];
+  const seatRows=seats.map(row=>{
+    const name=Array.isArray(row)?row[0]:row.display_name;
+    const grade=Array.isArray(row)?row[1]:row.grade;
+    const note=Array.isArray(row)?row[2]:row.one_line;
+    return `<div class="seat-commentary-item"><b>${esc(name || '—')}</b><span>${esc(Array.isArray(row)?ledgerCnText(note || grade || '—'):ledgerSeatNote(row))}</span></div>`;
+  }).join('');
+  const comicBlock=scenes.length?`
+    <div class="comic-preview">
+      <div class="comic-cover">
+        <small>${esc(ledgerSceneText(cover,'eyebrow') || `${ledger.round_id || ''} · ${ledger.date || ''}`)}</small>
+        <h3>${esc(ledgerStoryText(story,cover,'title',ledger.headline || '解说日志'))}</h3>
+        <p>${esc(ledgerStoryText(story,cover,'subtitle',ledger.lead || ''))}</p>
+        <div class="comic-pills">${ledgerPills(cover).slice(0,5).map(pill=>`<span class="comic-pill">${esc(pill)}</span>`).join('')}</div>
+      </div>
+      ${scenePreview.map(scene=>`
+        <div class="comic-scene">
+          <small>${esc(ledgerSceneText(scene,'eyebrow') || scene.key || '')}</small>
+          <b>${esc(ledgerSceneText(scene,'title'))}</b>
+          <p>${esc(ledgerSceneText(scene,'commentary'))}</p>
+          ${ledgerSceneBullets(scene).length?`<ul>${ledgerSceneBullets(scene).slice(0,4).map(item=>`<li>${esc(item)}</li>`).join('')}</ul>`:''}
+          ${(scene.cards || []).length?`<div class="comic-mini-cards">${scene.cards.slice(0,3).map(card=>`
+            <div class="comic-mini-card"><strong>${esc(card.name || '—')} · ${esc(ledgerUnitText(card.metric || ''))}</strong>${esc(ledgerCardText(scene.key,card,'quote') || ledgerCardText(scene.key,card,'role'))}</div>
+          `).join('')}</div>`:''}
+        </div>
+      `).join('')}
+    </div>
+  `:'';
+  return `
+    ${comicBlock}
+    <div class="observer-summary-grid">
+      <div class="observer-note"><span>${t('analystView')}</span><p>${esc(ledgerSummaryLine(ledger,'data_analyst') || '—')}</p></div>
+      <div class="observer-note"><span>${t('footballView')}</span><p>${esc(ledgerSummaryLine(ledger,'football_expert') || '—')}</p></div>
+      <div class="observer-note"><span>${t('bettorView')}</span><p>${esc(ledgerSummaryLine(ledger,'pro_bettor') || '—')}</p></div>
+    </div>
+    <div class="metric-list">
+      <div class="metric-line"><span>${currentLang==='zh'?'席位覆盖':'Seat coverage'}</span><b>${Number(board.models || seats.length || 0)}/12</b></div>
+      <div class="metric-line"><span>${currentLang==='zh'?'结构化投注':'Structured bets'}</span><b>${Number(board.accepted_bets || 0).toLocaleString()}</b></div>
+      <div class="metric-line"><span>${currentLang==='zh'?'总投入':'Total stake'}</span><b>${pointsText(board.total_stake_gp || 0)}</b></div>
+      <div class="metric-line"><span>${currentLang==='zh'?'贷款暴露':'Loan exposure'}</span><b>${pointsText(board.total_loan_gp || 0)}</b></div>
+    </div>
+    <div class="data-note">${esc(ledgerHeadline(ledger))}</div>
+    <div class="section-head" style="margin:14px 0 8px"><span class="section-head-title">${t('seatCommentary')}</span></div>
+    <div class="seat-commentary-list">${seatRows || `<div class="empty-state">${currentLang==='zh'?'暂无逐席点评':'No seat notes yet'}</div>`}</div>
+    <a class="data-action-link" href="${commentaryLogHref()}" target="_blank" rel="noopener">${currentLang==='zh'?'打开完整解说日志页':'Open full commentary log'}</a>
+  `;
+}
+
+function behaviorRefs(){
+  return staticArtifacts.behaviorSummary?.artifact_refs || {};
+}
+
+function artifactLink(href,label){
+  return href ? `<a class="data-action-link" href="${esc(href)}" target="_blank" rel="noopener">${esc(label)}</a>` : "";
+}
+
+function setDataCenterView(view){
+  activeDataCenterView=view;
+  renderDataCenter();
+}
+
+function productViewTitle(title,subtitle,actions=""){
+  return `<div class="product-view-title">
+    <div><h3>${esc(title)}</h3>${subtitle?`<p>${esc(subtitle)}</p>`:""}</div>
+    ${actions?`<div class="product-view-actions">${actions}</div>`:""}
+  </div>`;
+}
+
+function productEmpty(text){
+  return `<div class="empty-state" style="padding:22px 0">${esc(text)}</div>`;
+}
+
+function journalSummaryText(journal){
+  const review=journal?.last_self_review || {};
+  const fields=[review.what_i_did_last_round,review.what_i_learned,review.strategy_change_this_round,review.risk_commitment].filter(Boolean);
+  if(fields.length)return fields.join(" ");
+  const recent=Array.isArray(journal?.recent_events)?journal.recent_events:[];
+  const latest=recent.find(event=>event?.settlement || event?.forecast || event?.investment) || recent[0];
+  if(latest?.settlement)return `最近结算：${Number(latest.settlement.profit_gp || 0).toLocaleString()} GP。`;
+  return currentLang==="zh" ? "已接入连续行为日志，等待更多赛前/赛后事件累积。" : "Seat journal is connected and waiting for more events.";
+}
+
+function renderJournalProductView(){
+  const refs=behaviorRefs();
+  const journals=staticArtifacts.seatJournals || {};
+  const ids=Object.keys(journals).sort();
+  const actions=[
+    artifactLink(refs.behavior_summary,currentLang==="zh"?"打开行为摘要":"Open behavior summary"),
+  ].join("");
+  const rows=ids.map(id=>{
+    const journal=journals[id] || {};
+    const eventCounts=journal.event_counts || {};
+    const forecasts=Array.isArray(journal.last_forecasts) && journal.last_forecasts.length ? journal.last_forecasts.length : Number(eventCounts.forecast_recorded || 0);
+    const investments=Array.isArray(journal.last_investments) && journal.last_investments.length ? journal.last_investments.length : Number(eventCounts.investment_recorded || 0);
+    return `<div class="product-row">
+      <div class="product-row-head"><b>${esc(id)}</b><span>${esc(journal.credit_grade || "—")} · ${pointsText(journal.net_worth_gp ?? journal.balance_gp ?? 0)}</span></div>
+      <p>${esc(journalSummaryText(journal))}</p>
+      <div class="product-row-grid">
+        <div class="product-mini"><span>${currentLang==="zh"?"预测记录":"Forecasts"}</span><b>${forecasts}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"投资动作":"Investments"}</span><b>${investments}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"重整状态":"Recovery"}</span><b>${journal.recovery_mode ? (currentLang==="zh"?"开启":"On") : (currentLang==="zh"?"正常":"Normal")}</b></div>
+      </div>
+    </div>`;
+  }).join("");
+  return `${productViewTitle(currentLang==="zh"?"行为日志":"Seat Journal",currentLang==="zh"?"按模型沉淀赛前判断、下注动作、赛后反思和资金状态。":"Per-seat thinking, actions, reflection and account state.",actions)}
+    <div class="product-list">${rows || productEmpty(currentLang==="zh"?"行为日志还没有生成。":"No seat journals yet.")}</div>`;
+}
+
+function renderCreditProductView(){
+  const refs=behaviorRefs();
+  const seats=staticArtifacts.creditLedger?.seats || {};
+  const actions=artifactLink(refs.credit_ledger,currentLang==="zh"?"打开信用账本源文件":"Open credit ledger");
+  const rows=Object.values(seats).sort((a,b)=>String(a.seat_id).localeCompare(String(b.seat_id))).map(seat=>{
+    const details=Array.isArray(seat.details)?seat.details:[];
+    return `<div class="product-row">
+      <div class="product-row-head"><b>${esc(seat.seat_id || "—")}</b><span>${esc(seat.credit_grade || "—")} · ${Number(seat.credit_score || 0).toLocaleString()}</span></div>
+      <p>${details.length?esc(details.map(item=>item.reason || item.type || JSON.stringify(item)).join("；")):(currentLang==="zh"?"本轮信用无扣分，继续观察是否遵守预测/投资分账、no-bet 和贷款规则。":"No credit penalty this round.")}</p>
+      <div class="product-row-grid">
+        <div class="product-mini"><span>${currentLang==="zh"?"信用变化":"Credit delta"}</span><b>${gpSigned(seat.credit_delta || 0)}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"信用等级":"Grade"}</span><b>${esc(seat.credit_grade || "—")}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"规则版本":"Rule"}</span><b>${esc(staticArtifacts.creditLedger?.rule_version || "V2")}</b></div>
+      </div>
+    </div>`;
+  }).join("");
+  return `${productViewTitle(currentLang==="zh"?"信用账本":"Credit Ledger",currentLang==="zh"?"记录模型是否守规则：预测先行、投资分账、贷款克制、no-bet 合规。":"Tracks rule compliance: forecast first, split investment, loan discipline and no-bet.",actions)}
+    <div class="product-list">${rows || productEmpty(currentLang==="zh"?"信用账本还没有生成。":"No credit ledger yet.")}</div>`;
+}
+
+function renderSplitProductView(){
+  const refs=behaviorRefs();
+  const forecasts=staticArtifacts.forecastReceipts?.seats || {};
+  const investments=staticArtifacts.investmentReceipts?.seats || {};
+  const ids=Array.from(new Set([...Object.keys(forecasts),...Object.keys(investments)])).sort();
+  const actions=[
+    artifactLink(refs.forecast_receipts,currentLang==="zh"?"打开预测回执":"Open forecast receipts"),
+    artifactLink(refs.investment_receipts,currentLang==="zh"?"打开投资回执":"Open investment receipts"),
+  ].join("");
+  const rows=ids.map(id=>{
+    const forecastRows=Array.isArray(forecasts[id]?.forecasts)?forecasts[id].forecasts:[];
+    const investmentRows=Array.isArray(investments[id]?.investments)?investments[id].investments:[];
+    const primary=investmentRows.find(row=>row.action==="bet") || investmentRows[0] || {};
+    const noBetCount=investmentRows.filter(row=>row.action==="no_bet").length;
+    const stake=investmentRows.reduce((sum,row)=>sum+Number(row.stake_gp || 0),0);
+    const loan=investmentRows.reduce((sum,row)=>sum+Number(row.loan_used_gp || 0),0);
+    return `<div class="product-row">
+      <div class="product-row-head"><b>${esc(id)}</b><span>${investmentRows.filter(row=>row.action==="bet").length} bet · ${noBetCount} no-bet</span></div>
+      <p>${esc(primary.why_bet_or_no_bet || forecasts[id]?.self_review?.strategy_change_this_round || (currentLang==="zh"?"已完成预测/投资分账。":"Forecast and investment are separated."))}</p>
+      <div class="product-row-grid">
+        <div class="product-mini"><span>${currentLang==="zh"?"预测数":"Forecasts"}</span><b>${forecastRows.length}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"投入":"Stake"}</span><b>${pointsText(stake)}</b></div>
+        <div class="product-mini"><span>${currentLang==="zh"?"贷款使用":"Loan used"}</span><b>${pointsText(loan)}</b></div>
+      </div>
+    </div>`;
+  }).join("");
+  return `${productViewTitle(currentLang==="zh"?"预测 / 投资分账":"Forecast / Investment Split",currentLang==="zh"?"先给概率和信息缺口，再决定下注或 no-bet，避免把预测和下注混成一句话。":"Probability and information gap first, then bet/no-bet decision.",actions)}
+    <div class="product-list">${rows || productEmpty(currentLang==="zh"?"分账回执还没有生成。":"No split receipts yet.")}</div>`;
+}
+
+function renderGodReportProductView(){
+  const refs=behaviorRefs();
+  const report=staticArtifacts.godReportV2 || {};
+  const cards=Array.isArray(report.seat_cards)?report.seat_cards:[];
+  const actions=[
+    artifactLink(refs.god_report_v2_md,currentLang==="zh"?"打开 Markdown 日报":"Open markdown report"),
+    artifactLink(refs.god_report_v2_json,currentLang==="zh"?"打开结构化日报":"Open JSON report"),
+  ].join("");
+  const rows=cards.map(card=>`<div class="product-row">
+    <div class="product-row-head"><b>${esc(card.seat_id || "—")}</b><span>${esc(card.credit_grade || "—")} · ${pointsText(card.net_worth_gp || 0)}</span></div>
+    <p>${currentLang==="zh"?`本轮 ${Number(card.forecast_count || 0)} 条预测、${Number(card.bet_count || 0)} 次下注、${Number(card.no_bet_count || 0)} 次 no-bet；投入 ${Number(card.stake_gp || 0).toLocaleString()} GP，贷款 ${Number(card.loan_used_gp || 0).toLocaleString()} GP。`:`${Number(card.forecast_count || 0)} forecasts, ${Number(card.bet_count || 0)} bets, ${Number(card.no_bet_count || 0)} no-bets.`}</p>
+  </div>`).join("");
+  return `${productViewTitle(currentLang==="zh"?"上帝行为日报":"God Behavior Report",currentLang==="zh"?"第三方视角点评本轮模型操作、纪律、风险和可疑点。":"Third-party commentary on actions, discipline and risk.",actions)}
+    <div class="product-row-grid" style="margin-bottom:12px">
+      <div class="product-mini"><span>${currentLang==="zh"?"席位":"Seats"}</span><b>${Number(report.seat_count || cards.length || 0)}</b></div>
+      <div class="product-mini"><span>${currentLang==="zh"?"事件":"Events"}</span><b>${Number(report.event_count || 0).toLocaleString()}</b></div>
+      <div class="product-mini"><span>bet / no-bet</span><b>${Number(report.action_counts?.bet || 0)} / ${Number(report.action_counts?.no_bet || 0)}</b></div>
+    </div>
+    <div class="product-list">${rows || productEmpty(currentLang==="zh"?"上帝日报还没有生成。":"No god report yet.")}</div>`;
+}
+
+function renderDataCenterView(){
+  if(activeDataCenterView==="credit")return renderCreditProductView();
+  if(activeDataCenterView==="split")return renderSplitProductView();
+  if(activeDataCenterView==="god")return renderGodReportProductView();
+  return renderJournalProductView();
+}
+
+function renderDataCenter(){
+  const el=document.getElementById('dataCenter');
+  if(!el)return;
+  const summary=staticArtifacts.behaviorSummary || {};
+  const refs=behaviorRefs();
+  const counts=summary.counts || {};
+  const rule=summary.rule_version || "PRED_INVEST_CREDIT_SURVIVE_V2";
+  const run=summary.run_id || displayRoundId();
+  const date=summary.date || staticDateIso() || activeDate || "—";
+  const entries=[
+    {id:"journal",title:currentLang==="zh"?"行为日志":"Seat Journal",desc:currentLang==="zh"?"每个模型的连续思考、复盘、资金状态":"Continuous thinking, reflection and account state",status:`${Number(counts.seat_journal_count || Object.keys(staticArtifacts.seatJournals || {}).length || 0)} ${currentLang==="zh"?"席":"seats"}`},
+    {id:"credit",title:currentLang==="zh"?"信用账本":"Credit Ledger",desc:currentLang==="zh"?"信用分、扣分原因、重整风险":"Credit score, penalties and recovery risk",status:staticArtifacts.creditLedger ? (currentLang==="zh"?"已接入":"Ready") : "—"},
+    {id:"split",title:currentLang==="zh"?"预测 / 投资分账":"Forecast / Investment",desc:currentLang==="zh"?"概率判断和下注动作分开看":"Forecasts and betting actions are separated",status:`${Number(counts.forecast_receipt_count || 0)} / ${Number(counts.investment_receipt_count || 0)}`},
+    {id:"god",title:currentLang==="zh"?"上帝行为日报":"God Report",desc:currentLang==="zh"?"第三方视角逐席点评":"Third-party per-seat commentary",status:staticArtifacts.godReportV2 ? (currentLang==="zh"?"已生成":"Generated") : "—"},
+  ];
+  const technicalAudit=`
+    <details class="product-audit">
+      <summary>${currentLang==="zh"?"系统审计状态（折叠）":"System audit state"}</summary>
+      <div class="metric-list">
+        <div class="metric-line"><span>run</span><b>${esc(run)}</b></div>
+        <div class="metric-line"><span>${currentLang==="zh"?"规则版本":"Rule"}</span><b>${esc(rule)}</b></div>
+        <div class="metric-line"><span>${currentLang==="zh"?"行为席位":"Journal seats"}</span><b>${Number(counts.seat_journal_count || 0).toLocaleString()}</b></div>
+        <div class="metric-line"><span>${currentLang==="zh"?"预测回执":"Forecast records"}</span><b>${Number(counts.forecast_receipt_count || 0).toLocaleString()}</b></div>
+        <div class="metric-line"><span>${currentLang==="zh"?"投资回执":"Investment records"}</span><b>${Number(counts.investment_receipt_count || 0).toLocaleString()}</b></div>
+        <div class="metric-line"><span>${currentLang==="zh"?"上帝日报":"God report"}</span><b>${summary.readiness?.god_report_v2_generated ? (currentLang==="zh"?"已生成":"Generated") : "—"}</b></div>
+      </div>
+      <div class="product-view-actions">
+        ${artifactLink(refs.pipeline_smoke,currentLang==="zh"?"打开 smoke 结果":"Open smoke result")}
+        ${artifactLink(refs.god_ledger,currentLang==="zh"?"打开底层日志源文件":"Open source ledger")}
+      </div>
+    </details>`;
+  el.innerHTML=`
+    <div class="product-data-shell">
+      <div class="product-data-head">
+        <h3>${esc(rule)} · ${currentLang==="zh"?"运营数据中心":"Operations Data Center"}</h3>
+        <p>${currentLang==="zh"
+          ? `这里不是调试台，只展示游戏运营要读的结果：行为日志、信用账本、预测/投资分账和上帝行为日报。内部计数收进底部审计状态。当前 ${date} · ${run}。`
+          : `This is not a debug console. It exposes only game operations surfaces: journals, credit, split receipts and god report. Internal counters are folded into audit status. ${date} · ${run}.`}</p>
+      </div>
+      <div class="product-entry-grid">
+        ${entries.map(entry=>`<button type="button" class="product-entry-card ${activeDataCenterView===entry.id?'active':''}" onclick="setDataCenterView('${entry.id}')">
+          <b>${esc(entry.title)}</b>
+          <span>${esc(entry.desc)}</span>
+          <small>${esc(entry.status)}</small>
+        </button>`).join("")}
+      </div>
+      <div class="product-view-panel">${renderDataCenterView()}</div>
+      ${technicalAudit}
+    </div>
+  `;
+}
+
+function openDataCenter(){
+  closeDetail();
+  renderDataCenter();
+  applyI18n();
+  document.getElementById('dataCenterOverlay')?.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeDataCenter(){
+  document.getElementById('dataCenterOverlay')?.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ==================================================================
+   DATE SWITCHING
+   ================================================================== */
+async function switchDate(key){
+  closeDetail();
+  closeDataCenter();
+  if(key===activeDate && !isRefreshing)return;
+  const seq=++refreshSeq;
+  activeDate=key;
+  isRefreshing=true;
+  renderLoadingState();
+  const minLoadingDelay=new Promise(resolve=>setTimeout(resolve,220));
+  try{
+    const [matchResult,poolResult] = await Promise.all([apiGetMatches(key), fetchPoolSummary(key), minLoadingDelay]);
+    if(seq!==refreshSeq)return;
+    currentMatches = enforceDateSignature(matchResult.matches,key);
+    runtimeRaw = poolResult.raw;
+    poolSummary = poolResult.summary;
+    lastRefreshFailed=false;
+  }catch(_err){
+    await minLoadingDelay;
+    if(seq!==refreshSeq)return;
+    currentMatches = [];
+    runtimeRaw = null;
+    poolSummary = {total_pool:0,net_pl:"—",loan_seats:0,verified_ratio:"0/12",model_count:12};
+    lastRefreshFailed=true;
+  }finally{
+    if(seq===refreshSeq){
+      isRefreshing=false;
+      renderAll();
+    }
+  }
+}
+
+/* ==================================================================
+   LANGUAGE SWITCHING
+   ================================================================== */
+function toggleLang(){
+  const detailOpen=document.getElementById('detailOverlay')?.classList.contains('open');
+  const dataCenterOpen=document.getElementById('dataCenterOverlay')?.classList.contains('open');
+  const detailId=activeDetailId;
+  currentLang=currentLang==='zh'?'en':'zh';
+  renderAll();
+  if(detailOpen && detailId)openDetail(detailId);
+  if(dataCenterOpen)openDataCenter();
+}
+
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.dataset.i18n;
+    if(i18n[currentLang][k])el.textContent=i18n[currentLang][k];
+  });
+  document.getElementById('langToggle').textContent=currentLang==='zh'?'EN':'中';
+}
+
+/* ==================================================================
+   DETAIL LAYER
+   ================================================================== */
+function openDetail(matchId){
+  const m=currentMatches.find(x=>x.id===matchId);
+  if(!m)return;
+  activeDetailId=matchId;
+  const runtimeMatchId=m.match_id || m.id || matchId;
+  const mv=getModelViews(runtimeMatchId,m);
+  const overlay=document.getElementById('detailOverlay');
+  const panel=document.getElementById('detailPanel');
+  const hName=localizedTeam(m,"home");
+  const aName=localizedTeam(m,"away");
+  const detailMarket = formatWdlMarket(m.odds);
+  const summary=genericMatchSummary(m,hName,aName,detailMarket);
+  const scoreHTML=m.score?`<span class="detail-hero-score">${m.score}</span>`:`<span class="detail-hero-vs">VS</span>`;
+  const badgeTxt={active:t('activeLabel'),pending:t('pendingLabel'),timeout:t('timeoutLabel')};
+  const strategies=currentLang==='zh'?["高赔冷门","串关型","串关型","冷门偏爱","冷门偏爱","冷门偏爱","让球型","保守稳扎","保守稳扎","价值狩猎","超时","超时"]:["Scout","Parlay","Parlay","Scout","Scout","Scout","Handicap","Conservative","Conservative","Value","Timeout","Timeout"];
+  const allocatedRows = mv.models.filter(r=>Number(r.points)>0).length;
+  const marketFallback = currentLang==='zh'
+    ? `胜平负市场参考暂缺；下方保留 ${allocatedRows} 条模型分配记录，包含盘口、line 与 odds。`
+    : `W/D/L market reference is pending; ${allocatedRows} allocation records below keep market, line, and odds.`;
+
+  panel.innerHTML=`
+    <button class="detail-close" onclick="closeDetail()">${t('detailClose')}</button>
+    <div class="detail-hero">
+      <div class="detail-hero-team"><span class="detail-hero-flag">${m.hf}</span><span class="detail-hero-team-name">${hName}</span></div>
+      ${scoreHTML}
+      <div class="detail-hero-team"><span class="detail-hero-flag">${m.af}</span><span class="detail-hero-team-name">${aName}</span></div>
+    </div>
+    ${summary?`<div class="section-head"><span class="section-head-title">${t('detailSummary')}</span></div><div class="detail-summary">${summary}</div>`:''}
+    <div class="section-head"><span class="section-head-title">${t('detailOdds')}</span></div>
+    ${detailMarket?`<div class="detail-odds-grid">
+      <div class="detail-odd-cell"><div class="detail-odd-val">${detailMarket.h}</div><div class="detail-odd-lbl">${t('oddsW')} · ${hName}</div></div>
+      <div class="detail-odd-cell"><div class="detail-odd-val">${detailMarket.d}</div><div class="detail-odd-lbl">${t('oddsD')}</div></div>
+      <div class="detail-odd-cell"><div class="detail-odd-val">${detailMarket.a}</div><div class="detail-odd-lbl">${t('oddsL')} · ${aName}</div></div>
+    </div><div class="detail-summary">${oddsMarketDetails(m)}</div>`:`<div class="detail-summary">${marketFallback}<br>${oddsMarketDetails(m)}</div>`}
+    <div class="section-head">
+      <span class="section-head-title">${t('detailModels')} · ${mv.models.length} ${currentLang==='zh'?'条记录':'records'}</span>
+      <span class="section-head-meta">${t('statPool')}: ${mv.totalPoints.toLocaleString()} ${t('GP')} &nbsp; ${t('returnLabel')}: <span style="color:var(--green)">↑ ${mv.totalRet.toLocaleString()} ${t('GP')}</span></span>
+    </div>
+    <div class="model-grid">
+      ${mv.models.map((r,i)=>{
+        const retCls=r.ret>0?'up':'';
+        const hasReasoning=!!r.reasoning;
+        const bdg=badgeTxt[r.status]||badgeTxt.active;
+        const marketStr=currentLang==='zh'?r.marketZh:r.marketEn;
+        const archiveTarget=`seatArchive-${matchId}-${i}`;
+        const archiveButton=(r.roundId && r.seatId)
+          ? `<div class="model-detail-actions"><button type="button" class="archive-action" onclick="openSeatArchive('${r.roundId}','${r.seatId}','${archiveTarget}',event)">${currentLang==='zh'?'查看完整档案':'Open full archive'}</button></div><div class="seat-archive-panel" id="${archiveTarget}" hidden></div>`
+          : '';
+        return `<div class="model-row" id="mRow-${matchId}-${i}" onclick="toggleModelDetail('${matchId}',${i},${hasReasoning})">
+          <span class="model-row-pos">${r.pos}</span>
+          ${modelAvatar(r.name,'sm')}
+          <span class="model-row-name">${r.name}</span>
+          <span class="model-row-market">${marketStr}</span>
+          <span class="model-row-points">${r.points>0?r.points.toLocaleString()+' '+t('GP'):'—'}</span>
+          <span class="model-row-ret ${retCls}">${r.ret>0?'↑ '+r.ret.toLocaleString():'—'}</span>
+          <span class="model-row-status ${r.status}">${bdg}</span>
+          ${hasReasoning?`<span style="font-size:12px;color:var(--text-faint);min-width:14px;text-align:center">▾</span>`:`<span style="min-width:14px"></span>`}
+        </div>
+        ${hasReasoning?`<div class="model-detail" id="mDetail-${matchId}-${i}">
+          <div class="model-detail-section"><div class="model-detail-label">${t('thinking')}</div><div class="model-detail-text strategy-excerpt">${esc(r.reasoning.thinking)}</div></div>
+          <div class="model-detail-section"><div class="model-detail-label">${t('judgment')}</div><div class="model-detail-text">${esc(r.reasoning.judgment)}</div></div>
+          <div class="model-detail-section"><div class="model-detail-label">${t('risk')}</div><div class="model-detail-text">${esc(r.reasoning.risk)}</div></div>
+          ${archiveButton}
+        </div>`:''}`;
+      }).join('')}
+    </div>
+    <div class="section-head"><span class="section-head-title">${t('detailProfit')}</span></div>
+    <table class="profit-table">
+      <thead><tr><th>#</th><th>${t('colModel')}</th><th>P/L</th><th>ROI</th></tr></thead>
+      <tbody>${mv.profitList.map(r=>`<tr><td>${r.pos}</td><td style="font-weight:600;color:var(--text-primary)">${r.name}</td><td class="${r.plTone}">${r.pl}</td><td class="${r.roiTone}">${r.roi}</td></tr>`).join('')}</tbody>
+    </table>
+    <div class="section-head"><span class="section-head-title">${t('detailCompare')} · ${mv.models.length} ${currentLang==='zh'?'条记录':'records'}</span></div>
+    <table class="profit-table">
+      <thead><tr><th>#</th><th>${t('colModel')}</th><th>${t('GP')}</th><th>${t('colPL')}</th><th>${t('colStrategy')}</th><th>${t('colBets')}</th></tr></thead>
+      <tbody>${mv.models.map(r=>{
+      const net=(Number(r.ret)||0)-(Number(r.points)||0);
+        const hasSettlementProfit = r.settlementProfit !== null && r.settlementProfit !== undefined && Number.isFinite(Number(r.settlementProfit));
+        const displayNet=hasSettlementProfit ? Number(r.settlementProfit) : net;
+        const tone=signedTone(displayNet);
+        return `<tr><td>${r.pos}</td><td style="font-weight:600;color:var(--text-primary)">${r.name}</td><td style="font-weight:700">${r.gp.toLocaleString()}</td><td class="${tone}">${r.points>0?gpSigned(displayNet):'—'}</td><td style="color:var(--text-muted)">${strategies[r.pos-1]||'—'}</td><td>${r.points>0?1:0}</td></tr>`;
+      }).join('')}</tbody>
+    </table>
+    <div class="disclaimer">${t('disclaimer')}</div>
+  `;
+  closeDataCenter();
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function openModelFromRank(encodedName){
+  const name=decodeURIComponent(encodedName || "");
+  const match=currentMatches[0];
+  if(!match)return;
+  openDetail(match.id);
+  window.setTimeout(()=>{
+    const rows=Array.from(document.querySelectorAll('#detailPanel .model-row'));
+    const row=rows.find(item=>item.querySelector('.model-row-name')?.textContent.trim()===name);
+    if(!row){
+      document.getElementById('detailPanel')?.scrollTo({top:0,behavior:'smooth'});
+      return;
+    }
+    row.scrollIntoView({behavior:'smooth',block:'center'});
+    row.click();
+  },120);
+}
+
+function archiveValue(value,fallback='—'){
+  if(value === null || value === undefined || value === '')return fallback;
+  return String(value);
+}
+
+function renderSeatArchive(data){
+  if(!data || data.missing)return `<div class="seat-archive-title">${currentLang==='zh'?'档案暂不可用':'Archive unavailable'}</div>`;
+  const account=data.account || {};
+  const loan=data.loan_decision || {};
+  const response=data.game_response || {};
+  const responseZh=data.game_response_zh || {};
+  const bets=Array.isArray(data.bets)?data.bets:[];
+  const title=`${archiveValue(data.display_name || data.seat_id)} · ${archiveValue(data.round_id)}`;
+  const analysisText=zhDisplay(data.analysis_summary_zh,data.analysis_summary,currentLang==='zh'?'该席位已提交结构化投注策略；原始输出保留在审计档案。':'');
+  const riskText=zhDisplay(data.risk_summary_zh,data.risk_summary,currentLang==='zh'?'主要风险来自临场阵容、赔率波动和单场结果不确定性。':'');
+  const strategyParts=[
+    zhDisplay(responseZh.rank_strategy,response.rank_strategy,currentLang==='zh'?'结合当前排名和资金压力制定本轮策略。':''),
+    zhDisplay(responseZh.reward_strategy,response.reward_strategy,currentLang==='zh'?'前五名奖励和末三位惩罚会影响仓位选择。':''),
+    zhDisplay(responseZh.loan_strategy,response.loan_strategy,currentLang==='zh'?'贷款仅在预期回报覆盖利息与回撤风险时使用。':''),
+    zhDisplay(responseZh.audience_pressure_response,response.audience_pressure_response,currentLang==='zh'?'公开排名压力要求该席位给出可解释的投注判断。':''),
+  ].filter(Boolean);
+  return `<div class="seat-archive-title">${esc(title)}</div>
+    <div class="seat-archive-grid">
+      <div class="seat-archive-pill"><span>${currentLang==='zh'?'排名/余额':'Rank / balance'}</span><b>#${esc(archiveValue(account.rank))} · ${esc(archiveValue(account.balance_gp))} GP</b></div>
+      <div class="seat-archive-pill"><span>${currentLang==='zh'?'贷款':'Loan'}</span><b>${esc(archiveValue(loan.amount || account.loan_gp || 0))} GP</b></div>
+      <div class="seat-archive-pill"><span>${currentLang==='zh'?'投注数':'Bets'}</span><b>${bets.length}</b></div>
+      <div class="seat-archive-pill"><span>${currentLang==='zh'?'状态':'Status'}</span><b>${esc(archiveValue(data.status_label || data.state))}</b></div>
+    </div>
+    ${analysisText?`<div class="archive-section"><h4>${currentLang==='zh'?'总体策略':'Overall strategy'}</h4><p>${esc(analysisText)}</p></div>`:''}
+    ${strategyParts.length?`<div class="archive-section"><h4>${currentLang==='zh'?'游戏压力回应':'Game pressure response'}</h4><ul>${strategyParts.map(part=>`<li>${esc(part)}</li>`).join('')}</ul></div>`:''}
+    ${bets.length?`<div class="archive-section"><h4>${currentLang==='zh'?'本轮下注':'Round bets'}</h4><ul>${bets.map(b=>{
+      const rawPick=[b.selection,b.line].filter(v=>v!==undefined&&v!==null&&String(v)!=='').join(' ') || archiveValue(b.market,'pick');
+      const pick=currentLang==='zh' ? (b.market_zh || rawPick) : rawPick;
+      const reason=zhDisplay(b.rationale_zh,b.rationale,'');
+      return `<li class="archive-bet-item"><b>${esc(archiveValue(b.match_id))}</b> · ${esc(pick)} · ${esc(archiveValue(b.stake_gp || b.stake))} GP${reason?`<br><span>${esc(reason)}</span>`:''}</li>`;
+    }).join('')}</ul></div>`:''}
+    ${riskText?`<div class="archive-section"><h4>${currentLang==='zh'?'风险':'Risk'}</h4><p>${esc(riskText)}</p></div>`:''}
+    ${loan.repayment_plan || loan.stop_loss?`<div class="archive-section"><h4>${currentLang==='zh'?'还款/止损':'Repayment / stop-loss'}</h4><p>${esc([loan.repayment_plan,loan.stop_loss].filter(Boolean).join(' '))}</p></div>`:''}`;
+}
+
+async function openSeatArchive(roundId,seatId,targetId,event){
+  if(event)event.stopPropagation();
+  const target=document.getElementById(targetId);
+  if(!target)return;
+  target.hidden=false;
+  target.innerHTML=`<div class="seat-archive-title">${currentLang==='zh'?'正在读取完整档案…':'Loading full archive…'}</div>`;
+  const data=await fetchJsonSafe(`/api/pool/seat-archives/${encodeURIComponent(roundId)}/${encodeURIComponent(seatId)}`);
+  target.innerHTML=renderSeatArchive(data);
+  target.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeDetail(){
+  document.getElementById('detailOverlay').classList.remove('open');
+  activeDetailId=null;
+  document.body.style.overflow='';
+}
+
+function toggleModelDetail(matchId,i,hasReasoning){
+  if(!hasReasoning)return;
+  const detail=document.getElementById('mDetail-'+matchId+'-'+i);
+  if(!detail)return;
+  const row=document.getElementById('mRow-'+matchId+'-'+i);
+  const isOpen=detail.classList.contains('show');
+  document.querySelectorAll('.model-detail.show').forEach(d=>d.classList.remove('show'));
+  document.querySelectorAll('.model-row.expanded').forEach(r=>r.classList.remove('expanded'));
+  if(!isOpen){detail.classList.add('show');row.classList.add('expanded');detail.scrollIntoView({behavior:'smooth',block:'nearest'});}
+}
+
+/* ==================================================================
+   KEYBOARD
+   ================================================================== */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeDetail();
+    closeDataCenter();
+  }
+});
+
+/* ==================================================================
+   CONTACT PANEL
+   ================================================================== */
+function setContactOpen(open){
+  const panel=document.getElementById('contactPanel');
+  const button=document.getElementById('contactToggle');
+  if(!panel || !button)return;
+  panel.hidden=!open;
+  button.setAttribute('aria-expanded',String(open));
+}
+document.addEventListener('click',event=>{
+  if(!event.target.closest('#contactWrap'))setContactOpen(false);
+});
+document.getElementById('contactToggle')?.addEventListener('click',event=>{
+  event.stopPropagation();
+  const panel=document.getElementById('contactPanel');
+  setContactOpen(panel ? panel.hidden : true);
+});
+document.getElementById('copyEmailBtn')?.addEventListener('click',async event=>{
+  event.stopPropagation();
+  const hint=document.getElementById('contactHint');
+  try{
+    await navigator.clipboard.writeText(CONTACT_EMAIL);
+    if(hint)hint.textContent=t('emailCopied');
+  }catch(_err){
+    if(hint)hint.textContent=t('emailCopyFailed');
+  }
+});
+document.getElementById('copyWechatBtn')?.addEventListener('click',async event=>{
+  event.stopPropagation();
+  const hint=document.getElementById('contactHint');
+  try{
+    await navigator.clipboard.writeText(WECHAT_ID);
+    if(hint)hint.textContent=t('wechatCopied');
+  }catch(_err){
+    if(hint)hint.textContent=t('emailCopyFailed');
+  }
+});
+
+/* ==================================================================
+   BOOT
+   ================================================================== */
+init();
+</script>
+</body>
+</html>

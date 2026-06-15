@@ -1,0 +1,1416 @@
+{
+  "version": "pred_invest_current_game.v2",
+  "generated_at": "2026-06-15T16:31:16+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "verdict": "PARTIAL_NOT_READY",
+  "rules": {
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "forecast_required_for_every_match": true,
+    "investment_optional_no_bet_allowed": true,
+    "credit_controls_loan": true,
+    "settlement_repay_before_ranking": true,
+    "stake_caps_by_odds": true
+  },
+  "source_paths": {
+    "daily_sop": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
+    "shadow_rerun": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_shadow_rerun.json",
+    "quality_gate": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_quality_gate.json",
+    "strict_god_report": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json"
+  },
+  "scoreboard": {
+    "models": 12,
+    "forecast_matches": 5,
+    "matches_with_odds": 5,
+    "existing_bets": 55,
+    "existing_decisions": 55,
+    "existing_bets_source": "strict_god_report",
+    "allowed": 0,
+    "warned": 0,
+    "rejected": 0,
+    "validated_seats": 11,
+    "pending_seats": 1,
+    "models_without_bets": [
+      "grok"
+    ],
+    "original_stake_total_gp": 4170.0,
+    "rule_converted_stake_total_gp": 4170.0,
+    "bridge_valid_seats": 11,
+    "bridge_required_seats": 12,
+    "bridge_frontend_badge": "11/12 部分回收",
+    "bridge_publish_allowed": false
+  },
+  "matches": [
+    {
+      "match_id": "WC-H1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T16:00:00Z",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Spain",
+          "line": null,
+          "odds": 1.08,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "line": null,
+          "odds": 10.0,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Cape Verde",
+          "line": null,
+          "odds": 29.0,
+          "provider": null
+        }
+      ]
+    },
+    {
+      "match_id": "WC-K1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T00:00:00Z",
+      "home_team": "Portugal",
+      "away_team": "Colombia",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Portugal",
+          "line": null,
+          "odds": 1.75,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "line": null,
+          "odds": 3.6,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Colombia",
+          "line": null,
+          "odds": 4.8,
+          "provider": null
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T19:00:00Z",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.81,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.25,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.27,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.15,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.8,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.64,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.27,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.87,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.09,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.84,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Egypt",
+          "line": null,
+          "odds": 1.45,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Egypt",
+          "line": null,
+          "odds": 1.69,
+          "provider": "BetAnything"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T22:00:00Z",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.62,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.2,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.24,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.8,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.62,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.24,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.84,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.04,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.83,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Uruguay",
+          "line": null,
+          "odds": 2.33,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Uruguay",
+          "line": null,
+          "odds": 1.71,
+          "provider": "BetAnything"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-16T01:00:00Z",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 3.34,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.82,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.82,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.88,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.78,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.85,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "New Zealand",
+          "line": null,
+          "odds": 1.28,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "New Zealand",
+          "line": null,
+          "odds": 2.02,
+          "provider": "BetAnything"
+        }
+      ]
+    }
+  ],
+  "missing_data": {
+    "matches_without_odds": [],
+    "missing_models": [],
+    "sop_errors": [],
+    "sop_warnings": [
+      "sop_guard:publish_blocked_by_quality_gate:11/12",
+      "quality_gate_partial:11/12"
+    ],
+    "required_coverage": {
+      "required_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "included_required_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "missing_required_match_ids": [],
+      "source": "existing_quality_gate:2026-06-15_run-15_quality_gate.json"
+    },
+    "bridge_needs_rerun": [
+      "grok"
+    ],
+    "bridge_rerun_queue": [
+      {
+        "seat": "grok",
+        "mode": "provider_quota_blocked",
+        "prompt_mode": "wait_for_quota_reset",
+        "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+        "last_run_id": "page_salvage:grok",
+        "response_chars": 1142,
+        "issues": [
+          "provider_quota_limited"
+        ],
+        "last_errors": [
+          {
+            "run_id": "e71c1024a4d6",
+            "action": "raw_result_error",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "e71c1024a4d6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "42a97c4d0fa9",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 123
+          }
+        ]
+      }
+    ]
+  },
+  "quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "frontend_badge": "11/12 部分回收",
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  },
+  "strict_match_consensus": [
+    {
+      "match_id": "WC-H1",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 890.0,
+      "top_selection": "moneyline Spain 0",
+      "bets": [
+        {
+          "seat": "doubao",
+          "selection": "moneyline Spain 0",
+          "odds": 1.08,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "主队实力占优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "h2h Spain",
+          "odds": 1.08,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0,
+          "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "h2h Spain none",
+          "odds": 1.08,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "西班牙队实力碾压"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.08,
+          "stake_gp": 500.0,
+          "loan_used_gp": 0,
+          "reason": "西班必胜"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen"
+      ]
+    },
+    {
+      "match_id": "WC-K1",
+      "bet_count": 8,
+      "no_bet_count": 3,
+      "total_stake_gp": 1360.0,
+      "top_selection": "moneyline Portugal none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 180.0,
+          "loan_used_gp": 0,
+          "reason": "主胜有价"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 80.0,
+          "loan_used_gp": 0,
+          "reason": "主场小胜"
+        },
+        {
+          "seat": "doubao",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.75,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡队攻防稳定"
+        },
+        {
+          "seat": "gemini",
+          "selection": "h2h Draw",
+          "odds": 3.6,
+          "stake_gp": 50.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "meta",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "葡控场优势稳"
+        },
+        {
+          "seat": "qwen",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.75,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "看好主队"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "h2h Portugal none",
+          "odds": 1.75,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙队状态更佳"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.75,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡稳小胜"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "kimi"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 800.0,
+      "top_selection": "handicap Belgium -1",
+      "bets": [
+        {
+          "seat": "mimo",
+          "selection": "handicap Belgium -1",
+          "odds": 2.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "控球碾压小胜覆盖"
+        },
+        {
+          "seat": "minimax",
+          "selection": "handicap Belgium -0.75",
+          "odds": 2.27,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "让平半稳"
+        },
+        {
+          "seat": "meta",
+          "selection": "handicap Belgium -1.5",
+          "odds": 2.81,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "比军锋线占优"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Belgium -",
+          "odds": 2.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "让球防冷"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "doubao",
+        "gemini",
+        "kimi",
+        "qwen",
+        "wenxin"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "bet_count": 3,
+      "no_bet_count": 8,
+      "total_stake_gp": 600.0,
+      "top_selection": "handicap Saudi Arabia +0.5",
+      "bets": [
+        {
+          "seat": "mimo",
+          "selection": "handicap Saudi Arabia +0.5",
+          "odds": 1.62,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "防反韧性冷门覆盖"
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Uruguay 0",
+          "odds": 2.24,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "欧亚差距明显"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Saudi Arabia none",
+          "odds": 1.62,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "沙特坐拥主场优势"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "minimax",
+        "gemini",
+        "kimi",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 520.0,
+      "top_selection": "handicap Iran -1",
+      "bets": [
+        {
+          "seat": "minimax",
+          "selection": "handicap Iran -1",
+          "odds": 1.83,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "让一球主胜"
+        },
+        {
+          "seat": "meta",
+          "selection": "handicap Iran -0.5",
+          "odds": 1.83,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "伊朗防守稳健"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Iran none",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "伊朗整体实力占优"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Iran -",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "主让安全"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "doubao",
+        "gemini",
+        "kimi",
+        "qwen"
+      ]
+    }
+  ],
+  "model_summaries": [
+    {
+      "model_account": "chatgpt",
+      "display_name": "chatgpt",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 180.0,
+      "converted_stake_total_gp": 180.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal moneyline none",
+          "odds": 1.75,
+          "original_stake_gp": 180,
+          "converted_stake_gp": 180,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "deepseek",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "mimo",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 400.0,
+      "converted_stake_total_gp": 400.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "Belgium handicap -1",
+          "odds": 2.27,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "Saudi Arabia handicap +0.5",
+          "odds": 1.62,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "minimax",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 300.0,
+      "converted_stake_total_gp": 300.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal moneyline none",
+          "odds": 1.75,
+          "original_stake_gp": 80,
+          "converted_stake_gp": 80,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "Belgium handicap -0.75",
+          "odds": 2.27,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "none handicap none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "Iran handicap -1",
+          "odds": 1.83,
+          "original_stake_gp": 120,
+          "converted_stake_gp": 120,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "doubao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 600.0,
+      "converted_stake_total_gp": 600.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "Spain moneyline 0",
+          "odds": 1.08,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal moneyline 0",
+          "odds": 1.75,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "Uruguay handicap 0",
+          "odds": 2.24,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "gemini",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 50.0,
+      "converted_stake_total_gp": 50.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Draw h2h",
+          "odds": 3.6,
+          "original_stake_gp": 50,
+          "converted_stake_gp": 50,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "kimi",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 40.0,
+      "converted_stake_total_gp": 40.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "Spain h2h",
+          "odds": 1.08,
+          "original_stake_gp": 40,
+          "converted_stake_gp": 40,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "h2h",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "handicap",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "meta",
+      "display_name": "meta",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 900.0,
+      "converted_stake_total_gp": 900.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal moneyline none",
+          "odds": 1.75,
+          "original_stake_gp": 400,
+          "converted_stake_gp": 400,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "Belgium handicap -1.5",
+          "odds": 2.81,
+          "original_stake_gp": 300,
+          "converted_stake_gp": 300,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "Iran handicap -0.5",
+          "odds": 1.83,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "qwen",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 100.0,
+      "converted_stake_total_gp": 100.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal moneyline 0",
+          "odds": 1.75,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "wenxin",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 600.0,
+      "converted_stake_total_gp": 600.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "Spain h2h none",
+          "odds": 1.08,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "Portugal h2h none",
+          "odds": 1.75,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "Saudi Arabia handicap none",
+          "odds": 1.62,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "Iran handicap none",
+          "odds": 1.83,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "yuanbao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 1000.0,
+      "converted_stake_total_gp": 1000.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-H1",
+          "pick": "home moneyline none",
+          "odds": 1.08,
+          "original_stake_gp": 500,
+          "converted_stake_gp": 500,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-K1",
+          "pick": "home moneyline none",
+          "odds": 1.75,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "pick": "Belgium handicap -",
+          "odds": 2.27,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "pick": "Iran handicap -",
+          "odds": 1.83,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "audit_rows": [],
+  "caveat": "This bundle uses strict AI Judge output as the current decision source; it remains partial until the hard gate reaches 12/12."
+}

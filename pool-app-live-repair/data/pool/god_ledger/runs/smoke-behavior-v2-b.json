@@ -1,0 +1,1176 @@
+{
+  "run_id": "smoke-behavior-v2-b",
+  "generated_at": "2026-06-15T20:26:01+00:00",
+  "event_count": 129,
+  "seats": [
+    "alpha",
+    "beta",
+    "gamma"
+  ],
+  "event_counts": {
+    "seat_receipt_validated": 129
+  },
+  "events": [
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-14T21:36:28+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-14T21:36:28+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-14T21:36:28+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-14T21:37:34+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-14T21:37:34+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-14T21:37:34+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-14T21:38:16+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-14T21:38:16+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-14T21:38:16+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-14T21:39:40+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-14T21:39:40+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-14T21:39:40+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-14T21:49:58+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-14T21:49:58+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-14T21:49:58+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T16:52:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T16:52:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T16:52:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:16:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:16:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:16:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:28:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:28:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:28:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:36:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:36:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:36:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:39:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:39:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:39:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:53:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:53:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:53:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T17:55:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T17:55:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T17:55:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:07:13+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:07:13+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:07:13+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:11:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:11:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:11:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:18:31+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:18:31+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:18:31+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:36:11+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:36:11+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:36:11+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:41:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:41:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:41:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:47:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:47:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:47:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:57:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:57:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:57:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:57:30+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:57:30+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:57:30+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:58:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:58:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:58:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:58:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:58:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:58:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T18:59:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T18:59:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T18:59:08+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:05:44+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:05:44+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:05:44+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:06:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:06:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:06:46+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:09:06+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:09:06+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:09:06+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:10:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:10:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:10:48+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:15:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:15:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:15:49+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:28:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:28:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:28:26+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:30:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:30:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:30:23+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:37:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:37:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:37:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:38:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:38:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:38:20+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:41:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:41:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:41:15+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:42:07+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:42:07+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:42:07+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:54:01+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:54:01+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:54:01+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:55:10+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:55:10+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:55:10+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:55:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:55:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:55:39+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T19:56:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T19:56:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T19:56:03+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T20:05:04+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T20:05:04+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T20:05:04+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T20:07:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T20:07:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T20:07:52+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T20:12:35+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T20:12:35+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T20:12:35+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T20:17:18+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T20:17:18+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T20:17:18+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-15T20:26:01+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-15T20:26:01+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-15T20:26:01+00:00"
+    }
+  ]
+}

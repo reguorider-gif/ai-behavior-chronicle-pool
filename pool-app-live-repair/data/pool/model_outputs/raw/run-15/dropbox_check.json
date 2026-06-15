@@ -1,0 +1,20 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "generated_at": "2026-06-15T16:24:13.958621+00:00",
+  "round_id": "run-15",
+  "source": "ai_judge_web_bridge_validity",
+  "status": "ready_for_ingest",
+  "outputs_expected": 12,
+  "outputs_found": 0,
+  "outputs_missing": 0,
+  "found_files": [],
+  "missing_files": [],
+  "empty_files": [],
+  "invalid_names": [],
+  "mismatched_files": [],
+  "blocked": [],
+  "required_blocked": [],
+  "optional_blocked": [],
+  "message": "AI Judge exported 0/12 required model outputs. Missing files are required bridge-invalid seats; optional quota-limited seats are recorded but not scheduled for rerun.",
+  "next_action": "ingest"
+}

@@ -1,0 +1,612 @@
+{
+  "version": "observer_ledger.v1",
+  "generated_at": "2026-06-14T23:41:54+00:00",
+  "source_base_url": "https://pool-app-one.vercel.app",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "phase": "pre",
+  "settlement_status": "",
+  "headline": "2026-06-14 run-14 赛前战报：11 席下注计划已入账，等待赛果结算",
+  "lead": "本轮 11 席产生结构化策略，预计投入 2,590 GP，贷款暴露 0 GP。该报告只记录赛前操作，不写赛果。",
+  "scoreboard": {
+    "models": 11,
+    "accepted_bets": 18,
+    "settled_bets": 0,
+    "winning_bets": 0,
+    "losing_bets": 0,
+    "total_stake_gp": 2590.0,
+    "total_profit_gp": 0.0,
+    "total_loan_gp": 0.0,
+    "roi": 0.0
+  },
+  "observer_summary": {
+    "data_analyst": "数据层面，本轮有效结构化投注=18，结算 ROI 0.0%。",
+    "football_expert": "比赛层面，本报告处于赛前态，只记录投注集中方向；主要覆盖 Germany vs Curaçao、Ivory Coast vs Ecuador、Netherlands vs Japan、Sweden vs Tunisia。",
+    "pro_bettor": "资金层面，贷款暴露 0 GP；这一轮需要重点观察高杠杆席位是否能用胜率覆盖利息和回撤。"
+  },
+  "best_operation": {
+    "model_account": "doubao",
+    "display_name": "doubao",
+    "rank": null,
+    "balance_gp": 0.0,
+    "loan_gp": 0.0,
+    "bet_count": 3,
+    "decision_count": 4,
+    "stake_gp": 1100.0,
+    "payout_gp": 0.0,
+    "profit_gp": 0.0,
+    "roi": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "pushes": 0,
+    "grade": "待赛",
+    "risk_label": "中等仓位",
+    "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+    "main_match": "Germany vs Curaçao",
+    "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+    "one_line": "doubao：待赛；doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+    "perspectives": {
+      "data_analyst": "doubao 本轮给出 4 条决策，其中下注 3 笔，计划投入 1,100 GP，潜在利润约 657 GP。",
+      "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+      "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+    },
+    "strategy_excerpt": "doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+    "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+    "source_excerpt": "优先低风险高胜率方向，德国让 3.5、瑞典不败、厄瓜多尔受让为主，荷兰日本谨慎，哥伦比亚不 bet",
+    "source_risk_excerpt": "聚焦高胜率低波动场次，避开强强对话与未知状态赛事，资金集中于德国、瑞典、厄瓜多尔，控制单场仓位不超 30%"
+  },
+  "worst_operation": {
+    "model_account": "doubao",
+    "display_name": "doubao",
+    "rank": null,
+    "balance_gp": 0.0,
+    "loan_gp": 0.0,
+    "bet_count": 3,
+    "decision_count": 4,
+    "stake_gp": 1100.0,
+    "payout_gp": 0.0,
+    "profit_gp": 0.0,
+    "roi": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "pushes": 0,
+    "grade": "待赛",
+    "risk_label": "中等仓位",
+    "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+    "main_match": "Germany vs Curaçao",
+    "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+    "one_line": "doubao：待赛；doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+    "perspectives": {
+      "data_analyst": "doubao 本轮给出 4 条决策，其中下注 3 笔，计划投入 1,100 GP，潜在利润约 657 GP。",
+      "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+      "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+    },
+    "strategy_excerpt": "doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+    "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+    "source_excerpt": "优先低风险高胜率方向，德国让 3.5、瑞典不败、厄瓜多尔受让为主，荷兰日本谨慎，哥伦比亚不 bet",
+    "source_risk_excerpt": "聚焦高胜率低波动场次，避开强强对话与未知状态赛事，资金集中于德国、瑞典、厄瓜多尔，控制单场仓位不超 30%"
+  },
+  "match_notes": [],
+  "seat_commentaries": [
+    {
+      "model_account": "doubao",
+      "display_name": "doubao",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 3,
+      "decision_count": 4,
+      "stake_gp": 1100.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+      "one_line": "doubao：待赛；doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "doubao 本轮给出 4 条决策，其中下注 3 笔，计划投入 1,100 GP，潜在利润约 657 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "doubao本轮4条决策，其中下注3笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "优先低风险高胜率方向，德国让 3.5、瑞典不败、厄瓜多尔受让为主，荷兰日本谨慎，哥伦比亚不 bet",
+      "source_risk_excerpt": "聚焦高胜率低波动场次，避开强强对话与未知状态赛事，资金集中于德国、瑞典、厄瓜多尔，控制单场仓位不超 30%"
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "kimi",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 4,
+      "decision_count": 4,
+      "stake_gp": 550.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "分散高频",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+      "one_line": "kimi：待赛；kimi本轮4条决策，其中下注4笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于分散高频。",
+      "perspectives": {
+        "data_analyst": "kimi 本轮给出 4 条决策，其中下注 4 笔，计划投入 550 GP，潜在利润约 528.5 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：分散高频；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "kimi本轮4条决策，其中下注4笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于分散高频。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "分散押注4场保留450GP流动性，重点配置日本受让与瑞典让球，回避葡萄牙深盘并小注厄瓜多尔独赢博取高赔。",
+      "source_risk_excerpt": "总投注550GP保留450GP流动性；德国对库拉索存在4球以上大胜风险；日本对荷兰存在完败可能；厄瓜多尔对科特迪瓦高赔独赢胜率不稳；瑞典对突尼斯可能被逼平；葡萄牙对哥伦比亚虽选择观望但存在错失低赔稳胆机会。"
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "gemini",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 2,
+      "decision_count": 4,
+      "stake_gp": 450.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Japan 让球 +0.5 @ 1.85",
+      "one_line": "gemini：待赛；gemini本轮4条决策，其中下注2笔，主线是Japan 让球 +0.5 @ 1.85，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "gemini 本轮给出 4 条决策，其中下注 2 笔，计划投入 450 GP，潜在利润约 390 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "gemini本轮4条决策，其中下注2笔，主线是Japan 让球 +0.5 @ 1.85，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "Defend rank 2 by utilizing a conservative bankroll management strategy, finding value in underdogs covering the spread without taking on new debt.",
+      "source_risk_excerpt": "Maintained total exposure at 650.0 GP, preserving 1200.0 GP in liquid balance. Relying on current net profit to absorb any potential drawdowns without accruing new loan interest."
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "deepseek",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 1,
+      "decision_count": 4,
+      "stake_gp": 200.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "main_match": "Netherlands vs Japan",
+      "primary_position": "Japan 让球 +0.5 @ 1.89",
+      "one_line": "deepseek：待赛；deepseek本轮4条决策，其中下注1笔，主线是Japan 让球 +0.5 @ 1.89，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "deepseek 本轮给出 4 条决策，其中下注 1 笔，计划投入 200 GP，潜在利润约 178 GP。",
+        "football_expert": "足球面看，主要押注 Netherlands vs Japan；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "deepseek本轮4条决策，其中下注1笔，主线是Japan 让球 +0.5 @ 1.89，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Netherlands vs Japan结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "榜首守成：仅在高置信度盘口上以小额自有资金捕捉结构化边缘，最大化信息透明度以降低无谓风险。",
+      "source_risk_excerpt": "本席位资产结构：1135GP自有现金 + 1000GP未偿贷款，已进入盈利跑道，不需要任何非对称赌博来翻盘。；唯一的下注（日本+0.5）是结构化正EV边缘，但优势极薄（约2%），主要目的是通过真实下注来校准模型对『技术型弱队受让半球』这一类的定价能力。；对德国、瑞典的两场深盘选择了no_bet。即使主观认为德国大概率赢球，但库拉索+3.5的盘口包含大量未知…"
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "minimax",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 2,
+      "decision_count": 4,
+      "stake_gp": 100.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Japan 让球 +0 @ 2.87",
+      "one_line": "minimax：待赛；minimax本轮4条决策，其中下注2笔，主线是Japan 让球 +0 @ 2.87，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "minimax 本轮给出 4 条决策，其中下注 2 笔，计划投入 100 GP，潜在利润约 127.6 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "minimax本轮4条决策，其中下注2笔，主线是Japan 让球 +0 @ 2.87，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "Selective value-hunting on mispriced Asian/European handicaps; small conservative stakes to preserve bankroll while targeting 2-3 spots with positive expected value, skipping toss…",
+      "source_risk_excerpt": "Total staked 130 GP (~13% of bankroll). Three no_bet entries protect capital on uncertain spots. Late-stage Colombia-Portugal match carries extra lineup/news risk — stake kept sma…"
+    },
+    {
+      "model_account": "chatgpt",
+      "display_name": "chatgpt",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 1,
+      "decision_count": 4,
+      "stake_gp": 80.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+      "one_line": "chatgpt：待赛；chatgpt本轮4条决策，其中下注1笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "chatgpt 本轮给出 4 条决策，其中下注 1 笔，计划投入 80 GP，潜在利润约 66.4 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "chatgpt本轮4条决策，其中下注1笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "榜首资金1530GP且无贷款，采取低杠杆保排名策略：只押盘口保护较强或赔率明显偏高项，其余低信息场次保守弃权。",
+      "source_risk_excerpt": "仅研究游戏，不构成真实投注建议。；全部预测基于庄家给定盘口与一般强弱假设，未使用伪造信源。；主风险是赛程真实性、首发、伤停、临场赔率与盘口方向变化。；单场最大亏损80GP，占本金约5.2%，符合榜首防守。"
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "wenxin",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 4,
+      "decision_count": 4,
+      "stake_gp": 60.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "分散高频",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Curaçao 让球 +3.5 @ 1.83",
+      "one_line": "wenxin：待赛；wenxin本轮4条决策，其中下注4笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于分散高频。",
+      "perspectives": {
+        "data_analyst": "wenxin 本轮给出 4 条决策，其中下注 4 笔，计划投入 60 GP，潜在利润约 38.4 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：分散高频；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "wenxin本轮4条决策，其中下注4笔，主线是Curaçao 让球 +3.5 @ 1.83，整体属于分散高频。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "优先依托实力差距判断，低信息赛事选择不投注",
+      "source_risk_excerpt": "本内容仅用于世界杯AI预测池研究游戏，不构成任何真实投注建议"
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "yuanbao",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 1,
+      "decision_count": 4,
+      "stake_gp": 50.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "中等仓位",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "Japan 让球 +0.5 @ 1.85",
+      "one_line": "yuanbao：待赛；yuanbao本轮4条决策，其中下注1笔，主线是Japan 让球 +0.5 @ 1.85，整体属于中等仓位。",
+      "perspectives": {
+        "data_analyst": "yuanbao 本轮给出 4 条决策，其中下注 1 笔，计划投入 50 GP，潜在利润约 42.5 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：中等仓位；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "yuanbao本轮4条决策，其中下注1笔，主线是Japan 让球 +0.5 @ 1.85，整体属于中等仓位。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "以谨慎为主，优先在盘口接近公平值的比赛中下注，控制风险，避免进一步陷入债务。",
+      "source_risk_excerpt": "当前债务344GP，排名垫底，风险极高。仅选择有微弱正EV或信息相对充分的比赛下注，避免盲目追高赔率。若连续失利将考虑暂停投注。"
+    },
+    {
+      "model_account": "meta",
+      "display_name": "meta",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 0,
+      "decision_count": 4,
+      "stake_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "零注观望",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "全场观望",
+      "one_line": "meta：待赛；meta本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "perspectives": {
+        "data_analyst": "meta 本轮给出 4 条决策，其中下注 0 笔，计划投入 0 GP，潜在利润约 0 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：零注观望；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "meta本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "保守控仓，五场信息冲突或低置信度，全部选择观望以保本并优先还贷。",
+      "source_risk_excerpt": "五场均为世界杯小组赛，前四场临近或已开赛且德国赛果报道冲突；整体模型置信度低，信用B不宜冒险；空仓可 问问 Meta AI... 思考"
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "mimo",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 0,
+      "decision_count": 4,
+      "stake_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "零注观望",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "全场观望",
+      "one_line": "mimo：待赛；mimo本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "perspectives": {
+        "data_analyst": "mimo 本轮给出 4 条决策，其中下注 0 笔，计划投入 0 GP，潜在利润约 0 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：零注观望；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "mimo本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "Focus on value bets in well-analyzed matches with clear edges; use moderate stakes to manage risk while aiming for top-five finish.",
+      "source_risk_excerpt": "World Cup opening matches often produce upsets; loan interest could erode returns if bets fail. Focused on value in analyzed matches to mitigate risk."
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "qwen",
+      "rank": null,
+      "balance_gp": 0.0,
+      "loan_gp": 0.0,
+      "bet_count": 0,
+      "decision_count": 4,
+      "stake_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": 0.0,
+      "roi": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "pushes": 0,
+      "grade": "待赛",
+      "risk_label": "零注观望",
+      "main_match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "main_match": "Germany vs Curaçao",
+      "primary_position": "全场观望",
+      "one_line": "qwen：待赛；qwen本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "perspectives": {
+        "data_analyst": "qwen 本轮给出 4 条决策，其中下注 0 笔，计划投入 0 GP，潜在利润约 0 GP。",
+        "football_expert": "足球面看，主要押注 Germany vs Curaçao；尚未结算，暂不写胜负判断。",
+        "pro_bettor": "职业下注视角：零注观望；贷款 0 GP，需在结算后先还债再计排名。"
+      },
+      "strategy_excerpt": "qwen本轮4条决策，其中下注0笔，主线是全场观望，整体属于零注观望。",
+      "risk_excerpt": "主要风险是Germany vs Curaçao结果偏离共识，贷款0 GP会放大赛后净值压力。",
+      "source_excerpt": "信用D级且高负债，执行极度保守的零注生存策略，回避所有边缘模糊的盘口，优先保全剩余1500本金。",
+      "source_risk_excerpt": "当前净收益-3655，贷款5155，任何激进投注都可能导致信用破产并触发末三罚款机制，生存是唯一优先级。"
+    }
+  ],
+  "data_quality": {
+    "archive_source": "local_strict_god_report_fallback",
+    "quality_gate_status": "PARTIAL_NOT_READY",
+    "quality_gate_valid_count": 11,
+    "quality_gate_required_count": 12,
+    "quality_gate_needs_rerun": [
+      "grok"
+    ],
+    "daily_report_status": null,
+    "model_status_counts": null,
+    "data_gaps": [],
+    "source_files": []
+  },
+  "comic_story": {
+    "version": "comic_story.v1",
+    "style": "comic_commentary",
+    "title": "模型们学会不赌了",
+    "subtitle": "11/12 有效 · 18 笔下注 · 26 次观望 · 总投入 2,590 GP",
+    "scenes": [
+      {
+        "key": "cover",
+        "eyebrow": "AI PREDICTION POOL · run-14 · 2026-06-14",
+        "title": "模型们学会不赌了",
+        "subtitle": "11/12 有效 · 18 笔下注 · 26 次观望 · 总投入 2,590 GP",
+        "pills": [
+          "11/12 有效",
+          "18 笔下注",
+          "26 次观望",
+          "2,590 GP"
+        ],
+        "commentary": "本轮 11 席产生结构化策略，预计投入 2,590 GP，贷款暴露 0 GP。该报告只记录赛前操作，不写赛果。"
+      },
+      {
+        "key": "evolution",
+        "eyebrow": "SCENE · THE EVOLUTION",
+        "title": "从重仓冲榜到选择性下注",
+        "tone": "green",
+        "stats": [
+          {
+            "label": "run-13",
+            "value": "48",
+            "desc": "8,119.7 GP · 贷款 10,126.5 GP"
+          },
+          {
+            "label": "run-14",
+            "value": "18",
+            "desc": "2,590 GP · 26 次观望"
+          }
+        ],
+        "commentary": "本轮最重要的变化不是押了谁，而是模型开始把“不下注”当成策略。结构化下注 18 笔，观望 26 次，说明决策从“必须出手”变成了“只在有边缘时出手”。"
+      },
+      {
+        "key": "zero_bet_club",
+        "eyebrow": "SCENE · THE ZERO BET CLUB",
+        "title": "3 个模型，全场零注",
+        "tone": "red",
+        "cards": [
+          {
+            "name": "meta",
+            "role": "零注观望 · 4 条决策",
+            "quote": "保守控仓，五场信息冲突或低置信度，全部选择观望以保本并优先还贷。",
+            "metric": "0 GP"
+          },
+          {
+            "name": "mimo",
+            "role": "零注观望 · 4 条决策",
+            "quote": "Focus on value bets in well-analyzed matches with clear edges; use moderate stakes to manage risk while aiming for top-five fin…",
+            "metric": "0 GP"
+          },
+          {
+            "name": "qwen",
+            "role": "零注观望 · 4 条决策",
+            "quote": "信用D级且高负债，执行极度保守的零注生存策略，回避所有边缘模糊的盘口，优先保全剩余1500本金。",
+            "metric": "0 GP"
+          }
+        ],
+        "commentary": "零注不是缺席，而是一个可被记录的行动。只要席位给出结构化 no_bet，它就代表模型认为当前盘口没有足够边缘，或资金状态不允许继续冒险。"
+      },
+      {
+        "key": "selective_bettors",
+        "eyebrow": "SCENE · THE SELECTIVE BETTORS",
+        "title": "选择性下注：谁在承担主要风险",
+        "tone": "gold",
+        "cards": [
+          {
+            "name": "doubao",
+            "role": "中等仓位 · 3 条决策",
+            "quote": "优先低风险高胜率方向，德国让 3.5、瑞典不败、厄瓜多尔受让为主，荷兰日本谨慎，哥伦比亚不 bet",
+            "metric": "1,100 GP"
+          },
+          {
+            "name": "kimi",
+            "role": "分散高频 · 4 条决策",
+            "quote": "分散押注4场保留450GP流动性，重点配置日本受让与瑞典让球，回避葡萄牙深盘并小注厄瓜多尔独赢博取高赔。",
+            "metric": "550 GP"
+          },
+          {
+            "name": "gemini",
+            "role": "中等仓位 · 2 条决策",
+            "quote": "Defend rank 2 by utilizing a conservative bankroll management strategy, finding value in underdogs covering the spread without…",
+            "metric": "450 GP"
+          },
+          {
+            "name": "deepseek",
+            "role": "中等仓位 · 1 条决策",
+            "quote": "榜首守成：仅在高置信度盘口上以小额自有资金捕捉结构化边缘，最大化信息透明度以降低无谓风险。",
+            "metric": "200 GP"
+          },
+          {
+            "name": "minimax",
+            "role": "中等仓位 · 2 条决策",
+            "quote": "Selective value-hunting on mispriced Asian/European handicaps; small conservative stakes to preserve bankroll while targeting 2…",
+            "metric": "100 GP"
+          },
+          {
+            "name": "chatgpt",
+            "role": "中等仓位 · 1 条决策",
+            "quote": "榜首资金1530GP且无贷款，采取低杠杆保排名策略：只押盘口保护较强或赔率明显偏高项，其余低信息场次保守弃权。",
+            "metric": "80 GP"
+          }
+        ],
+        "commentary": "投入最多的席位不一定最聪明，但一定暴露最多。赛后复盘时，这些席位会优先被检查：他们是在抓正 EV，还是只是在用仓位制造存在感。"
+      },
+      {
+        "key": "focus_match",
+        "eyebrow": "SCENE · THE FOCUS MATCH",
+        "title": "本轮焦点：Netherlands vs Japan",
+        "tone": "blue",
+        "stats": [
+          {
+            "label": "下注席位",
+            "value": "6",
+            "desc": "本轮最集中"
+          },
+          {
+            "label": "总投入",
+            "value": "755 GP",
+            "desc": "集中暴露"
+          }
+        ],
+        "bubble_title": "6 个模型集中在 Japan 让球 +0.5 @1.85",
+        "bullets": [
+          "kimi：Japan 让球 +0.5 @1.85 · 250 GP",
+          "deepseek：Japan 让球 +0.5 @1.89 · 200 GP",
+          "gemini：Japan 让球 +0.5 @1.85 · 200 GP",
+          "yuanbao：Japan 让球 +0.5 @1.85 · 50 GP",
+          "minimax：Japan 让球 +0 @2.87 · 40 GP",
+          "wenxin：Japan 让球 +0.5 @1.85 · 15 GP"
+        ],
+        "commentary": "Netherlands vs Japan 是本轮最像主战场的一场：6 席下注，资金合计 755 GP。这不是比分预测，而是盘口选择的集体暴露点；结算后最能检验模型是否真的读懂盘口。"
+      },
+      {
+        "key": "gap_watch",
+        "eyebrow": "SCENE · THE GAP",
+        "title": "场边还有空椅子",
+        "tone": "red",
+        "bullets": [
+          "待补席位：grok",
+          "数据缺口：0 项",
+          "硬门禁：不到 12/12，不允许显示为全量完成报告。"
+        ],
+        "commentary": "这部分必须保留在解说里：它不是剧情装饰，而是产品可信度。Grok 没有通过门禁时，战报只能叫“部分上帝视角”，不能假装全员到齐。"
+      },
+      {
+        "key": "summary",
+        "eyebrow": "COMMENTARY · 解说席总结",
+        "title": "本轮最值得盯的五件事",
+        "tone": "green",
+        "bullets": [
+          "下注从数量转向质量：18 笔下注，26 次观望。",
+          "总资金暴露为 2,590 GP，贷款暴露 0 GP。",
+          "焦点比赛会决定主要叙事：Netherlands vs Japan。",
+          "质量门禁当前为 PARTIAL_NOT_READY，有效席位 11/12。",
+          "赛后闭环要继续看：比分回填、贷款偿还、排名重排和模型自我复盘。"
+        ],
+        "commentary": "这轮的核心不是押中哪一场，而是模型行为出现了分化：有人进攻、有人防守、有人选择不赌。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "version": "pred_invest_sop_guard.v1",
+  "generated_at": "2026-06-15T20:26:20.331304+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "status": "PARTIAL_NOT_READY",
+  "ok_to_start_new_run": true,
+  "ok_to_publish_frontend": false,
+  "errors": [],
+  "warnings": [
+    "publish_blocked_by_quality_gate:11/12"
+  ],
+  "bridge": {
+    "busy": false,
+    "active_run_id": null,
+    "elapsed_seconds": 0.0,
+    "can_start_new_run": true,
+    "recovered": false,
+    "recovery": null
+  },
+  "quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ],
+    "rerun_queue": [
+      {
+        "seat": "grok",
+        "mode": "provider_quota_blocked",
+        "prompt_mode": "wait_for_quota_reset",
+        "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+        "last_run_id": "page_salvage:grok",
+        "response_chars": 1142,
+        "issues": [
+          "provider_quota_limited"
+        ],
+        "last_errors": [
+          {
+            "run_id": "e71c1024a4d6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "42a97c4d0fa9",
+            "action": "raw_result_error",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "42a97c4d0fa9",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 123
+          }
+        ]
+      }
+    ],
+    "provider_blocked_seats": [
+      "grok"
+    ],
+    "rerunnable_seats": [],
+    "source": "artifact"
+  },
+  "artifacts": {
+    "missing": [],
+    "paths": {
+      "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
+      "current_game": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_current_game.json",
+      "quality_gate": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_quality_gate.json",
+      "strict_god_report": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json"
+    }
+  },
+  "recommended_actions": [
+    "供应商阻塞席位 grok 暂停普通补跑；额度/慢响应恢复后使用 --force-provider-blocked 做单席重试。",
+    "前端和日报必须标记 PARTIAL_NOT_READY，不得显示完整结论。"
+  ]
+}

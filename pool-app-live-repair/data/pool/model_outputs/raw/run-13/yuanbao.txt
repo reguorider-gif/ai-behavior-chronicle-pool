@@ -1,0 +1,58 @@
+{
+"seat_id": "yuanbao",
+"round": "run-14",
+"position": "条件支持",
+"forecast": {
+"match": "France v Côte d'Ivoire (2026-06-04)",
+"probabilities": {
+"home_win": 0.68,
+"draw": 0.19,
+"away_win": 0.13
+},
+"most_probable_score": "2-1",
+"confidence": 0.76,
+"fair_odds": {
+"home": 1.47,
+"draw": 5.26,
+"away": 7.69
+},
+"info_gap": "缺少两队近期阵容变化及热身赛具体战术倾向"
+},
+"account_review": {
+"balance_gp": 1530.0,
+"net_worth_gp": 1530.0,
+"loan_gp": 0.0,
+"credit_grade": "A",
+"credit_score": 737.2,
+"risk_status": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+},
+"unlimited_loan_strategy": {
+"type": "investment_loan",
+"amount": 500.0,
+"interest_rate": "10% per round",
+"expected_roi": "15%",
+"repayment_path": "从下一场比赛净收益中扣除利息并偿还本金",
+"stop_loss": "若比赛结果偏离预测概率超过20%，立即平仓并重新评估"
+},
+"opponent_counterplay": [
+"DeepSeek 高负债可能被迫高风险投注，可利用其风险偏好制造市场波动",
+"MiMo 中等负债但信源质量未知，需防范其突然高赔率重仓"
+],
+"next_position": {
+"stake_gp": 300.0,
+"max_stake_percent_net_worth": 19.6,
+"market": "France home win",
+"info_sources": ["FIFA官方热身赛日程", "历史交锋记录（无直接记录，依赖排名推断）"]
+},
+"forward_looking_data": {
+"observed_trend": "法国队近5场热身赛4
+胜
+1
+平
+，
+进
+攻
+深度思考
+工具
+安装电脑版
+内容由AI生成，仅供参考

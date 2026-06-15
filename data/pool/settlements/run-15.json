@@ -1,0 +1,780 @@
+{
+  "run_id": "run-15",
+  "settlement_status": "partially_settled",
+  "matches": [
+    {
+      "match_id": "WC-A1",
+      "home_team": "Mexico",
+      "away_team": "South Africa",
+      "score": "2-0",
+      "home_score": 2,
+      "away_score": 0,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-11T19:00:00Z",
+      "matchday_hk": "2026-06-12",
+      "source": "match_data_alignment_audit",
+      "source_date_query": "2026-06-11",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WC-A2",
+      "home_team": "South Korea",
+      "away_team": "Czech Republic",
+      "score": "2-1",
+      "home_score": 2,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-12T02:00:00Z",
+      "matchday_hk": "2026-06-12",
+      "source": "match_data_alignment_audit",
+      "source_date_query": "2026-06-11",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WC-B1",
+      "home_team": "Canada",
+      "away_team": "Bosnia & Herzegovina",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-12T19:00:00Z",
+      "matchday_hk": "2026-06-13",
+      "source": "match_data_alignment_audit",
+      "source_date_query": "2026-06-12",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WC-D1",
+      "home_team": "USA",
+      "away_team": "Paraguay",
+      "score": "4-1",
+      "home_score": 4,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-13T01:00:00Z",
+      "matchday_hk": "2026-06-13",
+      "source": "match_data_alignment_audit",
+      "source_date_query": "2026-06-12",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WC-B2",
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-13T19:04:00Z",
+      "matchday_hk": "2026-06-14",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "26634922d3f78c146440816023e40de8",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WC-C2",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-13T22:04:00Z",
+      "matchday_hk": "2026-06-14",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "f6c8748a16516e0998f95de14235432a",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WC-C1",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "score": "0-1",
+      "home_score": 0,
+      "away_score": 1,
+      "outcome": "away",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-14T01:00:00Z",
+      "matchday_hk": "2026-06-14",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "5ae41a06735c926eeb7f74006933adce",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WC-D2",
+      "home_team": "Australia",
+      "away_team": "Turkey",
+      "score": "2-0",
+      "home_score": 2,
+      "away_score": 0,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-14T04:00:00Z",
+      "matchday_hk": "2026-06-14",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "564084f52cc9f1abcc18187c168a7cdc",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "score": "7-1",
+      "home_score": 7,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-14T17:01:00Z",
+      "matchday_hk": "2026-06-15",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "d79edbd6aaeb578d33e313446b18d333",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "score": "2-2",
+      "home_score": 2,
+      "away_score": 2,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-14T20:00:00Z",
+      "matchday_hk": "2026-06-15",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "32ec06abda2398ac41501c86eb9aa376",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "score": "1-0",
+      "home_score": 1,
+      "away_score": 0,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-14T23:03:00Z",
+      "matchday_hk": "2026-06-15",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "05752bb341e197001387b64f3a06b9b2",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "score": "5-1",
+      "home_score": 5,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-15T02:00:00Z",
+      "matchday_hk": "2026-06-15",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "b55f9569de3f4d731bc5537ff5ff43e4",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WC-H1",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "score": "0-0",
+      "home_score": 0,
+      "away_score": 0,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-15T16:01:00Z",
+      "matchday_hk": "2026-06-16",
+      "source": "the_odds_api_scores",
+      "source_date_query": null,
+      "provider_event_id": "c54f00b11925751d2b62988775c6c239",
+      "provider_last_update": "2026-06-15T19:16:10Z"
+    }
+  ],
+  "settlements": [
+    {
+      "seat_id": "doubao",
+      "match_id": "WC-H1",
+      "market": "moneyline",
+      "selection": "Spain",
+      "line": "0",
+      "odds": 1.08,
+      "stake_gp": 200.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": -200.0,
+      "status": "lose",
+      "score": "0-0"
+    },
+    {
+      "seat_id": "kimi",
+      "match_id": "WC-H1",
+      "market": "h2h",
+      "selection": "Spain",
+      "line": null,
+      "odds": 1.08,
+      "stake_gp": 40.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": -40.0,
+      "status": "lose",
+      "score": "0-0"
+    },
+    {
+      "seat_id": "wenxin",
+      "match_id": "WC-H1",
+      "market": "h2h",
+      "selection": "Spain",
+      "line": "none",
+      "odds": 1.08,
+      "stake_gp": 150.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": -150.0,
+      "status": "lose",
+      "score": "0-0"
+    },
+    {
+      "seat_id": "yuanbao",
+      "match_id": "WC-H1",
+      "market": "moneyline",
+      "selection": "home",
+      "line": "none",
+      "odds": 1.08,
+      "stake_gp": 500.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": -500.0,
+      "status": "lose",
+      "score": "0-0"
+    }
+  ],
+  "seats": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "run_id": "run-15",
+      "profit_gp": -200.0,
+      "settled": [
+        {
+          "seat_id": "doubao",
+          "match_id": "WC-H1",
+          "market": "moneyline",
+          "selection": "Spain",
+          "line": "0",
+          "odds": 1.08,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 0.0,
+          "profit_gp": -200.0,
+          "status": "lose",
+          "score": "0-0"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "run_id": "run-15",
+      "profit_gp": -40.0,
+      "settled": [
+        {
+          "seat_id": "kimi",
+          "match_id": "WC-H1",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": null,
+          "odds": 1.08,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 0.0,
+          "profit_gp": -40.0,
+          "status": "lose",
+          "score": "0-0"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "meta": {
+      "seat_id": "meta",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "run_id": "run-15",
+      "profit_gp": 0.0,
+      "settled": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "run_id": "run-15",
+      "profit_gp": -150.0,
+      "settled": [
+        {
+          "seat_id": "wenxin",
+          "match_id": "WC-H1",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 0.0,
+          "profit_gp": -150.0,
+          "status": "lose",
+          "score": "0-0"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "run_id": "run-15",
+      "profit_gp": -500.0,
+      "settled": [
+        {
+          "seat_id": "yuanbao",
+          "match_id": "WC-H1",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 500.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 0.0,
+          "profit_gp": -500.0,
+          "status": "lose",
+          "score": "0-0"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "profit_gp": 0
+        }
+      ]
+    }
+  },
+  "summary": {
+    "settled_bets": 4,
+    "winning_bets": 0,
+    "losing_bets": 4,
+    "push_bets": 0,
+    "total_stake_gp": 890.0,
+    "total_payout_gp": 0.0,
+    "total_profit_gp": -890.0,
+    "roi": -1.0,
+    "result_source_policy": "explicit_result_file_plus_matches_api_score_registry",
+    "positive_bet_count": 23,
+    "pending_bets": 19,
+    "pending_match_ids": [
+      "WC-K1",
+      "WCAPI-20260615-BELGIUM-EGYPT",
+      "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "WCAPI-20260616-IRAN-NEW-ZEALAND"
+    ],
+    "strict_receipt_seats": 11,
+    "result_match_count": 13,
+    "account_updates_written": 11
+  },
+  "account_updates": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "rank_before": 8,
+      "balance_before_gp": 1000.0,
+      "outstanding_loan_before_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 0.0,
+      "interest_paid_gp": 0.0,
+      "principal_repaid_gp": 0.0,
+      "balance_after_debt_service_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 1000.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "rank_before": 1,
+      "balance_before_gp": 2810.0,
+      "outstanding_loan_before_gp": 1000.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 70.0,
+      "interest_paid_gp": 70.0,
+      "principal_repaid_gp": 1000.0,
+      "balance_after_debt_service_gp": 1740.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 1740.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "rank_before": 7,
+      "balance_before_gp": 1200.0,
+      "outstanding_loan_before_gp": 300.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 33.0,
+      "interest_paid_gp": 33.0,
+      "principal_repaid_gp": 300.0,
+      "balance_after_debt_service_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 867.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "rank_before": 10,
+      "balance_before_gp": 1000.0,
+      "outstanding_loan_before_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 0.0,
+      "interest_paid_gp": 0.0,
+      "principal_repaid_gp": 0.0,
+      "balance_after_debt_service_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 1000.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "rank_before": 5,
+      "balance_before_gp": 1400.0,
+      "outstanding_loan_before_gp": 300.0,
+      "settlement_profit_gp": -200.0,
+      "settled_new_loan_used_gp": 0.0,
+      "interest_due_gp": 33.0,
+      "interest_paid_gp": 33.0,
+      "principal_repaid_gp": 300.0,
+      "balance_after_debt_service_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 867.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "rank_before": 2,
+      "balance_before_gp": 1850.0,
+      "outstanding_loan_before_gp": 1000.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 110.0,
+      "interest_paid_gp": 110.0,
+      "principal_repaid_gp": 1000.0,
+      "balance_after_debt_service_gp": 740.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 740.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "rank_before": 9,
+      "balance_before_gp": 1000.0,
+      "outstanding_loan_before_gp": 0.0,
+      "settlement_profit_gp": -40.0,
+      "settled_new_loan_used_gp": 0.0,
+      "interest_due_gp": 0.0,
+      "interest_paid_gp": 0.0,
+      "principal_repaid_gp": 0.0,
+      "balance_after_debt_service_gp": 960.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 960.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "meta": {
+      "seat_id": "meta",
+      "rank_before": 6,
+      "balance_before_gp": 1400.0,
+      "outstanding_loan_before_gp": 800.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 144.0,
+      "interest_paid_gp": 144.0,
+      "principal_repaid_gp": 800.0,
+      "balance_after_debt_service_gp": 456.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 456.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "rank_before": 3,
+      "balance_before_gp": 1500.0,
+      "outstanding_loan_before_gp": 400.0,
+      "settlement_profit_gp": 0.0,
+      "settled_new_loan_used_gp": 0,
+      "interest_due_gp": 44.0,
+      "interest_paid_gp": 44.0,
+      "principal_repaid_gp": 400.0,
+      "balance_after_debt_service_gp": 1056.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 1056.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "rank_before": 11,
+      "balance_before_gp": 1000.0,
+      "outstanding_loan_before_gp": 0.0,
+      "settlement_profit_gp": -150.0,
+      "settled_new_loan_used_gp": 0.0,
+      "interest_due_gp": 0.0,
+      "interest_paid_gp": 0.0,
+      "principal_repaid_gp": 0.0,
+      "balance_after_debt_service_gp": 850.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 850.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "rank_before": 4,
+      "balance_before_gp": 1500.0,
+      "outstanding_loan_before_gp": 500.0,
+      "settlement_profit_gp": -500.0,
+      "settled_new_loan_used_gp": 0.0,
+      "interest_due_gp": 55.0,
+      "interest_paid_gp": 55.0,
+      "principal_repaid_gp": 500.0,
+      "balance_after_debt_service_gp": 445.0,
+      "outstanding_loan_gp": 0.0,
+      "unpaid_interest_gp": 0.0,
+      "net_worth_after_gp": 445.0,
+      "ranking_basis": "partial_settlement_net_worth_after_interest_and_principal_repayment"
+    }
+  }
+}

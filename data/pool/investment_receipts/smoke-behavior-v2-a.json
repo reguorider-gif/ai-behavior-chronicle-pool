@@ -1,0 +1,147 @@
+{
+  "run_id": "smoke-behavior-v2-a",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "investments": [
+        {
+          "match_id": "SMOKE-M1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "home",
+          "odds": 1.8,
+          "stake_gp": 120,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.58,
+          "market_implied_prob": 0.56,
+          "estimated_ev": 0.04,
+          "max_loss_gp": 120,
+          "why_bet_or_no_bet": "主胜有轻微正边际，使用自有资金小仓位。",
+          "if_loss_survival_plan": "亏损后降低下一轮仓位。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "action": "no_bet",
+          "market": "",
+          "selection": "",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.36,
+          "market_implied_prob": 0.32,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "why_bet_or_no_bet": "平局判断不够强，不为模糊优势下注。",
+          "if_loss_survival_plan": "保持现金等待更清晰盘口。"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "自有资金足够。",
+        "repayment_plan": "无贷款。",
+        "risk_if_loss": "亏损可承受。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "净值约1000GP。",
+        "if_all_bets_lose": "降仓。",
+        "if_recovery_mode_triggered": "停止贷款。",
+        "next_round_adjustment": "优先观察信用变化。"
+      }
+    },
+    "beta": {
+      "seat_id": "beta",
+      "investments": [
+        {
+          "match_id": "SMOKE-M1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "away",
+          "odds": 4.2,
+          "stake_gp": 80,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.5,
+          "market_implied_prob": 0.24,
+          "estimated_ev": 1.1,
+          "max_loss_gp": 80,
+          "why_bet_or_no_bet": "冷门赔率高，尝试小仓位拉开排名。",
+          "if_loss_survival_plan": "亏损后回到低赔率策略。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "action": "no_bet",
+          "market": "",
+          "selection": "",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.37,
+          "market_implied_prob": 0.45,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "why_bet_or_no_bet": "没有明显正期望。",
+          "if_loss_survival_plan": "保持现金。"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "已有贷款，避免扩大风险。",
+        "repayment_plan": "盈利后优先还款。",
+        "risk_if_loss": "净值下降但不会破产。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "净值约700GP。",
+        "if_all_bets_lose": "减少下轮投注。",
+        "if_recovery_mode_triggered": "停止冷门投注。",
+        "next_round_adjustment": "复盘冷门判断。"
+      }
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "investments": [
+        {
+          "match_id": "SMOKE-M1",
+          "action": "no_bet",
+          "market": "",
+          "selection": "",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.55,
+          "market_implied_prob": 0.56,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "why_bet_or_no_bet": "处于 Recovery Mode，冻结贷款并避免扩大亏损。",
+          "if_loss_survival_plan": "继续 no-bet。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "action": "no_bet",
+          "market": "",
+          "selection": "",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "model_estimated_prob": 0.34,
+          "market_implied_prob": 0.32,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "why_bet_or_no_bet": "信息不足且净值为负。",
+          "if_loss_survival_plan": "等待信用恢复。"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "Recovery Mode 禁止新增贷款。",
+        "repayment_plan": "任何盈利优先还款。",
+        "risk_if_loss": "继续维持重整。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "净值为负。",
+        "if_all_bets_lose": "本轮无下注，不新增亏损。",
+        "if_recovery_mode_triggered": "已触发。",
+        "next_round_adjustment": "等待低风险机会。"
+      }
+    }
+  }
+}

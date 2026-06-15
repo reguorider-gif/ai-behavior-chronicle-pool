@@ -1,0 +1,290 @@
+{
+  "seat_id": "mimo",
+  "updated_at": "2026-06-15T20:26:20+00:00",
+  "last_run_id": "run-15",
+  "runs_seen": [
+    "run-15"
+  ],
+  "event_counts": {
+    "prompt_context_recorded": 1,
+    "forecast_recorded": 1,
+    "investment_recorded": 1,
+    "credit_updated": 1,
+    "survival_updated": 1,
+    "settlement_recorded": 1
+  },
+  "recent_events": [
+    {
+      "event_type": "prompt_context_recorded",
+      "prompt_context_path": "data/pool/prompt_contexts/run-15/mimo.json",
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [
+        {
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口数据"
+          ],
+          "match_id": "WC-K1",
+          "model_estimated_prob": "Portugal",
+          "most_likely_score": "1-1",
+          "p": "Portugal",
+          "score": "1-1",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 57,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "埃及世预赛零封铁桶难破"
+          ],
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "model_estimated_prob": "Belgium",
+          "most_likely_score": "2-1",
+          "p": "Belgium",
+          "score": "2-1",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 35,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "乌拉圭防线残阵但中场世界顶级"
+          ],
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "model_estimated_prob": "Saudi Arabia",
+          "most_likely_score": "0-1",
+          "p": "Saudi Arabia",
+          "score": "0-1",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 54,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "伊朗进攻效率有限小球格局"
+          ],
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "model_estimated_prob": "Iran",
+          "most_likely_score": "1-0",
+          "p": "Iran",
+          "score": "1-0",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 95,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "赔率1.08无价值边缘"
+          ],
+          "match_id": "WC-H1",
+          "model_estimated_prob": "Spain",
+          "most_likely_score": "3-0",
+          "p": "Spain",
+          "score": "3-0",
+          "source": "strict_god_report",
+          "status": "collected"
+        }
+      ],
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [
+        {
+          "action": "no_bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "none",
+          "match_id": "WC-K1",
+          "odds": 0,
+          "reason": "无盘口不投。",
+          "selection": "none",
+          "source": "strict_god_report",
+          "stake_gp": 0.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "无盘口不投。"
+        },
+        {
+          "action": "bet",
+          "line": "-1",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "odds": 2.27,
+          "reason": "控球碾压小胜覆盖",
+          "selection": "Belgium",
+          "source": "strict_god_report",
+          "stake_gp": 200.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "控球碾压小胜覆盖"
+        },
+        {
+          "action": "bet",
+          "line": "+0.5",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "odds": 1.62,
+          "reason": "防反韧性冷门覆盖",
+          "selection": "Saudi Arabia",
+          "source": "strict_god_report",
+          "stake_gp": 200.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "防反韧性冷门覆盖"
+        },
+        {
+          "action": "no_bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "none",
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "odds": 0,
+          "reason": "小球易拖风险高。",
+          "selection": "none",
+          "source": "strict_god_report",
+          "stake_gp": 0.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "小球易拖风险高。"
+        },
+        {
+          "action": "no_bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "none",
+          "match_id": "WC-H1",
+          "odds": 0,
+          "reason": "无边不投。",
+          "selection": "none",
+          "source": "strict_god_report",
+          "stake_gp": 0.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "无边不投。"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "余额可支撑两注",
+        "repayment_plan": "300贷款需积分偿还"
+      },
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "available_loan_gp": 150.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": 0,
+      "credit_grade": "B",
+      "credit_score": 640.7,
+      "details": [
+        {
+          "credit_delta": 0,
+          "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+          "type": "production_receipt_collected"
+        }
+      ],
+      "event_type": "credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 450.0,
+      "outstanding_loan_gp": 300.0,
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 150.0,
+      "balance_gp": 867.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 450.0,
+      "net_worth_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "settlement_recorded",
+      "run_id": "run-15",
+      "seat_id": "mimo",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-15",
+        "seat_id": "mimo",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-H1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-K1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-15T19:56:21+00:00"
+    }
+  ],
+  "last_self_review": {},
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {
+    "profit_gp": 0.0,
+    "run_id": "run-15",
+    "seat_id": "mimo",
+    "settled": [
+      {
+        "action": "no_bet",
+        "match_id": "WC-H1",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WC-K1",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "profit_gp": 0
+      }
+    ]
+  },
+  "credit_score": 640.7,
+  "credit_grade": "B",
+  "credit_delta": 0,
+  "balance_gp": 867.0,
+  "outstanding_loan_gp": 0.0,
+  "accrued_interest_gp": 0.0,
+  "net_worth_gp": 867.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

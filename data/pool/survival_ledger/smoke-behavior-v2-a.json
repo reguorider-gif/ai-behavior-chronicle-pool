@@ -1,0 +1,54 @@
+{
+  "run_id": "smoke-behavior-v2-a",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "balance_gp": 1096.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1096.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "max_single_match_stake_gp": null,
+      "max_odds": null,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "beta": {
+      "seat_id": "beta",
+      "balance_gp": 602.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 602.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "max_single_match_stake_gp": null,
+      "max_odds": null,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "balance_gp": 0.0,
+      "outstanding_loan_gp": 71.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": -71.0,
+      "recovery_mode": true,
+      "freeze_new_loan": true,
+      "max_single_match_stake_gp": 50,
+      "max_odds": 3.0,
+      "allowed_actions": [
+        "forecast",
+        "no_bet",
+        "small_recovery_bet"
+      ]
+    }
+  }
+}

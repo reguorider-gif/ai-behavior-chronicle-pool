@@ -1,0 +1,69 @@
+{
+  "ok": false,
+  "generated_at": "2026-06-15T20:26:20+00:00",
+  "date": "2026-06-15",
+  "run_id": "run-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "operational_mode": "production_pred_invest_sop",
+  "public_frontend_contract": {
+    "rule_version_label": "规则版本：PRED_INVEST_CREDIT_SURVIVE_V2",
+    "seat_journal_label": "行为日志：可查看",
+    "credit_ledger_label": "信用账本：可查看",
+    "forecast_investment_label": "预测/投资分账：可查看",
+    "no_bet_label": "no-bet：合法动作",
+    "recovery_label": "Recovery Mode：已接入"
+  },
+  "features": [
+    "Seat Journal",
+    "Credit",
+    "Loan Limit",
+    "Recovery Mode",
+    "forecast_receipts",
+    "investment_receipts",
+    "no-bet",
+    "god_report_v2"
+  ],
+  "counts": {
+    "seat_count": 12,
+    "valid_seat_count": 11,
+    "missing_seat_count": 1,
+    "required_match_count": 4,
+    "forecast_receipt_count": 12,
+    "investment_receipt_count": 12,
+    "prompt_context_count": 12,
+    "seat_journal_count": 12,
+    "god_report_seat_count": 12,
+    "god_report_event_count": 72
+  },
+  "separation": {
+    "forecast_receipts_exists": true,
+    "investment_receipts_exists": true,
+    "forecast_and_investment_are_separate": true
+  },
+  "artifact_refs": {
+    "seat_journals": "data/pool/seat_journals/",
+    "prompt_contexts": "data/pool/prompt_contexts/run-15/",
+    "forecast_receipts": "data/pool/forecast_receipts/run-15.json",
+    "investment_receipts": "data/pool/investment_receipts/run-15.json",
+    "credit_ledger": "data/pool/credit_ledger/run-15.json",
+    "survival_ledger": "data/pool/survival_ledger/run-15.json",
+    "god_ledger": "data/pool/god_ledger/runs/run-15.json",
+    "god_report_v2_json": "data/pool/god_reports/2026-06-15_run-15.json",
+    "god_report_v2_md": "data/pool/god_reports/2026-06-15_run-15.md",
+    "behavior_summary": "data/pool/behavior_summary/latest.json"
+  },
+  "readiness": {
+    "god_report_v2_generated": true,
+    "behavior_summary_readable": true,
+    "public_frontend_minimum_markers": [
+      "规则版本：PRED_INVEST_CREDIT_SURVIVE_V2",
+      "行为日志：可查看",
+      "信用账本：可查看",
+      "预测/投资分账：可查看"
+    ],
+    "publish_complete_badge_allowed": false,
+    "missing_or_blocked_seats": [
+      "grok"
+    ]
+  }
+}

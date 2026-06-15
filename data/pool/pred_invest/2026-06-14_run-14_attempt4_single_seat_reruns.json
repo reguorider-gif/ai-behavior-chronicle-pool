@@ -1,0 +1,79 @@
+{
+  "version": "pred_invest_single_seat_reruns.v1",
+  "generated_at": "2026-06-14T21:06:35.982681+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "attempt_no": 4,
+  "base_url": "https://pool-app-one.vercel.app",
+  "bridge_base_url": "http://127.0.0.1:8501",
+  "input_run_ids": [
+    "d2c66e23d985",
+    "cb95b584a8c1",
+    "cf4a4f780080",
+    "predrepair-run14-attempt3",
+    "3bf99e09a4dc",
+    "ecef4b738de7",
+    "3e269df39b88",
+    "859cdad3e3c4",
+    "ea1b1e222bf6",
+    "44d062527458",
+    "299cb01a867c",
+    "a7e0f6a62c22",
+    "b26e50501a3b",
+    "970910b162f0",
+    "e917d090dc8f",
+    "632c19c803a3",
+    "bacf3d601b22",
+    "45a5c9ddc9da",
+    "3fc361452b89",
+    "9845577632af",
+    "62f7b965086a",
+    "02711f191fac",
+    "8f9b895d2b1a",
+    "cc70e540ce79",
+    "badcec66af16",
+    "1e247ede99bd",
+    "c724001cba1f",
+    "529569e21f6a",
+    "eecb7e46fd14",
+    "f94b2c1bdb3f",
+    "8a96116c10f0",
+    "9413255ceb7e",
+    "3abc21f8c0d6"
+  ],
+  "requested_seats": [
+    "doubao",
+    "gemini",
+    "grok",
+    "kimi",
+    "mimo",
+    "minimax",
+    "wenxin"
+  ],
+  "initial_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  },
+  "targets": [
+    "grok"
+  ],
+  "runs": [],
+  "dry_run": true
+}

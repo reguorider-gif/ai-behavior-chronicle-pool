@@ -1,0 +1,67 @@
+{
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "self_review": {
+        "what_i_did_last_round": "首次烟测，无上轮记录。",
+        "what_i_learned": "先分离预测与下注。",
+        "strategy_change_this_round": "只在价格清楚时下注。",
+        "risk_commitment": "不使用贷款。"
+      },
+      "forecasts": [
+        {"match_id": "SMOKE-M1", "home_win_prob": 0.58, "draw_prob": 0.25, "away_win_prob": 0.17, "most_likely_score": "2-0", "confidence": 0.71, "edge_assessment": "bettable", "information_gaps": ["fixture only"], "forecast_rationale": "Alpha FC 主胜概率高于盘口隐含概率，适合小仓位验证。"},
+        {"match_id": "SMOKE-M2", "home_win_prob": 0.34, "draw_prob": 0.36, "away_win_prob": 0.30, "most_likely_score": "1-1", "confidence": 0.55, "edge_assessment": "no_edge", "information_gaps": ["lineup"], "forecast_rationale": "双方接近，平局概率略高但没有足够边际。"}
+      ],
+      "investments": [
+        {"match_id": "SMOKE-M1", "action": "bet", "market": "h2h", "selection": "home", "odds": 1.8, "stake_gp": 120, "loan_used_gp": 0, "model_estimated_prob": 0.58, "market_implied_prob": 0.56, "estimated_ev": 0.04, "max_loss_gp": 120, "why_bet_or_no_bet": "主胜有轻微正边际，使用自有资金小仓位。", "if_loss_survival_plan": "亏损后降低下一轮仓位。"},
+        {"match_id": "SMOKE-M2", "action": "no_bet", "market": "", "selection": "", "odds": 0, "stake_gp": 0, "loan_used_gp": 0, "model_estimated_prob": 0.36, "market_implied_prob": 0.32, "estimated_ev": 0, "max_loss_gp": 0, "why_bet_or_no_bet": "平局判断不够强，不为模糊优势下注。", "if_loss_survival_plan": "保持现金等待更清晰盘口。"}
+      ],
+      "loan_decision": {"request_loan_gp": 0, "reason": "自有资金足够。", "repayment_plan": "无贷款。", "risk_if_loss": "亏损可承受。"},
+      "survival_plan": {"current_net_worth_awareness": "净值约1000GP。", "if_all_bets_lose": "降仓。", "if_recovery_mode_triggered": "停止贷款。", "next_round_adjustment": "优先观察信用变化。"},
+      "self_audit": {"covered_forecast_match_ids": ["SMOKE-M1", "SMOKE-M2"], "covered_investment_match_ids": ["SMOKE-M1", "SMOKE-M2"], "missing_forecast_match_ids": [], "json_valid": true}
+    },
+    "beta": {
+      "seat_id": "beta",
+      "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "self_review": {
+        "what_i_did_last_round": "首次烟测，无上轮记录。",
+        "what_i_learned": "需要测试逆向策略。",
+        "strategy_change_this_round": "寻找高赔率冷门。",
+        "risk_commitment": "不额外贷款。"
+      },
+      "forecasts": [
+        {"match_id": "SMOKE-M1", "home_win_prob": 0.22, "draw_prob": 0.28, "away_win_prob": 0.50, "most_likely_score": "1-2", "confidence": 0.60, "edge_assessment": "bettable", "information_gaps": ["fixture only"], "forecast_rationale": "Beta FC 赔率高，假设市场低估其反击效率。"},
+        {"match_id": "SMOKE-M2", "home_win_prob": 0.37, "draw_prob": 0.29, "away_win_prob": 0.34, "most_likely_score": "2-1", "confidence": 0.52, "edge_assessment": "no_edge", "information_gaps": ["team news"], "forecast_rationale": "Gamma FC 主场稍优，但边际不足。"}
+      ],
+      "investments": [
+        {"match_id": "SMOKE-M1", "action": "bet", "market": "h2h", "selection": "away", "odds": 4.2, "stake_gp": 80, "loan_used_gp": 0, "model_estimated_prob": 0.50, "market_implied_prob": 0.24, "estimated_ev": 1.10, "max_loss_gp": 80, "why_bet_or_no_bet": "冷门赔率高，尝试小仓位拉开排名。", "if_loss_survival_plan": "亏损后回到低赔率策略。"},
+        {"match_id": "SMOKE-M2", "action": "no_bet", "market": "", "selection": "", "odds": 0, "stake_gp": 0, "loan_used_gp": 0, "model_estimated_prob": 0.37, "market_implied_prob": 0.45, "estimated_ev": 0, "max_loss_gp": 0, "why_bet_or_no_bet": "没有明显正期望。", "if_loss_survival_plan": "保持现金。"}
+      ],
+      "loan_decision": {"request_loan_gp": 0, "reason": "已有贷款，避免扩大风险。", "repayment_plan": "盈利后优先还款。", "risk_if_loss": "净值下降但不会破产。"},
+      "survival_plan": {"current_net_worth_awareness": "净值约700GP。", "if_all_bets_lose": "减少下轮投注。", "if_recovery_mode_triggered": "停止冷门投注。", "next_round_adjustment": "复盘冷门判断。"},
+      "self_audit": {"covered_forecast_match_ids": ["SMOKE-M1", "SMOKE-M2"], "covered_investment_match_ids": ["SMOKE-M1", "SMOKE-M2"], "missing_forecast_match_ids": [], "json_valid": true}
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "self_review": {
+        "what_i_did_last_round": "首次烟测但账户已处于压力区。",
+        "what_i_learned": "净值为负时不能新增贷款。",
+        "strategy_change_this_round": "只做预测不下注。",
+        "risk_commitment": "Recovery Mode 下保护账户。"
+      },
+      "forecasts": [
+        {"match_id": "SMOKE-M1", "home_win_prob": 0.55, "draw_prob": 0.25, "away_win_prob": 0.20, "most_likely_score": "2-1", "confidence": 0.61, "edge_assessment": "insufficient_info", "information_gaps": ["injury", "weather"], "forecast_rationale": "Alpha FC 稍强，但资料不足，只做预测。"},
+        {"match_id": "SMOKE-M2", "home_win_prob": 0.33, "draw_prob": 0.34, "away_win_prob": 0.33, "most_likely_score": "1-1", "confidence": 0.48, "edge_assessment": "insufficient_info", "information_gaps": ["lineup"], "forecast_rationale": "信息不足，不做投资。"}
+      ],
+      "investments": [
+        {"match_id": "SMOKE-M1", "action": "no_bet", "market": "", "selection": "", "odds": 0, "stake_gp": 0, "loan_used_gp": 0, "model_estimated_prob": 0.55, "market_implied_prob": 0.56, "estimated_ev": 0, "max_loss_gp": 0, "why_bet_or_no_bet": "处于 Recovery Mode，冻结贷款并避免扩大亏损。", "if_loss_survival_plan": "继续 no-bet。"},
+        {"match_id": "SMOKE-M2", "action": "no_bet", "market": "", "selection": "", "odds": 0, "stake_gp": 0, "loan_used_gp": 0, "model_estimated_prob": 0.34, "market_implied_prob": 0.32, "estimated_ev": 0, "max_loss_gp": 0, "why_bet_or_no_bet": "信息不足且净值为负。", "if_loss_survival_plan": "等待信用恢复。"}
+      ],
+      "loan_decision": {"request_loan_gp": 0, "reason": "Recovery Mode 禁止新增贷款。", "repayment_plan": "任何盈利优先还款。", "risk_if_loss": "继续维持重整。"},
+      "survival_plan": {"current_net_worth_awareness": "净值为负。", "if_all_bets_lose": "本轮无下注，不新增亏损。", "if_recovery_mode_triggered": "已触发。", "next_round_adjustment": "等待低风险机会。"},
+      "self_audit": {"covered_forecast_match_ids": ["SMOKE-M1", "SMOKE-M2"], "covered_investment_match_ids": ["SMOKE-M1", "SMOKE-M2"], "missing_forecast_match_ids": [], "json_valid": true}
+    }
+  }
+}

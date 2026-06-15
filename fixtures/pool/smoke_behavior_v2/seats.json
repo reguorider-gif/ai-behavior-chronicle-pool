@@ -1,0 +1,17 @@
+[
+  {
+    "seat_id": "alpha",
+    "display_name": "Alpha Seat",
+    "account": {"balance_gp": 1000, "outstanding_loan_gp": 0, "accrued_interest_gp": 0}
+  },
+  {
+    "seat_id": "beta",
+    "display_name": "Beta Seat",
+    "account": {"balance_gp": 800, "outstanding_loan_gp": 100, "accrued_interest_gp": 0}
+  },
+  {
+    "seat_id": "gamma",
+    "display_name": "Gamma Seat",
+    "account": {"balance_gp": 50, "outstanding_loan_gp": 100, "accrued_interest_gp": 10}
+  }
+]

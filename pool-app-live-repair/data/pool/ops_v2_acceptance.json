@@ -1,0 +1,87 @@
+{
+  "ok": true,
+  "generated_at": "2026-06-16T01:20:00+08:00",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "product_surface": {
+    "home_page": "/",
+    "acceptance_page": "/ops-v2.html",
+    "visible_home_markers": [
+      "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "行为日志 / Seat Journal",
+      "信用账本 / Credit Ledger",
+      "预测 / 投资分账",
+      "God Ledger / 上帝日志",
+      "Recovery Mode",
+      "no-bet 合法展示"
+    ]
+  },
+  "required_contract": {
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "seat_journal": "available",
+    "credit_ledger": "available",
+    "forecast_investment_split": "available",
+    "god_ledger": "available",
+    "god_report_v2": "available",
+    "no_bet": "legal_structured_action",
+    "recovery_mode": "connected"
+  },
+  "smoke_runs": {
+    "smoke-behavior-v2-a": {
+      "ok": true,
+      "path": "data/pool/pipeline_smoke/2026-06-15_smoke-behavior-v2-a.json",
+      "settlement_written": true,
+      "forecast_receipt_count": 3,
+      "investment_receipt_count": 3,
+      "required_match_count": 2
+    },
+    "smoke-behavior-v2-b": {
+      "ok": true,
+      "path": "data/pool/pipeline_smoke/2026-06-15_smoke-behavior-v2-b.json",
+      "settlement_written": false,
+      "forecast_receipt_count": 3,
+      "investment_receipt_count": 3,
+      "required_match_count": 2,
+      "uses_previous_behavior_memory": true
+    }
+  },
+  "artifact_dirs": {
+    "seat_journals": "data/pool/seat_journals/",
+    "prompt_contexts": "data/pool/prompt_contexts/smoke-behavior-v2-b/",
+    "forecast_receipts": "data/pool/forecast_receipts/smoke-behavior-v2-b.json",
+    "investment_receipts": "data/pool/investment_receipts/smoke-behavior-v2-b.json",
+    "credit_ledger": "data/pool/credit_ledger/smoke-behavior-v2-b.json",
+    "survival_ledger": "data/pool/survival_ledger/smoke-behavior-v2-b.json",
+    "god_ledger": "data/pool/god_ledger/runs/smoke-behavior-v2-b.json",
+    "god_report_v2_json": "data/pool/god_reports/2026-06-15_smoke-behavior-v2-b.json",
+    "god_report_v2_md": "data/pool/god_reports/2026-06-15_smoke-behavior-v2-b.md",
+    "behavior_summary": "data/pool/behavior_summary/latest.json"
+  },
+  "counts": {
+    "seat_journal_count": 3,
+    "prompt_context_count": 3,
+    "forecast_receipt_count": 3,
+    "investment_receipt_count": 3,
+    "god_report_seat_count": 3,
+    "god_report_event_count": 24
+  },
+  "receipt_separation_sample": {
+    "forecast_receipts_path": "data/pool/forecast_receipts/smoke-behavior-v2-b.json",
+    "investment_receipts_path": "data/pool/investment_receipts/smoke-behavior-v2-b.json",
+    "separated": true,
+    "forecast_requires_all_matches": true,
+    "investment_allows_no_bet": true
+  },
+  "daily_sop_sequence": [
+    "settle_finished_matches_before_new_predictions",
+    "repay_debt_before_ranking",
+    "apply_rewards_and_penalties",
+    "collect_forecasts_for_all_matches",
+    "collect_investment_rows_for_all_matches",
+    "quality_gate_before_publish"
+  ],
+  "known_limits": [
+    "当前 V2 验收产物使用 smoke fixture 证明产品链路，真实 12 席 AI Judge 仍由 run-15 及后续桥接任务继续执行。",
+    "Grok 若无合格回执不得伪造入库；硬门禁仍有效。",
+    "Vercel 静态页面不能直接运行 Python SOP；每日自动任务需在本地或服务端执行后同步 data/pool 产物并部署。"
+  ]
+}

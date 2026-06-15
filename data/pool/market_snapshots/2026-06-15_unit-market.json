@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-15",
+  "run_id": "unit-market",
+  "privacy": "anonymous_market_only_no_seat_choices",
+  "matches": [
+    {
+      "match_id": "MKT-M1",
+      "date": "2026-06-15",
+      "home_team": "One",
+      "away_team": "Two",
+      "kickoff_at": null,
+      "markets": [
+        {
+          "market": "h2h",
+          "selection": "home",
+          "odds": 1.9
+        }
+      ]
+    }
+  ]
+}

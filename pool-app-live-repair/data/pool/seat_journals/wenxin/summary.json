@@ -1,0 +1,298 @@
+{
+  "seat_id": "wenxin",
+  "updated_at": "2026-06-15T20:26:20+00:00",
+  "last_run_id": "run-15",
+  "runs_seen": [
+    "run-15"
+  ],
+  "event_counts": {
+    "prompt_context_recorded": 1,
+    "forecast_recorded": 1,
+    "investment_recorded": 1,
+    "credit_updated": 1,
+    "survival_updated": 1,
+    "settlement_recorded": 1
+  },
+  "recent_events": [
+    {
+      "event_type": "prompt_context_recorded",
+      "prompt_context_path": "data/pool/prompt_contexts/run-15/wenxin.json",
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [
+        {
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "实力接近"
+          ],
+          "match_id": "WC-K1",
+          "model_estimated_prob": "home",
+          "most_likely_score": "",
+          "p": "home",
+          "score": "",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 45,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "盘口混乱"
+          ],
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "model_estimated_prob": "home",
+          "most_likely_score": "",
+          "p": "home",
+          "score": "",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 50,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "信息充足"
+          ],
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "model_estimated_prob": "home",
+          "most_likely_score": "",
+          "p": "home",
+          "score": "",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "实力占优"
+          ],
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "model_estimated_prob": "home",
+          "most_likely_score": "",
+          "p": "home",
+          "score": "",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无缺口"
+          ],
+          "match_id": "WC-H1",
+          "model_estimated_prob": "home",
+          "most_likely_score": "",
+          "p": "home",
+          "score": "",
+          "source": "strict_god_report",
+          "status": "collected"
+        }
+      ],
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "h2h",
+          "match_id": "WC-K1",
+          "odds": 1.75,
+          "reason": "葡萄牙队状态更佳",
+          "selection": "Portugal",
+          "source": "strict_god_report",
+          "stake_gp": 150.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "葡萄牙队状态更佳"
+        },
+        {
+          "action": "no_bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "none",
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "odds": 0,
+          "reason": "盘口不明故不投注",
+          "selection": "none",
+          "source": "strict_god_report",
+          "stake_gp": 0.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "盘口不明故不投注"
+        },
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "odds": 1.62,
+          "reason": "沙特坐拥主场优势",
+          "selection": "Saudi Arabia",
+          "source": "strict_god_report",
+          "stake_gp": 200.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "沙特坐拥主场优势"
+        },
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "odds": 1.83,
+          "reason": "伊朗整体实力占优",
+          "selection": "Iran",
+          "source": "strict_god_report",
+          "stake_gp": 100.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "伊朗整体实力占优"
+        },
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "h2h",
+          "match_id": "WC-H1",
+          "odds": 1.08,
+          "reason": "西班牙队实力碾压",
+          "selection": "Spain",
+          "source": "strict_god_report",
+          "stake_gp": 150.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "西班牙队实力碾压"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前账户资金充足",
+        "repayment_plan": "按期足额归还到位"
+      },
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": 0,
+      "credit_grade": "B",
+      "credit_score": 653.0,
+      "details": [
+        {
+          "credit_delta": 0,
+          "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+          "type": "production_receipt_collected"
+        }
+      ],
+      "event_type": "credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 850.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 850.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "settlement_recorded",
+      "run_id": "run-15",
+      "seat_id": "wenxin",
+      "settlement": {
+        "profit_gp": -150.0,
+        "run_id": "run-15",
+        "seat_id": "wenxin",
+        "settled": [
+          {
+            "line": "none",
+            "loan_used_gp": 0.0,
+            "market": "h2h",
+            "match_id": "WC-H1",
+            "odds": 1.08,
+            "payout_gp": 0.0,
+            "profit_gp": -150.0,
+            "score": "0-0",
+            "seat_id": "wenxin",
+            "selection": "Spain",
+            "stake_gp": 150.0,
+            "status": "lose"
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-15T19:56:21+00:00"
+    }
+  ],
+  "last_self_review": {},
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {
+    "profit_gp": -150.0,
+    "run_id": "run-15",
+    "seat_id": "wenxin",
+    "settled": [
+      {
+        "line": "none",
+        "loan_used_gp": 0.0,
+        "market": "h2h",
+        "match_id": "WC-H1",
+        "odds": 1.08,
+        "payout_gp": 0.0,
+        "profit_gp": -150.0,
+        "score": "0-0",
+        "seat_id": "wenxin",
+        "selection": "Spain",
+        "stake_gp": 150.0,
+        "status": "lose"
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "profit_gp": 0
+      }
+    ]
+  },
+  "credit_score": 653.0,
+  "credit_grade": "B",
+  "credit_delta": 0,
+  "balance_gp": 850.0,
+  "outstanding_loan_gp": 0.0,
+  "accrued_interest_gp": 0.0,
+  "net_worth_gp": 850.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

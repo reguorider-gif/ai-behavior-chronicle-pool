@@ -1,0 +1,202 @@
+{
+  "seat_id": "minimax",
+  "run_id": "run-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "status": "collected",
+  "forecasts": [
+    {
+      "match_id": "WC-K1",
+      "p": "home",
+      "score": "2-1",
+      "confidence": 74,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "葡主场小胜一球"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-1"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "p": "home",
+      "score": "2-0",
+      "confidence": 70,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "比利时让一球稳"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-0"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "p": "away",
+      "score": "1-2",
+      "confidence": 55,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "沙特受让过浅"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "away",
+      "most_likely_score": "1-2"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "p": "home",
+      "score": "2-0",
+      "confidence": 80,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "伊朗主场优势大"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-0"
+    },
+    {
+      "match_id": "WC-H1",
+      "p": "home",
+      "score": "3-0",
+      "confidence": 92,
+      "edge_assessment": "lean",
+      "information_gaps": [
+        "主力轮换仍碾压"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "3-0"
+    }
+  ],
+  "investments": [
+    {
+      "match_id": "WC-K1",
+      "action": "bet",
+      "market": "moneyline",
+      "selection": "Portugal",
+      "line": "none",
+      "odds": 1.75,
+      "stake_gp": 80.0,
+      "loan_used_gp": 0.0,
+      "reason": "主场小胜",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "主场小胜"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "action": "bet",
+      "market": "handicap",
+      "selection": "Belgium",
+      "line": "-0.75",
+      "odds": 2.27,
+      "stake_gp": 100.0,
+      "loan_used_gp": 0.0,
+      "reason": "让平半稳",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "让平半稳"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "action": "no_bet",
+      "market": "handicap",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "沙伊受让坑",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "沙伊受让坑"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "action": "bet",
+      "market": "handicap",
+      "selection": "Iran",
+      "line": "-1",
+      "odds": 1.83,
+      "stake_gp": 120.0,
+      "loan_used_gp": 0.0,
+      "reason": "让一球主胜",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "让一球主胜"
+    },
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "赔率过低不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "赔率过低不投"
+    }
+  ],
+  "credit": {
+    "seat_id": "minimax",
+    "run_id": "run-15",
+    "credit_delta": 0,
+    "details": [
+      {
+        "type": "production_receipt_collected",
+        "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+        "credit_delta": 0
+      }
+    ],
+    "credit_score": 657.0,
+    "credit_grade": "B",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "loan_limit_gp": 500.0,
+    "available_loan_gp": 500.0,
+    "outstanding_loan_gp": 0.0,
+    "interest_rate": 0.11
+  },
+  "survival": {
+    "seat_id": "minimax",
+    "balance_gp": 1000.0,
+    "outstanding_loan_gp": 0.0,
+    "accrued_interest_gp": 0.0,
+    "net_worth_gp": 1000.0,
+    "recovery_mode": false,
+    "freeze_new_loan": false,
+    "loan_limit_gp": 500.0,
+    "available_loan_gp": 500.0,
+    "allowed_actions": [
+      "forecast",
+      "bet",
+      "no_bet"
+    ]
+  },
+  "settlement": {
+    "seat_id": "minimax",
+    "run_id": "run-15",
+    "profit_gp": 0.0,
+    "settled": [
+      {
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "profit_gp": 0
+      }
+    ]
+  }
+}

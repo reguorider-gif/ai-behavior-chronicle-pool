@@ -1,0 +1,69 @@
+{
+  "run_id": "smoke-behavior-v2-a",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "run_id": "smoke-behavior-v2-a",
+      "credit_delta": 24,
+      "details": [
+        {
+          "match_id": "SMOKE-M1",
+          "expected": "home",
+          "actual": "home",
+          "delta": 12
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "expected": "draw",
+          "actual": "draw",
+          "delta": 12
+        }
+      ],
+      "credit_score": 624.0,
+      "credit_grade": "B"
+    },
+    "beta": {
+      "seat_id": "beta",
+      "run_id": "smoke-behavior-v2-a",
+      "credit_delta": -20,
+      "details": [
+        {
+          "match_id": "SMOKE-M1",
+          "expected": "away",
+          "actual": "home",
+          "delta": -10
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "expected": "home",
+          "actual": "draw",
+          "delta": -10
+        }
+      ],
+      "credit_score": 580.0,
+      "credit_grade": "C"
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "run_id": "smoke-behavior-v2-a",
+      "credit_delta": 20,
+      "details": [
+        {
+          "match_id": "SMOKE-M1",
+          "expected": "home",
+          "actual": "home",
+          "delta": 10
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "expected": "draw",
+          "actual": "draw",
+          "delta": 10
+        }
+      ],
+      "credit_score": 620.0,
+      "credit_grade": "B"
+    }
+  }
+}

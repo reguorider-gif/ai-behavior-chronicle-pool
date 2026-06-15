@@ -1,0 +1,30 @@
+{
+  "run_id": "smoke-behavior-v2-b",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "run_id": "smoke-behavior-v2-b",
+      "credit_delta": 0,
+      "details": [],
+      "credit_score": 624.0,
+      "credit_grade": "B"
+    },
+    "beta": {
+      "seat_id": "beta",
+      "run_id": "smoke-behavior-v2-b",
+      "credit_delta": 0,
+      "details": [],
+      "credit_score": 580.0,
+      "credit_grade": "C"
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "run_id": "smoke-behavior-v2-b",
+      "credit_delta": 0,
+      "details": [],
+      "credit_score": 620.0,
+      "credit_grade": "B"
+    }
+  }
+}

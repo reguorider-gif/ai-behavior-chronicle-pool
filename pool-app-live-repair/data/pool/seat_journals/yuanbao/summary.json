@@ -1,0 +1,298 @@
+{
+  "seat_id": "yuanbao",
+  "updated_at": "2026-06-15T20:26:20+00:00",
+  "last_run_id": "run-15",
+  "runs_seen": [
+    "run-15"
+  ],
+  "event_counts": {
+    "prompt_context_recorded": 1,
+    "forecast_recorded": 1,
+    "investment_recorded": 1,
+    "credit_updated": 1,
+    "survival_updated": 1,
+    "settlement_recorded": 1
+  },
+  "recent_events": [
+    {
+      "event_type": "prompt_context_recorded",
+      "prompt_context_path": "data/pool/prompt_contexts/run-15/yuanbao.json",
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [
+        {
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ],
+          "match_id": "WC-K1",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0",
+          "p": "home",
+          "score": "1-0",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ],
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1",
+          "p": "home",
+          "score": "2-1",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 50,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无"
+          ],
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1",
+          "p": "draw",
+          "score": "1-1",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 65,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ],
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0",
+          "p": "home",
+          "score": "2-0",
+          "source": "strict_god_report",
+          "status": "collected"
+        },
+        {
+          "confidence": 95,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ],
+          "match_id": "WC-H1",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0",
+          "p": "home",
+          "score": "2-0",
+          "source": "strict_god_report",
+          "status": "collected"
+        }
+      ],
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "moneyline",
+          "match_id": "WC-K1",
+          "odds": 1.75,
+          "reason": "葡稳小胜",
+          "selection": "home",
+          "source": "strict_god_report",
+          "stake_gp": 200.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "葡稳小胜"
+        },
+        {
+          "action": "bet",
+          "line": "-",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "odds": 2.27,
+          "reason": "让球防冷",
+          "selection": "Belgium",
+          "source": "strict_god_report",
+          "stake_gp": 200.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "让球防冷"
+        },
+        {
+          "action": "no_bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "none",
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "odds": 0,
+          "reason": "均势不投",
+          "selection": "none",
+          "source": "strict_god_report",
+          "stake_gp": 0.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "均势不投"
+        },
+        {
+          "action": "bet",
+          "line": "-",
+          "loan_used_gp": 0.0,
+          "market": "handicap",
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "odds": 1.83,
+          "reason": "主让安全",
+          "selection": "Iran",
+          "source": "strict_god_report",
+          "stake_gp": 100.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "主让安全"
+        },
+        {
+          "action": "bet",
+          "line": "none",
+          "loan_used_gp": 0.0,
+          "market": "moneyline",
+          "match_id": "WC-H1",
+          "odds": 1.08,
+          "reason": "西班必胜",
+          "selection": "home",
+          "source": "strict_god_report",
+          "stake_gp": 500.0,
+          "status": "collected",
+          "why_bet_or_no_bet": "西班必胜"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无贷款",
+        "repayment_plan": "无"
+      },
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "status": "collected",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "available_loan_gp": 0.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": 0,
+      "credit_grade": "B",
+      "credit_score": 657.7,
+      "details": [
+        {
+          "credit_delta": 0,
+          "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+          "type": "production_receipt_collected"
+        }
+      ],
+      "event_type": "credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 500.0,
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 0.0,
+      "balance_gp": 445.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 445.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "settlement_recorded",
+      "run_id": "run-15",
+      "seat_id": "yuanbao",
+      "settlement": {
+        "profit_gp": -500.0,
+        "run_id": "run-15",
+        "seat_id": "yuanbao",
+        "settled": [
+          {
+            "line": "none",
+            "loan_used_gp": 0.0,
+            "market": "moneyline",
+            "match_id": "WC-H1",
+            "odds": 1.08,
+            "payout_gp": 0.0,
+            "profit_gp": -500.0,
+            "score": "0-0",
+            "seat_id": "yuanbao",
+            "selection": "home",
+            "stake_gp": 500.0,
+            "status": "lose"
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-15T19:56:21+00:00"
+    }
+  ],
+  "last_self_review": {},
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {
+    "profit_gp": -500.0,
+    "run_id": "run-15",
+    "seat_id": "yuanbao",
+    "settled": [
+      {
+        "line": "none",
+        "loan_used_gp": 0.0,
+        "market": "moneyline",
+        "match_id": "WC-H1",
+        "odds": 1.08,
+        "payout_gp": 0.0,
+        "profit_gp": -500.0,
+        "score": "0-0",
+        "seat_id": "yuanbao",
+        "selection": "home",
+        "stake_gp": 500.0,
+        "status": "lose"
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "profit_gp": 0
+      }
+    ]
+  },
+  "credit_score": 657.7,
+  "credit_grade": "B",
+  "credit_delta": 0,
+  "balance_gp": 445.0,
+  "outstanding_loan_gp": 0.0,
+  "accrued_interest_gp": 0.0,
+  "net_worth_gp": 445.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

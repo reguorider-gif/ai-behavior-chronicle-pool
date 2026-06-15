@@ -1,0 +1,1358 @@
+{
+  "version": "pred_invest_single_seat_reruns.v1",
+  "generated_at": "2026-06-14T23:21:39.202537+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "attempt_no": 5,
+  "base_url": "https://pool-app-one.vercel.app",
+  "bridge_base_url": "http://127.0.0.1:8501",
+  "input_run_ids": [
+    "d2c66e23d985",
+    "cb95b584a8c1",
+    "cf4a4f780080",
+    "predrepair-run14-attempt3",
+    "3bf99e09a4dc",
+    "ecef4b738de7",
+    "3e269df39b88",
+    "859cdad3e3c4",
+    "ea1b1e222bf6",
+    "44d062527458",
+    "299cb01a867c",
+    "a7e0f6a62c22",
+    "b26e50501a3b",
+    "970910b162f0",
+    "e917d090dc8f",
+    "632c19c803a3",
+    "bacf3d601b22",
+    "45a5c9ddc9da",
+    "3fc361452b89",
+    "9845577632af",
+    "62f7b965086a",
+    "02711f191fac",
+    "8f9b895d2b1a",
+    "cc70e540ce79",
+    "badcec66af16",
+    "1e247ede99bd",
+    "c724001cba1f",
+    "529569e21f6a",
+    "eecb7e46fd14",
+    "f94b2c1bdb3f",
+    "8a96116c10f0",
+    "9413255ceb7e",
+    "3abc21f8c0d6"
+  ],
+  "requested_seats": [
+    "grok"
+  ],
+  "initial_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  },
+  "targets": [
+    "grok"
+  ],
+  "runs": [
+    {
+      "seat": "grok",
+      "started_at": "2026-06-14T23:21:39.202541+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "active_run_id": null,
+          "automation_driver": "chrome_cdp",
+          "available": true,
+          "bridge_run": {
+            "busy": false,
+            "can_start_new_run": true,
+            "queued_count": 0
+          },
+          "busy": false,
+          "calibration_max_age_hours": 72,
+          "calibration_path": "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/data/seat_calibration.json",
+          "can_start_new_run": true,
+          "chrome_apple_events": null,
+          "chrome_cdp": {
+            "available": true,
+            "browser": "Chrome/149.0.7827.115",
+            "endpoint": "http://127.0.0.1:9333",
+            "playwright_probe": {
+              "contexts": 1,
+              "elapsed_seconds": 1.924,
+              "ok": true,
+              "pages": 15
+            },
+            "process": {
+              "command": "45620   ??  S      8:03.53 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --remote-debugging-port=9333 --user-data-dir=/Users/audimacmini/Documents/Playground/.omx/ai-judge/chrome-profile --no-first-run --no-default-browser-check --disable-background-mode --disable-features=DialMediaRouteProvider,MediaRouter",
+              "expected_profile_dir": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/chrome-profile",
+              "pid": 45620,
+              "port": 9333,
+              "profile_dir": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/chrome-profile",
+              "profile_match": true
+            },
+            "quality_mode_policy": {
+              "deepseek": {
+                "failure_code": "deepseek_expert_mode_not_verified",
+                "required_mode": "专家模式 + 深度思考 + 智能搜索",
+                "strict": false,
+                "verification_markers": [
+                  "deepseek_expert_verified:yes",
+                  "deepseek_tools_verified:yes"
+                ]
+              },
+              "doubao": {
+                "failure_code": "doubao_expert_mode_not_verified",
+                "required_mode": "专家/超能模式",
+                "strict": false,
+                "verification_markers": [
+                  "doubao_expert_verified:yes"
+                ]
+              },
+              "gemini": {
+                "failure_code": "gemini_quality_mode_not_verified",
+                "required_mode": "Pro 扩展",
+                "strict": false,
+                "verification_markers": [
+                  "gemini_pro_verified:yes",
+                  "gemini_expanded_verified:yes"
+                ]
+              },
+              "kimi": {
+                "failure_code": "kimi_quality_mode_not_verified",
+                "required_mode": "K2.6 思考",
+                "strict": true,
+                "verification_markers": [
+                  "kimi_model_verified:yes",
+                  "kimi_thinking_verified:yes"
+                ]
+              },
+              "meta": {
+                "failure_code": "meta_quality_mode_not_verified",
+                "required_mode": "思考",
+                "strict": false,
+                "verification_markers": [
+                  "meta_thinking_verified:yes"
+                ]
+              },
+              "minimax": {
+                "failure_code": "minimax_quality_mode_not_verified",
+                "required_mode": "MiniMax-M3 + Thinking",
+                "strict": false,
+                "verification_markers": [
+                  "minimax_model_verified:yes",
+                  "minimax_thinking_verified:yes"
+                ]
+              },
+              "qwen": {
+                "failure_code": "qwen_quality_mode_not_verified",
+                "required_mode": "Qwen3.7-Plus + 思考",
+                "strict": false,
+                "verification_markers": [
+                  "qwen_model_verified:yes",
+                  "qwen_deep_thinking_verified:yes"
+                ]
+              },
+              "wenxin": {
+                "failure_code": "wenxin_quality_mode_not_verified",
+                "required_mode": "深度思考",
+                "strict": true,
+                "verification_markers": [
+                  "wenxin_deep_thinking_verified:yes"
+                ]
+              },
+              "yuanbao": {
+                "failure_code": "yuanbao_quality_mode_not_verified",
+                "required_mode": "深度思考",
+                "strict": false,
+                "verification_markers": [
+                  "yuanbao_deep_thinking_verified:yes"
+                ]
+              }
+            },
+            "reason": "ready",
+            "tab_count": 34
+          },
+          "chrome_cdp_wake": null,
+          "config_exists": true,
+          "config_path": "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/data/web_seats.json",
+          "configured_count": 13,
+          "current_phase": "idle",
+          "current_seat": null,
+          "elapsed_sec": 0.0,
+          "enabled_count": 13,
+          "isolation": {
+            "automation": "Chrome CDP input events in fixed visible tabs",
+            "browser_profiles": "one persistent profile per seat",
+            "uses_system_clipboard": false,
+            "uses_system_keyboard": false,
+            "uses_system_mouse": false
+          },
+          "last_cdp_phase": "idle",
+          "playwright_installed": true,
+          "queued_count": 0,
+          "ready_count": 13,
+          "recoverable": false,
+          "seat_browser_matrix": [
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.273490+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://gemini.google.com/app?hl=zh",
+              "login_state": {
+                "state": "session_present",
+                "title": "World Cup Pool Investment Strategy - Google Gemini",
+                "url": "https://gemini.google.com/app/43136f39d553eab3?hl=zh"
+              },
+              "match_domains": [
+                "gemini.google.com"
+              ],
+              "provider": "Gemini",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "gemini",
+              "seat_name": "Gemini",
+              "target": "Gemini / gemini.google.com",
+              "url": "https://gemini.google.com/app?hl=zh"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.274437+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chatgpt.com/",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯预测与投注策略",
+                "url": "https://chatgpt.com/c/6a2ee265-b7ec-83ea-8eec-fc89ffd103c3"
+              },
+              "match_domains": [
+                "chatgpt.com"
+              ],
+              "provider": "ChatGPT",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "chatgpt",
+              "seat_name": "ChatGPT",
+              "target": "ChatGPT / chatgpt.com",
+              "url": "https://chatgpt.com/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.274644+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chat.deepseek.com/",
+              "login_state": {
+                "state": "session_present",
+                "title": "DeepSeek - 探索未至之境",
+                "url": "https://chat.deepseek.com/"
+              },
+              "match_domains": [
+                "chat.deepseek.com"
+              ],
+              "provider": "DeepSeek",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "deepseek",
+              "seat_name": "DeepSeek",
+              "target": "DeepSeek / chat.deepseek.com",
+              "url": "https://chat.deepseek.com/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.274785+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chat.qwen.ai/",
+              "login_state": {
+                "state": "session_present",
+                "title": "Qwen Studio",
+                "url": "https://chat.qwen.ai/c/dda63125-7d65-4805-ad89-3745ca5d0990"
+              },
+              "match_domains": [
+                "chat.qwen.ai"
+              ],
+              "provider": "Qwen Studio",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "qwen",
+              "seat_name": "Qwen",
+              "target": "Qwen Studio / chat.qwen.ai",
+              "url": "https://chat.qwen.ai/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.274908+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.kimi.com/",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯 AI 预测池 - Kimi",
+                "url": "https://www.kimi.com/chat/19ec7ddc-b822-8095-8000-0962706e2ffd?chat_enter_method=home"
+              },
+              "match_domains": [
+                "www.kimi.com",
+                "kimi.com"
+              ],
+              "provider": "Kimi",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "kimi",
+              "seat_name": "Kimi",
+              "target": "Kimi / kimi.com",
+              "url": "https://www.kimi.com/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275021+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://grok.com/",
+              "login_state": {
+                "state": "session_present",
+                "title": "Grok",
+                "url": "https://grok.com/"
+              },
+              "match_domains": [
+                "grok.com"
+              ],
+              "provider": "Grok",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "grok",
+              "seat_name": "Grok",
+              "target": "Grok / grok.com",
+              "url": "https://grok.com/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275120+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://yuanbao.tencent.com/chat/",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯AI预测池策略分析",
+                "url": "https://yuanbao.tencent.com/chat/naQivTmsDa/0NyiXR2sV4y"
+              },
+              "match_domains": [
+                "yuanbao.tencent.com"
+              ],
+              "provider": "腾讯元宝",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "yuanbao",
+              "seat_name": "Yuanbao",
+              "target": "腾讯元宝 / yuanbao.tencent.com",
+              "url": "https://yuanbao.tencent.com/chat/"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275214+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://aistudio.xiaomimimo.com/#/chat",
+              "login_state": {
+                "state": "session_present",
+                "title": "Xiaomi MiMo Studio",
+                "url": "https://aistudio.xiaomimimo.com/#/chat/6878d7e509c770bc7678185a943a0a26"
+              },
+              "match_domains": [
+                "aistudio.xiaomimimo.com"
+              ],
+              "provider": "Xiaomi MiMo Studio",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "mimo",
+              "seat_name": "MiMo",
+              "target": "Xiaomi MiMo Studio / aistudio.xiaomimimo.com",
+              "url": "https://aistudio.xiaomimimo.com/#/chat"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275308+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.doubao.com/chat/",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯AI预测池研究游戏分析 - 豆包",
+                "url": "https://www.doubao.com/chat/38430640013855490"
+              },
+              "match_domains": [
+                "doubao.com",
+                "www.doubao.com"
+              ],
+              "provider": "Doubao",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "doubao",
+              "seat_name": "Doubao",
+              "target": "Doubao / doubao.com",
+              "url": "https://www.doubao.com/chat/"
+            },
+            {
+              "best_effort": true,
+              "calibrated_at": "2026-06-09T15:56:28.007128+00:00",
+              "calibration_age_hours": 127.42,
+              "calibration_error_code": "disabled",
+              "calibration_status": "fail",
+              "channel": "web",
+              "configured": false,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": true,
+              "execution_required": false,
+              "fresh_url": "https://claude.ai/new",
+              "login_state": {
+                "state": "provider_account_restricted",
+                "title": "克劳德",
+                "url": "https://claude.ai/restricted"
+              },
+              "match_domains": [
+                "claude.ai"
+              ],
+              "provider": "Claude",
+              "ready": false,
+              "reason": "provider_account_restricted",
+              "safe_background": true,
+              "seat": "claude",
+              "seat_name": "Claude",
+              "target": "Claude / claude.ai",
+              "url": "https://claude.ai/new"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275391+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://agent.minimax.io",
+              "login_state": {
+                "state": "session_present",
+                "title": "MiniMax Agent: Minimize Effort, Maximize Intelligence",
+                "url": "https://agent.minimax.io/mavis?id=409259231158355"
+              },
+              "match_domains": [
+                "agent.minimax.io"
+              ],
+              "provider": "MiniMax Agent",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "minimax",
+              "seat_name": "MiniMax",
+              "target": "MiniMax Agent / agent.minimax.io",
+              "url": "https://agent.minimax.io"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275478+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://bigmodel.cn/trialcenter/modeltrial/text",
+              "login_state": {
+                "state": "session_present",
+                "title": "智谱AI开放平台",
+                "url": "https://bigmodel.cn/trialcenter/modeltrial/text"
+              },
+              "match_domains": [
+                "bigmodel.cn"
+              ],
+              "provider": "智谱 AI",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "zhipu",
+              "seat_name": "Zhipu",
+              "target": "智谱AI开放平台 / bigmodel.cn",
+              "url": "https://bigmodel.cn/trialcenter/modeltrial/text"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275561+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://wenxin.baidu.com/new-chat",
+              "login_state": {
+                "state": "session_present",
+                "title": "文心 - 百度旗下AI助手",
+                "url": "https://wenxin.baidu.com/chat/211133748783"
+              },
+              "match_domains": [
+                "wenxin.baidu.com",
+                "yiyan.baidu.com"
+              ],
+              "provider": "文心一言",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "wenxin",
+              "seat_name": "Wenxin",
+              "target": "文心一言 / wenxin.baidu.com",
+              "url": "https://wenxin.baidu.com/new-chat"
+            },
+            {
+              "best_effort": false,
+              "calibrated_at": "2026-06-09T19:15:03.275654+00:00",
+              "calibration_age_hours": 124.11,
+              "calibration_error_code": null,
+              "calibration_status": "pass",
+              "channel": "web",
+              "configured": true,
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.meta.ai/",
+              "login_state": {
+                "state": "session_present",
+                "title": "Meta AI",
+                "url": "https://www.meta.ai/prompt/b54032cc-d728-41ba-bfb1-78540983d7a4"
+              },
+              "match_domains": [
+                "www.meta.ai",
+                "meta.ai"
+              ],
+              "provider": "Meta AI",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "seat": "meta",
+              "seat_name": "Meta AI",
+              "target": "Meta AI / meta.ai",
+              "url": "https://www.meta.ai/"
+            }
+          ],
+          "seats": [
+            {
+              "best_effort": false,
+              "browser_label": "Gemini / gemini.google.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.273490+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "gemini",
+                "seat_name": "Gemini",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://gemini.google.com/app?hl=zh",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://gemini.google.com/app?hl=zh",
+              "id": "gemini",
+              "login_state": {
+                "state": "session_present",
+                "title": "World Cup Pool Investment Strategy - Google Gemini",
+                "url": "https://gemini.google.com/app/43136f39d553eab3?hl=zh"
+              },
+              "match_domains": [
+                "gemini.google.com"
+              ],
+              "name": "Gemini",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/gemini",
+              "provider": "Gemini",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://gemini.google.com/app?hl=zh"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "ChatGPT / chatgpt.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.274437+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "chatgpt",
+                "seat_name": "ChatGPT",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://chatgpt.com/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chatgpt.com/",
+              "id": "chatgpt",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯预测与投注策略",
+                "url": "https://chatgpt.com/c/6a2ee265-b7ec-83ea-8eec-fc89ffd103c3"
+              },
+              "match_domains": [
+                "chatgpt.com"
+              ],
+              "name": "ChatGPT",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/chatgpt",
+              "provider": "ChatGPT",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://chatgpt.com/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "DeepSeek / chat.deepseek.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.274644+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "deepseek",
+                "seat_name": "DeepSeek",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://chat.deepseek.com/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chat.deepseek.com/",
+              "id": "deepseek",
+              "login_state": {
+                "state": "session_present",
+                "title": "DeepSeek - 探索未至之境",
+                "url": "https://chat.deepseek.com/"
+              },
+              "match_domains": [
+                "chat.deepseek.com"
+              ],
+              "name": "DeepSeek",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/deepseek",
+              "provider": "DeepSeek",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://chat.deepseek.com/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Qwen Studio / chat.qwen.ai",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.274785+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "qwen",
+                "seat_name": "Qwen",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://chat.qwen.ai/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://chat.qwen.ai/",
+              "id": "qwen",
+              "login_state": {
+                "state": "session_present",
+                "title": "Qwen Studio",
+                "url": "https://chat.qwen.ai/c/dda63125-7d65-4805-ad89-3745ca5d0990"
+              },
+              "match_domains": [
+                "chat.qwen.ai"
+              ],
+              "name": "Qwen",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/qwen",
+              "provider": "Qwen Studio",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://chat.qwen.ai/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Kimi / kimi.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.274908+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "kimi",
+                "seat_name": "Kimi",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://www.kimi.com/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.kimi.com/",
+              "id": "kimi",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯 AI 预测池 - Kimi",
+                "url": "https://www.kimi.com/chat/19ec7ddc-b822-8095-8000-0962706e2ffd?chat_enter_method=home"
+              },
+              "match_domains": [
+                "www.kimi.com",
+                "kimi.com"
+              ],
+              "name": "Kimi",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/kimi",
+              "provider": "Kimi",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://www.kimi.com/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Grok / grok.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275021+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "grok",
+                "seat_name": "Grok",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://grok.com/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://grok.com/",
+              "id": "grok",
+              "login_state": {
+                "state": "session_present",
+                "title": "Grok",
+                "url": "https://grok.com/"
+              },
+              "match_domains": [
+                "grok.com"
+              ],
+              "name": "Grok",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/grok",
+              "provider": "Grok",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://grok.com/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "腾讯元宝 / yuanbao.tencent.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275120+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "yuanbao",
+                "seat_name": "Yuanbao",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://yuanbao.tencent.com/chat/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://yuanbao.tencent.com/chat/",
+              "id": "yuanbao",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯AI预测池策略分析",
+                "url": "https://yuanbao.tencent.com/chat/naQivTmsDa/0NyiXR2sV4y"
+              },
+              "match_domains": [
+                "yuanbao.tencent.com"
+              ],
+              "name": "Yuanbao",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/yuanbao",
+              "provider": "腾讯元宝",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://yuanbao.tencent.com/chat/"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Xiaomi MiMo Studio / aistudio.xiaomimimo.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275214+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "mimo",
+                "seat_name": "MiMo",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://aistudio.xiaomimimo.com/#/chat",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://aistudio.xiaomimimo.com/#/chat",
+              "id": "mimo",
+              "login_state": {
+                "state": "session_present",
+                "title": "Xiaomi MiMo Studio",
+                "url": "https://aistudio.xiaomimimo.com/#/chat/6878d7e509c770bc7678185a943a0a26"
+              },
+              "match_domains": [
+                "aistudio.xiaomimimo.com"
+              ],
+              "name": "MiMo",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/mimo",
+              "provider": "Xiaomi MiMo Studio",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://aistudio.xiaomimimo.com/#/chat"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Doubao / doubao.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275308+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "doubao",
+                "seat_name": "Doubao",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://www.doubao.com/chat/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.doubao.com/chat/",
+              "id": "doubao",
+              "login_state": {
+                "state": "session_present",
+                "title": "世界杯AI预测池研究游戏分析 - 豆包",
+                "url": "https://www.doubao.com/chat/38430640013855490"
+              },
+              "match_domains": [
+                "doubao.com",
+                "www.doubao.com"
+              ],
+              "name": "Doubao",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/doubao",
+              "provider": "Doubao",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://www.doubao.com/chat/"
+            },
+            {
+              "best_effort": true,
+              "browser_label": "Claude / claude.ai",
+              "calibration": {
+                "age_hours": 127.42,
+                "calibrated_at": "2026-06-09T15:56:28.007128+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": {
+                  "code": "disabled",
+                  "message": "Seat is disabled in web_seats.json."
+                },
+                "fresh": false,
+                "seat": "claude",
+                "seat_name": "Claude",
+                "status": "fail"
+              },
+              "channel": "web",
+              "configured": false,
+              "desktop_app": null,
+              "display_url": "https://claude.ai/new",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": false,
+              "exclude_from_publish_gate": true,
+              "execution_required": false,
+              "fresh_url": "https://claude.ai/new",
+              "id": "claude",
+              "login_state": {
+                "state": "provider_account_restricted",
+                "title": "克劳德",
+                "url": "https://claude.ai/restricted"
+              },
+              "match_domains": [
+                "claude.ai"
+              ],
+              "name": "Claude",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/claude",
+              "provider": "Claude",
+              "ready": false,
+              "reason": "provider_account_restricted",
+              "safe_background": true,
+              "url": "https://claude.ai/new"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "MiniMax Agent / agent.minimax.io",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275391+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "minimax",
+                "seat_name": "MiniMax",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://agent.minimax.io",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://agent.minimax.io",
+              "id": "minimax",
+              "login_state": {
+                "state": "session_present",
+                "title": "MiniMax Agent: Minimize Effort, Maximize Intelligence",
+                "url": "https://agent.minimax.io/mavis?id=409259231158355"
+              },
+              "match_domains": [
+                "agent.minimax.io"
+              ],
+              "name": "MiniMax",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/minimax",
+              "provider": "MiniMax Agent",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://agent.minimax.io"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "智谱AI开放平台 / bigmodel.cn",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275478+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "zhipu",
+                "seat_name": "Zhipu",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://bigmodel.cn/trialcenter/modeltrial/text",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://bigmodel.cn/trialcenter/modeltrial/text",
+              "id": "zhipu",
+              "login_state": {
+                "state": "session_present",
+                "title": "智谱AI开放平台",
+                "url": "https://bigmodel.cn/trialcenter/modeltrial/text"
+              },
+              "match_domains": [
+                "bigmodel.cn"
+              ],
+              "name": "Zhipu",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/zhipu",
+              "provider": "智谱 AI",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://bigmodel.cn/trialcenter/modeltrial/text"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "文心一言 / wenxin.baidu.com",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275561+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "wenxin",
+                "seat_name": "Wenxin",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://wenxin.baidu.com/new-chat",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://wenxin.baidu.com/new-chat",
+              "id": "wenxin",
+              "login_state": {
+                "state": "session_present",
+                "title": "文心 - 百度旗下AI助手",
+                "url": "https://wenxin.baidu.com/chat/211133748783"
+              },
+              "match_domains": [
+                "wenxin.baidu.com",
+                "yiyan.baidu.com"
+              ],
+              "name": "Wenxin",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/wenxin",
+              "provider": "文心一言",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://wenxin.baidu.com/new-chat"
+            },
+            {
+              "best_effort": false,
+              "browser_label": "Meta AI / meta.ai",
+              "calibration": {
+                "age_hours": 124.11,
+                "calibrated_at": "2026-06-09T19:15:03.275654+00:00",
+                "driver": "chrome_cdp",
+                "elapsed_seconds": 0,
+                "error": null,
+                "fresh": false,
+                "sample_chars": 0,
+                "seat": "meta",
+                "seat_name": "Meta AI",
+                "status": "pass"
+              },
+              "channel": "web",
+              "configured": true,
+              "desktop_app": null,
+              "display_url": "https://www.meta.ai/",
+              "driver": "chrome_cdp",
+              "driver_label": "Chrome CDP 固定标签",
+              "enabled": true,
+              "exclude_from_publish_gate": false,
+              "execution_required": true,
+              "fresh_url": "https://www.meta.ai/",
+              "id": "meta",
+              "login_state": {
+                "state": "session_present",
+                "title": "Meta AI",
+                "url": "https://www.meta.ai/prompt/b54032cc-d728-41ba-bfb1-78540983d7a4"
+              },
+              "match_domains": [
+                "www.meta.ai",
+                "meta.ai"
+              ],
+              "name": "Meta AI",
+              "operator_required": false,
+              "profile_dir": "/Users/audimacmini/Documents/ai-judge-skill/data/web_profiles/meta",
+              "provider": "Meta AI",
+              "ready": true,
+              "reason": "ready",
+              "safe_background": true,
+              "url": "https://www.meta.ai/"
+            }
+          ],
+          "since": null
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": true,
+        "error": null,
+        "selected_seats": [
+          "grok"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 2061,
+        "attempt_no": 5
+      },
+      "run_id": "0acbbca288fc",
+      "submit_ok": true,
+      "wait_ok": true,
+      "wait": {
+        "ok": true,
+        "error": null,
+        "progress": null
+      },
+      "finished_at": "2026-06-14T23:26:11.172290+00:00"
+    }
+  ],
+  "page_salvage": {
+    "ok": false,
+    "error": "ModuleNotFoundError",
+    "message": "No module named 'playwright'",
+    "note": "Page salvage is best-effort; quality gate remains authoritative."
+  },
+  "final_run_ids": [
+    "d2c66e23d985",
+    "cb95b584a8c1",
+    "cf4a4f780080",
+    "predrepair-run14-attempt3",
+    "3bf99e09a4dc",
+    "ecef4b738de7",
+    "3e269df39b88",
+    "859cdad3e3c4",
+    "ea1b1e222bf6",
+    "44d062527458",
+    "299cb01a867c",
+    "a7e0f6a62c22",
+    "b26e50501a3b",
+    "970910b162f0",
+    "e917d090dc8f",
+    "632c19c803a3",
+    "bacf3d601b22",
+    "45a5c9ddc9da",
+    "3fc361452b89",
+    "9845577632af",
+    "62f7b965086a",
+    "02711f191fac",
+    "8f9b895d2b1a",
+    "cc70e540ce79",
+    "badcec66af16",
+    "1e247ede99bd",
+    "c724001cba1f",
+    "529569e21f6a",
+    "eecb7e46fd14",
+    "f94b2c1bdb3f",
+    "8a96116c10f0",
+    "9413255ceb7e",
+    "3abc21f8c0d6",
+    "0acbbca288fc"
+  ],
+  "artifacts": {
+    "audit": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_bridge_output_audit.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_bridge_output_audit.md"
+    },
+    "quality_gate": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_quality_gate.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_quality_gate.md"
+    },
+    "sop_guard": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_sop_guard.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_sop_guard.md"
+    },
+    "observer": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/2026-06-14_run-14_pre.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/2026-06-14_run-14_pre.md",
+      "latest_json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/latest.json",
+      "latest_markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/latest.md"
+    },
+    "daily_sop_return_code": 2,
+    "current_game_return_code": 2
+  },
+  "final_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  }
+}

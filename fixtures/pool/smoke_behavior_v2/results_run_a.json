@@ -1,0 +1,6 @@
+{
+  "matches": [
+    {"match_id": "SMOKE-M1", "score": "2-0", "status": "settled"},
+    {"match_id": "SMOKE-M2", "score": "1-1", "status": "settled"}
+  ]
+}

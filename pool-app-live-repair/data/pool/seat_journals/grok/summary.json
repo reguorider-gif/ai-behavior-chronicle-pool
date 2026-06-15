@@ -1,0 +1,215 @@
+{
+  "seat_id": "grok",
+  "updated_at": "2026-06-15T20:26:20+00:00",
+  "last_run_id": "run-15",
+  "runs_seen": [
+    "run-15"
+  ],
+  "event_counts": {
+    "prompt_context_recorded": 1,
+    "forecast_recorded": 1,
+    "investment_recorded": 1,
+    "credit_updated": 1,
+    "survival_updated": 1
+  },
+  "recent_events": [
+    {
+      "event_type": "prompt_context_recorded",
+      "prompt_context_path": "data/pool/prompt_contexts/run-15/grok.json",
+      "run_id": "run-15",
+      "seat_id": "grok",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [
+        {
+          "away_win_prob": null,
+          "confidence": 0,
+          "draw_prob": null,
+          "edge_assessment": "missing",
+          "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "home_win_prob": null,
+          "information_gaps": [
+            "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          ],
+          "match_id": "WC-K1",
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "status": "missing_provider_blocked"
+        },
+        {
+          "away_win_prob": null,
+          "confidence": 0,
+          "draw_prob": null,
+          "edge_assessment": "missing",
+          "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "home_win_prob": null,
+          "information_gaps": [
+            "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          ],
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "status": "missing_provider_blocked"
+        },
+        {
+          "away_win_prob": null,
+          "confidence": 0,
+          "draw_prob": null,
+          "edge_assessment": "missing",
+          "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "home_win_prob": null,
+          "information_gaps": [
+            "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          ],
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "status": "missing_provider_blocked"
+        },
+        {
+          "away_win_prob": null,
+          "confidence": 0,
+          "draw_prob": null,
+          "edge_assessment": "missing",
+          "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "home_win_prob": null,
+          "information_gaps": [
+            "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          ],
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "status": "missing_provider_blocked"
+        }
+      ],
+      "run_id": "run-15",
+      "seat_id": "grok",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [
+        {
+          "action": "missing",
+          "line": null,
+          "loan_used_gp": 0,
+          "market": "",
+          "match_id": "WC-K1",
+          "odds": null,
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "selection": "",
+          "source": "quality_gate_missing_receipt",
+          "stake_gp": 0,
+          "status": "missing_provider_blocked",
+          "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+        },
+        {
+          "action": "missing",
+          "line": null,
+          "loan_used_gp": 0,
+          "market": "",
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "odds": null,
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "selection": "",
+          "source": "quality_gate_missing_receipt",
+          "stake_gp": 0,
+          "status": "missing_provider_blocked",
+          "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+        },
+        {
+          "action": "missing",
+          "line": null,
+          "loan_used_gp": 0,
+          "market": "",
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "odds": null,
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "selection": "",
+          "source": "quality_gate_missing_receipt",
+          "stake_gp": 0,
+          "status": "missing_provider_blocked",
+          "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+        },
+        {
+          "action": "missing",
+          "line": null,
+          "loan_used_gp": 0,
+          "market": "",
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "odds": null,
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "selection": "",
+          "source": "quality_gate_missing_receipt",
+          "stake_gp": 0,
+          "status": "missing_provider_blocked",
+          "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+        }
+      ],
+      "loan_decision": {
+        "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-15",
+      "seat_id": "grok",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 641.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-15",
+      "seat_id": "grok",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-15",
+      "seat_id": "grok",
+      "ts": "2026-06-15T19:56:21+00:00"
+    }
+  ],
+  "last_self_review": {},
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {},
+  "credit_score": 641.0,
+  "credit_grade": "B",
+  "credit_delta": -8,
+  "balance_gp": 1000.0,
+  "outstanding_loan_gp": 0.0,
+  "accrued_interest_gp": 0.0,
+  "net_worth_gp": 1000.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

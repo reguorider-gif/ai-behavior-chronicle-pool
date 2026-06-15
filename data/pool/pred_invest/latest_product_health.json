@@ -1,0 +1,69 @@
+{
+  "version": "pred_invest_product_health.v1",
+  "generated_at": "2026-06-15T17:14:17.216085+00:00",
+  "status": "READY_WITH_WARNINGS",
+  "errors": [],
+  "warnings": [
+    "provider_blocked_wait_for_reset:grok"
+  ],
+  "findings": [
+    "provider_blocked_seats=grok",
+    "browser_qa_entry=ok_with_chrome_fallback",
+    "proxy_python_socket_check_sandboxed_but_non_blocking",
+    "current=2026-06-15 run-15 PARTIAL_NOT_READY",
+    "quality=PARTIAL_NOT_READY valid=11/12 needs=grok",
+    "matches=5 market_rows=42",
+    "observer=2026-06-15 run-15 phase=pre",
+    "browser_qa=Google Chrome 149.0.7827.115",
+    "score_sync_overdue=0"
+  ],
+  "artifact_refs": {
+    "current_game": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_current_game.json",
+    "daily_sop": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_prompt_pack.json",
+    "quality_gate": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_quality_gate.json",
+    "observer_ledger": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/latest.json",
+    "match_data_alignment": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_match_data_alignment_audit.json",
+    "score_sync": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_score_sync.json",
+    "frontend_index": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app-live-repair/index.html",
+    "live_current_game": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app-live-repair/data/pool/pred_invest/latest_current_game.json",
+    "live_observer_ledger": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app-live-repair/data/pool/observer_ledgers/latest.json",
+    "browser_wrapper": "/opt/homebrew/Caskroom/chromium/latest/chromium.wrapper.sh"
+  },
+  "browser_qa": {
+    "command": "/opt/homebrew/bin/chromium",
+    "wrapper": "/opt/homebrew/Caskroom/chromium/latest/chromium.wrapper.sh",
+    "ok": true,
+    "uses_chrome_fallback": true,
+    "do_not_delete_marker": true,
+    "returncode": 0,
+    "version": "Google Chrome 149.0.7827.115"
+  },
+  "proxy": {
+    "configured": true,
+    "proxies": {
+      "HTTP_PROXY": "http://127.0.0.1:7897",
+      "HTTPS_PROXY": "http://127.0.0.1:7897",
+      "http_proxy": "http://127.0.0.1:7897",
+      "https_proxy": "http://127.0.0.1:7897"
+    },
+    "ok": true,
+    "local_control_plane_bypasses_proxy": true,
+    "checks": [
+      {
+        "host": "127.0.0.1",
+        "port": 7897,
+        "reachable": false,
+        "error": "[Errno 1] Operation not permitted",
+        "python_socket_blocked_by_sandbox": true,
+        "nc_probe": {
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "nc: connectx to 127.0.0.1 port 7897 (tcp) failed: Operation not permitted"
+        },
+        "diagnostic_only": true
+      }
+    ],
+    "diagnostic_only": true
+  }
+}

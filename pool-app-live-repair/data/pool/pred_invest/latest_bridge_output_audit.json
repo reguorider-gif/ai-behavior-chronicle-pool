@@ -1,0 +1,532 @@
+{
+  "version": "pred_invest_bridge_output_audit.v1",
+  "generated_at": "2026-06-15T16:24:06.106763+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "run_ids": [
+    "0da5412a9597",
+    "b33916a4b385",
+    "756e78426eb5",
+    "13176b9614f9",
+    "2417a26089e3",
+    "5b83ca4d14a0",
+    "6f0a6d43dafd",
+    "7371a95c52b1",
+    "f237a524f16f",
+    "fa47ecfff7cf",
+    "3460f0a20d1d",
+    "eebac75ef2d1",
+    "ef2d7a804329",
+    "9f1457383a12",
+    "f665835e4d40",
+    "e71c1024a4d6",
+    "b9c0b2497162",
+    "2b4f863569d6",
+    "46306bac87f1",
+    "9aee63119a68",
+    "314ae74eaee1",
+    "bec893a721e3",
+    "737c12a30c43",
+    "d6ef204aa1ed",
+    "5fe3fe78089f",
+    "52812cc907fe",
+    "d8b6c6143095",
+    "6f266c36cac6",
+    "585709847a4b",
+    "fc6bc896100f",
+    "c9ec4b3f1690",
+    "91726e268e52",
+    "e2a40a526ab7",
+    "df24f0c89f8d",
+    "e5e67523cf4a",
+    "1c074eeac2e6",
+    "d07f120d5f20",
+    "f7477100202c",
+    "f6d312c4c03a",
+    "63743ac0111b",
+    "c9417dce8b88",
+    "f2ea80731e8b",
+    "26fa688fc56f",
+    "ca25fb857efa",
+    "42a97c4d0fa9"
+  ],
+  "required_match_ids": [
+    "WC-H1",
+    "WC-K1",
+    "WCAPI-20260615-BELGIUM-EGYPT",
+    "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+    "WCAPI-20260616-IRAN-NEW-ZEALAND"
+  ],
+  "required_match_source": "existing_quality_gate:2026-06-15_run-15_quality_gate.json",
+  "valid_count": 11,
+  "invalid_count": 1,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "invalid_seats": [
+    "grok"
+  ],
+  "ignored_extra_seats": [
+    "zhipu"
+  ],
+  "missing_seats": [],
+  "needs_rerun": [
+    "grok"
+  ],
+  "seat_results": [
+    {
+      "seat": "chatgpt",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:chatgpt",
+      "response_chars": 756,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "9f1457383a12",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 779
+        },
+        {
+          "run_id": "9f1457383a12",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 776
+        },
+        {
+          "run_id": "9f1457383a12",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 756
+        }
+      ]
+    },
+    {
+      "seat": "deepseek",
+      "valid": true,
+      "issues": [],
+      "run_id": "0da5412a9597",
+      "response_chars": 4133,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": []
+    },
+    {
+      "seat": "doubao",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:doubao",
+      "response_chars": 803,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "c9ec4b3f1690",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 853
+        },
+        {
+          "run_id": "f7477100202c",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "f7477100202c",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 803
+        }
+      ]
+    },
+    {
+      "seat": "gemini",
+      "valid": true,
+      "issues": [],
+      "run_id": "0da5412a9597",
+      "response_chars": 4673,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": []
+    },
+    {
+      "seat": "grok",
+      "valid": false,
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "run_id": "page_salvage:grok",
+      "response_chars": 1142,
+      "forecast_match_ids": [],
+      "investment_match_ids": [],
+      "last_errors": [
+        {
+          "run_id": "2417a26089e3",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "e71c1024a4d6",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "e71c1024a4d6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "kimi",
+      "valid": true,
+      "issues": [],
+      "run_id": "756e78426eb5",
+      "response_chars": 3078,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "0da5412a9597",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "0da5412a9597",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "0da5412a9597",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "meta",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:meta",
+      "response_chars": 779,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "63743ac0111b",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 768
+        },
+        {
+          "run_id": "63743ac0111b",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 790
+        },
+        {
+          "run_id": "63743ac0111b",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 779
+        }
+      ]
+    },
+    {
+      "seat": "mimo",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:mimo",
+      "response_chars": 852,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "0da5412a9597",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "ca25fb857efa",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "ca25fb857efa",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 852
+        }
+      ]
+    },
+    {
+      "seat": "minimax",
+      "valid": true,
+      "issues": [],
+      "run_id": "df24f0c89f8d",
+      "response_chars": 790,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "fa47ecfff7cf",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 3742
+        },
+        {
+          "run_id": "314ae74eaee1",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "314ae74eaee1",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 812
+        }
+      ]
+    },
+    {
+      "seat": "qwen",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:qwen",
+      "response_chars": 743,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "756e78426eb5",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "f237a524f16f",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "f237a524f16f",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 1781
+        }
+      ]
+    },
+    {
+      "seat": "wenxin",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:wenxin",
+      "response_chars": 776,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "1c074eeac2e6",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 776
+        },
+        {
+          "run_id": "f2ea80731e8b",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "f2ea80731e8b",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 776
+        }
+      ]
+    },
+    {
+      "seat": "yuanbao",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:yuanbao",
+      "response_chars": 758,
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "last_errors": [
+        {
+          "run_id": "26fa688fc56f",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 747
+        },
+        {
+          "run_id": "26fa688fc56f",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 781
+        },
+        {
+          "run_id": "26fa688fc56f",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 758
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "0da5412a9597",
+  "round_id": "run-15",
+  "attempt_no": 3,
+  "date": "2026-06-15",
+  "seat": "gemini",
+  "model_account": "gemini",
+  "ok": true,
+  "raw_output_path": "data/pool/model_outputs/raw_rerun/run-15/attempt-3/gemini.txt",
+  "base_raw_output_path": "data/pool/model_outputs/raw/run-15/gemini.txt",
+  "parsed": {
+    "model_account": "gemini",
+    "seat_id": "gemini",
+    "one_sentence_strategy": "Applying strict data validation constraints: executing one low-stake value bet on fully specified H2H markets while aggressively skipping handicap markets due to missing structural line parameters.",
+    "forecasts": [
+      {
+        "match_id": "WC-H1",
+        "home_win_prob": 0.89,
+        "draw_prob": 0.08,
+        "away_win_prob": 0.03,
+        "most_likely_score": "3-0",
+        "confidence": 0.92,
+        "fair_odds": {
+          "home": 1.12,
+          "draw": 12.5,
+          "away": 33.33
+        },
+        "edge_assessment": "no_bet",
+        "information_gaps": [
+          "Cape Verde squad rotation and travel fatigue data"
+        ]
+      },
+      {
+        "match_id": "WC-K1",
+        "home_win_prob": 0.52,
+        "draw_prob": 0.29,
+        "away_win_prob": 0.19,
+        "most_likely_score": "1-1",
+        "confidence": 0.85,
+        "fair_odds": {
+          "home": 1.92,
+          "draw": 3.45,
+          "away": 5.26
+        },
+        "edge_assessment": "bettable",
+        "information_gaps": [
+          "Colombia defensive formation specifics"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "home_win_prob": 0.62,
+        "draw_prob": 0.24,
+        "away_win_prob": 0.14,
+        "most_likely_score": "2-0",
+        "confidence": 0.78,
+        "fair_odds": {
+          "home": 1.61,
+          "draw": 4.17,
+          "away": 7.14
+        },
+        "edge_assessment": "no_bet",
+        "information_gaps": [
+          "Missing exact handicap line (e.g., -1.0, -1.5) in provider feed making odds unevaluable",
+          "Egypt key attacker availability"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "home_win_prob": 0.16,
+        "draw_prob": 0.26,
+        "away_win_prob": 0.58,
+        "most_likely_score": "0-2",
+        "confidence": 0.84,
+        "fair_odds": {
+          "home": 6.25,
+          "draw": 3.85,
+          "away": 1.72
+        },
+        "edge_assessment": "no_bet",
+        "information_gaps": [
+          "Missing exact handicap line in provider feed"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "home_win_prob": 0.57,
+        "draw_prob": 0.28,
+        "away_win_prob": 0.15,
+        "most_likely_score": "1-0",
+        "confidence": 0.81,
+        "fair_odds": {
+          "home": 1.75,
+          "draw": 3.57,
+          "away": 6.67
+        },
+        "edge_assessment": "no_bet",
+        "information_gaps": [
+          "Missing exact handicap line in provider feed"
+        ]
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "selection": null,
+        "market": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.0,
+        "estimated_ev": 0.0,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "N/A"
+      },
+      {
+        "match_id": "WC-K1",
+        "action": "bet",
+        "selection": "Draw",
+        "market": "h2h",
+        "line": null,
+        "odds": 3.6,
+        "stake_gp": 50,
+        "own_funds_gp": 50,
+        "loan_used_gp": 0,
+        "model_prob": 0.29,
+        "market_implied_prob": 0.278,
+        "estimated_ev": 0.044,
+        "max_loss_gp": 50,
+        "survival_plan_if_loss": "Absorb 50 GP loss from 1850 GP balance; 50 GP is ~5.8% of net worth, strictly compliant with max 15% tier limit for 2.5-5.0 odds. No insolvency risk."
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "selection": null,
+        "market": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.0,
+        "estimated_ev": 0.0,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "N/A"
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "selection": null,
+        "market": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.0,
+        "estimated_ev": 0.0,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "N/A"
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "selection": null,
+        "market": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.0,
+        "estimated_ev": 0.0,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "N/A"
+      }
+    ],
+    "loan_decision": {
+      "borrow_gp": 0,
+      "reason": "Existing balance of 1850 GP provides ample liquidity. Net worth (850 GP) limits position sizing, but current EV-positive opportunities are minimal. Focus is on protecting capital rather than leveraged expansion.",
+      "repayment_plan": "Will continue to amortize existing 1000 GP loan organically from balance as tournament phases progress."
+    },
+    "risk_notes": [
+      "DATA INTEGRITY FLAG: Three matches (Belgium, Saudi Arabia, Iran) provided handicap odds without specifying the line (e.g., -0.5, +1.0). Betting into structurally incomplete markets violates strict verification protocols.",
+      "Spain H2H offers negative EV (-1.8%) given the market's heavy 6% vig on odds of 1.08; filtered out for capital protection."
+    ],
+    "sources_to_verify_before_kickoff": [
+      "Pinnacle / 1xBet API directly for missing handicap line parameters",
+      "Official FIFA starting XIs 60 minutes before kickoff for Portugal vs Colombia"
+    ],
+    "self_audit": {
+      "covered_all_matches": true,
+      "contains_no_real_money_advice": true,
+      "ready_for_frontend_ingest": true
+    }
+  },
+  "response_chars": 4673,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 4673,
+    "min_response_chars": 1,
+    "response_hash": "92a746e82d25b1fcdd8d9a38f3eb72e2588482d01aeeaa9926a9aa1aec0ef7cd",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

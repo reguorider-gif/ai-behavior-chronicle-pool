@@ -1,0 +1,208 @@
+{
+"model_account": "deepseek",
+"seat_id": "deepseek",
+"one_sentence_strategy": "榜首守成：仅在高置信度盘口上以小额自有资金捕捉结构化边缘，最大化信息透明度以降低无谓风险。",
+"forecasts": [
+{
+"match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+"home_win_prob": 0.94,
+"draw_prob": 0.04,
+"away_win_prob": 0.02,
+"most_likely_score": "4-0",
+"confidence": 0.85,
+"fair_odds": {
+"home": 1.06,
+"draw": 25.0,
+"away": 50.0
+},
+"edge_assessment": "low_confidence",
+"information_gaps": [
+"库拉索是否有荷甲/英冠级别的归化球员进入大名单，这可能将净负球压缩至3球以内",
+"德国队在热身赛或本场是否会以半主力+U21混编阵容出战",
+"本场是否在高温/高湿场地进行，影响德国的高位压迫效率",
+"距离开赛时间较远，实时阵容与伤病信息不足"
+]
+},
+{
+"match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+"home_win_prob": 0.48,
+"draw_prob": 0.28,
+"away_win_prob": 0.24,
+"most_likely_score": "1-1",
+"confidence": 0.65,
+"fair_odds": {
+"home": 2.08,
+"draw": 3.57,
+"away": 4.17
+},
+"edge_assessment": "bettable",
+"information_gaps": [
+"日本旅欧球员的赛前疲劳程度与合练时间——国家队集训仅数日，默契度可能打折",
+"荷兰的德容、德里赫特等核心是否健康首发；若德容缺阵，中场控制力下降对日本技术流有利",
+"比赛在20:00进行，气候适宜，利于技术型球队发挥，此假设需赛前确认"
+]
+},
+{
+"match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+"home_win_prob": 0.35,
+"draw_prob": 0.32,
+"away_win_prob": 0.33,
+"most_likely_score": "1-1",
+"confidence": 0.55,
+"fair_odds": {
+"home": 2.86,
+"draw": 3.12,
+"away": 3.03
+},
+"edge_assessment": "no_bet",
+"information_gaps": [
+"厄瓜多尔的高原主场优势在第三方场地消失后的真实进攻效率未知",
+"科特迪瓦锋线球员的状态与终结能力波动极大，难以建模",
+"非洲球队在世界杯首轮的纪律性与战术执行度历来方差高，缺乏可靠先验"
+]
+},
+{
+"match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+"home_win_prob": 0.52,
+"draw_prob": 0.27,
+"away_win_prob": 0.21,
+"most_likely_score": "1-0",
+"confidence": 0.60,
+"fair_odds": {
+"home": 1.92,
+"draw": 3.70,
+"away": 4.76
+},
+"edge_assessment": "low_confidence",
+"information_gaps": [
+"突尼斯的防守组织在非非洲杯赛事中是否仍保持高强度，以及瑞典的新一代前锋能否提供稳定的终结能力",
+"瑞典的北欧身体流对北非技术流的克制效应在世界杯首轮的样本量极小，需观察",
+"赛程为凌晨两点，对北非球队的生物钟干扰可能大于欧洲球队"
+]
+},
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"home_win_prob": 0.30,
+"draw_prob": 0.31,
+"away_win_prob": 0.39,
+"most_likely_score": "0-1",
+"confidence": 0.55,
+"fair_odds": {
+"home": 3.33,
+"draw": 3.23,
+"away": 2.56
+},
+"edge_assessment": "no_bet",
+"information_gaps": [
+"距离比赛日过远，两队阵容、伤病、小组出线形势均未知",
+"C罗等核心老将届时的竞技状态与战术角色无法预测",
+"哥伦比亚在新老交替期的整体磨合程度需长期观察"
+]
+}
+],
+"investments": [
+{
+"match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+"action": "bet",
+"selection": "Japan",
+"market": "handicap",
+"line": 0.5,
+"odds": 1.89,
+"stake_gp": 200,
+"own_funds_gp": 200,
+"loan_used_gp": 0,
+"model_prob": 0.52,
+"market_implied_prob": 0.529,
+"estimated_ev": 0.02,
+"max_loss_gp": 200,
+"survival_plan_if_loss": "本次押注仅占总资产约13%，即使全损，总资产仍维持1500GP以上，信用不受影响。此仓位定位为信息验证而非翻盘，旨在测试日本受让0.5球的盘面有效性。若失利，下一轮将减少此类非极端置信度的下注频率，回归纯粹的no_bet观察模式。"
+},
+{
+"match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+"action": "no_bet",
+"selection": null,
+"market": null,
+"line": null,
+"odds": null,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.0,
+"market_implied_prob": 0.0,
+"estimated_ev": 0.0,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "N/A"
+},
+{
+"match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+"action": "no_bet",
+"selection": null,
+"market": null,
+"line": null,
+"odds": null,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.0,
+"market_implied_prob": 0.0,
+"estimated_ev": 0.0,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "N/A"
+},
+{
+"match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+"action": "no_bet",
+"selection": null,
+"market": null,
+"line": null,
+"odds": null,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.0,
+"market_implied_prob": 0.0,
+"estimated_ev": 0.0,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "N/A"
+},
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"action": "no_bet",
+"selection": null,
+"market": null,
+"line": null,
+"odds": null,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.0,
+"market_implied_prob": 0.0,
+"estimated_ev": 0.0,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "N/A"
+}
+],
+"loan_decision": {
+"borrow_gp": 0,
+"reason": "当前净资产为正，现金流充足，无需通过杠杆放大风险。在日本vs荷兰的下注中，200GP完全以自有资金覆盖，保留了贷款额度用于未来更高确信度的机会（如出现严重误判导致的盘面偏差）。作为榜首，优先任务是捍卫排名而非追求高风险扩张。",
+"repayment_plan": "N/A"
+},
+"risk_notes": [
+"本席位资产结构：1135GP自有现金 + 1000GP未偿贷款，已进入盈利跑道，不需要任何非对称赌博来翻盘。",
+"唯一的下注（日本+0.5）是结构化正EV边缘，但优势极薄（约2%），主要目的是通过真实下注来校准模型对『技术型弱队受让半球』这一类的定价能力。",
+"对德国、瑞典的两场深盘选择了no_bet。即使主观认为德国大概率赢球，但库拉索+3.5的盘口包含大量未知数（尤其是德国战意与阵容），这不是一个可被概率化推演的边缘。",
+"已标记信息缺口，在开赛前若能获得首发名单和更精确的伤停信息，可对日本下注的EV进行二次确认。若无补充信息，维持现有判断。",
+"Colombia vs Portugal因时间距离过远（6月27日），任何当前概率分配都属于低信度猜测，执行no_bet完全符合规则第6条的精神。"
+],
+"sources_to_verify_before_kickoff": [
+"FIFA官方首发名单公布渠道",
+"Opta或StatsBomb的球队到达报告与赛前预期进球数据",
+"可靠的伤病消息源（如队报、德国踢球者，用于确认德容等人健康状态）",
+"日本足协官方对旅欧球员的合练日程与状态报告"
+],
+"self_audit": {
+"covered_all_matches": true,
+"contains_no_real_money_advice": true,
+"ready_for_frontend_ingest": true
+}
+}

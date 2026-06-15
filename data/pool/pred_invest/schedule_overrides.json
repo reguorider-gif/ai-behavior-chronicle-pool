@@ -1,0 +1,23 @@
+{
+  "version": "pred_invest_schedule_overrides.v1",
+  "updated_at": "2026-06-15T13:35:00Z",
+  "policy": "Authoritative fixture corrections used before prompt-pack generation and score-sync due checks. Do not write match results here.",
+  "matches": {
+    "WC-H1": {
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T16:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "source_note": "External schedule: Spain vs Cape Verde is listed for Monday 2026-06-15 at 12 p.m. ET."
+    },
+    "WC-I1": {
+      "date": "2026-06-16",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "matchday_hk": "2026-06-17",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "source_note": "External schedule: France vs Senegal is listed for Tuesday 2026-06-16 at New York/New Jersey Stadium; venue table shows 15:00 UTC-4."
+    }
+  }
+}

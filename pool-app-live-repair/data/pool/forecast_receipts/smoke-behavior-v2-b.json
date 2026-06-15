@@ -1,0 +1,117 @@
+{
+  "run_id": "smoke-behavior-v2-b",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.57,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.18,
+          "most_likely_score": "2-1",
+          "confidence": 0.68,
+          "edge_assessment": "bettable",
+          "information_gaps": [
+            "fresh lineup"
+          ],
+          "forecast_rationale": "延续上轮判断，但降低信心。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.35,
+          "draw_prob": 0.35,
+          "away_win_prob": 0.3,
+          "most_likely_score": "1-1",
+          "confidence": 0.53,
+          "edge_assessment": "no_edge",
+          "information_gaps": [
+            "fitness"
+          ],
+          "forecast_rationale": "平衡局，不强下注。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "上轮主胜小仓位命中，no-bet 纪律保持。",
+        "what_i_learned": "轻边际可以下注，但不需要贷款。",
+        "strategy_change_this_round": "继续优先低波动选择。",
+        "risk_commitment": "仓位不超过净值四分之一。"
+      }
+    },
+    "beta": {
+      "seat_id": "beta",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.54,
+          "draw_prob": 0.27,
+          "away_win_prob": 0.19,
+          "most_likely_score": "1-0",
+          "confidence": 0.58,
+          "edge_assessment": "no_edge",
+          "information_gaps": [
+            "injury"
+          ],
+          "forecast_rationale": "修正上轮冷门偏差，承认主队更稳。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.34,
+          "draw_prob": 0.34,
+          "away_win_prob": 0.32,
+          "most_likely_score": "1-1",
+          "confidence": 0.5,
+          "edge_assessment": "no_edge",
+          "information_gaps": [
+            "team news"
+          ],
+          "forecast_rationale": "没有明确方向。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "上轮冷门判断失败。",
+        "what_i_learned": "高赔率不是自动正期望。",
+        "strategy_change_this_round": "降低逆向仓位。",
+        "risk_commitment": "不再追损。"
+      }
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.56,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.19,
+          "most_likely_score": "2-0",
+          "confidence": 0.62,
+          "edge_assessment": "insufficient_info",
+          "information_gaps": [
+            "lineup"
+          ],
+          "forecast_rationale": "主队略优，但重整期不投资。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.33,
+          "draw_prob": 0.35,
+          "away_win_prob": 0.32,
+          "most_likely_score": "1-1",
+          "confidence": 0.49,
+          "edge_assessment": "insufficient_info",
+          "information_gaps": [
+            "weather"
+          ],
+          "forecast_rationale": "只做预测。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "上轮处于重整，没有下注。",
+        "what_i_learned": "重整期也必须完成 forecast。",
+        "strategy_change_this_round": "继续 no-bet，优先信用。",
+        "risk_commitment": "不碰贷款。"
+      }
+    }
+  }
+}
