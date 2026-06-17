@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
-const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-app-one.vercel.app";
+const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "";
 
 async function readText(relPath) {
   try {
@@ -121,6 +121,13 @@ function pathParts(req) {
 }
 
 async function proxyFallback(req, res, parts) {
+  if (!FALLBACK_ORIGIN) {
+    return send(res, 404, {
+      ok: false,
+      detail: "fallback_not_configured",
+      path: `/api/pool/${parts.join("/")}`,
+    });
+  }
   const qs = new URLSearchParams();
   for (const [key, value] of Object.entries(req.query || {})) {
     if (key === "path") continue;

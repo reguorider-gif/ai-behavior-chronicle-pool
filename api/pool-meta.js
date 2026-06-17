@@ -3,7 +3,9 @@ const path = require("node:path");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
-const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-app-one.vercel.app";
+const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "";
+const PRODUCTION_SEATS = ["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao","xunfei","stepfun","zhipu"];
+const REQUIRED_SEAT_COUNT = PRODUCTION_SEATS.length;
 
 async function readText(relPath) {
   try {
@@ -135,6 +137,13 @@ function appendForwardedQuery(req, url, omit = []) {
 }
 
 async function proxyFallback(req, res, endpointPath, omit = []) {
+  if (!FALLBACK_ORIGIN) {
+    return send(res, 404, {
+      ok: false,
+      detail: "fallback_not_configured",
+      path: `/api/pool/${endpointPath}`,
+    });
+  }
   const url = appendForwardedQuery(req, `${FALLBACK_ORIGIN}/api/pool/${endpointPath}`, omit);
   try {
     const response = await fetch(url, { headers: { accept: "application/json" } });
@@ -149,6 +158,145 @@ async function proxyFallback(req, res, endpointPath, omit = []) {
       error: String((error && error.message) || error),
     });
   }
+}
+
+function compactSeatName(seatId) {
+  const names = {
+    chatgpt: "ChatGPT",
+    deepseek: "DeepSeek",
+    mimo: "MiMo",
+    minimax: "MiniMax",
+    doubao: "Doubao",
+    gemini: "Gemini",
+    kimi: "Kimi",
+    meta: "Meta AI",
+    qwen: "Qwen",
+    wenxin: "Wenxin",
+    grok: "xAI Grok",
+    yuanbao: "Yuanbao",
+    xunfei: "科大讯飞",
+    stepfun: "阶跃星辰",
+    zhipu: "智谱清言",
+  };
+  return names[seatId] || seatId;
+}
+
+function normalizeQualityGate(raw = {}) {
+  const valid = Array.isArray(raw.valid_seats)
+    ? raw.valid_seats.filter((seat) => PRODUCTION_SEATS.includes(String(seat)))
+    : [];
+  const needs = Array.from(new Set([
+    ...PRODUCTION_SEATS.filter((seat) => !valid.includes(seat)),
+    ...(Array.isArray(raw.needs_rerun) ? raw.needs_rerun.filter((seat) => PRODUCTION_SEATS.includes(String(seat))) : []),
+  ]));
+  const publishAllowed = valid.length === REQUIRED_SEAT_COUNT && needs.length === 0 && raw.publish_allowed !== false;
+  return {
+    ...raw,
+    required_seat_count: REQUIRED_SEAT_COUNT,
+    valid_count: valid.length,
+    valid_seats: valid,
+    needs_rerun: needs,
+    publish_allowed: publishAllowed,
+    frontend_badge: publishAllowed ? `${REQUIRED_SEAT_COUNT}/${REQUIRED_SEAT_COUNT} 已验证` : `${valid.length}/${REQUIRED_SEAT_COUNT} 部分回收`,
+  };
+}
+
+function runtimeRanking(current = {}, quality = {}) {
+  const summaries = Array.isArray(current.model_summaries) ? current.model_summaries : [];
+  const bySeat = new Map();
+  for (const row of summaries) {
+    const seat = String(row.model_account || row.seat_id || row.display_name || "").toLowerCase();
+    if (!seat) continue;
+    bySeat.set(seat, row);
+  }
+  return PRODUCTION_SEATS.map((seat, index) => {
+    const row = bySeat.get(seat) || {};
+    const missing = !quality.valid_seats?.includes(seat);
+    return {
+      rank: Number(row.rank || index + 1),
+      seat_id: seat,
+      model_account: seat === "grok" ? "xai" : seat,
+      display_name: row.display_name || compactSeatName(seat),
+      balance_gp: Number(row.balance_gp || row.cash_gp || 0),
+      loan_gp: Number(row.loan_gp || row.loan_terms?.outstanding_loan_gp || 0),
+      net_worth_gp: Number(row.loan_terms?.net_worth_gp || row.net_worth_gp || 0),
+      required_next_action: row.required_next_action || (missing ? "missing_required_seat" : "ready"),
+    };
+  });
+}
+
+function matchDatesFrom(matches = []) {
+  const counts = new Map();
+  for (const match of matches) {
+    const date = String(match.date || "").slice(0, 10);
+    if (!date) continue;
+    counts.set(date, (counts.get(date) || 0) + 1);
+  }
+  return Array.from(counts.entries()).sort().map(([date, count]) => ({ date, count }));
+}
+
+async function runtimeSummary(req, res) {
+  const current = await readJson(path.join("pred_invest", "latest_current_game.json"));
+  const quality = normalizeQualityGate(await readJson(path.join("pred_invest", "latest_quality_gate.json")));
+  const daily = await readJson(path.join("pred_invest", "latest_daily_sop.json"));
+  const scoreSync = await readJson(path.join("pred_invest", "latest_score_sync.json"));
+  const matches = Array.isArray(current.matches) ? current.matches : [];
+  const ranking = runtimeRanking(current, quality);
+  const marketRows = matches.reduce((sum, match) => sum + (Array.isArray(match.market_snapshot) ? match.market_snapshot.length : 0), 0);
+  const totalPool = ranking.reduce((sum, row) => sum + Number(row.balance_gp || 0), 0);
+  const loanSeats = ranking.filter((row) => Number(row.loan_gp || 0) > 0).length;
+  return send(res, current.version ? 200 : 404, {
+    ok: Boolean(current.version),
+    version: "pool_runtime_summary.local.v1",
+    date: queryValue(req, "date", current.date || daily.date || ""),
+    round_id: queryValue(req, "round_id", current.round_id || daily.round_id || "run-15"),
+    current_round: current.round_id || daily.round_id || "run-15",
+    provider: {
+      provider: "local_pred_invest_artifacts",
+      valid_odds_rows: marketRows,
+      matches_with_odds: current.scoreboard?.matches_with_odds || matches.filter((match) => (match.market_snapshot || []).length).length,
+      forecast_matches: current.scoreboard?.forecast_matches || matches.length,
+      overall: current.verdict || daily.verdict || "UNKNOWN",
+    },
+    betting: {
+      accepted_bets: Number(current.scoreboard?.existing_decisions || current.scoreboard?.existing_bets || 0),
+      compact_decisions: [],
+      summary: {
+        accepted_bets: Number(current.scoreboard?.existing_decisions || current.scoreboard?.existing_bets || 0),
+        candidate_bets: Number(current.scoreboard?.existing_bets || 0),
+        models_without_bets: quality.needs_rerun || [],
+      },
+    },
+    automation: {
+      verdict: current.verdict || daily.verdict || "UNKNOWN",
+      pipeline_status: quality.publish_allowed ? "ready" : "attention_required",
+      warnings: current.missing_data?.sop_warnings || daily.warnings || [],
+      errors: current.missing_data?.sop_errors || daily.errors || [],
+    },
+    matches,
+    match_dates: matchDatesFrom(matches),
+    current_ranking: ranking,
+    historical_ranking: ranking,
+    active_models: ranking,
+    active_models_count: REQUIRED_SEAT_COUNT,
+    quality_gate: quality,
+    score_sync: {
+      ok: Boolean(scoreSync.ok || scoreSync.version),
+      updated_at: scoreSync.generated_at || scoreSync.updated_at || null,
+    },
+    summary: {
+      total_pool: totalPool,
+      net_pl: current.scoreboard?.net_pl || "—",
+      loan_seats: loanSeats,
+      verified_ratio: `${quality.valid_count}/${REQUIRED_SEAT_COUNT}`,
+      model_count: REQUIRED_SEAT_COUNT,
+    },
+    reports: {
+      current_game_html: publicRef("pred_invest", "latest_current_game.html"),
+      daily_sop_md: publicRef("pred_invest", "latest_daily_sop.md"),
+      quality_gate_json: publicRef("pred_invest", "latest_quality_gate.json"),
+    },
+  });
 }
 
 async function currentRules(res) {
@@ -366,7 +514,7 @@ module.exports = async function handler(req, res) {
   if (type === "agent-profile") return agentProfile(res, seatId);
   if (type === "behavior-replay") return behaviorReplay(res, runId);
   if (type === "pred-invest-artifact") return predInvestArtifact(res, queryValue(req, "file"));
-  if (type === "runtime-summary") return proxyFallback(req, res, "runtime-summary", ["runId"]);
+  if (type === "runtime-summary") return runtimeSummary(req, res);
   if (type === "frontend-archives") return proxyFallback(req, res, "frontend-archives");
   if (type === "seat-archives") {
     const archiveRunId = queryValue(req, "runId", "run-15");
