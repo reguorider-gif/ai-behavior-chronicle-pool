@@ -124,6 +124,23 @@ class DataCenterContractTest(unittest.TestCase):
             with self.subTest(handler=handler):
                 self.assertIn(handler, backend)
 
+    def test_pool_backend_does_not_default_to_production_self_proxy(self):
+        backend = self.pool_meta + "\n" + self.pool_catch_all
+        self.assertNotIn('|| "https://pool-app-one.vercel.app"', backend)
+        self.assertGreaterEqual(backend.count('process.env.POOL_FALLBACK_ORIGIN || ""'), 2)
+        self.assertIn("fallback_not_configured", backend)
+
+    def test_v4_backend_contracts_are_present(self):
+        self.assertIn("initialized_required_seats", self.pool_meta)
+        self.assertIn("frontendArchives", self.pool_meta)
+        self.assertIn("seatArchive", self.pool_meta)
+        self.assertIn("account_initialized", self.pool_meta)
+        sop = (ROOT / "ops/run_pred_invest_daily_sop.py").read_text(encoding="utf-8")
+        rules = (ROOT / "data/pool/rules/PRED_INVEST_CREDIT_SURVIVE_V2.json").read_text(encoding="utf-8")
+        self.assertIn("missing_or_invalid_receipt", sop)
+        self.assertIn("missing_or_invalid_receipt", rules)
+        self.assertNotIn("credit_delta = 0 if valid else -8", sop)
+
 
 if __name__ == "__main__":
     unittest.main()
