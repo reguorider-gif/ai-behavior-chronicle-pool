@@ -1,0 +1,21 @@
+{
+  "version": "behavior_patterns_compat.v1",
+  "run_id": "run-16",
+  "seat_id": "chatgpt",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "chatgpt"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "date": "2026-06-15",
+  "run_id": "run-15",
+  "privacy": "anonymous_market_only_no_seat_choices",
+  "matches": [
+    {
+      "match_id": "WC-K1",
+      "date": "2026-06-15",
+      "home_team": "Portugal",
+      "away_team": "Colombia",
+      "kickoff_at": "2026-06-15T00:00:00Z",
+      "markets": [
+        {
+          "market": "h2h",
+          "selection": "Portugal",
+          "line": null,
+          "odds": 1.75,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "line": null,
+          "odds": 3.6,
+          "provider": null
+        },
+        {
+          "market": "h2h",
+          "selection": "Colombia",
+          "line": null,
+          "odds": 4.8,
+          "provider": null
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "date": "2026-06-15",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "kickoff_at": "2026-06-15T19:00:00Z",
+      "markets": [
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.81,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.25,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.27,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.15,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.8,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.64,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.27,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.87,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 2.09,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": null,
+          "odds": 1.84,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Egypt",
+          "line": null,
+          "odds": 1.45,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Egypt",
+          "line": null,
+          "odds": 1.69,
+          "provider": "BetAnything"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "date": "2026-06-15",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "kickoff_at": "2026-06-15T22:00:00Z",
+      "markets": [
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.62,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.2,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.24,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.8,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.62,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.24,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.84,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 2.04,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": null,
+          "odds": 1.83,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Uruguay",
+          "line": null,
+          "odds": 2.33,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Uruguay",
+          "line": null,
+          "odds": 1.71,
+          "provider": "BetAnything"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "date": "2026-06-15",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "kickoff_at": "2026-06-16T01:00:00Z",
+      "markets": [
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 3.34,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.82,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.82,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.83,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.88,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.78,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Iran",
+          "line": null,
+          "odds": 1.85,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "New Zealand",
+          "line": null,
+          "odds": 1.28,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "New Zealand",
+          "line": null,
+          "odds": 2.02,
+          "provider": "BetAnything"
+        }
+      ]
+    }
+  ]
+}

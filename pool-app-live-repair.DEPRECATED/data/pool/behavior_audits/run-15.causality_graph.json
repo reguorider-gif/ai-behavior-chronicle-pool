@@ -1,0 +1,499 @@
+{
+  "version": "decision_causality_graph.v1",
+  "run_id": "run-15",
+  "node_count": 40,
+  "edge_count": 48,
+  "nodes": [
+    {
+      "id": "seat:chatgpt",
+      "type": "seat",
+      "label": "chatgpt"
+    },
+    {
+      "id": "pattern:uncertainty_to_no_bet",
+      "type": "pattern",
+      "label": "uncertainty_to_no_bet"
+    },
+    {
+      "id": "decision:chatgpt:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:chatgpt",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:deepseek",
+      "type": "seat",
+      "label": "deepseek"
+    },
+    {
+      "id": "pattern:loan_pressure_shapes_risk",
+      "type": "pattern",
+      "label": "loan_pressure_shapes_risk"
+    },
+    {
+      "id": "decision:deepseek:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:deepseek",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:doubao",
+      "type": "seat",
+      "label": "doubao"
+    },
+    {
+      "id": "pattern:capital_to_selective_allocation",
+      "type": "pattern",
+      "label": "capital_to_selective_allocation"
+    },
+    {
+      "id": "pattern:loss_requires_strategy_change",
+      "type": "pattern",
+      "label": "loss_requires_strategy_change"
+    },
+    {
+      "id": "decision:doubao:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:doubao",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:gemini",
+      "type": "seat",
+      "label": "gemini"
+    },
+    {
+      "id": "decision:gemini:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:gemini",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:grok",
+      "type": "seat",
+      "label": "grok"
+    },
+    {
+      "id": "decision:grok:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:grok",
+      "type": "credit_survival",
+      "label": "-8 / loan 0.0"
+    },
+    {
+      "id": "seat:kimi",
+      "type": "seat",
+      "label": "kimi"
+    },
+    {
+      "id": "decision:kimi:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:kimi",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:meta",
+      "type": "seat",
+      "label": "meta"
+    },
+    {
+      "id": "decision:meta:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:meta",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:mimo",
+      "type": "seat",
+      "label": "mimo"
+    },
+    {
+      "id": "decision:mimo:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:mimo",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:minimax",
+      "type": "seat",
+      "label": "minimax"
+    },
+    {
+      "id": "decision:minimax:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:minimax",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:qwen",
+      "type": "seat",
+      "label": "qwen"
+    },
+    {
+      "id": "decision:qwen:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:qwen",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:wenxin",
+      "type": "seat",
+      "label": "wenxin"
+    },
+    {
+      "id": "decision:wenxin:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:wenxin",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    },
+    {
+      "id": "seat:yuanbao",
+      "type": "seat",
+      "label": "yuanbao"
+    },
+    {
+      "id": "decision:yuanbao:investment",
+      "type": "decision",
+      "label": "investment"
+    },
+    {
+      "id": "credit:yuanbao",
+      "type": "credit_survival",
+      "label": "0 / loan 0.0"
+    }
+  ],
+  "edges": [
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:chatgpt",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:chatgpt",
+      "to": "decision:chatgpt:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:chatgpt:investment",
+      "to": "credit:chatgpt",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:deepseek",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:deepseek",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:deepseek",
+      "to": "decision:deepseek:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:deepseek:investment",
+      "to": "credit:deepseek",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:doubao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:doubao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loss_requires_strategy_change",
+      "to": "seat:doubao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:doubao",
+      "to": "decision:doubao:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:doubao:investment",
+      "to": "credit:doubao",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:gemini",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:gemini",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:gemini",
+      "to": "decision:gemini:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:gemini:investment",
+      "to": "credit:gemini",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:grok",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:grok",
+      "to": "decision:grok:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:grok:investment",
+      "to": "credit:grok",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:kimi",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loss_requires_strategy_change",
+      "to": "seat:kimi",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:kimi",
+      "to": "decision:kimi:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:kimi:investment",
+      "to": "credit:kimi",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:meta",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:meta",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:meta",
+      "to": "decision:meta:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:meta:investment",
+      "to": "credit:meta",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:mimo",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:mimo",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:mimo",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:mimo",
+      "to": "decision:mimo:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:mimo:investment",
+      "to": "credit:mimo",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:minimax",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:minimax",
+      "to": "decision:minimax:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:minimax:investment",
+      "to": "credit:minimax",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:uncertainty_to_no_bet",
+      "to": "seat:qwen",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:qwen",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:qwen",
+      "to": "decision:qwen:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:qwen:investment",
+      "to": "credit:qwen",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:wenxin",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loss_requires_strategy_change",
+      "to": "seat:wenxin",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:wenxin",
+      "to": "decision:wenxin:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:wenxin:investment",
+      "to": "credit:wenxin",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    },
+    {
+      "from": "pattern:capital_to_selective_allocation",
+      "to": "seat:yuanbao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loan_pressure_shapes_risk",
+      "to": "seat:yuanbao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "pattern:loss_requires_strategy_change",
+      "to": "seat:yuanbao",
+      "type": "pattern_injected",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "seat:yuanbao",
+      "to": "decision:yuanbao:investment",
+      "type": "agent_decision",
+      "evidence_level": "medium"
+    },
+    {
+      "from": "decision:yuanbao:investment",
+      "to": "credit:yuanbao",
+      "type": "decision_updates_credit_survival",
+      "evidence_level": "strong"
+    }
+  ],
+  "graph_hash": "da894e017282005226dae6eaa436ce97086b7970af9f68585339da63f4040a3a"
+}

@@ -1,0 +1,1347 @@
+{
+  "version": "pred_invest_current_game.v2",
+  "generated_at": "2026-06-16T22:52:22+00:00",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "verdict": "PARTIAL_NOT_READY",
+  "rules": {
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "forecast_required_for_every_match": true,
+    "investment_optional_no_bet_allowed": true,
+    "credit_controls_loan": true,
+    "settlement_repay_before_ranking": true,
+    "stake_caps_by_odds": true
+  },
+  "source_paths": {
+    "daily_sop": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_prompt_pack.json",
+    "shadow_rerun": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_shadow_rerun.json",
+    "quality_gate": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_quality_gate.json",
+    "strict_god_report": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_god_report_strict.json"
+  },
+  "scoreboard": {
+    "models": 12,
+    "forecast_matches": 5,
+    "matches_with_odds": 5,
+    "existing_bets": 50,
+    "existing_decisions": 50,
+    "existing_bets_source": "strict_god_report",
+    "allowed": 0,
+    "warned": 0,
+    "rejected": 0,
+    "validated_seats": 10,
+    "pending_seats": 2,
+    "models_without_bets": [
+      "grok",
+      "qwen"
+    ],
+    "original_stake_total_gp": 3892.0,
+    "rule_converted_stake_total_gp": 3892.0,
+    "bridge_valid_seats": 10,
+    "bridge_required_seats": 12,
+    "bridge_frontend_badge": "10/12 部分回收",
+    "bridge_publish_allowed": false
+  },
+  "matches": [
+    {
+      "match_id": "WC-I1",
+      "date": "2026-06-16",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "status": "scheduled",
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "reference_market_seed",
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "France",
+          "odds": 1.46,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 4.6,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Senegal",
+          "odds": 6.29,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "France",
+          "line": -1.5,
+          "odds": 2.07,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Senegal",
+          "line": 1.5,
+          "odds": 1.73,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Over",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Under",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "date": "2026-06-17",
+      "kickoff_at": null,
+      "home_team": "England",
+      "away_team": "Croatia",
+      "status": "scheduled",
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "reference_market_seed",
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "England",
+          "odds": 1.85,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 4.07,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Croatia",
+          "odds": 3.66,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "England",
+          "line": -0.5,
+          "odds": 2.19,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Croatia",
+          "line": 0.5,
+          "odds": 1.66,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Over",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Under",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "date": "2026-06-17",
+      "kickoff_at": null,
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "status": "scheduled",
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "reference_market_seed",
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Ghana",
+          "odds": 2.03,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 3.91,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Panama",
+          "odds": 3.21,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ghana",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Panama",
+          "line": 0.5,
+          "odds": 1.53,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Over",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Under",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "date": "2026-06-17",
+      "kickoff_at": null,
+      "home_team": "Portugal",
+      "away_team": "Congo DR",
+      "status": "scheduled",
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "reference_market_seed",
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Portugal",
+          "odds": 1.27,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 5.86,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Congo DR",
+          "odds": 9.9,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Portugal",
+          "line": -1.5,
+          "odds": 1.7,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Congo DR",
+          "line": 1.5,
+          "odds": 2.11,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Over",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Under",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "date": "2026-06-17",
+      "kickoff_at": null,
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "status": "scheduled",
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "reference_market_seed",
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Uzbekistan",
+          "odds": 5.9,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 4.97,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "h2h",
+          "selection": "Colombia",
+          "odds": 1.45,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Colombia",
+          "line": -1.5,
+          "odds": 2.05,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "handicap",
+          "selection": "Uzbekistan",
+          "line": 1.5,
+          "odds": 1.75,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Over",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        },
+        {
+          "market": "total_goals",
+          "selection": "Under",
+          "line": 2.5,
+          "odds": 1.92,
+          "provider": "reference_market_seed"
+        }
+      ]
+    }
+  ],
+  "missing_data": {
+    "matches_without_odds": [],
+    "missing_models": [],
+    "sop_errors": [],
+    "sop_warnings": [
+      "sop_guard:publish_blocked_by_quality_gate:10/12",
+      "quality_gate_partial:10/12"
+    ],
+    "required_coverage": {
+      "required_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "included_required_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "missing_required_match_ids": [],
+      "source": "required_match_snapshot:2026-06-16_run-16_required_match_snapshot.json"
+    },
+    "bridge_needs_rerun": [
+      "grok",
+      "qwen"
+    ],
+    "bridge_rerun_queue": [
+      {
+        "seat": "grok",
+        "mode": "provider_quota_blocked",
+        "prompt_mode": "wait_for_quota_reset",
+        "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+        "last_run_id": null,
+        "response_chars": 0,
+        "issues": [
+          "no_captured_response"
+        ],
+        "last_errors": [
+          {
+            "run_id": "207f01bb1cea",
+            "action": "raw_result_error",
+            "reason": "provider_quota_limited",
+            "response_chars": 0
+          }
+        ]
+      },
+      {
+        "seat": "qwen",
+        "mode": "fresh_chat_marker_required",
+        "prompt_mode": "ultra_compact",
+        "reason": "未捕获当前轮答案或页面仍停留旧上下文，必须新会话/新 marker 重投。",
+        "last_run_id": null,
+        "response_chars": 0,
+        "issues": [
+          "no_captured_response"
+        ],
+        "last_errors": [
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      }
+    ]
+  },
+  "quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "frontend_badge": "10/12 部分回收",
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok",
+      "qwen"
+    ]
+  },
+  "strict_match_consensus": [
+    {
+      "match_id": "WC-I1",
+      "bet_count": 7,
+      "no_bet_count": 3,
+      "total_stake_gp": 1170.0,
+      "top_selection": "moneyline home none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline France none",
+          "odds": 1.46,
+          "stake_gp": 20.0,
+          "loan_used_gp": 0,
+          "reason": "稳健法国胜局定赢"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline France 1.46",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "赔率偏低但确定性高"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline France 0",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "法国主场强势稳胜"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline France -",
+          "odds": 1.46,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "法国实力占优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "法国主场稳"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.46,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "法国实力更强"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.46,
+          "stake_gp": 300.0,
+          "loan_used_gp": 200,
+          "reason": "法国稳胜"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "doubao",
+        "meta"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "bet_count": 6,
+      "no_bet_count": 4,
+      "total_stake_gp": 810.0,
+      "top_selection": "moneyline England none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline England none",
+          "odds": 1.85,
+          "stake_gp": 20.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场优势稳"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline England 1.85",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "价值合理可博"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline England 0",
+          "odds": 1.85,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰种子占优势"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline England -",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰被看好"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.85,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场强"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.85,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰实力占优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "doubao",
+        "meta",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "bet_count": 4,
+      "no_bet_count": 6,
+      "total_stake_gp": 362.0,
+      "top_selection": "moneyline Ghana none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Ghana none",
+          "odds": 2.03,
+          "stake_gp": 12.0,
+          "loan_used_gp": 0,
+          "reason": "加纳小优主场势稳"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline Ghana 2.03",
+          "odds": 2.03,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "赔率有边际值得投"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline Ghana -",
+          "odds": 2.03,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "加纳略有优势"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 2.03,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "加纳纸面优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "minimax",
+        "doubao",
+        "meta",
+        "wenxin",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "bet_count": 6,
+      "no_bet_count": 4,
+      "total_stake_gp": 1405.0,
+      "top_selection": "moneyline home none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Portugal none",
+          "odds": 1.27,
+          "stake_gp": 25.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压稳"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.27,
+          "stake_gp": 180.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压局"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline Portugal -",
+          "odds": 1.27,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙大优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙碾压"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "实力差距明显"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.27,
+          "stake_gp": 400.0,
+          "loan_used_gp": 100,
+          "reason": "葡萄牙大优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "doubao",
+        "meta"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "bet_count": 2,
+      "no_bet_count": 8,
+      "total_stake_gp": 145.0,
+      "top_selection": "moneyline Colombia none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Colombia none",
+          "odds": 1.7,
+          "stake_gp": 15.0,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚客胜优势"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline away none",
+          "odds": 1.35,
+          "stake_gp": 130.0,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚稳"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "minimax",
+        "doubao",
+        "gemini",
+        "meta",
+        "wenxin",
+        "yuanbao"
+      ]
+    }
+  ],
+  "model_summaries": [
+    {
+      "model_account": "chatgpt",
+      "display_name": "chatgpt",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 92.0,
+      "converted_stake_total_gp": 92.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "France moneyline none",
+          "odds": 1.46,
+          "original_stake_gp": 20,
+          "converted_stake_gp": 20,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "England moneyline none",
+          "odds": 1.85,
+          "original_stake_gp": 20,
+          "converted_stake_gp": 20,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "Ghana moneyline none",
+          "odds": 2.03,
+          "original_stake_gp": 12,
+          "converted_stake_gp": 12,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "Portugal moneyline none",
+          "odds": 1.27,
+          "original_stake_gp": 25,
+          "converted_stake_gp": 25,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "Colombia moneyline none",
+          "odds": 1.7,
+          "original_stake_gp": 15,
+          "converted_stake_gp": 15,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "deepseek",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "mimo",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 500.0,
+      "converted_stake_total_gp": 500.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "France moneyline 1.46",
+          "odds": 1.46,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "England moneyline 1.85",
+          "odds": 1.85,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "Ghana moneyline 2.03",
+          "odds": 2.03,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "minimax",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 450.0,
+      "converted_stake_total_gp": 450.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "France moneyline 0",
+          "odds": 1.46,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "England moneyline 0",
+          "odds": 1.85,
+          "original_stake_gp": 120,
+          "converted_stake_gp": 120,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "Portugal moneyline 0",
+          "odds": 1.27,
+          "original_stake_gp": 180,
+          "converted_stake_gp": 180,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "doubao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "France moneyline 1.46",
+          "odds": 220,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "England moneyline 1.85",
+          "odds": 180,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "Ghana moneyline 2.03",
+          "odds": 150,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "Portugal moneyline 1.27",
+          "odds": 250,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "gemini",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 1000.0,
+      "converted_stake_total_gp": 1000.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "France moneyline -",
+          "odds": 1.46,
+          "original_stake_gp": 300,
+          "converted_stake_gp": 300,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "England moneyline -",
+          "odds": 1.85,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "Ghana moneyline -",
+          "odds": 2.03,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "Portugal moneyline -",
+          "odds": 1.27,
+          "original_stake_gp": 400,
+          "converted_stake_gp": 400,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "kimi",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 700.0,
+      "converted_stake_total_gp": 700.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "home moneyline none",
+          "odds": 1.46,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "home moneyline none",
+          "odds": 1.85,
+          "original_stake_gp": 120,
+          "converted_stake_gp": 120,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "home moneyline none",
+          "odds": 2.03,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "home moneyline none",
+          "odds": 1.27,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "away moneyline none",
+          "odds": 1.35,
+          "original_stake_gp": 130,
+          "converted_stake_gp": 130,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "meta",
+      "display_name": "meta",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "wenxin",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 450.0,
+      "converted_stake_total_gp": 450.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "home moneyline h2h",
+          "odds": 1.46,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "home moneyline h2h",
+          "odds": 1.85,
+          "original_stake_gp": 150,
+          "converted_stake_gp": 150,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "home moneyline h2h",
+          "odds": 1.27,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "yuanbao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 5,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 700.0,
+      "converted_stake_total_gp": 700.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WC-I1",
+          "pick": "home moneyline none",
+          "odds": 1.46,
+          "original_stake_gp": 300,
+          "converted_stake_gp": 300,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "pick": "home moneyline none",
+          "odds": 1.27,
+          "original_stake_gp": 400,
+          "converted_stake_gp": 400,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "pick": "none none none",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "audit_rows": [],
+  "caveat": "This bundle uses strict AI Judge output as the current decision source; it remains partial until the hard gate reaches 12/12."
+}

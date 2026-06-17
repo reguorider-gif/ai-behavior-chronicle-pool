@@ -1,0 +1,217 @@
+{
+  "seat_id": "meta",
+  "run_id": "run-16",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "status": "collected",
+  "forecasts": [
+    {
+      "match_id": "WC-I1",
+      "p": "draw",
+      "score": "0-0",
+      "confidence": 20,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "阵容状态不明"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "draw",
+      "most_likely_score": "0-0"
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "p": "home",
+      "score": "2-1",
+      "confidence": 25,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "盘口缺失数据"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-1"
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "p": "draw",
+      "score": "1-1",
+      "confidence": 20,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "实力接近未知"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "draw",
+      "most_likely_score": "1-1"
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "p": "home",
+      "score": "3-0",
+      "confidence": 30,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "无赔率支撑"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "3-0"
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "p": "away",
+      "score": "0-2",
+      "confidence": 25,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "信息不对称"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "away",
+      "most_likely_score": "0-2"
+    }
+  ],
+  "investments": [
+    {
+      "match_id": "WC-I1",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "无盘口不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "无盘口不投"
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "无盘口不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "无盘口不投"
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "无盘口不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "无盘口不投"
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "无盘口不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "无盘口不投"
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "无盘口不投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "无盘口不投"
+    }
+  ],
+  "credit": {
+    "seat_id": "meta",
+    "run_id": "run-16",
+    "credit_delta": 0,
+    "details": [
+      {
+        "type": "production_receipt_collected",
+        "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+        "credit_delta": 0
+      }
+    ],
+    "credit_score": 597.8,
+    "credit_grade": "C",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "loan_limit_gp": 120.0,
+    "available_loan_gp": 0.0,
+    "outstanding_loan_gp": 800.0,
+    "interest_rate": 0.18
+  },
+  "survival": {
+    "seat_id": "meta",
+    "balance_gp": 456.0,
+    "outstanding_loan_gp": 0.0,
+    "accrued_interest_gp": 0.0,
+    "net_worth_gp": 456.0,
+    "recovery_mode": false,
+    "freeze_new_loan": false,
+    "loan_limit_gp": 120.0,
+    "available_loan_gp": 0.0,
+    "allowed_actions": [
+      "forecast",
+      "bet",
+      "no_bet"
+    ]
+  },
+  "settlement": {
+    "seat_id": "meta",
+    "run_id": "run-16",
+    "profit_gp": 0.0,
+    "settled": [
+      {
+        "match_id": "WC-I1",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "profit_gp": 0
+      }
+    ]
+  }
+}

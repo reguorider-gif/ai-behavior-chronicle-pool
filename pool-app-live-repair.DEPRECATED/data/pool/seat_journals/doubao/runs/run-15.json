@@ -1,0 +1,216 @@
+{
+  "seat_id": "doubao",
+  "run_id": "run-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "status": "collected",
+  "forecasts": [
+    {
+      "match_id": "WC-K1",
+      "p": "home",
+      "score": "2-1",
+      "confidence": 70,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "中场状态未知"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-1"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "p": "away",
+      "score": "1-2",
+      "confidence": 40,
+      "edge_assessment": "lean",
+      "information_gaps": [
+        "客场战力不明"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "away",
+      "most_likely_score": "1-2"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "p": "away",
+      "score": "0-2",
+      "confidence": 75,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "客队经验充足"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "away",
+      "most_likely_score": "0-2"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "p": "home",
+      "score": "2-1",
+      "confidence": 60,
+      "edge_assessment": "lean",
+      "information_gaps": [
+        "临场状态待定"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-1"
+    },
+    {
+      "match_id": "WC-H1",
+      "p": "home",
+      "score": "2-0",
+      "confidence": 85,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "无明显漏洞"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-0"
+    }
+  ],
+  "investments": [
+    {
+      "match_id": "WC-K1",
+      "action": "bet",
+      "market": "moneyline",
+      "selection": "Portugal",
+      "line": "0",
+      "odds": 1.75,
+      "stake_gp": 200.0,
+      "loan_used_gp": 0.0,
+      "reason": "葡队攻防稳定",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "葡队攻防稳定"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "盘口偏混乱",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "盘口偏混乱"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "action": "bet",
+      "market": "handicap",
+      "selection": "Uruguay",
+      "line": "0",
+      "odds": 2.24,
+      "stake_gp": 200.0,
+      "loan_used_gp": 0.0,
+      "reason": "欧亚差距明显",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "欧亚差距明显"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "走势难判断",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "走势难判断"
+    },
+    {
+      "match_id": "WC-H1",
+      "action": "bet",
+      "market": "moneyline",
+      "selection": "Spain",
+      "line": "0",
+      "odds": 1.08,
+      "stake_gp": 200.0,
+      "loan_used_gp": 0.0,
+      "reason": "主队实力占优",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "主队实力占优"
+    }
+  ],
+  "credit": {
+    "seat_id": "doubao",
+    "run_id": "run-15",
+    "credit_delta": 0,
+    "details": [
+      {
+        "type": "production_receipt_collected",
+        "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+        "credit_delta": 0
+      }
+    ],
+    "credit_score": 669.6,
+    "credit_grade": "B",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "loan_limit_gp": 550.0,
+    "available_loan_gp": 250.0,
+    "outstanding_loan_gp": 300.0,
+    "interest_rate": 0.11
+  },
+  "survival": {
+    "seat_id": "doubao",
+    "balance_gp": 867.0,
+    "outstanding_loan_gp": 0.0,
+    "accrued_interest_gp": 0.0,
+    "net_worth_gp": 867.0,
+    "recovery_mode": false,
+    "freeze_new_loan": false,
+    "loan_limit_gp": 550.0,
+    "available_loan_gp": 250.0,
+    "allowed_actions": [
+      "forecast",
+      "bet",
+      "no_bet"
+    ]
+  },
+  "settlement": {
+    "seat_id": "doubao",
+    "run_id": "run-15",
+    "profit_gp": -200.0,
+    "settled": [
+      {
+        "seat_id": "doubao",
+        "match_id": "WC-H1",
+        "market": "moneyline",
+        "selection": "Spain",
+        "line": "0",
+        "odds": 1.08,
+        "stake_gp": 200.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 0.0,
+        "profit_gp": -200.0,
+        "status": "lose",
+        "score": "0-0"
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "profit_gp": 0
+      }
+    ]
+  }
+}

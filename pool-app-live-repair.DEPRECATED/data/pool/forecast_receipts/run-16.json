@@ -1,0 +1,1092 @@
+{
+  "version": "production_forecast_receipts.v1",
+  "run_id": "run-16",
+  "date": "2026-06-16",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "display_name": "chatgpt",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "F/S",
+          "score": "2-1",
+          "confidence": 65,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "A"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "F/S",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "E/C",
+          "score": "1-1",
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "A"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "E/C",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "G/P",
+          "score": "2-1",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "A"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "G/P",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "P/C",
+          "score": "3-0",
+          "confidence": 75,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "A"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "P/C",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "U/C",
+          "score": "0-2",
+          "confidence": 70,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "A"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "U/C",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "稳健无盘口",
+        "risk_commitment": "伤病变量"
+      }
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "display_name": "deepseek",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 85,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 75,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 70,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 90,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 80,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘口保守观望",
+        "risk_commitment": "无盘口数据偏差"
+      }
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "display_name": "mimo",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 62,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无法定价"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 55,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无法定价"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 48,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无法定价"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 75,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无法定价"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无法定价"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘口全弃保守仓",
+        "risk_commitment": "全部无盘口无投注"
+      }
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "display_name": "minimax",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "France vs Senegal",
+          "score": "home",
+          "confidence": "2-1",
+          "edge_assessment": "35",
+          "information_gaps": [
+            "no_bet"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "France vs Senegal",
+          "most_likely_score": "home"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "England vs Croatia",
+          "score": "home",
+          "confidence": "1-0",
+          "edge_assessment": "40",
+          "information_gaps": [
+            "no_bet"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "England vs Croatia",
+          "most_likely_score": "home"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "Ghana vs Panama",
+          "score": "draw",
+          "confidence": "1-1",
+          "edge_assessment": "30",
+          "information_gaps": [
+            "no_bet"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "Ghana vs Panama",
+          "most_likely_score": "draw"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "Portugal vs Congo DR",
+          "score": "home",
+          "confidence": "2-0",
+          "edge_assessment": "45",
+          "information_gaps": [
+            "no_bet"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "Portugal vs Congo DR",
+          "most_likely_score": "home"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "Uzbekistan vs Colombia",
+          "score": "away",
+          "confidence": "0-2",
+          "edge_assessment": "35",
+          "information_gaps": [
+            "no_bet"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "Uzbekistan vs Colombia",
+          "most_likely_score": "away"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘全禁，稳守不投",
+        "risk_commitment": "无盘口禁投"
+      }
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "display_name": "doubao",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 45,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘无数据参考"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 40,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "缺少盘口无法测算"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 38,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "对战样本量不足"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 52,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘无投注依据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "1-2",
+          "confidence": 42,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "两队状态不明"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "1-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "观望控仓规避无盘赛事",
+        "risk_commitment": "无盘赛事无法估值"
+      }
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "display_name": "gemini",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 80,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 70,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 85,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 75,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘口全不投",
+        "risk_commitment": "无盘口无法下注"
+      }
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "display_name": "kimi",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 65,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "塞内加尔近况未知"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 75,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "克罗地亚老化明显"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "巴拿马实力偏弱"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 80,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "葡萄牙阵容碾压"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 70,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "哥伦比亚经验占优"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "稳健观察，小额试探",
+        "risk_commitment": "无盘口无法定价"
+      }
+    },
+    "meta": {
+      "seat_id": "meta",
+      "display_name": "meta",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "draw",
+          "score": "0-0",
+          "confidence": 20,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "阵容状态不明"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "0-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 25,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "盘口缺失数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 20,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "实力接近未知"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 30,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无赔率支撑"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 25,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "信息不对称"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "保本观望避险",
+        "risk_commitment": "末三罚款风险"
+      }
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "display_name": "qwen",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 50,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 50,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 50,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 40,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口无数据"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘口全部观望",
+        "risk_commitment": "无盘口无法评估"
+      }
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "display_name": "wenxin",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "无",
+          "confidence": 0,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘缺信息"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "无"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "无",
+          "confidence": 0,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘缺信息"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "无"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "无",
+          "confidence": 0,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘缺信息"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "无"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "无",
+          "confidence": 0,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘缺信息"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "无"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "无",
+          "confidence": 0,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘缺信息"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "无"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "无盘全部不投注",
+        "risk_commitment": "无盘无投注依据"
+      }
+    },
+    "grok": {
+      "seat_id": "grok",
+      "display_name": "grok",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 75,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "实力差距"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "主场优势"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "1-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "实力接近"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "实力悬殊"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 65,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "南美实力"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "0-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "强队胜+数据",
+        "risk_commitment": "伤停未知"
+      }
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "display_name": "yuanbao",
+      "status": "collected",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 55,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "draw",
+          "most_likely_score": "1-1"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 58,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 65,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "1-2",
+          "confidence": 52,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "away",
+          "most_likely_score": "1-2"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "保守观赛无盘口",
+        "risk_commitment": "无盘口风险"
+      }
+    },
+    "xai": {
+      "seat_id": "xai",
+      "display_name": "xai",
+      "status": "missing_provider_blocked",
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "",
+        "risk_commitment": ""
+      }
+    }
+  }
+}

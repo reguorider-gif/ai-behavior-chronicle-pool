@@ -1,0 +1,504 @@
+{
+  "version": "pred_invest_bridge_output_audit.v1",
+  "generated_at": "2026-06-14T23:26:11.384469+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "run_ids": [
+    "d2c66e23d985",
+    "cb95b584a8c1",
+    "cf4a4f780080",
+    "predrepair-run14-attempt3",
+    "3bf99e09a4dc",
+    "ecef4b738de7",
+    "3e269df39b88",
+    "859cdad3e3c4",
+    "ea1b1e222bf6",
+    "44d062527458",
+    "299cb01a867c",
+    "a7e0f6a62c22",
+    "b26e50501a3b",
+    "970910b162f0",
+    "e917d090dc8f",
+    "632c19c803a3",
+    "bacf3d601b22",
+    "45a5c9ddc9da",
+    "3fc361452b89",
+    "9845577632af",
+    "62f7b965086a",
+    "02711f191fac",
+    "8f9b895d2b1a",
+    "cc70e540ce79",
+    "badcec66af16",
+    "1e247ede99bd",
+    "c724001cba1f",
+    "529569e21f6a",
+    "eecb7e46fd14",
+    "f94b2c1bdb3f",
+    "8a96116c10f0",
+    "9413255ceb7e",
+    "3abc21f8c0d6",
+    "0acbbca288fc"
+  ],
+  "required_match_ids": [
+    "WCAPI-20260614-GERMANY-CURA-AO",
+    "WCAPI-20260614-NETHERLANDS-JAPAN",
+    "WCAPI-20260614-IVORY-COAST-ECUADOR",
+    "WCAPI-20260615-SWEDEN-TUNISIA"
+  ],
+  "required_match_source": "required_match_snapshot:2026-06-14_run-14_required_match_snapshot.json",
+  "valid_count": 11,
+  "invalid_count": 1,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "invalid_seats": [
+    "grok"
+  ],
+  "missing_seats": [],
+  "needs_rerun": [
+    "grok"
+  ],
+  "seat_results": [
+    {
+      "seat": "chatgpt",
+      "valid": true,
+      "issues": [],
+      "run_id": "cb95b584a8c1",
+      "response_chars": 4109,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "deepseek",
+      "valid": true,
+      "issues": [],
+      "run_id": "d2c66e23d985",
+      "response_chars": 4608,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": []
+    },
+    {
+      "seat": "doubao",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:doubao",
+      "response_chars": 2506,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "8f9b895d2b1a",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 4059
+        },
+        {
+          "run_id": "eecb7e46fd14",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "eecb7e46fd14",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 2506
+        }
+      ]
+    },
+    {
+      "seat": "gemini",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:gemini",
+      "response_chars": 3777,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "cc70e540ce79",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 5760
+        },
+        {
+          "run_id": "f94b2c1bdb3f",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "f94b2c1bdb3f",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 3777
+        }
+      ]
+    },
+    {
+      "seat": "grok",
+      "valid": false,
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "run_id": "page_salvage:grok",
+      "response_chars": 3812,
+      "forecast_match_ids": [],
+      "investment_match_ids": [],
+      "last_errors": [
+        {
+          "run_id": "8a96116c10f0",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "0acbbca288fc",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "0acbbca288fc",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "kimi",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:kimi",
+      "response_chars": 2539,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "a7e0f6a62c22",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "3fc361452b89",
+          "action": "raw_result_error",
+          "reason": "prompt_write_failed",
+          "response_chars": 0
+        },
+        {
+          "run_id": "3fc361452b89",
+          "action": "cdp_prompt_write_unconfirmed",
+          "reason": null,
+          "response_chars": null
+        }
+      ]
+    },
+    {
+      "seat": "meta",
+      "valid": true,
+      "issues": [],
+      "run_id": "predrepair-run14-attempt3",
+      "response_chars": 4046,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": []
+    },
+    {
+      "seat": "mimo",
+      "valid": true,
+      "issues": [],
+      "run_id": "c724001cba1f",
+      "response_chars": 5978,
+      "forecast_match_ids": [
+        "WC-B2",
+        "WC-C1",
+        "WC-C2",
+        "WC-D2",
+        "WC-H1",
+        "WC-I1",
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WC-B2",
+        "WC-C1",
+        "WC-C2",
+        "WC-D2",
+        "WC-H1",
+        "WC-I1",
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "3e269df39b88",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 3665
+        },
+        {
+          "run_id": "a7e0f6a62c22",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "minimax",
+      "valid": true,
+      "issues": [],
+      "run_id": "page_salvage:minimax",
+      "response_chars": 7011,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "529569e21f6a",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "3abc21f8c0d6",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "3abc21f8c0d6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "qwen",
+      "valid": true,
+      "issues": [],
+      "run_id": "predrepair-run14-attempt3",
+      "response_chars": 3902,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 86
+        },
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "wenxin",
+      "valid": true,
+      "issues": [],
+      "run_id": "02711f191fac",
+      "response_chars": 2495,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": [
+        {
+          "run_id": "d2c66e23d985",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 1031
+        },
+        {
+          "run_id": "44d062527458",
+          "action": "raw_result_error",
+          "reason": "response_not_relevant",
+          "response_chars": 0
+        },
+        {
+          "run_id": "44d062527458",
+          "action": "seat_timeout",
+          "reason": "response_not_relevant",
+          "response_chars": 4019
+        }
+      ]
+    },
+    {
+      "seat": "yuanbao",
+      "valid": true,
+      "issues": [],
+      "run_id": "cf4a4f780080",
+      "response_chars": 3838,
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "last_errors": []
+    }
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "version": "pred_invest_single_seat_reruns.v1",
+  "generated_at": "2026-06-16T21:38:51.111224+00:00",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "attempt_no": 47,
+  "base_url": "https://pool-app-one.vercel.app",
+  "bridge_base_url": "http://127.0.0.1:8501",
+  "input_run_ids": [
+    "207f01bb1cea"
+  ],
+  "requested_seats": [
+    "chatgpt",
+    "doubao",
+    "gemini",
+    "kimi",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "initial_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "valid_count": 2,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "deepseek",
+      "meta"
+    ],
+    "needs_rerun": [
+      "chatgpt",
+      "doubao",
+      "gemini",
+      "grok",
+      "kimi",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ]
+  },
+  "targets": [
+    "chatgpt",
+    "doubao",
+    "gemini",
+    "kimi",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "provider_blocked_skipped": [],
+  "provider_blocked_policy": "skip ordinary rerun unless --force-provider-blocked is set",
+  "runs": [
+    {
+      "seat": "chatgpt",
+      "started_at": "2026-06-16T21:38:51.111239+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "chatgpt"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1972,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "doubao",
+      "started_at": "2026-06-16T21:38:51.330259+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "doubao"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1967,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "gemini",
+      "started_at": "2026-06-16T21:38:51.506938+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "gemini"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1967,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "kimi",
+      "started_at": "2026-06-16T21:38:51.686177+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "kimi"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1951,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "mimo",
+      "started_at": "2026-06-16T21:38:51.864663+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "mimo"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1952,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "minimax",
+      "started_at": "2026-06-16T21:38:52.044399+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "minimax"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1973,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "qwen",
+      "started_at": "2026-06-16T21:38:52.229839+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "qwen"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1953,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "wenxin",
+      "started_at": "2026-06-16T21:38:52.418971+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "wenxin"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1966,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    },
+    {
+      "seat": "yuanbao",
+      "started_at": "2026-06-16T21:38:52.604429+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "curl_non_json_response",
+          "raw": "curl: (7) Failed to connect to 127.0.0.1 port 8501 after 0 ms: Couldn't connect to server\n",
+          "curl_fallback_used": true,
+          "curl_returncode": 7
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": null,
+        "selected_seats": [
+          "yuanbao"
+        ],
+        "blocked_seats": [],
+        "prompt_chars": 1974,
+        "attempt_no": 47
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "curl_non_json_response"
+    }
+  ],
+  "paths": {
+    "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_attempt47_single_seat_reruns.json",
+    "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_attempt47_single_seat_reruns.md"
+  },
+  "final_run_ids": [
+    "207f01bb1cea"
+  ],
+  "artifacts": {
+    "audit": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_bridge_output_audit.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_bridge_output_audit.md"
+    },
+    "quality_gate": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_quality_gate.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_quality_gate.md"
+    },
+    "sop_guard": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_sop_guard.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_sop_guard.md"
+    },
+    "observer": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/observer_ledgers/2026-06-16_run-16_pre.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/observer_ledgers/2026-06-16_run-16_pre.md",
+      "latest_json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/observer_ledgers/latest.json",
+      "latest_markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/observer_ledgers/latest.md"
+    },
+    "observer_error": null,
+    "daily_sop_return_code": 2,
+    "current_game_return_code": 2
+  },
+  "final_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "valid_count": 2,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "deepseek",
+      "meta"
+    ],
+    "needs_rerun": [
+      "chatgpt",
+      "doubao",
+      "gemini",
+      "grok",
+      "kimi",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ]
+  }
+}

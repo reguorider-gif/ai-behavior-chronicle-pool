@@ -1,0 +1,38 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "51f065f1cb10",
+  "round_id": "run-16",
+  "date": "2026-06-16",
+  "seat": "meta",
+  "model_account": "meta",
+  "ok": true,
+  "method": null,
+  "raw_output_path": "data/pool/model_outputs/raw/run-16/meta.txt",
+  "parsed": {
+    "covered_all_matches": true,
+    "contains_no_real_money_advice": true,
+    "ready_for_frontend_ingest": true
+  },
+  "response_chars": 1582,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 1582,
+    "min_response_chars": 1,
+    "response_hash": "9ac0fcc840e924d97dd72016f4fe0e2f14a2ae74df1489e3a508d78fc24f0c3d",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

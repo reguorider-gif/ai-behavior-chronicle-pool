@@ -1,0 +1,58 @@
+{
+  "date": "2026-06-15",
+  "version": "PRED_INVEST_CREDIT_SURVIVE_V2.operational_readiness",
+  "verdict": "READY_FOR_NEXT_AI_JUDGE_DRY_RUN",
+  "reviewer_view": "third_party_operator",
+  "checks": [
+    {
+      "id": "data_contract",
+      "status": "pass",
+      "finding": "forecast_receipts 与 investment_receipts 已分账；no-bet 被视为有效投资决策而非缺席。"
+    },
+    {
+      "id": "memory_continuity",
+      "status": "pass",
+      "finding": "smoke-behavior-v2-b 的 prompt_context 已包含 smoke-behavior-v2-a 行为摘要。"
+    },
+    {
+      "id": "privacy_boundary",
+      "status": "pass",
+      "finding": "模型 prompt 仅包含本席历史与匿名市场快照；不包含其他席位私有日志和细分下注。"
+    },
+    {
+      "id": "credit_survival",
+      "status": "pass",
+      "finding": "信用分、贷款额度、净值和 Recovery Mode 已进入 ledger；净值小于等于 0 时冻结新增贷款。"
+    },
+    {
+      "id": "god_report",
+      "status": "pass",
+      "finding": "上帝日报已覆盖预测-投资偏离、贷款压力、no-bet 纪律、重整状态和策略漂移。"
+    },
+    {
+      "id": "frontend_visibility",
+      "status": "fixed_this_round",
+      "finding": "此前线上前端未读取 V2 静态产物。本轮增加 ops-v2 页面与数据中心 V2 运营链路卡。"
+    }
+  ],
+  "known_limits": [
+    "当前 V2 线上封装使用 smoke fixture 证明链路能力，真实 12 席 AI Judge 接入仍需下一轮桥接运行产出。",
+    "静态 Vercel 页面不能直接运行 Python SOP；每日自动任务仍应在本地/服务端执行后同步 data/pool 产物并部署。",
+    "旧 /api rewrite 仍保留给原赛事数据，V2 页面优先读取静态 data/pool 镜像。"
+  ],
+  "next_run_gate": {
+    "must_pass_before_real_run": [
+      "python3 -m unittest discover -s tests -p 'test_*.py'",
+      "smoke-behavior-v2-a ok=true",
+      "smoke-behavior-v2-b ok=true",
+      "online ops-v2 page loads rule, market snapshot, prompt context, god report"
+    ],
+    "hard_fail_if": [
+      "forecast_receipt_count != seat_count",
+      "investment_receipt_count != seat_count",
+      "market snapshot includes seat choices",
+      "prompt_context private_context includes another seat identity",
+      "god_report missing behavior commentary"
+    ]
+  }
+}

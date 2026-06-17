@@ -1,0 +1,46 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "3460f0a20d1d",
+  "round_id": "run-15",
+  "attempt_no": 6,
+  "date": "2026-06-15",
+  "exported_at": "2026-06-15T10:53:01.333034+00:00",
+  "observed_models": [
+    "wenxin"
+  ],
+  "exported_outputs": 0,
+  "invalid_outputs": [
+    {
+      "seat_id": "wenxin",
+      "seat": "wenxin",
+      "response_chars": 2171,
+      "ok": true,
+      "reason": "missing_required_pool_json_receipt",
+      "execution_validity": {
+        "policy_version": "required-web-seat-v1",
+        "required": true,
+        "valid": true,
+        "submitted": true,
+        "accepted": true,
+        "marker_found": false,
+        "marker_closed": false,
+        "matches_question": true,
+        "prompt_echo": false,
+        "polluted": false,
+        "page_busy": false,
+        "response_chars": 2171,
+        "min_response_chars": 1,
+        "response_hash": "c83f85e06b0e641a07a347a6057c7af2e34fbd1413d86ee4a15ab2fdb29cc396",
+        "capture_mode": "",
+        "prompt_id": "",
+        "attempts": 0,
+        "source": "web_bridge",
+        "reason": "valid"
+      }
+    }
+  ],
+  "rows": [],
+  "dropbox": null,
+  "ingest": null,
+  "pipeline": null
+}

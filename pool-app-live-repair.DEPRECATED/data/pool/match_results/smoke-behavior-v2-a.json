@@ -1,0 +1,16 @@
+{
+  "version": "pipeline_results_from_explicit_scores.v1",
+  "source_policy": "explicit_result_file_plus_matches_api_score_registry",
+  "matches": [
+    {
+      "match_id": "SMOKE-M1",
+      "score": "2-0",
+      "status": "settled"
+    },
+    {
+      "match_id": "SMOKE-M2",
+      "score": "1-1",
+      "status": "settled"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "run_id": "run-16",
+  "date": "2026-06-16",
+  "seat_id": "xai",
+  "display_name": "xai",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "prompt": null,
+  "loan_terms": {},
+  "required_match_ids": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "source": "production_pred_invest_daily_sop",
+  "behavior_memory_required": true
+}

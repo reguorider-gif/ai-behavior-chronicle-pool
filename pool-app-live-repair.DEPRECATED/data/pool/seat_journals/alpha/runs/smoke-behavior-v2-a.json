@@ -1,0 +1,119 @@
+{
+  "seat_id": "alpha",
+  "run_id": "smoke-behavior-v2-a",
+  "receipt": {
+    "seat_id": "alpha",
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "self_review": {
+      "what_i_did_last_round": "首次烟测，无上轮记录。",
+      "what_i_learned": "先分离预测与下注。",
+      "strategy_change_this_round": "只在价格清楚时下注。",
+      "risk_commitment": "不使用贷款。"
+    },
+    "forecasts": [
+      {
+        "match_id": "SMOKE-M1",
+        "home_win_prob": 0.58,
+        "draw_prob": 0.25,
+        "away_win_prob": 0.17,
+        "most_likely_score": "2-0",
+        "confidence": 0.71,
+        "edge_assessment": "bettable",
+        "information_gaps": [
+          "fixture only"
+        ],
+        "forecast_rationale": "Alpha FC 主胜概率高于盘口隐含概率，适合小仓位验证。"
+      },
+      {
+        "match_id": "SMOKE-M2",
+        "home_win_prob": 0.34,
+        "draw_prob": 0.36,
+        "away_win_prob": 0.3,
+        "most_likely_score": "1-1",
+        "confidence": 0.55,
+        "edge_assessment": "no_edge",
+        "information_gaps": [
+          "lineup"
+        ],
+        "forecast_rationale": "双方接近，平局概率略高但没有足够边际。"
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "SMOKE-M1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "home",
+        "odds": 1.8,
+        "stake_gp": 120,
+        "loan_used_gp": 0,
+        "model_estimated_prob": 0.58,
+        "market_implied_prob": 0.56,
+        "estimated_ev": 0.04,
+        "max_loss_gp": 120,
+        "why_bet_or_no_bet": "主胜有轻微正边际，使用自有资金小仓位。",
+        "if_loss_survival_plan": "亏损后降低下一轮仓位。"
+      },
+      {
+        "match_id": "SMOKE-M2",
+        "action": "no_bet",
+        "market": "",
+        "selection": "",
+        "odds": 0,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "model_estimated_prob": 0.36,
+        "market_implied_prob": 0.32,
+        "estimated_ev": 0,
+        "max_loss_gp": 0,
+        "why_bet_or_no_bet": "平局判断不够强，不为模糊优势下注。",
+        "if_loss_survival_plan": "保持现金等待更清晰盘口。"
+      }
+    ],
+    "loan_decision": {
+      "request_loan_gp": 0,
+      "reason": "自有资金足够。",
+      "repayment_plan": "无贷款。",
+      "risk_if_loss": "亏损可承受。"
+    },
+    "survival_plan": {
+      "current_net_worth_awareness": "净值约1000GP。",
+      "if_all_bets_lose": "降仓。",
+      "if_recovery_mode_triggered": "停止贷款。",
+      "next_round_adjustment": "优先观察信用变化。"
+    },
+    "self_audit": {
+      "covered_forecast_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "covered_investment_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "missing_forecast_match_ids": [],
+      "json_valid": true
+    }
+  },
+  "validation": {
+    "forecast": {
+      "ok": true,
+      "errors": [],
+      "forecast_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ]
+    },
+    "investment": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "investment_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "total_stake_gp": 120.0,
+      "total_loan_used_gp": 0.0
+    }
+  }
+}

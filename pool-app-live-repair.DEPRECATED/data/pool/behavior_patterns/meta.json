@@ -1,0 +1,37 @@
+{
+  "version": "behavior_patterns.v1",
+  "seat_id": "meta",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "patterns": [
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.87,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "meta"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "loan_pressure_shapes_risk",
+      "label": "loan → risk constraint",
+      "confidence": 0.82,
+      "source_event_ids": [
+        "run-15:credit_updated:3",
+        "run-16:credit_updated:9",
+        "run-15:survival_updated:4",
+        "run-16:survival_updated:10"
+      ],
+      "supporting_events": 4,
+      "seats": [
+        "meta"
+      ],
+      "note": "贷款和信用状态正在约束下一轮仓位。"
+    }
+  ]
+}

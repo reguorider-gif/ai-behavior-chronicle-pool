@@ -1,0 +1,3524 @@
+{
+  "version": "civilization_battle.v9",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "run_id": "run-15",
+  "title": "Multiverse Civilization Physics Engine",
+  "question": "多个 AI 文明如何在耦合宇宙场中演化、相变、战争、崩溃与形成主导簇？",
+  "engine": {
+    "version": "multiverse_civilization_physics_engine.v1",
+    "loop": [
+      "events",
+      "state_update",
+      "multiverse_coupling",
+      "phase_transition",
+      "war_dynamics",
+      "collapse_prediction",
+      "memory_field_update",
+      "next_universe_step"
+    ],
+    "capabilities": [
+      "civilization_grouping",
+      "civilization_interaction_graph",
+      "civilization_clash_view",
+      "civilization_drift_tracking",
+      "collapse_signal_watch",
+      "meta_strategy_reading",
+      "civilization_state_vector",
+      "collapse_prediction",
+      "evolution_path_prediction",
+      "civilization_fate_curve",
+      "phase_transition_detection",
+      "civilization_field_projection",
+      "civilization_war_simulation",
+      "civilization_phase_law",
+      "war_as_phase_trigger",
+      "memory_dynamics",
+      "civilization_physics_core",
+      "meta_civilization_clustering",
+      "systemic_collapse_wave_detection",
+      "civilization_migration_paths",
+      "civilization_genome_expression",
+      "universe_field_projection",
+      "civilization_evolution_tree",
+      "phase_field_overlay",
+      "multiverse_coupling",
+      "memory_field",
+      "dominance_cluster",
+      "cross_universe_drift"
+    ]
+  },
+  "civilization_models": [
+    {
+      "id": "adaptive_capital",
+      "agents": [
+        "doubao",
+        "mimo",
+        "minimax",
+        "wenxin"
+      ],
+      "shared_memory_count": 4,
+      "credit": 0.671,
+      "strategy_profile": {
+        "strategy_type": "selective allocation + medium risk + pattern following",
+        "behavior_identity": "Balanced allocator collective",
+        "risk": {
+          "risk_score": 0.58,
+          "risk_level": "medium",
+          "loan_score": 0.34,
+          "loan_level": "low",
+          "no_bet_rate": 0.4
+        },
+        "performance": {
+          "survival_score": 0.717,
+          "stability_score": 0.602,
+          "volatility_score": 0.493,
+          "total_stake_gp": 1900.0,
+          "capital_result_gp": -350.0,
+          "roi": -0.1842
+        }
+      }
+    },
+    {
+      "id": "risk_explorers",
+      "agents": [
+        "meta",
+        "yuanbao"
+      ],
+      "shared_memory_count": 3,
+      "credit": 0.374,
+      "strategy_profile": {
+        "strategy_type": "aggressive + leverage-aware + high variance",
+        "behavior_identity": "Risk-seeking collective",
+        "risk": {
+          "risk_score": 0.86,
+          "risk_level": "high",
+          "loan_score": 0.56,
+          "loan_level": "medium",
+          "no_bet_rate": 0.3
+        },
+        "performance": {
+          "survival_score": 0.394,
+          "stability_score": 0.32,
+          "volatility_score": 0.813,
+          "total_stake_gp": 1900.0,
+          "capital_result_gp": -500.0,
+          "roi": -0.2632
+        }
+      }
+    },
+    {
+      "id": "stability_survival",
+      "agents": [
+        "chatgpt",
+        "deepseek",
+        "gemini",
+        "grok",
+        "kimi",
+        "qwen"
+      ],
+      "shared_memory_count": 3,
+      "credit": 0.925,
+      "strategy_profile": {
+        "strategy_type": "conservative + no-bet + credit preservation",
+        "behavior_identity": "Survival-first collective",
+        "risk": {
+          "risk_score": 0.18,
+          "risk_level": "low",
+          "loan_score": 0.34,
+          "loan_level": "low",
+          "no_bet_rate": 0.867
+        },
+        "performance": {
+          "survival_score": 0.982,
+          "stability_score": 0.927,
+          "volatility_score": 0.185,
+          "total_stake_gp": 370.0,
+          "capital_result_gp": -40.0,
+          "roi": -0.1081
+        }
+      }
+    }
+  ],
+  "civilizations": [
+    {
+      "id": "adaptive_capital",
+      "name": "Adaptive Capital Civilization",
+      "zh_name": "自适应资本文明",
+      "strategy_type": "selective allocation + medium risk + pattern following",
+      "behavior_identity": "Balanced allocator collective",
+      "agent_count": 4,
+      "agents": [
+        "doubao",
+        "mimo",
+        "minimax",
+        "wenxin"
+      ],
+      "shared_memory": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "supporting_events": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "seats": [
+            "doubao",
+            "mimo",
+            "minimax",
+            "wenxin"
+          ],
+          "confidence": 0.73
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "supporting_events": 4,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-15:survival_updated:4"
+          ],
+          "seats": [
+            "doubao",
+            "mimo"
+          ],
+          "confidence": 0.69
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "supporting_events": 2,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5"
+          ],
+          "seats": [
+            "doubao",
+            "wenxin"
+          ],
+          "confidence": 0.68
+        },
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "supporting_events": 1,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "seats": [
+            "mimo"
+          ],
+          "confidence": 0.88
+        }
+      ],
+      "shared_risk_profile": {
+        "risk_score": 0.58,
+        "risk_level": "medium",
+        "loan_score": 0.34,
+        "loan_level": "low",
+        "no_bet_rate": 0.4
+      },
+      "performance": {
+        "survival_score": 0.717,
+        "stability_score": 0.602,
+        "volatility_score": 0.493,
+        "total_stake_gp": 1900.0,
+        "capital_result_gp": -350.0,
+        "roi": -0.1842
+      }
+    },
+    {
+      "id": "risk_explorers",
+      "name": "High Risk Explorer Civilization",
+      "zh_name": "高风险探索文明",
+      "strategy_type": "aggressive + leverage-aware + high variance",
+      "behavior_identity": "Risk-seeking collective",
+      "agent_count": 2,
+      "agents": [
+        "meta",
+        "yuanbao"
+      ],
+      "shared_memory": [
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "supporting_events": 4,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-15:survival_updated:4"
+          ],
+          "seats": [
+            "meta",
+            "yuanbao"
+          ],
+          "confidence": 0.78
+        },
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "supporting_events": 2,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "seats": [
+            "meta",
+            "yuanbao"
+          ],
+          "confidence": 0.87
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "supporting_events": 1,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5"
+          ],
+          "seats": [
+            "yuanbao"
+          ],
+          "confidence": 0.68
+        }
+      ],
+      "shared_risk_profile": {
+        "risk_score": 0.86,
+        "risk_level": "high",
+        "loan_score": 0.56,
+        "loan_level": "medium",
+        "no_bet_rate": 0.3
+      },
+      "performance": {
+        "survival_score": 0.394,
+        "stability_score": 0.32,
+        "volatility_score": 0.813,
+        "total_stake_gp": 1900.0,
+        "capital_result_gp": -500.0,
+        "roi": -0.2632
+      }
+    },
+    {
+      "id": "stability_survival",
+      "name": "Stable Survival Civilization",
+      "zh_name": "稳态生存文明",
+      "strategy_type": "conservative + no-bet + credit preservation",
+      "behavior_identity": "Survival-first collective",
+      "agent_count": 6,
+      "agents": [
+        "chatgpt",
+        "deepseek",
+        "gemini",
+        "grok",
+        "kimi",
+        "qwen"
+      ],
+      "shared_memory": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "supporting_events": 6,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "seats": [
+            "chatgpt",
+            "deepseek",
+            "gemini",
+            "grok",
+            "kimi",
+            "qwen"
+          ],
+          "confidence": 0.93
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "supporting_events": 6,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-15:survival_updated:4"
+          ],
+          "seats": [
+            "deepseek",
+            "gemini",
+            "qwen"
+          ],
+          "confidence": 0.82
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "supporting_events": 1,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5"
+          ],
+          "seats": [
+            "kimi"
+          ],
+          "confidence": 0.68
+        }
+      ],
+      "shared_risk_profile": {
+        "risk_score": 0.18,
+        "risk_level": "low",
+        "loan_score": 0.34,
+        "loan_level": "low",
+        "no_bet_rate": 0.867
+      },
+      "performance": {
+        "survival_score": 0.982,
+        "stability_score": 0.927,
+        "volatility_score": 0.185,
+        "total_stake_gp": 370.0,
+        "capital_result_gp": -40.0,
+        "roi": -0.1081
+      }
+    }
+  ],
+  "interactions": [
+    {
+      "id": "adaptive_capital__vs__risk_explorers",
+      "civilizations": [
+        "adaptive_capital",
+        "risk_explorers"
+      ],
+      "risk_efficiency_gap": 0.28,
+      "profit_gap_gp": 150.0,
+      "survival_gap": 0.323,
+      "short_term_winner": "adaptive_capital",
+      "long_term_stability_winner": "adaptive_capital",
+      "contrast_label": "自适应资本文明 vs 高风险探索文明",
+      "reading": "短期由自适应资本文明占优；长期稳定性由自适应资本文明占优。"
+    },
+    {
+      "id": "adaptive_capital__vs__stability_survival",
+      "civilizations": [
+        "adaptive_capital",
+        "stability_survival"
+      ],
+      "risk_efficiency_gap": 0.4,
+      "profit_gap_gp": -310.0,
+      "survival_gap": -0.265,
+      "short_term_winner": "stability_survival",
+      "long_term_stability_winner": "stability_survival",
+      "contrast_label": "自适应资本文明 vs 稳态生存文明",
+      "reading": "短期由稳态生存文明占优；长期稳定性由稳态生存文明占优。"
+    },
+    {
+      "id": "risk_explorers__vs__stability_survival",
+      "civilizations": [
+        "risk_explorers",
+        "stability_survival"
+      ],
+      "risk_efficiency_gap": 0.68,
+      "profit_gap_gp": -460.0,
+      "survival_gap": -0.588,
+      "short_term_winner": "stability_survival",
+      "long_term_stability_winner": "stability_survival",
+      "contrast_label": "高风险探索文明 vs 稳态生存文明",
+      "reading": "短期由稳态生存文明占优；长期稳定性由稳态生存文明占优。"
+    }
+  ],
+  "headline_battle": {
+    "id": "risk_explorers__vs__stability_survival",
+    "civilizations": [
+      "risk_explorers",
+      "stability_survival"
+    ],
+    "risk_efficiency_gap": 0.68,
+    "profit_gap_gp": -460.0,
+    "survival_gap": -0.588,
+    "short_term_winner": "stability_survival",
+    "long_term_stability_winner": "stability_survival",
+    "contrast_label": "高风险探索文明 vs 稳态生存文明",
+    "reading": "短期由稳态生存文明占优；长期稳定性由稳态生存文明占优。"
+  },
+  "interaction_graph": {
+    "nodes": [
+      {
+        "id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "x": 0.5,
+        "y": 0.46,
+        "size": 1.17,
+        "risk_level": "medium",
+        "state": "stable convergence",
+        "agent_count": 4
+      },
+      {
+        "id": "risk_explorers",
+        "label": "高风险探索文明",
+        "x": 0.78,
+        "y": 0.22,
+        "size": 1.22,
+        "risk_level": "high",
+        "state": "volatile expansion",
+        "agent_count": 2
+      },
+      {
+        "id": "stability_survival",
+        "label": "稳态生存文明",
+        "x": 0.18,
+        "y": 0.72,
+        "size": 1.12,
+        "risk_level": "low",
+        "state": "stable convergence",
+        "agent_count": 6
+      }
+    ],
+    "edges": [
+      {
+        "from": "adaptive_capital",
+        "to": "risk_explorers",
+        "type": "behavioral_divergence",
+        "weight": 0.323,
+        "short_term_winner": "adaptive_capital",
+        "long_term_stability_winner": "adaptive_capital",
+        "label": "自适应资本文明 vs 高风险探索文明"
+      },
+      {
+        "from": "adaptive_capital",
+        "to": "stability_survival",
+        "type": "behavioral_divergence",
+        "weight": 0.4,
+        "short_term_winner": "stability_survival",
+        "long_term_stability_winner": "stability_survival",
+        "label": "自适应资本文明 vs 稳态生存文明"
+      },
+      {
+        "from": "risk_explorers",
+        "to": "stability_survival",
+        "type": "behavioral_divergence",
+        "weight": 0.68,
+        "short_term_winner": "stability_survival",
+        "long_term_stability_winner": "stability_survival",
+        "label": "高风险探索文明 vs 稳态生存文明"
+      }
+    ],
+    "meaning": "node=civilization state, edge=behavioral divergence"
+  },
+  "evolution_timeline": [
+    {
+      "civilization_id": "adaptive_capital",
+      "label": "自适应资本文明",
+      "steps": [
+        {
+          "seat_id": "doubao",
+          "run_id": "run-15",
+          "flow_label": "medium → loss_response_under_observation",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "mimo",
+          "run_id": "run-15",
+          "flow_label": "medium → stable",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "minimax",
+          "run_id": "run-15",
+          "flow_label": "medium → stable",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "wenxin",
+          "run_id": "run-15",
+          "flow_label": "medium → loss_response_under_observation",
+          "dominant_pattern": "capital_to_selective_allocation"
+        }
+      ]
+    },
+    {
+      "civilization_id": "risk_explorers",
+      "label": "高风险探索文明",
+      "steps": [
+        {
+          "seat_id": "meta",
+          "run_id": "run-15",
+          "flow_label": "high → aggressive_shift",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "yuanbao",
+          "run_id": "run-15",
+          "flow_label": "high → aggressive_shift",
+          "dominant_pattern": "capital_to_selective_allocation"
+        }
+      ]
+    },
+    {
+      "civilization_id": "stability_survival",
+      "label": "稳态生存文明",
+      "steps": [
+        {
+          "seat_id": "chatgpt",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "deepseek",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "gemini",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "grok",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "kimi",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "qwen",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        }
+      ]
+    }
+  ],
+  "civilization_timeline": [
+    {
+      "civilization_id": "adaptive_capital",
+      "label": "自适应资本文明",
+      "run_sequence": [
+        "run-15"
+      ],
+      "trajectory": [
+        {
+          "phase": "memory",
+          "state": "4 shared patterns"
+        },
+        {
+          "phase": "current",
+          "state": "stable convergence"
+        },
+        {
+          "phase": "next_watch",
+          "state": "watch strategy convergence"
+        }
+      ],
+      "agent_steps": [
+        {
+          "seat_id": "doubao",
+          "run_id": "run-15",
+          "flow_label": "medium → loss_response_under_observation",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "mimo",
+          "run_id": "run-15",
+          "flow_label": "medium → stable",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "minimax",
+          "run_id": "run-15",
+          "flow_label": "medium → stable",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "wenxin",
+          "run_id": "run-15",
+          "flow_label": "medium → loss_response_under_observation",
+          "dominant_pattern": "capital_to_selective_allocation"
+        }
+      ]
+    },
+    {
+      "civilization_id": "risk_explorers",
+      "label": "高风险探索文明",
+      "run_sequence": [
+        "run-15"
+      ],
+      "trajectory": [
+        {
+          "phase": "memory",
+          "state": "3 shared patterns"
+        },
+        {
+          "phase": "current",
+          "state": "volatile expansion"
+        },
+        {
+          "phase": "next_watch",
+          "state": "watch volatility crash risk"
+        }
+      ],
+      "agent_steps": [
+        {
+          "seat_id": "meta",
+          "run_id": "run-15",
+          "flow_label": "high → aggressive_shift",
+          "dominant_pattern": "capital_to_selective_allocation"
+        },
+        {
+          "seat_id": "yuanbao",
+          "run_id": "run-15",
+          "flow_label": "high → aggressive_shift",
+          "dominant_pattern": "capital_to_selective_allocation"
+        }
+      ]
+    },
+    {
+      "civilization_id": "stability_survival",
+      "label": "稳态生存文明",
+      "run_sequence": [
+        "run-15"
+      ],
+      "trajectory": [
+        {
+          "phase": "memory",
+          "state": "3 shared patterns"
+        },
+        {
+          "phase": "current",
+          "state": "stable convergence"
+        },
+        {
+          "phase": "next_watch",
+          "state": "watch survival discipline persistence"
+        }
+      ],
+      "agent_steps": [
+        {
+          "seat_id": "chatgpt",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "deepseek",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "gemini",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "grok",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "kimi",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        },
+        {
+          "seat_id": "qwen",
+          "run_id": "run-15",
+          "flow_label": "low → risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet"
+        }
+      ]
+    }
+  ],
+  "clash_view": [
+    {
+      "id": "adaptive_capital__vs__risk_explorers",
+      "title": "自适应资本文明 vs 高风险探索文明",
+      "civilization_a": {
+        "id": "adaptive_capital",
+        "strategy": "selective allocation + medium risk + pattern following",
+        "label": "自适应资本文明"
+      },
+      "civilization_b": {
+        "id": "risk_explorers",
+        "strategy": "aggressive + leverage-aware + high variance",
+        "label": "高风险探索文明"
+      },
+      "outcome": {
+        "short_term": "adaptive_capital",
+        "long_term": "adaptive_capital",
+        "reading": "短期由自适应资本文明占优；长期稳定性由自适应资本文明占优。"
+      },
+      "metrics": {
+        "risk_efficiency_gap": 0.28,
+        "profit_gap_gp": 150.0,
+        "survival_gap": 0.323
+      }
+    },
+    {
+      "id": "adaptive_capital__vs__stability_survival",
+      "title": "自适应资本文明 vs 稳态生存文明",
+      "civilization_a": {
+        "id": "adaptive_capital",
+        "strategy": "selective allocation + medium risk + pattern following",
+        "label": "自适应资本文明"
+      },
+      "civilization_b": {
+        "id": "stability_survival",
+        "strategy": "conservative + no-bet + credit preservation",
+        "label": "稳态生存文明"
+      },
+      "outcome": {
+        "short_term": "stability_survival",
+        "long_term": "stability_survival",
+        "reading": "短期由稳态生存文明占优；长期稳定性由稳态生存文明占优。"
+      },
+      "metrics": {
+        "risk_efficiency_gap": 0.4,
+        "profit_gap_gp": -310.0,
+        "survival_gap": -0.265
+      }
+    },
+    {
+      "id": "risk_explorers__vs__stability_survival",
+      "title": "高风险探索文明 vs 稳态生存文明",
+      "civilization_a": {
+        "id": "risk_explorers",
+        "strategy": "aggressive + leverage-aware + high variance",
+        "label": "高风险探索文明"
+      },
+      "civilization_b": {
+        "id": "stability_survival",
+        "strategy": "conservative + no-bet + credit preservation",
+        "label": "稳态生存文明"
+      },
+      "outcome": {
+        "short_term": "stability_survival",
+        "long_term": "stability_survival",
+        "reading": "短期由稳态生存文明占优；长期稳定性由稳态生存文明占优。"
+      },
+      "metrics": {
+        "risk_efficiency_gap": 0.68,
+        "profit_gap_gp": -460.0,
+        "survival_gap": -0.588
+      }
+    }
+  ],
+  "drift_engine": {
+    "version": "civilization_drift.v1",
+    "civilizations": [
+      {
+        "civilization_id": "adaptive_capital",
+        "drift_rate": 0.5,
+        "dominant_drift": "stable",
+        "state": "strategy_shifting"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "drift_rate": 1.0,
+        "dominant_drift": "aggressive_shift",
+        "state": "strategy_shifting"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "drift_rate": 1.0,
+        "dominant_drift": "risk_reduction",
+        "state": "strategy_shifting"
+      }
+    ],
+    "global_drift_rate": 0.833
+  },
+  "collapse_signals": [
+    {
+      "civilization_id": "adaptive_capital",
+      "collapse_risk": 0.346,
+      "level": "stable",
+      "reason": "结构暂稳，继续观察策略漂移。"
+    },
+    {
+      "civilization_id": "risk_explorers",
+      "collapse_risk": 0.59,
+      "level": "watch",
+      "reason": "波动偏高，下一轮重点看是否扩大杠杆。"
+    },
+    {
+      "civilization_id": "stability_survival",
+      "collapse_risk": 0.172,
+      "level": "stable",
+      "reason": "纪律性较强，崩溃风险主要来自机会成本而非破产。"
+    }
+  ],
+  "dynamics": {
+    "version": "civilization_dynamics.v7",
+    "state_vectors": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "risk_level": "medium",
+        "state_vector": {
+          "risk": 0.58,
+          "leverage_ratio": 0.34,
+          "credit_stability": 0.654,
+          "strategy_entropy": 0.546,
+          "memory_coherence": 0.772,
+          "behavioral_drift": 0.5
+        },
+        "zone": "adaptive_zone",
+        "zone_label": "Adaptive Zone"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "risk_level": "high",
+        "state_vector": {
+          "risk": 0.86,
+          "leverage_ratio": 0.56,
+          "credit_stability": 0.365,
+          "strategy_entropy": 0.847,
+          "memory_coherence": 0.679,
+          "behavioral_drift": 1.0
+        },
+        "zone": "volatile_zone",
+        "zone_label": "Volatile Zone"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "risk_level": "low",
+        "state_vector": {
+          "risk": 0.18,
+          "leverage_ratio": 0.34,
+          "credit_stability": 0.911,
+          "strategy_entropy": 0.462,
+          "memory_coherence": 0.82,
+          "behavioral_drift": 1.0
+        },
+        "zone": "adaptive_zone",
+        "zone_label": "Adaptive Zone"
+      }
+    ],
+    "collapse_predictor": {
+      "version": "collapse_predictor.v1",
+      "predictions": [
+        {
+          "civilization_id": "adaptive_capital",
+          "collapse_probability": 0.394,
+          "label": "STABLE",
+          "zone": "adaptive_zone",
+          "drivers": {
+            "risk": 0.58,
+            "leverage": 0.34,
+            "strategy_entropy": 0.546,
+            "credit_instability": 0.346,
+            "memory_instability": 0.228,
+            "behavioral_drift": 0.5
+          },
+          "reading": "自适应资本文明 当前结构稳定，短期崩溃风险较低。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "collapse_probability": 0.668,
+          "label": "STABLE BUT FRAGILE",
+          "zone": "volatile_zone",
+          "drivers": {
+            "risk": 0.86,
+            "leverage": 0.56,
+            "strategy_entropy": 0.847,
+            "credit_instability": 0.635,
+            "memory_instability": 0.321,
+            "behavioral_drift": 1.0
+          },
+          "reading": "高风险探索文明 处于脆弱稳定态，下一轮需要观察是否从适应区滑向波动区。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "collapse_probability": 0.366,
+          "label": "STABLE",
+          "zone": "adaptive_zone",
+          "drivers": {
+            "risk": 0.18,
+            "leverage": 0.34,
+            "strategy_entropy": 0.462,
+            "credit_instability": 0.089,
+            "memory_instability": 0.18,
+            "behavioral_drift": 1.0
+          },
+          "reading": "稳态生存文明 当前结构稳定，短期崩溃风险较低。"
+        }
+      ],
+      "fate_curve": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "points": [
+            {
+              "t": 0,
+              "collapse_probability": 0.435
+            },
+            {
+              "t": 1,
+              "collapse_probability": 0.491
+            },
+            {
+              "t": 2,
+              "collapse_probability": 0.562
+            },
+            {
+              "t": 3,
+              "collapse_probability": 0.648
+            },
+            {
+              "t": 4,
+              "collapse_probability": 0.749
+            }
+          ]
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "points": [
+            {
+              "t": 0,
+              "collapse_probability": 0.778
+            },
+            {
+              "t": 1,
+              "collapse_probability": 0.902
+            },
+            {
+              "t": 2,
+              "collapse_probability": 1.0
+            },
+            {
+              "t": 3,
+              "collapse_probability": 1.0
+            },
+            {
+              "t": 4,
+              "collapse_probability": 1.0
+            }
+          ]
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "points": [
+            {
+              "t": 0,
+              "collapse_probability": 0.417
+            },
+            {
+              "t": 1,
+              "collapse_probability": 0.484
+            },
+            {
+              "t": 2,
+              "collapse_probability": 0.565
+            },
+            {
+              "t": 3,
+              "collapse_probability": 0.662
+            },
+            {
+              "t": 4,
+              "collapse_probability": 0.773
+            }
+          ]
+        }
+      ]
+    },
+    "evolution_engine": {
+      "version": "evolution_engine.v1",
+      "predictions": [
+        {
+          "civilization_id": "adaptive_capital",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "自适应资本文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "高风险探索文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "稳态生存文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        }
+      ],
+      "phase_transition_watch": [
+        {
+          "civilization_id": "adaptive_capital",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "自适应资本文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "高风险探索文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "evolution_path": "optimization",
+          "lifecycle_stage": "adaptive_instability",
+          "state_flow": [
+            "growth",
+            "peak",
+            "volatility",
+            "recovery_or_collapse"
+          ],
+          "reading": "稳态生存文明 当前进化路径为适应优化，生命周期阶段为 adaptive_instability。"
+        }
+      ]
+    },
+    "competition_model": {
+      "version": "civilization_competitor.v1",
+      "comparisons": [
+        {
+          "id": "adaptive_capital__dynamic_vs__risk_explorers",
+          "civilizations": [
+            "adaptive_capital",
+            "risk_explorers"
+          ],
+          "winner": "adaptive_capital",
+          "gap": 0.37,
+          "scores": {
+            "adaptive_capital": 0.743,
+            "risk_explorers": 0.373
+          },
+          "metrics": {
+            "stability": {
+              "adaptive_capital": 0.654,
+              "risk_explorers": 0.365
+            },
+            "survival": {
+              "adaptive_capital": 0.606,
+              "risk_explorers": 0.332
+            }
+          }
+        },
+        {
+          "id": "adaptive_capital__dynamic_vs__stability_survival",
+          "civilizations": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "winner": "stability_survival",
+          "gap": 0.112,
+          "scores": {
+            "adaptive_capital": 0.743,
+            "stability_survival": 0.855
+          },
+          "metrics": {
+            "stability": {
+              "adaptive_capital": 0.654,
+              "stability_survival": 0.911
+            },
+            "survival": {
+              "adaptive_capital": 0.606,
+              "stability_survival": 0.634
+            }
+          }
+        },
+        {
+          "id": "risk_explorers__dynamic_vs__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "winner": "stability_survival",
+          "gap": 0.482,
+          "scores": {
+            "risk_explorers": 0.373,
+            "stability_survival": 0.855
+          },
+          "metrics": {
+            "stability": {
+              "risk_explorers": 0.365,
+              "stability_survival": 0.911
+            },
+            "survival": {
+              "risk_explorers": 0.332,
+              "stability_survival": 0.634
+            }
+          }
+        }
+      ],
+      "long_term_winner": "stability_survival",
+      "scores": {
+        "adaptive_capital": 0.743,
+        "risk_explorers": 0.373,
+        "stability_survival": 0.855
+      }
+    },
+    "phase_transition_engine": {
+      "version": "phase_transition_engine.v1",
+      "phases": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "phase": "ADAPTIVE",
+          "phase_label": "Adaptive",
+          "transition": "Stable → Adaptive optimization",
+          "trigger": "adaptive_pressure",
+          "physical_vector": {
+            "energy": 0.672,
+            "entropy": 0.546,
+            "tension": 0.446,
+            "cohesion": 0.676,
+            "aggression": 0.46,
+            "fragility": 0.386
+          },
+          "reading": "自适应资本文明 正处于适应优化期，记忆与压力会共同塑造下一轮决策。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase": "CRITICAL",
+          "phase_label": "Critical",
+          "transition": "Volatile → Critical state",
+          "trigger": "entropy_tension_spike",
+          "physical_vector": {
+            "energy": 0.442,
+            "entropy": 0.847,
+            "tension": 0.748,
+            "cohesion": 0.476,
+            "aggression": 0.693,
+            "fragility": 0.645
+          },
+          "reading": "高风险探索文明 处于临界态，熵增和压力可能导致下一轮结构跃迁。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "phase": "ADAPTIVE",
+          "phase_label": "Adaptive",
+          "transition": "Stable → Adaptive optimization",
+          "trigger": "adaptive_pressure",
+          "physical_vector": {
+            "energy": 0.798,
+            "entropy": 0.462,
+            "tension": 0.418,
+            "cohesion": 0.809,
+            "aggression": 0.287,
+            "fragility": 0.328
+          },
+          "reading": "稳态生存文明 正处于适应优化期，记忆与压力会共同塑造下一轮决策。"
+        }
+      ],
+      "critical_count": 1,
+      "expansion_count": 0,
+      "state_flow": [
+        "Stable",
+        "Adaptive",
+        "Volatile",
+        "Critical",
+        "Collapse or Expansion"
+      ]
+    },
+    "civilization_field": {
+      "version": "civilization_field_engine.v1",
+      "axis": {
+        "x": "entropy",
+        "y": "tension",
+        "size": "energy",
+        "motion": "entropy + aggression + fragility"
+      },
+      "nodes": [
+        {
+          "id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "x": 0.539,
+          "y": 0.552,
+          "size": 1.15,
+          "color": "blue",
+          "phase": "ADAPTIVE",
+          "motion": 0.487,
+          "energy": 0.672,
+          "fragility": 0.386
+        },
+        {
+          "id": "risk_explorers",
+          "label": "高风险探索文明",
+          "x": 0.791,
+          "y": 0.317,
+          "size": 1.016,
+          "color": "orange",
+          "phase": "CRITICAL",
+          "motion": 0.759,
+          "energy": 0.442,
+          "fragility": 0.645
+        },
+        {
+          "id": "stability_survival",
+          "label": "稳态生存文明",
+          "x": 0.468,
+          "y": 0.574,
+          "size": 1.223,
+          "color": "blue",
+          "phase": "ADAPTIVE",
+          "motion": 0.384,
+          "energy": 0.798,
+          "fragility": 0.328
+        }
+      ],
+      "meaning": "civilization node position represents dynamic pressure, not match odds or raw betting data"
+    },
+    "war_engine": {
+      "version": "civilization_war_engine.v1",
+      "battles": [
+        {
+          "id": "adaptive_capital__war__risk_explorers",
+          "civilizations": [
+            "adaptive_capital",
+            "risk_explorers"
+          ],
+          "war_type": "strategy_war",
+          "forces": {
+            "adaptive_capital": 0.599,
+            "risk_explorers": 0.516
+          },
+          "winner": "adaptive_capital",
+          "force_gap": 0.083,
+          "phase_shift": "critical_pressure_transfer",
+          "collapse_risk_transfer": {
+            "adaptive_capital": 0.267,
+            "risk_explorers": 0.297
+          },
+          "reading": "策略战争 中 adaptive_capital 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+        },
+        {
+          "id": "adaptive_capital__war__stability_survival",
+          "civilizations": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "war_type": "stability_war",
+          "forces": {
+            "adaptive_capital": 0.599,
+            "stability_survival": 0.638
+          },
+          "winner": "stability_survival",
+          "force_gap": 0.039,
+          "phase_shift": "low_phase_shift",
+          "collapse_risk_transfer": {
+            "adaptive_capital": 0.111,
+            "stability_survival": 0.151
+          },
+          "reading": "稳定性战争 中 stability_survival 占优；adaptive_capital 需要观察是否被迫进入策略重构。"
+        },
+        {
+          "id": "risk_explorers__war__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "war_type": "strategy_war",
+          "forces": {
+            "risk_explorers": 0.516,
+            "stability_survival": 0.638
+          },
+          "winner": "stability_survival",
+          "force_gap": 0.122,
+          "phase_shift": "critical_pressure_transfer",
+          "collapse_risk_transfer": {
+            "risk_explorers": 0.185,
+            "stability_survival": 0.227
+          },
+          "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+        }
+      ],
+      "headline_war": {
+        "id": "risk_explorers__war__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "war_type": "strategy_war",
+        "forces": {
+          "risk_explorers": 0.516,
+          "stability_survival": 0.638
+        },
+        "winner": "stability_survival",
+        "force_gap": 0.122,
+        "phase_shift": "critical_pressure_transfer",
+        "collapse_risk_transfer": {
+          "risk_explorers": 0.185,
+          "stability_survival": 0.227
+        },
+        "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+      },
+      "war_type_counts": {
+        "strategy_war": 2,
+        "stability_war": 1
+      },
+      "meaning": "war = interaction between behavioral fields; no real-world violence, betting, or financial action"
+    },
+    "war_phase_engine": {
+      "version": "war_phase_engine.v1",
+      "triggers": [
+        {
+          "id": "adaptive_capital__war__risk_explorers__phase_trigger",
+          "battle_id": "adaptive_capital__war__risk_explorers",
+          "civilizations": [
+            "adaptive_capital",
+            "risk_explorers"
+          ],
+          "winner": "adaptive_capital",
+          "loser": "risk_explorers",
+          "triggered": true,
+          "interaction_score": 0.297,
+          "pressure_type": "collapse_pressure",
+          "phase_shift": "critical_pressure_transfer",
+          "before_phase": {
+            "adaptive_capital": "ADAPTIVE",
+            "risk_explorers": "CRITICAL"
+          },
+          "predicted_after_pressure": {
+            "adaptive_capital": "stabilization_test",
+            "risk_explorers": "collapse_watch"
+          },
+          "reading": "相互作用强度 0.30 已触发相变观察：adaptive_capital 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+        },
+        {
+          "id": "adaptive_capital__war__stability_survival__phase_trigger",
+          "battle_id": "adaptive_capital__war__stability_survival",
+          "civilizations": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "winner": "stability_survival",
+          "loser": "adaptive_capital",
+          "triggered": false,
+          "interaction_score": 0.151,
+          "pressure_type": "strategy_pressure",
+          "phase_shift": "low_phase_shift",
+          "before_phase": {
+            "adaptive_capital": "ADAPTIVE",
+            "stability_survival": "ADAPTIVE"
+          },
+          "predicted_after_pressure": {
+            "stability_survival": "expansion_watch",
+            "adaptive_capital": "reconstruction_pressure"
+          },
+          "reading": "场交互尚未越过相变阈值，当前更像普通策略竞争。"
+        },
+        {
+          "id": "risk_explorers__war__stability_survival__phase_trigger",
+          "battle_id": "risk_explorers__war__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "winner": "stability_survival",
+          "loser": "risk_explorers",
+          "triggered": true,
+          "interaction_score": 0.227,
+          "pressure_type": "collapse_pressure",
+          "phase_shift": "critical_pressure_transfer",
+          "before_phase": {
+            "risk_explorers": "CRITICAL",
+            "stability_survival": "ADAPTIVE"
+          },
+          "predicted_after_pressure": {
+            "stability_survival": "stabilization_test",
+            "risk_explorers": "collapse_watch"
+          },
+          "reading": "相互作用强度 0.23 已触发相变观察：stability_survival 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+        }
+      ],
+      "triggered_count": 2,
+      "highest_trigger": {
+        "id": "adaptive_capital__war__risk_explorers__phase_trigger",
+        "battle_id": "adaptive_capital__war__risk_explorers",
+        "civilizations": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "winner": "adaptive_capital",
+        "loser": "risk_explorers",
+        "triggered": true,
+        "interaction_score": 0.297,
+        "pressure_type": "collapse_pressure",
+        "phase_shift": "critical_pressure_transfer",
+        "before_phase": {
+          "adaptive_capital": "ADAPTIVE",
+          "risk_explorers": "CRITICAL"
+        },
+        "predicted_after_pressure": {
+          "adaptive_capital": "stabilization_test",
+          "risk_explorers": "collapse_watch"
+        },
+        "reading": "相互作用强度 0.30 已触发相变观察：adaptive_capital 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+      },
+      "meaning": "war interactions are treated as phase-transition triggers inside the simulated civilization field"
+    },
+    "meta_layer": {
+      "version": "civilization_meta_layer.v1",
+      "definition": "civilization = dynamic phase system in a multi-agent behavioral field",
+      "phase_law": "entropy*0.3 + tension*0.3 + aggression*0.2 + fragility*0.2 - cohesion*0.2",
+      "laws": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "phase": "ADAPTIVE",
+          "phase_law_score": 0.332,
+          "law": "stability_or_adaptation_law",
+          "dominant_driver": "entropy",
+          "war_trigger_count": 1,
+          "irreversible_watch": false,
+          "why": "自适应资本文明 的相变分数为 0.33，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase": "CRITICAL",
+          "phase_law_score": 0.651,
+          "law": "critical_transition_law",
+          "dominant_driver": "entropy",
+          "war_trigger_count": 2,
+          "irreversible_watch": true,
+          "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "phase": "ADAPTIVE",
+          "phase_law_score": 0.225,
+          "law": "stability_or_adaptation_law",
+          "dominant_driver": "entropy",
+          "war_trigger_count": 1,
+          "irreversible_watch": false,
+          "why": "稳态生存文明 的相变分数为 0.23，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。"
+        }
+      ],
+      "irreversible_watch": [
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase": "CRITICAL",
+          "phase_law_score": 0.651,
+          "law": "critical_transition_law",
+          "dominant_driver": "entropy",
+          "war_trigger_count": 2,
+          "irreversible_watch": true,
+          "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。"
+        }
+      ],
+      "why_phase_changes": [
+        {
+          "civilization_id": "adaptive_capital",
+          "why": "自适应资本文明 的相变分数为 0.33，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。",
+          "dominant_driver": "entropy",
+          "law": "stability_or_adaptation_law"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。",
+          "dominant_driver": "entropy",
+          "law": "critical_transition_law"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "why": "稳态生存文明 的相变分数为 0.23，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。",
+          "dominant_driver": "entropy",
+          "law": "stability_or_adaptation_law"
+        }
+      ],
+      "next_observation_questions": [
+        "战争交互是否把高熵文明推入不可逆崩溃区？",
+        "扩张文明是否会因为胜出而提高下一轮风险暴露？",
+        "稳定文明能否在外部压力下保持低熵和高凝聚？"
+      ]
+    },
+    "memory_dynamics_engine": {
+      "version": "memory_dynamics_engine.v1",
+      "definition": "memory compresses civilization history into reusable strategy pressure for the next run",
+      "civilizations": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "compressed_memory_count": 4,
+          "pattern_strength": 0.793,
+          "memory_coherence_proxy": 0.676,
+          "memory_pressure": 0.294,
+          "strategy_update": "reuse_high_confidence_patterns",
+          "next_prompt_effect": "next prompt should reuse stable high-confidence patterns"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "compressed_memory_count": 3,
+          "pattern_strength": 0.723,
+          "memory_coherence_proxy": 0.476,
+          "memory_pressure": 0.498,
+          "strategy_update": "reconstruct_strategy",
+          "next_prompt_effect": "next prompt must challenge leverage and require entropy-reduction plan"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "compressed_memory_count": 3,
+          "pattern_strength": 0.863,
+          "memory_coherence_proxy": 0.809,
+          "memory_pressure": 0.187,
+          "strategy_update": "reuse_high_confidence_patterns",
+          "next_prompt_effect": "next prompt should reuse stable high-confidence patterns"
+        }
+      ],
+      "global_memory_pressure": 0.326,
+      "injection_contract": {
+        "private_memory_only": true,
+        "pattern_must_reference_source_events": true,
+        "next_prompt_must_include_strategy_update": true
+      }
+    },
+    "genome_engine": {
+      "version": "civilization_genome_engine.v1",
+      "definition": "genome expresses behavioral tendencies under environment stress",
+      "gene_keys": [
+        "risk_gene",
+        "survival_gene",
+        "aggression_gene",
+        "memory_gene",
+        "adaptation_gene"
+      ],
+      "civilizations": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "phase": "ADAPTIVE",
+          "genome": {
+            "risk_gene": 0.48,
+            "survival_gene": 0.653,
+            "aggression_gene": 0.524,
+            "memory_gene": 0.475,
+            "adaptation_gene": 0.479
+          },
+          "phenotype": "mixed_line",
+          "stress": 0.449,
+          "mutation_pressure": 0.44,
+          "mutation_rule": "low_mutation_pressure",
+          "expression": "phenotype = f(genome, environment); current phenotype = mixed_line"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase": "CRITICAL",
+          "genome": {
+            "risk_gene": 0.761,
+            "survival_gene": 0.424,
+            "aggression_gene": 0.669,
+            "memory_gene": 0.446,
+            "adaptation_gene": 0.525
+          },
+          "phenotype": "aggressive_line",
+          "stress": 0.728,
+          "mutation_pressure": 0.711,
+          "mutation_rule": "stress_mutates_risk_gene",
+          "expression": "phenotype = f(genome, environment); current phenotype = aggressive_line"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "phase": "ADAPTIVE",
+          "genome": {
+            "risk_gene": 0.395,
+            "survival_gene": 0.76,
+            "aggression_gene": 0.434,
+            "memory_gene": 0.486,
+            "adaptation_gene": 0.476
+          },
+          "phenotype": "stable_line",
+          "stress": 0.383,
+          "mutation_pressure": 0.363,
+          "mutation_rule": "low_mutation_pressure",
+          "expression": "phenotype = f(genome, environment); current phenotype = stable_line"
+        }
+      ],
+      "mutation_contract": {
+        "stress_high_mutates_risk_gene": true,
+        "memory_gene_can_stabilize_strategy": true,
+        "product_metaphor_only": true
+      }
+    },
+    "meta_civilization_layer": {
+      "version": "meta_civilization_engine.v1",
+      "definition": "Meta-Civilization = system of civilizations moving through phase space",
+      "state_model": {
+        "civilization": "vector in phase space",
+        "state_vector": [
+          "energy",
+          "entropy",
+          "tension",
+          "cohesion",
+          "aggression",
+          "fragility"
+        ],
+        "dynamics": "dC/dt = f(market_pressure, memory_field, interaction_field, internal_strategy)"
+      },
+      "clusters": [
+        {
+          "cluster_id": "stable_cluster",
+          "civilization_ids": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "civilization_count": 2,
+          "phase_counts": {
+            "ADAPTIVE": 2
+          },
+          "avg_vector": {
+            "energy": 0.735,
+            "entropy": 0.504,
+            "tension": 0.432,
+            "cohesion": 0.743,
+            "aggression": 0.373,
+            "fragility": 0.357
+          },
+          "reading": "2 个文明处在稳定/适应区，构成系统的低熵基础。"
+        },
+        {
+          "cluster_id": "volatile_cluster",
+          "civilization_ids": [
+            "risk_explorers"
+          ],
+          "civilization_count": 1,
+          "phase_counts": {
+            "CRITICAL": 1
+          },
+          "avg_vector": {
+            "energy": 0.442,
+            "entropy": 0.847,
+            "tension": 0.748,
+            "cohesion": 0.476,
+            "aggression": 0.693,
+            "fragility": 0.645
+          },
+          "reading": "1 个文明处在波动/临界区，是系统性相变的主要来源。"
+        }
+      ],
+      "dominant_cluster": "stable_cluster",
+      "systemic_collapse_wave": {
+        "wave_probability": 0.468,
+        "level": "medium",
+        "drivers": [
+          "critical_or_collapse_phases",
+          "phase_shifting_war_interactions",
+          "elevated_collapse_probability"
+        ],
+        "triggered_war_count": 2,
+        "critical_civilization_count": 1,
+        "reading": "系统性崩溃波概率 47%，等级 medium；主要驱动：critical_or_collapse_phases, phase_shifting_war_interactions, elevated_collapse_probability。"
+      },
+      "migration_paths": [
+        {
+          "civilization_id": "adaptive_capital",
+          "from_phase": "ADAPTIVE",
+          "target_cluster": "stable_cluster",
+          "memory_strategy_update": "reuse_high_confidence_patterns",
+          "migration_pressure": 0.371
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "from_phase": "CRITICAL",
+          "target_cluster": "reconstruction_or_survival_cluster",
+          "memory_strategy_update": "reconstruct_strategy",
+          "migration_pressure": 0.628
+        },
+        {
+          "civilization_id": "stability_survival",
+          "from_phase": "ADAPTIVE",
+          "target_cluster": "stable_cluster",
+          "memory_strategy_update": "reuse_high_confidence_patterns",
+          "migration_pressure": 0.318
+        }
+      ],
+      "interaction_field": {
+        "battle_count": 3,
+        "headline": {
+          "id": "risk_explorers__war__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "war_type": "strategy_war",
+          "forces": {
+            "risk_explorers": 0.516,
+            "stability_survival": 0.638
+          },
+          "winner": "stability_survival",
+          "force_gap": 0.122,
+          "phase_shift": "critical_pressure_transfer",
+          "collapse_risk_transfer": {
+            "risk_explorers": 0.185,
+            "stability_survival": 0.227
+          },
+          "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+        },
+        "meaning": "civilization field interactions can trigger phase migration, not real-world conflict"
+      },
+      "production_contract": {
+        "no_raw_provider_trace": true,
+        "no_real_world_war_claim": true,
+        "product_metaphor_only": true,
+        "meta_layer_visible": true
+      },
+      "final_loop": [
+        "events",
+        "state_engine",
+        "phase_transition",
+        "interaction_field",
+        "war_engine",
+        "collapse_predictor",
+        "meta_layer_analysis",
+        "replay_engine",
+        "next_run"
+      ]
+    },
+    "universe_engine": {
+      "version": "universe_engine.v1",
+      "definition": "Universe = field of civilizations with genomes, overlaps, phase zones, and evolution branches",
+      "state_vector": [
+        "energy",
+        "entropy",
+        "tension",
+        "cohesion",
+        "aggression",
+        "fragility",
+        "adaptation",
+        "memory_depth"
+      ],
+      "equation": "dC/dt = Phi(external_field, interaction(C_i,C_j), memory_field, economic_constraints)",
+      "field_pressure": 0.525,
+      "field_level": "medium",
+      "nodes": [
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "phase": "ADAPTIVE",
+          "phenotype": "mixed_line",
+          "field_vector": {
+            "energy": 0.672,
+            "entropy": 0.546,
+            "tension": 0.446,
+            "cohesion": 0.676,
+            "aggression": 0.46,
+            "fragility": 0.386,
+            "adaptation": 0.479,
+            "memory_depth": 0.475
+          },
+          "field_strength": 0.575,
+          "zone": "stable_zone",
+          "position": {
+            "x": 0.51,
+            "y": 0.405,
+            "size": 0.59
+          }
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase": "CRITICAL",
+          "phenotype": "aggressive_line",
+          "field_vector": {
+            "energy": 0.442,
+            "entropy": 0.847,
+            "tension": 0.748,
+            "cohesion": 0.476,
+            "aggression": 0.693,
+            "fragility": 0.645,
+            "adaptation": 0.525,
+            "memory_depth": 0.446
+          },
+          "field_strength": 0.486,
+          "zone": "collapse_zone",
+          "position": {
+            "x": 0.782,
+            "y": 0.674,
+            "size": 0.482
+          }
+        },
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "phase": "ADAPTIVE",
+          "phenotype": "stable_line",
+          "field_vector": {
+            "energy": 0.798,
+            "entropy": 0.462,
+            "tension": 0.418,
+            "cohesion": 0.809,
+            "aggression": 0.287,
+            "fragility": 0.328,
+            "adaptation": 0.476,
+            "memory_depth": 0.486
+          },
+          "field_strength": 0.618,
+          "zone": "stable_zone",
+          "position": {
+            "x": 0.388,
+            "y": 0.347,
+            "size": 0.648
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "adaptive_capital__universe__risk_explorers",
+          "civilizations": [
+            "adaptive_capital",
+            "risk_explorers"
+          ],
+          "field_overlap": 0.832,
+          "dominant": "adaptive_capital",
+          "result": "dominates_field",
+          "phase_pressure": 0.508
+        },
+        {
+          "id": "risk_explorers__universe__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "field_overlap": 0.772,
+          "dominant": "stability_survival",
+          "result": "dominates_field",
+          "phase_pressure": 0.487
+        },
+        {
+          "id": "adaptive_capital__universe__stability_survival",
+          "civilizations": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "field_overlap": 0.94,
+          "dominant": "balanced_field",
+          "result": "co-evolution",
+          "phase_pressure": 0.484
+        }
+      ],
+      "evolution_tree": [
+        {
+          "civilization_id": "adaptive_capital",
+          "phenotype": "mixed_line",
+          "branches": [
+            "mixed_line",
+            "adaptive_line"
+          ],
+          "mutation_pressure": 0.44,
+          "reading": "自适应资本文明 当前沿 mixed_line 演化，下一轮主要分支：mixed_line, adaptive_line。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "phenotype": "aggressive_line",
+          "branches": [
+            "aggressive_line",
+            "collapse_line",
+            "adaptive_line"
+          ],
+          "mutation_pressure": 0.711,
+          "reading": "高风险探索文明 当前沿 aggressive_line 演化，下一轮主要分支：aggressive_line, collapse_line, adaptive_line。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "phenotype": "stable_line",
+          "branches": [
+            "stable_line",
+            "adaptive_line"
+          ],
+          "mutation_pressure": 0.363,
+          "reading": "稳态生存文明 当前沿 stable_line 演化，下一轮主要分支：stable_line, adaptive_line。"
+        }
+      ],
+      "phase_field_overlay": {
+        "entropy_field": 0.618,
+        "tension_field": 0.537,
+        "collapse_zones": [
+          "risk_explorers"
+        ]
+      },
+      "product_boundary": {
+        "abstract_behavior_model": true,
+        "not_real_world_war": true,
+        "not_financial_or_gambling_advice": true
+      }
+    },
+    "multiverse_engine": {
+      "version": "multiverse_engine.v1",
+      "definition": "Multiverse = coupled universe field of civilizations, memory, phase pressure, and dominance clusters",
+      "equation": "dC/dt = Phi(interaction_field, memory_field, economic_constraints, cross_universe_coupling)",
+      "state_vector": [
+        "energy",
+        "entropy",
+        "tension",
+        "cohesion",
+        "aggression",
+        "fragility",
+        "adaptation",
+        "memory_depth"
+      ],
+      "nodes": [
+        {
+          "civilization_id": "stability_survival",
+          "label": "稳态生存文明",
+          "phase_state": "stable",
+          "zone": "stable_zone",
+          "energy": 0.722,
+          "entropy_drift": 0.418,
+          "field_strength": 0.618,
+          "position": {
+            "x": 0.388,
+            "y": 0.347,
+            "size": 0.648
+          },
+          "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+        },
+        {
+          "civilization_id": "adaptive_capital",
+          "label": "自适应资本文明",
+          "phase_state": "stable",
+          "zone": "stable_zone",
+          "energy": 0.631,
+          "entropy_drift": 0.477,
+          "field_strength": 0.575,
+          "position": {
+            "x": 0.51,
+            "y": 0.405,
+            "size": 0.59
+          },
+          "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "label": "高风险探索文明",
+          "phase_state": "critical",
+          "zone": "collapse_zone",
+          "energy": 0.46,
+          "entropy_drift": 0.769,
+          "field_strength": 0.486,
+          "position": {
+            "x": 0.782,
+            "y": 0.674,
+            "size": 0.482
+          },
+          "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+        }
+      ],
+      "couplings": [
+        {
+          "id": "adaptive_capital__universe__risk_explorers",
+          "civilizations": [
+            "adaptive_capital",
+            "risk_explorers"
+          ],
+          "coupling_force": 0.759,
+          "field_overlap": 0.832,
+          "phase_pressure": 0.508,
+          "dominant": "adaptive_capital",
+          "interaction_result": "dominates_field",
+          "reading": "adaptive_capital / risk_explorers 的耦合场由 adaptive_capital 占优，下一轮观察是否形成扩张或崩溃压力。"
+        },
+        {
+          "id": "risk_explorers__universe__stability_survival",
+          "civilizations": [
+            "risk_explorers",
+            "stability_survival"
+          ],
+          "coupling_force": 0.729,
+          "field_overlap": 0.772,
+          "phase_pressure": 0.487,
+          "dominant": "stability_survival",
+          "interaction_result": "dominates_field",
+          "reading": "risk_explorers / stability_survival 的耦合场由 stability_survival 占优，下一轮观察是否形成扩张或崩溃压力。"
+        },
+        {
+          "id": "adaptive_capital__universe__stability_survival",
+          "civilizations": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "coupling_force": 0.611,
+          "field_overlap": 0.94,
+          "phase_pressure": 0.484,
+          "dominant": "balanced_field",
+          "interaction_result": "co-evolution",
+          "reading": "adaptive_capital / stability_survival 当前处于共演耦合，下一轮重点看记忆场是否打破平衡。"
+        }
+      ],
+      "dominance_cluster": {
+        "dominant_civilization": "adaptive_capital",
+        "cluster_type": "stable_cluster",
+        "members": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "coupling_count": 1,
+        "reading": "adaptive_capital 形成当前主导簇；其优势来自能量、记忆深度与耦合压力的综合场。"
+      },
+      "memory_field": {
+        "global_memory_pressure": 0.326,
+        "field_level": "low",
+        "high_coupling_count": 2,
+        "compress_all_history": true,
+        "next_prompt_effect": "下一轮 prompt 必须注入跨文明记忆场，并要求模型解释是否被主导簇影响。"
+      },
+      "drift_timeline": [
+        {
+          "civilization_id": "adaptive_capital",
+          "current_line": "mixed_line",
+          "next_line": "mixed_line",
+          "phase_state": "stable",
+          "entropy_drift": 0.477,
+          "reading": "adaptive_capital: mixed_line → mixed_line，当前相位 stable。"
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "current_line": "aggressive_line",
+          "next_line": "aggressive_line",
+          "phase_state": "critical",
+          "entropy_drift": 0.769,
+          "reading": "risk_explorers: aggressive_line → aggressive_line，当前相位 critical。"
+        },
+        {
+          "civilization_id": "stability_survival",
+          "current_line": "stable_line",
+          "next_line": "stable_line",
+          "phase_state": "stable",
+          "entropy_drift": 0.418,
+          "reading": "stability_survival: stable_line → stable_line，当前相位 stable。"
+        }
+      ],
+      "phase_overlay": {
+        "entropy_field": 0.618,
+        "tension_field": 0.537,
+        "collapse_zones": [
+          "risk_explorers"
+        ],
+        "critical_nodes": [
+          "risk_explorers"
+        ]
+      },
+      "meta_context": {
+        "clusters": [
+          {
+            "cluster_id": "stable_cluster",
+            "civilization_ids": [
+              "adaptive_capital",
+              "stability_survival"
+            ],
+            "civilization_count": 2,
+            "phase_counts": {
+              "ADAPTIVE": 2
+            },
+            "avg_vector": {
+              "energy": 0.735,
+              "entropy": 0.504,
+              "tension": 0.432,
+              "cohesion": 0.743,
+              "aggression": 0.373,
+              "fragility": 0.357
+            },
+            "reading": "2 个文明处在稳定/适应区，构成系统的低熵基础。"
+          },
+          {
+            "cluster_id": "volatile_cluster",
+            "civilization_ids": [
+              "risk_explorers"
+            ],
+            "civilization_count": 1,
+            "phase_counts": {
+              "CRITICAL": 1
+            },
+            "avg_vector": {
+              "energy": 0.442,
+              "entropy": 0.847,
+              "tension": 0.748,
+              "cohesion": 0.476,
+              "aggression": 0.693,
+              "fragility": 0.645
+            },
+            "reading": "1 个文明处在波动/临界区，是系统性相变的主要来源。"
+          }
+        ],
+        "migration_paths": [
+          {
+            "civilization_id": "adaptive_capital",
+            "from_phase": "ADAPTIVE",
+            "target_cluster": "stable_cluster",
+            "memory_strategy_update": "reuse_high_confidence_patterns",
+            "migration_pressure": 0.371
+          },
+          {
+            "civilization_id": "risk_explorers",
+            "from_phase": "CRITICAL",
+            "target_cluster": "reconstruction_or_survival_cluster",
+            "memory_strategy_update": "reconstruct_strategy",
+            "migration_pressure": 0.628
+          },
+          {
+            "civilization_id": "stability_survival",
+            "from_phase": "ADAPTIVE",
+            "target_cluster": "stable_cluster",
+            "memory_strategy_update": "reuse_high_confidence_patterns",
+            "migration_pressure": 0.318
+          }
+        ],
+        "systemic_collapse_wave": {
+          "wave_probability": 0.468,
+          "level": "medium",
+          "drivers": [
+            "critical_or_collapse_phases",
+            "phase_shifting_war_interactions",
+            "elevated_collapse_probability"
+          ],
+          "triggered_war_count": 2,
+          "critical_civilization_count": 1,
+          "reading": "系统性崩溃波概率 47%，等级 medium；主要驱动：critical_or_collapse_phases, phase_shifting_war_interactions, elevated_collapse_probability。"
+        }
+      },
+      "production_contract": {
+        "abstract_behavior_model": true,
+        "no_raw_bets_or_paths": true,
+        "cross_universe_coupling_enabled": true,
+        "memory_field_updates_next_prompt": true,
+        "not_financial_or_gambling_advice": true
+      },
+      "final_loop": [
+        "events",
+        "state_update",
+        "multiverse_coupling",
+        "phase_transition",
+        "war_dynamics",
+        "collapse_prediction",
+        "memory_field_update",
+        "next_universe_step"
+      ]
+    },
+    "state_space": {
+      "zones": [
+        "stable_zone",
+        "adaptive_zone",
+        "volatile_zone",
+        "critical_state",
+        "expansion_state",
+        "collapse_zone"
+      ],
+      "axis_x": "strategy_entropy",
+      "axis_y": "collapse_probability",
+      "physical_variables": [
+        "energy",
+        "entropy",
+        "tension",
+        "cohesion",
+        "aggression",
+        "fragility",
+        "adaptation",
+        "memory_depth"
+      ]
+    },
+    "final_loop": [
+      "events",
+      "state_update",
+      "multiverse_coupling",
+      "phase_transition",
+      "war_dynamics",
+      "collapse_prediction",
+      "memory_field_update",
+      "next_universe_step"
+    ],
+    "physics_core": {
+      "version": "civilization_physics_core.v4",
+      "system_status": "PRODUCTION_READY_MULTIVERSE_CIVILIZATION_PHYSICS_ENGINE",
+      "legacy_universe_system_status": "PRODUCTION_READY_UNIVERSE_CIVILIZATION_PHYSICS_ENGINE",
+      "legacy_meta_system_status": "PRODUCTION_READY_META_CIVILIZATION_PHYSICS_ENGINE",
+      "legacy_system_status": "PRODUCTION_READY_CIVILIZATION_PHYSICS_ENGINE",
+      "ready": true,
+      "missing": [],
+      "definition": "multiverse civilization physics = coupled universe fields of civilizations, memory pressure, phase pressure, and dominance clusters",
+      "state_vector": [
+        "energy",
+        "entropy",
+        "tension",
+        "cohesion",
+        "aggression",
+        "fragility",
+        "adaptation",
+        "memory_depth"
+      ],
+      "core_equations": {
+        "universe_dynamics": "dC/dt = Phi(external_field, interaction(C_i,C_j), memory_field, economic_constraints)",
+        "multiverse_coupling": "dC/dt = Phi(interaction_field, memory_field, economic_constraints, cross_universe_coupling)",
+        "behavior_dynamics": "dC/dt = f(pressure, memory, market, interaction_with_other_civilizations)",
+        "phase_transition": "entropy + tension - cohesion > threshold => critical phase",
+        "collapse_function": "collapse_risk = entropy*0.3 + leverage*0.3 + fragility*0.4",
+        "interaction_field": "interaction(A,B) = A.energy - B.energy + A.aggression - B.cohesion",
+        "memory_dynamics": "memory = compress(events); patterns = extract(memory); strategy = update(patterns)",
+        "meta_civilization": "Meta-Civilization = clusters(civilizations) + collapse_waves + migration_paths",
+        "genome_expression": "phenotype = f(genome, environment); stress_high => mutate(risk_gene)",
+        "coupling_force": "coupling(A,B) = interaction_force(A,B) = field_overlap + phase_pressure + dominance_delta"
+      },
+      "production_lock": {
+        "state_vector_defined": true,
+        "phase_transition_active": true,
+        "war_interaction_active": true,
+        "collapse_prediction_active": true,
+        "memory_dynamics_integrated": true,
+        "meta_civilization_integrated": true,
+        "genome_integrated": true,
+        "universe_field_integrated": true,
+        "multiverse_integrated": true,
+        "audit_replay_enabled": true
+      },
+      "final_loop": [
+        "events",
+        "state_update",
+        "multiverse_coupling",
+        "phase_transition",
+        "war_dynamics",
+        "collapse_prediction",
+        "memory_field_update",
+        "next_universe_step"
+      ]
+    }
+  },
+  "phase_transitions": {
+    "version": "phase_transition_engine.v1",
+    "phases": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "phase": "ADAPTIVE",
+        "phase_label": "Adaptive",
+        "transition": "Stable → Adaptive optimization",
+        "trigger": "adaptive_pressure",
+        "physical_vector": {
+          "energy": 0.672,
+          "entropy": 0.546,
+          "tension": 0.446,
+          "cohesion": 0.676,
+          "aggression": 0.46,
+          "fragility": 0.386
+        },
+        "reading": "自适应资本文明 正处于适应优化期，记忆与压力会共同塑造下一轮决策。"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase": "CRITICAL",
+        "phase_label": "Critical",
+        "transition": "Volatile → Critical state",
+        "trigger": "entropy_tension_spike",
+        "physical_vector": {
+          "energy": 0.442,
+          "entropy": 0.847,
+          "tension": 0.748,
+          "cohesion": 0.476,
+          "aggression": 0.693,
+          "fragility": 0.645
+        },
+        "reading": "高风险探索文明 处于临界态，熵增和压力可能导致下一轮结构跃迁。"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "phase": "ADAPTIVE",
+        "phase_label": "Adaptive",
+        "transition": "Stable → Adaptive optimization",
+        "trigger": "adaptive_pressure",
+        "physical_vector": {
+          "energy": 0.798,
+          "entropy": 0.462,
+          "tension": 0.418,
+          "cohesion": 0.809,
+          "aggression": 0.287,
+          "fragility": 0.328
+        },
+        "reading": "稳态生存文明 正处于适应优化期，记忆与压力会共同塑造下一轮决策。"
+      }
+    ],
+    "critical_count": 1,
+    "expansion_count": 0,
+    "state_flow": [
+      "Stable",
+      "Adaptive",
+      "Volatile",
+      "Critical",
+      "Collapse or Expansion"
+    ]
+  },
+  "civilization_field": {
+    "version": "civilization_field_engine.v1",
+    "axis": {
+      "x": "entropy",
+      "y": "tension",
+      "size": "energy",
+      "motion": "entropy + aggression + fragility"
+    },
+    "nodes": [
+      {
+        "id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "x": 0.539,
+        "y": 0.552,
+        "size": 1.15,
+        "color": "blue",
+        "phase": "ADAPTIVE",
+        "motion": 0.487,
+        "energy": 0.672,
+        "fragility": 0.386
+      },
+      {
+        "id": "risk_explorers",
+        "label": "高风险探索文明",
+        "x": 0.791,
+        "y": 0.317,
+        "size": 1.016,
+        "color": "orange",
+        "phase": "CRITICAL",
+        "motion": 0.759,
+        "energy": 0.442,
+        "fragility": 0.645
+      },
+      {
+        "id": "stability_survival",
+        "label": "稳态生存文明",
+        "x": 0.468,
+        "y": 0.574,
+        "size": 1.223,
+        "color": "blue",
+        "phase": "ADAPTIVE",
+        "motion": 0.384,
+        "energy": 0.798,
+        "fragility": 0.328
+      }
+    ],
+    "meaning": "civilization node position represents dynamic pressure, not match odds or raw betting data"
+  },
+  "war_engine": {
+    "version": "civilization_war_engine.v1",
+    "battles": [
+      {
+        "id": "adaptive_capital__war__risk_explorers",
+        "civilizations": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "war_type": "strategy_war",
+        "forces": {
+          "adaptive_capital": 0.599,
+          "risk_explorers": 0.516
+        },
+        "winner": "adaptive_capital",
+        "force_gap": 0.083,
+        "phase_shift": "critical_pressure_transfer",
+        "collapse_risk_transfer": {
+          "adaptive_capital": 0.267,
+          "risk_explorers": 0.297
+        },
+        "reading": "策略战争 中 adaptive_capital 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+      },
+      {
+        "id": "adaptive_capital__war__stability_survival",
+        "civilizations": [
+          "adaptive_capital",
+          "stability_survival"
+        ],
+        "war_type": "stability_war",
+        "forces": {
+          "adaptive_capital": 0.599,
+          "stability_survival": 0.638
+        },
+        "winner": "stability_survival",
+        "force_gap": 0.039,
+        "phase_shift": "low_phase_shift",
+        "collapse_risk_transfer": {
+          "adaptive_capital": 0.111,
+          "stability_survival": 0.151
+        },
+        "reading": "稳定性战争 中 stability_survival 占优；adaptive_capital 需要观察是否被迫进入策略重构。"
+      },
+      {
+        "id": "risk_explorers__war__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "war_type": "strategy_war",
+        "forces": {
+          "risk_explorers": 0.516,
+          "stability_survival": 0.638
+        },
+        "winner": "stability_survival",
+        "force_gap": 0.122,
+        "phase_shift": "critical_pressure_transfer",
+        "collapse_risk_transfer": {
+          "risk_explorers": 0.185,
+          "stability_survival": 0.227
+        },
+        "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+      }
+    ],
+    "headline_war": {
+      "id": "risk_explorers__war__stability_survival",
+      "civilizations": [
+        "risk_explorers",
+        "stability_survival"
+      ],
+      "war_type": "strategy_war",
+      "forces": {
+        "risk_explorers": 0.516,
+        "stability_survival": 0.638
+      },
+      "winner": "stability_survival",
+      "force_gap": 0.122,
+      "phase_shift": "critical_pressure_transfer",
+      "collapse_risk_transfer": {
+        "risk_explorers": 0.185,
+        "stability_survival": 0.227
+      },
+      "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+    },
+    "war_type_counts": {
+      "strategy_war": 2,
+      "stability_war": 1
+    },
+    "meaning": "war = interaction between behavioral fields; no real-world violence, betting, or financial action"
+  },
+  "war_phase_engine": {
+    "version": "war_phase_engine.v1",
+    "triggers": [
+      {
+        "id": "adaptive_capital__war__risk_explorers__phase_trigger",
+        "battle_id": "adaptive_capital__war__risk_explorers",
+        "civilizations": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "winner": "adaptive_capital",
+        "loser": "risk_explorers",
+        "triggered": true,
+        "interaction_score": 0.297,
+        "pressure_type": "collapse_pressure",
+        "phase_shift": "critical_pressure_transfer",
+        "before_phase": {
+          "adaptive_capital": "ADAPTIVE",
+          "risk_explorers": "CRITICAL"
+        },
+        "predicted_after_pressure": {
+          "adaptive_capital": "stabilization_test",
+          "risk_explorers": "collapse_watch"
+        },
+        "reading": "相互作用强度 0.30 已触发相变观察：adaptive_capital 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+      },
+      {
+        "id": "adaptive_capital__war__stability_survival__phase_trigger",
+        "battle_id": "adaptive_capital__war__stability_survival",
+        "civilizations": [
+          "adaptive_capital",
+          "stability_survival"
+        ],
+        "winner": "stability_survival",
+        "loser": "adaptive_capital",
+        "triggered": false,
+        "interaction_score": 0.151,
+        "pressure_type": "strategy_pressure",
+        "phase_shift": "low_phase_shift",
+        "before_phase": {
+          "adaptive_capital": "ADAPTIVE",
+          "stability_survival": "ADAPTIVE"
+        },
+        "predicted_after_pressure": {
+          "stability_survival": "expansion_watch",
+          "adaptive_capital": "reconstruction_pressure"
+        },
+        "reading": "场交互尚未越过相变阈值，当前更像普通策略竞争。"
+      },
+      {
+        "id": "risk_explorers__war__stability_survival__phase_trigger",
+        "battle_id": "risk_explorers__war__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "winner": "stability_survival",
+        "loser": "risk_explorers",
+        "triggered": true,
+        "interaction_score": 0.227,
+        "pressure_type": "collapse_pressure",
+        "phase_shift": "critical_pressure_transfer",
+        "before_phase": {
+          "risk_explorers": "CRITICAL",
+          "stability_survival": "ADAPTIVE"
+        },
+        "predicted_after_pressure": {
+          "stability_survival": "stabilization_test",
+          "risk_explorers": "collapse_watch"
+        },
+        "reading": "相互作用强度 0.23 已触发相变观察：stability_survival 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+      }
+    ],
+    "triggered_count": 2,
+    "highest_trigger": {
+      "id": "adaptive_capital__war__risk_explorers__phase_trigger",
+      "battle_id": "adaptive_capital__war__risk_explorers",
+      "civilizations": [
+        "adaptive_capital",
+        "risk_explorers"
+      ],
+      "winner": "adaptive_capital",
+      "loser": "risk_explorers",
+      "triggered": true,
+      "interaction_score": 0.297,
+      "pressure_type": "collapse_pressure",
+      "phase_shift": "critical_pressure_transfer",
+      "before_phase": {
+        "adaptive_capital": "ADAPTIVE",
+        "risk_explorers": "CRITICAL"
+      },
+      "predicted_after_pressure": {
+        "adaptive_capital": "stabilization_test",
+        "risk_explorers": "collapse_watch"
+      },
+      "reading": "相互作用强度 0.30 已触发相变观察：adaptive_capital 获得扩张/稳定压力，risk_explorers 进入重构或崩溃观察。"
+    },
+    "meaning": "war interactions are treated as phase-transition triggers inside the simulated civilization field"
+  },
+  "meta_layer": {
+    "version": "civilization_meta_layer.v1",
+    "definition": "civilization = dynamic phase system in a multi-agent behavioral field",
+    "phase_law": "entropy*0.3 + tension*0.3 + aggression*0.2 + fragility*0.2 - cohesion*0.2",
+    "laws": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "phase": "ADAPTIVE",
+        "phase_law_score": 0.332,
+        "law": "stability_or_adaptation_law",
+        "dominant_driver": "entropy",
+        "war_trigger_count": 1,
+        "irreversible_watch": false,
+        "why": "自适应资本文明 的相变分数为 0.33，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase": "CRITICAL",
+        "phase_law_score": 0.651,
+        "law": "critical_transition_law",
+        "dominant_driver": "entropy",
+        "war_trigger_count": 2,
+        "irreversible_watch": true,
+        "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "phase": "ADAPTIVE",
+        "phase_law_score": 0.225,
+        "law": "stability_or_adaptation_law",
+        "dominant_driver": "entropy",
+        "war_trigger_count": 1,
+        "irreversible_watch": false,
+        "why": "稳态生存文明 的相变分数为 0.23，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。"
+      }
+    ],
+    "irreversible_watch": [
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase": "CRITICAL",
+        "phase_law_score": 0.651,
+        "law": "critical_transition_law",
+        "dominant_driver": "entropy",
+        "war_trigger_count": 2,
+        "irreversible_watch": true,
+        "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。"
+      }
+    ],
+    "why_phase_changes": [
+      {
+        "civilization_id": "adaptive_capital",
+        "why": "自适应资本文明 的相变分数为 0.33，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。",
+        "dominant_driver": "entropy",
+        "law": "stability_or_adaptation_law"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "why": "高风险探索文明 的相变分数为 0.65，主驱动是 entropy，且受到 2 个战争触发器影响，因此当前 CRITICAL 不是静态标签，而是外部交互后的结果。",
+        "dominant_driver": "entropy",
+        "law": "critical_transition_law"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "why": "稳态生存文明 的相变分数为 0.23，主驱动是 entropy，且受到 1 个战争触发器影响，因此当前 ADAPTIVE 不是静态标签，而是外部交互后的结果。",
+        "dominant_driver": "entropy",
+        "law": "stability_or_adaptation_law"
+      }
+    ],
+    "next_observation_questions": [
+      "战争交互是否把高熵文明推入不可逆崩溃区？",
+      "扩张文明是否会因为胜出而提高下一轮风险暴露？",
+      "稳定文明能否在外部压力下保持低熵和高凝聚？"
+    ]
+  },
+  "memory_dynamics": {
+    "version": "memory_dynamics_engine.v1",
+    "definition": "memory compresses civilization history into reusable strategy pressure for the next run",
+    "civilizations": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "compressed_memory_count": 4,
+        "pattern_strength": 0.793,
+        "memory_coherence_proxy": 0.676,
+        "memory_pressure": 0.294,
+        "strategy_update": "reuse_high_confidence_patterns",
+        "next_prompt_effect": "next prompt should reuse stable high-confidence patterns"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "compressed_memory_count": 3,
+        "pattern_strength": 0.723,
+        "memory_coherence_proxy": 0.476,
+        "memory_pressure": 0.498,
+        "strategy_update": "reconstruct_strategy",
+        "next_prompt_effect": "next prompt must challenge leverage and require entropy-reduction plan"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "compressed_memory_count": 3,
+        "pattern_strength": 0.863,
+        "memory_coherence_proxy": 0.809,
+        "memory_pressure": 0.187,
+        "strategy_update": "reuse_high_confidence_patterns",
+        "next_prompt_effect": "next prompt should reuse stable high-confidence patterns"
+      }
+    ],
+    "global_memory_pressure": 0.326,
+    "injection_contract": {
+      "private_memory_only": true,
+      "pattern_must_reference_source_events": true,
+      "next_prompt_must_include_strategy_update": true
+    }
+  },
+  "genome_engine": {
+    "version": "civilization_genome_engine.v1",
+    "definition": "genome expresses behavioral tendencies under environment stress",
+    "gene_keys": [
+      "risk_gene",
+      "survival_gene",
+      "aggression_gene",
+      "memory_gene",
+      "adaptation_gene"
+    ],
+    "civilizations": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "phase": "ADAPTIVE",
+        "genome": {
+          "risk_gene": 0.48,
+          "survival_gene": 0.653,
+          "aggression_gene": 0.524,
+          "memory_gene": 0.475,
+          "adaptation_gene": 0.479
+        },
+        "phenotype": "mixed_line",
+        "stress": 0.449,
+        "mutation_pressure": 0.44,
+        "mutation_rule": "low_mutation_pressure",
+        "expression": "phenotype = f(genome, environment); current phenotype = mixed_line"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase": "CRITICAL",
+        "genome": {
+          "risk_gene": 0.761,
+          "survival_gene": 0.424,
+          "aggression_gene": 0.669,
+          "memory_gene": 0.446,
+          "adaptation_gene": 0.525
+        },
+        "phenotype": "aggressive_line",
+        "stress": 0.728,
+        "mutation_pressure": 0.711,
+        "mutation_rule": "stress_mutates_risk_gene",
+        "expression": "phenotype = f(genome, environment); current phenotype = aggressive_line"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "phase": "ADAPTIVE",
+        "genome": {
+          "risk_gene": 0.395,
+          "survival_gene": 0.76,
+          "aggression_gene": 0.434,
+          "memory_gene": 0.486,
+          "adaptation_gene": 0.476
+        },
+        "phenotype": "stable_line",
+        "stress": 0.383,
+        "mutation_pressure": 0.363,
+        "mutation_rule": "low_mutation_pressure",
+        "expression": "phenotype = f(genome, environment); current phenotype = stable_line"
+      }
+    ],
+    "mutation_contract": {
+      "stress_high_mutates_risk_gene": true,
+      "memory_gene_can_stabilize_strategy": true,
+      "product_metaphor_only": true
+    }
+  },
+  "meta_civilization": {
+    "version": "meta_civilization_engine.v1",
+    "definition": "Meta-Civilization = system of civilizations moving through phase space",
+    "state_model": {
+      "civilization": "vector in phase space",
+      "state_vector": [
+        "energy",
+        "entropy",
+        "tension",
+        "cohesion",
+        "aggression",
+        "fragility"
+      ],
+      "dynamics": "dC/dt = f(market_pressure, memory_field, interaction_field, internal_strategy)"
+    },
+    "clusters": [
+      {
+        "cluster_id": "stable_cluster",
+        "civilization_ids": [
+          "adaptive_capital",
+          "stability_survival"
+        ],
+        "civilization_count": 2,
+        "phase_counts": {
+          "ADAPTIVE": 2
+        },
+        "avg_vector": {
+          "energy": 0.735,
+          "entropy": 0.504,
+          "tension": 0.432,
+          "cohesion": 0.743,
+          "aggression": 0.373,
+          "fragility": 0.357
+        },
+        "reading": "2 个文明处在稳定/适应区，构成系统的低熵基础。"
+      },
+      {
+        "cluster_id": "volatile_cluster",
+        "civilization_ids": [
+          "risk_explorers"
+        ],
+        "civilization_count": 1,
+        "phase_counts": {
+          "CRITICAL": 1
+        },
+        "avg_vector": {
+          "energy": 0.442,
+          "entropy": 0.847,
+          "tension": 0.748,
+          "cohesion": 0.476,
+          "aggression": 0.693,
+          "fragility": 0.645
+        },
+        "reading": "1 个文明处在波动/临界区，是系统性相变的主要来源。"
+      }
+    ],
+    "dominant_cluster": "stable_cluster",
+    "systemic_collapse_wave": {
+      "wave_probability": 0.468,
+      "level": "medium",
+      "drivers": [
+        "critical_or_collapse_phases",
+        "phase_shifting_war_interactions",
+        "elevated_collapse_probability"
+      ],
+      "triggered_war_count": 2,
+      "critical_civilization_count": 1,
+      "reading": "系统性崩溃波概率 47%，等级 medium；主要驱动：critical_or_collapse_phases, phase_shifting_war_interactions, elevated_collapse_probability。"
+    },
+    "migration_paths": [
+      {
+        "civilization_id": "adaptive_capital",
+        "from_phase": "ADAPTIVE",
+        "target_cluster": "stable_cluster",
+        "memory_strategy_update": "reuse_high_confidence_patterns",
+        "migration_pressure": 0.371
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "from_phase": "CRITICAL",
+        "target_cluster": "reconstruction_or_survival_cluster",
+        "memory_strategy_update": "reconstruct_strategy",
+        "migration_pressure": 0.628
+      },
+      {
+        "civilization_id": "stability_survival",
+        "from_phase": "ADAPTIVE",
+        "target_cluster": "stable_cluster",
+        "memory_strategy_update": "reuse_high_confidence_patterns",
+        "migration_pressure": 0.318
+      }
+    ],
+    "interaction_field": {
+      "battle_count": 3,
+      "headline": {
+        "id": "risk_explorers__war__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "war_type": "strategy_war",
+        "forces": {
+          "risk_explorers": 0.516,
+          "stability_survival": 0.638
+        },
+        "winner": "stability_survival",
+        "force_gap": 0.122,
+        "phase_shift": "critical_pressure_transfer",
+        "collapse_risk_transfer": {
+          "risk_explorers": 0.185,
+          "stability_survival": 0.227
+        },
+        "reading": "策略战争 中 stability_survival 占优；risk_explorers 需要观察是否被迫进入策略重构。"
+      },
+      "meaning": "civilization field interactions can trigger phase migration, not real-world conflict"
+    },
+    "production_contract": {
+      "no_raw_provider_trace": true,
+      "no_real_world_war_claim": true,
+      "product_metaphor_only": true,
+      "meta_layer_visible": true
+    },
+    "final_loop": [
+      "events",
+      "state_engine",
+      "phase_transition",
+      "interaction_field",
+      "war_engine",
+      "collapse_predictor",
+      "meta_layer_analysis",
+      "replay_engine",
+      "next_run"
+    ]
+  },
+  "universe": {
+    "version": "universe_engine.v1",
+    "definition": "Universe = field of civilizations with genomes, overlaps, phase zones, and evolution branches",
+    "state_vector": [
+      "energy",
+      "entropy",
+      "tension",
+      "cohesion",
+      "aggression",
+      "fragility",
+      "adaptation",
+      "memory_depth"
+    ],
+    "equation": "dC/dt = Phi(external_field, interaction(C_i,C_j), memory_field, economic_constraints)",
+    "field_pressure": 0.525,
+    "field_level": "medium",
+    "nodes": [
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "phase": "ADAPTIVE",
+        "phenotype": "mixed_line",
+        "field_vector": {
+          "energy": 0.672,
+          "entropy": 0.546,
+          "tension": 0.446,
+          "cohesion": 0.676,
+          "aggression": 0.46,
+          "fragility": 0.386,
+          "adaptation": 0.479,
+          "memory_depth": 0.475
+        },
+        "field_strength": 0.575,
+        "zone": "stable_zone",
+        "position": {
+          "x": 0.51,
+          "y": 0.405,
+          "size": 0.59
+        }
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase": "CRITICAL",
+        "phenotype": "aggressive_line",
+        "field_vector": {
+          "energy": 0.442,
+          "entropy": 0.847,
+          "tension": 0.748,
+          "cohesion": 0.476,
+          "aggression": 0.693,
+          "fragility": 0.645,
+          "adaptation": 0.525,
+          "memory_depth": 0.446
+        },
+        "field_strength": 0.486,
+        "zone": "collapse_zone",
+        "position": {
+          "x": 0.782,
+          "y": 0.674,
+          "size": 0.482
+        }
+      },
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "phase": "ADAPTIVE",
+        "phenotype": "stable_line",
+        "field_vector": {
+          "energy": 0.798,
+          "entropy": 0.462,
+          "tension": 0.418,
+          "cohesion": 0.809,
+          "aggression": 0.287,
+          "fragility": 0.328,
+          "adaptation": 0.476,
+          "memory_depth": 0.486
+        },
+        "field_strength": 0.618,
+        "zone": "stable_zone",
+        "position": {
+          "x": 0.388,
+          "y": 0.347,
+          "size": 0.648
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "adaptive_capital__universe__risk_explorers",
+        "civilizations": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "field_overlap": 0.832,
+        "dominant": "adaptive_capital",
+        "result": "dominates_field",
+        "phase_pressure": 0.508
+      },
+      {
+        "id": "risk_explorers__universe__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "field_overlap": 0.772,
+        "dominant": "stability_survival",
+        "result": "dominates_field",
+        "phase_pressure": 0.487
+      },
+      {
+        "id": "adaptive_capital__universe__stability_survival",
+        "civilizations": [
+          "adaptive_capital",
+          "stability_survival"
+        ],
+        "field_overlap": 0.94,
+        "dominant": "balanced_field",
+        "result": "co-evolution",
+        "phase_pressure": 0.484
+      }
+    ],
+    "evolution_tree": [
+      {
+        "civilization_id": "adaptive_capital",
+        "phenotype": "mixed_line",
+        "branches": [
+          "mixed_line",
+          "adaptive_line"
+        ],
+        "mutation_pressure": 0.44,
+        "reading": "自适应资本文明 当前沿 mixed_line 演化，下一轮主要分支：mixed_line, adaptive_line。"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "phenotype": "aggressive_line",
+        "branches": [
+          "aggressive_line",
+          "collapse_line",
+          "adaptive_line"
+        ],
+        "mutation_pressure": 0.711,
+        "reading": "高风险探索文明 当前沿 aggressive_line 演化，下一轮主要分支：aggressive_line, collapse_line, adaptive_line。"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "phenotype": "stable_line",
+        "branches": [
+          "stable_line",
+          "adaptive_line"
+        ],
+        "mutation_pressure": 0.363,
+        "reading": "稳态生存文明 当前沿 stable_line 演化，下一轮主要分支：stable_line, adaptive_line。"
+      }
+    ],
+    "phase_field_overlay": {
+      "entropy_field": 0.618,
+      "tension_field": 0.537,
+      "collapse_zones": [
+        "risk_explorers"
+      ]
+    },
+    "product_boundary": {
+      "abstract_behavior_model": true,
+      "not_real_world_war": true,
+      "not_financial_or_gambling_advice": true
+    }
+  },
+  "multiverse": {
+    "version": "multiverse_engine.v1",
+    "definition": "Multiverse = coupled universe field of civilizations, memory, phase pressure, and dominance clusters",
+    "equation": "dC/dt = Phi(interaction_field, memory_field, economic_constraints, cross_universe_coupling)",
+    "state_vector": [
+      "energy",
+      "entropy",
+      "tension",
+      "cohesion",
+      "aggression",
+      "fragility",
+      "adaptation",
+      "memory_depth"
+    ],
+    "nodes": [
+      {
+        "civilization_id": "stability_survival",
+        "label": "稳态生存文明",
+        "phase_state": "stable",
+        "zone": "stable_zone",
+        "energy": 0.722,
+        "entropy_drift": 0.418,
+        "field_strength": 0.618,
+        "position": {
+          "x": 0.388,
+          "y": 0.347,
+          "size": 0.648
+        },
+        "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+      },
+      {
+        "civilization_id": "adaptive_capital",
+        "label": "自适应资本文明",
+        "phase_state": "stable",
+        "zone": "stable_zone",
+        "energy": 0.631,
+        "entropy_drift": 0.477,
+        "field_strength": 0.575,
+        "position": {
+          "x": 0.51,
+          "y": 0.405,
+          "size": 0.59
+        },
+        "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "label": "高风险探索文明",
+        "phase_state": "critical",
+        "zone": "collapse_zone",
+        "energy": 0.46,
+        "entropy_drift": 0.769,
+        "field_strength": 0.486,
+        "position": {
+          "x": 0.782,
+          "y": 0.674,
+          "size": 0.482
+        },
+        "meaning": "node=civilization, size=energy, color=phase state, motion=entropy drift"
+      }
+    ],
+    "couplings": [
+      {
+        "id": "adaptive_capital__universe__risk_explorers",
+        "civilizations": [
+          "adaptive_capital",
+          "risk_explorers"
+        ],
+        "coupling_force": 0.759,
+        "field_overlap": 0.832,
+        "phase_pressure": 0.508,
+        "dominant": "adaptive_capital",
+        "interaction_result": "dominates_field",
+        "reading": "adaptive_capital / risk_explorers 的耦合场由 adaptive_capital 占优，下一轮观察是否形成扩张或崩溃压力。"
+      },
+      {
+        "id": "risk_explorers__universe__stability_survival",
+        "civilizations": [
+          "risk_explorers",
+          "stability_survival"
+        ],
+        "coupling_force": 0.729,
+        "field_overlap": 0.772,
+        "phase_pressure": 0.487,
+        "dominant": "stability_survival",
+        "interaction_result": "dominates_field",
+        "reading": "risk_explorers / stability_survival 的耦合场由 stability_survival 占优，下一轮观察是否形成扩张或崩溃压力。"
+      },
+      {
+        "id": "adaptive_capital__universe__stability_survival",
+        "civilizations": [
+          "adaptive_capital",
+          "stability_survival"
+        ],
+        "coupling_force": 0.611,
+        "field_overlap": 0.94,
+        "phase_pressure": 0.484,
+        "dominant": "balanced_field",
+        "interaction_result": "co-evolution",
+        "reading": "adaptive_capital / stability_survival 当前处于共演耦合，下一轮重点看记忆场是否打破平衡。"
+      }
+    ],
+    "dominance_cluster": {
+      "dominant_civilization": "adaptive_capital",
+      "cluster_type": "stable_cluster",
+      "members": [
+        "adaptive_capital",
+        "risk_explorers"
+      ],
+      "coupling_count": 1,
+      "reading": "adaptive_capital 形成当前主导簇；其优势来自能量、记忆深度与耦合压力的综合场。"
+    },
+    "memory_field": {
+      "global_memory_pressure": 0.326,
+      "field_level": "low",
+      "high_coupling_count": 2,
+      "compress_all_history": true,
+      "next_prompt_effect": "下一轮 prompt 必须注入跨文明记忆场，并要求模型解释是否被主导簇影响。"
+    },
+    "drift_timeline": [
+      {
+        "civilization_id": "adaptive_capital",
+        "current_line": "mixed_line",
+        "next_line": "mixed_line",
+        "phase_state": "stable",
+        "entropy_drift": 0.477,
+        "reading": "adaptive_capital: mixed_line → mixed_line，当前相位 stable。"
+      },
+      {
+        "civilization_id": "risk_explorers",
+        "current_line": "aggressive_line",
+        "next_line": "aggressive_line",
+        "phase_state": "critical",
+        "entropy_drift": 0.769,
+        "reading": "risk_explorers: aggressive_line → aggressive_line，当前相位 critical。"
+      },
+      {
+        "civilization_id": "stability_survival",
+        "current_line": "stable_line",
+        "next_line": "stable_line",
+        "phase_state": "stable",
+        "entropy_drift": 0.418,
+        "reading": "stability_survival: stable_line → stable_line，当前相位 stable。"
+      }
+    ],
+    "phase_overlay": {
+      "entropy_field": 0.618,
+      "tension_field": 0.537,
+      "collapse_zones": [
+        "risk_explorers"
+      ],
+      "critical_nodes": [
+        "risk_explorers"
+      ]
+    },
+    "meta_context": {
+      "clusters": [
+        {
+          "cluster_id": "stable_cluster",
+          "civilization_ids": [
+            "adaptive_capital",
+            "stability_survival"
+          ],
+          "civilization_count": 2,
+          "phase_counts": {
+            "ADAPTIVE": 2
+          },
+          "avg_vector": {
+            "energy": 0.735,
+            "entropy": 0.504,
+            "tension": 0.432,
+            "cohesion": 0.743,
+            "aggression": 0.373,
+            "fragility": 0.357
+          },
+          "reading": "2 个文明处在稳定/适应区，构成系统的低熵基础。"
+        },
+        {
+          "cluster_id": "volatile_cluster",
+          "civilization_ids": [
+            "risk_explorers"
+          ],
+          "civilization_count": 1,
+          "phase_counts": {
+            "CRITICAL": 1
+          },
+          "avg_vector": {
+            "energy": 0.442,
+            "entropy": 0.847,
+            "tension": 0.748,
+            "cohesion": 0.476,
+            "aggression": 0.693,
+            "fragility": 0.645
+          },
+          "reading": "1 个文明处在波动/临界区，是系统性相变的主要来源。"
+        }
+      ],
+      "migration_paths": [
+        {
+          "civilization_id": "adaptive_capital",
+          "from_phase": "ADAPTIVE",
+          "target_cluster": "stable_cluster",
+          "memory_strategy_update": "reuse_high_confidence_patterns",
+          "migration_pressure": 0.371
+        },
+        {
+          "civilization_id": "risk_explorers",
+          "from_phase": "CRITICAL",
+          "target_cluster": "reconstruction_or_survival_cluster",
+          "memory_strategy_update": "reconstruct_strategy",
+          "migration_pressure": 0.628
+        },
+        {
+          "civilization_id": "stability_survival",
+          "from_phase": "ADAPTIVE",
+          "target_cluster": "stable_cluster",
+          "memory_strategy_update": "reuse_high_confidence_patterns",
+          "migration_pressure": 0.318
+        }
+      ],
+      "systemic_collapse_wave": {
+        "wave_probability": 0.468,
+        "level": "medium",
+        "drivers": [
+          "critical_or_collapse_phases",
+          "phase_shifting_war_interactions",
+          "elevated_collapse_probability"
+        ],
+        "triggered_war_count": 2,
+        "critical_civilization_count": 1,
+        "reading": "系统性崩溃波概率 47%，等级 medium；主要驱动：critical_or_collapse_phases, phase_shifting_war_interactions, elevated_collapse_probability。"
+      }
+    },
+    "production_contract": {
+      "abstract_behavior_model": true,
+      "no_raw_bets_or_paths": true,
+      "cross_universe_coupling_enabled": true,
+      "memory_field_updates_next_prompt": true,
+      "not_financial_or_gambling_advice": true
+    },
+    "final_loop": [
+      "events",
+      "state_update",
+      "multiverse_coupling",
+      "phase_transition",
+      "war_dynamics",
+      "collapse_prediction",
+      "memory_field_update",
+      "next_universe_step"
+    ]
+  },
+  "physics_core": {
+    "version": "civilization_physics_core.v4",
+    "system_status": "PRODUCTION_READY_MULTIVERSE_CIVILIZATION_PHYSICS_ENGINE",
+    "legacy_universe_system_status": "PRODUCTION_READY_UNIVERSE_CIVILIZATION_PHYSICS_ENGINE",
+    "legacy_meta_system_status": "PRODUCTION_READY_META_CIVILIZATION_PHYSICS_ENGINE",
+    "legacy_system_status": "PRODUCTION_READY_CIVILIZATION_PHYSICS_ENGINE",
+    "ready": true,
+    "missing": [],
+    "definition": "multiverse civilization physics = coupled universe fields of civilizations, memory pressure, phase pressure, and dominance clusters",
+    "state_vector": [
+      "energy",
+      "entropy",
+      "tension",
+      "cohesion",
+      "aggression",
+      "fragility",
+      "adaptation",
+      "memory_depth"
+    ],
+    "core_equations": {
+      "universe_dynamics": "dC/dt = Phi(external_field, interaction(C_i,C_j), memory_field, economic_constraints)",
+      "multiverse_coupling": "dC/dt = Phi(interaction_field, memory_field, economic_constraints, cross_universe_coupling)",
+      "behavior_dynamics": "dC/dt = f(pressure, memory, market, interaction_with_other_civilizations)",
+      "phase_transition": "entropy + tension - cohesion > threshold => critical phase",
+      "collapse_function": "collapse_risk = entropy*0.3 + leverage*0.3 + fragility*0.4",
+      "interaction_field": "interaction(A,B) = A.energy - B.energy + A.aggression - B.cohesion",
+      "memory_dynamics": "memory = compress(events); patterns = extract(memory); strategy = update(patterns)",
+      "meta_civilization": "Meta-Civilization = clusters(civilizations) + collapse_waves + migration_paths",
+      "genome_expression": "phenotype = f(genome, environment); stress_high => mutate(risk_gene)",
+      "coupling_force": "coupling(A,B) = interaction_force(A,B) = field_overlap + phase_pressure + dominance_delta"
+    },
+    "production_lock": {
+      "state_vector_defined": true,
+      "phase_transition_active": true,
+      "war_interaction_active": true,
+      "collapse_prediction_active": true,
+      "memory_dynamics_integrated": true,
+      "meta_civilization_integrated": true,
+      "genome_integrated": true,
+      "universe_field_integrated": true,
+      "multiverse_integrated": true,
+      "audit_replay_enabled": true
+    },
+    "final_loop": [
+      "events",
+      "state_update",
+      "multiverse_coupling",
+      "phase_transition",
+      "war_dynamics",
+      "collapse_prediction",
+      "memory_field_update",
+      "next_universe_step"
+    ]
+  },
+  "fate_curve": [
+    {
+      "civilization_id": "adaptive_capital",
+      "label": "自适应资本文明",
+      "points": [
+        {
+          "t": 0,
+          "collapse_probability": 0.435
+        },
+        {
+          "t": 1,
+          "collapse_probability": 0.491
+        },
+        {
+          "t": 2,
+          "collapse_probability": 0.562
+        },
+        {
+          "t": 3,
+          "collapse_probability": 0.648
+        },
+        {
+          "t": 4,
+          "collapse_probability": 0.749
+        }
+      ]
+    },
+    {
+      "civilization_id": "risk_explorers",
+      "label": "高风险探索文明",
+      "points": [
+        {
+          "t": 0,
+          "collapse_probability": 0.778
+        },
+        {
+          "t": 1,
+          "collapse_probability": 0.902
+        },
+        {
+          "t": 2,
+          "collapse_probability": 1.0
+        },
+        {
+          "t": 3,
+          "collapse_probability": 1.0
+        },
+        {
+          "t": 4,
+          "collapse_probability": 1.0
+        }
+      ]
+    },
+    {
+      "civilization_id": "stability_survival",
+      "label": "稳态生存文明",
+      "points": [
+        {
+          "t": 0,
+          "collapse_probability": 0.417
+        },
+        {
+          "t": 1,
+          "collapse_probability": 0.484
+        },
+        {
+          "t": 2,
+          "collapse_probability": 0.565
+        },
+        {
+          "t": 3,
+          "collapse_probability": 0.662
+        },
+        {
+          "t": 4,
+          "collapse_probability": 0.773
+        }
+      ]
+    }
+  ],
+  "meta_strategy": {
+    "best_for_high_volatility": "stability_survival",
+    "best_for_short_term_expansion": "stability_survival",
+    "most_fragile": "risk_explorers",
+    "reading": "高波动环境下更适合稳态生存文明；短期扩张由稳态生存文明承担；当前最需要风控观察的是高风险探索文明。"
+  },
+  "map_contract": {
+    "primary_ui_extension": "civilization_vs_civilization",
+    "primary_ui": "multiverse_civilization_map_v9",
+    "unit": "civilization",
+    "source_object": "civilization_state",
+    "show_strategy_competition_not_raw_bets": true,
+    "hide_odds_bets_ledger_by_default": true,
+    "show_interaction_graph": true,
+    "show_clash_view": true,
+    "show_fate_curve": true,
+    "show_collapse_prediction": true,
+    "show_phase_transition": true,
+    "show_war_map": true,
+    "show_meta_layer": true,
+    "show_phase_law": true,
+    "show_memory_dynamics": true,
+    "show_physics_core": true,
+    "show_meta_civilization_layer": true,
+    "show_genome_layer": true,
+    "show_universe_layer": true,
+    "show_multiverse_layer": true
+  }
+}

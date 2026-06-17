@@ -1,0 +1,25 @@
+{
+  "run_id": "unit-debt-service",
+  "seats": {
+    "alpha": {
+      "profit_gp": 200
+    }
+  },
+  "account_updates": {
+    "alpha": {
+      "seat_id": "alpha",
+      "run_id": "unit-debt-service",
+      "balance_before_gp": 1000.0,
+      "settlement_profit_gp": 200.0,
+      "new_loan_used_gp": 50.0,
+      "interest_due_gp": 16.5,
+      "interest_paid_gp": 16.5,
+      "principal_repaid_gp": 150.0,
+      "balance_after_debt_service_gp": 1083.5,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1083.5,
+      "ranking_basis": "net_worth_after_settlement_interest_and_principal_repayment"
+    }
+  }
+}

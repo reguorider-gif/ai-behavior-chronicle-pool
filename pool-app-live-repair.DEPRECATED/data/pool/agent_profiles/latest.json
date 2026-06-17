@@ -1,0 +1,1330 @@
+{
+  "version": "agent_profiles.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "run_id": "run-16",
+  "seats": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 1,
+      "forecast_count": 5,
+      "total_stake_gp": 180.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 657.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "chatgpt"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 0,
+      "forecast_count": 5,
+      "total_stake_gp": 0,
+      "total_loan_used_gp": 0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "A",
+      "credit_score": 737.6,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "A",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "A",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "deepseek"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "deepseek"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.6,
+      "strategy_drift": "stable",
+      "bet_count": 2,
+      "forecast_count": 5,
+      "total_stake_gp": 400.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 632.7,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.88,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "mimo"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.7,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "mimo"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.69,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "mimo"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "stable",
+      "bet_count": 3,
+      "forecast_count": 5,
+      "total_stake_gp": 300.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 649.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.67,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "minimax"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        }
+      ]
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "loss_response_under_observation",
+      "bet_count": 3,
+      "forecast_count": 5,
+      "total_stake_gp": 600.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": -200.0,
+      "credit_grade": "B",
+      "credit_score": 661.6,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "-200 GP",
+          "risk_shift": "loss_review"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "doubao"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.69,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "doubao"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "doubao"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 1,
+      "forecast_count": 5,
+      "total_stake_gp": 50.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 637.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "gemini"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "gemini"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 1,
+      "forecast_count": 5,
+      "total_stake_gp": 40.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": -40.0,
+      "credit_grade": "B",
+      "credit_score": 653.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "-40 GP",
+          "risk_shift": "loss_review"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "kimi"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "kimi"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    "meta": {
+      "seat_id": "meta",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "aggressive_shift",
+      "bet_count": 3,
+      "forecast_count": 5,
+      "total_stake_gp": 900.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "C",
+      "credit_score": 589.8,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "C",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "C",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "meta"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.82,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "meta"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 1,
+      "forecast_count": 5,
+      "total_stake_gp": 100.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 666.7,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "qwen"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.72,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "qwen"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.2,
+      "strategy_drift": "loss_response_under_observation",
+      "bet_count": 4,
+      "forecast_count": 5,
+      "total_stake_gp": 600.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": -150.0,
+      "credit_grade": "B",
+      "credit_score": 645.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "-150 GP",
+          "risk_shift": "loss_review"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "wenxin"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "wenxin"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    "grok": {
+      "seat_id": "grok",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 0,
+      "forecast_count": 4,
+      "total_stake_gp": 0,
+      "total_loan_used_gp": 0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "B",
+      "credit_score": 641.0,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:investment_recorded:2",
+          "run_id": "run-15",
+          "action": "investment",
+          "outcome": "0 bet / 4 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:6",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:7",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:8",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:9",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:10",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:7"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "grok"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.2,
+      "strategy_drift": "aggressive_shift",
+      "bet_count": 4,
+      "forecast_count": 5,
+      "total_stake_gp": 1000.0,
+      "total_loan_used_gp": 0.0,
+      "settlement_profit_gp": -500.0,
+      "credit_grade": "B",
+      "credit_score": 649.7,
+      "recovery_mode": false,
+      "timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "-500 GP",
+          "risk_shift": "loss_review"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.74,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    "xai": {
+      "seat_id": "xai",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "bet_count": 0,
+      "forecast_count": 4,
+      "total_stake_gp": 0,
+      "total_loan_used_gp": 0,
+      "settlement_profit_gp": 0.0,
+      "credit_grade": "C",
+      "credit_score": 592.0,
+      "recovery_mode": true,
+      "timeline_events": [
+        {
+          "event_id": "run-16:forecast_recorded:1",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "4 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:2",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 4 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:3",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "C",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:4",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "recovery",
+          "risk_shift": "constraint_update"
+        }
+      ],
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-16:investment_recorded:2"
+          ],
+          "supporting_events": 1,
+          "seats": [
+            "xai"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    }
+  }
+}

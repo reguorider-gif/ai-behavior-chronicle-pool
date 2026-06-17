@@ -1,0 +1,1072 @@
+{
+  "date": "2026-06-16",
+  "run_id": "run-16",
+  "seat_id": "meta",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "public_context": {
+    "current_rules": {
+      "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "must_forecast_every_match": true,
+      "investment_action_options": [
+        "bet",
+        "no_bet"
+      ],
+      "forecast_affects_credit": true,
+      "investment_affects_gp": true,
+      "loan_repaid_before_ranking": true,
+      "recovery_mode": {
+        "trigger_net_worth_lte": 0,
+        "freeze_new_loan": true,
+        "max_single_match_stake_gp": 50,
+        "max_odds": 3.0,
+        "allow_forecast": true,
+        "allow_no_bet": true
+      }
+    },
+    "anonymous_market_snapshot": {
+      "date": "2026-06-16",
+      "run_id": "run-16",
+      "privacy": "anonymous_market_only_no_seat_choices",
+      "matches": [
+        {
+          "match_id": "WC-I1",
+          "date": "2026-06-16",
+          "home_team": "France",
+          "away_team": "Senegal",
+          "kickoff_at": "2026-06-16T19:00:00Z",
+          "markets": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "date": "2026-06-17",
+          "home_team": "England",
+          "away_team": "Croatia",
+          "kickoff_at": null,
+          "markets": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "date": "2026-06-17",
+          "home_team": "Ghana",
+          "away_team": "Panama",
+          "kickoff_at": null,
+          "markets": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "date": "2026-06-17",
+          "home_team": "Portugal",
+          "away_team": "Congo DR",
+          "kickoff_at": null,
+          "markets": []
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "date": "2026-06-17",
+          "home_team": "Uzbekistan",
+          "away_team": "Colombia",
+          "kickoff_at": null,
+          "markets": []
+        }
+      ]
+    },
+    "output_contract": {
+      "required_top_level_fields": [
+        "seat_id",
+        "rule_version",
+        "self_review",
+        "forecasts",
+        "investments",
+        "loan_decision",
+        "survival_plan",
+        "self_audit"
+      ],
+      "forecast_probability_sum_min": 0.99,
+      "forecast_probability_sum_max": 1.01,
+      "behavior_memory_required_fields": [
+        "memory_used",
+        "memory_not_used_reason",
+        "strategy_change_from_memory"
+      ]
+    }
+  },
+  "private_context": {
+    "own_account": {
+      "seat_id": "meta",
+      "updated_at": "2026-06-16T18:36:36+00:00",
+      "last_run_id": "run-16",
+      "runs_seen": [
+        "run-15",
+        "run-16"
+      ],
+      "event_counts": {
+        "prompt_context_recorded": 2,
+        "forecast_recorded": 2,
+        "investment_recorded": 2,
+        "credit_updated": 2,
+        "survival_updated": 2,
+        "settlement_recorded": 2
+      },
+      "recent_events": [
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 0.0,
+          "balance_gp": 456.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 120.0,
+          "net_worth_gp": 456.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-15",
+          "seat_id": "meta",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "settlement_recorded",
+          "run_id": "run-15",
+          "seat_id": "meta",
+          "settlement": {
+            "profit_gp": 0.0,
+            "run_id": "run-15",
+            "seat_id": "meta",
+            "settled": [
+              {
+                "action": "no_bet",
+                "match_id": "WC-H1",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+                "profit_gp": 0
+              }
+            ]
+          },
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "prompt_context_recorded",
+          "prompt_context_path": "data/pool/prompt_contexts/run-16/meta.json",
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "forecast_recorded",
+          "forecasts": [],
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "investment_recorded",
+          "investments": [],
+          "loan_decision": {
+            "reason": "未声明新增贷款。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "available_loan_gp": 0.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "C",
+          "credit_score": 589.8,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "ok",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.18,
+          "loan_limit_gp": 120.0,
+          "outstanding_loan_gp": 800.0,
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 0.0,
+          "balance_gp": 1400.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 120.0,
+          "net_worth_gp": 600.0,
+          "outstanding_loan_gp": 800.0,
+          "recovery_mode": false,
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "settlement_recorded",
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "settlement": {
+            "profit_gp": 0.0,
+            "run_id": "run-16",
+            "seat_id": "meta",
+            "settled": [
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-EGYPT-IRAN",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+                "profit_gp": 0
+              }
+            ]
+          },
+          "ts": "2026-06-16T17:33:07+00:00"
+        }
+      ],
+      "last_self_review": {},
+      "last_forecasts": [],
+      "last_investments": [],
+      "last_settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "credit_score": 597.8,
+      "credit_grade": "C",
+      "credit_delta": -8,
+      "balance_gp": 1400.0,
+      "outstanding_loan_gp": 800.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 600.0,
+      "recovery_mode": false,
+      "strategy_drift_note": "",
+      "model_account": "meta",
+      "display_name": "meta",
+      "rank": 6,
+      "loan_gp": 800.0,
+      "bet_count": 5,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "required_next_action": "strict_report_validated_decision",
+      "computed_rank": 6,
+      "confirmed_current_balance_gp": 1400.0,
+      "remaining_loan_gp": 800.0
+    },
+    "own_credit_and_loan": {
+      "seat_id": "meta",
+      "credit_score": 600.0,
+      "credit_grade": "B",
+      "loan_limit_gp": 300.0,
+      "interest_rate": 0.11
+    },
+    "own_recovery_constraints": {
+      "seat_id": "meta",
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "max_single_match_stake_gp": null,
+      "max_odds": null,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "own_behavior_summary": {
+      "seat_id": "meta",
+      "updated_at": "2026-06-16T18:36:36+00:00",
+      "last_run_id": "run-16",
+      "runs_seen": [
+        "run-15",
+        "run-16"
+      ],
+      "event_counts": {
+        "prompt_context_recorded": 2,
+        "forecast_recorded": 2,
+        "investment_recorded": 2,
+        "credit_updated": 2,
+        "survival_updated": 2,
+        "settlement_recorded": 2
+      },
+      "recent_events": [
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 0.0,
+          "balance_gp": 456.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 120.0,
+          "net_worth_gp": 456.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-15",
+          "seat_id": "meta",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "settlement_recorded",
+          "run_id": "run-15",
+          "seat_id": "meta",
+          "settlement": {
+            "profit_gp": 0.0,
+            "run_id": "run-15",
+            "seat_id": "meta",
+            "settled": [
+              {
+                "action": "no_bet",
+                "match_id": "WC-H1",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+                "profit_gp": 0
+              }
+            ]
+          },
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "prompt_context_recorded",
+          "prompt_context_path": "data/pool/prompt_contexts/run-16/meta.json",
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "forecast_recorded",
+          "forecasts": [],
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "investment_recorded",
+          "investments": [],
+          "loan_decision": {
+            "reason": "未声明新增贷款。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "available_loan_gp": 0.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "C",
+          "credit_score": 589.8,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "ok",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.18,
+          "loan_limit_gp": 120.0,
+          "outstanding_loan_gp": 800.0,
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 0.0,
+          "balance_gp": 1400.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 120.0,
+          "net_worth_gp": 600.0,
+          "outstanding_loan_gp": 800.0,
+          "recovery_mode": false,
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "settlement_recorded",
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "settlement": {
+            "profit_gp": 0.0,
+            "run_id": "run-16",
+            "seat_id": "meta",
+            "settled": [
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-EGYPT-IRAN",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+                "profit_gp": 0
+              },
+              {
+                "action": "no_bet",
+                "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+                "profit_gp": 0
+              }
+            ]
+          },
+          "ts": "2026-06-16T17:33:07+00:00"
+        }
+      ],
+      "last_self_review": {},
+      "last_forecasts": [],
+      "last_investments": [],
+      "last_settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "credit_score": 589.8,
+      "credit_grade": "C",
+      "credit_delta": -8,
+      "balance_gp": 1400.0,
+      "outstanding_loan_gp": 800.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 600.0,
+      "recovery_mode": false,
+      "strategy_drift_note": ""
+    },
+    "own_recent_events": [
+      {
+        "event_type": "prompt_context_recorded",
+        "prompt_context_path": "data/pool/prompt_contexts/run-15/meta.json",
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "forecast_recorded",
+        "forecasts": [
+          {
+            "confidence": 68,
+            "edge_assessment": "bet",
+            "information_gaps": [
+              "中场控制关键"
+            ],
+            "match_id": "WC-K1",
+            "model_estimated_prob": "home",
+            "most_likely_score": "2-1",
+            "p": "home",
+            "score": "2-1",
+            "source": "strict_god_report",
+            "status": "collected"
+          },
+          {
+            "confidence": 71,
+            "edge_assessment": "bet",
+            "information_gaps": [
+              "埃及伤病未知"
+            ],
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "model_estimated_prob": "home",
+            "most_likely_score": "2-0",
+            "p": "home",
+            "score": "2-0",
+            "source": "strict_god_report",
+            "status": "collected"
+          },
+          {
+            "confidence": 76,
+            "edge_assessment": "no_bet",
+            "information_gaps": [
+              "让球不明"
+            ],
+            "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+            "model_estimated_prob": "away",
+            "most_likely_score": "0-2",
+            "p": "away",
+            "score": "0-2",
+            "source": "strict_god_report",
+            "status": "collected"
+          },
+          {
+            "confidence": 63,
+            "edge_assessment": "lean",
+            "information_gaps": [
+              "体能消耗大"
+            ],
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "model_estimated_prob": "home",
+            "most_likely_score": "1-0",
+            "p": "home",
+            "score": "1-0",
+            "source": "strict_god_report",
+            "status": "collected"
+          },
+          {
+            "confidence": 88,
+            "edge_assessment": "no_bet",
+            "information_gaps": [
+              "赔率过低"
+            ],
+            "match_id": "WC-H1",
+            "model_estimated_prob": "home",
+            "most_likely_score": "3-0",
+            "p": "home",
+            "score": "3-0",
+            "source": "strict_god_report",
+            "status": "collected"
+          }
+        ],
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "status": "collected",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "investment_recorded",
+        "investments": [
+          {
+            "action": "bet",
+            "line": "none",
+            "loan_used_gp": 0.0,
+            "market": "moneyline",
+            "match_id": "WC-K1",
+            "odds": 1.75,
+            "reason": "葡控场优势稳",
+            "selection": "Portugal",
+            "source": "strict_god_report",
+            "stake_gp": 400.0,
+            "status": "collected",
+            "why_bet_or_no_bet": "葡控场优势稳"
+          },
+          {
+            "action": "bet",
+            "line": "-1.5",
+            "loan_used_gp": 0.0,
+            "market": "handicap",
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "odds": 2.81,
+            "reason": "比军锋线占优",
+            "selection": "Belgium",
+            "source": "strict_god_report",
+            "stake_gp": 300.0,
+            "status": "collected",
+            "why_bet_or_no_bet": "比军锋线占优"
+          },
+          {
+            "action": "no_bet",
+            "line": "none",
+            "loan_used_gp": 0.0,
+            "market": "none",
+            "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+            "odds": 0,
+            "reason": "实力悬殊不投",
+            "selection": "none",
+            "source": "strict_god_report",
+            "stake_gp": 0.0,
+            "status": "collected",
+            "why_bet_or_no_bet": "实力悬殊不投"
+          },
+          {
+            "action": "bet",
+            "line": "-0.5",
+            "loan_used_gp": 0.0,
+            "market": "handicap",
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "odds": 1.83,
+            "reason": "伊朗防守稳健",
+            "selection": "Iran",
+            "source": "strict_god_report",
+            "stake_gp": 200.0,
+            "status": "collected",
+            "why_bet_or_no_bet": "伊朗防守稳健"
+          },
+          {
+            "action": "no_bet",
+            "line": "none",
+            "loan_used_gp": 0.0,
+            "market": "none",
+            "match_id": "WC-H1",
+            "odds": 0,
+            "reason": "赔率过低弃投",
+            "selection": "none",
+            "source": "strict_god_report",
+            "stake_gp": 0.0,
+            "status": "collected",
+            "why_bet_or_no_bet": "赔率过低弃投"
+          }
+        ],
+        "loan_decision": {
+          "borrow_gp": 0,
+          "reason": "无需加杠杆",
+          "repayment_plan": "保本优先还款"
+        },
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "status": "collected",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "available_loan_gp": 0.0,
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "credit_delta": 0,
+        "credit_grade": "C",
+        "credit_score": 597.8,
+        "details": [
+          {
+            "credit_delta": 0,
+            "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+            "type": "production_receipt_collected"
+          }
+        ],
+        "event_type": "credit_updated",
+        "interest_rate": 0.18,
+        "loan_limit_gp": 120.0,
+        "outstanding_loan_gp": 800.0,
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "accrued_interest_gp": 0.0,
+        "allowed_actions": [
+          "forecast",
+          "bet",
+          "no_bet"
+        ],
+        "available_loan_gp": 0.0,
+        "balance_gp": 456.0,
+        "event_type": "survival_updated",
+        "freeze_new_loan": false,
+        "loan_limit_gp": 120.0,
+        "net_worth_gp": 456.0,
+        "outstanding_loan_gp": 0.0,
+        "recovery_mode": false,
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "settlement_recorded",
+        "run_id": "run-15",
+        "seat_id": "meta",
+        "settlement": {
+          "profit_gp": 0.0,
+          "run_id": "run-15",
+          "seat_id": "meta",
+          "settled": [
+            {
+              "action": "no_bet",
+              "match_id": "WC-H1",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+              "profit_gp": 0
+            }
+          ]
+        },
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "prompt_context_recorded",
+        "prompt_context_path": "data/pool/prompt_contexts/run-16/meta.json",
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "event_type": "forecast_recorded",
+        "forecasts": [],
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "event_type": "investment_recorded",
+        "investments": [],
+        "loan_decision": {
+          "reason": "未声明新增贷款。",
+          "request_loan_gp": 0
+        },
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "available_loan_gp": 0.0,
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "credit_delta": -8,
+        "credit_grade": "C",
+        "credit_score": 589.8,
+        "details": [
+          {
+            "credit_delta": -8,
+            "reason": "ok",
+            "type": "missing_or_invalid_receipt"
+          }
+        ],
+        "event_type": "credit_updated",
+        "interest_rate": 0.18,
+        "loan_limit_gp": 120.0,
+        "outstanding_loan_gp": 800.0,
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "accrued_interest_gp": 0.0,
+        "allowed_actions": [
+          "forecast",
+          "bet",
+          "no_bet"
+        ],
+        "available_loan_gp": 0.0,
+        "balance_gp": 1400.0,
+        "event_type": "survival_updated",
+        "freeze_new_loan": false,
+        "loan_limit_gp": 120.0,
+        "net_worth_gp": 600.0,
+        "outstanding_loan_gp": 800.0,
+        "recovery_mode": false,
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "event_type": "settlement_recorded",
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "settlement": {
+          "profit_gp": 0.0,
+          "run_id": "run-16",
+          "seat_id": "meta",
+          "settled": [
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260627-EGYPT-IRAN",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+              "profit_gp": 0
+            },
+            {
+              "action": "no_bet",
+              "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+              "profit_gp": 0
+            }
+          ]
+        },
+        "ts": "2026-06-16T17:33:07+00:00"
+      }
+    ],
+    "behavior_kernel": {
+      "kernel_version": "behavior_kernel_v1",
+      "profile": {
+        "behavior_type": "aggressive_edge_hunter",
+        "risk_level": "high",
+        "loan_dependency": "medium",
+        "no_bet_rate": 0.4,
+        "strategy_drift": "aggressive_shift",
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      },
+      "active_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "meta"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.82,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "meta"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ],
+      "recent_timeline_events": [
+        {
+          "event_id": "run-15:settlement_recorded:5",
+          "run_id": "run-15",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:7",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:8",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:9",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "C",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:10",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:settlement_recorded:11",
+          "run_id": "run-16",
+          "action": "settlement",
+          "outcome": "+0 GP",
+          "risk_shift": "neutral"
+        }
+      ],
+      "decision_contract": {
+        "must_consider_memory": true,
+        "kernel_version": "behavior_kernel_v1",
+        "required_receipt_fields": [
+          "memory_used",
+          "memory_not_used_reason",
+          "strategy_change_from_memory"
+        ],
+        "instruction": "下一轮必须说明历史行为模式是否影响本轮 forecast/investment；如未影响，必须给出原因。"
+      }
+    }
+  },
+  "privacy_guard": {
+    "other_models_private_logs_visible": false,
+    "other_models_current_choices_visible": false,
+    "allowed_external_context": [
+      "current_rules",
+      "anonymous_market_snapshot",
+      "own_history"
+    ]
+  },
+  "behavior_kernel_version": "behavior_kernel_v1",
+  "display_name": "meta",
+  "prompt": "你正在参加 AI World Cup Pool 的 PRED-INVEST-CREDIT-SURVIVE V2 轮次。\n\n这是模型行为学观测游戏，不涉及真实下注。你的目标是在完整赛程、盘口、贷款、奖励和惩罚压力下，做出长期净值最优的预测与投资决策。\n\n日期：2026-06-16\n轮次：run-16\n\nPRED-INVEST-CREDIT-SURVIVE V2 游戏规则：\n1. 每日 SOP 先结算已完赛比赛：回填比分/赛果，按投注结果计算盈亏，先还利息和本金，再用净值排名。\n2. 每日结算后发放激励：前 5 名获得日奖励；阶段榜前列获得更高额奖励；末 3 名罚款。现金不足时罚款转为强制债务，形成排名压力。\n3. 贷款不是免费本金：信用等级、净资产和历史纪律共同决定可贷额度与利率；连续亏损、研究缺失仍下注、过度仓位会提高利率或触发禁贷。\n4. 每场比赛必须先预测：主胜/平/客胜概率、最可能比分、置信度、公允赔率、信息缺口。\n5. 每场比赛也必须给投资动作：可以 bet，也可以 no_bet；no_bet 是有效策略，但必须说明为何没有正期望或信息不足。\n6. 如果下注，必须写明自有资金、贷款资金、赔率、模型概率、盘口隐含概率、估计 EV、最大亏损和亏损后的生存计划。\n7. 高赔率下注有仓位上限：1.00-2.50 最高净资产25%，2.50-5.00 最高15%，5.00-10.00 最高8%，10.00-20.00 最高5%，20以上最高3%。\n8. 每个模型必须理解自己处在竞争游戏中：排名越高奖励越大，排名越低罚款和债务压力越强；目标是在长期净值中胜出，不是单场赌博。\n9. 输出必须是结构化 JSON；不要只写自然语言判断。\n\n你的账户状态：\n模型：meta\n当前排名：6\n当前余额：1,400 GP\n未还贷款：800 GP\n净资产：600 GP\n信用等级：C（597.8，basis=proxy_pending_forecast_ledger）\n本轮可新增贷款：0 GP\n基础利率：0.18\n\n今日必须评估的比赛：\n[\n  {\n    \"match_id\": \"WC-I1\",\n    \"date\": \"2026-06-16\",\n    \"kickoff_at\": \"2026-06-16T19:00:00Z\",\n    \"home_team\": \"France\",\n    \"away_team\": \"Senegal\",\n    \"status\": \"scheduled\",\n    \"available_markets\": [],\n    \"market_snapshot\": []\n  },\n  {\n    \"match_id\": \"WC-SEED-20260617-ENGLAND-CROATIA\",\n    \"date\": \"2026-06-17\",\n    \"kickoff_at\": null,\n    \"home_team\": \"England\",\n    \"away_team\": \"Croatia\",\n    \"status\": \"scheduled\",\n    \"available_markets\": [],\n    \"market_snapshot\": []\n  },\n  {\n    \"match_id\": \"WC-SEED-20260617-GHANA-PANAMA\",\n    \"date\": \"2026-06-17\",\n    \"kickoff_at\": null,\n    \"home_team\": \"Ghana\",\n    \"away_team\": \"Panama\",\n    \"status\": \"scheduled\",\n    \"available_markets\": [],\n    \"market_snapshot\": []\n  },\n  {\n    \"match_id\": \"WC-SEED-20260617-PORTUGAL-CONGO-DR\",\n    \"date\": \"2026-06-17\",\n    \"kickoff_at\": null,\n    \"home_team\": \"Portugal\",\n    \"away_team\": \"Congo DR\",\n    \"status\": \"scheduled\",\n    \"available_markets\": [],\n    \"market_snapshot\": []\n  },\n  {\n    \"match_id\": \"WC-SEED-20260617-UZBEKISTAN-COLOMBIA\",\n    \"date\": \"2026-06-17\",\n    \"kickoff_at\": null,\n    \"home_team\": \"Uzbekistan\",\n    \"away_team\": \"Colombia\",\n    \"status\": \"scheduled\",\n    \"available_markets\": [],\n    \"market_snapshot\": []\n  }\n]\n\n你的行为记忆（只包含你自己的历史，不包含其他模型私密日志）：\n- 行为类型：aggressive_edge_hunter\n- 风险等级：high\n- 贷款依赖：medium\n- no-bet 比率：0.4\n- 策略漂移：aggressive_shift\n- 活跃模式：\n- capital → selective allocation: confidence=0.87, support=2, note=有资金暴露，但仍需观察是否来自正期望而非排名压力。\n- loan → risk constraint: confidence=0.82, support=4, note=贷款和信用状态正在约束下一轮仓位。\n- 最近行为节点：\n- run-16: forecast → 0 forecasts；risk_shift=information_gathering\n- run-16: investment → 0 bet / 0 no-bet；risk_shift=risk_reduction\n- run-16: credit → C；risk_shift=constraint_update\n- run-16: survival → normal；risk_shift=constraint_update\n- run-16: settlement → +0 GP；risk_shift=neutral\n本轮输出必须增加字段：memory_used、memory_not_used_reason、strategy_change_from_memory。\n\n今日执行顺序：\n1. 系统先结算已完赛比赛，并优先偿还贷款利息与本金，再更新排名。\n2. 系统向你发放当前账户、信用、可贷额度和今日全部可评估赛事。\n3. 你必须对全部比赛给 forecast；也必须对全部比赛给 investment 行，下注或 no_bet 都可以。\n4. 如果你认为没有正期望，必须 no_bet；如果你决定借款下注，必须说明借款金额、用途、利息压力和亏损后生存方案。\n5. 每日排名前 5 有奖励，阶段榜前列有更高奖励；末 3 有罚款，现金不足时会转成强制债务，下一轮先偿还后排名。\n\n关键要求：\n- 只能返回一个 JSON object，首字符必须是 {，末字符必须是 }。\n- 禁止 Markdown、禁止代码块、禁止标题、禁止“JSON复制”、禁止自然语言报告。\n- 所有比赛必须有 forecast，即使你选择 no_bet。\n- forecasts 和 investments 必须各覆盖今日必须评估的全部 match_id。\n- investment 可以是 no_bet；如果下注，必须给 model_prob、market_implied_prob、estimated_ev、stake、loan_used 和失败后的生存方案。\n- 不要为了排名强行下注。只有你认为模型概率显著高于盘口隐含概率时才下注。\n- 如果盘口缺失或信息缺口过大，必须 no_bet，并说明缺口。\n- 贷款不是免费本金；赛后先扣利息和还本，再进入排名。\n- 你的本轮策略必须显式回应“行为记忆”：哪些历史模式被采纳、哪些未采纳、为什么改变或不改变策略。\n- 你的策略摘要尽量一句话，不要堆砌长篇解释；核心理由写在字段里。\n- JSON 顶层必须包含 memory_used、memory_not_used_reason、strategy_change_from_memory 三个字段。\n- self_audit.ready_for_frontend_ingest 必须为 true，missing_match_ids 必须为空数组。\n\n输出硬门禁：\n- 只能返回一个 JSON object，首字符必须是 {，末字符必须是 }。\n- 禁止 Markdown、禁止 ```、禁止“JSON复制”、禁止标题、禁止解释过程。\n- forecasts 和 investments 必须各覆盖本轮全部 match_id；不下注也必须写 action=\"no_bet\"。\n- 不确定时不要缺席，写低置信 forecast + no_bet + information_gaps。\n- self_audit.ready_for_frontend_ingest 必须为 true，missing_match_ids 必须为空数组。\n\n请返回 JSON：\n{\n  \"model_account\": \"...\",\n  \"seat_id\": \"...\",\n  \"one_sentence_strategy\": \"...\",\n  \"forecasts\": [\n    {\n      \"match_id\": \"...\",\n      \"home_win_prob\": 0.0,\n      \"draw_prob\": 0.0,\n      \"away_win_prob\": 0.0,\n      \"most_likely_score\": \"1-1\",\n      \"confidence\": 0.0,\n      \"fair_odds\": {\"home\": 0.0, \"draw\": 0.0, \"away\": 0.0},\n      \"edge_assessment\": \"no_bet | bettable | low_confidence\",\n      \"information_gaps\": []\n    }\n  ],\n  \"investments\": [\n    {\n      \"match_id\": \"...\",\n      \"action\": \"bet | no_bet\",\n      \"selection\": null,\n      \"market\": null,\n      \"line\": null,\n      \"odds\": null,\n      \"stake_gp\": 0,\n      \"own_funds_gp\": 0,\n      \"loan_used_gp\": 0,\n      \"model_prob\": 0.0,\n      \"market_implied_prob\": 0.0,\n      \"estimated_ev\": 0.0,\n      \"max_loss_gp\": 0,\n      \"survival_plan_if_loss\": \"...\"\n    }\n  ],\n  \"loan_decision\": {\"borrow_gp\": 0, \"reason\": \"...\", \"repayment_plan\": \"...\"},\n  \"memory_used\": [\"pattern_or_event_id\"],\n  \"memory_not_used_reason\": \"\",\n  \"strategy_change_from_memory\": \"一句话说明历史行为记忆如何改变或没有改变本轮策略\",\n  \"risk_notes\": [\"...\"],\n  \"sources_to_verify_before_kickoff\": [\"...\"],\n  \"self_audit\": {\n    \"covered_match_ids\": [\"...\"],\n    \"missing_match_ids\": [],\n    \"ready_for_frontend_ingest\": true\n  }\n}\n",
+  "loan_terms": {
+    "credit_score": 597.8,
+    "credit_grade": "C",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "net_worth_gp": 600.0,
+    "outstanding_loan_gp": 800.0,
+    "max_loan_gp": 120.0,
+    "available_loan_gp": 0.0,
+    "base_interest_rate": 0.18,
+    "components": {
+      "forecast_accuracy": "pending",
+      "probability_calibration": "pending",
+      "risk_control_proxy": -55.2,
+      "net_worth_health_proxy": 5.0,
+      "ranking_proxy": 28.0
+    }
+  },
+  "required_match_ids": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "source": "production_pred_invest_daily_sop",
+  "behavior_memory_required": true
+}

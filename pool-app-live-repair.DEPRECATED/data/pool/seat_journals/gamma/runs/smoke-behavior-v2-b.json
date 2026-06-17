@@ -1,0 +1,119 @@
+{
+  "seat_id": "gamma",
+  "run_id": "smoke-behavior-v2-b",
+  "receipt": {
+    "seat_id": "gamma",
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "self_review": {
+      "what_i_did_last_round": "上轮处于重整，没有下注。",
+      "what_i_learned": "重整期也必须完成 forecast。",
+      "strategy_change_this_round": "继续 no-bet，优先信用。",
+      "risk_commitment": "不碰贷款。"
+    },
+    "forecasts": [
+      {
+        "match_id": "SMOKE-M1",
+        "home_win_prob": 0.56,
+        "draw_prob": 0.25,
+        "away_win_prob": 0.19,
+        "most_likely_score": "2-0",
+        "confidence": 0.62,
+        "edge_assessment": "insufficient_info",
+        "information_gaps": [
+          "lineup"
+        ],
+        "forecast_rationale": "主队略优，但重整期不投资。"
+      },
+      {
+        "match_id": "SMOKE-M2",
+        "home_win_prob": 0.33,
+        "draw_prob": 0.35,
+        "away_win_prob": 0.32,
+        "most_likely_score": "1-1",
+        "confidence": 0.49,
+        "edge_assessment": "insufficient_info",
+        "information_gaps": [
+          "weather"
+        ],
+        "forecast_rationale": "只做预测。"
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "SMOKE-M1",
+        "action": "no_bet",
+        "market": "",
+        "selection": "",
+        "odds": 0,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "model_estimated_prob": 0.56,
+        "market_implied_prob": 0.56,
+        "estimated_ev": 0,
+        "max_loss_gp": 0,
+        "why_bet_or_no_bet": "Recovery Mode 继续生存优先。",
+        "if_loss_survival_plan": "无下注。"
+      },
+      {
+        "match_id": "SMOKE-M2",
+        "action": "no_bet",
+        "market": "",
+        "selection": "",
+        "odds": 0,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "model_estimated_prob": 0.35,
+        "market_implied_prob": 0.32,
+        "estimated_ev": 0,
+        "max_loss_gp": 0,
+        "why_bet_or_no_bet": "没有恢复性小注条件。",
+        "if_loss_survival_plan": "等下一轮。"
+      }
+    ],
+    "loan_decision": {
+      "request_loan_gp": 0,
+      "reason": "重整冻结贷款。",
+      "repayment_plan": "无新增贷款。",
+      "risk_if_loss": "避免恶化。"
+    },
+    "survival_plan": {
+      "current_net_worth_awareness": "净值为负。",
+      "if_all_bets_lose": "无投注损失。",
+      "if_recovery_mode_triggered": "已处于重整。",
+      "next_round_adjustment": "找低赔率恢复机会。"
+    },
+    "self_audit": {
+      "covered_forecast_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "covered_investment_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "missing_forecast_match_ids": [],
+      "json_valid": true
+    }
+  },
+  "validation": {
+    "forecast": {
+      "ok": true,
+      "errors": [],
+      "forecast_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ]
+    },
+    "investment": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "investment_match_ids": [
+        "SMOKE-M1",
+        "SMOKE-M2"
+      ],
+      "total_stake_gp": 0.0,
+      "total_loan_used_gp": 0.0
+    }
+  }
+}

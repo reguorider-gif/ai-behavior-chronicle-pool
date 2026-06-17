@@ -1,0 +1,166 @@
+{
+"model_account": "yuanbao",
+"seat_id": "yuanbao",
+"one_sentence_strategy": "以谨慎为主，优先在盘口接近公平值的比赛中下注，控制风险，避免进一步陷入债务。",
+"forecasts": [
+{
+"match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+"home_win_prob": 0.85,
+"draw_prob": 0.10,
+"away_win_prob": 0.05,
+"most_likely_score": "4-0",
+"confidence": "medium",
+"fair_odds": 1.18,
+"edge_assessment": "无显著价值，德国大胜已在盘口中充分体现。",
+"information_gaps": "库拉索近期状态及阵容完整性未知；德国是否轮换主力不确定。"
+},
+{
+"match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+"home_win_prob": 0.55,
+"draw_prob": 0.25,
+"away_win_prob": 0.20,
+"most_likely_score": "2-1",
+"confidence": "medium",
+"fair_odds": 1.82,
+"edge_assessment": "日本受让0.5球盘口略有价值，日本防守组织好。",
+"information_gaps": "日本客场作战能力评估有限；荷兰中场创造力数据不足。"
+},
+{
+"match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+"home_win_prob": 0.35,
+"draw_prob": 0.30,
+"away_win_prob": 0.35,
+"most_likely_score": "1-1",
+"confidence": "low",
+"fair_odds": 2.86,
+"edge_assessment": "厄瓜多尔略被看好，但差距极小，无明显投注价值。",
+"information_gaps": "两队近期交锋记录缺失；高原主场优势是否延续不确定。"
+},
+{
+"match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+"home_win_prob": 0.70,
+"draw_prob": 0.20,
+"away_win_prob": 0.10,
+"most_likely_score": "2-0",
+"confidence": "medium",
+"fair_odds": 1.43,
+"edge_assessment": "瑞典主场优势明显，但盘口已充分反映。",
+"information_gaps": "突尼斯反击效率数据不足；瑞典主场具体战绩待确认。"
+},
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"home_win_prob": 0.30,
+"draw_prob": 0.28,
+"away_win_prob": 0.42,
+"most_likely_score": "1-2",
+"confidence": "medium",
+"fair_odds": 2.38,
+"edge_assessment": "葡萄牙客胜赔率2.1有一定价值，阵容深度占优。",
+"information_gaps": "哥伦比亚主场优势程度未知；葡萄牙轮换策略不确定。"
+}
+],
+"investments": [
+{
+"match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+"action": "no_bet",
+"market": "handicap",
+"selection": "Curaçao",
+"line": 3.5,
+"odds": 1.83,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.15,
+"market_implied_prob": 0.55,
+"estimated_ev": -0.40,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "无投注，无需应对。"
+},
+{
+"match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+"action": "bet",
+"market": "handicap",
+"selection": "Japan",
+"line": 0.5,
+"odds": 1.85,
+"stake_gp": 50,
+"own_funds_gp": 0,
+"loan_used_gp": 50,
+"model_prob": 0.55,
+"market_implied_prob": 0.54,
+"estimated_ev": 0.02,
+"max_loss_gp": 50,
+"survival_plan_if_loss": "若日本输球，下轮减少投注额，优先偿还贷款。"
+},
+{
+"match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+"action": "no_bet",
+"market": "handicap",
+"selection": "Ecuador",
+"line": -0.5,
+"odds": 2.45,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.35,
+"market_implied_prob": 0.41,
+"estimated_ev": -0.15,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "无投注，无需应对。"
+},
+{
+"match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+"action": "no_bet",
+"market": "handicap",
+"selection": "Sweden",
+"line": -0.5,
+"odds": 1.88,
+"stake_gp": 0,
+"own_funds_gp": 0,
+"loan_used_gp": 0,
+"model_prob": 0.70,
+"market_implied_prob": 0.53,
+"estimated_ev": 0.31,
+"max_loss_gp": 0,
+"survival_plan_if_loss": "无投注，无需应对。"
+},
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"action": "bet",
+"market": "h2h",
+"selection": "Portugal",
+"line": null,
+"odds": 2.1,
+"stake_gp": 50,
+"own_funds_gp": 0,
+"loan_used_gp": 50,
+"model_prob": 0.42,
+"market_implied_prob": 0.48,
+"estimated_ev": -0.12,
+"max_loss_gp": 50,
+"survival_plan_if_loss": "若葡萄牙不胜，暂停投注，专注偿还贷款，等待下一轮机会。"
+}
+],
+"loan_decision": {
+"borrow_gp": 100,
+"reason": "当前余额为负，需借入资金维持基本投注能力，选择两场最有把握的比赛各投50GP。",
+"repayment_plan": "若两场全胜可获约170GP回报，扣除100GP本金及利息后优先偿还贷款，目标在下一轮前将贷款余额降至200GP以下。"
+},
+"risk_notes": "当前债务344GP，排名垫底，风险极高。仅选择有微弱正EV或信息相对充分的比赛下注，避免盲目追高赔率。若连续失利将考虑暂停投注。",
+"sources_to_verify_before_kickoff": [
+"FIFA官网各队大名单及伤病报告",
+"各队近10场正式比赛战绩",
+"世界杯小组赛首轮赛后积分及士气影响"
+],
+"self_audit": {
+"covered_match_ids": [
+"WCAPI-20260614-GERMANY-CURA-AO",
+"WCAPI-20260614-NETHERLANDS-JAPAN",
+"WCAPI-20260614-IVORY-COAST-ECUADOR",
+"WCAPI-20260615-SWEDEN-TUNISIA",
+"WCAPI-20260627-COLOMBIA-PORTUGAL"
+],
+"missing_match_ids": [],
+"ready_for_frontend_ingest": true
+}
+}

@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/pool/rules/current",
+      "destination": "/api/pool-meta?type=rules"
+    },
+    {
+      "source": "/api/pool/runs/:runId/behavior-summary",
+      "destination": "/api/pool-meta?type=behavior-summary&runId=:runId"
+    },
+    {
+      "source": "/api/pool/runs/:runId/god-report",
+      "destination": "/api/pool-meta?type=god-report&runId=:runId"
+    },
+    {
+      "source": "/api/pool/runs/:runId/market-snapshot",
+      "destination": "/api/pool-meta?type=market-snapshot&runId=:runId"
+    },
+    {
+      "source": "/api/pool/seats/:seatId/journal",
+      "destination": "/api/pool-meta?type=seat-journal&seatId=:seatId"
+    },
+    {
+      "source": "/api/pool/seats/:seatId/credit",
+      "destination": "/api/pool-meta?type=credit&seatId=:seatId"
+    },
+    {
+      "source": "/api/pool/runtime-summary",
+      "destination": "/api/pool-meta?type=runtime-summary"
+    },
+    {
+      "source": "/api/pool/frontend-archives",
+      "destination": "/api/pool-meta?type=frontend-archives"
+    },
+    {
+      "source": "/api/pool/seat-archives/:runId/:seatId",
+      "destination": "/api/pool-meta?type=seat-archives&runId=:runId&seatId=:seatId"
+    }
+  ]
+}

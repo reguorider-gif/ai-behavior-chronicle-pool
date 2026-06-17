@@ -1,0 +1,541 @@
+{
+  "version": "pred_invest_quality_gate.v1",
+  "generated_at": "2026-06-16T22:52:02.169048+00:00",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "status": "PARTIAL_NOT_READY",
+  "publish_allowed": false,
+  "frontend_badge": "10/12 部分回收",
+  "valid_count": 10,
+  "required_seat_count": 12,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "mimo",
+    "minimax",
+    "wenxin",
+    "yuanbao"
+  ],
+  "needs_rerun": [
+    "grok",
+    "qwen"
+  ],
+  "rerun_queue": [
+    {
+      "seat": "grok",
+      "mode": "provider_quota_blocked",
+      "prompt_mode": "wait_for_quota_reset",
+      "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+      "last_run_id": null,
+      "response_chars": 0,
+      "issues": [
+        "no_captured_response"
+      ],
+      "last_errors": [
+        {
+          "run_id": "207f01bb1cea",
+          "action": "raw_result_error",
+          "reason": "provider_quota_limited",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "qwen",
+      "mode": "fresh_chat_marker_required",
+      "prompt_mode": "ultra_compact",
+      "reason": "未捕获当前轮答案或页面仍停留旧上下文，必须新会话/新 marker 重投。",
+      "last_run_id": null,
+      "response_chars": 0,
+      "issues": [
+        "no_captured_response"
+      ],
+      "last_errors": [
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        }
+      ]
+    }
+  ],
+  "provider_blocked_seats": [
+    "grok"
+  ],
+  "rerunnable_seats": [
+    "qwen"
+  ],
+  "required_match_ids": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "required_match_source": "required_match_snapshot:2026-06-16_run-16_required_match_snapshot.json",
+  "match_count": 5,
+  "prompt_pack_match_count": 5,
+  "prompt_pack_models": 12,
+  "product_findings": [
+    "发布状态必须来自 quality_gate.publish_allowed，不得只看有无任意模型答案。",
+    "前端必须展示 frontend_badge 和 needs_rerun，避免用户误以为本轮已全量。",
+    "日报可以引用部分上帝报告，但标题必须标注 PARTIAL_NOT_READY。",
+    "自动化下一步只能补跑 rerun_queue，不应重跑已合格席位。",
+    "provider_blocked_seats 不进入普通自动补跑；供应商额度/慢响应恢复后才能单席强制重试。",
+    "同一轮发布门禁使用 required_match_snapshot 或上次质量门禁冻结口径，避免 prompt_pack 刷新后误伤已合格席位。",
+    "供应商额度限制必须作为阻塞态呈现，不得被误判为普通 coverage failure 反复补跑。"
+  ],
+  "audit": {
+    "version": "pred_invest_bridge_output_audit.v1",
+    "generated_at": "2026-06-16T22:52:02.164285+00:00",
+    "date": "2026-06-16",
+    "round_id": "run-16",
+    "run_ids": [
+      "207f01bb1cea",
+      "7c1de19fe5d1",
+      "cd6e9ac0f2c3",
+      "b89060f60909",
+      "36c907ccd05b",
+      "b453965391fc",
+      "030d2572c321",
+      "37110a93d7e6"
+    ],
+    "required_match_ids": [
+      "WC-I1",
+      "WC-SEED-20260617-ENGLAND-CROATIA",
+      "WC-SEED-20260617-GHANA-PANAMA",
+      "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+    ],
+    "required_match_source": "required_match_snapshot:2026-06-16_run-16_required_match_snapshot.json",
+    "market_available_by_match": {
+      "WC-I1": true,
+      "WC-SEED-20260617-ENGLAND-CROATIA": true,
+      "WC-SEED-20260617-GHANA-PANAMA": true,
+      "WC-SEED-20260617-PORTUGAL-CONGO-DR": true,
+      "WC-SEED-20260617-UZBEKISTAN-COLOMBIA": true
+    },
+    "valid_count": 10,
+    "invalid_count": 2,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "wenxin",
+      "yuanbao"
+    ],
+    "invalid_seats": [
+      "grok",
+      "qwen"
+    ],
+    "ignored_extra_seats": [],
+    "missing_seats": [],
+    "needs_rerun": [
+      "grok",
+      "qwen"
+    ],
+    "seat_results": [
+      {
+        "seat": "chatgpt",
+        "valid": true,
+        "issues": [],
+        "run_id": "cd6e9ac0f2c3",
+        "response_chars": 916,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      },
+      {
+        "seat": "deepseek",
+        "valid": true,
+        "issues": [],
+        "run_id": "207f01bb1cea",
+        "response_chars": 3864,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": []
+      },
+      {
+        "seat": "doubao",
+        "valid": true,
+        "issues": [],
+        "run_id": "b89060f60909",
+        "response_chars": 898,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      },
+      {
+        "seat": "gemini",
+        "valid": true,
+        "issues": [],
+        "run_id": "36c907ccd05b",
+        "response_chars": 869,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 878
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 843
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 880
+          }
+        ]
+      },
+      {
+        "seat": "grok",
+        "valid": false,
+        "issues": [
+          "no_captured_response"
+        ],
+        "run_id": null,
+        "response_chars": 0,
+        "forecast_match_ids": [],
+        "investment_match_ids": [],
+        "last_errors": [
+          {
+            "run_id": "207f01bb1cea",
+            "action": "raw_result_error",
+            "reason": "provider_quota_limited",
+            "response_chars": 0
+          }
+        ]
+      },
+      {
+        "seat": "kimi",
+        "valid": true,
+        "issues": [],
+        "run_id": "7c1de19fe5d1",
+        "response_chars": 888,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": null,
+            "response_chars": 888
+          }
+        ]
+      },
+      {
+        "seat": "meta",
+        "valid": true,
+        "issues": [],
+        "run_id": "207f01bb1cea",
+        "response_chars": 5512,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": []
+      },
+      {
+        "seat": "mimo",
+        "valid": true,
+        "issues": [],
+        "run_id": "7c1de19fe5d1",
+        "response_chars": 930,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": null,
+            "response_chars": 930
+          }
+        ]
+      },
+      {
+        "seat": "minimax",
+        "valid": true,
+        "issues": [],
+        "run_id": "7c1de19fe5d1",
+        "response_chars": 883,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "207f01bb1cea",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 1822
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 581
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      },
+      {
+        "seat": "qwen",
+        "valid": false,
+        "issues": [
+          "no_captured_response"
+        ],
+        "run_id": null,
+        "response_chars": 0,
+        "forecast_match_ids": [],
+        "investment_match_ids": [],
+        "last_errors": [
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          },
+          {
+            "run_id": "37110a93d7e6",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      },
+      {
+        "seat": "wenxin",
+        "valid": true,
+        "issues": [],
+        "run_id": "7c1de19fe5d1",
+        "response_chars": 870,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": [
+          {
+            "run_id": "207f01bb1cea",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 1207
+          },
+          {
+            "run_id": "207f01bb1cea",
+            "action": "seat_timeout",
+            "reason": "response_not_relevant",
+            "response_chars": 1212
+          },
+          {
+            "run_id": "7c1de19fe5d1",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 19
+          }
+        ]
+      },
+      {
+        "seat": "yuanbao",
+        "valid": true,
+        "issues": [],
+        "run_id": "7c1de19fe5d1",
+        "response_chars": 855,
+        "forecast_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "investment_match_ids": [
+          "WC-I1",
+          "WC-SEED-20260617-ENGLAND-CROATIA",
+          "WC-SEED-20260617-GHANA-PANAMA",
+          "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+        ],
+        "last_errors": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "02711f191fac",
+  "round_id": "run-14",
+  "attempt_no": 4,
+  "date": "2026-06-14",
+  "seat": "wenxin",
+  "model_account": "wenxin",
+  "ok": true,
+  "raw_output_path": "data/pool/model_outputs/raw/run-14/wenxin.txt",
+  "base_raw_output_path": "data/pool/model_outputs/raw/run-14/wenxin.txt",
+  "parsed": {
+    "model_account": "wenxin",
+    "seat_id": "wenxin",
+    "one_sentence_strategy": "优先依托实力差距判断，低信息赛事选择不投注",
+    "forecasts": [
+      {
+        "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+        "p": "H",
+        "score": "3-0",
+        "confidence": 0.92,
+        "edge_assessment": "德国纸面实力远超库拉索，主场赢球稳定性高",
+        "information_gaps": "库拉索杯赛阵容完整度信息不足"
+      },
+      {
+        "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "p": "D",
+        "score": "1-1",
+        "confidence": 0.51,
+        "edge_assessment": "两队实力接近，攻防水平差距小，平局概率不低",
+        "information_gaps": "双方核心球员临场状态信息不完整"
+      },
+      {
+        "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "p": "A",
+        "score": "1-2",
+        "confidence": 0.62,
+        "edge_assessment": "厄瓜多尔大赛经验更丰富，市场赔率也更支持厄瓜多尔不败",
+        "information_gaps": "科特迪瓦新阵容磨合信息不足"
+      },
+      {
+        "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+        "p": "H",
+        "score": "2-0",
+        "confidence": 0.73,
+        "edge_assessment": "瑞典主场实力占优，赔率明确指向瑞典赢球",
+        "information_gaps": "突尼斯最新阵容调整信息缺失"
+      },
+      {
+        "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+        "p": "A",
+        "score": "1-2",
+        "confidence": 0.65,
+        "edge_assessment": "葡萄牙阵容星度和整体竞争力高于哥伦比亚",
+        "information_gaps": "赛事距离当前时间较远，备战信息不充分"
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Curaçao",
+        "line": 3.5,
+        "odds": 1.83,
+        "stake_gp": 10,
+        "loan_used_gp": 10,
+        "reason": "德国赢1-2球概率不低，难以击穿3.5球让盘，选择受让库拉索"
+      },
+      {
+        "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Japan",
+        "line": 0.5,
+        "odds": 1.85,
+        "stake_gp": 15,
+        "loan_used_gp": 15,
+        "reason": "预测平局，日本受让0.5可赢盘，赔率性价比合适"
+      },
+      {
+        "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Ecuador",
+        "line": 0.0,
+        "odds": 1.59,
+        "stake_gp": 20,
+        "loan_used_gp": 20,
+        "reason": "预测厄瓜多尔不败，匹配该盘口方向"
+      },
+      {
+        "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Sweden",
+        "line": 0.0,
+        "odds": 1.37,
+        "stake_gp": 15,
+        "loan_used_gp": 15,
+        "reason": "预测瑞典赢球，匹配盘口方向"
+      },
+      {
+        "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+        "action": "no_bet",
+        "market": "",
+        "selection": "",
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "reason": "赛事时间过早，信息缺口大，选择不投注"
+      }
+    ],
+    "loan_decision": {
+      "borrow_gp": 60,
+      "reason": "现有可用贷款额度足够支持选中赛事投注，使用部分贷款参与",
+      "repayment_plan": "获得盈利后优先偿还贷款"
+    },
+    "risk_notes": [
+      "本内容仅用于世界杯AI预测池研究游戏，不构成任何真实投注建议"
+    ],
+    "self_audit": {
+      "covered_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "missing_match_ids": [],
+      "ready_for_frontend_ingest": true
+    }
+  },
+  "response_chars": 2495,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 2495,
+    "min_response_chars": 1,
+    "response_hash": "5d0ea1a1eb2f8ca3a05e8d92464e42364492cad46160f0ea48ef1f87eadc3025",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  },
+  "source_rerun_raw_output_path": "data/pool/model_outputs/raw_rerun/run-14/attempt-4/wenxin.txt"
+}

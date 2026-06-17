@@ -1,0 +1,42 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "d2c66e23d985",
+  "round_id": "run-13",
+  "date": "2026-06-14",
+  "seat": "yuanbao",
+  "model_account": "yuanbao",
+  "ok": true,
+  "method": null,
+  "raw_output_path": "data/pool/model_outputs/raw/run-13/yuanbao.txt",
+  "parsed": {
+    "stake_gp": 300.0,
+    "max_stake_percent_net_worth": 19.6,
+    "market": "France home win",
+    "info_sources": [
+      "FIFA官方热身赛日程",
+      "历史交锋记录（无直接记录，依赖排名推断）"
+    ]
+  },
+  "response_chars": 1095,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 1095,
+    "min_response_chars": 520,
+    "response_hash": "aa7b07575fe499d3fa351f24b971c1de37282d227c7701368254be9eadea52b2",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

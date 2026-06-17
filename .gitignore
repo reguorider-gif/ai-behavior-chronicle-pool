@@ -9,3 +9,6 @@ node_modules/
 tmp/
 dist/
 .vercel/
+.vercel
+data/pool/_archive/*
+!data/pool/_archive/README.md

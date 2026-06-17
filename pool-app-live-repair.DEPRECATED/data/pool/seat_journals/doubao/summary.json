@@ -1,0 +1,224 @@
+{
+  "seat_id": "doubao",
+  "updated_at": "2026-06-16T20:18:40+00:00",
+  "last_run_id": "run-16",
+  "runs_seen": [
+    "run-15",
+    "run-16"
+  ],
+  "event_counts": {
+    "prompt_context_recorded": 2,
+    "forecast_recorded": 2,
+    "investment_recorded": 2,
+    "credit_updated": 2,
+    "survival_updated": 2,
+    "settlement_recorded": 2
+  },
+  "recent_events": [
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 250.0,
+      "balance_gp": 867.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "net_worth_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-15",
+      "seat_id": "doubao",
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "settlement_recorded",
+      "run_id": "run-15",
+      "seat_id": "doubao",
+      "settlement": {
+        "profit_gp": -200.0,
+        "run_id": "run-15",
+        "seat_id": "doubao",
+        "settled": [
+          {
+            "line": "0",
+            "loan_used_gp": 0.0,
+            "market": "moneyline",
+            "match_id": "WC-H1",
+            "odds": 1.08,
+            "payout_gp": 0.0,
+            "profit_gp": -200.0,
+            "score": "0-0",
+            "seat_id": "doubao",
+            "selection": "Spain",
+            "stake_gp": 200.0,
+            "status": "lose"
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-15T19:56:21+00:00"
+    },
+    {
+      "event_type": "prompt_context_recorded",
+      "prompt_context_path": "data/pool/prompt_contexts/run-16/doubao.json",
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [],
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [],
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 250.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 661.6,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 550.0,
+      "outstanding_loan_gp": 300.0,
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 250.0,
+      "balance_gp": 1400.0,
+      "event_type": "survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "net_worth_gp": 1100.0,
+      "outstanding_loan_gp": 300.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "doubao",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    }
+  ],
+  "last_self_review": {},
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {
+    "profit_gp": 0.0,
+    "run_id": "run-16",
+    "seat_id": "doubao",
+    "settled": [
+      {
+        "action": "no_bet",
+        "match_id": "WC-I1",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "profit_gp": 0
+      },
+      {
+        "action": "no_bet",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "profit_gp": 0
+      }
+    ]
+  },
+  "credit_score": 661.6,
+  "credit_grade": "B",
+  "credit_delta": -8,
+  "balance_gp": 1400.0,
+  "outstanding_loan_gp": 300.0,
+  "accrued_interest_gp": 0.0,
+  "net_worth_gp": 1100.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

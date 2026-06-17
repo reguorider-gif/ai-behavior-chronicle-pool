@@ -1,0 +1,1432 @@
+{
+  "run_id": "run-16",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "event_count": 78,
+  "seats": [
+    "chatgpt",
+    "deepseek",
+    "doubao",
+    "gemini",
+    "grok",
+    "kimi",
+    "meta",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "xai",
+    "yuanbao"
+  ],
+  "event_counts": {
+    "seat_forecast_recorded": 13,
+    "seat_investment_recorded": 13,
+    "seat_credit_updated": 13,
+    "seat_survival_updated": 13,
+    "seat_artifact_recorded": 13,
+    "production_artifacts_generated": 1,
+    "seat_settlement_recorded": 12
+  },
+  "events": [
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 657.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 448.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "A",
+      "credit_score": 737.6,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.07,
+      "loan_limit_gp": 1448.0,
+      "outstanding_loan_gp": 1000.0,
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 448.0,
+      "balance_gp": 2810.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 1448.0,
+      "net_worth_gp": 1810.0,
+      "outstanding_loan_gp": 1000.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 150.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 632.7,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 450.0,
+      "outstanding_loan_gp": 300.0,
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 150.0,
+      "balance_gp": 1200.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 450.0,
+      "net_worth_gp": 900.0,
+      "outstanding_loan_gp": 300.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 649.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 250.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 661.6,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 550.0,
+      "outstanding_loan_gp": 300.0,
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 250.0,
+      "balance_gp": 1400.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "net_worth_gp": 1100.0,
+      "outstanding_loan_gp": 300.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 0.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 637.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 425.0,
+      "outstanding_loan_gp": 1000.0,
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 0.0,
+      "balance_gp": 1850.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 425.0,
+      "net_worth_gp": 850.0,
+      "outstanding_loan_gp": 1000.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 653.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 0.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "C",
+      "credit_score": 589.8,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.18,
+      "loan_limit_gp": 120.0,
+      "outstanding_loan_gp": 800.0,
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 0.0,
+      "balance_gp": 1400.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 120.0,
+      "net_worth_gp": 600.0,
+      "outstanding_loan_gp": 800.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 150.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 666.7,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 550.0,
+      "outstanding_loan_gp": 400.0,
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 150.0,
+      "balance_gp": 1500.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "net_worth_gp": 1100.0,
+      "outstanding_loan_gp": 400.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 645.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 500.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 641.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 500.0,
+      "balance_gp": 1000.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 0,
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 0,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "available_loan_gp": 0.0,
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "credit_delta": -8,
+      "credit_grade": "B",
+      "credit_score": 649.7,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": 0.11,
+      "loan_limit_gp": 500.0,
+      "outstanding_loan_gp": 500.0,
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ],
+      "available_loan_gp": 0.0,
+      "balance_gp": 1500.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 500.0,
+      "recovery_mode": false,
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "counts": {
+        "forecast_receipt_count": 12,
+        "investment_receipt_count": 12,
+        "missing_seat_count": 12,
+        "prompt_context_count": 12,
+        "required_match_count": 0,
+        "seat_count": 12,
+        "seat_journal_count": 12,
+        "valid_seat_count": 0
+      },
+      "event_type": "production_artifacts_generated",
+      "run_id": "run-16",
+      "settlement_trigger": {
+        "account_updates_written": 0,
+        "path": "data/pool/settlements/run-16.json",
+        "pending_bets": 0,
+        "pending_match_ids": [],
+        "positive_bet_count": 0,
+        "roi": 0,
+        "settled_bets": 0,
+        "source": "strict_god_report+score_sync+/api/matches",
+        "status": "no_positive_bets",
+        "total_payout_gp": 0.0,
+        "total_profit_gp": 0.0,
+        "total_stake_gp": 0.0
+      },
+      "ts": "2026-06-16T12:01:03+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "deepseek",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "deepseek",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "minimax",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "minimax",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "kimi",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "kimi",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "meta",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "meta",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "wenxin",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "wenxin",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "grok",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "yuanbao",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "yuanbao",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-NORWAY-FRANCE",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260626-SENEGAL-IRAQ",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-CAPE-VERDE-SAUDI-ARABIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-URUGUAY-SPAIN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-EGYPT-IRAN",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WCAPI-20260627-NEW-ZEALAND-BELGIUM",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_forecast_recorded",
+      "forecast_count": 4,
+      "run_id": "run-16",
+      "seat_id": "xai",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_investment_recorded",
+      "investment_count": 4,
+      "loan_decision": {
+        "reason": "未声明新增贷款。",
+        "request_loan_gp": 0
+      },
+      "run_id": "run-16",
+      "seat_id": "xai",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "available_loan_gp": 0.0,
+      "credit_basis": "production_sop_pending_result_calibration",
+      "credit_delta": -8,
+      "credit_grade": "C",
+      "credit_score": 592.0,
+      "details": [
+        {
+          "credit_delta": -8,
+          "reason": "ok",
+          "type": "missing_or_invalid_receipt"
+        }
+      ],
+      "event_type": "seat_credit_updated",
+      "interest_rate": null,
+      "loan_limit_gp": 0.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "run-16",
+      "seat_id": "xai",
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "no_bet",
+        "small_recovery_bet"
+      ],
+      "available_loan_gp": 0.0,
+      "balance_gp": 0.0,
+      "event_type": "seat_survival_updated",
+      "freeze_new_loan": true,
+      "loan_limit_gp": 0.0,
+      "net_worth_gp": 0.0,
+      "outstanding_loan_gp": 0.0,
+      "recovery_mode": true,
+      "run_id": "run-16",
+      "seat_id": "xai",
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_artifact_recorded",
+      "run_id": "run-16",
+      "seat_id": "xai",
+      "status": "missing_provider_blocked",
+      "ts": "2026-06-16T17:33:07+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "chatgpt",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "chatgpt",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "mimo",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "mimo",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "doubao",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "doubao",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "gemini",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "gemini",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    },
+    {
+      "event_type": "seat_settlement_recorded",
+      "run_id": "run-16",
+      "seat_id": "qwen",
+      "settlement": {
+        "profit_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "qwen",
+        "settled": [
+          {
+            "action": "no_bet",
+            "match_id": "WC-I1",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+            "profit_gp": 0
+          },
+          {
+            "action": "no_bet",
+            "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+            "profit_gp": 0
+          }
+        ]
+      },
+      "ts": "2026-06-16T20:18:40+00:00"
+    }
+  ]
+}

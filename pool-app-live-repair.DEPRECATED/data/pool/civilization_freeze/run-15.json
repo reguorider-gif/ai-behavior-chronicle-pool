@@ -1,0 +1,150 @@
+{
+  "version": "behavior_civilization_freeze.v1",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "run_id": "run-15",
+  "engine_version": "AI_BEHAVIORAL_CIVILIZATION_ENGINE_V1",
+  "kernel_version": "behavior_kernel_v1",
+  "system_definition": "Behavior Civilization Simulation System",
+  "system_formula": "multi-agent + economic pressure + memory + behavioral evolution",
+  "final_status": "PRODUCTION_READY_BEHAVIOR_CIVILIZATION_ENGINE",
+  "ready": true,
+  "architecture_layers": [
+    {
+      "id": "world",
+      "name": "World Layer",
+      "responsibility": "matches, odds, market pressure and external events"
+    },
+    {
+      "id": "agent",
+      "name": "Agent Layer",
+      "responsibility": "model memory, risk profile, credit state and behavior history"
+    },
+    {
+      "id": "behavior_kernel",
+      "name": "Behavior Kernel",
+      "responsibility": "event store, pattern compiler, behavior graph, memory injector and drift detector"
+    },
+    {
+      "id": "economic_system",
+      "name": "Economic System",
+      "responsibility": "credit, loan, survival pressure, bankruptcy constraints and ranking"
+    },
+    {
+      "id": "audit_system",
+      "name": "Audit System",
+      "responsibility": "decision trace, causality graph, replay validator and pattern influence checker"
+    },
+    {
+      "id": "civilization_map_ui",
+      "name": "Civilization Map UI",
+      "responsibility": "pressure field, behavior graph, agent identity, replay and hidden data center"
+    }
+  ],
+  "final_loop": [
+    "event",
+    "behavior_kernel",
+    "pattern_generation",
+    "memory_injection",
+    "agent_decision",
+    "economic_result",
+    "audit_replay",
+    "next_run"
+  ],
+  "freeze_assertions": {
+    "memory_influences_decision": "memory → decision is enforced by prompt memory audit",
+    "pattern_influences_behavior": "pattern → behavior is enforced by pattern participation and sensitivity audit",
+    "audit_validates_causality": "audit → causality is enforced by causal trace and graph checks",
+    "replay_ensures_determinism": "replay → deterministic reconstruction is enforced by replay audit",
+    "ui_visualizes_civilization_structure": "UI → civilization map is the primary public surface"
+  },
+  "evidence": {
+    "memory_influences_decision": {
+      "ok": true,
+      "source": "behavior_production_audit.status.checks.prompt_control",
+      "value": "pass"
+    },
+    "pattern_influences_behavior": {
+      "ok": true,
+      "source": "behavior_production_audit.status.checks.pattern_participates + pattern_removal_changes_behavior",
+      "value": {
+        "pattern_participates": "pass",
+        "pattern_removal_changes_behavior": "pass"
+      }
+    },
+    "audit_validates_causality": {
+      "ok": true,
+      "source": "behavior_production_audit.status.checks.causal_trace_complete + causality_graph.edge_count",
+      "value": {
+        "causal_trace_complete": "pass",
+        "edge_count": 48
+      }
+    },
+    "replay_ensures_determinism": {
+      "ok": true,
+      "source": "behavior_production_audit.status.checks.deterministic_replay + production_contract.deterministic_replay",
+      "value": {
+        "audit": "pass",
+        "contract": true
+      }
+    },
+    "ui_visualizes_civilization_structure": {
+      "ok": true,
+      "source": "civilization_state.map_contract + agents + causality",
+      "value": {
+        "primary_ui": "civilization_map",
+        "agent_count": 12,
+        "causality_edges": 4
+      }
+    },
+    "event_store_append_only": {
+      "ok": true,
+      "source": "production_contract.append_only_event_sourcing + readiness.event_sourcing",
+      "value": {
+        "append_only_event_sourcing": true,
+        "readiness": "pass"
+      }
+    },
+    "memory_isolation": {
+      "ok": true,
+      "source": "production_contract.memory_isolation + readiness.memory_isolation",
+      "value": {
+        "memory_isolation": true,
+        "readiness": "pass"
+      }
+    },
+    "multi_civilization_layer": {
+      "ok": true,
+      "source": "civilization_battle.civilizations + interactions + map_contract",
+      "value": {
+        "civilization_count": 3,
+        "interaction_count": 3,
+        "primary_ui_extension": "civilization_vs_civilization"
+      }
+    }
+  },
+  "public_surface_policy": {
+    "primary_surface": "civilization_map",
+    "home_rule": "show behavior structure and behavior change only",
+    "data_center_rule": "show product health and drill-down surfaces only",
+    "hide_by_default": [
+      "odds",
+      "bets",
+      "ledger",
+      "raw_logs",
+      "local_paths",
+      "provider_transcripts",
+      "bridge_debug"
+    ],
+    "api_contract": "product_objects_only_no_local_paths"
+  },
+  "validation": {
+    "production_audit_verdict": "PRODUCTION_READY",
+    "production_audit_passed": 8,
+    "production_audit_partial": 0,
+    "kernel_ready": true,
+    "civilization_agent_count": 12,
+    "civilization_causality_edge_count": 4,
+    "civilization_count": 3,
+    "civilization_interaction_count": 3
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "version": "production_survival_ledger.v1",
+  "run_id": "run-15",
+  "date": "2026-06-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "balance_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "balance_gp": 1740.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1740.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 1448.0,
+      "available_loan_gp": 448.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "balance_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 867.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 450.0,
+      "available_loan_gp": 150.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "balance_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "balance_gp": 867.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 867.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "available_loan_gp": 250.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "balance_gp": 740.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 740.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 425.0,
+      "available_loan_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "balance_gp": 960.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 960.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "meta": {
+      "seat_id": "meta",
+      "balance_gp": 456.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 456.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 120.0,
+      "available_loan_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "balance_gp": 1056.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1056.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 550.0,
+      "available_loan_gp": 150.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "balance_gp": 850.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 850.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "grok": {
+      "seat_id": "grok",
+      "balance_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "balance_gp": 445.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 445.0,
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 0.0,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    }
+  }
+}

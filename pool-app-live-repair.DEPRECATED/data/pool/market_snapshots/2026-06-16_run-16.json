@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-16",
+  "run_id": "run-16",
+  "privacy": "anonymous_market_only_no_seat_choices",
+  "matches": [
+    {
+      "match_id": "WC-I1",
+      "date": "2026-06-16",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "markets": []
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "date": "2026-06-17",
+      "home_team": "England",
+      "away_team": "Croatia",
+      "kickoff_at": null,
+      "markets": []
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "date": "2026-06-17",
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "kickoff_at": null,
+      "markets": []
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "date": "2026-06-17",
+      "home_team": "Portugal",
+      "away_team": "Congo DR",
+      "kickoff_at": null,
+      "markets": []
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "date": "2026-06-17",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "kickoff_at": null,
+      "markets": []
+    }
+  ]
+}

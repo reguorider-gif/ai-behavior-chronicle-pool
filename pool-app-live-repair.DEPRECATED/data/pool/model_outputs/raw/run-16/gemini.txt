@@ -1,0 +1,64 @@
+{
+"model_account": "gemini",
+"seat_id": "gemini",
+"one_sentence_strategy": "坚守结构化数据核查与权威信源交叉验证底线，本轮聚焦高置信度低波动的基本面价值盘（小球），优先化解历史负债压力，避免盲目跟风高波策略。",
+"forecasts": [
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"home_win_prob": 0.265,
+"draw_prob": 0.295,
+"away_win_prob": 0.440,
+"most_likely_score": "0-1",
+"confidence": 0.82,
+"fair_odds": {
+"home": 3.77,
+"draw": 3.39,
+"away": 2.27
+},
+"edge_assessment": "bettable",
+"information_gaps": [
+"葡萄牙前场核心体能恢复数据与最终首发名单",
+"哥伦比亚防守反击体系对葡萄牙控球战术的具体压迫效率"
+]
+}
+],
+"investments": [
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"action": "bet",
+"selection": "Under",
+"market": "totals",
+"line": 2.25,
+"odds": 1.96,
+"stake_gp": 200,
+"own_funds_gp": 200,
+"loan_used_gp": 0,
+"model_prob": 0.56,
+"market_implied_prob": 0.5102,
+"estimated_ev": 0.0976,
+"max_loss_gp": 200,
+"survival_plan_if_loss": "若产生亏损，将依赖剩余的 1650GP（账面资金）进行低风险对冲交易，不再申请高息贷款，确保净值在下一轮不触发破产平仓线。"
+}
+],
+"loan_decision": {
+"borrow_gp": 0,
+"reason": "账户当前余额1850GP充裕，且已有1000GP历史贷款导致净资产仅为850GP（排名第11）。此时不宜增加额外利息负担，应专注现有资金投资回报率（ROI）。",
+"repayment_plan": "本轮赛果结算并计息后，将优先利用账面现金偿还至少500GP的旧贷款，以实质性降低下轮的利息冲击并提升总净值。"
+},
+"risk_notes": [
+"账户复盘：前期因过度追求绝对数据交叉核查导致出手谨慎（bet_count为0），承担了贷款利息却没有GP进账，导致排名滑落至濒临淘汰边缘。本轮必须改变零投注的观望状态，释放算力优势转为实际价值投资。",
+"对手反制：规避 MiMo、Meta 擅长的主场叙事与旅途环境模型焦点盘；针对 DeepSeek 领先的概率化路径，采取反向防守及寻找差异化市场（进球数 Totals）对冲的策略；针对处于追赶位的 Doubao 与 xAI 的高波动倾向，坚持稳健下注套利。",
+"前瞻观察数据：由于比赛处于6月下旬的淘汰赛/小组赛关键轮次，需警惕下半场因出线形势突变导致的非常规战术（例如最后15分钟门将压上或放弃防守），这可能对小球盘（Under）构成尾部风险。",
+"共振挑战与产品反馈：针对赛程密集期的模拟环境，目前对多场比赛并发开赛的盘口联动（如同一小组另一场的即时比分影响）缺少动态调整空间，建议赛事API支持更细粒度的时间戳介入或引入实时撤单条件字段。"
+],
+"sources_to_verify_before_kickoff": [
+"FIFA 官方数据中心（赛前一小时权威伤停、首发阵型核查）",
+"Pinnacle Closing Line 预测（监测临场大资金是否出现倾向性反转）",
+"Opta/StatsBomb 底层赛事战术热图分析（验证葡萄牙中场控制力指标）"
+],
+"self_audit": {
+"covered_all_matches": true,
+"contains_no_real_money_advice": true,
+"ready_for_frontend_ingest": true
+}
+}

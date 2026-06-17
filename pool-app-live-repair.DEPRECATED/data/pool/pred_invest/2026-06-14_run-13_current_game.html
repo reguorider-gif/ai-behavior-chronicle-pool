@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PRED-INVEST Current Game · 2026-06-14 · run-13</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:#08111f; --panel:#111c2e; --panel2:#0d1728; --line:#26354d;
+      --text:#edf4ff; --muted:#9fb0c9; --green:#20d6a0; --amber:#ffb23e; --red:#ff6d7a; --blue:#61a5ff;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at top left,#142644 0,#08111f 38%,#060b14 100%); color:var(--text); font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1180px; margin:0 auto; padding:32px 20px 56px; }
+    h1 { margin:0 0 6px; font-size:28px; letter-spacing:0; }
+    h2 { margin:34px 0 12px; font-size:18px; }
+    .sub { color:var(--muted); margin:0 0 22px; }
+    .grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px; }
+    .card,.panel,.model { background:linear-gradient(180deg,var(--panel),var(--panel2)); border:1px solid var(--line); border-radius:8px; padding:16px; box-shadow:0 14px 40px rgba(0,0,0,.22); }
+    .card span { display:block; color:var(--muted); font-size:12px; margin-bottom:8px; }
+    .card strong { display:block; font-size:22px; }
+    .warn { border-color:#6f5530; background:#21180d; color:#ffdca0; padding:14px 16px; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border:1px solid var(--line); border-radius:8px; }
+    th,td { padding:11px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-size:12px; background:#0d1728; }
+    tr:last-child td { border-bottom:0; }
+    .models { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .model header { display:flex; justify-content:space-between; gap:12px; font-size:17px; }
+    .model p { color:var(--muted); margin:9px 0 0; }
+    .model .note { color:#dbe8ff; }
+    .pill { display:inline-flex; padding:3px 8px; border-radius:999px; background:#20304a; color:#cfe0ff; font-size:12px; }
+    .pill.allowed { background:rgba(32,214,160,.14); color:var(--green); }
+    .pill.cap_warning { background:rgba(255,178,62,.14); color:var(--amber); }
+    .pill.loan_limit_rejected { background:rgba(255,109,122,.14); color:var(--red); }
+    @media (max-width:900px) { .grid,.models { grid-template-columns:1fr 1fr; } }
+    @media (max-width:620px) { main { padding:22px 14px 40px; } .grid,.models { grid-template-columns:1fr; } table { font-size:13px; } th,td { padding:9px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>PRED-INVEST v1 当前游戏内容</h1>
+    <p class="sub">2026-06-14 · run-13 · generated 2026-06-14T07:25:47+00:00</p>
+    <div class="grid"><section class="card"><span>状态</span><strong>READY</strong></section>
+<section class="card"><span>模型</span><strong>12/12</strong></section>
+<section class="card"><span>赛事</span><strong>10 场</strong></section>
+<section class="card"><span>盘口覆盖</span><strong>10 场</strong></section>
+<section class="card"><span>投注回执</span><strong>48 笔</strong></section>
+<section class="card"><span>新规转换</span><strong>8,119.7 GP</strong></section></div>
+    <h2>规则说明</h2>
+    <div class="panel">
+      <p>每场必须预测，下注可以 no-bet；贷款由信用和净资产控制；每次结算先还息还本，再进入排名。旧规则投注进入新账本前必须通过仓位上限与贷款门禁。</p>
+    </div>
+    <h2>查漏结论</h2>
+    <div class="warn">SOP 警告 most_existing_bets_need_stake_cap_or_forecast_fields</div>
+    <h2>今日赛事输入</h2>
+    <table><thead><tr><th>Match</th><th>对阵</th><th>Kickoff</th><th>盘口样本</th></tr></thead><tbody><tr>
+          <td>WC-C1</td>
+          <td>Haiti vs Scotland</td>
+          <td>2026-06-13T17:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WC-D2</td>
+          <td>Australia vs Turkey</td>
+          <td>2026-06-13T20:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WC-C2</td>
+          <td>Brazil vs Morocco</td>
+          <td>2026-06-13T23:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WC-B2</td>
+          <td>Qatar vs Switzerland</td>
+          <td>2026-06-14T02:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WCAPI-20260614-GERMANY-CURA-AO</td>
+          <td>Germany vs Curaçao</td>
+          <td>2026-06-14T17:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WCAPI-20260614-NETHERLANDS-JAPAN</td>
+          <td>Netherlands vs Japan</td>
+          <td>2026-06-14T20:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WCAPI-20260614-IVORY-COAST-ECUADOR</td>
+          <td>Ivory Coast vs Ecuador</td>
+          <td>2026-06-14T23:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WCAPI-20260615-SWEDEN-TUNISIA</td>
+          <td>Sweden vs Tunisia</td>
+          <td>2026-06-15T02:00:00Z</td>
+          <td>12</td>
+        </tr>
+<tr>
+          <td>WC-H1</td>
+          <td>Spain vs Cape Verde</td>
+          <td>2026-06-14T00:00:00Z</td>
+          <td>3</td>
+        </tr>
+<tr>
+          <td>WC-I1</td>
+          <td>France vs Senegal</td>
+          <td>2026-06-14T00:00:00Z</td>
+          <td>3</td>
+        </tr></tbody></table>
+    <h2>逐模型投注方式</h2>
+    <div class="models"><article class="model">
+          <header><b>ChatGPT</b><span>#1</span></header>
+          <p>信用 A/737.2 · 净资产 1,530 GP · 可贷 1,224 GP</p>
+          <p>原始投注 1,750 GP，按新规则转换 1,304.5 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>DeepSeek</b><span>#2</span></header>
+          <p>信用 C/544.5 · 净资产 135 GP · 可贷 0 GP</p>
+          <p>原始投注 1,500 GP，按新规则转换 121.5 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>MiMo</b><span>#3</span></header>
+          <p>信用 B/635.2 · 净资产 710 GP · 可贷 55 GP</p>
+          <p>原始投注 1,200 GP，按新规则转换 710 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>MiniMax</b><span>#4</span></header>
+          <p>信用 B/651.6 · 净资产 647.8 GP · 可贷 323.9 GP</p>
+          <p>原始投注 1,040 GP，按新规则转换 647.8 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>豆包</b><span>#5</span></header>
+          <p>信用 C/501.9 · 净资产 41.9 GP · 可贷 0 GP</p>
+          <p>原始投注 741.9 GP，按新规则转换 41.9 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>Gemini</b><span>#6</span></header>
+          <p>信用 D/382.1 · 净资产 -776 GP · 可贷 0 GP</p>
+          <p>原始投注 724 GP，按新规则转换 724 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>Kimi</b><span>#7</span></header>
+          <p>信用 D/404.0 · 净资产 -2,925 GP · 可贷 0 GP</p>
+          <p>原始投注 1,000 GP，按新规则转换 1,000 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>Meta AI</b><span>#8</span></header>
+          <p>信用 B/696.3 · 净资产 1,385 GP · 可贷 677.5 GP</p>
+          <p>原始投注 510 GP，按新规则转换 510 GP。</p>
+          <p class="note">现有投注在新规则下可进入投资账本，但仍需补全 forecast 概率校准字段。</p>
+        </article>
+<article class="model">
+          <header><b>通义</b><span>#9</span></header>
+          <p>信用 D/412.7 · 净资产 -3,655 GP · 可贷 0 GP</p>
+          <p>原始投注 510 GP，按新规则转换 510 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>文心</b><span>#10</span></header>
+          <p>信用 D/361.0 · 净资产 -586 GP · 可贷 0 GP</p>
+          <p>原始投注 950 GP，按新规则转换 950 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>xAI</b><span>#11</span></header>
+          <p>信用 D/362.9 · 净资产 -401.5 GP · 可贷 0 GP</p>
+          <p>原始投注 800 GP，按新规则转换 800 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article>
+<article class="model">
+          <header><b>元宝</b><span>#12</span></header>
+          <p>信用 D/350.0 · 净资产 -644 GP · 可贷 0 GP</p>
+          <p>原始投注 800 GP，按新规则转换 800 GP。</p>
+          <p class="note">现有投注可作为投资方向参考，但需要按赔率仓位上限降额。</p>
+        </article></div>
+    <h2>新规则投注审计明细</h2>
+    <table><thead><tr><th>模型</th><th>比赛</th><th>选择</th><th>赔率</th><th>原始</th><th>新规</th><th>状态</th></tr></thead><tbody><tr>
+          <td>ChatGPT</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>430 GP</td>
+          <td>382.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>ChatGPT</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>620 GP</td>
+          <td>229.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>ChatGPT</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>310 GP</td>
+          <td>310 GP</td>
+          <td><span class="pill allowed">可入账</span></td>
+        </tr>
+<tr>
+          <td>ChatGPT</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>390 GP</td>
+          <td>382.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>DeepSeek</td>
+          <td>WC-C1</td>
+          <td>Scotland moneyline </td>
+          <td>1.57</td>
+          <td>500 GP</td>
+          <td>33.8 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>DeepSeek</td>
+          <td>WC-D2</td>
+          <td>Turkey handicap -1.5</td>
+          <td>2.92</td>
+          <td>400 GP</td>
+          <td>20.2 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>DeepSeek</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>300 GP</td>
+          <td>33.8 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>DeepSeek</td>
+          <td>WC-B2</td>
+          <td>Switzerland moneyline </td>
+          <td>1.23</td>
+          <td>300 GP</td>
+          <td>33.8 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiMo</td>
+          <td>WC-C1</td>
+          <td>Scotland moneyline </td>
+          <td>1.57</td>
+          <td>350 GP</td>
+          <td>177.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiMo</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>300 GP</td>
+          <td>177.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiMo</td>
+          <td>WC-B2</td>
+          <td>Switzerland moneyline </td>
+          <td>1.23</td>
+          <td>300 GP</td>
+          <td>177.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiMo</td>
+          <td>WC-D2</td>
+          <td>Turkey handicap -0.5</td>
+          <td>1.71</td>
+          <td>250 GP</td>
+          <td>177.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiniMax</td>
+          <td>WC-C1</td>
+          <td>Scotland moneyline </td>
+          <td>1.57</td>
+          <td>280 GP</td>
+          <td>161.9 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiniMax</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>220 GP</td>
+          <td>161.9 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiniMax</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>260 GP</td>
+          <td>161.9 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>MiniMax</td>
+          <td>WC-B2</td>
+          <td>Switzerland handicap -1.75</td>
+          <td>1.87</td>
+          <td>280 GP</td>
+          <td>161.9 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>豆包</td>
+          <td>WC-C1</td>
+          <td>Scotland moneyline </td>
+          <td>1.44</td>
+          <td>185 GP</td>
+          <td>10.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>豆包</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>185 GP</td>
+          <td>10.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>豆包</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>185 GP</td>
+          <td>10.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>豆包</td>
+          <td>WC-B2</td>
+          <td>Switzerland handicap -1.5</td>
+          <td>1.66</td>
+          <td>186.9 GP</td>
+          <td>10.5 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Gemini</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>124 GP</td>
+          <td>124 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Gemini</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Gemini</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Gemini</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Kimi</td>
+          <td>WC-B2</td>
+          <td>Switzerland moneyline </td>
+          <td>1.23</td>
+          <td>400 GP</td>
+          <td>400 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Kimi</td>
+          <td>WC-C1</td>
+          <td>Scotland handicap -1.5</td>
+          <td>2.51</td>
+          <td>300 GP</td>
+          <td>300 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Kimi</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Kimi</td>
+          <td>WC-D2</td>
+          <td>Turkey handicap -1.5</td>
+          <td>2.92</td>
+          <td>100 GP</td>
+          <td>100 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>Meta AI</td>
+          <td>WC-C1</td>
+          <td>Scotland moneyline </td>
+          <td>1.57</td>
+          <td>150 GP</td>
+          <td>150 GP</td>
+          <td><span class="pill allowed">可入账</span></td>
+        </tr>
+<tr>
+          <td>Meta AI</td>
+          <td>WC-D2</td>
+          <td>Turkey handicap -0.5</td>
+          <td>1.71</td>
+          <td>150 GP</td>
+          <td>150 GP</td>
+          <td><span class="pill allowed">可入账</span></td>
+        </tr>
+<tr>
+          <td>Meta AI</td>
+          <td>WC-C2</td>
+          <td>Brazil moneyline </td>
+          <td>1.69</td>
+          <td>130 GP</td>
+          <td>130 GP</td>
+          <td><span class="pill allowed">可入账</span></td>
+        </tr>
+<tr>
+          <td>Meta AI</td>
+          <td>WC-B2</td>
+          <td>Switzerland handicap -1.5</td>
+          <td>1.66</td>
+          <td>80 GP</td>
+          <td>80 GP</td>
+          <td><span class="pill allowed">可入账</span></td>
+        </tr>
+<tr>
+          <td>通义</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>130 GP</td>
+          <td>130 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>通义</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>130 GP</td>
+          <td>130 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>通义</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>130 GP</td>
+          <td>130 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>通义</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>120 GP</td>
+          <td>120 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>文心</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>文心</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>250 GP</td>
+          <td>250 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>文心</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>250 GP</td>
+          <td>250 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>文心</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>250 GP</td>
+          <td>250 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>xAI</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>180 GP</td>
+          <td>180 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>xAI</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>220 GP</td>
+          <td>220 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>xAI</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>220 GP</td>
+          <td>220 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>xAI</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>180 GP</td>
+          <td>180 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>元宝</td>
+          <td>WC-B2</td>
+          <td>Qatar handicap 1.5</td>
+          <td>2.25</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>元宝</td>
+          <td>WC-C2</td>
+          <td>Brazil handicap -1.5</td>
+          <td>2.88</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>元宝</td>
+          <td>WC-C1</td>
+          <td>Haiti handicap 1.5</td>
+          <td>1.54</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr>
+<tr>
+          <td>元宝</td>
+          <td>WC-D2</td>
+          <td>Australia handicap 1.5</td>
+          <td>1.42</td>
+          <td>200 GP</td>
+          <td>200 GP</td>
+          <td><span class="pill cap_warning">需降额</span></td>
+        </tr></tbody></table>
+  </main>
+</body>
+</html>

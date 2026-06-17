@@ -1,0 +1,426 @@
+{
+  "version": "pred_invest_schedule_seed.v1",
+  "updated_at": "2026-06-16T18:31:47.324121+00:00",
+  "policy": "Append-only fixture registry seed for public schedule continuity. This file may add future fixtures, but must not invent odds, scores, or betting conclusions. Kickoff times remain null until a trusted provider sync supplies them.",
+  "source_note": "Group-stage schedule aligned to public FIFA match schedule; seed provides fixtures only and never invents odds or scores.",
+  "matches": [
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "date": "2026-06-17",
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "date": "2026-06-17",
+      "home_team": "England",
+      "away_team": "Croatia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "date": "2026-06-17",
+      "home_team": "Portugal",
+      "away_team": "Congo DR",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "date": "2026-06-17",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260618-CZECHIA-SOUTH-AFRICA",
+      "date": "2026-06-18",
+      "home_team": "Czechia",
+      "away_team": "South Africa",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260618-SWITZERLAND-BOSNIA-HERZEGOVINA",
+      "date": "2026-06-18",
+      "home_team": "Switzerland",
+      "away_team": "Bosnia & Herzegovina",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260618-CANADA-QATAR",
+      "date": "2026-06-18",
+      "home_team": "Canada",
+      "away_team": "Qatar",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260618-MEXICO-KOREA-REPUBLIC",
+      "date": "2026-06-18",
+      "home_team": "Mexico",
+      "away_team": "Korea Republic",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260619-BRAZIL-HAITI",
+      "date": "2026-06-19",
+      "home_team": "Brazil",
+      "away_team": "Haiti",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260619-SCOTLAND-MOROCCO",
+      "date": "2026-06-19",
+      "home_team": "Scotland",
+      "away_team": "Morocco",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260619-TURKIYE-PARAGUAY",
+      "date": "2026-06-19",
+      "home_team": "Türkiye",
+      "away_team": "Paraguay",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260619-USA-AUSTRALIA",
+      "date": "2026-06-19",
+      "home_team": "United States",
+      "away_team": "Australia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260620-GERMANY-COTE-D-IVOIRE",
+      "date": "2026-06-20",
+      "home_team": "Germany",
+      "away_team": "Côte d’Ivoire",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260620-ECUADOR-CURACAO",
+      "date": "2026-06-20",
+      "home_team": "Ecuador",
+      "away_team": "Curaçao",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260620-NETHERLANDS-SWEDEN",
+      "date": "2026-06-20",
+      "home_team": "Netherlands",
+      "away_team": "Sweden",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260620-TUNISIA-JAPAN",
+      "date": "2026-06-20",
+      "home_team": "Tunisia",
+      "away_team": "Japan",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260621-URUGUAY-CABO-VERDE",
+      "date": "2026-06-21",
+      "home_team": "Uruguay",
+      "away_team": "Cabo Verde",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260621-SPAIN-SAUDI-ARABIA",
+      "date": "2026-06-21",
+      "home_team": "Spain",
+      "away_team": "Saudi Arabia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260621-BELGIUM-IR-IRAN",
+      "date": "2026-06-21",
+      "home_team": "Belgium",
+      "away_team": "IR Iran",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260621-NEW-ZEALAND-EGYPT",
+      "date": "2026-06-21",
+      "home_team": "New Zealand",
+      "away_team": "Egypt",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260622-NORWAY-SENEGAL",
+      "date": "2026-06-22",
+      "home_team": "Norway",
+      "away_team": "Senegal",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260622-FRANCE-IRAQ",
+      "date": "2026-06-22",
+      "home_team": "France",
+      "away_team": "Iraq",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260622-ARGENTINA-AUSTRIA",
+      "date": "2026-06-22",
+      "home_team": "Argentina",
+      "away_team": "Austria",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260622-JORDAN-ALGERIA",
+      "date": "2026-06-22",
+      "home_team": "Jordan",
+      "away_team": "Algeria",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260623-ENGLAND-GHANA",
+      "date": "2026-06-23",
+      "home_team": "England",
+      "away_team": "Ghana",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260623-PANAMA-CROATIA",
+      "date": "2026-06-23",
+      "home_team": "Panama",
+      "away_team": "Croatia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260623-PORTUGAL-UZBEKISTAN",
+      "date": "2026-06-23",
+      "home_team": "Portugal",
+      "away_team": "Uzbekistan",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260623-COLOMBIA-CONGO-DR",
+      "date": "2026-06-23",
+      "home_team": "Colombia",
+      "away_team": "Congo DR",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-SCOTLAND-BRAZIL",
+      "date": "2026-06-24",
+      "home_team": "Scotland",
+      "away_team": "Brazil",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-MOROCCO-HAITI",
+      "date": "2026-06-24",
+      "home_team": "Morocco",
+      "away_team": "Haiti",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-SWITZERLAND-CANADA",
+      "date": "2026-06-24",
+      "home_team": "Switzerland",
+      "away_team": "Canada",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-BOSNIA-HERZEGOVINA-QATAR",
+      "date": "2026-06-24",
+      "home_team": "Bosnia & Herzegovina",
+      "away_team": "Qatar",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-CZECHIA-MEXICO",
+      "date": "2026-06-24",
+      "home_team": "Czechia",
+      "away_team": "Mexico",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260624-SOUTH-AFRICA-KOREA-REPUBLIC",
+      "date": "2026-06-24",
+      "home_team": "South Africa",
+      "away_team": "Korea Republic",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-CURACAO-COTE-D-IVOIRE",
+      "date": "2026-06-25",
+      "home_team": "Curaçao",
+      "away_team": "Côte d’Ivoire",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-ECUADOR-GERMANY",
+      "date": "2026-06-25",
+      "home_team": "Ecuador",
+      "away_team": "Germany",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-JAPAN-SWEDEN",
+      "date": "2026-06-25",
+      "home_team": "Japan",
+      "away_team": "Sweden",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-TUNISIA-NETHERLANDS",
+      "date": "2026-06-25",
+      "home_team": "Tunisia",
+      "away_team": "Netherlands",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-TURKIYE-USA",
+      "date": "2026-06-25",
+      "home_team": "Türkiye",
+      "away_team": "United States",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260625-PARAGUAY-AUSTRALIA",
+      "date": "2026-06-25",
+      "home_team": "Paraguay",
+      "away_team": "Australia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-NORWAY-FRANCE",
+      "date": "2026-06-26",
+      "home_team": "Norway",
+      "away_team": "France",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-SENEGAL-IRAQ",
+      "date": "2026-06-26",
+      "home_team": "Senegal",
+      "away_team": "Iraq",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-EGYPT-IR-IRAN",
+      "date": "2026-06-26",
+      "home_team": "Egypt",
+      "away_team": "IR Iran",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-NEW-ZEALAND-BELGIUM",
+      "date": "2026-06-26",
+      "home_team": "New Zealand",
+      "away_team": "Belgium",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-CABO-VERDE-SAUDI-ARABIA",
+      "date": "2026-06-26",
+      "home_team": "Cabo Verde",
+      "away_team": "Saudi Arabia",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260626-URUGUAY-SPAIN",
+      "date": "2026-06-26",
+      "home_team": "Uruguay",
+      "away_team": "Spain",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-PANAMA-ENGLAND",
+      "date": "2026-06-27",
+      "home_team": "Panama",
+      "away_team": "England",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-CROATIA-GHANA",
+      "date": "2026-06-27",
+      "home_team": "Croatia",
+      "away_team": "Ghana",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-ALGERIA-AUSTRIA",
+      "date": "2026-06-27",
+      "home_team": "Algeria",
+      "away_team": "Austria",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-JORDAN-ARGENTINA",
+      "date": "2026-06-27",
+      "home_team": "Jordan",
+      "away_team": "Argentina",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-COLOMBIA-PORTUGAL",
+      "date": "2026-06-27",
+      "kickoff_at": "2026-06-27T23:30:00Z",
+      "matchday_hk": "2026-06-28",
+      "home_team": "Colombia",
+      "away_team": "Portugal",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    },
+    {
+      "match_id": "WC-SEED-20260627-CONGO-DR-UZBEKISTAN",
+      "date": "2026-06-27",
+      "home_team": "Congo DR",
+      "away_team": "Uzbekistan",
+      "status": "scheduled",
+      "result_state": "missing_or_not_finished"
+    }
+  ]
+}

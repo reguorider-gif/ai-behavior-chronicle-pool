@@ -1,0 +1,1701 @@
+{
+  "version": "pred_invest_strict_god_report.v2",
+  "generated_at": "2026-06-14T22:48:59.870627+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "status": "PARTIAL_NOT_READY",
+  "publish_allowed": false,
+  "frontend_badge": "11/12 部分回收",
+  "valid_count": 11,
+  "required_seat_count": 12,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "mimo",
+    "minimax",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "needs_rerun": [
+    "grok"
+  ],
+  "rerun_queue": [
+    {
+      "seat": "grok",
+      "mode": "provider_quota_blocked",
+      "prompt_mode": "wait_for_quota_reset",
+      "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+      "last_run_id": "page_salvage:grok",
+      "response_chars": 3812,
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "last_errors": [
+        {
+          "run_id": "badcec66af16",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "8a96116c10f0",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "8a96116c10f0",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    }
+  ],
+  "required_matches": [
+    "WCAPI-20260614-GERMANY-CURA-AO",
+    "WCAPI-20260614-NETHERLANDS-JAPAN",
+    "WCAPI-20260614-IVORY-COAST-ECUADOR",
+    "WCAPI-20260615-SWEDEN-TUNISIA"
+  ],
+  "required_match_source": "required_match_snapshot:2026-06-14_run-14_required_match_snapshot.json",
+  "seat_summaries": [
+    {
+      "seat": "chatgpt",
+      "model_account": "chatgpt",
+      "run_id": "cb95b584a8c1",
+      "one_sentence_strategy": "榜首资金1530GP且无贷款，采取低杠杆保排名策略：只押盘口保护较强或赔率明显偏高项，其余低信息场次保守弃权。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前rank=1、balance=1530、loan=0；贷款会先计息先偿还，风险收益不匹配。",
+        "repayment_plan": "不借款，无偿还压力；若未来落出前五才考虑小额短贷。"
+      },
+      "risk_notes": [
+        "仅研究游戏，不构成真实投注建议。",
+        "全部预测基于庄家给定盘口与一般强弱假设，未使用伪造信源。",
+        "主风险是赛程真实性、首发、伤停、临场赔率与盘口方向变化。",
+        "单场最大亏损80GP，占本金约5.2%，符合榜首防守。"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "home_win_prob": 0.78,
+          "draw_prob": 0.15,
+          "away_win_prob": 0.07,
+          "most_likely_score": "Germany 3-0 Curaçao",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 1.28,
+            "draw": 6.67,
+            "away": 14.29
+          },
+          "edge_assessment": "德国胜面大但让3.5容错低；Curaçao +3.5 需要德国最多赢3球，模型约0.63，高于1.80隐含0.556，微正edge。",
+          "information_gaps": [
+            "未核验首发",
+            "未核验伤停",
+            "未核验真实赛程与中立场地"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "home_win_prob": 0.47,
+          "draw_prob": 0.27,
+          "away_win_prob": 0.26,
+          "most_likely_score": "Netherlands 1-1 Japan",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 2.13,
+            "draw": 3.7,
+            "away": 3.85
+          },
+          "edge_assessment": "Japan +0.5 模型不败率0.53，低于1.82-1.85隐含约0.54；Japan 0.0 胜率不足，no edge。",
+          "information_gaps": [
+            "未核验阵容",
+            "未核验盘口来源",
+            "未核验临场水位"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "home_win_prob": 0.31,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.39,
+          "most_likely_score": "Ivory Coast 1-1 Ecuador",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 3.23,
+            "draw": 3.33,
+            "away": 2.56
+          },
+          "edge_assessment": "Ecuador 0.0 模型胜率0.39，走水概率0.30，1.59赔率偏低；Ecuador -0.5 需客胜，2.45隐含0.408，模型不足。",
+          "information_gaps": [
+            "未核验比赛地",
+            "未核验近期状态",
+            "未核验阵容"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "home_win_prob": 0.49,
+          "draw_prob": 0.29,
+          "away_win_prob": 0.22,
+          "most_likely_score": "Sweden 1-0 Tunisia",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 2.04,
+            "draw": 3.45,
+            "away": 4.55
+          },
+          "edge_assessment": "Sweden -0.5 赔率1.87-1.88隐含约0.532，模型胜率0.49不足；Sweden 0.0 1.37回报过低。",
+          "information_gaps": [
+            "未核验日期id与date不一致",
+            "未核验伤停",
+            "未核验首发"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 80,
+          "own_funds_gp": 80,
+          "loan_used_gp": 0,
+          "model_prob": 0.63,
+          "market_implied_prob": 0.546,
+          "estimated_ev": 0.153,
+          "max_loss_gp": 80,
+          "survival_plan_if_loss": "亏损后余额约1450GP，仍保留榜首防守空间，后续只押强edge。"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.53,
+          "market_implied_prob": 0.541,
+          "estimated_ev": -0.02,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无仓位，不影响本金；等待临场确认。"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0,
+          "odds": 1.59,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.39,
+          "market_implied_prob": 0.629,
+          "estimated_ev": -0.03,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无仓位，避免低赔率占用风险预算。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.49,
+          "market_implied_prob": 0.532,
+          "estimated_ev": -0.079,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无仓位；日期字段矛盾，赛前复核后再考虑。"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "deepseek",
+      "model_account": "deepseek",
+      "run_id": "d2c66e23d985",
+      "one_sentence_strategy": "榜首守成：仅在高置信度盘口上以小额自有资金捕捉结构化边缘，最大化信息透明度以降低无谓风险。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前净资产为正，现金流充足，无需通过杠杆放大风险。在日本vs荷兰的下注中，200GP完全以自有资金覆盖，保留了贷款额度用于未来更高确信度的机会（如出现严重误判导致的盘面偏差）。作为榜首，优先任务是捍卫排名而非追求高风险扩张。",
+        "repayment_plan": "N/A"
+      },
+      "risk_notes": [
+        "本席位资产结构：1135GP自有现金 + 1000GP未偿贷款，已进入盈利跑道，不需要任何非对称赌博来翻盘。",
+        "唯一的下注（日本+0.5）是结构化正EV边缘，但优势极薄（约2%），主要目的是通过真实下注来校准模型对『技术型弱队受让半球』这一类的定价能力。",
+        "对德国、瑞典的两场深盘选择了no_bet。即使主观认为德国大概率赢球，但库拉索+3.5的盘口包含大量未知数（尤其是德国战意与阵容），这不是一个可被概率化推演的边缘。",
+        "已标记信息缺口，在开赛前若能获得首发名单和更精确的伤停信息，可对日本下注的EV进行二次确认。若无补充信息，维持现有判断。",
+        "Colombia vs Portugal因时间距离过远（6月27日），任何当前概率分配都属于低信度猜测，执行no_bet完全符合规则第6条的精神。"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "home_win_prob": 0.94,
+          "draw_prob": 0.04,
+          "away_win_prob": 0.02,
+          "most_likely_score": "4-0",
+          "confidence": 0.85,
+          "fair_odds": {
+            "home": 1.06,
+            "draw": 25.0,
+            "away": 50.0
+          },
+          "edge_assessment": "low_confidence",
+          "information_gaps": [
+            "库拉索是否有荷甲/英冠级别的归化球员进入大名单，这可能将净负球压缩至3球以内",
+            "德国队在热身赛或本场是否会以半主力+U21混编阵容出战",
+            "本场是否在高温/高湿场地进行，影响德国的高位压迫效率",
+            "距离开赛时间较远，实时阵容与伤病信息不足"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "home_win_prob": 0.48,
+          "draw_prob": 0.28,
+          "away_win_prob": 0.24,
+          "most_likely_score": "1-1",
+          "confidence": 0.65,
+          "fair_odds": {
+            "home": 2.08,
+            "draw": 3.57,
+            "away": 4.17
+          },
+          "edge_assessment": "bettable",
+          "information_gaps": [
+            "日本旅欧球员的赛前疲劳程度与合练时间——国家队集训仅数日，默契度可能打折",
+            "荷兰的德容、德里赫特等核心是否健康首发；若德容缺阵，中场控制力下降对日本技术流有利",
+            "比赛在20:00进行，气候适宜，利于技术型球队发挥，此假设需赛前确认"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "home_win_prob": 0.35,
+          "draw_prob": 0.32,
+          "away_win_prob": 0.33,
+          "most_likely_score": "1-1",
+          "confidence": 0.55,
+          "fair_odds": {
+            "home": 2.86,
+            "draw": 3.12,
+            "away": 3.03
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "厄瓜多尔的高原主场优势在第三方场地消失后的真实进攻效率未知",
+            "科特迪瓦锋线球员的状态与终结能力波动极大，难以建模",
+            "非洲球队在世界杯首轮的纪律性与战术执行度历来方差高，缺乏可靠先验"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "home_win_prob": 0.52,
+          "draw_prob": 0.27,
+          "away_win_prob": 0.21,
+          "most_likely_score": "1-0",
+          "confidence": 0.6,
+          "fair_odds": {
+            "home": 1.92,
+            "draw": 3.7,
+            "away": 4.76
+          },
+          "edge_assessment": "low_confidence",
+          "information_gaps": [
+            "突尼斯的防守组织在非非洲杯赛事中是否仍保持高强度，以及瑞典的新一代前锋能否提供稳定的终结能力",
+            "瑞典的北欧身体流对北非技术流的克制效应在世界杯首轮的样本量极小，需观察",
+            "赛程为凌晨两点，对北非球队的生物钟干扰可能大于欧洲球队"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "selection": "Japan",
+          "market": "handicap",
+          "line": 0.5,
+          "odds": 1.89,
+          "stake_gp": 200,
+          "own_funds_gp": 200,
+          "loan_used_gp": 0,
+          "model_prob": 0.52,
+          "market_implied_prob": 0.529,
+          "estimated_ev": 0.02,
+          "max_loss_gp": 200,
+          "survival_plan_if_loss": "本次押注仅占总资产约13%，即使全损，总资产仍维持1500GP以上，信用不受影响。此仓位定位为信息验证而非翻盘，旨在测试日本受让0.5球的盘面有效性。若失利，下一轮将减少此类非极端置信度的下注频率，回归纯粹的no_bet观察模式。"
+        },
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "mimo",
+      "model_account": "mimo",
+      "run_id": "c724001cba1f",
+      "one_sentence_strategy": "Focus on value bets in well-analyzed matches with clear edges; use moderate stakes to manage risk while aiming for top-five finish.",
+      "loan_decision": "No loan used this round; conservative strategy to preserve capital given limited high-confidence opportunities.",
+      "risk_notes": "World Cup opening matches often produce upsets; loan interest could erode returns if bets fail. Focused on value in analyzed matches to mitigate risk.",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": 0.01,
+          "score": "5-0",
+          "confidence": 0.9,
+          "edge_assessment": "Curaçao +3.5 likely to lose given Germany's attacking strength; deep handicap risky.",
+          "information_gaps": "None."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": 0.45,
+          "score": "2-1",
+          "confidence": 0.5,
+          "edge_assessment": "Insufficient data to assess edge; odds not provided.",
+          "information_gaps": "No analysis on recent form, lineups, or tactics."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": 0.4,
+          "score": "1-1",
+          "confidence": 0.4,
+          "edge_assessment": "Information gap prevents meaningful assessment.",
+          "information_gaps": "No data on team strength, injuries, or recent performance."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": 0.5,
+          "score": "2-0",
+          "confidence": 0.45,
+          "edge_assessment": "Lack of information precludes reliable edge evaluation.",
+          "information_gaps": "No analysis available."
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "Germany's attacking depth could exceed 3-goal margin; deep handicap risky."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Netherlands",
+          "line": 0,
+          "odds": 1.0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "Insufficient information to make informed bet."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ivory Coast",
+          "line": 0,
+          "odds": 1.0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "Lack of data prevents confident investment."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": 0,
+          "odds": 1.0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "No analysis available; conservative approach."
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "minimax",
+      "model_account": "minimax",
+      "run_id": "page_salvage:minimax",
+      "one_sentence_strategy": "Selective value-hunting on mispriced Asian/European handicaps; small conservative stakes to preserve bankroll while targeting 2-3 spots with positive expected value, skipping toss-up games.",
+      "loan_decision": {
+        "take_loan": false,
+        "amount_gp": 0,
+        "reason": "Bankroll healthy at 1000 GP; taking on loan interest and ranking penalty is unnecessary for a 130 GP exposure plan."
+      },
+      "risk_notes": "Total staked 130 GP (~13% of bankroll). Three no_bet entries protect capital on uncertain spots. Late-stage Colombia-Portugal match carries extra lineup/news risk — stake kept small. All exposure unlinked, no parlays, no loan leverage.",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": 0.91,
+          "score": "4-1",
+          "confidence": 0.85,
+          "edge_assessment": "Germany overwhelming favorite; probability of covering -3.5 sits near 50% — coin-flip line with no clear edge in either direction.",
+          "information_gaps": "Curaçao squad readiness, weather, Germany rotation in opening fixture."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": 0.55,
+          "score": "2-1",
+          "confidence": 0.6,
+          "edge_assessment": "Japan +0.0 at 2.87 implies 34.8%; my model puts Netherlands win around 55% so draw-no-bet on Japan offers positive EV.",
+          "information_gaps": "Recent Japan form vs European sides, lineup confirmations, set-piece quality."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": 0.5,
+          "score": "1-1",
+          "confidence": 0.5,
+          "edge_assessment": "Near toss-up. Ecuador 0.0 at 1.59 is overround-fair; no meaningful value on either side.",
+          "information_gaps": "Pre-tournament friendlies, key player fitness, tactical setups."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": 0.6,
+          "score": "2-1",
+          "confidence": 0.65,
+          "edge_assessment": "Sweden -0.5 at 1.88 implies 53.2%; my estimate ~58% — modest but real edge on outright Sweden win.",
+          "information_gaps": "Sweden's attacking depth, Tunisia's defensive shape and counter threat."
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Curaçao +3.5",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "No clear edge on a coin-flip line; preserve bankroll for higher conviction spots."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.0,
+          "odds": 2.87,
+          "stake_gp": 40,
+          "loan_used_gp": 0,
+          "reason": "Implied 34.8% vs my 45% — positive EV on draw-no-bet at attractive 2.87."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ecuador 0.0",
+          "line": 0.0,
+          "odds": 1.59,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "Toss-up match with no value; skip and protect capital."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 60,
+          "loan_used_gp": 0,
+          "reason": "Sweden to win outright; modest edge over bookmaker's implied 53.2%."
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "doubao",
+      "model_account": "doubao",
+      "run_id": "page_salvage:doubao",
+      "one_sentence_strategy": "优先低风险高胜率方向，德国让 3.5、瑞典不败、厄瓜多尔受让为主，荷兰日本谨慎，哥伦比亚不 bet",
+      "loan_decision": "no_loan",
+      "risk_notes": "聚焦高胜率低波动场次，避开强强对话与未知状态赛事，资金集中于德国、瑞典、厄瓜多尔，控制单场仓位不超 30%",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": 0.88,
+          "score": "4-0",
+          "confidence": "high",
+          "edge_assessment": "德国实力碾压，库拉索首秀经验不足，让 3.5 稳妥",
+          "information_gaps": "库拉索防线抗压能力未知"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": 0.52,
+          "score": "1-1",
+          "confidence": "medium",
+          "edge_assessment": "荷兰日本实力接近，日本反击强，平局概率高",
+          "information_gaps": "临场体能消耗与伤病影响不确定"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": 0.65,
+          "score": "1-2",
+          "confidence": "medium-high",
+          "edge_assessment": "厄瓜多尔南美经验足，科特迪瓦主场优势有限",
+          "information_gaps": "科特迪瓦非洲杯后状态延续性存疑"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": 0.78,
+          "score": "2-0",
+          "confidence": "high",
+          "edge_assessment": "瑞典阵容齐整，突尼斯进攻乏力，不败概率大",
+          "information_gaps": "突尼斯定位球防守稳定性未知"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 400,
+          "loan_used_gp": 0,
+          "reason": "德国状态火热，让 3.5 胜率高，低风险"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "强强对话波动大，无绝对把握，规避风险"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.59,
+          "stake_gp": 300,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔南美硬实力强，平局返还，安全性高"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": 0.0,
+          "odds": 1.37,
+          "stake_gp": 400,
+          "loan_used_gp": 0,
+          "reason": "瑞典攻防均衡，突尼斯进攻弱，不败概率极高"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "gemini",
+      "model_account": "gemini",
+      "run_id": "page_salvage:gemini",
+      "one_sentence_strategy": "Defend rank 2 by utilizing a conservative bankroll management strategy, finding value in underdogs covering the spread without taking on new debt.",
+      "loan_decision": {
+        "action": "repay_none",
+        "amount": 0.0
+      },
+      "risk_notes": "Maintained total exposure at 650.0 GP, preserving 1200.0 GP in liquid balance. Relying on current net profit to absorb any potential drawdowns without accruing new loan interest.",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": 0.85,
+          "score": "4-0",
+          "confidence": "high",
+          "edge_assessment": "The 3.5 handicap is exceptionally tight and reflects the exact expected blowout margin, leaving no value.",
+          "information_gaps": "Curaçao's tactical approach against a vastly superior attacking side under tournament pressure."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": 0.45,
+          "score": "1-1",
+          "confidence": "medium",
+          "edge_assessment": "Japan +0.5 at 1.85 offers solid value due to their well-drilled counter-press neutralizing Dutch buildup.",
+          "information_gaps": "Final fitness checks on key Dutch midfielders."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": 0.35,
+          "score": "1-1",
+          "confidence": "low",
+          "edge_assessment": "Ecuador at -0.5 requires an outright win, which is difficult given Ivory Coast's physicality in midfield.",
+          "information_gaps": "Impact of humidity and travel recovery times for both squads."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": 0.6,
+          "score": "1-0",
+          "confidence": "high",
+          "edge_assessment": "Sweden -0.5 at 1.88 is a fair price; their structured offense should overcome a stubborn Tunisian block.",
+          "information_gaps": "Tunisia's willingness to abandon a low block if they concede early."
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "Variance is too high on a 4-goal margin, preferring capital preservation."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0.0,
+          "reason": "Backing Japan to secure at least a draw against a potentially overvalued Netherlands squad."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "Market lacks clear edge; Ivory Coast is strong enough to force a draw."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 250.0,
+          "loan_used_gp": 0.0,
+          "reason": "Sweden's reliability against lower-ranked opposition justifies the investment."
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "kimi",
+      "model_account": "kimi",
+      "run_id": "page_salvage:kimi",
+      "one_sentence_strategy": "分散押注4场保留450GP流动性，重点配置日本受让与瑞典让球，回避葡萄牙深盘并小注厄瓜多尔独赢博取高赔。",
+      "loan_decision": 0,
+      "risk_notes": "总投注550GP保留450GP流动性；德国对库拉索存在4球以上大胜风险；日本对荷兰存在完败可能；厄瓜多尔对科特迪瓦高赔独赢胜率不稳；瑞典对突尼斯可能被逼平；葡萄牙对哥伦比亚虽选择观望但存在错失低赔稳胆机会。",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": "H",
+          "score": "3-0",
+          "confidence": 0.55,
+          "edge_assessment": "德国实力碾压但3.5球盘口过深，近年对弱旅未必大胜，客队赢盘存在边际价值",
+          "information_gaps": "德国首发阵容及进攻投入度未知，库拉索防守韧性缺乏世界杯正赛样本"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": "D",
+          "score": "1-1",
+          "confidence": 0.5,
+          "edge_assessment": "日本近年对欧洲顶级球队战绩优异，+0.5盘口提供安全垫，赔率1.85具备正期望值",
+          "information_gaps": "荷兰后防伤病情况、日本主力旅欧球员疲劳度未知"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": "A",
+          "score": "1-2",
+          "confidence": 0.45,
+          "edge_assessment": "厄瓜多尔世界杯经验更丰富且阵容年轻化，-0.5高赔2.45隐含胜率被低估",
+          "information_gaps": "科特迪瓦核心球员状态、两队近期热身赛对手质量不明"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": "H",
+          "score": "2-1",
+          "confidence": 0.55,
+          "edge_assessment": "瑞典附加赛连胜势头强劲，突尼斯进攻乏力，-0.5盘1.88赔率合理",
+          "information_gaps": "瑞典主力前锋伤愈程度、突尼斯旅欧球员归队时间未知"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "3.5球让盘过深，德国近年世界杯对弱旅未必大胜，小注博取客队赢盘"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 250,
+          "loan_used_gp": 0,
+          "reason": "日本对欧洲强队近年战绩亮眼，+0.5盘口提供双重保护，重点配置"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔世界杯经验与年轻化阵容具备冲击力，高赔博取独赢价值"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "瑞典附加赛连胜状态正佳，突尼斯进攻手段有限，看好主队赢盘"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "meta",
+      "model_account": "meta",
+      "run_id": "predrepair-run14-attempt3",
+      "one_sentence_strategy": "保守控仓，五场信息冲突或低置信度，全部选择观望以保本并优先还贷。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "已有15贷款且排名第8，信息不确定高，避免加杠杆",
+        "repayment_plan": "赛后先计息，用自有资金1400中优先偿还15贷款本息"
+      },
+      "risk_notes": "五场均为世界杯小组赛，前四场临近或已开赛且德国赛果报道冲突；整体模型置信度低，信用B不宜冒险；空仓可 问问 Meta AI... 思考",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "home_win_prob": 0.82,
+          "draw_prob": 0.13,
+          "away_win_prob": 0.05,
+          "most_likely_score": "4-0",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 1.22,
+            "draw": 7.69,
+            "away": 20.0
+          },
+          "edge_assessment": "盘口Curaçao+3.5约1.83无优势，且赛果报道冲突",
+          "information_gaps": "Sportradar报上半场2-1；The Sun报1-1扳平；USA Today称终局1-1；预测4-0与5-1分歧大"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "home_win_prob": 0.49,
+          "draw_prob": 0.26,
+          "away_win_prob": 0.25,
+          "most_likely_score": "2-1",
+          "confidence": "medium",
+          "fair_odds": {
+            "home": 2.04,
+            "draw": 3.85,
+            "away": 4.0
+          },
+          "edge_assessment": "市场日本+0.5约1.85接近模型，无明显EV",
+          "information_gaps": "未开赛；Khelnow预测2-2；Opta荷兰49%日本25.8%；AI共识2-1荷兰91%；赔率+100/+250/+255"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "home_win_prob": 0.375,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.325,
+          "most_likely_score": "1-1",
+          "confidence": "low",
+          "fair_odds": {
+            "home": 2.67,
+            "draw": 3.33,
+            "away": 3.08
+          },
+          "edge_assessment": "Ecuador让0球1.59偏低，与模型接近无套利",
+          "information_gaps": "未开赛；赔率科特迪瓦5/2平7/4厄瓜多尔7/5；Opta37.5%对35.2%；预测1-1"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "home_win_prob": 0.48,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.22,
+          "most_likely_score": "1-0",
+          "confidence": "medium",
+          "fair_odds": {
+            "home": 2.08,
+            "draw": 3.33,
+            "away": 4.55
+          },
+          "edge_assessment": "瑞典-0.5约1.88略低于模型，风险收益不足",
+          "information_gaps": "未开赛；预测1-0；赔率-110/+245/+330"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Curaçao +3.5",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.05,
+          "market_implied_prob": 0.546,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "空仓无损，维持1400余额"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Japan +0.5",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.51,
+          "market_implied_prob": 0.541,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "空仓无损，等待信息确认"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ecuador 0",
+          "line": 0.0,
+          "odds": 1.59,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.325,
+          "market_implied_prob": 0.629,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "空仓无损，保留还贷资金"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Sweden -0.5",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.48,
+          "market_implied_prob": 0.532,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "空仓无损，排名保护"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "qwen",
+      "model_account": "qwen",
+      "run_id": "predrepair-run14-attempt3",
+      "one_sentence_strategy": "信用D级且高负债，执行极度保守的零注生存策略，回避所有边缘模糊的盘口，优先保全剩余1500本金。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前信用为D级且负债高达5155，本轮无高置信度正EV机会，拒绝新增债务以防彻底爆仓。",
+        "repayment_plan": "利用现有1500余额进行极小注或完全观望，依靠未来出现的高信心、高赔率错价机会逐步偿还贷款。"
+      },
+      "risk_notes": "当前净收益-3655，贷款5155，任何激进投注都可能导致信用破产并触发末三罚款机制，生存是唯一优先级。",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "home_win_prob": 0.8,
+          "draw_prob": 0.1,
+          "away_win_prob": 0.1,
+          "most_likely_score": "3-0",
+          "confidence": 0.7,
+          "fair_odds": 1.25,
+          "edge_assessment": "Curaçao +3.5 @ 1.83 隐含概率54.6%，但德国净胜4球以上概率不足40%，虽有轻微正EV，但风险不符D级信用。",
+          "information_gaps": "德国队小组赛轮换幅度及战意未知。"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "home_win_prob": 0.55,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.2,
+          "most_likely_score": "2-1",
+          "confidence": 0.6,
+          "fair_odds": 1.82,
+          "edge_assessment": "Japan +0.5 @ 1.85 隐含概率54%，模型估算日本不败概率约45%，负EV，无投注价值。",
+          "information_gaps": "日本队关键中场球员赛前伤停情况。"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "home_win_prob": 0.3,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.4,
+          "most_likely_score": "1-1",
+          "confidence": 0.5,
+          "fair_odds": 2.5,
+          "edge_assessment": "Ecuador 0.0 @ 1.59 隐含概率高达62.8%，严重溢价，无投注价值。",
+          "information_gaps": "厄瓜多尔在中立场地的客场表现数据不足。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "home_win_prob": 0.5,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.2,
+          "most_likely_score": "1-0",
+          "confidence": 0.55,
+          "fair_odds": 2.0,
+          "edge_assessment": "Sweden -0.5 @ 1.88 隐含概率53.2%，模型胜平概率约50%，边际负EV，放弃。",
+          "information_gaps": "突尼斯面对高强度身体对抗球队的防守部署。"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": 0,
+          "odds": 0,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0,
+          "market_implied_prob": 0,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "No capital at risk, balance preserved."
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": 0,
+          "odds": 0,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0,
+          "market_implied_prob": 0,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "No capital at risk, balance preserved."
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": 0,
+          "odds": 0,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0,
+          "market_implied_prob": 0,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "No capital at risk, balance preserved."
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": 0,
+          "odds": 0,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0,
+          "market_implied_prob": 0,
+          "estimated_ev": 0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "No capital at risk, balance preserved."
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "wenxin",
+      "model_account": "wenxin",
+      "run_id": "02711f191fac",
+      "one_sentence_strategy": "优先依托实力差距判断，低信息赛事选择不投注",
+      "loan_decision": {
+        "borrow_gp": 60,
+        "reason": "现有可用贷款额度足够支持选中赛事投注，使用部分贷款参与",
+        "repayment_plan": "获得盈利后优先偿还贷款"
+      },
+      "risk_notes": [
+        "本内容仅用于世界杯AI预测池研究游戏，不构成任何真实投注建议"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "p": "H",
+          "score": "3-0",
+          "confidence": 0.92,
+          "edge_assessment": "德国纸面实力远超库拉索，主场赢球稳定性高",
+          "information_gaps": "库拉索杯赛阵容完整度信息不足"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "p": "D",
+          "score": "1-1",
+          "confidence": 0.51,
+          "edge_assessment": "两队实力接近，攻防水平差距小，平局概率不低",
+          "information_gaps": "双方核心球员临场状态信息不完整"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "p": "A",
+          "score": "1-2",
+          "confidence": 0.62,
+          "edge_assessment": "厄瓜多尔大赛经验更丰富，市场赔率也更支持厄瓜多尔不败",
+          "information_gaps": "科特迪瓦新阵容磨合信息不足"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "p": "H",
+          "score": "2-0",
+          "confidence": 0.73,
+          "edge_assessment": "瑞典主场实力占优，赔率明确指向瑞典赢球",
+          "information_gaps": "突尼斯最新阵容调整信息缺失"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 10,
+          "loan_used_gp": 10,
+          "reason": "德国赢1-2球概率不低，难以击穿3.5球让盘，选择受让库拉索"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 15,
+          "loan_used_gp": 15,
+          "reason": "预测平局，日本受让0.5可赢盘，赔率性价比合适"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.59,
+          "stake_gp": 20,
+          "loan_used_gp": 20,
+          "reason": "预测厄瓜多尔不败，匹配该盘口方向"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": 0.0,
+          "odds": 1.37,
+          "stake_gp": 15,
+          "loan_used_gp": 15,
+          "reason": "预测瑞典赢球，匹配盘口方向"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    },
+    {
+      "seat": "yuanbao",
+      "model_account": "yuanbao",
+      "run_id": "cf4a4f780080",
+      "one_sentence_strategy": "以谨慎为主，优先在盘口接近公平值的比赛中下注，控制风险，避免进一步陷入债务。",
+      "loan_decision": {
+        "borrow_gp": 100,
+        "reason": "当前余额为负，需借入资金维持基本投注能力，选择两场最有把握的比赛各投50GP。",
+        "repayment_plan": "若两场全胜可获约170GP回报，扣除100GP本金及利息后优先偿还贷款，目标在下一轮前将贷款余额降至200GP以下。"
+      },
+      "risk_notes": "当前债务344GP，排名垫底，风险极高。仅选择有微弱正EV或信息相对充分的比赛下注，避免盲目追高赔率。若连续失利将考虑暂停投注。",
+      "forecasts": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "home_win_prob": 0.85,
+          "draw_prob": 0.1,
+          "away_win_prob": 0.05,
+          "most_likely_score": "4-0",
+          "confidence": "medium",
+          "fair_odds": 1.18,
+          "edge_assessment": "无显著价值，德国大胜已在盘口中充分体现。",
+          "information_gaps": "库拉索近期状态及阵容完整性未知；德国是否轮换主力不确定。"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "home_win_prob": 0.55,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.2,
+          "most_likely_score": "2-1",
+          "confidence": "medium",
+          "fair_odds": 1.82,
+          "edge_assessment": "日本受让0.5球盘口略有价值，日本防守组织好。",
+          "information_gaps": "日本客场作战能力评估有限；荷兰中场创造力数据不足。"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "home_win_prob": 0.35,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.35,
+          "most_likely_score": "1-1",
+          "confidence": "low",
+          "fair_odds": 2.86,
+          "edge_assessment": "厄瓜多尔略被看好，但差距极小，无明显投注价值。",
+          "information_gaps": "两队近期交锋记录缺失；高原主场优势是否延续不确定。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "home_win_prob": 0.7,
+          "draw_prob": 0.2,
+          "away_win_prob": 0.1,
+          "most_likely_score": "2-0",
+          "confidence": "medium",
+          "fair_odds": 1.43,
+          "edge_assessment": "瑞典主场优势明显，但盘口已充分反映。",
+          "information_gaps": "突尼斯反击效率数据不足；瑞典主场具体战绩待确认。"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.15,
+          "market_implied_prob": 0.55,
+          "estimated_ev": -0.4,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无投注，无需应对。"
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "stake_gp": 50,
+          "own_funds_gp": 0,
+          "loan_used_gp": 50,
+          "model_prob": 0.55,
+          "market_implied_prob": 0.54,
+          "estimated_ev": 0.02,
+          "max_loss_gp": 50,
+          "survival_plan_if_loss": "若日本输球，下轮减少投注额，优先偿还贷款。"
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.35,
+          "market_implied_prob": 0.41,
+          "estimated_ev": -0.15,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无投注，无需应对。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.7,
+          "market_implied_prob": 0.53,
+          "estimated_ev": 0.31,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "无投注，无需应对。"
+        }
+      ],
+      "forecast_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "investment_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ]
+    }
+  ],
+  "invalid_details": [
+    {
+      "seat": "grok",
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "run_id": "page_salvage:grok",
+      "response_chars": 3812,
+      "last_errors": [
+        {
+          "run_id": "badcec66af16",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "8a96116c10f0",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "8a96116c10f0",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        }
+      ]
+    }
+  ],
+  "match_consensus": [
+    {
+      "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 590.0,
+      "top_selection": "handicap Curaçao 3.5",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 80.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "德国状态火热，让 3.5 胜率高，低风险"
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "3.5球让盘过深，德国近年世界杯对弱旅未必大胜，小注博取客队赢盘"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 10.0,
+          "loan_used_gp": 10,
+          "reason": "德国赢1-2球概率不低，难以击穿3.5球让盘，选择受让库拉索"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "bet_count": 6,
+      "no_bet_count": 5,
+      "total_stake_gp": 755.0,
+      "top_selection": "handicap Japan 0.5",
+      "bets": [
+        {
+          "seat": "deepseek",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.89,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "minimax",
+          "selection": "handicap Japan 0.0",
+          "odds": 2.87,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0,
+          "reason": "Implied 34.8% vs my 45% — positive EV on draw-no-bet at attractive 2.87."
+        },
+        {
+          "seat": "gemini",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0.0,
+          "reason": "Backing Japan to secure at least a draw against a potentially overvalued Netherlands squad."
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 250.0,
+          "loan_used_gp": 0,
+          "reason": "日本对欧洲强队近年战绩亮眼，+0.5盘口提供双重保护，重点配置"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 15.0,
+          "loan_used_gp": 15,
+          "reason": "预测平局，日本受让0.5可赢盘，赔率性价比合适"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 50.0,
+          "loan_used_gp": 50,
+          "reason": null
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "mimo",
+        "doubao",
+        "meta",
+        "qwen"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+      "bet_count": 3,
+      "no_bet_count": 8,
+      "total_stake_gp": 420.0,
+      "top_selection": "handicap Ecuador 0.0",
+      "bets": [
+        {
+          "seat": "doubao",
+          "selection": "handicap Ecuador 0.0",
+          "odds": 1.59,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔南美硬实力强，平局返还，安全性高"
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Ecuador -0.5",
+          "odds": 2.45,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔世界杯经验与年轻化阵容具备冲击力，高赔博取独赢价值"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Ecuador 0.0",
+          "odds": 1.59,
+          "stake_gp": 20.0,
+          "loan_used_gp": 20,
+          "reason": "预测厄瓜多尔不败，匹配该盘口方向"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+      "bet_count": 5,
+      "no_bet_count": 6,
+      "total_stake_gp": 825.0,
+      "top_selection": "handicap Sweden -0.5",
+      "bets": [
+        {
+          "seat": "minimax",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 60.0,
+          "loan_used_gp": 0,
+          "reason": "Sweden to win outright; modest edge over bookmaker's implied 53.2%."
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Sweden 0.0",
+          "odds": 1.37,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "瑞典攻防均衡，突尼斯进攻弱，不败概率极高"
+        },
+        {
+          "seat": "gemini",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 250.0,
+          "loan_used_gp": 0.0,
+          "reason": "Sweden's reliability against lower-ranked opposition justifies the investment."
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "瑞典附加赛连胜状态正佳，突尼斯进攻手段有限，看好主队赢盘"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Sweden 0.0",
+          "odds": 1.37,
+          "stake_gp": 15.0,
+          "loan_used_gp": 15,
+          "reason": "预测瑞典赢球，匹配盘口方向"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    }
+  ],
+  "hard_gate_notice": "不到 12/12 publish_allowed=true，不允许前端或日报显示为全量完成报告。"
+}

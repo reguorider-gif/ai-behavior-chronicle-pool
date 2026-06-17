@@ -1,0 +1,123 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "event": {
+    "event_id": "run-16:gemini:2:investment_recorded",
+    "run_id": "run-16",
+    "seat_id": "gemini",
+    "timestamp": "2026-06-16T12:01:03+00:00",
+    "event_type": "investment_recorded",
+    "action": "investment",
+    "outcome": "0 bet / 0 no-bet · 0 GP",
+    "risk_shift": "risk_reduction",
+    "state_before": {
+      "seat_id": "gemini",
+      "balance_gp": 1000.0,
+      "credit_score": 637.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-16:forecast_recorded:1",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        }
+      ],
+      "last_forecast_count": 0
+    },
+    "state_after": {
+      "seat_id": "gemini",
+      "balance_gp": 1000.0,
+      "credit_score": 637.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-16:forecast_recorded:1",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:2",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        }
+      ],
+      "last_forecast_count": 0,
+      "last_investment_count": 0,
+      "last_stake_gp": 0,
+      "last_loan_used_gp": 0
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": true
+      },
+      "memory_summary": {
+        "behavior_type": "discipline_first_observer",
+        "risk_level": "low",
+        "loan_dependency": "medium",
+        "dominant_pattern": "uncertainty_to_no_bet"
+      },
+      "decision": "no investment decision"
+    },
+    "counterfactual": {
+      "question": "如果强制下注会怎样？",
+      "alternative": "使用最小仓位测试最高置信市场，而不是完全 no-bet。",
+      "expected_effect": "获得结果样本，但会降低纪律分并暴露不必要风险。"
+    },
+    "source_event": {
+      "event_type": "investment_recorded",
+      "status": "missing_provider_blocked",
+      "forecast_count": 0,
+      "investment_count": 0
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-16-gemini-2-investment_recorded.json"
+  }
+}

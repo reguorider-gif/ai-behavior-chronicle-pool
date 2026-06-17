@@ -1,0 +1,98 @@
+{
+  "run_id": "unit-settle-handicap-total",
+  "settlement_status": "settled",
+  "matches": [
+    {
+      "match_id": "M2",
+      "home_team": "Germany",
+      "away_team": "Curacao",
+      "score": "7-1",
+      "home_score": 7,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": null,
+      "source": "matches_api_score_registry",
+      "score_registry_applied": true
+    }
+  ],
+  "settlements": [
+    {
+      "seat_id": "beta",
+      "match_id": "M2",
+      "market": "handicap",
+      "selection": "Curacao",
+      "line": 3.5,
+      "odds": 1.83,
+      "stake_gp": 100.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 0.0,
+      "profit_gp": -100.0,
+      "status": "lose",
+      "score": "7-1"
+    },
+    {
+      "seat_id": "beta",
+      "match_id": "M2",
+      "market": "total",
+      "selection": "over",
+      "line": 5.5,
+      "odds": 2.1,
+      "stake_gp": 50.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 105.0,
+      "profit_gp": 55.0,
+      "status": "win",
+      "score": "7-1"
+    }
+  ],
+  "seats": {
+    "beta": {
+      "seat_id": "beta",
+      "run_id": "unit-settle-handicap-total",
+      "profit_gp": -45.0,
+      "settled": [
+        {
+          "seat_id": "beta",
+          "match_id": "M2",
+          "market": "handicap",
+          "selection": "Curacao",
+          "line": 3.5,
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 0.0,
+          "profit_gp": -100.0,
+          "status": "lose",
+          "score": "7-1"
+        },
+        {
+          "seat_id": "beta",
+          "match_id": "M2",
+          "market": "total",
+          "selection": "over",
+          "line": 5.5,
+          "odds": 2.1,
+          "stake_gp": 50.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 105.0,
+          "profit_gp": 55.0,
+          "status": "win",
+          "score": "7-1"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "settled_bets": 2,
+    "winning_bets": 1,
+    "losing_bets": 1,
+    "push_bets": 0,
+    "total_stake_gp": 150.0,
+    "total_payout_gp": 105.0,
+    "total_profit_gp": -45.0,
+    "roi": -0.3,
+    "result_source_policy": "explicit_result_file_plus_matches_api_score_registry"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "version": "pred_invest_manual_trusted_backfill.v1",
+  "updated_at": "2026-06-16T22:40:00Z",
+  "source_policy": "Only explicit full-time scores with public source URLs may be entered here. Never use model forecasts as results.",
+  "matches": [
+    {
+      "match_id": "WC-I1",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "score": "3-1",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "matchday_hk": "2026-06-17",
+      "date_query": "2026-06-16",
+      "source_label": "The Guardian clockwatch",
+      "source_url": "https://www.theguardian.com/football/live/2026/jun/16/world-cup-2026-clockwatch-france-senegal-iran-new-zealand-live-updates"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "score": "1-1",
+      "kickoff_at": "2026-06-15T19:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "date_query": "2026-06-15",
+      "source_label": "Cadena SER World Cup live coverage",
+      "source_url": "https://cadenaser.com/nacional/2026/06/15/belgica-1-1-egipto-resumen-resultado-y-goles-del-partido-del-grupo-g-del-mundial-2026-cadena-ser/"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "score": "1-1",
+      "kickoff_at": "2026-06-15T22:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "date_query": "2026-06-15",
+      "source_label": "Cadena SER World Cup live coverage",
+      "source_url": "https://cadenaser.com/nacional/2026/06/16/arabia-saudi-1-1-uruguay-resumen-resultado-y-goles-del-partido-del-grupo-h-del-mundial-2026-cadena-ser/"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "score": "2-2",
+      "kickoff_at": "2026-06-16T01:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "date_query": "2026-06-15",
+      "source_label": "The Guardian clockwatch",
+      "source_url": "https://www.theguardian.com/football/live/2026/jun/16/world-cup-2026-clockwatch-france-senegal-iran-new-zealand-live-updates"
+    }
+  ]
+}
