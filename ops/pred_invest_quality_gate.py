@@ -16,15 +16,21 @@ from pathlib import Path
 from typing import Any
 
 import audit_pred_invest_bridge_outputs as bridge_audit
+from pred_invest_seat_registry import PRODUCTION_SEATS, REQUIRED_SEAT_COUNT, display_name_for_seat
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
-REQUIRED_SEATS = ["chatgpt", "deepseek", "mimo", "minimax", "doubao", "gemini", "kimi", "meta", "qwen", "wenxin", "grok", "yuanbao"]
+REQUIRED_SEATS = list(PRODUCTION_SEATS)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 
 def _classify_action(seat_result: dict[str, Any]) -> dict[str, Any]:
@@ -34,33 +40,56 @@ def _classify_action(seat_result: dict[str, Any]) -> dict[str, Any]:
     issue_text = ",".join(str(item) for item in issues)
     error_text = ",".join(str((item or {}).get("reason") or (item or {}).get("action") or "") for item in errors)
     text = f"{issue_text},{error_text}".lower()
+    latest_blocking_error = next(
+        (
+            error
+            for error in reversed(errors)
+            if str((error or {}).get("reason") or "").lower() == "provider_quota_limited"
+        ),
+        None,
+    )
+    display_run_id = (
+        latest_blocking_error.get("run_id")
+        if isinstance(latest_blocking_error, dict) and latest_blocking_error.get("run_id")
+        else seat_result.get("run_id")
+    )
+    display_response_chars = (
+        latest_blocking_error.get("response_chars")
+        if isinstance(latest_blocking_error, dict) and latest_blocking_error.get("response_chars") is not None
+        else seat_result.get("response_chars")
+    )
     if "provider_quota_limited" in text:
         mode = "provider_quota_blocked"
         prompt_mode = "wait_for_quota_reset"
         reason = "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。"
     elif "no_captured_response" in text or "response_not_relevant" in text or "existing page answer marker did not match" in text:
         mode = "fresh_chat_marker_required"
-        prompt_mode = "ultra_compact"
+        prompt_mode = "compact_json_no_ultra"
         reason = "未捕获当前轮答案或页面仍停留旧上下文，必须新会话/新 marker 重投。"
     elif "response_not_json" in text:
         mode = "json_truncation_or_schema_failure"
-        prompt_mode = "ultra_compact"
+        prompt_mode = "compact_json_no_ultra"
         reason = "有文本但不是可解析完整 JSON，多数是网页截断或混入 UI 文案。"
     elif "missing_forecasts" in text or "missing_investments" in text:
         mode = "coverage_failure"
-        prompt_mode = "ultra_compact"
+        prompt_mode = "compact_json_no_ultra"
         reason = "JSON 可读但没有覆盖全部赛事，必须按最短合同重跑。"
+    elif "market_snapshot_missing_but_bet_fields_present" in text:
+        mode = "no_market_no_bet_repair_required"
+        prompt_mode = "compact_json_no_ultra"
+        reason = "该席位在无盘口赛事上填了赔率或 stake，必须按无盘口 no-bet 硬门禁重跑。"
     else:
         mode = "rerun_required"
         prompt_mode = "compact"
         reason = "未通过发布门禁，需要补跑。"
     return {
         "seat": seat,
+        "display_name": display_name_for_seat(seat),
         "mode": mode,
         "prompt_mode": prompt_mode,
         "reason": reason,
-        "last_run_id": seat_result.get("run_id"),
-        "response_chars": seat_result.get("response_chars"),
+        "last_run_id": display_run_id,
+        "response_chars": display_response_chars,
         "issues": issues,
         "last_errors": errors,
     }
@@ -73,6 +102,22 @@ def build_gate(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
     required_match_ids = audit.get("required_match_ids") or []
     invalid_rows = [row for row in audit.get("seat_results") or [] if not row.get("valid")]
     rerun_queue = [_classify_action(row) for row in invalid_rows]
+    queued = {str(row.get("seat")) for row in rerun_queue if row.get("seat")}
+    for seat in audit.get("needs_rerun") or []:
+        seat_text = str(seat)
+        if seat_text in queued:
+            continue
+        rerun_queue.append({
+            "seat": seat_text,
+            "display_name": display_name_for_seat(seat_text),
+            "mode": "missing_required_seat_no_response",
+            "prompt_mode": "compact_json_no_ultra",
+            "reason": "固定席位未捕获本轮结构化回执，必须新会话/新 marker 单席补跑。",
+            "last_run_id": None,
+            "response_chars": 0,
+            "issues": ["required_seat_missing"],
+            "last_errors": [],
+        })
     provider_blocked_seats = sorted(
         str(row.get("seat"))
         for row in rerun_queue
@@ -83,16 +128,16 @@ def build_gate(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
         for row in rerun_queue
         if row.get("seat") and row.get("mode") != "provider_quota_blocked"
     )
-    publish_allowed = len(audit.get("valid_seats") or []) == len(REQUIRED_SEATS) and not rerun_queue
+    publish_allowed = len(audit.get("valid_seats") or []) == REQUIRED_SEAT_COUNT and not rerun_queue
     if publish_allowed:
         status = "READY"
-        frontend_badge = "12/12 已验证"
+        frontend_badge = f"{REQUIRED_SEAT_COUNT}/{REQUIRED_SEAT_COUNT} 已验证"
     elif audit.get("valid_seats"):
         status = "PARTIAL_NOT_READY"
-        frontend_badge = f"{len(audit.get('valid_seats') or [])}/12 部分回收"
+        frontend_badge = f"{len(audit.get('valid_seats') or [])}/{REQUIRED_SEAT_COUNT} 部分回收"
     else:
         status = "NOT_READY"
-        frontend_badge = "0/12 未回收"
+        frontend_badge = f"0/{REQUIRED_SEAT_COUNT} 未回收"
     return {
         "version": "pred_invest_quality_gate.v1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -102,9 +147,17 @@ def build_gate(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
         "publish_allowed": publish_allowed,
         "frontend_badge": frontend_badge,
         "valid_count": len(audit.get("valid_seats") or []),
-        "required_seat_count": len(REQUIRED_SEATS),
+        "required_seat_count": REQUIRED_SEAT_COUNT,
         "valid_seats": audit.get("valid_seats") or [],
         "needs_rerun": audit.get("needs_rerun") or [],
+        "valid_seat_labels": [
+            {"seat": seat, "display_name": display_name_for_seat(seat)}
+            for seat in audit.get("valid_seats") or []
+        ],
+        "needs_rerun_labels": [
+            {"seat": seat, "display_name": display_name_for_seat(seat)}
+            for seat in audit.get("needs_rerun") or []
+        ],
         "rerun_queue": rerun_queue,
         "provider_blocked_seats": provider_blocked_seats,
         "rerunnable_seats": rerunnable_seats,

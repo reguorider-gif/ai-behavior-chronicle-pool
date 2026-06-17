@@ -25,6 +25,11 @@
       {"grade": "D", "min_score": 0, "loan_multiplier": 0.0, "interest_rate": null}
     ]
   },
+  "credit_delta": {
+    "correct_forecast": 10,
+    "wrong_forecast": -10,
+    "insufficient_info_penalty": -2
+  },
   "stake_caps": [
     {"min_odds": 1.0, "max_odds": 2.5, "net_worth_fraction": 0.25},
     {"min_odds": 2.5, "max_odds": 5.0, "net_worth_fraction": 0.15},
@@ -55,4 +60,3 @@
     "forecast_probability_sum_max": 1.01
   }
 }
-

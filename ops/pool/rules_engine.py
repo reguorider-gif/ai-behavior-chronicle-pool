@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import functools
 import json
 from typing import Any
 
@@ -18,6 +19,7 @@ def n(value: Any, default: float = 0.0) -> float:
         return default
 
 
+@functools.lru_cache(maxsize=4)
 def load_rule_version(rule_version: str = RULE_VERSION) -> dict[str, Any]:
     path = DATA_ROOT / "rules" / f"{rule_version}.json"
     if not path.exists():
@@ -150,16 +152,17 @@ def validate_investment_receipt(
 
 
 def validate_no_cross_seat_leakage(prompt_context: dict[str, Any], seat_id: str, all_seat_ids: list[str]) -> dict[str, Any]:
-    serialized = json.dumps(prompt_context, ensure_ascii=False).lower()
-    private_context = prompt_context.get("private_context") or {}
+    check_target = {key: value for key, value in prompt_context.items() if key != "seat_id"}
+    serialized = json.dumps(check_target, ensure_ascii=False).lower()
     leaked: list[str] = []
     identity_keys = {"seat_id", "model_account", "model_id", "display_name", "owner_seat_id"}
+    other_seat_ids = {str(other).lower() for other in all_seat_ids if str(other).lower() != seat_id.lower()}
 
     def walk(value: Any, path: tuple[str, ...] = ()) -> None:
         if isinstance(value, dict):
             for key, child in value.items():
                 key_text = str(key).lower()
-                if key_text in {str(other).lower() for other in all_seat_ids if str(other).lower() != seat_id.lower()}:
+                if key_text in other_seat_ids:
                     leaked.append(key_text)
                 walk(child, (*path, key_text))
         elif isinstance(value, list):
@@ -171,7 +174,11 @@ def validate_no_cross_seat_leakage(prompt_context: dict[str, Any], seat_id: str,
                 other_text = str(other).lower()
                 if other_text and other_text != seat_id.lower() and text == other_text:
                     leaked.append(other_text)
+        elif isinstance(value, str):
+            text = value.strip().lower()
+            if text in other_seat_ids:
+                leaked.append(text)
 
-    walk(private_context)
+    walk(check_target)
     forbidden_keys = [key for key in ("other_seat_logs", "opponent_investments", "opponent_bets", "seat_private_logs") if key in serialized]
     return {"ok": not leaked and not forbidden_keys, "leaked_seats": sorted(set(leaked)), "forbidden_keys": forbidden_keys}
