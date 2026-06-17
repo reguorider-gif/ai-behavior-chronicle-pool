@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
-const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-efqknizkv-reguorider-9181s-projects.vercel.app";
+const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-app-one.vercel.app";
 
 async function readText(relPath) {
   try {
@@ -46,6 +46,71 @@ function send(res, status, payload) {
   res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.status(status).send(JSON.stringify(payload, null, 2));
+}
+
+async function latestGodReportDate(runId) {
+  const dir = path.join(POOL_ROOT, "god_reports");
+  let files = [];
+  try {
+    files = await fs.readdir(dir);
+  } catch (_error) {
+    return null;
+  }
+  const suffix = `_${runId}.json`;
+  const dates = files
+    .filter((file) => file.endsWith(suffix))
+    .map((file) => file.slice(0, -suffix.length))
+    .filter((date) => /^\d{4}-\d{2}-\d{2}$/.test(date))
+    .sort();
+  return dates.length ? dates[dates.length - 1] : null;
+}
+
+async function godReportDate(req, runId) {
+  const explicit = req.query && req.query.date ? String(req.query.date) : "";
+  if (explicit) return explicit;
+  return (await latestGodReportDate(runId)) || "2026-06-15";
+}
+
+const PRED_INVEST_PUBLIC_FILES = new Set([
+  "latest_current_game.json",
+  "latest_current_game.md",
+  "latest_current_game.html",
+  "latest_daily_sop.json",
+  "latest_daily_sop.md",
+  "latest_god_report_strict.json",
+  "latest_god_report_strict.md",
+  "latest_product_health.json",
+  "latest_product_health.md",
+  "latest_quality_gate.json",
+  "latest_quality_gate.md",
+  "latest_score_sync.json",
+  "latest_score_sync.md",
+  "latest_sop_guard.json",
+  "latest_sop_guard.md",
+]);
+
+function predInvestFileAllowed(fileName) {
+  if (PRED_INVEST_PUBLIC_FILES.has(fileName)) return true;
+  return /^\d{4}-\d{2}-\d{2}_[A-Za-z0-9._-]+_(current_game|daily_sop|god_report_strict|product_health|quality_gate|score_sync|sop_guard)\.(json|md|html)$/.test(fileName);
+}
+
+async function predInvestArtifact(res, fileName) {
+  if (!fileName || fileName.includes("/") || fileName.includes("\\") || !predInvestFileAllowed(fileName)) {
+    return send(res, 404, { ok: false, detail: "pred_invest_artifact_not_public", file: fileName || null });
+  }
+  const relPath = path.join("pred_invest", fileName);
+  if (fileName.endsWith(".json")) {
+    const data = await readJson(relPath, null);
+    return send(res, data ? 200 : 404, data || { ok: false, detail: "pred_invest_artifact_not_found", file: fileName });
+  }
+  const text = await readText(relPath);
+  return send(res, text ? 200 : 404, {
+    ok: Boolean(text),
+    file: fileName,
+    content_type: fileName.endsWith(".html") ? "text/html" : "text/markdown",
+    content: text,
+    artifact_ref: text ? publicRef("pred_invest", fileName) : null,
+  });
 }
 
 function pathParts(req) {
@@ -108,7 +173,7 @@ async function behaviorSummary(res, runId) {
 }
 
 async function godReport(req, res, runId) {
-  const date = String(req.query.date || "2026-06-15");
+  const date = await godReportDate(req, runId);
   const report = await readJson(path.join("god_reports", `${date}_${runId}.json`));
   const markdown = await readText(path.join("god_reports", `${date}_${runId}.md`));
   send(res, report.run_id || markdown ? 200 : 404, {
@@ -155,6 +220,94 @@ async function creditHistory(res, seatId) {
   send(res, 200, { ok: true, seat_id: seatId, history: rows });
 }
 
+async function behaviorMemory(res, seatId) {
+  if (seatId) {
+    const memory = await readJson(path.join("behavior_memory", "compiled", `${seatId}.json`));
+    return send(res, memory.seat_id ? 200 : 404, {
+      ok: Boolean(memory.seat_id),
+      seat_id: seatId,
+      profile: memory.profile || {},
+      top_patterns: memory.top_patterns || [],
+      timeline_events: memory.recent_timeline_events || [],
+      memory_contract: memory.memory_contract || {},
+    });
+  }
+  const compiled = {};
+  try {
+    const dir = path.join(POOL_ROOT, "behavior_memory", "compiled");
+    const files = (await fs.readdir(dir)).filter((file) => file.endsWith(".json")).sort();
+    for (const file of files) {
+      const row = await readJson(path.join("behavior_memory", "compiled", file));
+      if (row.seat_id) compiled[row.seat_id] = {
+        profile: row.profile || {},
+        top_patterns: row.top_patterns || [],
+        timeline_events: row.recent_timeline_events || [],
+      };
+    }
+  } catch (_error) {
+    // Keep compiled empty.
+  }
+  return send(res, Object.keys(compiled).length ? 200 : 404, {
+    ok: Object.keys(compiled).length > 0,
+    seat_count: Object.keys(compiled).length,
+    seats: compiled,
+  });
+}
+
+async function patternGraph(res) {
+  const graph = await readJson(path.join("pattern_graph", "latest.json"));
+  send(res, graph.version ? 200 : 404, {
+    ok: Boolean(graph.version),
+    version: graph.version || null,
+    run_id: graph.run_id || null,
+    generated_at: graph.generated_at || null,
+    top_patterns: graph.top_patterns || [],
+  });
+}
+
+async function evolutionTrace(res, runId) {
+  let trace = await readJson(path.join("evolution_traces", `${runId}.json`));
+  if (!trace.version) trace = await readJson(path.join("evolution_traces", "latest.json"));
+  send(res, trace.version ? 200 : 404, {
+    ok: Boolean(trace.version),
+    version: trace.version || null,
+    run_id: trace.run_id || runId,
+    generated_at: trace.generated_at || null,
+    traces: trace.traces || [],
+  });
+}
+
+async function agentProfile(res, seatId) {
+  const profiles = await readJson(path.join("agent_profiles", "latest.json"));
+  const seats = profiles.seats || {};
+  if (seatId) {
+    const profile = seats[seatId] || {};
+    return send(res, profile.seat_id ? 200 : 404, { ok: Boolean(profile.seat_id), profile });
+  }
+  return send(res, Object.keys(seats).length ? 200 : 404, {
+    ok: Object.keys(seats).length > 0,
+    version: profiles.version || null,
+    run_id: profiles.run_id || null,
+    seats,
+  });
+}
+
+async function behaviorReplay(res, runId) {
+  let replay = await readJson(path.join("replay", "runs", `${runId}.json`));
+  if (!replay.version) replay = await readJson(path.join("replay", "runs", "latest.json"));
+  send(res, replay.version ? 200 : 404, {
+    ok: Boolean(replay.version),
+    version: replay.version || null,
+    run_id: replay.run_id || runId,
+    generated_at: replay.generated_at || null,
+    event_count: replay.event_count || 0,
+    seat_count: replay.seat_count || 0,
+    timeline: replay.timeline || [],
+    seat_index: replay.seat_index || {},
+    artifact_ref: replay.version ? publicRef("replay", "runs", `${replay.run_id || runId}.json`) : null,
+  });
+}
+
 async function marketSnapshot(req, res, runId) {
   const date = String(req.query.date || "2026-06-15");
   let snapshot = await readJson(path.join("market_snapshots", `${date}_${runId}.json`));
@@ -192,5 +345,13 @@ module.exports = async function handler(req, res) {
   if (parts[0] === "runs" && parts[2] === "market-snapshot") return marketSnapshot(req, res, parts[1]);
   if (parts[0] === "seats" && parts[2] === "journal") return seatJournal(req, res, parts[1]);
   if (parts[0] === "seats" && parts[2] === "credit") return creditHistory(res, parts[1]);
+  if (parts[0] === "seats" && parts[2] === "behavior-memory") return behaviorMemory(res, parts[1]);
+  if (parts[0] === "seats" && parts[2] === "agent-profile") return agentProfile(res, parts[1]);
+  if (parts[0] === "behavior-memory") return behaviorMemory(res, "");
+  if (parts[0] === "pattern-graph") return patternGraph(res);
+  if (parts[0] === "agent-profiles") return agentProfile(res, "");
+  if (parts[0] === "pred_invest" && parts.length === 2) return predInvestArtifact(res, parts[1]);
+  if (parts[0] === "runs" && parts[2] === "evolution-trace") return evolutionTrace(res, parts[1]);
+  if (parts[0] === "runs" && parts[2] === "behavior-replay") return behaviorReplay(res, parts[1]);
   return proxyFallback(req, res, parts);
 };
