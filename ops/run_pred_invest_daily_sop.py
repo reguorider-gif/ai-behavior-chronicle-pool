@@ -32,6 +32,7 @@ from pool.god_report_v2 import generate_god_report
 from pool.io_utils import append_jsonl, now_iso, read_jsonl, write_json
 from pool.pattern_compiler import compile_all_patterns
 from pool.paths import DATA_ROOT
+from pool.rules_engine import load_rule_version, n as rule_number
 from pred_invest_seat_registry import PRODUCTION_SEATS, REQUIRED_SEAT_COUNT, canonical_seat_id
 import sync_pred_invest_scores
 
@@ -400,9 +401,20 @@ def _god_event_once(run_id: str, event_type: str, payload: dict[str, Any], seat_
     _append_once(path, identity, row)
 
 
+def _receipt_credit_delta(valid: bool) -> float:
+    if valid:
+        return 0
+    rule = load_rule_version(RULE_VERSION)
+    delta_rule = rule.get("credit_delta") if isinstance(rule.get("credit_delta"), dict) else {}
+    return rule_number(
+        delta_rule.get("missing_or_invalid_receipt"),
+        rule_number(delta_rule.get("wrong_forecast"), -10),
+    )
+
+
 def _credit_row(seat_id: str, run_id: str, shadow_row: dict[str, Any], valid: bool, reason: str) -> dict[str, Any]:
     terms = shadow_row.get("loan_terms") if isinstance(shadow_row.get("loan_terms"), dict) else {}
-    credit_delta = 0 if valid else -8
+    credit_delta = _receipt_credit_delta(valid)
     score = float(terms.get("credit_score") or 600) + credit_delta
     grade = terms.get("credit_grade") or ("B" if score >= 600 else "C")
     details: list[dict[str, Any]] = []

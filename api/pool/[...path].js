@@ -3,7 +3,11 @@ const path = require("node:path");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
-const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "";
+const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-app-one.vercel.app";
+const PRODUCTION_SEATS = ["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao","xunfei","stepfun","zhipu"];
+const DEFAULT_CREDIT_SCORE = 600;
+const DEFAULT_CREDIT_GRADE = "B";
+const DEFAULT_BALANCE_GP = 1000;
 
 async function readText(relPath) {
   try {
@@ -46,6 +50,93 @@ function send(res, status, payload) {
   res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.status(status).send(JSON.stringify(payload, null, 2));
+}
+
+function compactSeatName(seatId) {
+  const names = {
+    chatgpt: "ChatGPT",
+    deepseek: "DeepSeek",
+    mimo: "MiMo",
+    minimax: "MiniMax",
+    doubao: "Doubao",
+    gemini: "Gemini",
+    kimi: "Kimi",
+    meta: "Meta AI",
+    qwen: "Qwen",
+    wenxin: "Wenxin",
+    grok: "xAI Grok",
+    yuanbao: "Yuanbao",
+    xunfei: "科大讯飞",
+    stepfun: "阶跃星辰",
+    zhipu: "智谱清言",
+  };
+  return names[seatId] || seatId;
+}
+
+function initializedSeatState(seatId) {
+  return {
+    seat_id: seatId,
+    display_name: compactSeatName(seatId),
+    balance_gp: DEFAULT_BALANCE_GP,
+    outstanding_loan_gp: 0,
+    accrued_interest_gp: 0,
+    net_worth_gp: DEFAULT_BALANCE_GP,
+    credit_score: DEFAULT_CREDIT_SCORE,
+    credit_grade: DEFAULT_CREDIT_GRADE,
+    credit_delta: 0,
+    loan_limit_gp: 500,
+    available_loan_gp: 500,
+    recovery_mode: false,
+    source: "initialized_required_seat",
+  };
+}
+
+function n(value, fallback = 0) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+}
+
+async function ledgerForRun(kind, runId) {
+  if (runId) {
+    const exact = await readJson(path.join(kind, `${runId}.json`), null);
+    if (exact && exact.version) return exact;
+  }
+  try {
+    const dir = path.join(POOL_ROOT, kind);
+    const files = (await fs.readdir(dir)).filter((file) => file.endsWith(".json")).sort();
+    for (const file of files.reverse()) {
+      const data = await readJson(path.join(kind, file), null);
+      if (data && data.version) return data;
+    }
+  } catch (_error) {
+    // Fall through to an empty ledger.
+  }
+  return {};
+}
+
+function seatStateFromSources(seat, survival = {}, credit = {}, summary = {}) {
+  const base = initializedSeatState(seat);
+  const merged = {
+    ...base,
+    ...summary,
+    ...survival,
+    ...credit,
+  };
+  return {
+    ...merged,
+    display_name: summary.display_name || compactSeatName(seat),
+    balance_gp: n(merged.balance_gp ?? merged.cash_gp, base.balance_gp),
+    outstanding_loan_gp: n(merged.outstanding_loan_gp ?? merged.loan_gp, base.outstanding_loan_gp),
+    accrued_interest_gp: n(merged.accrued_interest_gp, base.accrued_interest_gp),
+    net_worth_gp: n(merged.net_worth_gp, base.net_worth_gp),
+    credit_score: n(merged.credit_score, base.credit_score),
+    credit_grade: String(merged.credit_grade || base.credit_grade),
+    credit_delta: n(merged.credit_delta, base.credit_delta),
+    loan_limit_gp: n(merged.loan_limit_gp, base.loan_limit_gp),
+    available_loan_gp: n(merged.available_loan_gp, base.available_loan_gp),
+    recovery_mode: Boolean(merged.recovery_mode),
+    source: survival.seat_id || credit.seat_id || summary.seat_id ? "ledger" : base.source,
+  };
 }
 
 async function latestGodReportDate(runId) {
@@ -110,6 +201,119 @@ async function predInvestArtifact(res, fileName) {
     content_type: fileName.endsWith(".html") ? "text/html" : "text/markdown",
     content: text,
     artifact_ref: text ? publicRef("pred_invest", fileName) : null,
+  });
+}
+
+function archiveBuckets(matches = []) {
+  const rows = Array.isArray(matches) ? matches : [];
+  const settled = rows.filter((match) => ["done", "settled", "final"].includes(String(match.status || match.state || "").toLowerCase()));
+  const future = rows.filter((match) => !settled.includes(match));
+  return {
+    matches: rows,
+    future_matches: future,
+    settled_matches: settled,
+  };
+}
+
+async function frontendArchives(res) {
+  const current = await readJson(path.join("pred_invest", "latest_current_game.json"));
+  const matches = Array.isArray(current.matches) ? current.matches : [];
+  let artifacts = [];
+  try {
+    const files = (await fs.readdir(path.join(POOL_ROOT, "pred_invest")))
+      .filter((file) => predInvestFileAllowed(file))
+      .sort()
+      .reverse()
+      .slice(0, 80);
+    artifacts = files.map((file) => ({
+      file,
+      artifact_ref: publicRef("pred_invest", file),
+      kind: file.endsWith(".json") ? "json" : (file.endsWith(".html") ? "html" : "markdown"),
+    }));
+  } catch (_error) {
+    artifacts = [];
+  }
+  send(res, current.version ? 200 : 404, {
+    ok: Boolean(current.version),
+    version: "frontend_archives.local.v1",
+    date: current.date || null,
+    round_id: current.round_id || null,
+    ...archiveBuckets(matches),
+    artifacts,
+  });
+}
+
+async function seatArchive(req, res, runId, seatId) {
+  const [seatRun, summary, creditLedger, survivalLedger] = await Promise.all([
+    readJson(path.join("seat_journals", seatId, "runs", `${runId}.json`), null),
+    readJson(path.join("seat_journals", seatId, "summary.json"), null),
+    ledgerForRun("credit_ledger", runId),
+    ledgerForRun("survival_ledger", runId),
+  ]);
+  if (!PRODUCTION_SEATS.includes(seatId)) {
+    return send(res, 404, { ok: false, missing: true, seat_id: seatId, round_id: runId, detail: "unknown_seat" });
+  }
+  const credit = (creditLedger.seats || {})[seatId] || {};
+  const survival = (survivalLedger.seats || {})[seatId] || {};
+  const state = seatStateFromSources(seatId, survival, credit, summary || {});
+  const investments = Array.isArray(seatRun?.investments) ? seatRun.investments : [];
+  const loan = seatRun?.loan_decision && typeof seatRun.loan_decision === "object" ? seatRun.loan_decision : {};
+  const status = seatRun?.status || (state.source === "initialized_required_seat" ? "initialized" : "available");
+  return send(res, 200, {
+    ok: true,
+    version: "seat_archive.local.v1",
+    seat_id: seatId,
+    display_name: state.display_name,
+    round_id: runId,
+    state: status,
+    status_label: status === "initialized" ? "账户已初始化，等待首轮回执" : status,
+    account: {
+      rank: null,
+      balance_gp: state.balance_gp,
+      loan_gp: state.outstanding_loan_gp,
+      net_worth_gp: state.net_worth_gp,
+      credit_score: state.credit_score,
+      credit_grade: state.credit_grade,
+      recovery_mode: state.recovery_mode,
+    },
+    loan_decision: {
+      amount: loan.request_loan_gp || loan.borrow_gp || state.outstanding_loan_gp || 0,
+      repayment_plan: loan.repayment_plan || "按 SOP 在排名前优先偿还利息和本金。",
+      stop_loss: loan.stop_loss || (state.recovery_mode ? "Recovery Mode 下冻结新增高杠杆。" : ""),
+      reason: loan.reason || "",
+    },
+    game_response: {
+      rank_strategy: "Use account state, credit score, and market edge before allocating stake.",
+      reward_strategy: "Prefer durable edge over isolated high-odds exposure.",
+      loan_strategy: "Use borrowed GP only when expected value covers interest and drawdown risk.",
+      audience_pressure_response: "Expose reasoning through structured journal and archive records.",
+    },
+    game_response_zh: {
+      rank_strategy: "根据净值、信用分和盘口边际决定仓位，不把缺席回执伪装成完成。",
+      reward_strategy: "优先选择稳定优势，避免只追逐高赔率。",
+      loan_strategy: "只有当预期收益覆盖利息和回撤时才使用借用积分。",
+      audience_pressure_response: "通过结构化行为日志和席位档案公开可审计依据。",
+    },
+    bets: investments.map((row) => ({
+      match_id: row.match_id,
+      market: row.market || row.action,
+      market_zh: row.action === "no_bet" ? "观望 / no-bet" : row.market,
+      selection: row.selection,
+      line: row.line,
+      odds: row.odds,
+      stake_gp: row.stake_gp || 0,
+      rationale: row.reason || row.why_bet_or_no_bet || row.rationale || "",
+      rationale_zh: row.reason || row.why_bet_or_no_bet || row.rationale || "",
+    })),
+    analysis_summary: seatRun?.status
+      ? "Structured forecast and investment receipt was archived for this seat."
+      : "This required seat has been initialized and is waiting for a valid structured receipt.",
+    analysis_summary_zh: seatRun?.status
+      ? "该席位的结构化预测与投资分账已归档，可从行为日志追溯。"
+      : "该固定席位已完成账户初始化，等待下一轮有效结构化回执。",
+    risk_summary: "Missing or stale receipts remain visible as targeted rerun work, not hidden completion.",
+    risk_summary_zh: "缺失或过期回执会保留为定向补跑任务，不再被隐藏成已完成状态。",
+    artifact_ref: seatRun ? publicRef("seat_journals", seatId, "runs", `${runId}.json`) : null,
   });
 }
 
@@ -202,6 +406,29 @@ async function seatJournal(req, res, seatId) {
   const limit = Math.max(1, Math.min(200, Number(req.query.limit || 20)));
   const summary = await readJson(path.join("seat_journals", seatId, "summary.json"));
   const events = await readJsonl(path.join("seat_journals", seatId, "journal.jsonl"), limit);
+  if (!summary.seat_id && events.length === 0 && PRODUCTION_SEATS.includes(seatId)) {
+    const initial = initializedSeatState(seatId);
+    return send(res, 200, {
+      ok: true,
+      seat_id: seatId,
+      summary: {
+        ...initial,
+        runs_seen: [],
+        event_counts: { account_initialized: 1 },
+      },
+      events: [{
+        ts: null,
+        seat_id: seatId,
+        event_type: "account_initialized",
+        balance_gp: DEFAULT_BALANCE_GP,
+        net_worth_gp: DEFAULT_BALANCE_GP,
+        credit_score: DEFAULT_CREDIT_SCORE,
+        credit_grade: DEFAULT_CREDIT_GRADE,
+        source: "api_initialized_required_seat",
+      }],
+      artifact_ref: publicRef("seat_journals", seatId, "journal.jsonl"),
+    });
+  }
   send(res, summary.seat_id || events.length ? 200 : 404, {
     ok: Boolean(summary.seat_id || events.length),
     seat_id: seatId,
@@ -223,6 +450,19 @@ async function creditHistory(res, seatId) {
     }
   } catch (_error) {
     // Keep rows empty.
+  }
+  if (rows.length === 0 && PRODUCTION_SEATS.includes(seatId)) {
+    rows.push({
+      run_id: "initial",
+      seat_id: seatId,
+      credit_score: DEFAULT_CREDIT_SCORE,
+      credit_grade: DEFAULT_CREDIT_GRADE,
+      credit_delta: 0,
+      loan_limit_gp: 500,
+      available_loan_gp: 500,
+      outstanding_loan_gp: 0,
+      source: "initialized_required_seat",
+    });
   }
   send(res, 200, { ok: true, seat_id: seatId, history: rows });
 }
@@ -357,6 +597,8 @@ module.exports = async function handler(req, res) {
   if (parts[0] === "behavior-memory") return behaviorMemory(res, "");
   if (parts[0] === "pattern-graph") return patternGraph(res);
   if (parts[0] === "agent-profiles") return agentProfile(res, "");
+  if (parts[0] === "frontend-archives") return frontendArchives(res);
+  if (parts[0] === "seat-archives" && parts[1] && parts[2]) return seatArchive(req, res, parts[1], parts[2]);
   if (parts[0] === "pred_invest" && parts.length === 2) return predInvestArtifact(res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "evolution-trace") return evolutionTrace(res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "behavior-replay") return behaviorReplay(res, parts[1]);

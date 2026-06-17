@@ -1,0 +1,29 @@
+{
+  "version": "behavior_chronicle_lessons.v1",
+  "seat_id": "gamma",
+  "generated_at": "2026-06-17T20:37:24+00:00",
+  "lesson_count": 1,
+  "lessons": [
+    {
+      "lesson_id": "gamma:None",
+      "seat_id": "gamma",
+      "type": "observe",
+      "pattern_id": null,
+      "claim": null,
+      "lesson": "继续观察：None",
+      "confidence": 0.93,
+      "evidence_count": null,
+      "source_event_ids": [
+        "smoke-behavior-v2-a:investment_recorded:519",
+        "smoke-behavior-v2-b:investment_recorded:526",
+        "smoke-behavior-v2-a:investment_recorded:531",
+        "smoke-behavior-v2-b:investment_recorded:538",
+        "smoke-behavior-v2-a:investment_recorded:543",
+        "smoke-behavior-v2-b:investment_recorded:550",
+        "smoke-behavior-v2-a:investment_recorded:555",
+        "smoke-behavior-v2-b:investment_recorded:562"
+      ]
+    }
+  ],
+  "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：None\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+}

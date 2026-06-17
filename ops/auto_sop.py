@@ -64,9 +64,14 @@ class AutoSOP:
                 write=write,
             )
         sop = self._daily_sop(date, round_id, write=write, runs=dispatch_report.get("run_ids") or [])
+        sync_ok = bool(sync.get("ok"))
+        score_blocking = bool((sync.get("score_sync") or {}).get("blocking_pending_score_count"))
+        if dry_run and not sync_ok and bool((sync.get("odds") or {}).get("ok")) and score_blocking:
+            sync_ok = True
+            sync.setdefault("warnings", []).append("score_blocking_softened_for_dry_run")
         return {
             "phase": "pre_match",
-            "ok": bool(sync.get("ok")) and bool(sop.get("ok")) and (dispatch_report.get("ok", True) or dispatch_report.get("skipped")),
+            "ok": sync_ok and bool(sop.get("ok")) and (dispatch_report.get("ok", True) or dispatch_report.get("skipped")),
             "sync": sync,
             "dispatch": dispatch_report,
             "daily_sop": sop,

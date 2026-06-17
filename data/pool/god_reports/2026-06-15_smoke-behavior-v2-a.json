@@ -1,52 +1,22 @@
 {
   "date": "2026-06-15",
   "run_id": "smoke-behavior-v2-a",
-  "seat_count": 3,
-  "event_count": 390,
-  "action_counts": {
-    "bet": 2,
-    "no_bet": 4
+  "seat_count": 0,
+  "event_count": 0,
+  "action_counts": {},
+  "seat_cards": [],
+  "behavior_patterns": [],
+  "agent_profiles": {
+    "seats": {}
   },
-  "seat_cards": [
-    {
-      "seat_id": "alpha",
-      "forecast_count": 2,
-      "bet_count": 1,
-      "no_bet_count": 1,
-      "stake_gp": 120.0,
-      "loan_used_gp": 0.0,
-      "credit_delta": 24,
-      "credit_grade": "B",
-      "net_worth_gp": 1096.0,
-      "recovery_mode": false,
-      "settlement_profit_gp": 96.0
-    },
-    {
-      "seat_id": "beta",
-      "forecast_count": 2,
-      "bet_count": 1,
-      "no_bet_count": 1,
-      "stake_gp": 80.0,
-      "loan_used_gp": 0.0,
-      "credit_delta": -20,
-      "credit_grade": "C",
-      "net_worth_gp": 602.0,
-      "recovery_mode": false,
-      "settlement_profit_gp": -80.0
-    },
-    {
-      "seat_id": "gamma",
-      "forecast_count": 2,
-      "bet_count": 0,
-      "no_bet_count": 2,
-      "stake_gp": 0,
-      "loan_used_gp": 0,
-      "credit_delta": 20,
-      "credit_grade": "B",
-      "net_worth_gp": -71.0,
-      "recovery_mode": true,
-      "settlement_profit_gp": 0.0
-    }
-  ],
-  "markdown": "# AI Judge 上帝日报 V2 - 2026-06-15 smoke-behavior-v2-a\n\n## 总览\n- 本轮席位：3\n- 投注动作：2 笔；no-bet：4 笔\n- Recovery Mode 席位：1\n- 上帝 ledger 事件：390 条\n\n## 预测-投资偏离\n- 观察 forecast 覆盖与实际下注分离：预测必须全覆盖，下注允许 no-bet，避免模型为了下注而伪造确定性。\n\n## 贷款压力\n- 贷款额度由信用分和净资产共同决定；净资产小于等于 0 的席位进入重整状态并冻结新增贷款。\n\n## no-bet 纪律\n- 本轮 no-bet 4 笔。no-bet 不是缺席，而是需要写明边际不足、信息缺口或生存约束。\n\n## 重整状态\n- 当前重整席位 1 个。重整席位仍可 forecast，但投资被限制为小额恢复或 no-bet。\n\n## 策略漂移\n- 本日报只记录行为路径，不向模型泄露其他席位明细；下一轮每个模型只收到自己的历史摘要。\n\n## 席位点评\n- alpha: forecast 2 场，bet 1 笔，no-bet 1 笔，投入 120 GP，贷款 0 GP，信用Δ 24，净值 1096 GP，状态 正常。\n- beta: forecast 2 场，bet 1 笔，no-bet 1 笔，投入 80 GP，贷款 0 GP，信用Δ -20，净值 602 GP，状态 正常。\n- gamma: forecast 2 场，bet 0 笔，no-bet 2 笔，投入 0 GP，贷款 0 GP，信用Δ 20，净值 -71 GP，状态 重整。\n"
+  "evolution_trace": {
+    "traces": []
+  },
+  "behavior_replay": {
+    "version": null,
+    "run_id": null,
+    "event_count": 0,
+    "seat_count": 0
+  },
+  "markdown": "# AI Judge 上帝日报 V2 - 2026-06-15 smoke-behavior-v2-a\n\n## 总览\n- 本轮席位：0\n- 投注动作：0 笔；no-bet：0 笔\n- Recovery Mode 席位：0\n- 上帝 ledger 事件：0 条\n\n## 预测-投资偏离\n- 观察 forecast 覆盖与实际下注分离：预测必须全覆盖，下注允许 no-bet，避免模型为了下注而伪造确定性。\n\n## 贷款压力\n- 贷款额度由信用分和净资产共同决定；净资产小于等于 0 的席位进入重整状态并冻结新增贷款。\n\n## no-bet 纪律\n- 本轮 no-bet 0 笔。no-bet 不是缺席，而是需要写明边际不足、信息缺口或生存约束。\n\n## 重整状态\n- 当前重整席位 0 个。重整席位仍可 forecast，但投资被限制为小额恢复或 no-bet。\n\n## 策略漂移\n- 本日报记录行为路径、模式压缩和个体漂移；下一轮每个模型只收到自己的历史摘要。\n\n## 行为回放\n- 本轮可回放事件 0 条，覆盖席位 0 个。\n- 回放节点包含当时状态、决策重建和反事实，不暴露 raw prompt。\n\n## 行为通鉴 Top Patterns\n- 暂无足够行为模式，下一轮继续观察。\n\n## 席位点评\n"
 }

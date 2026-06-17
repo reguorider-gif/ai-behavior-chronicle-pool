@@ -2266,6 +2266,10 @@ function renderAiDecisionTable(models){
   </table>`;
 }
 
+function renderDecisionTable(models){
+  return renderAiDecisionTable(models);
+}
+
 function genericMatchSummary(match,hName,aName,market){
   const pct = clampPercent(match.ai?.pct || 58);
   const favored = match.ai?.pref === "away" ? aName : hName;
@@ -5147,7 +5151,7 @@ function openDetail(matchId){
       <span class="section-head-title">${t('detailModels')} · ${mv.models.length} ${currentLang==='zh'?'条记录':'records'}</span>
       <span class="section-head-meta">${t('statPool')}: ${mv.totalPoints.toLocaleString()} ${t('GP')} &nbsp; ${t('returnLabel')}: <span style="color:var(--green)">↑ ${mv.totalRet.toLocaleString()} ${t('GP')}</span></span>
     </div>
-    ${renderAiDecisionTable(mv.models)}
+    ${renderDecisionTable(mv.models)}
     <div class="section-head"><span class="section-head-title">${currentLang==='zh'?'席位档案':'Seat Archive'}</span><span class="section-head-meta">${currentLang==='zh'?'点击展开完整理由':'Click to expand reasoning'}</span></div>
     <div class="model-grid">
       ${mv.models.map((r,i)=>{

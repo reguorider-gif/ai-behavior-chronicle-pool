@@ -1,0 +1,67 @@
+{
+  "version": "behavior_patterns.v1",
+  "seat_id": "alpha",
+  "generated_at": "2026-06-17T20:52:14+00:00",
+  "patterns": [
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.87,
+      "source_event_ids": [
+        "smoke-behavior-v2-a:investment_recorded:567",
+        "smoke-behavior-v2-b:investment_recorded:574",
+        "smoke-behavior-v2-a:investment_recorded:579",
+        "smoke-behavior-v2-b:investment_recorded:586",
+        "smoke-behavior-v2-a:investment_recorded:591",
+        "smoke-behavior-v2-b:investment_recorded:598",
+        "smoke-behavior-v2-a:investment_recorded:603",
+        "smoke-behavior-v2-b:investment_recorded:610"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "alpha"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.83,
+      "source_event_ids": [
+        "smoke-behavior-v2-a:investment_recorded:567",
+        "smoke-behavior-v2-b:investment_recorded:574",
+        "smoke-behavior-v2-a:investment_recorded:579",
+        "smoke-behavior-v2-b:investment_recorded:586",
+        "smoke-behavior-v2-a:investment_recorded:591",
+        "smoke-behavior-v2-b:investment_recorded:598",
+        "smoke-behavior-v2-a:investment_recorded:603",
+        "smoke-behavior-v2-b:investment_recorded:610"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "alpha"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    },
+    {
+      "name": "profit_to_stability_check",
+      "label": "profit → stabilize strategy",
+      "confidence": 0.62,
+      "source_event_ids": [
+        "smoke-behavior-v2-a:settlement_recorded:520",
+        "smoke-behavior-v2-a:settlement_recorded:532",
+        "smoke-behavior-v2-a:settlement_recorded:544",
+        "smoke-behavior-v2-a:settlement_recorded:556",
+        "smoke-behavior-v2-a:settlement_recorded:568",
+        "smoke-behavior-v2-a:settlement_recorded:580",
+        "smoke-behavior-v2-a:settlement_recorded:592",
+        "smoke-behavior-v2-a:settlement_recorded:604"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "alpha"
+      ],
+      "note": "盈利后需要验证是否保持纪律，而不是盲目放大仓位。"
+    }
+  ]
+}
