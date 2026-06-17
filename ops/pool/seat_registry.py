@@ -16,6 +16,9 @@ PRODUCTION_SEATS = [
     "wenxin",
     "grok",
     "yuanbao",
+    "xunfei",
+    "stepfun",
+    "zhipu",
 ]
 
 REQUIRED_SEAT_COUNT = len(PRODUCTION_SEATS)
@@ -34,6 +37,8 @@ SEAT_DISPLAY_NAMES = {
     "grok": "xAI Grok",
     "yuanbao": "Yuanbao",
     "xunfei": "科大讯飞",
+    "stepfun": "阶跃星辰",
+    "zhipu": "智谱清言",
 }
 
 MODEL_ACCOUNT_BY_SEAT = {
@@ -49,6 +54,19 @@ SEAT_ALIASES = {
     "xinghuo": "xunfei",
     "讯飞": "xunfei",
     "科大讯飞": "xunfei",
+    "stepfun": "stepfun",
+    "step fun": "stepfun",
+    "step": "stepfun",
+    "stepchat": "stepfun",
+    "stepchat ai": "stepfun",
+    "阶跃": "stepfun",
+    "阶跃星辰": "stepfun",
+    "zhipu": "zhipu",
+    "zhipuai": "zhipu",
+    "zhipu ai": "zhipu",
+    "glm": "zhipu",
+    "智谱": "zhipu",
+    "智谱清言": "zhipu",
 }
 
 

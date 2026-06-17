@@ -39,7 +39,7 @@
 - Output: `/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/2026-06-13_run-12_post.md`
 
 - [ ] Run the generator against yesterday's settled `run-12`.
-- [ ] Verify 12/12 model commentary rows exist.
+- [ ] Verify 15/15 model commentary rows exist.
 - [ ] Verify post-match fields exist because run-12 is settled.
 - [ ] Include the smoke excerpt in the user report.
 
@@ -50,12 +50,12 @@
 
 - [ ] Once the project source is restored or pulled, expose `/api/pool/observer-ledgers`.
 - [ ] Add `observer_ledger` to `runtime-summary`.
-- [ ] Add a `战报流水` card to Data Center, showing the latest headline and all 12 model commentary links.
+- [ ] Add a `战报流水` card to Data Center, showing the latest headline and all 15 model commentary links.
 - [ ] Keep the product UI as record/detail view; keep Codex-only god report private.
 
 ### Verification
 
 - [ ] `python3 ops/generate_observer_ledger.py --date 2026-06-13 --round run-12 --phase post --write`
 - [ ] `python3 ops/run_observer_ledger_sop.py --date 2026-06-13 --round run-12 --write`
-- [ ] Inspect generated JSON for `seat_commentaries` length 12 and `phase=post`.
+- [ ] Inspect generated JSON for `seat_commentaries` length 15 and `phase=post`.
 - [ ] Inspect generated Markdown for every model name and the three commentary perspectives.

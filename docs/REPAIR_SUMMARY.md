@@ -160,4 +160,4 @@ Those files are retained as active `latest_*` pointers and are not archive drift
 - Some provider receipts may still omit explicit `memory_used`; bridge prompts should keep requiring this field.
 - The new `ops/auto_sop.py` facade is intentionally conservative; real bridge dispatch still requires `--dispatch` so dry-run and preflight can be tested without accidental submissions.
 - Local proxy/DNS instability can still make local Vercel `curl` checks flaky. Use `ops/fixes/proxy_diagnostic_and_fix.sh diagnose` before treating local failures as deployment failures.
-- `reference_market_seed` is still a labeled fallback board. It prevents 0/12 no-market rounds, but should be replaced by provider odds whenever match mapping succeeds.
+- `reference_market_seed` is still a labeled fallback board. It prevents 0/15 no-market rounds, but should be replaced by provider odds whenever match mapping succeeds.

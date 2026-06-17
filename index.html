@@ -1041,7 +1041,7 @@ const DEFAULT_DATE = '';
 const DEFAULT_ROUND = '';
 const DESIGN_FREEZE_READY_STATUS = "PRODUCTION_READY_BEHAVIOR_CIVILIZATION_ENGINE";
 const DATE_TO_ISO = {"6/11":"2026-06-11","6/12":"2026-06-12","6/13":"2026-06-13","6/14":"2026-06-14","6/15":"2026-06-15"};
-const PRODUCTION_SEATS=["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao"];
+const PRODUCTION_SEATS=["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao","xunfei","stepfun","zhipu"];
 const REQUIRED_SEAT_COUNT=PRODUCTION_SEATS.length;
 function requiredSeatCount(...sources){
   for(const source of sources){
@@ -2579,6 +2579,8 @@ const modelProfiles={
   "ChatGPT":{initial:"C",emoji:"💬",tagZh:"通用席",tagEn:"General",a:"#10b981",b:"#14b8a6"},
   "xAI Grok":{initial:"X",emoji:"⚡",tagZh:"激进席",tagEn:"Bold",a:"#8b5cf6",b:"#ec4899"},
   "科大讯飞":{initial:"讯",initialEn:"XF",emoji:"🔥",tagZh:"讯飞席",tagEn:"Spark",a:"#ef4444",b:"#2563eb"},
+  "阶跃星辰":{initial:"阶",initialEn:"SF",emoji:"✦",tagZh:"阶跃席",tagEn:"Step",a:"#7c3aed",b:"#2563eb"},
+  "智谱清言":{initial:"智",initialEn:"ZP",emoji:"◈",tagZh:"智谱席",tagEn:"GLM",a:"#0f766e",b:"#22c55e"},
 };
 function modelAvatar(name,size=""){
   const canonicalName = canonicalModelName(name,name);
@@ -3166,12 +3168,12 @@ function renderLoadingState(){
 
 function seatIdFromDisplayName(name){
   const raw=String(name || "").toLowerCase();
-  const map={"deepseek":"deepseek","gemini":"gemini","qwen":"qwen","yuanbao":"yuanbao","doubao":"doubao","meta ai":"meta","minimax":"minimax","mimo":"mimo","wenxin":"wenxin","kimi":"kimi","chatgpt":"chatgpt","xai grok":"grok","xai":"grok","grok":"grok","xunfei":"xunfei","iflytek":"xunfei","iflytek spark":"xunfei","spark":"xunfei","xinghuo":"xunfei","讯飞":"xunfei","科大讯飞":"xunfei"};
+  const map={"deepseek":"deepseek","gemini":"gemini","qwen":"qwen","yuanbao":"yuanbao","doubao":"doubao","meta ai":"meta","minimax":"minimax","mimo":"mimo","wenxin":"wenxin","kimi":"kimi","chatgpt":"chatgpt","xai grok":"grok","xai":"grok","grok":"grok","xunfei":"xunfei","iflytek":"xunfei","iflytek spark":"xunfei","spark":"xunfei","xinghuo":"xunfei","讯飞":"xunfei","科大讯飞":"xunfei","stepfun":"stepfun","step fun":"stepfun","step":"stepfun","stepchat":"stepfun","阶跃":"stepfun","阶跃星辰":"stepfun","zhipu":"zhipu","zhipu ai":"zhipu","zhipuai":"zhipu","glm":"zhipu","智谱":"zhipu","智谱清言":"zhipu"};
   return map[raw] || raw.replace(/\s+/g,'');
 }
 
 function displayNameForSeat(seatId){
-  const map={chatgpt:"ChatGPT",deepseek:"DeepSeek",mimo:"MiMo",minimax:"MiniMax",doubao:"Doubao",gemini:"Gemini",kimi:"Kimi",meta:"Meta AI",qwen:"Qwen",wenxin:"Wenxin",grok:"xAI Grok",yuanbao:"Yuanbao",xunfei:"科大讯飞"};
+  const map={chatgpt:"ChatGPT",deepseek:"DeepSeek",mimo:"MiMo",minimax:"MiniMax",doubao:"Doubao",gemini:"Gemini",kimi:"Kimi",meta:"Meta AI",qwen:"Qwen",wenxin:"Wenxin",grok:"xAI Grok",yuanbao:"Yuanbao",xunfei:"科大讯飞",stepfun:"阶跃星辰",zhipu:"智谱清言"};
   return map[String(seatId || "").toLowerCase()] || canonicalModelName(seatId,seatId);
 }
 

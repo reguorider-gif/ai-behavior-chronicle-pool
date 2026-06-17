@@ -22,6 +22,7 @@ from pred_invest_rules import gp
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
+REQUIRED_SEAT_COUNT = len(pred_invest_quality_gate.REQUIRED_SEATS)
 
 
 def now_iso() -> str:
@@ -284,9 +285,9 @@ def build_bundle(date: str, round_id: str, out_dir: pathlib.Path = OUT_DIR) -> d
         "model_summaries": summaries,
         "audit_rows": rows,
         "caveat": (
-            "This bundle uses strict AI Judge output as the current decision source; it remains partial until the hard gate reaches 12/12."
+            f"This bundle uses strict AI Judge output as the current decision source; it remains partial until the hard gate reaches {REQUIRED_SEAT_COUNT}/{REQUIRED_SEAT_COUNT}."
             if decision_source == "strict_god_report"
-            else "This is a V2-rule shadow rerun over accepted run receipts. It does not claim the 12 external models have already reanswered under PRED-INVEST-CREDIT-SURVIVE V2."
+            else f"This is a V2-rule shadow rerun over accepted run receipts. It does not claim the {REQUIRED_SEAT_COUNT} external models have already reanswered under PRED-INVEST-CREDIT-SURVIVE V2."
         ),
     }
 
@@ -297,13 +298,13 @@ def markdown(bundle: dict[str, Any]) -> str:
         f"# 当前游戏内容 · PRED-INVEST-CREDIT-SURVIVE V2 · {bundle['date']} · {bundle['round_id']}",
         "",
         f"- verdict: **{bundle['verdict']}**",
-        f"- 模型：{s['models']}/12",
+        f"- 模型：{s['models']}/{REQUIRED_SEAT_COUNT}",
         f"- 必须预测赛事：{s['forecast_matches']} 场",
         f"- 有盘口赛事：{s['matches_with_odds']} 场",
         f"- 已收回结构化投资/观望决策：{s['existing_decisions']} 条",
         f"- 桥接席位门禁：{s.get('bridge_frontend_badge') or '未生成'}；publish_allowed={s.get('bridge_publish_allowed')}",
         (
-            f"- strict 门禁：{s.get('validated_seats')}/12 席有效，待补 {s.get('pending_seats')} 席。"
+            f"- strict 门禁：{s.get('validated_seats')}/{REQUIRED_SEAT_COUNT} 席有效，待补 {s.get('pending_seats')} 席。"
             if s.get("existing_bets_source") == "strict_god_report"
             else f"- 新规则审计：{s['allowed']} 可入账 / {s['warned']} 需降额补字段 / {s['rejected']} 贷款冲突"
         ),
@@ -375,7 +376,7 @@ def html_page(bundle: dict[str, Any]) -> str:
     s = bundle["scoreboard"]
     cards = [
         ("状态", bundle["verdict"]),
-        ("模型", f"{s['models']}/12"),
+        ("模型", f"{s['models']}/{REQUIRED_SEAT_COUNT}"),
         ("赛事", f"{s['forecast_matches']} 场"),
         ("盘口覆盖", f"{s['matches_with_odds']} 场"),
         ("决策回执", f"{s['existing_decisions']} 条"),

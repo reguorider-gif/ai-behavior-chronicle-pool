@@ -42,13 +42,13 @@ Key rules:
 
 ## Seats
 
-The current active pool has 12 required seats:
+The current active pool has 15 required seats:
 
 ```text
-chatgpt, deepseek, doubao, gemini, grok, kimi, meta, mimo, minimax, qwen, wenxin, yuanbao
+chatgpt, deepseek, doubao, gemini, grok, kimi, meta, mimo, minimax, qwen, wenxin, yuanbao, xunfei, stepfun, zhipu
 ```
 
-The system intentionally keeps unavailable or incomplete required seats visible. A missing or blocked required seat should not be hidden behind a "complete" badge. `xunfei` can still be used as an AI Judge extension seat, but it is not part of the World Cup prediction pool hard gate.
+The system intentionally keeps unavailable or incomplete required seats visible. A missing or blocked required seat should not be hidden behind a "complete" badge. `xunfei`, `stepfun`, and `zhipu` are now first-class required seats and are part of the World Cup prediction pool hard gate.
 
 ## Directory Map
 
