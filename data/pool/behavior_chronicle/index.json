@@ -1,13 +1,13 @@
 {
   "version": "behavior_chronicle_index.v1",
-  "generated_at": "2026-06-17T20:52:14+00:00",
+  "generated_at": "2026-06-17T20:59:53+00:00",
   "seat_count": 1,
   "lesson_count": 3,
   "seats": {
     "unit_chronicle": {
       "version": "behavior_chronicle_lessons.v1",
       "seat_id": "unit_chronicle",
-      "generated_at": "2026-06-17T20:52:14+00:00",
+      "generated_at": "2026-06-17T20:59:53+00:00",
       "lesson_count": 3,
       "lessons": [
         {

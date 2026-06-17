@@ -113,20 +113,20 @@
   "private_context": {
     "own_account": {
       "seat_id": "alpha",
-      "updated_at": "2026-06-17T20:52:14+00:00",
+      "updated_at": "2026-06-17T20:59:54+00:00",
       "last_run_id": "smoke-behavior-v2-a",
       "runs_seen": [
         "smoke-behavior-v2-a",
         "smoke-behavior-v2-b"
       ],
       "event_counts": {
-        "self_review_recorded": 104,
-        "forecast_recorded": 104,
-        "investment_recorded": 104,
-        "settlement_recorded": 54,
-        "credit_updated": 104,
-        "account_snapshot": 104,
-        "debt_service_recorded": 34
+        "self_review_recorded": 106,
+        "forecast_recorded": 106,
+        "investment_recorded": 106,
+        "settlement_recorded": 55,
+        "credit_updated": 106,
+        "account_snapshot": 106,
+        "debt_service_recorded": 35
       },
       "recent_events": [
         {
@@ -137,7 +137,7 @@
           "outstanding_loan_gp": 0,
           "run_id": "smoke-behavior-v2-b",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:48:57+00:00"
+          "ts": "2026-06-17T20:52:14+00:00"
         },
         {
           "event_type": "self_review_recorded",
@@ -149,7 +149,7 @@
             "what_i_did_last_round": "首次烟测，无上轮记录。",
             "what_i_learned": "先分离预测与下注。"
           },
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "forecast_recorded",
@@ -183,7 +183,7 @@
           ],
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "investment_recorded",
@@ -221,7 +221,7 @@
           ],
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "settlement_recorded",
@@ -253,7 +253,7 @@
               }
             ]
           },
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "accrued_interest_gp": 0.0,
@@ -270,7 +270,7 @@
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
           "settlement_profit_gp": 96.0,
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "credit_delta": 20.0,
@@ -293,7 +293,7 @@
           "event_type": "credit_updated",
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "accrued_interest_gp": 0.0,
@@ -303,7 +303,7 @@
           "outstanding_loan_gp": 0.0,
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         }
       ],
       "last_self_review": {
@@ -371,20 +371,20 @@
     },
     "own_behavior_summary": {
       "seat_id": "alpha",
-      "updated_at": "2026-06-17T20:52:14+00:00",
+      "updated_at": "2026-06-17T20:59:54+00:00",
       "last_run_id": "smoke-behavior-v2-a",
       "runs_seen": [
         "smoke-behavior-v2-a",
         "smoke-behavior-v2-b"
       ],
       "event_counts": {
-        "self_review_recorded": 104,
-        "forecast_recorded": 104,
-        "investment_recorded": 104,
-        "settlement_recorded": 54,
-        "credit_updated": 104,
-        "account_snapshot": 104,
-        "debt_service_recorded": 34
+        "self_review_recorded": 106,
+        "forecast_recorded": 106,
+        "investment_recorded": 106,
+        "settlement_recorded": 55,
+        "credit_updated": 106,
+        "account_snapshot": 106,
+        "debt_service_recorded": 35
       },
       "recent_events": [
         {
@@ -395,7 +395,7 @@
           "outstanding_loan_gp": 0,
           "run_id": "smoke-behavior-v2-b",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:48:57+00:00"
+          "ts": "2026-06-17T20:52:14+00:00"
         },
         {
           "event_type": "self_review_recorded",
@@ -407,7 +407,7 @@
             "what_i_did_last_round": "首次烟测，无上轮记录。",
             "what_i_learned": "先分离预测与下注。"
           },
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "forecast_recorded",
@@ -441,7 +441,7 @@
           ],
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "investment_recorded",
@@ -479,7 +479,7 @@
           ],
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "event_type": "settlement_recorded",
@@ -511,7 +511,7 @@
               }
             ]
           },
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "accrued_interest_gp": 0.0,
@@ -528,7 +528,7 @@
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
           "settlement_profit_gp": 96.0,
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "credit_delta": 20.0,
@@ -551,7 +551,7 @@
           "event_type": "credit_updated",
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         },
         {
           "accrued_interest_gp": 0.0,
@@ -561,7 +561,7 @@
           "outstanding_loan_gp": 0.0,
           "run_id": "smoke-behavior-v2-a",
           "seat_id": "alpha",
-          "ts": "2026-06-17T20:52:14+00:00"
+          "ts": "2026-06-17T20:59:54+00:00"
         }
       ],
       "last_self_review": {
@@ -619,7 +619,7 @@
           "what_i_did_last_round": "上轮主胜小仓位命中，no-bet 纪律保持。",
           "what_i_learned": "轻边际可以下注，但不需要贷款。"
         },
-        "ts": "2026-06-17T20:48:57+00:00"
+        "ts": "2026-06-17T20:52:14+00:00"
       },
       {
         "event_type": "forecast_recorded",
@@ -653,7 +653,7 @@
         ],
         "run_id": "smoke-behavior-v2-b",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:48:57+00:00"
+        "ts": "2026-06-17T20:52:14+00:00"
       },
       {
         "event_type": "investment_recorded",
@@ -691,7 +691,7 @@
         ],
         "run_id": "smoke-behavior-v2-b",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:48:57+00:00"
+        "ts": "2026-06-17T20:52:14+00:00"
       },
       {
         "credit_delta": 0,
@@ -701,7 +701,7 @@
         "event_type": "credit_updated",
         "run_id": "smoke-behavior-v2-b",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:48:57+00:00"
+        "ts": "2026-06-17T20:52:14+00:00"
       },
       {
         "accrued_interest_gp": 0,
@@ -711,7 +711,7 @@
         "outstanding_loan_gp": 0,
         "run_id": "smoke-behavior-v2-b",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:48:57+00:00"
+        "ts": "2026-06-17T20:52:14+00:00"
       },
       {
         "event_type": "self_review_recorded",
@@ -723,7 +723,7 @@
           "what_i_did_last_round": "首次烟测，无上轮记录。",
           "what_i_learned": "先分离预测与下注。"
         },
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "event_type": "forecast_recorded",
@@ -757,7 +757,7 @@
         ],
         "run_id": "smoke-behavior-v2-a",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "event_type": "investment_recorded",
@@ -795,7 +795,7 @@
         ],
         "run_id": "smoke-behavior-v2-a",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "event_type": "settlement_recorded",
@@ -827,7 +827,7 @@
             }
           ]
         },
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "accrued_interest_gp": 0.0,
@@ -844,7 +844,7 @@
         "run_id": "smoke-behavior-v2-a",
         "seat_id": "alpha",
         "settlement_profit_gp": 96.0,
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "credit_delta": 20.0,
@@ -867,7 +867,7 @@
         "event_type": "credit_updated",
         "run_id": "smoke-behavior-v2-a",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       },
       {
         "accrued_interest_gp": 0.0,
@@ -877,7 +877,7 @@
         "outstanding_loan_gp": 0.0,
         "run_id": "smoke-behavior-v2-a",
         "seat_id": "alpha",
-        "ts": "2026-06-17T20:52:14+00:00"
+        "ts": "2026-06-17T20:59:54+00:00"
       }
     ],
     "behavior_kernel": {
@@ -888,7 +888,7 @@
         "loan_dependency": "low",
         "no_bet_rate": 0.5,
         "strategy_drift": "aggressive_shift",
-        "settlement_profit_gp": 5184.0,
+        "settlement_profit_gp": 5280.0,
         "recovery_mode": false
       },
       "active_patterns": [
@@ -897,14 +897,14 @@
           "label": "capital → selective allocation",
           "confidence": 0.87,
           "source_event_ids": [
-            "smoke-behavior-v2-b:investment_recorded:562",
-            "smoke-behavior-v2-a:investment_recorded:567",
             "smoke-behavior-v2-b:investment_recorded:574",
             "smoke-behavior-v2-a:investment_recorded:579",
             "smoke-behavior-v2-b:investment_recorded:586",
             "smoke-behavior-v2-a:investment_recorded:591",
             "smoke-behavior-v2-b:investment_recorded:598",
-            "smoke-behavior-v2-a:investment_recorded:603"
+            "smoke-behavior-v2-a:investment_recorded:603",
+            "smoke-behavior-v2-b:investment_recorded:610",
+            "smoke-behavior-v2-a:investment_recorded:615"
           ],
           "supporting_events": 8,
           "seats": [
@@ -917,14 +917,14 @@
           "label": "uncertainty → no-bet",
           "confidence": 0.83,
           "source_event_ids": [
-            "smoke-behavior-v2-b:investment_recorded:562",
-            "smoke-behavior-v2-a:investment_recorded:567",
             "smoke-behavior-v2-b:investment_recorded:574",
             "smoke-behavior-v2-a:investment_recorded:579",
             "smoke-behavior-v2-b:investment_recorded:586",
             "smoke-behavior-v2-a:investment_recorded:591",
             "smoke-behavior-v2-b:investment_recorded:598",
-            "smoke-behavior-v2-a:investment_recorded:603"
+            "smoke-behavior-v2-a:investment_recorded:603",
+            "smoke-behavior-v2-b:investment_recorded:610",
+            "smoke-behavior-v2-a:investment_recorded:615"
           ],
           "supporting_events": 8,
           "seats": [
@@ -937,14 +937,14 @@
           "label": "profit → stabilize strategy",
           "confidence": 0.62,
           "source_event_ids": [
-            "smoke-behavior-v2-a:settlement_recorded:520",
             "smoke-behavior-v2-a:settlement_recorded:532",
             "smoke-behavior-v2-a:settlement_recorded:544",
             "smoke-behavior-v2-a:settlement_recorded:556",
             "smoke-behavior-v2-a:settlement_recorded:568",
             "smoke-behavior-v2-a:settlement_recorded:580",
             "smoke-behavior-v2-a:settlement_recorded:592",
-            "smoke-behavior-v2-a:settlement_recorded:604"
+            "smoke-behavior-v2-a:settlement_recorded:604",
+            "smoke-behavior-v2-a:settlement_recorded:616"
           ],
           "supporting_events": 8,
           "seats": [
@@ -955,42 +955,42 @@
       ],
       "recent_timeline_events": [
         {
-          "event_id": "smoke-behavior-v2-b:investment_recorded:598",
+          "event_id": "smoke-behavior-v2-b:investment_recorded:610",
           "run_id": "smoke-behavior-v2-b",
           "action": "investment",
           "outcome": "1 bet / 1 no-bet",
           "risk_shift": "risk_reduction"
         },
         {
-          "event_id": "smoke-behavior-v2-b:credit_updated:599",
+          "event_id": "smoke-behavior-v2-b:credit_updated:611",
           "run_id": "smoke-behavior-v2-b",
           "action": "credit",
           "outcome": "B",
           "risk_shift": "constraint_update"
         },
         {
-          "event_id": "smoke-behavior-v2-a:forecast_recorded:602",
+          "event_id": "smoke-behavior-v2-a:forecast_recorded:614",
           "run_id": "smoke-behavior-v2-a",
           "action": "forecast",
           "outcome": "2 forecasts",
           "risk_shift": "information_gathering"
         },
         {
-          "event_id": "smoke-behavior-v2-a:investment_recorded:603",
+          "event_id": "smoke-behavior-v2-a:investment_recorded:615",
           "run_id": "smoke-behavior-v2-a",
           "action": "investment",
           "outcome": "1 bet / 1 no-bet",
           "risk_shift": "risk_reduction"
         },
         {
-          "event_id": "smoke-behavior-v2-a:settlement_recorded:604",
+          "event_id": "smoke-behavior-v2-a:settlement_recorded:616",
           "run_id": "smoke-behavior-v2-a",
           "action": "settlement",
           "outcome": "+96 GP",
           "risk_shift": "profit_lock"
         },
         {
-          "event_id": "smoke-behavior-v2-a:credit_updated:606",
+          "event_id": "smoke-behavior-v2-a:credit_updated:618",
           "run_id": "smoke-behavior-v2-a",
           "action": "credit",
           "outcome": "B",

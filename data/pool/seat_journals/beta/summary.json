@@ -1,19 +1,19 @@
 {
   "seat_id": "beta",
-  "updated_at": "2026-06-17T20:52:14+00:00",
+  "updated_at": "2026-06-17T20:59:54+00:00",
   "last_run_id": "smoke-behavior-v2-b",
   "runs_seen": [
     "smoke-behavior-v2-a",
     "smoke-behavior-v2-b"
   ],
   "event_counts": {
-    "self_review_recorded": 105,
-    "forecast_recorded": 105,
-    "investment_recorded": 105,
-    "settlement_recorded": 54,
-    "credit_updated": 105,
-    "account_snapshot": 105,
-    "debt_service_recorded": 34
+    "self_review_recorded": 107,
+    "forecast_recorded": 107,
+    "investment_recorded": 107,
+    "settlement_recorded": 55,
+    "credit_updated": 107,
+    "account_snapshot": 107,
+    "debt_service_recorded": 35
   },
   "recent_events": [
     {
@@ -31,7 +31,7 @@
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
       "settlement_profit_gp": -80.0,
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "credit_delta": -20.0,
@@ -54,7 +54,7 @@
       "event_type": "credit_updated",
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "accrued_interest_gp": 0.0,
@@ -64,7 +64,7 @@
       "outstanding_loan_gp": 0.0,
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "event_type": "self_review_recorded",
@@ -76,7 +76,7 @@
         "what_i_did_last_round": "上轮冷门判断失败。",
         "what_i_learned": "高赔率不是自动正期望。"
       },
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "event_type": "forecast_recorded",
@@ -110,7 +110,7 @@
       ],
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "event_type": "investment_recorded",
@@ -148,7 +148,7 @@
       ],
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "credit_delta": 0,
@@ -158,7 +158,7 @@
       "event_type": "credit_updated",
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     },
     {
       "accrued_interest_gp": 0,
@@ -168,7 +168,7 @@
       "outstanding_loan_gp": 100,
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-17T20:52:14+00:00"
+      "ts": "2026-06-17T20:59:54+00:00"
     }
   ],
   "last_self_review": {

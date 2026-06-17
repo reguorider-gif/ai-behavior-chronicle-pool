@@ -1,8 +1,8 @@
 {
   "version": "behavior_memory.v1",
   "seat_id": "beta",
-  "generated_at": "2026-06-17T20:52:14+00:00",
-  "event_count": 608,
+  "generated_at": "2026-06-17T20:59:54+00:00",
+  "event_count": 620,
   "runs_seen": [
     "smoke-behavior-v2-a",
     "smoke-behavior-v2-b"
@@ -11,13 +11,13 @@
     "behavior_type": "aggressive_edge_hunter",
     "risk_level": "high",
     "loan_dependency": "low",
-    "no_bet_rate": 0.74,
+    "no_bet_rate": 0.741,
     "strategy_drift": "aggressive_shift",
-    "bet_count": 54,
-    "forecast_count": 208,
-    "total_stake_gp": 4320.0,
+    "bet_count": 55,
+    "forecast_count": 212,
+    "total_stake_gp": 4400.0,
     "total_loan_used_gp": 0.0,
-    "settlement_profit_gp": -4320.0,
+    "settlement_profit_gp": -4400.0,
     "credit_grade": "C",
     "credit_score": 580.0,
     "recovery_mode": false
@@ -28,14 +28,14 @@
       "label": "uncertainty → no-bet",
       "confidence": 0.93,
       "source_event_ids": [
-        "smoke-behavior-v2-b:investment_recorded:562",
-        "smoke-behavior-v2-a:investment_recorded:567",
         "smoke-behavior-v2-b:investment_recorded:574",
         "smoke-behavior-v2-a:investment_recorded:579",
         "smoke-behavior-v2-b:investment_recorded:586",
         "smoke-behavior-v2-a:investment_recorded:591",
         "smoke-behavior-v2-b:investment_recorded:598",
-        "smoke-behavior-v2-a:investment_recorded:603"
+        "smoke-behavior-v2-a:investment_recorded:603",
+        "smoke-behavior-v2-b:investment_recorded:610",
+        "smoke-behavior-v2-a:investment_recorded:615"
       ],
       "supporting_events": 8,
       "seats": [
@@ -48,14 +48,14 @@
       "label": "capital → selective allocation",
       "confidence": 0.87,
       "source_event_ids": [
-        "smoke-behavior-v2-b:investment_recorded:562",
-        "smoke-behavior-v2-a:investment_recorded:567",
         "smoke-behavior-v2-b:investment_recorded:574",
         "smoke-behavior-v2-a:investment_recorded:579",
         "smoke-behavior-v2-b:investment_recorded:586",
         "smoke-behavior-v2-a:investment_recorded:591",
         "smoke-behavior-v2-b:investment_recorded:598",
-        "smoke-behavior-v2-a:investment_recorded:603"
+        "smoke-behavior-v2-a:investment_recorded:603",
+        "smoke-behavior-v2-b:investment_recorded:610",
+        "smoke-behavior-v2-a:investment_recorded:615"
       ],
       "supporting_events": 8,
       "seats": [
@@ -68,14 +68,14 @@
       "label": "loss → strategy review",
       "confidence": 0.68,
       "source_event_ids": [
-        "smoke-behavior-v2-a:settlement_recorded:520",
         "smoke-behavior-v2-a:settlement_recorded:532",
         "smoke-behavior-v2-a:settlement_recorded:544",
         "smoke-behavior-v2-a:settlement_recorded:556",
         "smoke-behavior-v2-a:settlement_recorded:568",
         "smoke-behavior-v2-a:settlement_recorded:580",
         "smoke-behavior-v2-a:settlement_recorded:592",
-        "smoke-behavior-v2-a:settlement_recorded:604"
+        "smoke-behavior-v2-a:settlement_recorded:604",
+        "smoke-behavior-v2-a:settlement_recorded:616"
       ],
       "supporting_events": 8,
       "seats": [
@@ -86,56 +86,56 @@
   ],
   "recent_timeline_events": [
     {
-      "event_id": "smoke-behavior-v2-a:credit_updated:594",
+      "event_id": "smoke-behavior-v2-a:credit_updated:606",
       "run_id": "smoke-behavior-v2-a",
       "action": "credit",
       "outcome": "C",
       "risk_shift": "constraint_update"
     },
     {
-      "event_id": "smoke-behavior-v2-b:forecast_recorded:597",
+      "event_id": "smoke-behavior-v2-b:forecast_recorded:609",
       "run_id": "smoke-behavior-v2-b",
       "action": "forecast",
       "outcome": "2 forecasts",
       "risk_shift": "information_gathering"
     },
     {
-      "event_id": "smoke-behavior-v2-b:investment_recorded:598",
+      "event_id": "smoke-behavior-v2-b:investment_recorded:610",
       "run_id": "smoke-behavior-v2-b",
       "action": "investment",
       "outcome": "0 bet / 2 no-bet",
       "risk_shift": "risk_reduction"
     },
     {
-      "event_id": "smoke-behavior-v2-b:credit_updated:599",
+      "event_id": "smoke-behavior-v2-b:credit_updated:611",
       "run_id": "smoke-behavior-v2-b",
       "action": "credit",
       "outcome": "C",
       "risk_shift": "constraint_update"
     },
     {
-      "event_id": "smoke-behavior-v2-a:forecast_recorded:602",
+      "event_id": "smoke-behavior-v2-a:forecast_recorded:614",
       "run_id": "smoke-behavior-v2-a",
       "action": "forecast",
       "outcome": "2 forecasts",
       "risk_shift": "information_gathering"
     },
     {
-      "event_id": "smoke-behavior-v2-a:investment_recorded:603",
+      "event_id": "smoke-behavior-v2-a:investment_recorded:615",
       "run_id": "smoke-behavior-v2-a",
       "action": "investment",
       "outcome": "1 bet / 1 no-bet",
       "risk_shift": "risk_reduction"
     },
     {
-      "event_id": "smoke-behavior-v2-a:settlement_recorded:604",
+      "event_id": "smoke-behavior-v2-a:settlement_recorded:616",
       "run_id": "smoke-behavior-v2-a",
       "action": "settlement",
       "outcome": "-80 GP",
       "risk_shift": "loss_review"
     },
     {
-      "event_id": "smoke-behavior-v2-a:credit_updated:606",
+      "event_id": "smoke-behavior-v2-a:credit_updated:618",
       "run_id": "smoke-behavior-v2-a",
       "action": "credit",
       "outcome": "C",
