@@ -1,21 +1,21 @@
 {
   "version": "behavior_patterns.v1",
   "seat_id": "beta",
-  "generated_at": "2026-06-17T20:59:54+00:00",
+  "generated_at": "2026-06-17T21:06:33+00:00",
   "patterns": [
     {
       "name": "uncertainty_to_no_bet",
       "label": "uncertainty → no-bet",
       "confidence": 0.93,
       "source_event_ids": [
-        "smoke-behavior-v2-b:investment_recorded:574",
-        "smoke-behavior-v2-a:investment_recorded:579",
         "smoke-behavior-v2-b:investment_recorded:586",
         "smoke-behavior-v2-a:investment_recorded:591",
         "smoke-behavior-v2-b:investment_recorded:598",
         "smoke-behavior-v2-a:investment_recorded:603",
         "smoke-behavior-v2-b:investment_recorded:610",
-        "smoke-behavior-v2-a:investment_recorded:615"
+        "smoke-behavior-v2-a:investment_recorded:615",
+        "smoke-behavior-v2-b:investment_recorded:622",
+        "smoke-behavior-v2-a:investment_recorded:627"
       ],
       "supporting_events": 8,
       "seats": [
@@ -28,14 +28,14 @@
       "label": "capital → selective allocation",
       "confidence": 0.87,
       "source_event_ids": [
-        "smoke-behavior-v2-b:investment_recorded:574",
-        "smoke-behavior-v2-a:investment_recorded:579",
         "smoke-behavior-v2-b:investment_recorded:586",
         "smoke-behavior-v2-a:investment_recorded:591",
         "smoke-behavior-v2-b:investment_recorded:598",
         "smoke-behavior-v2-a:investment_recorded:603",
         "smoke-behavior-v2-b:investment_recorded:610",
-        "smoke-behavior-v2-a:investment_recorded:615"
+        "smoke-behavior-v2-a:investment_recorded:615",
+        "smoke-behavior-v2-b:investment_recorded:622",
+        "smoke-behavior-v2-a:investment_recorded:627"
       ],
       "supporting_events": 8,
       "seats": [
@@ -48,14 +48,14 @@
       "label": "loss → strategy review",
       "confidence": 0.68,
       "source_event_ids": [
-        "smoke-behavior-v2-a:settlement_recorded:532",
         "smoke-behavior-v2-a:settlement_recorded:544",
         "smoke-behavior-v2-a:settlement_recorded:556",
         "smoke-behavior-v2-a:settlement_recorded:568",
         "smoke-behavior-v2-a:settlement_recorded:580",
         "smoke-behavior-v2-a:settlement_recorded:592",
         "smoke-behavior-v2-a:settlement_recorded:604",
-        "smoke-behavior-v2-a:settlement_recorded:616"
+        "smoke-behavior-v2-a:settlement_recorded:616",
+        "smoke-behavior-v2-a:settlement_recorded:628"
       ],
       "supporting_events": 8,
       "seats": [

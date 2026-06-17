@@ -1,14 +1,14 @@
 {
   "run_id": "smoke-behavior-v2-b",
-  "generated_at": "2026-06-17T20:59:54+00:00",
-  "event_count": 156,
+  "generated_at": "2026-06-17T21:06:33+00:00",
+  "event_count": 159,
   "seats": [
     "alpha",
     "beta",
     "gamma"
   ],
   "event_counts": {
-    "seat_receipt_validated": 156
+    "seat_receipt_validated": 159
   },
   "events": [
     {
@@ -1414,6 +1414,33 @@
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "gamma",
       "ts": "2026-06-17T20:59:54+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-17T21:06:33+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "beta",
+      "ts": "2026-06-17T21:06:33+00:00"
+    },
+    {
+      "event_type": "seat_receipt_validated",
+      "forecast_ok": true,
+      "investment_ok": true,
+      "investment_warnings": [],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "gamma",
+      "ts": "2026-06-17T21:06:33+00:00"
     }
   ]
 }

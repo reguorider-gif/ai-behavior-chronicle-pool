@@ -3,7 +3,7 @@ const path = require("node:path");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
-const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "";
+const FALLBACK_ORIGIN = process.env.POOL_FALLBACK_ORIGIN || "https://pool-app-one.vercel.app";
 const PRODUCTION_SEATS = ["chatgpt","deepseek","mimo","minimax","doubao","gemini","kimi","meta","qwen","wenxin","grok","yuanbao","xunfei","stepfun","zhipu"];
 const DEFAULT_CREDIT_SCORE = 600;
 const DEFAULT_CREDIT_GRADE = "B";
