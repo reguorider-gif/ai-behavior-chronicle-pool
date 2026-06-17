@@ -17,15 +17,22 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from pred_invest_seat_registry import PRODUCTION_SEATS, canonical_seat_id
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
 RUNS_ROOT = Path("/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/runs")
-REQUIRED_SEATS = ["chatgpt", "deepseek", "mimo", "minimax", "doubao", "gemini", "kimi", "meta", "qwen", "wenxin", "grok", "yuanbao"]
+REQUIRED_SEATS = list(PRODUCTION_SEATS)
 
 
 def _load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    except Exception as exc:
+        return {"_read_error": str(exc), "_path": str(path)}
 
 
 def _balanced_json_candidates(text: str) -> list[str]:
@@ -71,6 +78,50 @@ def _pred_invest_score(parsed: dict[str, Any]) -> int:
     return score
 
 
+def _escape_json_string_controls(candidate: str) -> str:
+    """Repair provider JSON that contains literal control chars in strings.
+
+    Some web UIs preserve model line wraps inside JSON string values, e.g.
+    "Colombia
+    v
+    Costa Rica". Standard JSON correctly rejects that, but the object is still
+    structurally recoverable. This keeps the repair intentionally narrow: only
+    control characters encountered while inside a quoted string are escaped.
+    """
+    repaired: list[str] = []
+    in_string = False
+    escape = False
+    for char in candidate:
+        if in_string:
+            if escape:
+                repaired.append(char)
+                escape = False
+                continue
+            if char == "\\":
+                repaired.append(char)
+                escape = True
+                continue
+            if char == '"':
+                repaired.append(char)
+                in_string = False
+                continue
+            if char == "\n":
+                repaired.append("\\n")
+                continue
+            if char == "\r":
+                repaired.append("\\r")
+                continue
+            if char == "\t":
+                repaired.append("\\t")
+                continue
+            repaired.append(char)
+            continue
+        repaired.append(char)
+        if char == '"':
+            in_string = True
+    return "".join(repaired)
+
+
 def _extract_json_object(text: str) -> dict[str, Any] | None:
     stripped = (text or "").strip()
     candidates = [stripped]
@@ -86,7 +137,10 @@ def _extract_json_object(text: str) -> dict[str, Any] | None:
         try:
             parsed = json.loads(candidate)
         except Exception:
-            continue
+            try:
+                parsed = json.loads(_escape_json_string_controls(candidate))
+            except Exception:
+                continue
         if isinstance(parsed, dict):
             parsed_candidates.append(parsed)
     if not parsed_candidates:
@@ -378,12 +432,16 @@ def _match_ids_from_existing_gate(date: str, round_id: str) -> tuple[list[str], 
     ids = [str(item) for item in raw_ids if item]
     if not ids:
         return None
-    return ids, f"existing_quality_gate:{path.name}"
+    return ids, f"existing_quality_gate:{path.name}:{'publish_allowed' if data.get('publish_allowed') else 'not_published'}"
 
 
 def _match_ids_from_prompt_pack(date: str, round_id: str) -> tuple[list[str], str]:
     path = OUT_DIR / f"{date}_{round_id}_prompt_pack.json"
+    if not path.exists():
+        return [], f"prompt_pack_missing:{path.name}"
     pack = _load_json(path)
+    if isinstance(pack, dict) and pack.get("_read_error"):
+        return [], f"prompt_pack_unreadable:{path.name}"
     matches = pack.get("matches") if isinstance(pack, dict) else []
     ids = []
     for match in matches:
@@ -392,12 +450,41 @@ def _match_ids_from_prompt_pack(date: str, round_id: str) -> tuple[list[str], st
     return ids, f"prompt_pack:{path.name}"
 
 
+def _market_availability_from_prompt_pack(date: str, round_id: str) -> dict[str, bool]:
+    """Return whether each prompt-pack match had an auditable market snapshot.
+
+    This is intentionally tied to the prompt pack, not runtime matches: the
+    audit must validate what the models actually saw. A model may forecast
+    with no odds, but it must not invent bettable odds/stakes when the prompt
+    exposed no market rows.
+    """
+    path = OUT_DIR / f"{date}_{round_id}_prompt_pack.json"
+    if not path.exists():
+        return {}
+    try:
+        pack = _load_json(path)
+    except Exception:
+        return {}
+    result: dict[str, bool] = {}
+    for match in pack.get("matches") or []:
+        if not isinstance(match, dict):
+            continue
+        match_id = str(match.get("match_id") or match.get("id") or "")
+        if not match_id:
+            continue
+        snapshot = match.get("market_snapshot")
+        result[match_id] = bool(isinstance(snapshot, list) and snapshot)
+    return result
+
+
 def _required_match_ids(date: str, round_id: str) -> tuple[list[str], str]:
-    return (
-        _match_ids_from_required_snapshot(date, round_id)
-        or _match_ids_from_existing_gate(date, round_id)
-        or _match_ids_from_prompt_pack(date, round_id)
-    )
+    frozen = _match_ids_from_required_snapshot(date, round_id)
+    if frozen:
+        return frozen
+    gate = _match_ids_from_existing_gate(date, round_id)
+    if gate:
+        return gate
+    return _match_ids_from_prompt_pack(date, round_id)
 
 
 def _latest_responses(run_ids: list[str]) -> tuple[dict[str, list[dict[str, Any]]], dict[str, list[dict[str, Any]]]]:
@@ -421,7 +508,7 @@ def _latest_responses(run_ids: list[str]) -> tuple[dict[str, list[dict[str, Any]
             for row in raw_results:
                 if not isinstance(row, dict):
                     continue
-                seat = str(row.get("seat") or row.get("seat_id") or "").lower()
+                seat = canonical_seat_id(row.get("seat") or row.get("seat_id"))
                 if not seat:
                     continue
                 if row.get("ok") and row.get("response"):
@@ -453,7 +540,7 @@ def _latest_responses(run_ids: list[str]) -> tuple[dict[str, list[dict[str, Any]
                 continue
             action = event.get("action")
             data = event.get("data") if isinstance(event.get("data"), dict) else {}
-            seat = str(data.get("seat") or data.get("seat_id") or "").lower()
+            seat = canonical_seat_id(data.get("seat") or data.get("seat_id"))
             if not seat:
                 continue
             if action == "cdp_response_captured":
@@ -497,7 +584,7 @@ def _append_page_salvage_responses(
     for row in rows:
         if not isinstance(row, dict):
             continue
-        seat = str(row.get("seat") or "").strip().lower()
+        seat = canonical_seat_id(row.get("seat"))
         text = str(row.get("text") or "")
         if not seat or not text:
             continue
@@ -523,7 +610,12 @@ def _ids(rows: Any) -> set[str]:
     return result
 
 
-def _validate_parsed(parsed: dict[str, Any], required_ids: list[str], expected_seat: str | None = None) -> tuple[list[str], set[str], set[str]]:
+def _validate_parsed(
+    parsed: dict[str, Any],
+    required_ids: list[str],
+    expected_seat: str | None = None,
+    market_available_by_match: dict[str, bool] | None = None,
+) -> tuple[list[str], set[str], set[str]]:
     issues: list[str] = []
     required_fields = [
         "model_account",
@@ -540,18 +632,15 @@ def _validate_parsed(parsed: dict[str, Any], required_ids: list[str], expected_s
         issues.append("missing_top_level_fields:" + ",".join(missing_fields))
     if expected_seat:
         expected_seat = expected_seat.lower()
-        expected_models = {expected_seat}
-        if expected_seat == "grok":
-            expected_models.add("xai")
-        seat_id = str(parsed.get("seat_id") or parsed.get("seat") or "").strip().lower()
-        model_account = str(parsed.get("model_account") or "").strip().lower()
+        seat_id = canonical_seat_id(parsed.get("seat_id") or parsed.get("seat"))
+        model_account = canonical_seat_id(parsed.get("model_account"))
         if not seat_id:
             issues.append("missing_seat_id")
         elif seat_id != expected_seat:
             issues.append(f"seat_mismatch:{seat_id}!={expected_seat}")
         if not model_account:
             issues.append("missing_model_account")
-        elif model_account not in expected_models:
+        elif model_account != expected_seat:
             issues.append(f"model_account_mismatch:{model_account}!={expected_seat}")
     forecast_ids = _ids(parsed.get("forecasts"))
     investment_ids = _ids(parsed.get("investments"))
@@ -561,13 +650,48 @@ def _validate_parsed(parsed: dict[str, Any], required_ids: list[str], expected_s
         issues.append("missing_forecasts:" + ",".join(missing_forecasts))
     if missing_investments:
         issues.append("missing_investments:" + ",".join(missing_investments))
+    if market_available_by_match:
+        invalid_no_market_bets: list[str] = []
+        for row in parsed.get("investments") or []:
+            if not isinstance(row, dict):
+                continue
+            match_id = str(row.get("match_id") or "")
+            if match_id not in required_ids:
+                continue
+            if market_available_by_match.get(match_id, True):
+                continue
+            action = _normalize_investment_action(row.get("action"), row.get("stake_gp"))
+            stake = _compact_number(row.get("stake_gp"))
+            loan_used = _compact_number(row.get("loan_used_gp"))
+            odds = _compact_number(row.get("odds"))
+            market = str(row.get("market") or "").strip().lower()
+            selection = str(row.get("selection") or "").strip().lower()
+            line = str(row.get("line") or "").strip().lower()
+            has_bet_fields = (
+                action == "bet"
+                or stake > 0
+                or loan_used > 0
+                or odds > 0
+                or market not in {"", "none", "null"}
+                or selection not in {"", "none", "null"}
+                or line not in {"", "-", "--", "none", "null"}
+            )
+            if has_bet_fields:
+                invalid_no_market_bets.append(match_id)
+        if invalid_no_market_bets:
+            issues.append("market_snapshot_missing_but_bet_fields_present:" + ",".join(sorted(set(invalid_no_market_bets))))
     audit_block = parsed.get("self_audit") if isinstance(parsed.get("self_audit"), dict) else {}
     if audit_block.get("ready_for_frontend_ingest") is not True:
         issues.append("self_audit_not_ready")
     return issues, forecast_ids, investment_ids
 
 
-def _select_response_candidate(candidates: list[dict[str, Any]], required_ids: list[str], expected_seat: str | None = None) -> tuple[dict[str, Any] | None, list[str], set[str], set[str]]:
+def _select_response_candidate(
+    candidates: list[dict[str, Any]],
+    required_ids: list[str],
+    expected_seat: str | None = None,
+    market_available_by_match: dict[str, bool] | None = None,
+) -> tuple[dict[str, Any] | None, list[str], set[str], set[str]]:
     best_invalid: tuple[dict[str, Any], list[str], set[str], set[str]] | None = None
     for candidate in sorted(candidates, key=lambda row: row.get("sequence", 0), reverse=True):
         text = candidate.get("text") or ""
@@ -584,7 +708,12 @@ def _select_response_candidate(candidates: list[dict[str, Any]], required_ids: l
             forecast_ids: set[str] = set()
             investment_ids: set[str] = set()
         else:
-            issues, forecast_ids, investment_ids = _validate_parsed(parsed, required_ids, expected_seat)
+            issues, forecast_ids, investment_ids = _validate_parsed(
+                parsed,
+                required_ids,
+                expected_seat,
+                market_available_by_match,
+            )
         if not issues:
             return candidate, issues, forecast_ids, investment_ids
         if best_invalid is None:
@@ -596,6 +725,7 @@ def _select_response_candidate(candidates: list[dict[str, Any]], required_ids: l
 
 def audit(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
     required_ids, required_source = _required_match_ids(date, round_id)
+    market_available_by_match = _market_availability_from_prompt_pack(date, round_id)
     responses, errors = _latest_responses(run_ids)
     _append_page_salvage_responses(responses, date, round_id)
     observed_seats = sorted(set(responses) | set(errors))
@@ -606,7 +736,12 @@ def audit(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
     valid_seats = []
     invalid_seats = []
     for seat in seats:
-        response, issues, forecast_ids, investment_ids = _select_response_candidate(responses.get(seat, []), required_ids, seat)
+        response, issues, forecast_ids, investment_ids = _select_response_candidate(
+            responses.get(seat, []),
+            required_ids,
+            seat,
+            market_available_by_match,
+        )
         result = {
             "seat": seat,
             "valid": not issues,
@@ -628,6 +763,7 @@ def audit(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]:
         "run_ids": run_ids,
         "required_match_ids": required_ids,
         "required_match_source": required_source,
+        "market_available_by_match": {mid: market_available_by_match.get(mid) for mid in required_ids},
         "valid_count": len(valid_seats),
         "invalid_count": len(invalid_seats),
         "valid_seats": valid_seats,
