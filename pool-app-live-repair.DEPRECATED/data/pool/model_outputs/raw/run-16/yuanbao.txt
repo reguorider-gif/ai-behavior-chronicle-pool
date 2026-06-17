@@ -1,0 +1,105 @@
+{
+"model_account": "yuanbao",
+"seat_id": "yuanbao",
+"display_name": "yuanbao",
+"round_id": "run-16",
+"date": "2026-06-16",
+"account_review": {
+"balance_gp": 1500.0,
+"net_worth_gp": 1000.0,
+"loan_gp": 500.0,
+"credit_grade": "A-",
+"credit_score": 710.4,
+"risk_status": "高波动探索模式，需在多场热身赛中寻找非线性收益机会，避免无信息优势的重仓。",
+"recent_performance": "上一轮未参与投注，预测缺席导致排名下滑至第4位，急需在本轮展示结构化判断能力。"
+},
+"unlimited_loan_strategy": {
+"bankruptcy_loan": {
+"amount_gp": 0,
+"reason": "当前资产健康，无需破产贷款。",
+"repayment_path": "N/A"
+},
+"investment_loan": {
+"amount_gp": 800.0,
+"interest_rate": "10% per round",
+"target_markets": ["高赔率冷门赛果", "强弱对话的精准比分"],
+"expected_roi": "25%",
+"stop_loss_condition": "单场损失超过投入本金的70%，或赛前2小时出现关键情报反转（如主力伤停）。"
+}
+},
+"opponent_counterplay": {
+"vs_deepseek": "DeepSeek 排名第一且稳健，我将避开其首选的强队胜场，转而挖掘其可能忽略的平局或小概率比分。",
+"vs_gemini": "Gemini 依赖权威数据，我会利用其对非热门联赛球队数据覆盖不足的弱点，攻击中下游球队的对阵。",
+"vs_kimi": "Kimi 濒临出局，必然采取极端激进策略。我将反向操作其热门选择，利用其高波动制造对手失误。"
+},
+"next_round_bets": [
+{
+"match": "Morocco v Norway (2026-06-07)",
+"market": "亚洲盘 / 总进球数",
+"prediction": {
+"forecast": "主胜概率 55%, 平 25%, 客胜 20%",
+"most_likely_score": "2-1",
+"confidence": 0.75,
+"fair_odds": "主胜 1.80, 平 3.40, 客胜 4.50",
+"information_gaps": "挪威队近期防守体系变动情况不明，摩洛哥主场热身赛战绩样本较少。"
+},
+"investment": {
+"target_return_coeff": 3.20,
+"gp_stake": 400.0,
+"loan_used": 300.0,
+"rationale": "摩洛哥作为非洲杯冠军状态火热，挪威进攻端依赖个别球星，预计场面开放但效率不高。",
+"information_sources": ["FIFA 官方热身赛日程", "转会市场球员状态追踪"],
+"exit_conditions": "赛前确认挪威主力后卫缺阵则加注；摩洛哥核心前锋受伤则撤单。"
+}
+},
+{
+"match": "Croatia v Belgium (2026-06-02)",
+"market": "胜平负 / 精确比分",
+"prediction": {
+"forecast": "主胜概率 35%, 平 40%, 客胜 25%",
+"most_likely_score": "1-1",
+"confidence": 0.65,
+"fair_odds": "主胜 2.90, 平 3.10, 客胜 2.60",
+"information_gaps": "比利时队新老交替进度，克罗地亚中场控制力是否下滑。"
+},
+"investment": {
+"target_return_coeff": 4.00,
+"gp_stake": 300.0,
+"loan_used": 200.0,
+"rationale": "两队均为欧洲传统强队但处于调整期，平局概率极高，高赔率比分（如1-1, 0-0）具备投资价值。",
+"information_sources": ["欧足联国家队积分排名", "近期友谊赛得失球数据"],
+"exit_conditions": "临场赔率大幅波动超过15%则放弃。"
+}
+},
+{
+"match": "France v Côte d'Ivoire (2026-06-04)",
+"market": "让球胜平负",
+"prediction": {
+"forecast": "主胜概率 70%, 平 20%, 客胜 10%",
+"most_likely_score": "3-1",
+"confidence": 0.85,
+"fair_odds": "主胜 1.40, 平 4.50, 客胜 7.00",
+"information_gaps": "科特迪瓦客场作战能力评估。"
+},
+"investment": {
+"target_return_coeff": 1.95,
+"gp_stake": 600.0,
+"loan_used": 300.0,
+"rationale": "法国队阵容深度远超对手，主场热身赛通常全主力出战，穿盘可能性大。",
+"information_sources": ["FIFA世界排名", "球队大名单分析"],
+"exit_conditions": "姆巴佩等核心球员确认轮休则转为 no_bet。"
+}
+}
+],
+"information_sources_plan": {
+"primary": ["FIFA官网赛事中心", "Opta体育数据"],
+"secondary": ["转会新闻聚合", "各国家队社媒动态"],
+"verification_method": "交叉验证至少两个独立信源，拒绝单一匿名爆料。"
+},
+"forward_looking_data": {
+"world_cup_opening": "2026-06-11 A组首轮墨西哥 vs 南非",
+"key_indicators_to_track": ["各队伤病名单", "热身赛进球转化率", "新任主教练战术倾向"]
+},
+"resonance_challenge": "挑战 Grok 的反共识叙事：针对其可能看好的'科特迪瓦爆冷法国'，我将基于阵容深度差距进行反向狙击。",
+"product_feedback": "当前规则下，高赔率仓位限制对激进策略形成有效约束，建议增加'连续正确预测'的信用分加成，鼓励高质量冷门捕捉。"
+}

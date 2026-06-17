@@ -1,0 +1,845 @@
+{
+  "date": "2026-06-16",
+  "run_id": "debug-run-16",
+  "seat_id": "grok",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "public_context": {
+    "current_rules": {
+      "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+      "must_forecast_every_match": true,
+      "investment_action_options": [
+        "bet",
+        "no_bet"
+      ],
+      "forecast_affects_credit": true,
+      "investment_affects_gp": true,
+      "loan_repaid_before_ranking": true,
+      "recovery_mode": {
+        "trigger_net_worth_lte": 0,
+        "freeze_new_loan": true,
+        "max_single_match_stake_gp": 50,
+        "max_odds": 3.0,
+        "allow_forecast": true,
+        "allow_no_bet": true
+      }
+    },
+    "anonymous_market_snapshot": {
+      "date": "2026-06-16",
+      "run_id": "debug-run-16",
+      "privacy": "anonymous_market_only_no_seat_choices",
+      "matches": []
+    },
+    "output_contract": {
+      "required_top_level_fields": [
+        "seat_id",
+        "rule_version",
+        "self_review",
+        "forecasts",
+        "investments",
+        "loan_decision",
+        "survival_plan",
+        "self_audit"
+      ],
+      "forecast_probability_sum_min": 0.99,
+      "forecast_probability_sum_max": 1.01,
+      "behavior_memory_required_fields": [
+        "memory_used",
+        "memory_not_used_reason",
+        "strategy_change_from_memory"
+      ]
+    }
+  },
+  "private_context": {
+    "own_account": {
+      "seat_id": "grok",
+      "updated_at": "2026-06-16T12:01:03+00:00",
+      "last_run_id": "run-16",
+      "runs_seen": [
+        "run-15",
+        "run-16"
+      ],
+      "event_counts": {
+        "prompt_context_recorded": 2,
+        "forecast_recorded": 2,
+        "investment_recorded": 2,
+        "credit_updated": 2,
+        "survival_updated": 2
+      },
+      "recent_events": [
+        {
+          "event_type": "investment_recorded",
+          "investments": [
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WC-K1",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            }
+          ],
+          "loan_decision": {
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "available_loan_gp": 500.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "B",
+          "credit_score": 641.0,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.11,
+          "loan_limit_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 500.0,
+          "balance_gp": 1000.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 500.0,
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "prompt_context_recorded",
+          "prompt_context_path": "data/pool/prompt_contexts/run-16/grok.json",
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "forecast_recorded",
+          "forecasts": [],
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "investment_recorded",
+          "investments": [],
+          "loan_decision": {
+            "reason": "未声明新增贷款。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "available_loan_gp": 500.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "B",
+          "credit_score": 641.0,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "ok",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.11,
+          "loan_limit_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 500.0,
+          "balance_gp": 1000.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 500.0,
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        }
+      ],
+      "last_self_review": {},
+      "last_forecasts": [],
+      "last_investments": [],
+      "last_settlement": {},
+      "credit_score": 649.0,
+      "credit_grade": "B",
+      "credit_delta": -8,
+      "balance_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "strategy_drift_note": "",
+      "model_account": "grok",
+      "display_name": "xAI",
+      "rank": 12,
+      "loan_gp": 0.0,
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。",
+      "computed_rank": 12,
+      "confirmed_current_balance_gp": 1000.0,
+      "remaining_loan_gp": 0
+    },
+    "own_credit_and_loan": {
+      "seat_id": "grok",
+      "credit_score": 584.0,
+      "credit_grade": "C",
+      "loan_limit_gp": 200.0,
+      "interest_rate": 0.18
+    },
+    "own_recovery_constraints": {
+      "seat_id": "grok",
+      "recovery_mode": false,
+      "freeze_new_loan": false,
+      "max_single_match_stake_gp": null,
+      "max_odds": null,
+      "allowed_actions": [
+        "forecast",
+        "bet",
+        "no_bet"
+      ]
+    },
+    "own_behavior_summary": {
+      "seat_id": "grok",
+      "updated_at": "2026-06-16T12:01:03+00:00",
+      "last_run_id": "run-16",
+      "runs_seen": [
+        "run-15",
+        "run-16"
+      ],
+      "event_counts": {
+        "prompt_context_recorded": 2,
+        "forecast_recorded": 2,
+        "investment_recorded": 2,
+        "credit_updated": 2,
+        "survival_updated": 2
+      },
+      "recent_events": [
+        {
+          "event_type": "investment_recorded",
+          "investments": [
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WC-K1",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            },
+            {
+              "action": "missing",
+              "line": null,
+              "loan_used_gp": 0,
+              "market": "",
+              "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+              "odds": null,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "selection": "",
+              "source": "quality_gate_missing_receipt",
+              "stake_gp": 0,
+              "status": "missing_provider_blocked",
+              "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            }
+          ],
+          "loan_decision": {
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "available_loan_gp": 500.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "B",
+          "credit_score": 641.0,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.11,
+          "loan_limit_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 500.0,
+          "balance_gp": 1000.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 500.0,
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-15",
+          "seat_id": "grok",
+          "ts": "2026-06-15T19:56:21+00:00"
+        },
+        {
+          "event_type": "prompt_context_recorded",
+          "prompt_context_path": "data/pool/prompt_contexts/run-16/grok.json",
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "forecast_recorded",
+          "forecasts": [],
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "event_type": "investment_recorded",
+          "investments": [],
+          "loan_decision": {
+            "reason": "未声明新增贷款。",
+            "request_loan_gp": 0
+          },
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "status": "missing_provider_blocked",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "available_loan_gp": 500.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_delta": -8,
+          "credit_grade": "B",
+          "credit_score": 641.0,
+          "details": [
+            {
+              "credit_delta": -8,
+              "reason": "ok",
+              "type": "missing_or_invalid_receipt"
+            }
+          ],
+          "event_type": "credit_updated",
+          "interest_rate": 0.11,
+          "loan_limit_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        },
+        {
+          "accrued_interest_gp": 0.0,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ],
+          "available_loan_gp": 500.0,
+          "balance_gp": 1000.0,
+          "event_type": "survival_updated",
+          "freeze_new_loan": false,
+          "loan_limit_gp": 500.0,
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "run_id": "run-16",
+          "seat_id": "grok",
+          "ts": "2026-06-16T12:01:03+00:00"
+        }
+      ],
+      "last_self_review": {},
+      "last_forecasts": [],
+      "last_investments": [],
+      "last_settlement": {},
+      "credit_score": 641.0,
+      "credit_grade": "B",
+      "credit_delta": -8,
+      "balance_gp": 1000.0,
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "strategy_drift_note": ""
+    },
+    "own_recent_events": [
+      {
+        "event_type": "prompt_context_recorded",
+        "prompt_context_path": "data/pool/prompt_contexts/run-15/grok.json",
+        "run_id": "run-15",
+        "seat_id": "grok",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "forecast_recorded",
+        "forecasts": [
+          {
+            "away_win_prob": null,
+            "confidence": 0,
+            "draw_prob": null,
+            "edge_assessment": "missing",
+            "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "home_win_prob": null,
+            "information_gaps": [
+              "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            ],
+            "match_id": "WC-K1",
+            "model_estimated_prob": null,
+            "most_likely_score": null,
+            "status": "missing_provider_blocked"
+          },
+          {
+            "away_win_prob": null,
+            "confidence": 0,
+            "draw_prob": null,
+            "edge_assessment": "missing",
+            "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "home_win_prob": null,
+            "information_gaps": [
+              "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            ],
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "model_estimated_prob": null,
+            "most_likely_score": null,
+            "status": "missing_provider_blocked"
+          },
+          {
+            "away_win_prob": null,
+            "confidence": 0,
+            "draw_prob": null,
+            "edge_assessment": "missing",
+            "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "home_win_prob": null,
+            "information_gaps": [
+              "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            ],
+            "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+            "model_estimated_prob": null,
+            "most_likely_score": null,
+            "status": "missing_provider_blocked"
+          },
+          {
+            "away_win_prob": null,
+            "confidence": 0,
+            "draw_prob": null,
+            "edge_assessment": "missing",
+            "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "home_win_prob": null,
+            "information_gaps": [
+              "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+            ],
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "model_estimated_prob": null,
+            "most_likely_score": null,
+            "status": "missing_provider_blocked"
+          }
+        ],
+        "run_id": "run-15",
+        "seat_id": "grok",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "investment_recorded",
+        "investments": [
+          {
+            "action": "missing",
+            "line": null,
+            "loan_used_gp": 0,
+            "market": "",
+            "match_id": "WC-K1",
+            "odds": null,
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "selection": "",
+            "source": "quality_gate_missing_receipt",
+            "stake_gp": 0,
+            "status": "missing_provider_blocked",
+            "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          },
+          {
+            "action": "missing",
+            "line": null,
+            "loan_used_gp": 0,
+            "market": "",
+            "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+            "odds": null,
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "selection": "",
+            "source": "quality_gate_missing_receipt",
+            "stake_gp": 0,
+            "status": "missing_provider_blocked",
+            "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          },
+          {
+            "action": "missing",
+            "line": null,
+            "loan_used_gp": 0,
+            "market": "",
+            "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+            "odds": null,
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "selection": "",
+            "source": "quality_gate_missing_receipt",
+            "stake_gp": 0,
+            "status": "missing_provider_blocked",
+            "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          },
+          {
+            "action": "missing",
+            "line": null,
+            "loan_used_gp": 0,
+            "market": "",
+            "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+            "odds": null,
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "selection": "",
+            "source": "quality_gate_missing_receipt",
+            "stake_gp": 0,
+            "status": "missing_provider_blocked",
+            "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          }
+        ],
+        "loan_decision": {
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "request_loan_gp": 0
+        },
+        "run_id": "run-15",
+        "seat_id": "grok",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "available_loan_gp": 500.0,
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "credit_delta": -8,
+        "credit_grade": "B",
+        "credit_score": 641.0,
+        "details": [
+          {
+            "credit_delta": -8,
+            "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+            "type": "missing_or_invalid_receipt"
+          }
+        ],
+        "event_type": "credit_updated",
+        "interest_rate": 0.11,
+        "loan_limit_gp": 500.0,
+        "outstanding_loan_gp": 0.0,
+        "run_id": "run-15",
+        "seat_id": "grok",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "accrued_interest_gp": 0.0,
+        "allowed_actions": [
+          "forecast",
+          "bet",
+          "no_bet"
+        ],
+        "available_loan_gp": 500.0,
+        "balance_gp": 1000.0,
+        "event_type": "survival_updated",
+        "freeze_new_loan": false,
+        "loan_limit_gp": 500.0,
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "recovery_mode": false,
+        "run_id": "run-15",
+        "seat_id": "grok",
+        "ts": "2026-06-15T19:56:21+00:00"
+      },
+      {
+        "event_type": "prompt_context_recorded",
+        "prompt_context_path": "data/pool/prompt_contexts/run-16/grok.json",
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "event_type": "forecast_recorded",
+        "forecasts": [],
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "event_type": "investment_recorded",
+        "investments": [],
+        "loan_decision": {
+          "reason": "未声明新增贷款。",
+          "request_loan_gp": 0
+        },
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "status": "missing_provider_blocked",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "available_loan_gp": 500.0,
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "credit_delta": -8,
+        "credit_grade": "B",
+        "credit_score": 641.0,
+        "details": [
+          {
+            "credit_delta": -8,
+            "reason": "ok",
+            "type": "missing_or_invalid_receipt"
+          }
+        ],
+        "event_type": "credit_updated",
+        "interest_rate": 0.11,
+        "loan_limit_gp": 500.0,
+        "outstanding_loan_gp": 0.0,
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "ts": "2026-06-16T12:01:03+00:00"
+      },
+      {
+        "accrued_interest_gp": 0.0,
+        "allowed_actions": [
+          "forecast",
+          "bet",
+          "no_bet"
+        ],
+        "available_loan_gp": 500.0,
+        "balance_gp": 1000.0,
+        "event_type": "survival_updated",
+        "freeze_new_loan": false,
+        "loan_limit_gp": 500.0,
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "recovery_mode": false,
+        "run_id": "run-16",
+        "seat_id": "grok",
+        "ts": "2026-06-16T12:01:03+00:00"
+      }
+    ],
+    "behavior_kernel": {
+      "kernel_version": "behavior_kernel_v1",
+      "profile": {
+        "behavior_type": "discipline_first_observer",
+        "risk_level": "low",
+        "loan_dependency": "low",
+        "no_bet_rate": 1.0,
+        "strategy_drift": "risk_reduction",
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      },
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:7"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "grok"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ],
+      "recent_timeline_events": [
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:forecast_recorded:6",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-16:investment_recorded:7",
+          "run_id": "run-16",
+          "action": "investment",
+          "outcome": "0 bet / 0 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-16:credit_updated:8",
+          "run_id": "run-16",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-16:survival_updated:9",
+          "run_id": "run-16",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        }
+      ],
+      "decision_contract": {
+        "must_consider_memory": true,
+        "kernel_version": "behavior_kernel_v1",
+        "required_receipt_fields": [
+          "memory_used",
+          "memory_not_used_reason",
+          "strategy_change_from_memory"
+        ],
+        "instruction": "下一轮必须说明历史行为模式是否影响本轮 forecast/investment；如未影响，必须给出原因。"
+      }
+    }
+  },
+  "privacy_guard": {
+    "other_models_private_logs_visible": false,
+    "other_models_current_choices_visible": false,
+    "allowed_external_context": [
+      "current_rules",
+      "anonymous_market_snapshot",
+      "own_history"
+    ]
+  },
+  "behavior_kernel_version": "behavior_kernel_v1"
+}

@@ -1,0 +1,28 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "42a97c4d0fa9",
+  "round_id": "run-15",
+  "date": "2026-06-15",
+  "exported_at": "2026-06-15T16:24:13.711424+00:00",
+  "status": "complete",
+  "rows": [],
+  "blocked": [],
+  "required_blocked": [],
+  "optional_blocked": [],
+  "saved_raw_outputs": 0,
+  "blocked_or_missing": 0,
+  "active_pool_models": [
+    "chatgpt",
+    "deepseek",
+    "doubao",
+    "gemini",
+    "grok",
+    "kimi",
+    "meta",
+    "mimo",
+    "minimax",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ]
+}

@@ -16,19 +16,30 @@ import re
 import shutil
 import socket
 import subprocess
-from datetime import datetime, timezone
+import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+import pool_data  # noqa: E402
+from pred_invest_seat_registry import PRODUCTION_SEATS, REQUIRED_SEAT_COUNT  # noqa: E402
+
 PRED_DIR = ROOT / "data" / "pool" / "pred_invest"
 POOL_DIR = ROOT / "data" / "pool"
-LIVE_DIR_DEFAULT = ROOT.parent / "pool-app-live-repair"
+# The production app now serves root index/data files.  The old live-repair
+# bundle is intentionally kept as an archive and is excluded from Vercel
+# deployments, so it must not be the default health baseline.
+LIVE_DIR_DEFAULT = ROOT
 REQUIRED_RULE = "PRED_INVEST_CREDIT_SURVIVE_V2"
-REQUIRED_SEATS = {"chatgpt", "deepseek", "mimo", "minimax", "doubao", "gemini", "kimi", "meta", "qwen", "wenxin", "grok", "yuanbao"}
+REQUIRED_SEATS = set(PRODUCTION_SEATS)
+EXPECTED_TOURNAMENT_MATCHES = 104
 BROWSER_WRAPPER = Path("/opt/homebrew/Caskroom/chromium/latest/chromium.wrapper.sh")
+HK_TZ = timezone(timedelta(hours=8))
 
 
 def browser_health() -> dict[str, Any]:
@@ -166,6 +177,69 @@ def current_ids(matches: list[Any]) -> set[str]:
     return {str(match.get("match_id") or match.get("id")) for match in matches if isinstance(match, dict) and (match.get("match_id") or match.get("id"))}
 
 
+def match_registry_date_coverage(rows: list[Any]) -> dict[str, Any]:
+    dates: set[str] = set()
+    ids: set[str] = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        match_id = str(row.get("match_id") or row.get("id") or "")
+        if match_id:
+            ids.add(match_id)
+        dates.update(match_date_keys(row))
+        day = public_match_day(row)
+        if day:
+            dates.add(day)
+    ordered = sorted(date for date in dates if date and date != "None")
+    return {
+        "date_count": len(ordered),
+        "first_date": ordered[0] if ordered else None,
+        "last_date": ordered[-1] if ordered else None,
+        "match_count": len(ids),
+    }
+
+
+def match_date_keys(row: dict[str, Any]) -> set[str]:
+    values = {
+        str(row.get("date") or ""),
+        str(row.get("matchday_hk") or ""),
+        str(row.get("source_date_query") or ""),
+    }
+    kickoff = row.get("kickoff_at")
+    if kickoff:
+        try:
+            parsed = datetime.fromisoformat(str(kickoff).replace("Z", "+00:00"))
+            values.add(parsed.astimezone(timezone.utc).date().isoformat())
+        except Exception:
+            pass
+    return {value for value in values if value and value != "None"}
+
+
+def public_match_day(row: dict[str, Any]) -> str:
+    for key in ("matchday_hk", "public_matchday", "public_date"):
+        value = str(row.get(key) or "")
+        if value:
+            return value[:10]
+    kickoff = row.get("kickoff_at")
+    if kickoff:
+        try:
+            parsed = datetime.fromisoformat(str(kickoff).replace("Z", "+00:00"))
+            return parsed.astimezone(HK_TZ).date().isoformat()
+        except Exception:
+            pass
+    return str(row.get("date") or sorted(match_date_keys(row))[0])[:10]
+
+
+def next_actionable_day_matches(runtime: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = [row for row in runtime.get("future_matches") or [] if isinstance(row, dict)]
+    rows.sort(key=lambda row: str(row.get("kickoff_at") or row.get("date") or ""))
+    if not rows:
+        return []
+    first = rows[0]
+    first_day = public_match_day(first)
+    return [row for row in rows if public_match_day(row) == first_day]
+
+
 def score_sync_blocking_rows(score_sync: dict[str, Any], alignment: dict[str, Any]) -> list[dict[str, Any]]:
     """Use score-sync as the authoritative overdue source.
 
@@ -179,6 +253,74 @@ def score_sync_blocking_rows(score_sync: dict[str, Any], alignment: dict[str, An
         return [row for row in pending if isinstance(row, dict) and row.get("blocking") is not False]
     overdue = alignment.get("score_missing_after_due") if isinstance(alignment.get("score_missing_after_due"), list) else []
     return [row for row in overdue if isinstance(row, dict) and row.get("blocking") is not False]
+
+
+def provider_error_summary(meta: dict[str, Any]) -> str:
+    if not isinstance(meta, dict):
+        return "missing_meta"
+    error = str(meta.get("error") or "")
+    curl_system = meta.get("curl_system_fallback") if isinstance(meta.get("curl_system_fallback"), dict) else {}
+    curl_direct = meta.get("curl_direct_fallback") if isinstance(meta.get("curl_direct_fallback"), dict) else {}
+    curl_proxy = meta.get("curl_proxy_fallback") if isinstance(meta.get("curl_proxy_fallback"), dict) else {}
+    cache = meta.get("cache_fallback") if isinstance(meta.get("cache_fallback"), dict) else {}
+    parts = []
+    if error:
+        parts.append(error.split("\n", 1)[0][:90])
+    for label, payload in (("system", curl_system), ("direct", curl_direct), ("proxy", curl_proxy), ("cache", cache)):
+        detail = str(payload.get("error") or "")
+        if detail:
+            parts.append(f"{label}:{detail.split(chr(10), 1)[0][:80]}")
+    for key, label in (
+        ("curl_system_fallback_error", "system"),
+        ("curl_direct_fallback_error", "direct"),
+        ("curl_proxy_fallback_error", "proxy"),
+        ("cache_fallback_error", "cache"),
+    ):
+        detail = str(meta.get(key) or "")
+        if detail:
+            parts.append(f"{label}:{detail.split(chr(10), 1)[0][:80]}")
+    return " | ".join(parts) or "unknown"
+
+
+def parse_iso_datetime(value: Any) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00")).astimezone(timezone.utc)
+    except Exception:
+        return None
+
+
+def score_cache_warning(
+    meta: dict[str, Any],
+    *,
+    blocking_score_count: int,
+    now: datetime | None = None,
+    max_age_hours: float = 8.0,
+) -> str | None:
+    """Return a warning only when score cache fallback is a product risk.
+
+    Codex's managed sandbox can block DNS/network for Python subprocesses even
+    when the same domain is reachable from an approved shell curl.  The SOP is
+    designed to survive that by using the last provider cache.  Treat that as
+    healthy when the cache is fresh and no score backfill is blocking; escalate
+    only when the fallback could change user-visible settlement correctness.
+    """
+    if not isinstance(meta, dict) or meta.get("transport") != "cache_fallback":
+        return None
+    summary = provider_error_summary(meta)
+    if blocking_score_count > 0:
+        return f"the_odds_api_scores_using_cache_with_blocking_scores:{blocking_score_count}:{summary}"
+    if not meta.get("ok") or int(meta.get("row_count") or 0) <= 0:
+        return "the_odds_api_scores_cache_unusable:" + summary
+    generated_at = parse_iso_datetime(meta.get("cache_mtime") or meta.get("generated_at"))
+    if not generated_at:
+        return "the_odds_api_scores_cache_age_unknown:" + summary
+    reference = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    age_hours = max(0.0, (reference - generated_at).total_seconds() / 3600)
+    if age_hours > max_age_hours:
+        return f"the_odds_api_scores_cache_stale:{age_hours:.1f}h:{summary}"
+    return None
 
 
 def audit(live_dir: Path) -> dict[str, Any]:
@@ -195,6 +337,7 @@ def audit(live_dir: Path) -> dict[str, Any]:
     alignment = read_json(latest_artifact("match_data_alignment_audit"))
     score_sync = read_json(latest_artifact("score_sync"))
     proxy = proxy_health()
+    runtime = pool_data.get_runtime_summary(round_id=current.get("round_id"), date=current.get("date") or None)
 
     for name, data in {
         "current_game": current,
@@ -214,10 +357,20 @@ def audit(live_dir: Path) -> dict[str, Any]:
     if rule != REQUIRED_RULE:
         errors.append(f"rule_version_mismatch:{rule}")
 
+    current_key = (current.get("date"), current.get("round_id"))
+    quality_key = (quality.get("date"), quality.get("round_id"))
+    quality_applicable = bool(quality.get("round_id")) and quality_key == current_key
+    if quality.get("round_id") and not quality_applicable:
+        warnings.append(
+            f"quality_gate_round_differs_from_current:{quality.get('date')}:{quality.get('round_id')}!={current.get('date')}:{current.get('round_id')}"
+        )
+
     current_status = current.get("verdict")
     quality_status = quality.get("status")
     status_rank = {"NOT_READY": 0, "PARTIAL_NOT_READY": 1, "READY_WITH_WARNINGS": 1, "READY": 2}
     if (
+        quality_applicable
+        and
         current_status
         and quality_status
         and status_rank.get(str(current_status), -1) > status_rank.get(str(quality_status), -1)
@@ -225,11 +378,17 @@ def audit(live_dir: Path) -> dict[str, Any]:
         errors.append(f"current_more_optimistic_than_quality:{current_status}>{quality_status}")
     current_publish = ((current.get("quality_gate") or {}).get("publish_allowed"))
     quality_publish = quality.get("publish_allowed")
-    if current_publish is not None and quality_publish is not None and current_publish != quality_publish:
+    if quality_applicable and current_publish is not None and quality_publish is not None and current_publish != quality_publish:
         errors.append("current_quality_publish_mismatch")
 
     matches = current.get("matches") if isinstance(current.get("matches"), list) else []
     prompt_matches = prompt.get("matches") if isinstance(prompt.get("matches"), list) else []
+    runtime_matches = runtime.get("matches") if isinstance(runtime.get("matches"), list) else []
+    runtime_future = runtime.get("future_matches") if isinstance(runtime.get("future_matches"), list) else []
+    runtime_coverage = match_registry_date_coverage(runtime_matches)
+    runtime_match_count = int(runtime_coverage.get("match_count") or 0)
+    if runtime_match_count < EXPECTED_TOURNAMENT_MATCHES:
+        errors.append(f"tournament_schedule_incomplete:{runtime_match_count}/{EXPECTED_TOURNAMENT_MATCHES}")
     if not matches:
         errors.append("current_game_has_no_matches")
     if not prompt_matches:
@@ -240,27 +399,74 @@ def audit(live_dir: Path) -> dict[str, Any]:
     if count_market_rows(matches) <= 0:
         errors.append("current_game_has_no_market_rows")
 
-    required = set(str(item) for item in quality.get("required_match_ids") or [])
+    market_meta = prompt.get("market_source_meta") if isinstance(prompt.get("market_source_meta"), dict) else {}
+    odds_meta = market_meta.get("the_odds_api") if isinstance(market_meta.get("the_odds_api"), dict) else {}
+    if odds_meta and odds_meta.get("configured") and not odds_meta.get("ok"):
+        warnings.append("the_odds_api_live_odds_unavailable:" + provider_error_summary(odds_meta))
+    if market_meta and market_meta.get("primary") == "odds_snapshot_endpoint_or_reference_seed":
+        findings.append("market_source=odds_snapshot_endpoint_or_reference_seed")
+    early_overdue_scores = score_sync_blocking_rows(score_sync, alignment)
+    score_meta = score_sync.get("external_score_source") if isinstance(score_sync.get("external_score_source"), dict) else {}
+    score_warning = score_cache_warning(score_meta, blocking_score_count=len(early_overdue_scores))
+    if score_warning:
+        warnings.append(score_warning)
+    elif score_meta.get("transport") == "cache_fallback":
+        findings.append("the_odds_api_scores_cache_fallback_fresh_non_blocking")
+
+    required = set(str(item) for item in quality.get("required_match_ids") or []) if quality_applicable else set()
     if required:
-        missing_required = sorted(required - current_ids(matches))
+        runtime_ids = current_ids(runtime_matches)
+        missing_required = sorted(required - runtime_ids)
         if missing_required:
-            errors.append("required_matches_missing_from_current_game:" + ",".join(missing_required))
+            errors.append("required_matches_missing_from_runtime_registry:" + ",".join(missing_required))
 
     prompt_required = ((prompt.get("required_coverage") or {}) if isinstance(prompt.get("required_coverage"), dict) else {})
     prompt_missing_required = prompt_required.get("missing_required_match_ids") or []
     if prompt_missing_required:
         errors.append("prompt_pack_missing_required_matches:" + ",".join(str(item) for item in prompt_missing_required))
 
-    valid = set(str(item) for item in quality.get("valid_seats") or [])
-    provider_blocked, rerunnable_needs = split_rerun_queue(quality)
-    needs = set(str(item) for item in quality.get("needs_rerun") or [])
+    next_day_matches = next_actionable_day_matches(runtime)
+    next_day_ids = current_ids(next_day_matches)
+    prompt_ids = current_ids(prompt_matches)
+    current_match_ids = current_ids(matches)
+    if next_day_ids:
+        missing_next_prompt = sorted(next_day_ids - prompt_ids)
+        if missing_next_prompt:
+            errors.append("prompt_pack_missing_next_actionable_registry_matches:" + ",".join(missing_next_prompt))
+        missing_next_current = sorted(next_day_ids - current_match_ids)
+        if missing_next_current:
+            warnings.append("current_game_missing_next_actionable_registry_matches:" + ",".join(missing_next_current))
+    runtime_overdue = (((runtime.get("audit") or {}) if isinstance(runtime.get("audit"), dict) else {}).get("overdue_result_matches") or [])
+    if runtime_overdue:
+        errors.append(
+            "runtime_result_sync_overdue:"
+            + str(len(runtime_overdue))
+            + ":"
+            + ",".join(str(row.get("match_id")) for row in runtime_overdue[:12] if isinstance(row, dict))
+        )
+
+    local_schedule_seed = read_json(PRED_DIR / "schedule_seed.json")
+    live_schedule_seed = read_json(live_dir / "data" / "pool" / "pred_invest" / "schedule_seed.json")
+    local_schedule_rows = local_schedule_seed.get("matches") if isinstance(local_schedule_seed.get("matches"), list) else []
+    live_schedule_rows = live_schedule_seed.get("matches") if isinstance(live_schedule_seed.get("matches"), list) else []
+    local_coverage = match_registry_date_coverage(local_schedule_rows)
+    live_coverage = match_registry_date_coverage(live_schedule_rows)
+    runtime_last = runtime_coverage.get("last_date")
+    if runtime_last and local_coverage.get("last_date") and local_coverage["last_date"] < runtime_last:
+        errors.append(f"local_schedule_seed_truncated:{local_coverage['last_date']}<runtime:{runtime_last}")
+    if runtime_last and live_coverage.get("last_date") and live_coverage["last_date"] < runtime_last:
+        errors.append(f"live_schedule_seed_truncated:{live_coverage['last_date']}<runtime:{runtime_last}")
+
+    valid = set(str(item) for item in quality.get("valid_seats") or []) if quality_applicable else set()
+    provider_blocked, rerunnable_needs = split_rerun_queue(quality) if quality_applicable else ([], [])
+    needs = set(str(item) for item in quality.get("needs_rerun") or []) if quality_applicable else set()
     seen = valid | needs
-    missing_seat_state = sorted(REQUIRED_SEATS - seen)
+    missing_seat_state = sorted(REQUIRED_SEATS - seen) if quality_applicable else []
     if missing_seat_state:
         errors.append("quality_gate_missing_seat_state:" + ",".join(missing_seat_state))
-    if quality.get("publish_allowed") and len(valid) != 12:
+    if quality_applicable and quality.get("publish_allowed") and len(valid) != REQUIRED_SEAT_COUNT:
         errors.append(f"publish_allowed_but_valid_count_is_{len(valid)}")
-    if not quality.get("publish_allowed") and current.get("verdict") == "READY":
+    if quality_applicable and not quality.get("publish_allowed") and current.get("verdict") == "READY":
         errors.append("current_game_ready_while_gate_blocks")
     if rerunnable_needs:
         warnings.append("targeted_rerun_required:" + ",".join(rerunnable_needs))
@@ -279,7 +485,7 @@ def audit(live_dir: Path) -> dict[str, Any]:
     elif proxy.get("diagnostic_only"):
         findings.append("proxy_python_socket_check_sandboxed_but_non_blocking")
 
-    overdue_scores = score_sync_blocking_rows(score_sync, alignment)
+    overdue_scores = early_overdue_scores
     unique_overdue = sorted({str(row.get("match_id")) for row in overdue_scores if isinstance(row, dict) and row.get("match_id")})
     if unique_overdue:
         errors.append(f"score_sync_overdue:{len(unique_overdue)}:" + ",".join(unique_overdue[:12]))
@@ -352,8 +558,11 @@ def audit(live_dir: Path) -> dict[str, Any]:
     findings.extend(
         [
             f"current={current.get('date')} {current.get('round_id')} {current.get('verdict')}",
-            f"quality={quality.get('status')} valid={len(valid)}/12 needs={','.join(sorted(needs)) or 'none'}",
+            f"quality={quality.get('status')} valid={len(valid)}/{REQUIRED_SEAT_COUNT} needs={','.join(sorted(needs)) or 'none'}",
             f"matches={len(matches)} market_rows={count_market_rows(matches)}",
+            f"runtime_registry_matches={len(runtime_matches)} future={len(runtime_future)} next_actionable={len(next_day_matches)}",
+            f"schedule_coverage=runtime:{runtime_coverage.get('first_date')}..{runtime_coverage.get('last_date')} ({runtime_coverage.get('match_count')} matches) local_seed:{local_coverage.get('first_date')}..{local_coverage.get('last_date')} live_seed:{live_coverage.get('first_date')}..{live_coverage.get('last_date')}",
+            f"runtime_result_sync_overdue={len(runtime_overdue)}",
             f"observer={observer.get('date')} {observer.get('round_id')} phase={observer.get('phase')}",
             f"browser_qa={browser.get('version') or browser.get('error') or 'unknown'}",
             f"score_sync_overdue={len(unique_overdue)}",

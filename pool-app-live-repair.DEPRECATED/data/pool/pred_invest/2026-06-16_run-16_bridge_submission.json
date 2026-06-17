@@ -1,0 +1,67 @@
+{
+  "version": "pred_invest_bridge_submission.v2",
+  "generated_at": "2026-06-16T22:21:24.532738+00:00",
+  "base_url": "http://127.0.0.1:8501",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "selected_seats": [
+    "qwen"
+  ],
+  "requested_seats": [
+    "qwen"
+  ],
+  "wanted_seats": [
+    "qwen"
+  ],
+  "blocked_seats": [],
+  "prompt_chars": 1953,
+  "required_match_source": "quality_gate:2026-06-16_run-16_quality_gate.json:not_published",
+  "required_match_ids": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "missing_required_match_ids": [],
+  "dry_run": true,
+  "compact": true,
+  "ultra_compact": true,
+  "attempt_no": 54,
+  "judge_mode": "quick_judge",
+  "assume_requested_ready": true,
+  "payload": {
+    "question": "AI_JUDGE_RERUN_MARKER:POOL_RUN_16_ATTEMPT_54_QWEN_222124_\n[PRED_INVEST_RECEIPT_ONLY]\n    date=2026-06-16 round=run-16 product=worldcup_pool\n    answer_contract: compact_line_receipt\n    不要复述题目，不要 JSON，不要 Markdown，不要解释，只输出 PRED_INVEST_RECEIPT 行协议。\n    研究游戏，不是真实投注建议。当前席位：qwen。\n    账号：qwen rank3 bal1500.0 net1100.0 loan400.0 creditB\n    赛事：\n    M|WC-I1|France vs Senegal|h2h:France:-@1.46;h2h:Draw:-@4.6\nM|WC-SEED-20260617-ENGLAND-CROATIA|England vs Croatia|h2h:England:-@1.85;h2h:Draw:-@4.07\nM|WC-SEED-20260617-GHANA-PANAMA|Ghana vs Panama|h2h:Ghana:-@2.03;h2h:Draw:-@3.91\nM|WC-SEED-20260617-PORTUGAL-CONGO-DR|Portugal vs Congo DR|h2h:Portugal:-@1.27;h2h:Draw:-@5.86\nM|WC-SEED-20260617-UZBEKISTAN-COLOMBIA|Uzbekistan vs Colombia|h2h:Uzbekistan:-@5.9;h2h:Draw:-@4.97\n    必须覆盖：WC-I1,WC-SEED-20260617-ENGLAND-CROATIA,WC-SEED-20260617-GHANA-PANAMA,WC-SEED-20260617-PORTUGAL-CONGO-DR,WC-SEED-20260617-UZBEKISTAN-COLOMBIA\n    无盘口硬门禁：none\n    规则：每个 match_id 必须同时出现在 forecasts 与 investments；可 no_bet，但不能缺行。贷款会先计息偿还再排名；前五奖励，末三罚款。\n    身份硬门禁：model_account 必须等于 \"qwen\"；seat_id 必须等于 \"qwen\"。禁止沿用旧会话身份，禁止输出空字符串身份。\n\n    输出要求：\n    - 第一行必须是 PRED_INVEST_RECEIPT。\n    - 总长度必须控制在 900 字以内；不要长分析。\n    - 必须严格按以下格式逐行输出，不能增加其他行；不下注也必须写 B 行。\n      PRED_INVEST_RECEIPT\n      model_account=qwen\n      seat_id=qwen\n      strategy=12字内策略\n      F|match_id|home/draw/away|比分|0-100|bet/no_bet/lean|信息缺口\n      B|match_id|bet/no_bet|moneyline/handicap/total/none|selection|line|odds|stake_gp|loan_used_gp|8字理由\n      LOAN|borrow_gp|8字理由|8字还款\n      RISK|风险1;风险2\n      AUDIT|逗号连接全部match_id||true\n    - no_bet 示例：B|WC-EXAMPLE|no_bet|none|none|none|0|0|0|无边不投。\n    - F 行必须刚好 5 条，且覆盖全部 match_id。\n    - B 行必须刚好 5 条，且覆盖全部 match_id；禁止只写下注比赛。\n    - 无盘口硬门禁里的 match_id，B 行必须写 no_bet|none|none|none|0|0|0；禁止填赔率、盘口或 stake。\n    - AUDIT 第一栏必须等于 WC-I1,WC-SEED-20260617-ENGLAND-CROATIA,WC-SEED-20260617-GHANA-PANAMA,WC-SEED-20260617-PORTUGAL-CONGO-DR,WC-SEED-20260617-UZBEKISTAN-COLOMBIA；第二栏必须留空；第三栏必须 true。",
+    "mode": "quick_judge",
+    "engine": "web",
+    "seat_config": {
+      "selected": [
+        "qwen"
+      ],
+      "partial_policy": "allow",
+      "round2_policy": "all_valid_first_round"
+    },
+    "round2_policy": "all_valid_first_round",
+    "report_style": "audit",
+    "answer_contract": {
+      "kind": "sports_worldcup_pool_prediction_complete_answer",
+      "response_format": "compact_line_receipt",
+      "structured_json_required": false,
+      "required_top_level_fields": [
+        "model_account",
+        "seat_id",
+        "one_sentence_strategy",
+        "forecasts",
+        "investments",
+        "loan_decision",
+        "risk_notes",
+        "self_audit"
+      ],
+      "min_required_response_chars": 0,
+      "reason": "pred_invest_compact_receipt_required"
+    }
+  },
+  "ok": true,
+  "status": "dry_run",
+  "emitted_payload_path": "/tmp/run16_attempt54_qwen_payload.json"
+}

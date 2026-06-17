@@ -1,0 +1,46 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "3abc21f8c0d6",
+  "round_id": "run-14",
+  "attempt_no": 4,
+  "date": "2026-06-14",
+  "exported_at": "2026-06-14T20:45:23.414069+00:00",
+  "observed_models": [
+    "minimax"
+  ],
+  "exported_outputs": 0,
+  "invalid_outputs": [
+    {
+      "seat_id": "minimax",
+      "seat": "minimax",
+      "response_chars": 0,
+      "ok": false,
+      "reason": "empty_response",
+      "execution_validity": {
+        "policy_version": "required-web-seat-v1",
+        "required": true,
+        "valid": false,
+        "submitted": true,
+        "accepted": false,
+        "marker_found": false,
+        "marker_closed": false,
+        "matches_question": false,
+        "prompt_echo": false,
+        "polluted": false,
+        "page_busy": false,
+        "response_chars": 0,
+        "min_response_chars": 1,
+        "response_hash": null,
+        "capture_mode": "",
+        "prompt_id": "AIJUDGE-minimax-1781469683044665000",
+        "attempts": 0,
+        "source": "web_bridge",
+        "reason": "slow_response_pending"
+      }
+    }
+  ],
+  "rows": [],
+  "dropbox": null,
+  "ingest": null,
+  "pipeline": null
+}

@@ -1,0 +1,20 @@
+{
+  "version": "pipeline_results_from_explicit_scores.v1",
+  "source_policy": "explicit_result_file_plus_matches_api_score_registry",
+  "matches": [
+    {
+      "match_id": "M1",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "score": "0-1",
+      "home_score": 0,
+      "away_score": 1,
+      "outcome": "away",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": null,
+      "source": "matches_api_score_registry",
+      "score_registry_applied": true
+    }
+  ]
+}

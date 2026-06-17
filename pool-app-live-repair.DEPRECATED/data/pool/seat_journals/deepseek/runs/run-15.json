@@ -1,0 +1,278 @@
+{
+  "seat_id": "deepseek",
+  "run_id": "run-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "status": "collected",
+  "forecasts": [
+    {
+      "match_id": "WC-K1",
+      "home_win_prob": 0.48,
+      "draw_prob": 0.29,
+      "away_win_prob": 0.23,
+      "most_likely_score": "1-1",
+      "confidence": 0.65,
+      "fair_odds": {
+        "home": 2.08,
+        "draw": 3.45,
+        "away": 4.35
+      },
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "C罗是否首发及其身体状态",
+        "哥伦比亚J罗与迪亚斯连线实战配合",
+        "双方近期热身赛对抗强度和人员完整度"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "home_win_prob": 0.55,
+      "draw_prob": 0.26,
+      "away_win_prob": 0.19,
+      "most_likely_score": "2-1",
+      "confidence": 0.55,
+      "fair_odds": {
+        "home": 1.82,
+        "draw": 3.85,
+        "away": 5.26
+      },
+      "edge_assessment": "low_confidence",
+      "information_gaps": [
+        "比利时黄金一代剩余核心状态（德布劳内/卢卡库）",
+        "埃及萨拉赫之外的第二进攻点",
+        "handicap具体让球线缺失，无法计算真实价值",
+        "Pinnacle等机构盘口与其它博彩公司差异原因"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "home_win_prob": 0.16,
+      "draw_prob": 0.26,
+      "away_win_prob": 0.58,
+      "most_likely_score": "0-2",
+      "confidence": 0.6,
+      "fair_odds": {
+        "home": 6.25,
+        "draw": 3.85,
+        "away": 1.72
+      },
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "乌拉圭前锋线努涅斯/苏亚雷斯配置",
+        "沙特近期主场防守体系",
+        "handicap让球线缺失，赔率方向不明"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "home_win_prob": 0.33,
+      "draw_prob": 0.3,
+      "away_win_prob": 0.37,
+      "most_likely_score": "1-1",
+      "confidence": 0.5,
+      "fair_odds": {
+        "home": 3.03,
+        "draw": 3.33,
+        "away": 2.7
+      },
+      "edge_assessment": "low_confidence",
+      "information_gaps": [
+        "新西兰是否征召海外主力（如英超克里斯·伍德）",
+        "伊朗防守硬度及中场对抗能力",
+        "handicap盘口无明确让球线，隐含假设不明"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
+      "match_id": "WC-H1",
+      "home_win_prob": 0.85,
+      "draw_prob": 0.1,
+      "away_win_prob": 0.05,
+      "most_likely_score": "2-0",
+      "confidence": 0.9,
+      "fair_odds": {
+        "home": 1.18,
+        "draw": 10.0,
+        "away": 20.0
+      },
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "西班牙首发轮换幅度（核心是否休息）",
+        "佛得角近期防守组织及反击质量",
+        "比赛场地和天气对技术流传控的影响"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    }
+  ],
+  "investments": [
+    {
+      "match_id": "WC-K1",
+      "action": "no_bet",
+      "selection": null,
+      "market": null,
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": 0.23,
+      "market_implied_prob": 0.208,
+      "estimated_ev": 0.02,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "边缘过小且缺乏交叉信源，不投注",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "action": "no_bet",
+      "selection": null,
+      "market": "handicap",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": null,
+      "market_implied_prob": null,
+      "estimated_ev": null,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "action": "no_bet",
+      "selection": null,
+      "market": "handicap",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": null,
+      "market_implied_prob": null,
+      "estimated_ev": null,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "action": "no_bet",
+      "selection": null,
+      "market": "handicap",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": null,
+      "market_implied_prob": null,
+      "estimated_ev": null,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "selection": null,
+      "market": null,
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": 0.85,
+      "market_implied_prob": 0.926,
+      "estimated_ev": -0.076,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "不适用",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    }
+  ],
+  "credit": {
+    "seat_id": "deepseek",
+    "run_id": "run-15",
+    "credit_delta": 0,
+    "details": [
+      {
+        "type": "production_receipt_collected",
+        "reason": "本轮预测/投资分账已收录，等待完整赛果校准信用。",
+        "credit_delta": 0
+      }
+    ],
+    "credit_score": 745.6,
+    "credit_grade": "A",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "loan_limit_gp": 1448.0,
+    "available_loan_gp": 448.0,
+    "outstanding_loan_gp": 1000.0,
+    "interest_rate": 0.07
+  },
+  "survival": {
+    "seat_id": "deepseek",
+    "balance_gp": 1740.0,
+    "outstanding_loan_gp": 0.0,
+    "accrued_interest_gp": 0.0,
+    "net_worth_gp": 1740.0,
+    "recovery_mode": false,
+    "freeze_new_loan": false,
+    "loan_limit_gp": 1448.0,
+    "available_loan_gp": 448.0,
+    "allowed_actions": [
+      "forecast",
+      "bet",
+      "no_bet"
+    ]
+  },
+  "settlement": {
+    "seat_id": "deepseek",
+    "run_id": "run-15",
+    "profit_gp": 0.0,
+    "settled": [
+      {
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "profit_gp": 0
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "profit_gp": 0
+      }
+    ]
+  }
+}

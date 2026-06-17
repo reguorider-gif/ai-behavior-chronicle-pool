@@ -1,0 +1,63 @@
+{
+  "version": "behavior_kernel_v1",
+  "name": "AI Behavioral Civilization Kernel",
+  "event_sourcing": {
+    "mode": "append_only",
+    "event_identity": [
+      "run_id",
+      "seat_id",
+      "source_stream",
+      "source_index",
+      "event_type",
+      "payload_hash"
+    ],
+    "mutation_policy": "duplicate_event_id_with_different_hash_is_rejected"
+  },
+  "deterministic_replay": {
+    "mode": "captured_outputs_only",
+    "same_inputs_same_chain": true,
+    "non_deterministic_provider_calls": "not_replayed_without_captured_output",
+    "input_hash_fields": [
+      "kernel_hash",
+      "event_stream_hash",
+      "prompt_context_hashes",
+      "replay_source_hash"
+    ]
+  },
+  "memory_policy": {
+    "agent_private_memory": "own_history_only",
+    "public_memory": [
+      "anonymous_market_snapshot",
+      "aggregated_pattern_summary",
+      "rules"
+    ],
+    "forbidden": [
+      "other_agent_private_journals",
+      "other_agent_current_choices",
+      "raw_provider_transcripts"
+    ]
+  },
+  "audit_policy": {
+    "must_answer": [
+      "why_decision_was_made",
+      "which_patterns_were_used",
+      "whether_behavior_history_was_violated",
+      "what_counterfactual_was_considered"
+    ],
+    "public_surface": "product_objects_only_no_local_paths"
+  },
+  "pattern_compiler": {
+    "inputs": [
+      "seat_journal",
+      "settlement_record",
+      "credit_update",
+      "survival_update"
+    ],
+    "outputs": [
+      "agent_profile",
+      "pattern_graph",
+      "evolution_trace"
+    ]
+  },
+  "kernel_hash": "b2465567ed1295df75f0344e21c14e82feaebee4540f3a4593b9de8bee49c48d"
+}

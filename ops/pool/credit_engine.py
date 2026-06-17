@@ -31,6 +31,11 @@ def _predicted_outcome(forecast: dict[str, Any]) -> str:
 
 
 def calculate_credit_delta(seat_id: str, run_id: str) -> dict[str, Any]:
+    rule = load_rule_version(RULE_VERSION)
+    delta_rule = rule.get("credit_delta") if isinstance(rule.get("credit_delta"), dict) else {}
+    correct_delta = n(delta_rule.get("correct_forecast"), 10)
+    wrong_delta = n(delta_rule.get("wrong_forecast"), -10)
+    insufficient_penalty = n(delta_rule.get("insufficient_info_penalty"), -2)
     forecasts = read_json(DATA_ROOT / "forecast_receipts" / f"{run_id}.json", {"seats": {}}).get("seats", {}).get(seat_id, {})
     results = read_json(DATA_ROOT / "match_results" / f"{run_id}.json", {"matches": []})
     result_by_match = {row.get("match_id"): row for row in results.get("matches", []) if isinstance(row, dict)}
@@ -44,9 +49,9 @@ def calculate_credit_delta(seat_id: str, run_id: str) -> dict[str, Any]:
         actual = _outcome_from_score(str(result.get("score") or ""))
         if actual == "unknown":
             continue
-        change = 12 if expected == actual else -10
+        change = correct_delta if expected == actual else wrong_delta
         if forecast.get("edge_assessment") == "insufficient_info":
-            change -= 2
+            change += insufficient_penalty
         delta += change
         details.append({"match_id": forecast.get("match_id"), "expected": expected, "actual": actual, "delta": change})
     return {"seat_id": seat_id, "run_id": run_id, "credit_delta": delta, "details": details}
@@ -63,6 +68,19 @@ def _historical_credit_delta(seat_id: str, exclude_run_id: str | None = None) ->
         if isinstance(row, dict):
             total += n(row.get("credit_delta"))
     return total
+
+
+def _build_all_historical_deltas(exclude_run_id: str | None = None) -> dict[str, float]:
+    totals: dict[str, float] = {}
+    ledger_dir = DATA_ROOT / "credit_ledger"
+    for path in ledger_dir.glob("*.json") if ledger_dir.exists() else []:
+        data = read_json(path, {})
+        if exclude_run_id and data.get("run_id") == exclude_run_id:
+            continue
+        for seat_id, row in (data.get("seats") or {}).items():
+            if isinstance(row, dict):
+                totals[str(seat_id)] = totals.get(str(seat_id), 0.0) + n(row.get("credit_delta"))
+    return totals
 
 
 def calculate_credit_score(seat_id: str, base_score: float = 600) -> float:
@@ -102,10 +120,11 @@ def write_credit_ledger(run_id: str, seat_ids: list[str]) -> dict[str, Any]:
     rule = load_rule_version(RULE_VERSION)
     min_score = n(rule["credit"]["min_score"])
     max_score = n(rule["credit"]["max_score"])
+    historical_deltas = _build_all_historical_deltas(exclude_run_id=run_id)
     seats = {}
     for seat_id in seat_ids:
         delta = calculate_credit_delta(seat_id, run_id)
-        score = max(min_score, min(max_score, 600 + _historical_credit_delta(seat_id, exclude_run_id=run_id) + n(delta.get("credit_delta"))))
+        score = max(min_score, min(max_score, 600 + n(historical_deltas.get(seat_id)) + n(delta.get("credit_delta"))))
         seats[seat_id] = {
             **delta,
             "credit_score": round(score, 2),

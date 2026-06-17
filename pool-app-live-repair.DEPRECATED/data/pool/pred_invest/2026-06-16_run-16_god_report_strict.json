@@ -1,0 +1,3765 @@
+{
+  "version": "pred_invest_strict_god_report.v2",
+  "generated_at": "2026-06-16T22:52:22.505634+00:00",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "status": "PARTIAL_NOT_READY",
+  "publish_allowed": false,
+  "frontend_badge": "10/12 部分回收",
+  "valid_count": 10,
+  "required_seat_count": 12,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "mimo",
+    "minimax",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "wenxin",
+    "yuanbao"
+  ],
+  "needs_rerun": [
+    "grok",
+    "qwen"
+  ],
+  "rerun_queue": [
+    {
+      "seat": "grok",
+      "mode": "provider_quota_blocked",
+      "prompt_mode": "wait_for_quota_reset",
+      "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+      "last_run_id": null,
+      "response_chars": 0,
+      "issues": [
+        "no_captured_response"
+      ],
+      "last_errors": [
+        {
+          "run_id": "207f01bb1cea",
+          "action": "raw_result_error",
+          "reason": "provider_quota_limited",
+          "response_chars": 0
+        }
+      ]
+    },
+    {
+      "seat": "qwen",
+      "mode": "fresh_chat_marker_required",
+      "prompt_mode": "ultra_compact",
+      "reason": "未捕获当前轮答案或页面仍停留旧上下文，必须新会话/新 marker 重投。",
+      "last_run_id": null,
+      "response_chars": 0,
+      "issues": [
+        "no_captured_response"
+      ],
+      "last_errors": [
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        }
+      ]
+    }
+  ],
+  "required_matches": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "required_match_source": "required_match_snapshot:2026-06-16_run-16_required_match_snapshot.json",
+  "seat_summaries": [
+    {
+      "seat": "chatgpt",
+      "model_account": "chatgpt",
+      "run_id": "cd6e9ac0f2c3",
+      "one_sentence_strategy": "保守主胜分散布局",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需借贷稳执行定",
+        "repayment_plan": "稳健按期归还完成"
+      },
+      "risk_notes": [
+        "强队偏热",
+        "冷门波动"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 85,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "法国优势明显"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "英格兰略优主场"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "加纳小优对抗"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 90,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "葡萄牙碾压优势"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "哥伦比亚更强"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "France",
+          "line": "none",
+          "odds": 1.46,
+          "stake_gp": 20,
+          "loan_used_gp": 0,
+          "reason": "稳健法国胜局定赢"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "England",
+          "line": "none",
+          "odds": 1.85,
+          "stake_gp": 20,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场优势稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Ghana",
+          "line": "none",
+          "odds": 2.03,
+          "stake_gp": 12,
+          "loan_used_gp": 0,
+          "reason": "加纳小优主场势稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "none",
+          "odds": 1.27,
+          "stake_gp": 25,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Colombia",
+          "line": "none",
+          "odds": 1.7,
+          "stake_gp": 15,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚客胜优势"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "deepseek",
+      "model_account": "deepseek",
+      "run_id": "207f01bb1cea",
+      "one_sentence_strategy": "以预测覆盖全部赛事，但仅在实时信息充分且存在明确正期望时才会投注，当前阶段观望为主。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前无高置信度、正期望值投注机会，现有资金充足，无需增加杠杆。",
+        "repayment_plan": "N/A"
+      },
+      "risk_notes": [
+        "全部预测基于历史数据与种子赔率建模，缺乏实时首发、伤病等关键信息，无法确认模型概率与市场赔率之间是否存在真实边缘。",
+        "作为A级信用席位的领先者，本轮选择保守观望，避免因信息不对称造成不必要损失。",
+        "若赛前获得可信的阵容及状态更新，将在下一轮重新评估可能的价值投注。"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "home_win_prob": 0.6,
+          "draw_prob": 0.22,
+          "away_win_prob": 0.18,
+          "most_likely_score": "2-1",
+          "confidence": 0.55,
+          "fair_odds": {
+            "home": 1.67,
+            "draw": 4.55,
+            "away": 5.56
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "法国与塞内加尔的首发阵容及战术布置",
+            "关键球员伤病与体能状况",
+            "近期热身赛表现与更衣室氛围",
+            "比赛场地、天气及裁判尺度"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "home_win_prob": 0.48,
+          "draw_prob": 0.26,
+          "away_win_prob": 0.26,
+          "most_likely_score": "1-1",
+          "confidence": 0.6,
+          "fair_odds": {
+            "home": 2.08,
+            "draw": 3.85,
+            "away": 3.85
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "英格兰与克罗地亚的首发名单",
+            "中场核心球员状态与伤病",
+            "双方近期正式比赛表现",
+            "比赛时间、天气和场地条件"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "home_win_prob": 0.45,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.3,
+          "most_likely_score": "1-1",
+          "confidence": 0.5,
+          "fair_odds": {
+            "home": 2.22,
+            "draw": 4.0,
+            "away": 3.33
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "加纳与巴拿马的首发与阵型",
+            "重要球员是否因伤缺阵",
+            "球队近期国际赛状态",
+            "当地气候与场地适应性"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "home_win_prob": 0.72,
+          "draw_prob": 0.18,
+          "away_win_prob": 0.1,
+          "most_likely_score": "2-0",
+          "confidence": 0.65,
+          "fair_odds": {
+            "home": 1.39,
+            "draw": 5.56,
+            "away": 10.0
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "葡萄牙是否轮换阵容",
+            "刚果民主共和国防守核心状态",
+            "两队近期进球效率与防守数据",
+            "比赛场地是否对技术型球队有利"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "home_win_prob": 0.15,
+          "draw_prob": 0.2,
+          "away_win_prob": 0.65,
+          "most_likely_score": "0-2",
+          "confidence": 0.7,
+          "fair_odds": {
+            "home": 6.67,
+            "draw": 5.0,
+            "away": 1.54
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "哥伦比亚进攻端关键球员是否首发",
+            "乌兹别克斯坦的防守组织与反击策略",
+            "长途旅行对哥伦比亚体能的影响",
+            "裁判执法风格与历史判罚倾向"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "mimo",
+      "model_account": "mimo",
+      "run_id": "7c1de19fe5d1",
+      "one_sentence_strategy": "结构化行协议回执",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需追加借款",
+        "repayment_plan": "按期偿还存量"
+      },
+      "risk_notes": [
+        "法国冷门风险",
+        "英格兰对手实力不弱"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "France",
+          "score": "2-0",
+          "confidence": 72,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "法国状态正佳但赔率偏短"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "England",
+          "score": "2-1",
+          "confidence": 65,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "英格兰主场有优势赔率合理"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "Ghana",
+          "score": "1-0",
+          "confidence": 58,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "双方实力接近赔率有值"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "Portugal",
+          "score": "3-0",
+          "confidence": 80,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "葡萄牙极热赔率无价值"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "Colombia",
+          "score": "0-2",
+          "confidence": 75,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "哥伦比亚大热盘口无边"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "France",
+          "line": "1.46",
+          "odds": 1.46,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "赔率偏低但确定性高"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "England",
+          "line": "1.85",
+          "odds": 1.85,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "价值合理可博"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Ghana",
+          "line": "2.03",
+          "odds": 2.03,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "赔率有边际值得投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率无边不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率无边不投。"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "minimax",
+      "model_account": "minimax",
+      "run_id": "7c1de19fe5d1",
+      "one_sentence_strategy": "低风险种子赛保守下注",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无贷款稳健运转",
+        "repayment_plan": "保持零贷策略稳"
+      },
+      "risk_notes": [
+        "冷门爆冷",
+        "资金回撤"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "France",
+          "score": "2-1",
+          "confidence": 65,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "England",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "Draw",
+          "score": "1-1",
+          "confidence": 45,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "Portugal",
+          "score": "3-0",
+          "confidence": 75,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "Colombia",
+          "score": "0-2",
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "France",
+          "line": "0",
+          "odds": 1.46,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "法国主场强势稳胜"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "England",
+          "line": "0",
+          "odds": 1.85,
+          "stake_gp": 120,
+          "loan_used_gp": 0,
+          "reason": "英格兰种子占优势"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "均衡对决选择不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "0",
+          "odds": 1.27,
+          "stake_gp": 180,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压局"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率不利冷门较多"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "doubao",
+      "model_account": "doubao",
+      "run_id": "b89060f60909",
+      "one_sentence_strategy": "稳势低赔择优布局",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "暂无借贷需求",
+        "repayment_plan": "按期结清本息"
+      },
+      "risk_notes": [
+        "冷门爆冷",
+        "赔率波动"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 60,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "实力差距明显"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 50,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "主场优势占优"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 40,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "攻防更均衡"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "碾压对局稳妥"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 30,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "胜负难料平局"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "France",
+          "line": "1.46",
+          "odds": 220,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "强队胜率偏高"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "England",
+          "line": "1.85",
+          "odds": 180,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "战意状态更佳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Ghana",
+          "line": "2.03",
+          "odds": 150,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "战术适配对手"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "1.27",
+          "odds": 250,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "阵容优势巨大"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "强弱不明慎投"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "gemini",
+      "model_account": "gemini",
+      "run_id": "36c907ccd05b",
+      "one_sentence_strategy": "分散防守反击策略",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "资金充足",
+        "repayment_plan": "无需借款"
+      },
+      "risk_notes": [
+        "防爆冷风险",
+        "资金回撤风险"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 75,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "阵容变动"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 60,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "伤停信息"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 55,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "战术安排"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "临场状态"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 65,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "数据缺失"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "France",
+          "line": "-",
+          "odds": 1.46,
+          "stake_gp": 300,
+          "loan_used_gp": 0,
+          "reason": "法国实力占优"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "England",
+          "line": "-",
+          "odds": 1.85,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "英格兰被看好"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Ghana",
+          "line": "-",
+          "odds": 2.03,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "加纳略有优势"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "-",
+          "odds": 1.27,
+          "stake_gp": 400,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙大优"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "无边不投"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "kimi",
+      "model_account": "kimi",
+      "run_id": "7c1de19fe5d1",
+      "one_sentence_strategy": "稳健跟盘，小额分散",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需借贷",
+        "repayment_plan": "无还款"
+      },
+      "risk_notes": [
+        "低赔陷阱",
+        "冷门赔付"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "-",
+          "confidence": "2-0",
+          "edge_assessment": "70",
+          "information_gaps": [
+            "bet"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "-",
+          "confidence": "1-0",
+          "edge_assessment": "65",
+          "information_gaps": [
+            "bet"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "-",
+          "confidence": "1-0",
+          "edge_assessment": "55",
+          "information_gaps": [
+            "bet"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "-",
+          "confidence": "3-0",
+          "edge_assessment": "80",
+          "information_gaps": [
+            "bet"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "-",
+          "confidence": "0-2",
+          "edge_assessment": "60",
+          "information_gaps": [
+            "bet"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.46,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "法国主场稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.85,
+          "stake_gp": 120,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场强"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 2.03,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "加纳纸面优"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.27,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙碾压"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "away",
+          "line": "none",
+          "odds": 1.35,
+          "stake_gp": 130,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚稳"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "meta",
+      "model_account": "meta",
+      "run_id": "207f01bb1cea",
+      "one_sentence_strategy": "Low\nrisk\npreservation:\nforecast\nall\nmatches,\nno\nbets\ndue\nto\nC-grade\ncredit\n+\n800gp\ndebt\n+\nlack\nof\nreal-time\nsquad\ndata,\navoid\npenalties\nand\nwait\nfor\nclear\nedge.",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "Net\nworth\n600gp\nwith\n800gp\nexisting\nloan.\nCredit\ngrade\nC\nand\nscore\n597.8\nnear\nrisk\nthreshold.\nNo\npositive\nEV\nbets\nidentified.\nAdditional\nborrowing\nwould\nbreach\nsurvival\nconstraints\nand\nrisk\nforced\ndebt\nfrom\nbottom-3\npenalty.",
+        "repayment_plan": "Hold\n1400gp\nbalance.\nPrioritize\nloan\nreduction\npost-match\nif\nany\nrisk-free\ninterest\naccrues.\nNo\nnew\npositions\nuntil\nnet\nworth\n>1000gp\nor\nA/B\ngrade\nrestored."
+      },
+      "risk_notes": [
+        "Rank\n6\nwith\n600gp\nnet\nworth\nbut\n800gp\ndebt\n=\nhigh\nleverage\nrisk",
+        "Credit\ngrade\nC\nlimits\nborrowing\ncapacity\nand\nincreases\npenalty\nrisk",
+        "All\nmodel_prob\n<\nmarket_implied_prob\nacross\nh2h\nmarkets\n=\nno\nstatistical\nedge",
+        "High\nodds\ntier\nlimits\nnot\ntriggered\ndue\nto\nno_bet\nstance",
+        "Information\ngaps\ncritical:\nno\nreal-time\nlineups,\ninjuries,\nor\ntactical\ndata\navailable",
+        "Bottom-3\npenalty\nrisk\nif\nnet\nworth\ndrops\nbelow\n400-500gp\nrange"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "home_win_prob": 0.62,
+          "draw_prob": 0.23,
+          "away_win_prob": 0.15,
+          "most_likely_score": "2-0",
+          "confidence": 0.55,
+          "fair_odds": {
+            "home": 1.61,
+            "draw": 4.35,
+            "away": 6.67
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Starting\nXI\nunavailable",
+            "Injury\nstatus\nunknown",
+            "Recent\nform\ndata\nnot\nreal-time",
+            "Tactical\nsetup\nunclear"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "home_win_prob": 0.5,
+          "draw_prob": 0.28,
+          "away_win_prob": 0.22,
+          "most_likely_score": "1-0",
+          "confidence": 0.5,
+          "fair_odds": {
+            "home": 2.0,
+            "draw": 3.57,
+            "away": 4.55
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "No\nsquad\nconfirmation",
+            "Weather/pitch\nconditions\nunknown",
+            "Croatia\nmidfield\nage\nprofile\nuncertainty",
+            "Kickoff\ntime\nmissing"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "home_win_prob": 0.46,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.24,
+          "most_likely_score": "1-1",
+          "confidence": 0.4,
+          "fair_odds": {
+            "home": 2.17,
+            "draw": 3.33,
+            "away": 4.17
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Limited\nrecent\nH2H\ndata",
+            "Ghana\nsquad\nstability\nunclear",
+            "Panama\ntravel/fatigue\nunknown",
+            "No\nreferee\nassignment"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "home_win_prob": 0.73,
+          "draw_prob": 0.18,
+          "away_win_prob": 0.09,
+          "most_likely_score": "3-0",
+          "confidence": 0.6,
+          "fair_odds": {
+            "home": 1.37,
+            "draw": 5.56,
+            "away": 11.11
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Portugal\nrotation\nrisk\nunknown",
+            "Congo\nDR\nsquad\nquality\nvariance",
+            "Motivation\nlevel\nin\ngroup\nstage\nunclear"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "home_win_prob": 0.14,
+          "draw_prob": 0.2,
+          "away_win_prob": 0.66,
+          "most_likely_score": "0-2",
+          "confidence": 0.58,
+          "fair_odds": {
+            "home": 7.14,
+            "draw": 5.0,
+            "away": 1.52
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Uzbekistan\nhome\nadvantage\nmagnitude\nunknown",
+            "Colombia\ntravel\nload\nunconfirmed",
+            "No\ninfo\non\naltitude/temperature\nimpact"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.62,
+          "market_implied_prob": 0.685,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A\n-\nno\nposition\ntaken.\nCurrent\n600gp\nnet\nworth\n+\n800gp\nloan\nrequires\ncapital\npreservation\nto\navoid\nbottom-3\npenalty."
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.5,
+          "market_implied_prob": 0.541,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A\n-\nC-grade\ncredit\n597.8\nrestricts\nfurther\nleverage.\nProtecting\n600gp\nnet\nworth."
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.46,
+          "market_implied_prob": 0.493,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A\n-\nlowest\nconfidence\n0.40\namong\nall\nmatches.\nNo\nedge\ndetected\nwith\ncurrent\ninfo\ngaps."
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.73,
+          "market_implied_prob": 0.787,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A\n-\nMarket\nprice\n1.27\nimplies\n78.7%\nvs\nmodel\n73%.\nNegative\nEV.\nHigh\nodds\ntier\nlimits\nirrelevant."
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.66,
+          "market_implied_prob": 0.69,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A\n-\nColombia\n-1.5\nat\n2.05\nshows\nsmall\nnegative\nEV.\nWith\n800gp\nexisting\ndebt,\navoiding\nany\nleverage."
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "wenxin",
+      "model_account": "wenxin",
+      "run_id": "7c1de19fe5d1",
+      "one_sentence_strategy": "择优投注控制风险",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无资金需求",
+        "repayment_plan": "无需借贷"
+      },
+      "risk_notes": [
+        "强队爆冷",
+        "冷门翻车"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "无",
+          "confidence": "0-100",
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无信息缺口"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "无",
+          "confidence": "0-100",
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无信息缺口"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "home",
+          "score": "无",
+          "confidence": "0-100",
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无信息缺口"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "无",
+          "confidence": "0-100",
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无信息缺口"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "无",
+          "confidence": "0-100",
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "信息不足"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "h2h",
+          "odds": 1.46,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "法国实力更强"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "h2h",
+          "odds": 1.85,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "英格兰实力占优"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "优势不足不投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "h2h",
+          "odds": 1.27,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "实力差距明显"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "信息不足不投"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    },
+    {
+      "seat": "yuanbao",
+      "model_account": "yuanbao",
+      "run_id": "7c1de19fe5d1",
+      "one_sentence_strategy": "稳强队，博冷门",
+      "loan_decision": {
+        "borrow_gp": 300,
+        "reason": "补强投注资金",
+        "repayment_plan": "赛后优先还"
+      },
+      "risk_notes": [
+        "法国冷门输球",
+        "葡萄牙意外丢分"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-I1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 90,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 70,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 95,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.46,
+          "stake_gp": 300,
+          "loan_used_gp": 200,
+          "reason": "法国稳胜"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率偏低不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "平局难料不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.27,
+          "stake_gp": 400,
+          "loan_used_gp": 100,
+          "reason": "葡萄牙大优"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "客胜赔率高不投"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "investment_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ]
+    }
+  ],
+  "invalid_details": [
+    {
+      "seat": "qwen",
+      "issues": [
+        "no_captured_response"
+      ],
+      "run_id": null,
+      "response_chars": 0,
+      "last_errors": [
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        },
+        {
+          "run_id": "37110a93d7e6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 19
+        }
+      ]
+    },
+    {
+      "seat": "grok",
+      "issues": [
+        "no_captured_response"
+      ],
+      "run_id": null,
+      "response_chars": 0,
+      "last_errors": [
+        {
+          "run_id": "207f01bb1cea",
+          "action": "raw_result_error",
+          "reason": "provider_quota_limited",
+          "response_chars": 0
+        }
+      ]
+    }
+  ],
+  "match_consensus": [
+    {
+      "match_id": "WC-I1",
+      "bet_count": 7,
+      "no_bet_count": 3,
+      "total_stake_gp": 1170.0,
+      "top_selection": "moneyline home none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline France none",
+          "odds": 1.46,
+          "stake_gp": 20.0,
+          "loan_used_gp": 0,
+          "reason": "稳健法国胜局定赢"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline France 1.46",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "赔率偏低但确定性高"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline France 0",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "法国主场强势稳胜"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline France -",
+          "odds": 1.46,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "法国实力占优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.46,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "法国主场稳"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.46,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "法国实力更强"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.46,
+          "stake_gp": 300.0,
+          "loan_used_gp": 200,
+          "reason": "法国稳胜"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "doubao",
+        "meta"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "bet_count": 6,
+      "no_bet_count": 4,
+      "total_stake_gp": 810.0,
+      "top_selection": "moneyline England none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline England none",
+          "odds": 1.85,
+          "stake_gp": 20.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场优势稳"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline England 1.85",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "价值合理可博"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline England 0",
+          "odds": 1.85,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰种子占优势"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline England -",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰被看好"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.85,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰主场强"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.85,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "英格兰实力占优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "doubao",
+        "meta",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "bet_count": 4,
+      "no_bet_count": 6,
+      "total_stake_gp": 362.0,
+      "top_selection": "moneyline Ghana none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Ghana none",
+          "odds": 2.03,
+          "stake_gp": 12.0,
+          "loan_used_gp": 0,
+          "reason": "加纳小优主场势稳"
+        },
+        {
+          "seat": "mimo",
+          "selection": "moneyline Ghana 2.03",
+          "odds": 2.03,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "赔率有边际值得投"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline Ghana -",
+          "odds": 2.03,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "加纳略有优势"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 2.03,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "加纳纸面优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "minimax",
+        "doubao",
+        "meta",
+        "wenxin",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "bet_count": 6,
+      "no_bet_count": 4,
+      "total_stake_gp": 1405.0,
+      "top_selection": "moneyline home none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Portugal none",
+          "odds": 1.27,
+          "stake_gp": 25.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压稳"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.27,
+          "stake_gp": 180.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙实力碾压局"
+        },
+        {
+          "seat": "gemini",
+          "selection": "moneyline Portugal -",
+          "odds": 1.27,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙大优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline home none",
+          "odds": 1.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙碾压"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "moneyline home h2h",
+          "odds": 1.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "实力差距明显"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.27,
+          "stake_gp": 400.0,
+          "loan_used_gp": 100,
+          "reason": "葡萄牙大优"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "doubao",
+        "meta"
+      ]
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "bet_count": 2,
+      "no_bet_count": 8,
+      "total_stake_gp": 145.0,
+      "top_selection": "moneyline Colombia none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Colombia none",
+          "odds": 1.7,
+          "stake_gp": 15.0,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚客胜优势"
+        },
+        {
+          "seat": "kimi",
+          "selection": "moneyline away none",
+          "odds": 1.35,
+          "stake_gp": 130.0,
+          "loan_used_gp": 0,
+          "reason": "哥伦比亚稳"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "minimax",
+        "doubao",
+        "gemini",
+        "meta",
+        "wenxin",
+        "yuanbao"
+      ]
+    }
+  ],
+  "ev_analysis": {
+    "version": "ev_analysis.v2",
+    "method": "explicit model_prob first; otherwise infer from forecast win/draw/away probability or confidence proxy. For no_bet without selection, compare the model forecast lean against market odds as opportunity-cost EV. Market implied probability is 1/decimal odds.",
+    "rows": [
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.241,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "稳健法国胜局定赢"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰主场优势稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 0.218,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳小优主场势稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.9,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.143,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙实力碾压稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Colombia",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.7,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.5882,
+        "estimated_ev": 0.36,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "哥伦比亚客胜优势"
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-I1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.46,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.124,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.85,
+        "model_prob": 0.48,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -0.112,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.03,
+        "model_prob": 0.45,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": -0.0865,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.27,
+        "model_prob": 0.72,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.0856,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.45,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.0575,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "1.46",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率偏低但确定性高"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "1.85",
+        "odds": 1.85,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -0.963,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "价值合理可博"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "2.03",
+        "odds": 2.03,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 1.03,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率有边际值得投"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率无边不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率无边不投。"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国主场强势稳胜"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.85,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.85,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰种子占优势"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 3.91,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2558,
+        "estimated_ev": 2.91,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "均衡对决选择不投"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙实力碾压局"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率不利冷门较多"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "1.46",
+        "odds": 220.0,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.0045,
+        "estimated_ev": 131.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "强队胜率偏高"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "1.85",
+        "odds": 180.0,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.0056,
+        "estimated_ev": 89.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "战意状态更佳"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "2.03",
+        "odds": 150.0,
+        "model_prob": 0.4,
+        "market_implied_prob": 0.0067,
+        "estimated_ev": 59.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "战术适配对手"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "1.27",
+        "odds": 250.0,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.004,
+        "estimated_ev": 174.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "阵容优势巨大"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 4.97,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2012,
+        "estimated_ev": 3.97,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "强弱不明慎投"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.46,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.095,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国实力占优"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.85,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.11,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰被看好"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 2.03,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 0.1165,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳略有优势"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.27,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.016,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙大优"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.0575,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无边不投"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国主场稳"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.85,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰主场强"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 1.03,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳纸面优"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙碾压"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "away",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.35,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.7407,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "哥伦比亚稳"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-I1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.46,
+        "model_prob": 0.62,
+        "market_implied_prob": 0.685,
+        "estimated_ev": -0.0948,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.85,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.541,
+        "estimated_ev": -0.075,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.03,
+        "model_prob": 0.46,
+        "market_implied_prob": 0.493,
+        "estimated_ev": -0.0662,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.27,
+        "model_prob": 0.73,
+        "market_implied_prob": 0.787,
+        "estimated_ev": -0.0729,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.45,
+        "model_prob": 0.66,
+        "market_implied_prob": 0.69,
+        "estimated_ev": -0.043,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.46,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国实力更强"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.85,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰实力占优"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "优势不足不投注"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.27,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力差距明显"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息不足不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.9,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.314,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国稳胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率偏低不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 3.91,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2558,
+        "estimated_ev": 2.91,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "平局难料不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.95,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.2065,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙大优"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.2025,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "客胜赔率高不投"
+      }
+    ],
+    "actionable_rows": [
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.241,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "稳健法国胜局定赢"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰主场优势稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 0.218,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳小优主场势稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.9,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.143,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙实力碾压稳"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Colombia",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.7,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.5882,
+        "estimated_ev": 0.36,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "哥伦比亚客胜优势"
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-I1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.46,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.124,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.85,
+        "model_prob": 0.48,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -0.112,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.03,
+        "model_prob": 0.45,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": -0.0865,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.27,
+        "model_prob": 0.72,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.0856,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.45,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.0575,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "1.46",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率偏低但确定性高"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "1.85",
+        "odds": 1.85,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -0.963,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "价值合理可博"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "2.03",
+        "odds": 2.03,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 1.03,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率有边际值得投"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率无边不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率无边不投。"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国主场强势稳胜"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.85,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.85,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰种子占优势"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 3.91,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2558,
+        "estimated_ev": 2.91,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "均衡对决选择不投"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙实力碾压局"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率不利冷门较多"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "1.46",
+        "odds": 220.0,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.0045,
+        "estimated_ev": 131.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "强队胜率偏高"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "1.85",
+        "odds": 180.0,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.0056,
+        "estimated_ev": 89.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "战意状态更佳"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "2.03",
+        "odds": 150.0,
+        "model_prob": 0.4,
+        "market_implied_prob": 0.0067,
+        "estimated_ev": 59.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "战术适配对手"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "1.27",
+        "odds": 250.0,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.004,
+        "estimated_ev": 174.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "阵容优势巨大"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 4.97,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2012,
+        "estimated_ev": 3.97,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "强弱不明慎投"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "France",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.46,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.095,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国实力占优"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "England",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.85,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.11,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰被看好"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Ghana",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 2.03,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 0.1165,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳略有优势"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.27,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.016,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙大优"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.0575,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无边不投"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -0.9708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国主场稳"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.85,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰主场强"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": 1.03,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "加纳纸面优"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -0.9619,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙碾压"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "away",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.35,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.7407,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "哥伦比亚稳"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-I1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.46,
+        "model_prob": 0.62,
+        "market_implied_prob": 0.685,
+        "estimated_ev": -0.0948,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.85,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.541,
+        "estimated_ev": -0.075,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.03,
+        "model_prob": 0.46,
+        "market_implied_prob": 0.493,
+        "estimated_ev": -0.0662,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.27,
+        "model_prob": 0.73,
+        "market_implied_prob": 0.787,
+        "estimated_ev": -0.0729,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.45,
+        "model_prob": 0.66,
+        "market_implied_prob": 0.69,
+        "estimated_ev": -0.043,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.46,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国实力更强"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.85,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "英格兰实力占优"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.03,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.4926,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "优势不足不投注"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "h2h",
+        "odds": 1.27,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力差距明显"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息不足不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-I1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.46,
+        "model_prob": 0.9,
+        "market_implied_prob": 0.6849,
+        "estimated_ev": 0.314,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "法国稳胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.85,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5405,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率偏低不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": 3.91,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2558,
+        "estimated_ev": 2.91,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "平局难料不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.27,
+        "model_prob": 0.95,
+        "market_implied_prob": 0.7874,
+        "estimated_ev": 0.2065,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙大优"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.2025,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "客胜赔率高不投"
+      }
+    ],
+    "coverage_counts": {
+      "complete_explicit": 5,
+      "complete_inferred": 5,
+      "complete_proxy_inferred": 40
+    },
+    "data_gap_rows": []
+  },
+  "hard_gate_notice": "不到 12/12 publish_allowed=true，不允许前端或日报显示为全量完成报告。"
+}

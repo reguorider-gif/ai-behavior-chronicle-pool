@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Commentary Log · World Cup Pool</title>
+  <style>
+    :root{color-scheme:dark;--bg:#08111f;--panel:#101a2b;--panel2:#152238;--line:#24344f;--text:#f3f7ff;--muted:#9fb0ca;--blue:#4f8cff;--green:#19d39b;--gold:#fbbf24}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 20% 0%,#17243a 0,#08111f 42%,#050911 100%);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text)}
+    main{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:34px 0 56px}
+    header{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;margin-bottom:22px}
+    h1{font-size:28px;line-height:1.15;margin:0 0 10px}
+    p{margin:0;color:var(--muted);line-height:1.7}
+    a{color:#cfe0ff;text-decoration:none}
+    .back{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03);font-weight:800}
+    .hero,.card{border:1px solid var(--line);background:rgba(16,26,43,.86);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
+    .hero{padding:22px;margin-bottom:18px}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .chip{border:1px solid rgba(79,140,255,.28);background:rgba(79,140,255,.1);border-radius:999px;padding:7px 11px;color:#dbe7ff;font-size:13px;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+    .card{padding:18px}
+    .card h2{font-size:15px;margin:0 0 10px;color:#dbe7ff}
+    .metric{display:flex;justify-content:space-between;gap:14px;border-top:1px solid rgba(148,163,184,.14);padding:10px 0}
+    .metric:first-child{border-top:0}
+    .metric span{color:var(--muted)}
+    .metric b{color:var(--text)}
+    .summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .note{background:rgba(255,255,255,.035);border:1px solid rgba(148,163,184,.14);border-radius:14px;padding:14px}
+    .note span{display:block;color:var(--gold);font-size:12px;font-weight:900;margin-bottom:8px;text-transform:uppercase;letter-spacing:.04em}
+    .seats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .seat{background:rgba(15,23,42,.72);border:1px solid rgba(148,163,184,.14);border-radius:14px;padding:14px}
+    .seat-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+    .seat h3{margin:0;font-size:16px}
+    .tag{font-size:12px;font-weight:900;color:var(--green);background:rgba(25,211,155,.1);border-radius:999px;padding:4px 8px}
+    .seat p{font-size:14px}
+    .small{font-size:12px;color:var(--muted);margin-top:10px}
+    .error{border-color:rgba(248,113,113,.45);background:rgba(127,29,29,.3)}
+    .scene-break{text-align:center;padding:24px 0 18px;font-size:11px;letter-spacing:4px;color:rgba(255,255,255,.35)}
+    .comic-wrap{display:grid;gap:0}
+    .comic-panel{border:1px solid var(--line);background:rgba(16,26,43,.82);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:0 20px 70px rgba(0,0,0,.24)}
+    .comic-cover{background:linear-gradient(180deg,rgba(10,40,24,.95),rgba(8,17,31,.9));text-align:center;padding:42px 24px}
+    .comic-cover .brain{font-size:64px;margin:12px 0}
+    .eyebrow{font-size:11px;letter-spacing:4px;color:rgba(255,255,255,.42);text-transform:uppercase;margin-bottom:12px}
+    .comic-panel h2{font-size:28px;line-height:1.22;margin:0 0 12px}
+    .comic-panel h3{font-size:20px;margin:0 0 10px}
+    .pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:850;color:#dbe7ff}
+    .panel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+    .panel-box{border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px;text-align:center;background:rgba(255,255,255,.045)}
+    .panel-box h4{font-size:12px;color:var(--muted);margin:0 0 8px}
+    .panel-box .big{font-size:30px;font-weight:950;color:var(--green);line-height:1.1}
+    .panel-box .desc{font-size:12px;color:var(--muted);margin-top:5px}
+    .bubble,.commentator{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:15px 18px;margin:12px 0;color:#e5eefc;line-height:1.75}
+    .commentator::before{content:"🎙️ ";font-size:18px}
+    .scene-cards{display:grid;gap:12px;margin-top:14px}
+    .char-card{display:grid;grid-template-columns:1fr auto;gap:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:16px;padding:15px}
+    .char-card h3{font-size:17px}
+    .char-card .role{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .char-card .quote{font-size:14px;color:#d8e4f7;line-height:1.65}
+    .char-card .metric{font-size:24px;font-weight:950;color:var(--gold);white-space:nowrap}
+    .scene-list{margin:12px 0 0;padding-left:18px;color:#d8e4f7;line-height:1.8}
+    @media(max-width:760px){main{width:min(100% - 20px,1120px);padding-top:20px}.grid,.summary,.seats{grid-template-columns:1fr}header{display:block}.back{margin-top:14px}h1{font-size:24px}}
+    @media(max-width:760px){.panel-grid{grid-template-columns:1fr}.comic-panel{padding:18px}.char-card{grid-template-columns:1fr}.char-card .metric{font-size:20px}.comic-cover .brain{font-size:48px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1 id="pageTitle">解说日志</h1>
+        <p id="pageSub">独立第三方视角的每日战报、逐席点评和赛前/赛后流水。数据来自 <code>data/pool/observer_ledgers/latest.json</code>。</p>
+      </div>
+      <a class="back" id="backLink" href="index.html">返回预测池</a>
+    </header>
+    <section id="app" class="hero"><p>正在读取解说日志…</p></section>
+  </main>
+  <script>
+    const $ = (id)=>document.getElementById(id);
+    const esc = (v)=>String(v ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+    const n = (v)=>Number(v || 0).toLocaleString();
+    const currentLang = new URLSearchParams(location.search).get("lang") === "en" ? "en" : "zh";
+    const TEAM_ZH = {
+      "Curaçao":"库拉索","Curacao":"库拉索","Germany":"德国","Japan":"日本","Netherlands":"荷兰","Ivory Coast":"科特迪瓦",
+      "Ecuador":"厄瓜多尔","Sweden":"瑞典","Tunisia":"突尼斯","Portugal":"葡萄牙","Colombia":"哥伦比亚"
+    };
+    const SCENE_EN = {
+      cover:{
+        title:"Models learned when to stand down",
+      },
+      evolution:{
+        title:"From heavy chasing to selective allocation",
+        commentary:"The most important change this round is not who the models picked, but that they started treating no-allocation as a valid strategy. Eighteen allocations and twenty-six no-bet calls show the system moving from forced action toward edge-only selection.",
+      },
+      zero_bet_club:{
+        title:"Three models, zero allocation",
+        commentary:"Zero allocation is not absence; it is a recorded action. A structured no-bet means the model did not see enough edge, or its capital state did not allow more risk.",
+      },
+      selective_bettors:{
+        title:"Selective allocators: who carries the risk",
+        commentary:"The largest staking seats are not automatically the smartest, but they are the most exposed. Post-match review should ask whether they captured positive expected value or merely bought visibility with size.",
+      },
+      focus_match:{
+        title:"Focus match",
+        commentary:"The focus match is the slate's main pressure point. This is not a score prediction; it is the clearest shared exposure point for testing whether the models read the market correctly.",
+      },
+      gap_watch:{
+        title:"Empty seats on the sideline",
+        commentary:"This must remain visible in the commentary: it is not decoration, it is product credibility. When Grok misses the gate, the report is only a partial god-view report and cannot pretend the full slate is complete.",
+        bullets:["Missing seat: Grok","Data gaps: 0","Hard gate: until 12/12 seats are present, do not label the report as fully complete."],
+      },
+      summary:{
+        eyebrow:"COMMENTARY · CLOSING NOTES",
+        title:"Five things to watch",
+        commentary:"This round is less about picking one winner and more about model behavior splitting into attack, defense, and disciplined no-action.",
+        bullets:[
+          "Allocation quality matters more than count: 18 allocations and 26 no-bet calls.",
+          "Total exposure is 2,590 pts with zero loan exposure.",
+          "The main narrative hinge is Netherlands vs Japan.",
+          "Quality gate is PARTIAL_NOT_READY with 11/12 valid seats.",
+          "Post-match closure still needs score backfill, loan handling, ranking re-ordering, and model self-review.",
+        ],
+      },
+    };
+    const CARD_EN = {
+      meta:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"Conservative capital control: conflicting information or low confidence across the slate, so every match was passed to preserve capital and prioritize debt discipline."},
+      mimo:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"Focus on value bets only when the edge is clear; this slate did not justify exposure, so the seat preserved bankroll instead of forcing action."},
+      qwen:{role:"No allocation · balance 0 pts · loan 0 pts",quote:"With weak credit state and high debt pressure, Qwen chose a survival-first no-allocation policy and avoided all unclear edges."},
+      doubao:{role:"Moderate exposure · 3 decisions",quote:"Prioritized lower-volatility lines: Germany spread protection, Sweden not to lose, and Ecuador with a cushion, while staying cautious on Netherlands vs Japan."},
+      kimi:{role:"Distributed high-frequency · 4 decisions",quote:"Spread four allocations while keeping liquidity, with Japan handicap and Sweden spread as the main positions and only a small high-price Ecuador shot."},
+      gemini:{role:"Moderate exposure · 2 decisions",quote:"Defended rank 2 with conservative bankroll control and looked for underdog spread value without overextending the account."},
+      deepseek:{role:"Moderate exposure · 1 decision",quote:"Leader defense: one small self-funded position on a higher-confidence market edge, keeping transparency high and avoidable risk low."},
+      minimax:{role:"Moderate exposure · 2 decisions",quote:"Selective value-hunting on mispriced Asian and European handicaps, using small stakes to preserve bankroll while keeping upside alive."},
+      chatgpt:{role:"Moderate exposure · 1 decision",quote:"Low-leverage rank protection: one line with stronger downside cover, while lower-information matches were skipped."},
+      yuanbao:{role:"Distributed high-frequency · 4 decisions",quote:"Anchor picks first, with handicap positions used as support."},
+      wenxin:{role:"Distributed high-frequency · 4 decisions",quote:"Strong-team preference with steady execution and controlled risk."},
+    };
+
+    document.documentElement.lang = currentLang === "en" ? "en" : "zh-CN";
+    $("pageTitle").textContent = currentLang === "en" ? "Commentary Log" : "解说日志";
+    $("pageSub").innerHTML = currentLang === "en"
+      ? 'Daily god-view report, seat-by-seat notes, and pre/post-match ledger. Source: <code>data/pool/observer_ledgers/latest.json</code>.'
+      : '独立第三方视角的每日战报、逐席点评和赛前/赛后流水。数据来自 <code>data/pool/observer_ledgers/latest.json</code>。';
+    $("backLink").textContent = currentLang === "en" ? "Back to Pool" : "返回预测池";
+    $("backLink").href = currentLang === "en" ? "index.html?lang=en" : "index.html";
+
+    function unitText(value){
+      return String(value ?? "").replace(/\bGP\b/g,currentLang === "en" ? "pts" : "积分");
+    }
+
+    function teamText(value){
+      let out=unitText(value);
+      if(currentLang === "zh"){
+        for(const [en,zh] of Object.entries(TEAM_ZH)){
+          out=out.replace(new RegExp(en.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"gi"),zh);
+        }
+        out=out.replace(/\bbet\b/g,"下注");
+      }else{
+        out=out
+          .replace(/(\d+)\/12\s*有效/g,"$1/12 valid")
+          .replace(/(\d+)\s*笔下注/g,"$1 allocations")
+          .replace(/(\d+)\s*次观望/g,"$1 no-bet calls")
+          .replace(/(\d+)\s*个模型集中在/g,"$1 models clustered on")
+          .replace(/总投入/g,"total stake")
+          .replace(/贷款暴露/g,"loan exposure")
+          .replace(/贷款/g,"loan")
+          .replace(/下注席位/g,"Allocated seats")
+          .replace(/本轮最集中/g,"Most concentrated match")
+          .replace(/集中暴露/g,"Shared exposure")
+          .replace(/胜平负\s*(?:none|0)?/gi,"WDL")
+          .replace(/让球/g,"handicap")
+          .replace(/全场观望/g,"No allocation")
+          .replace(/观望/g,"no-bet")
+          .replace(/\bnone\b/gi,"")
+          .replace(/\s{2,}/g," ")
+          .trim();
+      }
+      return out;
+    }
+
+    function points(v){return `${n(v)} ${currentLang === "en" ? "pts" : "积分"}`}
+
+    function sceneField(scene,field){
+      if(currentLang === "en" && SCENE_EN[scene?.key]?.[field])return SCENE_EN[scene.key][field];
+      return teamText(scene?.[field] || "");
+    }
+
+    function sceneStats(scene){
+      if(currentLang === "en"){
+        const stats=(scene.stats || []).map(stat=>({label:teamText(stat.label),value:teamText(stat.value),desc:teamText(stat.desc)}));
+        if(stats.length)return stats;
+        if(SCENE_EN[scene?.key]?.stats)return SCENE_EN[scene.key].stats;
+      }
+      return (scene.stats || []).map(stat=>({label:teamText(stat.label),value:teamText(stat.value),desc:teamText(stat.desc)}));
+    }
+
+    function sceneBullets(scene){
+      if(currentLang === "en" && scene?.key !== "focus_match" && SCENE_EN[scene?.key]?.bullets)return SCENE_EN[scene.key].bullets;
+      return (scene.bullets || []).map(teamText);
+    }
+
+    function sceneBubbleTitle(scene){
+      if(currentLang === "en" && scene?.key === "focus_match")return teamText(scene?.bubble_title || "");
+      return teamText(scene?.bubble_title || "");
+    }
+
+    function cardField(card,field){
+      if(currentLang === "en" && CARD_EN[String(card?.name || "").toLowerCase()]?.[field]){
+        return CARD_EN[String(card.name).toLowerCase()][field];
+      }
+      return teamText(card?.[field] || "");
+    }
+
+    function seatNote(row){
+      const name=row.display_name || row.model_account || "—";
+      const mainLine=teamText(row.primary_position || (Number(row.bet_count || 0) ? "" : "No allocation"));
+      if(currentLang === "en"){
+        const risk=Number(row.bet_count || 0) === 0 ? "no allocation" : Number(row.bet_count || 0) >= 4 ? "distributed exposure" : "moderate exposure";
+        return `${name}: pending; ${Number(row.decision_count || 0)} decisions, ${Number(row.bet_count || 0)} allocations, main line ${mainLine}. Overall posture: ${risk}.`;
+      }
+      return `${name}：待赛；${name}本轮${Number(row.decision_count || 0)}条决策，其中下注${Number(row.bet_count || 0)}笔，主线是${mainLine}，整体属于${teamText(row.risk_label || "待评")}。`;
+    }
+
+    function summaryLine(data,field){
+      const board=data.scoreboard || {};
+      if(currentLang === "en"){
+        if(field === "data_analyst")return `Data view: ${n(board.accepted_bets)} structured allocations; settlement ROI ${Number(board.roi || 0).toFixed(1)}%.`;
+        if(field === "football_expert")return "Football view: this pre-match report covers Germany vs Curaçao, Ivory Coast vs Ecuador, Netherlands vs Japan, and Sweden vs Tunisia.";
+        return `Bankroll view: loan exposure ${points(board.total_loan_gp)}; monitor whether exposed seats can cover variance after settlement.`;
+      }
+      return teamText(data.observer_summary?.[field] || data.lead || "—");
+    }
+
+    function note(title,text){
+      return `<div class="note"><span>${esc(title)}</span><p>${esc(text || "—")}</p></div>`;
+    }
+
+    function renderComicScene(scene,index){
+      const stats=sceneStats(scene);
+      const cards=Array.isArray(scene.cards)?scene.cards:[];
+      const bullets=sceneBullets(scene);
+      return `
+        <div class="scene-break">${esc(sceneField(scene,"eyebrow") || `SCENE ${index}`)}</div>
+        <section class="comic-panel">
+          <div class="eyebrow">${esc(sceneField(scene,"eyebrow"))}</div>
+          <h2>${esc(sceneField(scene,"title") || scene.key || "")}</h2>
+          ${sceneField(scene,"commentary")?`<div class="commentator">${esc(sceneField(scene,"commentary"))}</div>`:""}
+          ${stats.length?`<div class="panel-grid">${stats.map(stat=>`
+            <div class="panel-box">
+              <h4>${esc(stat.label || "")}</h4>
+              <div class="big">${esc(stat.value || "")}</div>
+              <div class="desc">${esc(stat.desc || "")}</div>
+            </div>
+          `).join("")}</div>`:""}
+          ${scene.bubble_title?`<div class="bubble"><strong>${esc(sceneBubbleTitle(scene))}</strong>${bullets.length?`<ul class="scene-list">${bullets.map(item=>`<li>${esc(item)}</li>`).join("")}</ul>`:""}</div>`:""}
+          ${!scene.bubble_title && bullets.length?`<ul class="scene-list">${bullets.map(item=>`<li>${esc(item)}</li>`).join("")}</ul>`:""}
+          ${cards.length?`<div class="scene-cards">${cards.map(card=>`
+            <article class="char-card">
+              <div>
+                <h3>${esc(card.name || "—")}</h3>
+                <div class="role">${esc(cardField(card,"role"))}</div>
+                <div class="quote">${esc(cardField(card,"quote"))}</div>
+              </div>
+              <div class="metric">${esc(unitText(card.metric || ""))}</div>
+            </article>
+          `).join("")}</div>`:""}
+        </section>
+      `;
+    }
+
+    function renderComicStory(data){
+      const story=data.comic_story || {};
+      const scenes=Array.isArray(story.scenes)?story.scenes:[];
+      const cover=scenes.find(scene=>scene && scene.key==="cover") || {};
+      const body=scenes.filter(scene=>scene && scene.key!=="cover").map((scene,index)=>renderComicScene(scene,index+1)).join("");
+      const coverText=SCENE_EN.cover;
+      return `
+        <section class="comic-panel comic-cover">
+          <div class="eyebrow">${esc(currentLang === "en" ? `AI PREDICTION POOL · ${data.round_id || ""} · ${data.date || ""}` : teamText(cover.eyebrow || `${data.round_id || ""} · ${data.date || ""}`))}</div>
+          <div class="brain">🧠</div>
+          <h2>${esc(currentLang === "en" ? coverText.title : teamText(story.title || cover.title || data.headline || "解说日志"))}</h2>
+          <p>${esc(teamText(story.subtitle || cover.subtitle || data.lead || ""))}</p>
+          <div class="pills">${(cover.pills || []).map(teamText).map(pill=>`<span class="pill">${esc(pill)}</span>`).join("")}</div>
+        </section>
+        ${body}
+      `;
+    }
+
+    function render(data){
+      const board=data.scoreboard || {};
+      const seats=Array.isArray(data.seat_commentaries)?data.seat_commentaries:[];
+      $("app").innerHTML=`
+        ${data.comic_story ? renderComicStory(data) : `<h1>${esc(currentLang === "en" ? "Commentary Log" : teamText(data.headline || "解说日志"))}</h1><p>${esc(teamText(data.lead || ""))}</p>`}
+        <div class="meta">
+          <span class="chip">${esc(data.date || "—")}</span>
+          <span class="chip">${esc(data.round_id || "—")}</span>
+          <span class="chip">${esc(data.phase || "—")}</span>
+          <span class="chip">${currentLang === "en" ? "Settlement" : "结算"}：${esc(data.settlement_status || "—")}</span>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h2>${currentLang === "en" ? "Report Scoreboard" : "战报计分牌"}</h2>
+            <div class="metric"><span>${currentLang === "en" ? "Seat coverage" : "席位覆盖"}</span><b>${n(board.models)} / 12</b></div>
+            <div class="metric"><span>${currentLang === "en" ? "Structured allocations" : "结构化投注"}</span><b>${n(board.accepted_bets)}</b></div>
+            <div class="metric"><span>${currentLang === "en" ? "Total stake" : "总投入"}</span><b>${points(board.total_stake_gp)}</b></div>
+            <div class="metric"><span>${currentLang === "en" ? "Loan exposure" : "贷款暴露"}</span><b>${points(board.total_loan_gp)}</b></div>
+          </div>
+          <div class="card">
+            <h2>${currentLang === "en" ? "Best Operation" : "最佳操作"}</h2>
+            <p>${esc(currentLang === "en" ? "Top positive-control allocation selected for post-match review." : teamText(data.best_operation?.one_line || "待生成"))}</p>
+            <div class="small">${esc(currentLang === "en" ? "Clustered Japan handicap +0.5 @ 1.85" : teamText(data.best_operation?.primary_position || ""))}</div>
+          </div>
+          <div class="card">
+            <h2>${currentLang === "en" ? "Risk Operation" : "风险操作"}</h2>
+            <p>${esc(currentLang === "en" ? "Highest-risk allocation held for settlement review." : teamText(data.worst_operation?.one_line || "待生成"))}</p>
+            <div class="small">${esc(currentLang === "en" ? "Primary risk: Germany vs Curaçao may diverge from consensus; settlement variance affects net value." : teamText(data.worst_operation?.risk_excerpt || ""))}</div>
+          </div>
+        </div>
+        <div class="summary">
+          ${note(currentLang === "en" ? "Data Analyst" : "数据分析师",summaryLine(data,"data_analyst"))}
+          ${note(currentLang === "en" ? "Football Expert" : "足球专家",summaryLine(data,"football_expert"))}
+          ${note(currentLang === "en" ? "Pro Bettor" : "职业赌徒",summaryLine(data,"pro_bettor"))}
+        </div>
+        <div class="card" style="margin-top:18px">
+          <h2>${currentLang === "en" ? "Seat-by-seat Notes" : "逐席点评"}</h2>
+          <div class="seats">
+            ${seats.length ? seats.map(row=>`
+              <article class="seat">
+                <div class="seat-head">
+                  <h3>${esc(row.display_name || row.model_account || "—")}</h3>
+                  <span class="tag">${esc(currentLang === "en" ? "Pending" : teamText(row.grade || "待评"))}</span>
+                </div>
+                <p>${esc(seatNote(row))}</p>
+                <div class="small">${esc(teamText(row.primary_position || ""))}</div>
+              </article>
+            `).join("") : `<p>${currentLang === "en" ? "No seat notes yet." : "暂无逐席点评。"}</p>`}
+          </div>
+        </div>
+      `;
+    }
+
+    fetch("data/pool/observer_ledgers/latest.json",{cache:"no-store"})
+      .then(res=>{if(!res.ok)throw new Error(`HTTP ${res.status}`);return res.json();})
+      .then(render)
+      .catch(err=>{
+        $("app").classList.add("error");
+        $("app").innerHTML=`<h1>${currentLang === "en" ? "Commentary log failed to load" : "解说日志读取失败"}</h1><p>${esc(err.message)}</p>`;
+      });
+  </script>
+</body>
+</html>

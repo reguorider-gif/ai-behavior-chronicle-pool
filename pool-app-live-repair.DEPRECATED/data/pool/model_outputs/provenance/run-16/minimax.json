@@ -1,0 +1,66 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "51f065f1cb10",
+  "round_id": "run-16",
+  "date": "2026-06-16",
+  "seat": "minimax",
+  "model_account": "minimax",
+  "ok": true,
+  "method": null,
+  "raw_output_path": "data/pool/model_outputs/raw/run-16/minimax.txt",
+  "parsed": {
+    "seat": "minimax",
+    "round_id": "run-16",
+    "trace_id": "AIJUDGE-minimax-1781614253824854000",
+    "account": {
+      "data_status": "TRUNCATED_IN_PACKET",
+      "assumed_net_worth_gp": 1000,
+      "loan_gp": 0,
+      "credit_grade": "UNKNOWN"
+    },
+    "loan_strategy": {
+      "type": "none",
+      "reason": "热身赛窗口 edge 不足，举债违反无信源重仓扣分规则"
+    },
+    "forecasts_count": 51,
+    "bets_placed": 0,
+    "bets_standby": 2,
+    "opponent_targets": [
+      "deepseek",
+      "Grok",
+      "Kimi",
+      "Gemini"
+    ],
+    "consensus_challenge": "USA_v_Germany_consensus_overload",
+    "info_sources": [
+      "FIFA",
+      "Transfermarkt",
+      "ESPN/Opta",
+      "Pinnacle",
+      "Bet365"
+    ],
+    "next_round_focus": "USA_v_Germany_Australia_v_Switzerland_Peru_v_Spain"
+  },
+  "response_chars": 6144,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 6144,
+    "min_response_chars": 1,
+    "response_hash": "fa3b38555ec43866399255782684c56b3c6145f9f852b517224607d3d4fcc75b",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

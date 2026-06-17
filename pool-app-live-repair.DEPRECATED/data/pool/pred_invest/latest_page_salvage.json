@@ -1,0 +1,100 @@
+{
+  "responses": [
+    {
+      "seat": "chatgpt",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "世界杯预测池策略",
+      "url": "https://chatgpt.com/c/6a2fdc7c-02a0-83ea-bcde-32a0814922b2",
+      "chars": 756,
+      "run_id": "page_salvage:chatgpt",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=chatgpt\nseat_id=chatgpt\nstrategy=小仓稳胆避噪\nF|WC-H1|home|3-0|88|lean|客胜缺盘\nF|WC-K1|home|2-1|61|bet|平局扰动\nF|WCAPI-20260615-BELGIUM-EGYPT|home|2-1|57|no_bet|让球线缺\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|away|0-2|66|no_bet|让球线缺\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home|2-0|64|no_bet|让球线缺\nB|WC-H1|no_bet|none|none|none|0|0|0|赔率过低\nB|WC-K1|bet|moneyline|Portugal|none|1.75|180|0|主胜有价\nB|WCAPI-20260615-BELGIUM-EGYPT|no_bet|none|none|none|0|0|0|盘口不明\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|no_bet|none|none|none|0|0|0|方向冲突\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|no_bet|none|none|none|0|0|0|线位缺失\nLOAN|0|不用杠杆|保留本金\nRISK|盘口线缺失;强弱误判\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "doubao",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "世界杯投注预测与投资方案 - 豆包",
+      "url": "https://www.doubao.com/chat/38431035218378754",
+      "chars": 803,
+      "run_id": "page_salvage:doubao",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=doubao\nseat_id=doubao\nstrategy = 择优分散控风险\nF|WC-H1|home|2-0|85|bet | 无明显漏洞\nB|WC-H1|bet|moneyline|Spain|0|1.08|200|0 | 主队实力占优\nF|WC-K1|home|2-1|70|bet | 中场状态未知\nB|WC-K1|bet|moneyline|Portugal|0|1.75|200|0 | 葡队攻防稳定\nF|WCAPI-20260615-BELGIUM-EGYPT|away|1-2|40|lean | 客场战力不明\nB|WCAPI-20260615-BELGIUM-EGYPT|no_bet|none|none|none|0|0|0 | 盘口偏混乱\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|away|0-2|75|bet | 客队经验充足\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|bet|handicap|Uruguay|0|2.24|200|0 | 欧亚差距明显\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home|2-1|60|lean | 临场状态待定\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|no_bet|none|none|none|0|0|0 | 走势难判断\nLOAN|0 | 暂不追加借贷 | 结余稳步留存\nRISK | 赔率波动；临场爆冷\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "grok",
+      "ok": true,
+      "mode": "page_text",
+      "title": "Provide Reference Content - Grok",
+      "url": "https://grok.com/c/10838482-397f-4b46-9466-4f904c9eef53?rid=82b8ab01-383a-486f-9db5-f985ae0c2fea",
+      "chars": 1142,
+      "run_id": "page_salvage:grok",
+      "text": "切换侧边栏\n搜索\n⌘K\n新建聊天\n⌘J\nImagine\nSkills and Connectors\n项目\n新项目\n历史记录\n今天\nProvide Reference Content\nProvide Specific Reference Content\nWorld Cup Betting Predictions\n昨天\nGrok's Bold World Cup Pool Bets\nWorld Cup AI Betting Predictions\nWorld Cup Pool AI Predictions\nLeverage Germany Handicap Bets AI World Cup Pool Strategy\nGrok's WC Pool Handicap Bets\nWorld Cup Betting Strategies\nAIJUDGEANSWERSTART:AIJUDGE-grok-1781455926282193000 Germany-Curaçao Over Goals Bet AIJUDGEANSWEREND:AIJUDGE-grok-1781455926282193000\nGermany Curaçao Warmup Challenge\n更早的\nGermany vs Curaçao: Over 3.5 Goals Bet\n挑战共识弱队让球并保守贷款\n保守贷款策略与反直觉足球预测\nGrok/xAI Seat WC Betting Strategy\nOrdinary Chat Test: Two Responses\nWC C1 Scotland vs Haiti handicap\nNo specific content provided\nAI Preparation for Analysis\nSweden vs Tunisia handicap analysis\nSweden Tunisia handicap analysis\nAI Chatbot Response Setup\nAI Judge Supports Handicap Bets\nProvide Specific Content for Analysis\n2026 World Cup Handicap Bet Predictions\n查看全部\n刘威迪\nreguorider@gmail.com\n\n参考以下内容：\n\n思考了 5s\n\n请提供您要参考的具体内容，我会根据它为您分析、总结、回答问题或提供建议。随时贴上文字、链接或其他细节！\n\n探讨AI辅助写作的具体技巧\n了解自然语言处理的基础概念\n你对 Grok 的答案满意吗？\n赞\n踩\n\n\n\n\nFast\n升级到 SuperGrok"
+    },
+    {
+      "seat": "meta",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "Meta AI",
+      "url": "https://www.meta.ai/prompt/24a4a977-6fad-4337-8f2d-33ede060c0bc",
+      "chars": 779,
+      "run_id": "page_salvage:meta",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=meta\nseat_id=meta\nstrategy=低赔避险稳健\nF|WC-H1|home|3-0|88|no_bet|赔率过低\nF|WC-K1|home|2-1|68|bet|中场控制关键\nF|WCAPI-20260615-BELGIUM-EGYPT|home|2-0|71|bet|埃及伤病未知\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|away|0-2|76|no_bet|让球不明\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home|1-0|63|lean|体能消耗大\nB|WC-H1|no_bet|none|none|none|0|0|0|赔率过低弃投\nB|WC-K1|bet|moneyline|Portugal|none|1.75|400|0|葡控场优势稳\nB|WCAPI-20260615-BELGIUM-EGYPT|bet|handicap|Belgium|-1.5|2.81|300|0|比军锋线占优\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|no_bet|none|none|none|0|0|0|实力悬殊不投\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|bet|handicap|Iran|-0.5|1.83|200|0|伊朗防守稳健\nLOAN|0|无需加杠杆|保本优先还款\nRISK|冷门爆冷;赔率波动\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "mimo",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "Xiaomi MiMo Studio",
+      "url": "https://aistudio.xiaomimimo.com/#/chat/147d0570174a2b8b0cc3a5e2cf339172",
+      "chars": 852,
+      "run_id": "page_salvage:mimo",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=mimo\nseat_id=mimo\nstrategy=高确信冷门覆盖\nF|WC-H1|Spain|3-0|95|no_bet|赔率1.08无价值边缘\nF|WC-K1|Portugal|1-1|60|no_bet|无盘口数据\nF|WCAPI-20260615-BELGIUM-EGYPT|Belgium|2-1|57|lean|埃及世预赛零封铁桶难破\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|Saudi Arabia|0-1|35|lean|乌拉圭防线残阵但中场世界顶级\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|Iran|1-0|54|lean|伊朗进攻效率有限小球格局\nB|WC-H1|no_bet|none|none|none|0|0|0|无边不投。\nB|WC-K1|no_bet|none|none|none|0|0|0|无盘口不投。\nB|WCAPI-20260615-BELGIUM-EGYPT|bet|handicap|Belgium|-1|2.27|200|0|控球碾压小胜覆盖\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|bet|handicap|Saudi Arabia|+0.5|1.62|200|0|防反韧性冷门覆盖\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|no_bet|none|none|none|0|0|0|小球易拖风险高。\nLOAN|0|余额可支撑两注|300贷款需积分偿还\nRISK|比利时黄金一代老化后防不稳;沙特热身赛近5场仅1胜状态堪忧\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "qwen",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "Qwen Studio",
+      "url": "https://chat.qwen.ai/c/b3c79340-d6ee-4cbf-9be3-b3bd12f8dd7d",
+      "chars": 743,
+      "run_id": "page_salvage:qwen",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=qwen\nseat_id=qwen\nstrategy=稳健防守反击\nF|WC-H1|home|2-0|80|lean|无缺口\nB|WC-H1|no_bet|none|none|none|0|0|0|赔率过低\nF|WC-K1|home|2-1|70|bet|无缺口\nB|WC-K1|bet|moneyline|Portugal|0|1.75|100|0|看好主队\nF|WCAPI-20260615-BELGIUM-EGYPT|home|1-0|55|no_bet|无缺口\nB|WCAPI-20260615-BELGIUM-EGYPT|no_bet|none|none|none|0|0|0|盘口不明\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|away|0-2|75|no_bet|无缺口\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|no_bet|none|none|none|0|0|0|实力悬殊\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home|1-0|60|no_bet|无缺口\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|no_bet|none|none|none|0|0|0|信息不足\nLOAN|0|无新增借款|优先还旧贷\nRISK|冷门爆冷;盘口异常\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "wenxin",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "文心 - 百度旗下AI助手",
+      "url": "https://wenxin.baidu.com/chat/211253123147",
+      "chars": 776,
+      "run_id": "page_salvage:wenxin",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=wenxin\nseat_id=wenxin\nstrategy=强队优先稳扎稳打\nF|WC-H1|home||80|bet|无缺口\nF|WC-K1|home||60|lean|实力接近\nF|WCAPI-20260615-BELGIUM-EGYPT|home||45|no_bet|盘口混乱\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|home||50|bet|信息充足\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home||55|lean|实力占优\nB|WC-H1|bet|h2h|Spain|none|1.08|150|0|西班牙队实力碾压\nB|WC-K1|bet|h2h|Portugal|none|1.75|150|0|葡萄牙队状态更佳\nB|WCAPI-20260615-BELGIUM-EGYPT|no_bet|none|none|none|0|0|盘口不明故不投注\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|bet|handicap|Saudi Arabia|none|1.62|200|0|沙特坐拥主场优势\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|bet|handicap|Iran|none|1.83|100|0|伊朗整体实力占优\nLOAN|0|当前账户资金充足|按期足额归还到位\nRISK|冷门爆冷;盘口诱盘\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    },
+    {
+      "seat": "yuanbao",
+      "ok": true,
+      "mode": "answer_marker",
+      "title": "Pred Invest Receipt Analysis",
+      "url": "https://yuanbao.tencent.com/chat/naQivTmsDa/0O0192Q4z4K",
+      "chars": 758,
+      "run_id": "page_salvage:yuanbao",
+      "text": "PRED_INVEST_RECEIPT\nmodel_account=yuanbao\nseat_id=yuanbao\nstrategy=稳胆为主辅让球\nF|WC-H1|home|2-0|95|bet|无\nF|WC-K1|home|1-0|60|lean|无\nF|WCAPI-20260615-BELGIUM-EGYPT|home|2-1|55|lean|无\nF|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|draw|1-1|50|no_bet|无\nF|WCAPI-20260616-IRAN-NEW-ZEALAND|home|2-0|65|lean|无\nB|WC-H1|bet|moneyline|home|none|1.08|500|0|西班必胜\nB|WC-K1|lean|moneyline|home|none|1.75|200|0|葡稳小胜\nB|WCAPI-20260615-BELGIUM-EGYPT|lean|handicap|Belgium:-@2.27|2.27|200|0|让球防冷\nB|WCAPI-20260615-SAUDI-ARABIA-URUGUAY|no_bet|none|none|none|0|0|0|均势不投\nB|WCAPI-20260616-IRAN-NEW-ZEALAND|lean|handicap|Iran:-@1.83|1.83|100|0|主让安全\nLOAN|0|无贷款|无\nRISK|冷门平局;让球穿裆\nAUDIT|WC-H1,WC-K1,WCAPI-20260615-BELGIUM-EGYPT,WCAPI-20260615-SAUDI-ARABIA-URUGUAY,WCAPI-20260616-IRAN-NEW-ZEALAND||true"
+    }
+  ],
+  "version": "pred_invest_page_salvage.v1",
+  "generated_at": "2026-06-15T16:24:05.046884+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "seats": [
+    "chatgpt",
+    "doubao",
+    "grok",
+    "meta",
+    "mimo",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "note": "Raw provider-page candidates only; quality gate still validates structured JSON and coverage.",
+  "merge_note": "Write mode merges by seat so single-seat salvage does not delete other recovered page outputs."
+}

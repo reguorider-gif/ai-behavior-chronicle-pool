@@ -1,0 +1,235 @@
+{
+  "version": "evolution_trace.v1",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "run_id": "run-15",
+  "traces": [
+    {
+      "seat_id": "chatgpt",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 180.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "deepseek",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 1.0,
+        "total_stake_gp": 0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "mimo",
+      "run_id": "run-15",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "strategy_drift": "stable",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.6,
+        "total_stake_gp": 400.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "minimax",
+      "run_id": "run-15",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "strategy_drift": "stable",
+      "memory_used": true,
+      "dominant_pattern": "capital_to_selective_allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 300.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "doubao",
+      "run_id": "run-15",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "strategy_drift": "loss_response_under_observation",
+      "memory_used": true,
+      "dominant_pattern": "capital_to_selective_allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 600.0,
+        "settlement_profit_gp": -200.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "gemini",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 50.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "kimi",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 40.0,
+        "settlement_profit_gp": -40.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "meta",
+      "run_id": "run-15",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "memory_used": true,
+      "dominant_pattern": "capital_to_selective_allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 900.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "qwen",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 100.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "wenxin",
+      "run_id": "run-15",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "strategy_drift": "loss_response_under_observation",
+      "memory_used": true,
+      "dominant_pattern": "capital_to_selective_allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.2,
+        "total_stake_gp": 600.0,
+        "settlement_profit_gp": -150.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "grok",
+      "run_id": "run-15",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "memory_used": true,
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 1.0,
+        "total_stake_gp": 0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "yuanbao",
+      "run_id": "run-15",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "memory_used": true,
+      "dominant_pattern": "capital_to_selective_allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "decision_pressure": {
+        "no_bet_rate": 0.2,
+        "total_stake_gp": 1000.0,
+        "settlement_profit_gp": -500.0,
+        "recovery_mode": false
+      }
+    }
+  ]
+}

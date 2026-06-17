@@ -14,9 +14,6 @@ import os
 import subprocess
 import sys
 import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -29,57 +26,13 @@ import pred_invest_quality_gate
 import pred_invest_sop_guard
 import run_pred_invest_daily_sop
 from submit_pred_invest_bridge_run import submit
+from pool.io_utils import http_json, local_subprocess_env
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
-RUNTIME_PYTHON = Path("/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/bin/python")
-DEFAULT_TARGET_SEATS = ["doubao", "gemini", "grok", "kimi", "mimo", "minimax", "wenxin"]
-LOCAL_NO_PROXY = "127.0.0.1,localhost,::1"
-
-
-def _is_local_url(url: str) -> bool:
-    host = (urllib.parse.urlparse(url).hostname or "").lower()
-    return host in {"127.0.0.1", "localhost", "::1"}
-
-
-def _local_subprocess_env() -> dict[str, str]:
-    env = dict(os.environ)
-    env["NO_PROXY"] = ",".join(filter(None, [env.get("NO_PROXY"), LOCAL_NO_PROXY]))
-    env["no_proxy"] = ",".join(filter(None, [env.get("no_proxy"), LOCAL_NO_PROXY]))
-    # CDP and bridge calls are local control-plane calls. They must not be sent
-    # through a user/system HTTP proxy, or Playwright will try 127.0.0.1:7897.
-    for key in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy", "ALL_PROXY", "all_proxy"):
-        env.pop(key, None)
-    return env
-
-
-def _http_json(url: str, payload: dict[str, Any] | None = None, timeout: int = 30) -> dict[str, Any]:
-    data = None
-    headers = {"Accept": "application/json"}
-    if payload is not None:
-        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-        headers["Content-Type"] = "application/json"
-    request = urllib.request.Request(url, data=data, headers=headers, method="POST" if payload is not None else "GET")
-    try:
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({})) if _is_local_url(url) else urllib.request
-        with opener.open(request, timeout=timeout) as response:
-            raw = response.read().decode("utf-8", errors="replace")
-            try:
-                return json.loads(raw)
-            except Exception:
-                return {"ok": False, "error": "non_json_response", "status": response.status, "raw": raw[:1200]}
-    except urllib.error.HTTPError as exc:
-        raw = exc.read().decode("utf-8", errors="replace")
-        try:
-            body = json.loads(raw)
-        except Exception:
-            body = {"raw": raw[:1200]}
-        body.setdefault("ok", False)
-        body.setdefault("status", exc.code)
-        return body
-    except Exception as exc:
-        return {"ok": False, "error": type(exc).__name__, "message": str(exc)}
+RUNTIME_PYTHON = Path(os.environ.get("AI_JUDGE_PYTHON", sys.executable))
+DEFAULT_TARGET_SEATS = list(run_pred_invest_daily_sop.PRODUCTION_SEATS)
 
 
 def _parse_list(value: str | None) -> list[str]:
@@ -90,6 +43,18 @@ def _parse_list(value: str | None) -> list[str]:
 
 def _bridge_busy(status: dict[str, Any]) -> bool:
     return bool(status.get("busy") or (status.get("bridge_run") or {}).get("busy"))
+
+
+def _bridge_status_ok(status: dict[str, Any]) -> bool:
+    if not isinstance(status, dict):
+        return False
+    if status.get("ok") is False:
+        return False
+    if status.get("error") in {"curl_non_json_response", "non_json_response"}:
+        return False
+    if status.get("curl_returncode") not in (None, 0):
+        return False
+    return True
 
 
 def _bridge_run_id(status: dict[str, Any]) -> str | None:
@@ -111,22 +76,35 @@ def _wait_for_bridge_idle(base_url: str, recover_after: float, wait_seconds: flo
     deadline = time.time() + wait_seconds
     last: dict[str, Any] = {}
     while time.time() < deadline:
-        status = _http_json(f"{base_url}/api/bridge/status", timeout=45)
+        status = http_json(f"{base_url}/api/bridge/status", timeout=45)
         last = status
+        if not _bridge_status_ok(status):
+            time.sleep(10)
+            continue
         if not _bridge_busy(status):
             return {"ok": True, "status": status, "recovered": False}
         elapsed = _bridge_elapsed(status)
         active = _bridge_run_id(status)
         if elapsed >= recover_after:
-            recovery = _http_json(
+            recovery = http_json(
                 f"{base_url}/api/bridge/recover",
                 payload={"run_id": active, "reason": "pred_invest_attempt4_single_seat_recover"},
                 timeout=45,
             )
-            after = _http_json(f"{base_url}/api/bridge/status", timeout=45)
+            after = http_json(f"{base_url}/api/bridge/status", timeout=45)
             return {"ok": not _bridge_busy(after), "status": after, "recovered": True, "recovery": recovery}
         time.sleep(10)
     return {"ok": False, "status": last, "error": "bridge_wait_timeout"}
+
+
+def _load_json_file(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    except Exception as exc:
+        return {"_read_error": str(exc), "_path": str(path)}
+    return data if isinstance(data, dict) else {}
 
 
 def _wait_for_verdict(base_url: str, run_id: str, timeout_seconds: float, poll_seconds: float) -> dict[str, Any]:
@@ -134,16 +112,16 @@ def _wait_for_verdict(base_url: str, run_id: str, timeout_seconds: float, poll_s
     last_verdict: dict[str, Any] = {}
     bridge_idle_since: float | None = None
     while time.time() < deadline:
-        verdict = _http_json(f"{base_url}/api/judge/{run_id}/verdict", timeout=45)
+        verdict = http_json(f"{base_url}/api/judge/{run_id}/verdict", timeout=45)
         last_verdict = verdict
         if isinstance(verdict, dict) and (verdict.get("web_bridge") or verdict.get("answer_contract") or verdict.get("verdict_status")):
             return {"ok": True, "verdict": verdict}
-        bridge = _http_json(f"{base_url}/api/bridge/status", timeout=20)
+        bridge = http_json(f"{base_url}/api/bridge/status", timeout=20)
         active = _bridge_run_id(bridge)
         if not _bridge_busy(bridge) or (active and active != run_id):
             bridge_idle_since = bridge_idle_since or time.time()
             if time.time() - bridge_idle_since >= max(10.0, poll_seconds):
-                verdict = _http_json(f"{base_url}/api/judge/{run_id}/verdict", timeout=45)
+                verdict = http_json(f"{base_url}/api/judge/{run_id}/verdict", timeout=45)
                 if verdict.get("web_bridge") or verdict.get("answer_contract") or verdict.get("verdict_status"):
                     return {"ok": True, "verdict": verdict, "bridge": bridge}
                 return {"ok": False, "error": "bridge_idle_without_verdict", "last_verdict": verdict, "bridge": bridge}
@@ -213,6 +191,14 @@ def _write_attempt_report(report: dict[str, Any]) -> dict[str, str]:
     return {"json": str(json_path), "markdown": str(md_path)}
 
 
+def _write_seat_receipt(date: str, round_id: str, seat: str, receipt: dict[str, Any]) -> str:
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    safe_seat = "".join(ch if ch.isalnum() or ch in ("-", "_") else "_" for ch in seat)
+    path = OUT_DIR / f"{date}_{round_id}_seat_{safe_seat}_receipt.json"
+    path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return str(path)
+
+
 def _capture_page_salvage(
     *,
     date: str,
@@ -247,7 +233,7 @@ def _capture_page_salvage(
             endpoint,
             "--write",
         ]
-        proc = subprocess.run(command, cwd=str(ROOT), text=True, capture_output=True, timeout=120, env=_local_subprocess_env())
+        proc = subprocess.run(command, cwd=str(ROOT), text=True, capture_output=True, timeout=120, env=local_subprocess_env())
         if proc.returncode != 0:
             raise RuntimeError(
                 "runtime_python_page_salvage_failed: "
@@ -321,6 +307,7 @@ def _regenerate_artifacts(
         # A partial bridge repair can legitimately have no seat archives yet.
         # Do not lose the new run ids or quality-gate output just because the
         # commentary layer has no publishable archive rows.
+        print(f"WARNING: observer ledger failed: {type(exc).__name__}: {exc}", file=sys.stderr)
         observer_error = {
             "type": type(exc).__name__,
             "message": str(exc),
@@ -376,32 +363,89 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "bridge_base_url": base_url,
         "input_run_ids": run_ids[:],
         "requested_seats": requested,
+        "max_attempts": args.max_attempts,
         "initial_quality_gate": {
             "status": gate.get("status"),
             "valid_count": gate.get("valid_count"),
             "required_seat_count": gate.get("required_seat_count"),
             "valid_seats": gate.get("valid_seats") or [],
             "needs_rerun": gate.get("needs_rerun") or [],
+            "required_match_ids": gate.get("required_match_ids") or [],
+            "required_match_source": gate.get("required_match_source"),
         },
         "targets": targets,
         "provider_blocked_skipped": provider_blocked_skipped,
         "provider_blocked_policy": "skip ordinary rerun unless --force-provider-blocked is set",
+        "progress_reports": bool(getattr(args, "progress_reports", False)),
+        "dry_run": bool(args.dry_run),
+        "warnings": [],
         "runs": [],
     }
+    progress_reports = bool(getattr(args, "progress_reports", False))
+    if targets and args.attempt > args.max_attempts:
+        report["early_termination"] = {
+            "reason": f"attempt {args.attempt} exceeds max {args.max_attempts}",
+            "action": "manual_intervention_required",
+            "remaining_needs": sorted(needs),
+        }
+        report["warnings"].append("attempt_limit_reached")
+        report["paths"] = _write_attempt_report(report)
+        return report
+    prev_attempt_file = OUT_DIR / f"{args.date}_{args.round_id}_attempt{args.attempt - 1}_single_seat_reruns.json"
+    prev_report = _load_json_file(prev_attempt_file)
+    if targets and args.attempt > 4 and prev_report:
+        prev_valid = set(((prev_report.get("final_quality_gate") or {}) if isinstance(prev_report.get("final_quality_gate"), dict) else {}).get("valid_seats") or [])
+        current_valid = set(gate.get("valid_seats") or [])
+        if prev_valid == current_valid:
+            report["early_termination"] = {
+                "reason": "no improvement since last attempt",
+                "prev_attempt": args.attempt - 1,
+                "prev_valid_count": len(prev_valid),
+                "current_valid_count": len(current_valid),
+                "action": "manual_intervention_required",
+                "remaining_needs": sorted(needs),
+            }
+            report["warnings"].append("no_attempt_improvement")
+            report["paths"] = _write_attempt_report(report)
+            return report
+    if targets and not (gate.get("required_match_ids") or []):
+        report["errors"] = ["missing_required_match_contract"]
+        report["warnings"].append("prompt_pack_or_required_match_snapshot_missing")
+        report["remediation"] = (
+            "Generate the prompt pack / required match snapshot before targeted reruns. "
+            "The rerun executor refuses to expand to the full runtime schedule."
+        )
+        report["paths"] = _write_attempt_report(report)
+        return report
     if args.dry_run:
-        report["dry_run"] = True
+        report["paths"] = _write_attempt_report(report)
+        return report
+
+    if targets:
+        initial_ready = _wait_for_bridge_idle(
+            base_url,
+            recover_after=args.recover_after_seconds,
+            wait_seconds=args.bridge_wait_seconds,
+        )
+    else:
+        initial_ready = {"ok": True, "status": {}, "recovered": False, "source": "no_targets"}
+    report["initial_bridge_ready"] = initial_ready
+    if targets and not initial_ready.get("ok"):
+        for seat in targets:
+            report["runs"].append({
+                "seat": seat,
+                "started_at": datetime.now(timezone.utc).isoformat(),
+                "bridge_ready": initial_ready,
+                "submit_ok": False,
+                "wait_ok": False,
+                "error": "bridge_not_idle",
+            })
         report["paths"] = _write_attempt_report(report)
         return report
 
     for seat in targets:
         row: dict[str, Any] = {"seat": seat, "started_at": datetime.now(timezone.utc).isoformat()}
-        ready = _wait_for_bridge_idle(base_url, recover_after=args.recover_after_seconds, wait_seconds=args.bridge_wait_seconds)
-        row["bridge_ready"] = ready
-        if not ready.get("ok"):
-            row.update({"submit_ok": False, "wait_ok": False, "error": "bridge_not_idle"})
-            report["runs"].append(row)
-            report["paths"] = _write_attempt_report(report)
-            continue
+        row["bridge_ready"] = {"ok": True, "source": "initial_bridge_ready"}
         receipt = submit(
             base_url,
             args.date,
@@ -409,10 +453,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             dry_run=False,
             requested_seats=[seat],
             compact=True,
-            ultra_compact=True,
+            ultra_compact=False,
             attempt_no=args.attempt,
             judge_mode=args.judge_mode,
+            assume_requested_ready=True,
         )
+        row["receipt_path"] = _write_seat_receipt(args.date, args.round_id, seat, receipt)
         row["receipt"] = {
             key: receipt.get(key)
             for key in ("ok", "error", "selected_seats", "blocked_seats", "prompt_chars", "attempt_no")
@@ -425,7 +471,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             row["wait_ok"] = False
             row["error"] = receipt.get("error") or response.get("error") or "submit_failed"
             report["runs"].append(row)
-            report["paths"] = _write_attempt_report(report)
+            if progress_reports:
+                report["paths"] = _write_attempt_report(report)
             continue
         run_ids.append(str(run_id))
         wait = _wait_for_verdict(base_url, str(run_id), timeout_seconds=args.verdict_timeout_seconds, poll_seconds=args.poll_seconds)
@@ -441,7 +488,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             row["post_timeout_recover"] = recover
         row["finished_at"] = datetime.now(timezone.utc).isoformat()
         report["runs"].append(row)
-        report["paths"] = _write_attempt_report(report)
+        if progress_reports:
+            report["paths"] = _write_attempt_report(report)
 
     if targets and not args.skip_page_salvage:
         try:
@@ -472,7 +520,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 "message": str(exc),
                 "note": "Page salvage is best-effort; quality gate remains authoritative.",
             }
-        report["paths"] = _write_attempt_report(report)
+            report["warnings"].append("page_salvage_failed")
+        if progress_reports:
+            report["paths"] = _write_attempt_report(report)
 
     artifacts = _regenerate_artifacts(
         date=args.date,
@@ -493,6 +543,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "daily_sop_return_code": artifacts["daily_sop_return_code"],
         "current_game_return_code": artifacts["current_game_return_code"],
     }
+    if artifacts.get("observer_error"):
+        report["warnings"].append("observer_ledger_skipped")
     final_gate = artifacts["quality_gate"]
     report["final_quality_gate"] = {
         "status": final_gate.get("status"),
@@ -513,17 +565,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--runs", required=True, help="Comma-separated existing AI Judge run ids.")
     parser.add_argument("--seats", default=",".join(DEFAULT_TARGET_SEATS), help="Comma-separated seats to consider.")
     parser.add_argument("--attempt", type=int, default=4)
+    parser.add_argument("--max-attempts", type=int, default=5)
     parser.add_argument("--judge-mode", default="quick_judge")
     parser.add_argument("--base-url", default="https://pool-app-one.vercel.app")
     parser.add_argument("--bridge-base-url", default="http://127.0.0.1:8501")
     parser.add_argument("--verdict-timeout-seconds", type=float, default=720.0)
-    parser.add_argument("--poll-seconds", type=float, default=15.0)
-    parser.add_argument("--bridge-wait-seconds", type=float, default=900.0)
-    parser.add_argument("--recover-after-seconds", type=float, default=540.0)
+    parser.add_argument("--poll-seconds", type=float, default=8.0)
+    parser.add_argument("--bridge-wait-seconds", type=float, default=300.0)
+    parser.add_argument("--recover-after-seconds", type=float, default=180.0)
     parser.add_argument("--recover-stuck-bridge", action="store_true")
     parser.add_argument("--force-valid-seats", action="store_true")
     parser.add_argument("--force-provider-blocked", action="store_true")
     parser.add_argument("--skip-page-salvage", action="store_true")
+    parser.add_argument("--progress-reports", action="store_true", help="Write intermediate attempt reports after each seat. Off by default for faster reruns.")
     parser.add_argument("--cdp-endpoint", default="http://127.0.0.1:9333")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args(argv)

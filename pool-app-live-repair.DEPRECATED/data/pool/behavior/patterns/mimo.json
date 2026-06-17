@@ -1,0 +1,51 @@
+{
+  "version": "behavior_patterns_compat.v1",
+  "run_id": "run-16",
+  "seat_id": "mimo",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.88,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "mimo"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    },
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.7,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "mimo"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "loan_pressure_shapes_risk",
+      "label": "loan → risk constraint",
+      "confidence": 0.69,
+      "source_event_ids": [
+        "run-15:credit_updated:3",
+        "run-16:credit_updated:9",
+        "run-15:survival_updated:4",
+        "run-16:survival_updated:10"
+      ],
+      "supporting_events": 4,
+      "seats": [
+        "mimo"
+      ],
+      "note": "贷款和信用状态正在约束下一轮仓位。"
+    }
+  ]
+}

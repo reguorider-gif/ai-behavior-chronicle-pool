@@ -24,6 +24,7 @@ import pred_invest_quality_gate
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
 REQUIRED_SEATS = pred_invest_quality_gate.REQUIRED_SEATS
+REQUIRED_SEAT_COUNT = len(REQUIRED_SEATS)
 
 
 def _filter_match_rows(rows: Any, required_ids: set[str]) -> list[dict[str, Any]]:
@@ -410,7 +411,7 @@ def build_report(date: str, round_id: str, run_ids: list[str]) -> dict[str, Any]
         "invalid_details": invalid,
         "match_consensus": _match_consensus(valid, required_ids),
         "ev_analysis": ev,
-        "hard_gate_notice": "不到 12/12 publish_allowed=true，不允许前端或日报显示为全量完成报告。",
+        "hard_gate_notice": f"不到 {REQUIRED_SEAT_COUNT}/{REQUIRED_SEAT_COUNT} publish_allowed=true，不允许前端或日报显示为全量完成报告。",
     }
 
 
@@ -429,9 +430,12 @@ def markdown(report: dict[str, Any]) -> str:
         "",
     ]
     if report["publish_allowed"]:
-        lines.append("本轮 12 席全部通过硬门禁，可作为完整上帝视角报告发布。")
+        lines.append(f"本轮 {report['required_seat_count']} 席全部通过硬门禁，可作为完整上帝视角报告发布。")
     else:
-        lines.append(f"本轮已补回到 {report['valid_count']}/12；仍因 {', '.join(report['needs_rerun']) or '未知席位'} 未过门禁，报告只能作为部分上帝视角。")
+        lines.append(
+            f"本轮已补回到 {report['valid_count']}/{report['required_seat_count']}；"
+            f"仍因 {', '.join(report['needs_rerun']) or '未知席位'} 未过门禁，报告只能作为部分上帝视角。"
+        )
     lines += ["", "## 逐席投注摘要", ""]
     for seat in report["seat_summaries"]:
         lines += [

@@ -1,0 +1,18 @@
+.git
+.vercel
+__pycache__
+*.pyc
+.DS_Store
+node_modules
+tmp
+dist
+
+# Local development, tests, and Python operators are not part of the Vercel app.
+tests
+ops
+tools
+docs
+pool_data.py
+
+# Historical repair bundle; production routes now use root files.
+pool-app-live-repair.DEPRECATED

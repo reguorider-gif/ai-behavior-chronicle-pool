@@ -1,0 +1,53 @@
+{
+  "version": "pred_invest_required_match_snapshot.v1",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "generated_at": "2026-06-17T00:00:00+00:00",
+  "source_policy": "restored_frozen_publish_contract_for_round_no_prompt_pack_expansion",
+  "restoration_note": "Restored from pre-score-sync run-16 execution contract: WC-I1 plus the four 2026-06-17 seed matches. This prevents score sync and required-match updates from retroactively changing the slate already sent to AI Judge.",
+  "required_match_ids": [
+    "WC-I1",
+    "WC-SEED-20260617-ENGLAND-CROATIA",
+    "WC-SEED-20260617-GHANA-PANAMA",
+    "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+    "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+  ],
+  "matches": [
+    {
+      "match_id": "WC-I1",
+      "date": "2026-06-16",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "status": "scheduled",
+      "home_team": "France",
+      "away_team": "Senegal"
+    },
+    {
+      "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+      "date": "2026-06-17",
+      "status": "scheduled",
+      "home_team": "England",
+      "away_team": "Croatia"
+    },
+    {
+      "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+      "date": "2026-06-17",
+      "status": "scheduled",
+      "home_team": "Ghana",
+      "away_team": "Panama"
+    },
+    {
+      "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "date": "2026-06-17",
+      "status": "scheduled",
+      "home_team": "Portugal",
+      "away_team": "Congo DR"
+    },
+    {
+      "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+      "date": "2026-06-17",
+      "status": "scheduled",
+      "home_team": "Uzbekistan",
+      "away_team": "Colombia"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generated_at": "2026-06-15T21:03:13+00:00",
+  "generated_at": "2026-06-17T21:06:33+00:00",
   "date": "2026-06-15",
   "run_id": "smoke-behavior-v2-a",
   "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
@@ -23,7 +23,7 @@
   "settled_bets": 2,
   "account_updates_written": 3,
   "survival_ledger_seats": 3,
-  "god_report": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/god_reports/2026-06-15_smoke-behavior-v2-a.md",
+  "god_report": "/Users/audimacmini/Downloads/ai-behavior-chronicle-pool/data/pool/god_reports/2026-06-15_smoke-behavior-v2-a.md",
   "validation": {
     "forecasts": {
       "alpha": {

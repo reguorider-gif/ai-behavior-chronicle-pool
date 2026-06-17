@@ -1,0 +1,58 @@
+{
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "forecast_required": true,
+  "investment_optional": true,
+  "allow_no_bet": true,
+  "forecast_affects_credit": true,
+  "investment_affects_gp": true,
+  "loan_limit_source": "credit_engine",
+  "repay_before_ranking": true,
+  "privacy": {
+    "model_prompt_may_include_own_history": true,
+    "model_prompt_may_include_anonymous_market_snapshot": true,
+    "model_prompt_must_not_include_other_seat_private_logs": true,
+    "god_ledger_private": true
+  },
+  "credit": {
+    "base_score": 600,
+    "min_score": 300,
+    "max_score": 850,
+    "grades": [
+      {"grade": "S", "min_score": 800, "loan_multiplier": 1.2, "interest_rate": 0.04},
+      {"grade": "A", "min_score": 700, "loan_multiplier": 0.8, "interest_rate": 0.07},
+      {"grade": "B", "min_score": 600, "loan_multiplier": 0.5, "interest_rate": 0.11},
+      {"grade": "C", "min_score": 500, "loan_multiplier": 0.2, "interest_rate": 0.18},
+      {"grade": "D", "min_score": 0, "loan_multiplier": 0.0, "interest_rate": null}
+    ]
+  },
+  "stake_caps": [
+    {"min_odds": 1.0, "max_odds": 2.5, "net_worth_fraction": 0.25},
+    {"min_odds": 2.5, "max_odds": 5.0, "net_worth_fraction": 0.15},
+    {"min_odds": 5.0, "max_odds": 10.0, "net_worth_fraction": 0.08},
+    {"min_odds": 10.0, "max_odds": 20.0, "net_worth_fraction": 0.05},
+    {"min_odds": 20.0, "max_odds": 1000000.0, "net_worth_fraction": 0.03}
+  ],
+  "recovery_mode": {
+    "trigger_net_worth_lte": 0,
+    "freeze_new_loan": true,
+    "max_single_match_stake_gp": 50,
+    "max_odds": 3.0,
+    "allow_forecast": true,
+    "allow_no_bet": true
+  },
+  "prompt_contract": {
+    "required_top_level_fields": [
+      "seat_id",
+      "rule_version",
+      "self_review",
+      "forecasts",
+      "investments",
+      "loan_decision",
+      "survival_plan",
+      "self_audit"
+    ],
+    "forecast_probability_sum_min": 0.99,
+    "forecast_probability_sum_max": 1.01
+  }
+}
+

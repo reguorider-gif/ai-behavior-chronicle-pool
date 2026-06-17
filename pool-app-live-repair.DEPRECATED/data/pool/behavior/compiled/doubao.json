@@ -1,0 +1,137 @@
+{
+  "version": "behavior_memory.v1",
+  "seat_id": "doubao",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "event_count": 12,
+  "runs_seen": [
+    "run-15",
+    "run-16"
+  ],
+  "profile": {
+    "behavior_type": "selective_allocator",
+    "risk_level": "medium",
+    "loan_dependency": "medium",
+    "no_bet_rate": 0.4,
+    "strategy_drift": "loss_response_under_observation",
+    "bet_count": 3,
+    "forecast_count": 5,
+    "total_stake_gp": 600.0,
+    "total_loan_used_gp": 0.0,
+    "settlement_profit_gp": -200.0,
+    "credit_grade": "B",
+    "credit_score": 661.6,
+    "recovery_mode": false
+  },
+  "top_patterns": [
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.77,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "doubao"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "loan_pressure_shapes_risk",
+      "label": "loan → risk constraint",
+      "confidence": 0.69,
+      "source_event_ids": [
+        "run-15:credit_updated:3",
+        "run-16:credit_updated:9",
+        "run-15:survival_updated:4",
+        "run-16:survival_updated:10"
+      ],
+      "supporting_events": 4,
+      "seats": [
+        "doubao"
+      ],
+      "note": "贷款和信用状态正在约束下一轮仓位。"
+    },
+    {
+      "name": "loss_requires_strategy_change",
+      "label": "loss → strategy review",
+      "confidence": 0.68,
+      "source_event_ids": [
+        "run-15:settlement_recorded:5",
+        "run-16:settlement_recorded:11"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "doubao"
+      ],
+      "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+    }
+  ],
+  "recent_timeline_events": [
+    {
+      "event_id": "run-15:credit_updated:3",
+      "run_id": "run-15",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-15:survival_updated:4",
+      "run_id": "run-15",
+      "action": "survival",
+      "outcome": "normal",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-15:settlement_recorded:5",
+      "run_id": "run-15",
+      "action": "settlement",
+      "outcome": "-200 GP",
+      "risk_shift": "loss_review"
+    },
+    {
+      "event_id": "run-16:forecast_recorded:7",
+      "run_id": "run-16",
+      "action": "forecast",
+      "outcome": "0 forecasts",
+      "risk_shift": "information_gathering"
+    },
+    {
+      "event_id": "run-16:investment_recorded:8",
+      "run_id": "run-16",
+      "action": "investment",
+      "outcome": "0 bet / 0 no-bet",
+      "risk_shift": "risk_reduction"
+    },
+    {
+      "event_id": "run-16:credit_updated:9",
+      "run_id": "run-16",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-16:survival_updated:10",
+      "run_id": "run-16",
+      "action": "survival",
+      "outcome": "normal",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-16:settlement_recorded:11",
+      "run_id": "run-16",
+      "action": "settlement",
+      "outcome": "+0 GP",
+      "risk_shift": "neutral"
+    }
+  ],
+  "memory_contract": {
+    "must_reference_in_next_decision": true,
+    "required_output_fields": [
+      "memory_used",
+      "memory_not_used_reason",
+      "strategy_change_from_memory"
+    ]
+  }
+}

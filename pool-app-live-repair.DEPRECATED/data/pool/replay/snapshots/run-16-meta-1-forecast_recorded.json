@@ -1,0 +1,104 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "event": {
+    "event_id": "run-16:meta:1:forecast_recorded",
+    "run_id": "run-16",
+    "seat_id": "meta",
+    "timestamp": "2026-06-16T12:01:03+00:00",
+    "event_type": "forecast_recorded",
+    "action": "forecast",
+    "outcome": "0 forecasts",
+    "risk_shift": "information_update",
+    "state_before": {
+      "seat_id": "meta",
+      "balance_gp": 1000.0,
+      "credit_score": 589.8,
+      "credit_grade": "C",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "high",
+      "behavior_type": "aggressive_edge_hunter",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "active_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.82
+        }
+      ],
+      "recent_memory": []
+    },
+    "state_after": {
+      "seat_id": "meta",
+      "balance_gp": 1000.0,
+      "credit_score": 589.8,
+      "credit_grade": "C",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "high",
+      "behavior_type": "aggressive_edge_hunter",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "active_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.82
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-16:forecast_recorded:1",
+          "run_id": "run-16",
+          "action": "forecast",
+          "outcome": "0 forecasts",
+          "risk_shift": "information_gathering"
+        }
+      ],
+      "last_forecast_count": 0
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": true
+      },
+      "memory_summary": {
+        "behavior_type": "aggressive_edge_hunter",
+        "risk_level": "high",
+        "loan_dependency": "medium",
+        "dominant_pattern": "capital_to_selective_allocation"
+      },
+      "decision": "generated 0 forecasts"
+    },
+    "counterfactual": {
+      "question": "这个事件如何影响下一轮？",
+      "alternative": "下一轮 prompt 必须引用该事件，并说明是否改变仓位、贷款或 no-bet 策略。",
+      "expected_effect": "让行为记忆产生可检验的因果影响。"
+    },
+    "source_event": {
+      "event_type": "forecast_recorded",
+      "status": "missing_provider_blocked",
+      "forecast_count": 0,
+      "investment_count": 0
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-16-meta-1-forecast_recorded.json"
+  }
+}

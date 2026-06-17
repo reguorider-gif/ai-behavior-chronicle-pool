@@ -1,0 +1,365 @@
+{
+  "version": "pred_invest_shadow_rerun.v2",
+  "generated_at": "2026-06-14T23:27:33+00:00",
+  "source_base_url": "https://pool-app-one.vercel.app",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "runtime_version": "p14.0",
+  "current_round": "run-14",
+  "receipt_version": "p10.2",
+  "receipt_missing": true,
+  "receipt_missing_reason": null,
+  "models": 12,
+  "total_existing_bets": 0,
+  "missing_or_unavailable_models": [],
+  "summary": {
+    "allowed": 0,
+    "warned": 0,
+    "rejected": 0,
+    "models_without_bets": 12
+  },
+  "models_detail": [
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 1,
+      "loan_terms": {
+        "credit_score": 745.6,
+        "credit_grade": "A",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1810.0,
+        "outstanding_loan_gp": 1000.0,
+        "max_loan_gp": 1448.0,
+        "available_loan_gp": 448.0,
+        "base_interest_rate": 0.07,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 17.6,
+          "net_worth_health_proxy": 60.0,
+          "ranking_proxy": 48.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 2,
+      "loan_terms": {
+        "credit_score": 645.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 850.0,
+        "outstanding_loan_gp": 1000.0,
+        "max_loan_gp": 425.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -36.5,
+          "net_worth_health_proxy": 17.5,
+          "ranking_proxy": 44.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 3,
+      "loan_terms": {
+        "credit_score": 674.7,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1100.0,
+        "outstanding_loan_gp": 400.0,
+        "max_loan_gp": 550.0,
+        "available_loan_gp": 150.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -15.3,
+          "net_worth_health_proxy": 30.0,
+          "ranking_proxy": 40.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 4,
+      "loan_terms": {
+        "credit_score": 657.7,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 500.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -23.3,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 36.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "loan_terms": {
+        "credit_score": 669.6,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1100.0,
+        "outstanding_loan_gp": 300.0,
+        "max_loan_gp": 550.0,
+        "available_loan_gp": 250.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -12.4,
+          "net_worth_health_proxy": 30.0,
+          "ranking_proxy": 32.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 6,
+      "loan_terms": {
+        "credit_score": 597.8,
+        "credit_grade": "C",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 600.0,
+        "outstanding_loan_gp": 800.0,
+        "max_loan_gp": 120.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": 0.18,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -55.2,
+          "net_worth_health_proxy": 5.0,
+          "ranking_proxy": 28.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 7,
+      "loan_terms": {
+        "credit_score": 640.7,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 900.0,
+        "outstanding_loan_gp": 300.0,
+        "max_loan_gp": 450.0,
+        "available_loan_gp": 150.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -23.3,
+          "net_worth_health_proxy": 20.0,
+          "ranking_proxy": 24.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 8,
+      "loan_terms": {
+        "credit_score": 665.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 500.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 0.0,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 20.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 9,
+      "loan_terms": {
+        "credit_score": 661.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 500.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 0.0,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 16.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 10,
+      "loan_terms": {
+        "credit_score": 657.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 500.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 0.0,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 12.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 11,
+      "loan_terms": {
+        "credit_score": 653.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 500.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 0.0,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 8.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    },
+    {
+      "model_account": "grok",
+      "display_name": "xAI",
+      "rank": 12,
+      "loan_terms": {
+        "credit_score": 649.0,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1000.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 500.0,
+        "available_loan_gp": 500.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 0.0,
+          "net_worth_health_proxy": 25.0,
+          "ranking_proxy": 4.0
+        }
+      },
+      "bet_count": 0,
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "audits": [],
+      "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+    }
+  ],
+  "rule_interpretation": {
+    "forecast_required": "所有模型、所有当日比赛必须先预测；缺下注不等于缺判断。",
+    "investment_optional": "下注只在存在 edge 时进行；no-bet 是合法动作。",
+    "credit_controls_loan": "信用分和净资产决定新增贷款额度，当前无 forecast ledger 时使用保守 proxy。",
+    "repay_before_ranking": "每次结算先还息还本，再进入投资榜排名。"
+  }
+}

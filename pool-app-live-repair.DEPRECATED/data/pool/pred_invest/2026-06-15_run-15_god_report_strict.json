@@ -1,0 +1,3977 @@
+{
+  "version": "pred_invest_strict_god_report.v2",
+  "generated_at": "2026-06-15T17:28:07.181499+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "status": "PARTIAL_NOT_READY",
+  "publish_allowed": false,
+  "frontend_badge": "11/12 部分回收",
+  "valid_count": 11,
+  "required_seat_count": 12,
+  "valid_seats": [
+    "chatgpt",
+    "deepseek",
+    "mimo",
+    "minimax",
+    "doubao",
+    "gemini",
+    "kimi",
+    "meta",
+    "qwen",
+    "wenxin",
+    "yuanbao"
+  ],
+  "needs_rerun": [
+    "grok"
+  ],
+  "rerun_queue": [
+    {
+      "seat": "grok",
+      "mode": "provider_quota_blocked",
+      "prompt_mode": "wait_for_quota_reset",
+      "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+      "last_run_id": "page_salvage:grok",
+      "response_chars": 1142,
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "last_errors": [
+        {
+          "run_id": "e71c1024a4d6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "42a97c4d0fa9",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "42a97c4d0fa9",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 123
+        }
+      ]
+    }
+  ],
+  "required_matches": [
+    "WC-H1",
+    "WC-K1",
+    "WCAPI-20260615-BELGIUM-EGYPT",
+    "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+    "WCAPI-20260616-IRAN-NEW-ZEALAND"
+  ],
+  "required_match_source": "existing_quality_gate:2026-06-15_run-15_quality_gate.json",
+  "seat_summaries": [
+    {
+      "seat": "chatgpt",
+      "model_account": "chatgpt",
+      "run_id": "page_salvage:chatgpt",
+      "one_sentence_strategy": "小仓稳胆避噪",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "不用杠杆",
+        "repayment_plan": "保留本金"
+      },
+      "risk_notes": [
+        "盘口线缺失",
+        "强弱误判"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 88,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "客胜缺盘"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 61,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "平局扰动"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 57,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "让球线缺"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 66,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "让球线缺"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 64,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "让球线缺"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率过低"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "none",
+          "odds": 1.75,
+          "stake_gp": 180,
+          "loan_used_gp": 0,
+          "reason": "主胜有价"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "盘口不明"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "方向冲突"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "线位缺失"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "deepseek",
+      "model_account": "deepseek",
+      "run_id": "0da5412a9597",
+      "one_sentence_strategy": "守榜首保守策略：仅在有明确概率边缘且能交叉验证时下注，本场无边缘则全no_bet，维持现金储备观察对手过热暴露。",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前无任一赛事提供明确概率边缘，且三场handicap缺少让球线导致无法定价，守榜阶段不增加负债以保护信用等级和净资本。",
+        "repayment_plan": "不适用"
+      },
+      "risk_notes": [
+        "全no_bet策略下现金保持2810GP，无亏损风险，排名变动仅取决于对手损失。",
+        "西班牙深盘无价值，勿因高概率冲动重仓，避免隐含负EV吞噬资本。",
+        "三场handicap若开赛前补全让球线，将重新计算EV并可能以小额（净资产5%以内）测试高价值机会。",
+        "继续监测排行榜对手：若前五中有激进贷款押注冷门并失手，本策略将被动扩大排名优势。"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "home_win_prob": 0.85,
+          "draw_prob": 0.1,
+          "away_win_prob": 0.05,
+          "most_likely_score": "2-0",
+          "confidence": 0.9,
+          "fair_odds": {
+            "home": 1.18,
+            "draw": 10.0,
+            "away": 20.0
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "西班牙首发轮换幅度（核心是否休息）",
+            "佛得角近期防守组织及反击质量",
+            "比赛场地和天气对技术流传控的影响"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "home_win_prob": 0.48,
+          "draw_prob": 0.29,
+          "away_win_prob": 0.23,
+          "most_likely_score": "1-1",
+          "confidence": 0.65,
+          "fair_odds": {
+            "home": 2.08,
+            "draw": 3.45,
+            "away": 4.35
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "C罗是否首发及其身体状态",
+            "哥伦比亚J罗与迪亚斯连线实战配合",
+            "双方近期热身赛对抗强度和人员完整度"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "home_win_prob": 0.55,
+          "draw_prob": 0.26,
+          "away_win_prob": 0.19,
+          "most_likely_score": "2-1",
+          "confidence": 0.55,
+          "fair_odds": {
+            "home": 1.82,
+            "draw": 3.85,
+            "away": 5.26
+          },
+          "edge_assessment": "low_confidence",
+          "information_gaps": [
+            "比利时黄金一代剩余核心状态（德布劳内/卢卡库）",
+            "埃及萨拉赫之外的第二进攻点",
+            "handicap具体让球线缺失，无法计算真实价值",
+            "Pinnacle等机构盘口与其它博彩公司差异原因"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "home_win_prob": 0.16,
+          "draw_prob": 0.26,
+          "away_win_prob": 0.58,
+          "most_likely_score": "0-2",
+          "confidence": 0.6,
+          "fair_odds": {
+            "home": 6.25,
+            "draw": 3.85,
+            "away": 1.72
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "乌拉圭前锋线努涅斯/苏亚雷斯配置",
+            "沙特近期主场防守体系",
+            "handicap让球线缺失，赔率方向不明"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "home_win_prob": 0.33,
+          "draw_prob": 0.3,
+          "away_win_prob": 0.37,
+          "most_likely_score": "1-1",
+          "confidence": 0.5,
+          "fair_odds": {
+            "home": 3.03,
+            "draw": 3.33,
+            "away": 2.7
+          },
+          "edge_assessment": "low_confidence",
+          "information_gaps": [
+            "新西兰是否征召海外主力（如英超克里斯·伍德）",
+            "伊朗防守硬度及中场对抗能力",
+            "handicap盘口无明确让球线，隐含假设不明"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.85,
+          "market_implied_prob": 0.926,
+          "estimated_ev": -0.076,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "不适用"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.23,
+          "market_implied_prob": 0.208,
+          "estimated_ev": 0.02,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "边缘过小且缺乏交叉信源，不投注"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "selection": null,
+          "market": "handicap",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": null,
+          "market_implied_prob": null,
+          "estimated_ev": null,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "selection": null,
+          "market": "handicap",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": null,
+          "market_implied_prob": null,
+          "estimated_ev": null,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "selection": null,
+          "market": "handicap",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": null,
+          "market_implied_prob": null,
+          "estimated_ev": null,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "handicap无明确让球线，无法计算概率和EV，强制no_bet"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "mimo",
+      "model_account": "mimo",
+      "run_id": "page_salvage:mimo",
+      "one_sentence_strategy": "高确信冷门覆盖",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "余额可支撑两注",
+        "repayment_plan": "300贷款需积分偿还"
+      },
+      "risk_notes": [
+        "比利时黄金一代老化后防不稳",
+        "沙特热身赛近5场仅1胜状态堪忧"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "Spain",
+          "score": "3-0",
+          "confidence": 95,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "赔率1.08无价值边缘"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "Portugal",
+          "score": "1-1",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无盘口数据"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "Belgium",
+          "score": "2-1",
+          "confidence": 57,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "埃及世预赛零封铁桶难破"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "Saudi Arabia",
+          "score": "0-1",
+          "confidence": 35,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "乌拉圭防线残阵但中场世界顶级"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "Iran",
+          "score": "1-0",
+          "confidence": 54,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "伊朗进攻效率有限小球格局"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "无边不投。"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "无盘口不投。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": "-1",
+          "odds": 2.27,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "控球碾压小胜覆盖"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": "+0.5",
+          "odds": 1.62,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "防反韧性冷门覆盖"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "小球易拖风险高。"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "minimax",
+      "model_account": "minimax",
+      "run_id": "df24f0c89f8d",
+      "one_sentence_strategy": "低赔稳胆+亚盘博冷",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "资本充足不借",
+        "repayment_plan": "无需还款"
+      },
+      "risk_notes": [
+        "冷门大比分",
+        "盘口剧变"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 92,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "主力轮换仍碾压"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 74,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "葡主场小胜一球"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "比利时让一球稳"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "away",
+          "score": "1-2",
+          "confidence": 55,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "沙特受让过浅"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "伊朗主场优势大"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率过低不投"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "none",
+          "odds": 1.75,
+          "stake_gp": 80,
+          "loan_used_gp": 0,
+          "reason": "主场小胜"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": "-0.75",
+          "odds": 2.27,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "让平半稳"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "沙伊受让坑"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Iran",
+          "line": "-1",
+          "odds": 1.83,
+          "stake_gp": 120,
+          "loan_used_gp": 0,
+          "reason": "让一球主胜"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "doubao",
+      "model_account": "doubao",
+      "run_id": "page_salvage:doubao",
+      "one_sentence_strategy": "择优分散控风险",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "暂不追加借贷",
+        "repayment_plan": "结余稳步留存"
+      },
+      "risk_notes": [
+        "赔率波动",
+        "临场爆冷"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 85,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无明显漏洞"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "中场状态未知"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "away",
+          "score": "1-2",
+          "confidence": 40,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "客场战力不明"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 75,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "客队经验充足"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "临场状态待定"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Spain",
+          "line": "0",
+          "odds": 1.08,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "主队实力占优"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "0",
+          "odds": 1.75,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "葡队攻防稳定"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "盘口偏混乱"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Uruguay",
+          "line": "0",
+          "odds": 2.24,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "欧亚差距明显"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "走势难判断"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "gemini",
+      "model_account": "gemini",
+      "run_id": "0da5412a9597",
+      "one_sentence_strategy": "Applying strict data validation constraints: executing one low-stake value bet on fully specified H2H markets while aggressively skipping handicap markets due to missing structural line parameters.",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "Existing balance of 1850 GP provides ample liquidity. Net worth (850 GP) limits position sizing, but current EV-positive opportunities are minimal. Focus is on protecting capital rather than leveraged expansion.",
+        "repayment_plan": "Will continue to amortize existing 1000 GP loan organically from balance as tournament phases progress."
+      },
+      "risk_notes": [
+        "DATA INTEGRITY FLAG: Three matches (Belgium, Saudi Arabia, Iran) provided handicap odds without specifying the line (e.g., -0.5, +1.0). Betting into structurally incomplete markets violates strict verification protocols.",
+        "Spain H2H offers negative EV (-1.8%) given the market's heavy 6% vig on odds of 1.08; filtered out for capital protection."
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "home_win_prob": 0.89,
+          "draw_prob": 0.08,
+          "away_win_prob": 0.03,
+          "most_likely_score": "3-0",
+          "confidence": 0.92,
+          "fair_odds": {
+            "home": 1.12,
+            "draw": 12.5,
+            "away": 33.33
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Cape Verde squad rotation and travel fatigue data"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "home_win_prob": 0.52,
+          "draw_prob": 0.29,
+          "away_win_prob": 0.19,
+          "most_likely_score": "1-1",
+          "confidence": 0.85,
+          "fair_odds": {
+            "home": 1.92,
+            "draw": 3.45,
+            "away": 5.26
+          },
+          "edge_assessment": "bettable",
+          "information_gaps": [
+            "Colombia defensive formation specifics"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "home_win_prob": 0.62,
+          "draw_prob": 0.24,
+          "away_win_prob": 0.14,
+          "most_likely_score": "2-0",
+          "confidence": 0.78,
+          "fair_odds": {
+            "home": 1.61,
+            "draw": 4.17,
+            "away": 7.14
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Missing exact handicap line (e.g., -1.0, -1.5) in provider feed making odds unevaluable",
+            "Egypt key attacker availability"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "home_win_prob": 0.16,
+          "draw_prob": 0.26,
+          "away_win_prob": 0.58,
+          "most_likely_score": "0-2",
+          "confidence": 0.84,
+          "fair_odds": {
+            "home": 6.25,
+            "draw": 3.85,
+            "away": 1.72
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Missing exact handicap line in provider feed"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "home_win_prob": 0.57,
+          "draw_prob": 0.28,
+          "away_win_prob": 0.15,
+          "most_likely_score": "1-0",
+          "confidence": 0.81,
+          "fair_odds": {
+            "home": 1.75,
+            "draw": 3.57,
+            "away": 6.67
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Missing exact handicap line in provider feed"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "selection": "Draw",
+          "market": "h2h",
+          "line": null,
+          "odds": 3.6,
+          "stake_gp": 50,
+          "own_funds_gp": 50,
+          "loan_used_gp": 0,
+          "model_prob": 0.29,
+          "market_implied_prob": 0.278,
+          "estimated_ev": 0.044,
+          "max_loss_gp": 50,
+          "survival_plan_if_loss": "Absorb 50 GP loss from 1850 GP balance; 50 GP is ~5.8% of net worth, strictly compliant with max 15% tier limit for 2.5-5.0 odds. No insolvency risk."
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "kimi",
+      "model_account": "kimi",
+      "run_id": "756e78426eb5",
+      "one_sentence_strategy": "濒临出局，信息缺口极大，采取极端保守策略：仅对西班牙胜佛得角小额投注，其余全部no_bet保留现金，等待后续信息窗口打开后再做非线性翻盘。",
+      "loan_decision": {
+        "take_loan": false,
+        "loan_type": null,
+        "amount_gp": 0,
+        "interest_rate": null,
+        "repayment_plan": null,
+        "expected_roi": null,
+        "stop_loss": null,
+        "reason": "当前余额1000GP，信用B级，未濒临破产（>0）。信息缺口极大，贷款扩张无意义；若强行贷款投注，失败后将陷入债务螺旋。保留现金和信用额度，等待6月1-10日热身赛窗口打开后获取验证数据再做非线性翻盘。"
+      },
+      "risk_notes": "当前最大风险是信息缺口导致的盲目投注。5场比赛中3场 handicap让球数未明示，无法做任何概率建模。西班牙vs佛得角虽胜率高但赔率1.08几乎无回报，仅作极小注保本。若本轮全部no_bet，虽无收益但保留100%本金和信用，为后续翻盘保留弹药。对手中Grok（400GP）和本人（200GP）均濒临出局，但Grok倾向激进反共识，可能在本轮高风险投注，若其失败则缩小差距。",
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "Spain 3-0 Cape Verde",
+          "score": 0.92,
+          "confidence": 0.88,
+          "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
+          "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。"
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "Portugal 2-1 Colombia",
+          "score": 0.55,
+          "confidence": 0.45,
+          "edge_assessment": "葡萄牙主场优势但哥伦比亚防守坚韧，赔率1.75隐含概率57%，无显著edge。",
+          "information_gaps": "两队热身赛阵容、伤病、战术安排均未知；哥伦比亚近期状态无验证信源。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "Belgium 1-1 Egypt",
+          "score": 0.35,
+          "confidence": 0.3,
+          "edge_assessment": " handicap市场两条线赔率接近，信息极度混乱，无法判断让球方向。",
+          "information_gaps": " handicap具体让球数未明示；比利时黄金一代老化程度；埃及萨拉赫状态；两队近期无验证热身赛数据。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "Uruguay 2-0 Saudi Arabia",
+          "score": 0.48,
+          "confidence": 0.35,
+          "edge_assessment": "乌拉圭实力占优但 handicap让球方向不明，沙特主场因素未知，无edge。",
+          "information_gaps": " handicap具体让球数未明示；沙特世界杯主场优势量化；乌拉圭阵容老化与新生代融合情况。"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "Draw 1-1",
+          "score": 0.3,
+          "confidence": 0.25,
+          "edge_assessment": "两队实力接近但 handicap让球方向不明，赔率差异大（3.34 vs 1.83）暗示市场分歧严重，无可靠edge。",
+          "information_gaps": " handicap具体让球数未明示；伊朗海外球员集结情况；新西兰大洋洲预选赛状态；两队无近期验证热身赛数据。"
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": null,
+          "odds": 1.08,
+          "stake_gp": 40,
+          "loan_used_gp": 0,
+          "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "no_bet",
+          "market": "h2h",
+          "selection": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "信息缺口过大，两队热身赛数据未验证，无可靠edge，不冒险。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": " handicap让球数未明示，赔率结构混乱，比利时老化与埃及状态均未知，无投注条件。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": " handicap让球数未明示，沙特主场优势无法量化，乌拉圭阵容不确定性高，无投注条件。"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "market": "handicap",
+          "selection": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": " handicap让球数未明示，市场赔率分歧严重（3.34 vs 1.83），两队近期无验证数据，无投注条件。"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "meta",
+      "model_account": "meta",
+      "run_id": "page_salvage:meta",
+      "one_sentence_strategy": "低赔避险稳健",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需加杠杆",
+        "repayment_plan": "保本优先还款"
+      },
+      "risk_notes": [
+        "冷门爆冷",
+        "赔率波动"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 88,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "赔率过低"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 68,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "中场控制关键"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 71,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "埃及伤病未知"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 76,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "让球不明"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 63,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "体能消耗大"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率过低弃投"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "none",
+          "odds": 1.75,
+          "stake_gp": 400,
+          "loan_used_gp": 0,
+          "reason": "葡控场优势稳"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": "-1.5",
+          "odds": 2.81,
+          "stake_gp": 300,
+          "loan_used_gp": 0,
+          "reason": "比军锋线占优"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "实力悬殊不投"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Iran",
+          "line": "-0.5",
+          "odds": 1.83,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "伊朗防守稳健"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "qwen",
+      "model_account": "qwen",
+      "run_id": "page_salvage:qwen",
+      "one_sentence_strategy": "稳健防守反击",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无新增借款",
+        "repayment_plan": "优先还旧贷"
+      },
+      "risk_notes": [
+        "冷门爆冷",
+        "盘口异常"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 80,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无缺口"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 70,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无缺口"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 55,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无缺口"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "away",
+          "score": "0-2",
+          "confidence": 75,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无缺口"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无缺口"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "赔率过低"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Portugal",
+          "line": "0",
+          "odds": 1.75,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "看好主队"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "盘口不明"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "实力悬殊"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "信息不足"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "wenxin",
+      "model_account": "wenxin",
+      "run_id": "page_salvage:wenxin",
+      "one_sentence_strategy": "强队优先稳扎稳打",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "当前账户资金充足",
+        "repayment_plan": "按期足额归还到位"
+      },
+      "risk_notes": [
+        "冷门爆冷",
+        "盘口诱盘"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无缺口"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "实力接近"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "",
+          "confidence": 45,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "盘口混乱"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "home",
+          "score": "",
+          "confidence": 50,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "信息充足"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "",
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "实力占优"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "西班牙队实力碾压"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "Portugal",
+          "line": "none",
+          "odds": 1.75,
+          "stake_gp": 150,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙队状态更佳"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "盘口不明故不投注"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Saudi Arabia",
+          "line": "none",
+          "odds": 1.62,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "沙特坐拥主场优势"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Iran",
+          "line": "none",
+          "odds": 1.83,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "伊朗整体实力占优"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    },
+    {
+      "seat": "yuanbao",
+      "model_account": "yuanbao",
+      "run_id": "page_salvage:yuanbao",
+      "one_sentence_strategy": "稳胆为主辅让球",
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无贷款",
+        "repayment_plan": "无"
+      },
+      "risk_notes": [
+        "冷门平局",
+        "让球穿裆"
+      ],
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 95,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WC-K1",
+          "p": "home",
+          "score": "1-0",
+          "confidence": 60,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "p": "home",
+          "score": "2-1",
+          "confidence": 55,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "p": "draw",
+          "score": "1-1",
+          "confidence": 50,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "无"
+          ]
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 65,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无"
+          ]
+        }
+      ],
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 500,
+          "loan_used_gp": 0,
+          "reason": "西班必胜"
+        },
+        {
+          "match_id": "WC-K1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.75,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "葡稳小胜"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Belgium",
+          "line": "-",
+          "odds": 2.27,
+          "stake_gp": 200,
+          "loan_used_gp": 0,
+          "reason": "让球防冷"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "reason": "均势不投"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "action": "bet",
+          "market": "handicap",
+          "selection": "Iran",
+          "line": "-",
+          "odds": 1.83,
+          "stake_gp": 100,
+          "loan_used_gp": 0,
+          "reason": "主让安全"
+        }
+      ],
+      "forecast_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "investment_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ]
+    }
+  ],
+  "invalid_details": [
+    {
+      "seat": "grok",
+      "issues": [
+        "provider_quota_limited"
+      ],
+      "run_id": "page_salvage:grok",
+      "response_chars": 1142,
+      "last_errors": [
+        {
+          "run_id": "e71c1024a4d6",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "42a97c4d0fa9",
+          "action": "raw_result_error",
+          "reason": "slow_response_pending",
+          "response_chars": 0
+        },
+        {
+          "run_id": "42a97c4d0fa9",
+          "action": "seat_timeout",
+          "reason": "slow_response_pending",
+          "response_chars": 123
+        }
+      ]
+    }
+  ],
+  "match_consensus": [
+    {
+      "match_id": "WC-H1",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 890.0,
+      "top_selection": "moneyline Spain 0",
+      "bets": [
+        {
+          "seat": "doubao",
+          "selection": "moneyline Spain 0",
+          "odds": 1.08,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "主队实力占优"
+        },
+        {
+          "seat": "kimi",
+          "selection": "h2h Spain",
+          "odds": 1.08,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0,
+          "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "h2h Spain none",
+          "odds": 1.08,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "西班牙队实力碾压"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.08,
+          "stake_gp": 500.0,
+          "loan_used_gp": 0,
+          "reason": "西班必胜"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen"
+      ]
+    },
+    {
+      "match_id": "WC-K1",
+      "bet_count": 8,
+      "no_bet_count": 3,
+      "total_stake_gp": 1360.0,
+      "top_selection": "moneyline Portugal none",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 180.0,
+          "loan_used_gp": 0,
+          "reason": "主胜有价"
+        },
+        {
+          "seat": "minimax",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 80.0,
+          "loan_used_gp": 0,
+          "reason": "主场小胜"
+        },
+        {
+          "seat": "doubao",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.75,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡队攻防稳定"
+        },
+        {
+          "seat": "gemini",
+          "selection": "h2h Draw",
+          "odds": 3.6,
+          "stake_gp": 50.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "meta",
+          "selection": "moneyline Portugal none",
+          "odds": 1.75,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "葡控场优势稳"
+        },
+        {
+          "seat": "qwen",
+          "selection": "moneyline Portugal 0",
+          "odds": 1.75,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "看好主队"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "h2h Portugal none",
+          "odds": 1.75,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0,
+          "reason": "葡萄牙队状态更佳"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "moneyline home none",
+          "odds": 1.75,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "葡稳小胜"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "kimi"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 800.0,
+      "top_selection": "handicap Belgium -1",
+      "bets": [
+        {
+          "seat": "mimo",
+          "selection": "handicap Belgium -1",
+          "odds": 2.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "控球碾压小胜覆盖"
+        },
+        {
+          "seat": "minimax",
+          "selection": "handicap Belgium -0.75",
+          "odds": 2.27,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "让平半稳"
+        },
+        {
+          "seat": "meta",
+          "selection": "handicap Belgium -1.5",
+          "odds": 2.81,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "比军锋线占优"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Belgium -",
+          "odds": 2.27,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "让球防冷"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "doubao",
+        "gemini",
+        "kimi",
+        "qwen",
+        "wenxin"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "bet_count": 3,
+      "no_bet_count": 8,
+      "total_stake_gp": 600.0,
+      "top_selection": "handicap Saudi Arabia +0.5",
+      "bets": [
+        {
+          "seat": "mimo",
+          "selection": "handicap Saudi Arabia +0.5",
+          "odds": 1.62,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "防反韧性冷门覆盖"
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Uruguay 0",
+          "odds": 2.24,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "欧亚差距明显"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Saudi Arabia none",
+          "odds": 1.62,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "沙特坐拥主场优势"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "minimax",
+        "gemini",
+        "kimi",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 520.0,
+      "top_selection": "handicap Iran -1",
+      "bets": [
+        {
+          "seat": "minimax",
+          "selection": "handicap Iran -1",
+          "odds": 1.83,
+          "stake_gp": 120.0,
+          "loan_used_gp": 0,
+          "reason": "让一球主胜"
+        },
+        {
+          "seat": "meta",
+          "selection": "handicap Iran -0.5",
+          "odds": 1.83,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": "伊朗防守稳健"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Iran none",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "伊朗整体实力占优"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Iran -",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "主让安全"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "doubao",
+        "gemini",
+        "kimi",
+        "qwen"
+      ]
+    }
+  ],
+  "ev_analysis": {
+    "version": "ev_analysis.v2",
+    "method": "explicit model_prob first; otherwise infer from forecast win/draw/away probability or confidence proxy. For no_bet without selection, compare the model forecast lean against market odds as opportunity-cost EV. Market implied probability is 1/decimal odds.",
+    "rows": [
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.88,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0496,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.61,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.0675,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主胜有价"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.57,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.6017,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.66,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.5378,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "方向冲突"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.64,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.1376,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "线位缺失"
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.926,
+        "estimated_ev": -0.076,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.75,
+        "model_prob": 0.23,
+        "market_implied_prob": 0.208,
+        "estimated_ev": 0.02,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.5455,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 2.33,
+        "model_prob": 0.58,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.3514,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.28,
+        "model_prob": 0.37,
+        "market_implied_prob": 0.7812,
+        "estimated_ev": -0.5264,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.9676,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无边不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.75,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无盘口不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-1",
+        "odds": 2.27,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": -0.9546,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "控球碾压小胜覆盖"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Saudi Arabia",
+        "probability_target": "home",
+        "line": "+0.5",
+        "odds": 1.62,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "防反韧性冷门覆盖"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 2.34,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "小球易拖风险高。"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.92,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0064,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低不投"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.74,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主场小胜"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-0.75",
+        "odds": 2.27,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": 0.589,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让平半稳"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.2815,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "沙伊受让坑"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-1",
+        "odds": 1.83,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.464,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让一球主胜"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.08,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.082,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主队实力占优"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.75,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.225,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡队攻防稳定"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.4,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.42,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口偏混乱"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Uruguay",
+        "probability_target": "away",
+        "line": "0",
+        "odds": 2.24,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.4464,
+        "estimated_ev": 0.68,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "欧亚差距明显"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.004,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "走势难判断"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.89,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0388,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Draw",
+        "probability_target": "draw",
+        "line": null,
+        "odds": 3.6,
+        "model_prob": 0.29,
+        "market_implied_prob": 0.278,
+        "estimated_ev": 0.044,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.62,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.7422,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 2.33,
+        "model_prob": 0.58,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.3514,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 3.34,
+        "model_prob": 0.57,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 0.9038,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.92,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0064,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": "h2h",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.75,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": -0.0375,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息缺口过大，两队热身赛数据未验证，无可靠edge，不冒险。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.35,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": -0.0165,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": " handicap让球数未明示，赔率结构混乱，比利时老化与埃及状态均未知，无投注条件。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.62,
+        "model_prob": 0.48,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -0.2224,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": " handicap让球数未明示，沙特主场优势无法量化，乌拉圭阵容不确定性高，无投注条件。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "draw",
+        "line": null,
+        "odds": null,
+        "model_prob": 0.3,
+        "market_implied_prob": null,
+        "estimated_ev": null,
+        "coverage": "not_applicable_no_bet",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "not_available",
+        "ev_source": "not_computable",
+        "note": " handicap让球数未明示，市场赔率分歧严重（3.34 vs 1.83），两队近期无验证数据，无投注条件。"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.88,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0496,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低弃投"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.68,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.19,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡控场优势稳"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-1.5",
+        "odds": 2.81,
+        "model_prob": 0.71,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.9951,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "比军锋线占优"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.76,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.7708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力悬殊不投"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-0.5",
+        "odds": 1.83,
+        "model_prob": 0.63,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.1529,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "伊朗防守稳健"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.136,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.75,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.225,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "看好主队"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.5455,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.7475,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力悬殊"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.004,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息不足"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.136,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班牙队实力碾压"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.05,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙队状态更佳"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.45,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.2645,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明故不投注"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Saudi Arabia",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.62,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -0.19,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "沙特坐拥主场优势"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.83,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.0065,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "伊朗整体实力占优"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.95,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": 0.026,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班必胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.05,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡稳小胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 2.27,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": 0.2485,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让球防冷"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "draw",
+        "line": "none",
+        "odds": null,
+        "model_prob": 1.0,
+        "market_implied_prob": null,
+        "estimated_ev": null,
+        "coverage": "not_applicable_no_bet",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "not_available",
+        "ev_source": "not_computable",
+        "note": "均势不投"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.83,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.1895,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主让安全"
+      }
+    ],
+    "actionable_rows": [
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.88,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0496,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.61,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.0675,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主胜有价"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.57,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.6017,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.66,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.5378,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "方向冲突"
+      },
+      {
+        "seat": "chatgpt",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.64,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.1376,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "线位缺失"
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.926,
+        "estimated_ev": -0.076,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.75,
+        "model_prob": 0.23,
+        "market_implied_prob": 0.208,
+        "estimated_ev": 0.02,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.5455,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 2.33,
+        "model_prob": 0.58,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.3514,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "deepseek",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 1.28,
+        "model_prob": 0.37,
+        "market_implied_prob": 0.7812,
+        "estimated_ev": -0.5264,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.03,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.9676,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无边不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.75,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "无盘口不投。"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-1",
+        "odds": 2.27,
+        "model_prob": 0.02,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": -0.9546,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "控球碾压小胜覆盖"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Saudi Arabia",
+        "probability_target": "home",
+        "line": "+0.5",
+        "odds": 1.62,
+        "model_prob": 0.0,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -1.0,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "防反韧性冷门覆盖"
+      },
+      {
+        "seat": "mimo",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 1.0,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 2.34,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "小球易拖风险高。"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.92,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0064,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低不投"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.74,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.295,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主场小胜"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-0.75",
+        "odds": 2.27,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": 0.589,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让平半稳"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.2815,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "沙伊受让坑"
+      },
+      {
+        "seat": "minimax",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-1",
+        "odds": 1.83,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.464,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让一球主胜"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.08,
+        "model_prob": 0.85,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.082,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主队实力占优"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.75,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.225,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡队攻防稳定"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 1.45,
+        "model_prob": 0.4,
+        "market_implied_prob": 0.6897,
+        "estimated_ev": -0.42,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口偏混乱"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Uruguay",
+        "probability_target": "away",
+        "line": "0",
+        "odds": 2.24,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.4464,
+        "estimated_ev": 0.68,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "欧亚差距明显"
+      },
+      {
+        "seat": "doubao",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.004,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "走势难判断"
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.89,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0388,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Draw",
+        "probability_target": "draw",
+        "line": null,
+        "odds": 3.6,
+        "model_prob": 0.29,
+        "market_implied_prob": 0.278,
+        "estimated_ev": 0.044,
+        "coverage": "complete_explicit",
+        "model_prob_source": "investment.model_prob",
+        "market_prob_source": "investment.market_implied_prob",
+        "ev_source": "investment.estimated_ev",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.62,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.7422,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "away",
+        "line": null,
+        "odds": 2.33,
+        "model_prob": 0.58,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.3514,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.away_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "gemini",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": null,
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 3.34,
+        "model_prob": 0.57,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 0.9038,
+        "coverage": "complete_inferred",
+        "model_prob_source": "forecast.home_win_prob",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": ""
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.08,
+        "model_prob": 0.92,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0064,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": "h2h",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.75,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": -0.0375,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息缺口过大，两队热身赛数据未验证，无可靠edge，不冒险。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 2.81,
+        "model_prob": 0.35,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": -0.0165,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": " handicap让球数未明示，赔率结构混乱，比利时老化与埃及状态均未知，无投注条件。"
+      },
+      {
+        "seat": "kimi",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "probability_target": "home",
+        "line": null,
+        "odds": 1.62,
+        "model_prob": 0.48,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -0.2224,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.score_probability_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": " handicap让球数未明示，沙特主场优势无法量化，乌拉圭阵容不确定性高，无投注条件。"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.88,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.0496,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低弃投"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.68,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.19,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡控场优势稳"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-1.5",
+        "odds": 2.81,
+        "model_prob": 0.71,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.9951,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "比军锋线占优"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.76,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.7708,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力悬殊不投"
+      },
+      {
+        "seat": "meta",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-0.5",
+        "odds": 1.83,
+        "model_prob": 0.63,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.1529,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "伊朗防守稳健"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WC-H1",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.136,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "赔率过低"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "0",
+        "odds": 1.75,
+        "model_prob": 0.7,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.225,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "看好主队"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.5455,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "away",
+        "line": "none",
+        "odds": 2.33,
+        "model_prob": 0.75,
+        "market_implied_prob": 0.4292,
+        "estimated_ev": 0.7475,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "实力悬殊"
+      },
+      {
+        "seat": "qwen",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 3.34,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.2994,
+        "estimated_ev": 1.004,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "信息不足"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Spain",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.8,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": -0.136,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班牙队实力碾压"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Portugal",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.05,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡萄牙队状态更佳"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "none",
+        "selection": "none",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 2.81,
+        "model_prob": 0.45,
+        "market_implied_prob": 0.3559,
+        "estimated_ev": 0.2645,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.no_bet_confidence_proxy",
+        "market_prob_source": "market_snapshot:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "盘口不明故不投注"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Saudi Arabia",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.62,
+        "model_prob": 0.5,
+        "market_implied_prob": 0.6173,
+        "estimated_ev": -0.19,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "沙特坐拥主场优势"
+      },
+      {
+        "seat": "wenxin",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.83,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.0065,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "伊朗整体实力占优"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.08,
+        "model_prob": 0.95,
+        "market_implied_prob": 0.9259,
+        "estimated_ev": 0.026,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "西班必胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WC-K1",
+        "action": "bet",
+        "market": "moneyline",
+        "selection": "home",
+        "probability_target": "home",
+        "line": "none",
+        "odds": 1.75,
+        "model_prob": 0.6,
+        "market_implied_prob": 0.5714,
+        "estimated_ev": 0.05,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "葡稳小胜"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Belgium",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 2.27,
+        "model_prob": 0.55,
+        "market_implied_prob": 0.4405,
+        "estimated_ev": 0.2485,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "让球防冷"
+      },
+      {
+        "seat": "yuanbao",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Iran",
+        "probability_target": "home",
+        "line": "-",
+        "odds": 1.83,
+        "model_prob": 0.65,
+        "market_implied_prob": 0.5464,
+        "estimated_ev": 0.1895,
+        "coverage": "complete_proxy_inferred",
+        "model_prob_source": "forecast.confidence_fallback_proxy",
+        "market_prob_source": "investment.odds:1/odds",
+        "ev_source": "model_prob_times_odds_minus_one",
+        "note": "主让安全"
+      }
+    ],
+    "coverage_counts": {
+      "complete_explicit": 3,
+      "complete_inferred": 7,
+      "complete_proxy_inferred": 43,
+      "not_applicable_no_bet": 2
+    },
+    "data_gap_rows": []
+  },
+  "hard_gate_notice": "不到 12/12 publish_allowed=true，不允许前端或日报显示为全量完成报告。"
+}

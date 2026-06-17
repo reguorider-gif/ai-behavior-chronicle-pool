@@ -1,0 +1,28 @@
+{
+  "run_id": "unit-credit-v2",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "right": {
+      "forecasts": [
+        {
+          "match_id": "CREDIT-M1",
+          "home_win_prob": 0.7,
+          "draw_prob": 0.2,
+          "away_win_prob": 0.1,
+          "edge_assessment": "bettable"
+        }
+      ]
+    },
+    "wrong": {
+      "forecasts": [
+        {
+          "match_id": "CREDIT-M1",
+          "home_win_prob": 0.1,
+          "draw_prob": 0.2,
+          "away_win_prob": 0.7,
+          "edge_assessment": "bettable"
+        }
+      ]
+    }
+  }
+}

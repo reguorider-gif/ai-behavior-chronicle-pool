@@ -1,0 +1,107 @@
+{
+  "ok": true,
+  "generated_at": "2026-06-16T20:40:14+00:00",
+  "date": "2026-06-15",
+  "run_id": "smoke-behavior-v2-a",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "operational_mode": "daily_product_sop",
+  "surface_policy": "public_frontend_shows_results_logs_health_only",
+  "daily_sequence": [
+    "settle_finished_matches_before_new_predictions",
+    "repay_debt_before_ranking",
+    "apply_rewards_and_penalties",
+    "collect_forecasts_for_all_matches",
+    "collect_investment_rows_for_all_matches",
+    "quality_gate_before_publish"
+  ],
+  "seat_count": 3,
+  "required_match_count": 2,
+  "forecast_receipt_count": 3,
+  "investment_receipt_count": 3,
+  "settlement_written": true,
+  "settlement_status": "settled",
+  "settled_bets": 2,
+  "account_updates_written": 3,
+  "survival_ledger_seats": 3,
+  "god_report": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/god_reports/2026-06-15_smoke-behavior-v2-a.md",
+  "validation": {
+    "forecasts": {
+      "alpha": {
+        "ok": true,
+        "errors": [],
+        "forecast_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ]
+      },
+      "beta": {
+        "ok": true,
+        "errors": [],
+        "forecast_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ]
+      },
+      "gamma": {
+        "ok": true,
+        "errors": [],
+        "forecast_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ]
+      }
+    },
+    "investments": {
+      "alpha": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "investment_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ],
+        "total_stake_gp": 120.0,
+        "total_loan_used_gp": 0.0
+      },
+      "beta": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "investment_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ],
+        "total_stake_gp": 80.0,
+        "total_loan_used_gp": 0.0
+      },
+      "gamma": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "investment_match_ids": [
+          "SMOKE-M1",
+          "SMOKE-M2"
+        ],
+        "total_stake_gp": 0.0,
+        "total_loan_used_gp": 0.0
+      }
+    },
+    "leakage": {
+      "alpha": {
+        "ok": true,
+        "leaked_seats": [],
+        "forbidden_keys": []
+      },
+      "beta": {
+        "ok": true,
+        "leaked_seats": [],
+        "forbidden_keys": []
+      },
+      "gamma": {
+        "ok": true,
+        "leaked_seats": [],
+        "forbidden_keys": []
+      }
+    }
+  }
+}

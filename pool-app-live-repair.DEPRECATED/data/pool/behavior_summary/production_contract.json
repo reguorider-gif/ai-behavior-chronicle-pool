@@ -1,0 +1,63 @@
+{
+  "version": "behavior_production_contract.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "run_id": "run-16",
+  "kernel_version": "behavior_kernel_v1",
+  "kernel_hash": "b2465567ed1295df75f0344e21c14e82feaebee4540f3a4593b9de8bee49c48d",
+  "append_only_event_sourcing": true,
+  "deterministic_replay": true,
+  "memory_isolation": false,
+  "audit_layer": true,
+  "event_count": 155,
+  "event_stream_hash": "6b760ea7c3fc87bfbd78171230fc441b0799a9e672f2a388924b6c030fb47be6",
+  "input_hash": "582e9b8c853150320e440fbab3e95365894e0b71cce8c5e44548bd8ae7025f79",
+  "readiness": {
+    "ok": false,
+    "event_sourcing": "pass",
+    "replay": "pass",
+    "memory_isolation": "fail",
+    "audit": "pass"
+  },
+  "product_contract": {
+    "ui_role": "read_only_observer",
+    "home_surface": "behavior_changes_only",
+    "data_center": [
+      "Seat Journal",
+      "Credit Ledger",
+      "Forecast / Investment Split",
+      "God Report",
+      "Raw Audit"
+    ],
+    "hidden": [
+      "local_file_paths",
+      "raw_provider_outputs",
+      "bridge_debug_payloads"
+    ]
+  },
+  "compat_views": {
+    "version": "behavior_compat_views.v1",
+    "run_id": "run-16",
+    "written": {
+      "events": 154,
+      "compiled": 13,
+      "patterns": 13,
+      "traces": 1
+    },
+    "refs": {
+      "events": "data/pool/behavior/events/",
+      "compiled": "data/pool/behavior/compiled/",
+      "patterns": "data/pool/behavior/patterns/",
+      "traces": "data/pool/behavior/traces/run-16.json"
+    }
+  },
+  "refs": {
+    "kernel": "data/pool/data_lake/kernels/behavior_kernel_v1.json",
+    "events": "data/pool/data_lake/events/run-16.jsonl",
+    "run_manifest": "data/pool/data_lake/runs/run-16.json",
+    "replay_manifest": "data/pool/data_lake/replays/run-16.json",
+    "snapshot_index": "data/pool/data_lake/snapshots/run-16.json",
+    "behavior_events": "data/pool/behavior/events/",
+    "behavior_patterns": "data/pool/behavior/patterns/",
+    "behavior_traces": "data/pool/behavior/traces/run-16.json"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "run_id": "unit-settle-from-matches",
+  "settlement_status": "settled",
+  "matches": [
+    {
+      "match_id": "M1",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "score": "0-1",
+      "home_score": 0,
+      "away_score": 1,
+      "outcome": "away",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": null,
+      "source": "matches_api_score_registry",
+      "score_registry_applied": true
+    }
+  ],
+  "settlements": [
+    {
+      "seat_id": "alpha",
+      "match_id": "M1",
+      "market": "h2h",
+      "selection": "Scotland",
+      "line": null,
+      "odds": 1.57,
+      "stake_gp": 100.0,
+      "loan_used_gp": 0.0,
+      "payout_gp": 157.0,
+      "profit_gp": 57.0,
+      "status": "win",
+      "score": "0-1"
+    }
+  ],
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "run_id": "unit-settle-from-matches",
+      "profit_gp": 57.0,
+      "settled": [
+        {
+          "seat_id": "alpha",
+          "match_id": "M1",
+          "market": "h2h",
+          "selection": "Scotland",
+          "line": null,
+          "odds": 1.57,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0.0,
+          "payout_gp": 157.0,
+          "profit_gp": 57.0,
+          "status": "win",
+          "score": "0-1"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "settled_bets": 1,
+    "winning_bets": 1,
+    "losing_bets": 0,
+    "push_bets": 0,
+    "total_stake_gp": 100.0,
+    "total_payout_gp": 157.0,
+    "total_profit_gp": 57.0,
+    "roi": 0.57,
+    "result_source_policy": "explicit_result_file_plus_matches_api_score_registry"
+  }
+}

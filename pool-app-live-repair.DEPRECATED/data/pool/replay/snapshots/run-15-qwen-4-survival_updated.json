@@ -1,0 +1,154 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "event": {
+    "event_id": "run-15:qwen:4:survival_updated",
+    "run_id": "run-15",
+    "seat_id": "qwen",
+    "timestamp": "2026-06-15T19:56:21+00:00",
+    "event_type": "survival_updated",
+    "action": "survival",
+    "outcome": "normal",
+    "risk_shift": "constraint_update",
+    "state_before": {
+      "seat_id": "qwen",
+      "balance_gp": 1000.0,
+      "credit_score": 674.7,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 400.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.72
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-15:investment_recorded:2",
+          "run_id": "run-15",
+          "action": "investment",
+          "outcome": "1 bet / 4 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        }
+      ],
+      "last_forecast_count": 5,
+      "last_investment_count": 5,
+      "last_stake_gp": 100.0,
+      "last_loan_used_gp": 0.0
+    },
+    "state_after": {
+      "seat_id": "qwen",
+      "balance_gp": 1000.0,
+      "credit_score": 674.7,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1056.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.72
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-15:investment_recorded:2",
+          "run_id": "run-15",
+          "action": "investment",
+          "outcome": "1 bet / 4 no-bet",
+          "risk_shift": "risk_reduction"
+        },
+        {
+          "event_id": "run-15:credit_updated:3",
+          "run_id": "run-15",
+          "action": "credit",
+          "outcome": "B",
+          "risk_shift": "constraint_update"
+        },
+        {
+          "event_id": "run-15:survival_updated:4",
+          "run_id": "run-15",
+          "action": "survival",
+          "outcome": "normal",
+          "risk_shift": "constraint_update"
+        }
+      ],
+      "last_forecast_count": 5,
+      "last_investment_count": 5,
+      "last_stake_gp": 100.0,
+      "last_loan_used_gp": 0.0
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": true
+      },
+      "memory_summary": {
+        "behavior_type": "discipline_first_observer",
+        "risk_level": "low",
+        "loan_dependency": "medium",
+        "dominant_pattern": "uncertainty_to_no_bet"
+      },
+      "decision": "normal"
+    },
+    "counterfactual": {
+      "question": "这个事件如何影响下一轮？",
+      "alternative": "下一轮 prompt 必须引用该事件，并说明是否改变仓位、贷款或 no-bet 策略。",
+      "expected_effect": "让行为记忆产生可检验的因果影响。"
+    },
+    "source_event": {
+      "event_type": "survival_updated",
+      "status": null,
+      "forecast_count": 0,
+      "investment_count": 0
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-15-qwen-4-survival_updated.json"
+  }
+}

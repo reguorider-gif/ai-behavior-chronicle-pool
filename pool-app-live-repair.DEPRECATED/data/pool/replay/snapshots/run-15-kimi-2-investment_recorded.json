@@ -1,0 +1,123 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "event": {
+    "event_id": "run-15:kimi:2:investment_recorded",
+    "run_id": "run-15",
+    "seat_id": "kimi",
+    "timestamp": "2026-06-15T19:56:21+00:00",
+    "event_type": "investment_recorded",
+    "action": "investment",
+    "outcome": "1 bet / 4 no-bet · 40 GP",
+    "risk_shift": "selective_risk",
+    "state_before": {
+      "seat_id": "kimi",
+      "balance_gp": 1000.0,
+      "credit_score": 661.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        }
+      ],
+      "last_forecast_count": 5
+    },
+    "state_after": {
+      "seat_id": "kimi",
+      "balance_gp": 1000.0,
+      "credit_score": 661.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-15:investment_recorded:2",
+          "run_id": "run-15",
+          "action": "investment",
+          "outcome": "1 bet / 4 no-bet",
+          "risk_shift": "risk_reduction"
+        }
+      ],
+      "last_forecast_count": 5,
+      "last_investment_count": 5,
+      "last_stake_gp": 40.0,
+      "last_loan_used_gp": 0.0
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": true
+      },
+      "memory_summary": {
+        "behavior_type": "discipline_first_observer",
+        "risk_level": "low",
+        "loan_dependency": "low",
+        "dominant_pattern": "uncertainty_to_no_bet"
+      },
+      "decision": "bet WC-H1 h2h 40 GP"
+    },
+    "counterfactual": {
+      "question": "如果降低仓位会怎样？",
+      "alternative": "将 40 GP 投入拆成更小单位或保留现金。",
+      "expected_effect": "降低单场波动，增加后续回合生存能力。"
+    },
+    "source_event": {
+      "event_type": "investment_recorded",
+      "status": "collected",
+      "forecast_count": 0,
+      "investment_count": 5
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-15-kimi-2-investment_recorded.json"
+  }
+}

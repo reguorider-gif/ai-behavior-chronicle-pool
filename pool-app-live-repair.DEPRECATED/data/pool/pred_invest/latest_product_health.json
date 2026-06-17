@@ -1,0 +1,53 @@
+{
+  "version": "pred_invest_product_health.v1",
+  "generated_at": "2026-06-16T22:53:37.158219+00:00",
+  "status": "NOT_READY",
+  "errors": [
+    "tournament_schedule_incomplete:75/104"
+  ],
+  "warnings": [
+    "targeted_rerun_required:qwen",
+    "provider_blocked_wait_for_reset:grok"
+  ],
+  "findings": [
+    "provider_blocked_seats=grok",
+    "browser_qa_entry=ok_with_chrome_fallback",
+    "current=2026-06-16 run-16 PARTIAL_NOT_READY",
+    "quality=PARTIAL_NOT_READY valid=10/12 needs=grok,qwen",
+    "matches=5 market_rows=35",
+    "runtime_registry_matches=75 future=58 next_actionable=4",
+    "schedule_coverage=runtime:2026-06-11..2026-06-28 (75 matches) local_seed:2026-06-17..2026-06-28 live_seed:2026-06-17..2026-06-28",
+    "runtime_result_sync_overdue=0",
+    "observer=2026-06-16 run-16 phase=pre",
+    "browser_qa=Google Chrome 149.0.7827.115",
+    "score_sync_overdue=0"
+  ],
+  "artifact_refs": {
+    "current_game": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_current_game.json",
+    "daily_sop": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_prompt_pack.json",
+    "quality_gate": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_quality_gate.json",
+    "observer_ledger": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/observer_ledgers/latest.json",
+    "match_data_alignment": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_match_data_alignment_audit.json",
+    "score_sync": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_score_sync.json",
+    "frontend_index": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/pool-app-live-repair/index.html",
+    "live_current_game": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/pool-app-live-repair/data/pool/pred_invest/latest_current_game.json",
+    "live_observer_ledger": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/pool-app-live-repair/data/pool/observer_ledgers/latest.json",
+    "browser_wrapper": "/opt/homebrew/Caskroom/chromium/latest/chromium.wrapper.sh"
+  },
+  "browser_qa": {
+    "command": "/opt/homebrew/bin/chromium",
+    "wrapper": "/opt/homebrew/Caskroom/chromium/latest/chromium.wrapper.sh",
+    "ok": true,
+    "uses_chrome_fallback": true,
+    "do_not_delete_marker": true,
+    "returncode": 0,
+    "version": "Google Chrome 149.0.7827.115"
+  },
+  "proxy": {
+    "configured": false,
+    "proxies": {},
+    "ok": true,
+    "local_control_plane_bypasses_proxy": true
+  }
+}

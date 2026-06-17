@@ -1,0 +1,35 @@
+{
+  "version": "behavior_patterns_compat.v1",
+  "run_id": "run-16",
+  "seat_id": "kimi",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "run-15:investment_recorded:2",
+        "run-16:investment_recorded:8"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "kimi"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    },
+    {
+      "name": "loss_requires_strategy_change",
+      "label": "loss → strategy review",
+      "confidence": 0.68,
+      "source_event_ids": [
+        "run-15:settlement_recorded:5",
+        "run-16:settlement_recorded:11"
+      ],
+      "supporting_events": 2,
+      "seats": [
+        "kimi"
+      ],
+      "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+    }
+  ]
+}

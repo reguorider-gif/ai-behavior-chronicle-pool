@@ -1,0 +1,113 @@
+{
+  "version": "behavior_memory.v1",
+  "seat_id": "gamma",
+  "generated_at": "2026-06-16T20:40:14+00:00",
+  "event_count": 1148,
+  "runs_seen": [
+    "smoke-behavior-v2-a",
+    "smoke-behavior-v2-b"
+  ],
+  "profile": {
+    "behavior_type": "discipline_first_observer",
+    "risk_level": "low",
+    "loan_dependency": "low",
+    "no_bet_rate": 1.0,
+    "strategy_drift": "risk_reduction",
+    "bet_count": 0,
+    "forecast_count": 388,
+    "total_stake_gp": 0,
+    "total_loan_used_gp": 0,
+    "settlement_profit_gp": 0.0,
+    "credit_grade": "B",
+    "credit_score": 620.0,
+    "recovery_mode": false
+  },
+  "top_patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "smoke-behavior-v2-b:investment_recorded:1102",
+        "smoke-behavior-v2-a:investment_recorded:1107",
+        "smoke-behavior-v2-b:investment_recorded:1114",
+        "smoke-behavior-v2-a:investment_recorded:1119",
+        "smoke-behavior-v2-b:investment_recorded:1126",
+        "smoke-behavior-v2-a:investment_recorded:1131",
+        "smoke-behavior-v2-b:investment_recorded:1138",
+        "smoke-behavior-v2-a:investment_recorded:1143"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "gamma"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    }
+  ],
+  "recent_timeline_events": [
+    {
+      "event_id": "smoke-behavior-v2-a:credit_updated:1134",
+      "run_id": "smoke-behavior-v2-a",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "smoke-behavior-v2-b:forecast_recorded:1137",
+      "run_id": "smoke-behavior-v2-b",
+      "action": "forecast",
+      "outcome": "2 forecasts",
+      "risk_shift": "information_gathering"
+    },
+    {
+      "event_id": "smoke-behavior-v2-b:investment_recorded:1138",
+      "run_id": "smoke-behavior-v2-b",
+      "action": "investment",
+      "outcome": "0 bet / 2 no-bet",
+      "risk_shift": "risk_reduction"
+    },
+    {
+      "event_id": "smoke-behavior-v2-b:credit_updated:1139",
+      "run_id": "smoke-behavior-v2-b",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "smoke-behavior-v2-a:forecast_recorded:1142",
+      "run_id": "smoke-behavior-v2-a",
+      "action": "forecast",
+      "outcome": "2 forecasts",
+      "risk_shift": "information_gathering"
+    },
+    {
+      "event_id": "smoke-behavior-v2-a:investment_recorded:1143",
+      "run_id": "smoke-behavior-v2-a",
+      "action": "investment",
+      "outcome": "0 bet / 2 no-bet",
+      "risk_shift": "risk_reduction"
+    },
+    {
+      "event_id": "smoke-behavior-v2-a:settlement_recorded:1144",
+      "run_id": "smoke-behavior-v2-a",
+      "action": "settlement",
+      "outcome": "+0 GP",
+      "risk_shift": "neutral"
+    },
+    {
+      "event_id": "smoke-behavior-v2-a:credit_updated:1146",
+      "run_id": "smoke-behavior-v2-a",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    }
+  ],
+  "memory_contract": {
+    "must_reference_in_next_decision": true,
+    "required_output_fields": [
+      "memory_used",
+      "memory_not_used_reason",
+      "strategy_change_from_memory"
+    ]
+  }
+}

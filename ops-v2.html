@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRED_INVEST_CREDIT_SURVIVE_V2 · 验收页</title>
+<style>
+  :root{color-scheme:dark;--bg:#0c1222;--card:#111827;--line:rgba(148,163,184,.18);--text:#f1f5f9;--muted:#a8b3c4;--blue:#60a5fa;--green:#34d399;--gold:#facc15}
+  *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 12% 0%,rgba(59,130,246,.18),transparent 30%),var(--bg);color:var(--text);line-height:1.7}
+  main{max-width:1080px;margin:0 auto;padding:36px 22px 70px}
+  a{color:#bfdbfe;text-decoration:none}a:hover{text-decoration:underline}
+  .top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+  h1{font-size:28px;line-height:1.15;margin:0 0 8px;letter-spacing:-.04em}
+  .sub{color:var(--muted);font-size:14px;margin:0}
+  .pill{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(52,211,153,.34);background:rgba(52,211,153,.10);color:var(--green);font-weight:850;font-size:12px}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+  .card{border:1px solid var(--line);background:rgba(17,24,39,.78);border-radius:14px;padding:16px;box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .card span{display:block;color:var(--muted);font-size:12px;font-weight:800;margin-bottom:8px}
+  .card b{display:block;color:var(--text);font-size:16px;word-break:break-word}
+  .card small{display:block;color:var(--muted);font-size:12px;margin-top:8px;word-break:break-word}
+  .section{margin-top:22px}.section h2{font-size:18px;margin:0 0 12px;letter-spacing:-.02em}
+  .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 14px;border:1px solid rgba(96,165,250,.28);border-radius:12px;background:rgba(59,130,246,.08);font-size:13px;font-weight:800}
+  pre{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#080d19;padding:14px;color:#dbeafe;font-size:12px;max-height:460px}
+  .status{color:var(--green)}.warn{color:var(--gold)}
+  @media(max-width:760px){.grid,.links{grid-template-columns:1fr}main{padding:24px 14px 56px}h1{font-size:23px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div>
+      <h1>PRED_INVEST_CREDIT_SURVIVE_V2 · 产品验收面板</h1>
+      <p class="sub">这里专门用于验证行为连续日志版是否进入线上产品层：规则版本、行为日志、信用账本、预测/投资分账、no-bet、Recovery Mode、God Ledger。</p>
+    </div>
+    <a class="pill" href="/">返回主看板</a>
+  </div>
+
+  <div class="grid" id="summaryGrid">
+    <div class="card"><span>规则版本</span><b>PRED_INVEST_CREDIT_SURVIVE_V2</b><small>V2 游戏规则运营链路</small></div>
+    <div class="card"><span>行为日志 / Seat Journal</span><b class="status">存在</b><small>data/pool/seat_journals/</small></div>
+    <div class="card"><span>信用账本 / Credit Ledger</span><b class="status">存在</b><small>data/pool/credit_ledger/</small></div>
+    <div class="card"><span>预测 / 投资分账</span><b class="status">分离</b><small>forecast_receipts + investment_receipts</small></div>
+    <div class="card"><span>Recovery Mode</span><b class="status">已接入</b><small>净值小于等于 0 时进入重整</small></div>
+    <div class="card"><span>no-bet</span><b class="status">合法动作</b><small>观望需要结构化理由，不等于缺席</small></div>
+  </div>
+
+  <section class="section">
+    <h2>线上可验收数据</h2>
+    <div class="links">
+      <a class="link" href="data/pool/ops_v2_acceptance.json">ops_v2_acceptance.json <span>↗</span></a>
+      <a class="link" href="data/pool/behavior_summary/latest.json">behavior-summary <span>↗</span></a>
+      <a class="link" href="data/pool/pipeline_smoke/2026-06-15_smoke-behavior-v2-a.json">smoke-behavior-v2-a <span>↗</span></a>
+      <a class="link" href="data/pool/pipeline_smoke/2026-06-15_smoke-behavior-v2-b.json">smoke-behavior-v2-b <span>↗</span></a>
+      <a class="link" href="data/pool/forecast_receipts/smoke-behavior-v2-b.json">forecast_receipts <span>↗</span></a>
+      <a class="link" href="data/pool/investment_receipts/smoke-behavior-v2-b.json">investment_receipts <span>↗</span></a>
+      <a class="link" href="data/pool/god_reports/2026-06-15_smoke-behavior-v2-b.md">上帝行为日报 <span>↗</span></a>
+      <a class="link" href="data/pool/god_ledger/runs/smoke-behavior-v2-b.json">God Ledger <span>↗</span></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>acceptance JSON 快照</h2>
+    <pre id="acceptancePreview">读取中...</pre>
+  </section>
+</main>
+<script>
+async function loadAcceptance(){
+  const out=document.getElementById('acceptancePreview');
+  try{
+    const res=await fetch('data/pool/ops_v2_acceptance.json',{cache:'no-store'});
+    const data=await res.json();
+    out.textContent=JSON.stringify(data,null,2);
+  }catch(err){
+    out.textContent='加载失败：'+err.message;
+  }
+}
+loadAcceptance();
+</script>
+</body>
+</html>

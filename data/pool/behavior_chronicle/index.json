@@ -1,0 +1,56 @@
+{
+  "version": "behavior_chronicle_index.v1",
+  "generated_at": "2026-06-17T21:06:33+00:00",
+  "seat_count": 1,
+  "lesson_count": 3,
+  "seats": {
+    "unit_chronicle": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "unit_chronicle",
+      "generated_at": "2026-06-17T21:06:33+00:00",
+      "lesson_count": 3,
+      "lessons": [
+        {
+          "lesson_id": "unit_chronicle:longshot_seeking",
+          "seat_id": "unit_chronicle",
+          "type": "observe",
+          "pattern_id": "longshot_seeking",
+          "claim": "高赔率搜索：1/1 个下注动作赔率不低于 3.5，仓位占比 100%。",
+          "lesson": "继续观察：下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。",
+          "confidence": 0.82,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "unit-chronicle-run:investment_recorded:0"
+          ]
+        },
+        {
+          "lesson_id": "unit_chronicle:uncertainty_to_no_bet",
+          "seat_id": "unit_chronicle",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：2/3 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.75,
+          "evidence_count": 2,
+          "source_event_ids": [
+            "unit-chronicle-run:investment_recorded:0"
+          ]
+        },
+        {
+          "lesson_id": "unit_chronicle:loan_dependency",
+          "seat_id": "unit_chronicle",
+          "type": "observe",
+          "pattern_id": "loan_dependency",
+          "claim": "贷款依赖出现：累计贷款投注 200 GP，占投注暴露 40%。",
+          "lesson": "继续观察：下一轮必须先说明还款压力，再决定是否继续杠杆。",
+          "confidence": 0.66,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "unit-chronicle-run:investment_recorded:0"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须先说明还款压力，再决定是否继续杠杆。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    }
+  }
+}

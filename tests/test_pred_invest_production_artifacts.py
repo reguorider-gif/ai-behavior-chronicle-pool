@@ -73,7 +73,7 @@ class PredInvestProductionArtifactTests(unittest.TestCase):
             "needs_rerun": ["grok"],
         }
 
-    def test_production_artifacts_keep_all_12_seats_and_mark_missing(self):
+    def test_production_artifacts_keep_all_required_seats_and_mark_missing(self):
         result = build_production_artifacts(
             "2026-06-15",
             "unit-production-run",
@@ -84,10 +84,11 @@ class PredInvestProductionArtifactTests(unittest.TestCase):
             write=False,
         )
         counts = result["counts"]
-        self.assertEqual(counts["seat_count"], 12)
-        self.assertEqual(counts["forecast_receipt_count"], 12)
-        self.assertEqual(counts["investment_receipt_count"], 12)
-        self.assertEqual(counts["valid_seat_count"], 11)
+        required_count = len(PRODUCTION_SEATS)
+        self.assertEqual(counts["seat_count"], required_count)
+        self.assertEqual(counts["forecast_receipt_count"], required_count)
+        self.assertEqual(counts["investment_receipt_count"], required_count)
+        self.assertEqual(counts["valid_seat_count"], required_count - 1)
         self.assertEqual(counts["missing_seat_count"], 1)
         self.assertEqual(result["seat_statuses"]["grok"], "missing_provider_blocked")
         self.assertIn("run-15", build_production_artifacts(

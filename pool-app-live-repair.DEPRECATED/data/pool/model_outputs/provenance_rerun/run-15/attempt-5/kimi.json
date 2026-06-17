@@ -1,0 +1,165 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "756e78426eb5",
+  "round_id": "run-15",
+  "attempt_no": 5,
+  "date": "2026-06-15",
+  "seat": "kimi",
+  "model_account": "kimi",
+  "ok": true,
+  "raw_output_path": "data/pool/model_outputs/raw_rerun/run-15/attempt-5/kimi.txt",
+  "base_raw_output_path": "data/pool/model_outputs/raw/run-15/kimi.txt",
+  "parsed": {
+    "model_account": "kimi",
+    "seat_id": "kimi",
+    "one_sentence_strategy": "濒临出局，信息缺口极大，采取极端保守策略：仅对西班牙胜佛得角小额投注，其余全部no_bet保留现金，等待后续信息窗口打开后再做非线性翻盘。",
+    "forecasts": [
+      {
+        "match_id": "WC-H1",
+        "p": "Spain 3-0 Cape Verde",
+        "score": 0.92,
+        "confidence": 0.88,
+        "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
+        "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。"
+      },
+      {
+        "match_id": "WC-K1",
+        "p": "Portugal 2-1 Colombia",
+        "score": 0.55,
+        "confidence": 0.45,
+        "edge_assessment": "葡萄牙主场优势但哥伦比亚防守坚韧，赔率1.75隐含概率57%，无显著edge。",
+        "information_gaps": "两队热身赛阵容、伤病、战术安排均未知；哥伦比亚近期状态无验证信源。"
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "p": "Belgium 1-1 Egypt",
+        "score": 0.35,
+        "confidence": 0.3,
+        "edge_assessment": " handicap市场两条线赔率接近，信息极度混乱，无法判断让球方向。",
+        "information_gaps": " handicap具体让球数未明示；比利时黄金一代老化程度；埃及萨拉赫状态；两队近期无验证热身赛数据。"
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "p": "Uruguay 2-0 Saudi Arabia",
+        "score": 0.48,
+        "confidence": 0.35,
+        "edge_assessment": "乌拉圭实力占优但 handicap让球方向不明，沙特主场因素未知，无edge。",
+        "information_gaps": " handicap具体让球数未明示；沙特世界杯主场优势量化；乌拉圭阵容老化与新生代融合情况。"
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "p": "Draw 1-1",
+        "score": 0.3,
+        "confidence": 0.25,
+        "edge_assessment": "两队实力接近但 handicap让球方向不明，赔率差异大（3.34 vs 1.83）暗示市场分歧严重，无可靠edge。",
+        "information_gaps": " handicap具体让球数未明示；伊朗海外球员集结情况；新西兰大洋洲预选赛状态；两队无近期验证热身赛数据。"
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "WC-H1",
+        "action": "bet",
+        "market": "h2h",
+        "selection": "Spain",
+        "line": null,
+        "odds": 1.08,
+        "stake_gp": 40,
+        "loan_used_gp": 0,
+        "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+      },
+      {
+        "match_id": "WC-K1",
+        "action": "no_bet",
+        "market": "h2h",
+        "selection": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "reason": "信息缺口过大，两队热身赛数据未验证，无可靠edge，不冒险。"
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "reason": " handicap让球数未明示，赔率结构混乱，比利时老化与埃及状态均未知，无投注条件。"
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "reason": " handicap让球数未明示，沙特主场优势无法量化，乌拉圭阵容不确定性高，无投注条件。"
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": null,
+        "line": null,
+        "odds": null,
+        "stake_gp": 0,
+        "loan_used_gp": 0,
+        "reason": " handicap让球数未明示，市场赔率分歧严重（3.34 vs 1.83），两队近期无验证数据，无投注条件。"
+      }
+    ],
+    "loan_decision": {
+      "take_loan": false,
+      "loan_type": null,
+      "amount_gp": 0,
+      "interest_rate": null,
+      "repayment_plan": null,
+      "expected_roi": null,
+      "stop_loss": null,
+      "reason": "当前余额1000GP，信用B级，未濒临破产（>0）。信息缺口极大，贷款扩张无意义；若强行贷款投注，失败后将陷入债务螺旋。保留现金和信用额度，等待6月1-10日热身赛窗口打开后获取验证数据再做非线性翻盘。"
+    },
+    "risk_notes": "当前最大风险是信息缺口导致的盲目投注。5场比赛中3场 handicap让球数未明示，无法做任何概率建模。西班牙vs佛得角虽胜率高但赔率1.08几乎无回报，仅作极小注保本。若本轮全部no_bet，虽无收益但保留100%本金和信用，为后续翻盘保留弹药。对手中Grok（400GP）和本人（200GP）均濒临出局，但Grok倾向激进反共识，可能在本轮高风险投注，若其失败则缩小差距。",
+    "self_audit": {
+      "covered_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "missing_match_ids": [],
+      "ready_for_frontend_ingest": true,
+      "identity_verified": "kimi",
+      "total_stake_gp": 40,
+      "total_loan_used_gp": 0,
+      "remaining_balance_gp": 960,
+      "notes": "严格遵循25%单注上限（40/1000=4%），未使用贷款，全部5场比赛已覆盖，无遗漏。"
+    }
+  },
+  "response_chars": 3078,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 3078,
+    "min_response_chars": 1,
+    "response_hash": "d6db6cf425a7d25b9d29cd8fceff30dabd89d76d8a6ab1caee5386e8e3147338",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

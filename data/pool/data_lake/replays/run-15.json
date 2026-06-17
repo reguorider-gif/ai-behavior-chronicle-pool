@@ -1,0 +1,33 @@
+{
+  "version": "deterministic_replay_manifest.v1",
+  "run_id": "run-15",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "kernel_version": "behavior_kernel_v1",
+  "kernel_hash": "b2465567ed1295df75f0344e21c14e82feaebee4540f3a4593b9de8bee49c48d",
+  "event_stream_hash": "906c4bc37757d37cfe9a05a0b6445b886f2cebbc1f13385cb8f4ebbbfc0e7d45",
+  "prompt_context_hashes": {
+    "chatgpt": "f6411349db18cd97eeb7f0bc661c5431124bd928cf4b8682cfee16ab69fd287c",
+    "deepseek": "ccc00e87c1dc86177a53d348eb901bc46a052171bd9351a91bac8e47a656d40c",
+    "mimo": "0055f214068dd666995122bc86ec2e0b3de0c4b0872f998dfe9c92e56729b260",
+    "minimax": "8524ea70d205773a0faf6fe008e646246da16c798760626b39a8b5945dbc6237",
+    "doubao": "9a59a3abf7f80e344bb56a6e137dfc6553bf7d7a6eea018564aa51d2caa93020",
+    "gemini": "6e644ecfcb25a4642b8fec193744ec03056420cb451fee1da90d39d469383f20",
+    "kimi": "dd02a1cb3eb9f3c32e3bc8d8a6fa054257e3c98f0d48f6b2c01729e8d3af1643",
+    "meta": "998005df5840c627a437b04c1d4837ee4445bfd3f6ab98ba44cf826193c5ce7e",
+    "qwen": "6227447a194b4802f5338e30c22f95ab2bdc14d4af497b79283a8c161fba1f39",
+    "wenxin": "b214d66c93bd991ceb4986e92f468da047185ec0650d3789d53156923dc56ae0",
+    "grok": "0e80dda6be9dc6c743b6e509a2b9e353f79bab652f035ef57c07edf87ff36070",
+    "yuanbao": "c46658a546cf15c68398e68d5cb4ef9c9d31104b73461da154fe4c63a1812fbc"
+  },
+  "prompt_contexts_hash": "66000bc009759095c7f9af03398f90b0dce9c6b69555d1ad3aae6571b6780e97",
+  "replay_source_hash": "353e4bb581e8344fae2a7dc147824aa4cb558c32b6962da30543be80e0dc253d",
+  "event_count": 71,
+  "seat_count": 12,
+  "snapshot_count": 71,
+  "deterministic_replay": true,
+  "input_hash": "03e296af8a99556943b0c86c60866743c28f2c3fff0c297389f2ea1d1edddaf7",
+  "refs": {
+    "replay": "data/pool/replay/runs/run-15.json",
+    "snapshots": "data/pool/replay/snapshots/"
+  }
+}

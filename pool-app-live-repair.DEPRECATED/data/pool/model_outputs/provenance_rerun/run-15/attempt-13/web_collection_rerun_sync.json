@@ -1,0 +1,46 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "737c12a30c43",
+  "round_id": "run-15",
+  "attempt_no": 13,
+  "date": "2026-06-15",
+  "exported_at": "2026-06-15T11:52:01.544757+00:00",
+  "observed_models": [
+    "doubao"
+  ],
+  "exported_outputs": 0,
+  "invalid_outputs": [
+    {
+      "seat_id": "doubao",
+      "seat": "doubao",
+      "response_chars": 505,
+      "ok": true,
+      "reason": "missing_required_pool_json_receipt",
+      "execution_validity": {
+        "policy_version": "required-web-seat-v1",
+        "required": true,
+        "valid": true,
+        "submitted": true,
+        "accepted": true,
+        "marker_found": false,
+        "marker_closed": false,
+        "matches_question": true,
+        "prompt_echo": false,
+        "polluted": false,
+        "page_busy": false,
+        "response_chars": 505,
+        "min_response_chars": 1,
+        "response_hash": "aee6d62a778b86bf34697b886009e1d96723c0506a878a0bd7076564f8f2366d",
+        "capture_mode": "",
+        "prompt_id": "",
+        "attempts": 0,
+        "source": "web_bridge",
+        "reason": "valid"
+      }
+    }
+  ],
+  "rows": [],
+  "dropbox": null,
+  "ingest": null,
+  "pipeline": null
+}

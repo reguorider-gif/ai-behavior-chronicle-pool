@@ -42,30 +42,41 @@ Key rules:
 
 ## Seats
 
-The current active pool has 12 seats:
+The current active pool has 15 required seats:
 
 ```text
-chatgpt, deepseek, doubao, gemini, grok, kimi, meta, mimo, minimax, qwen, wenxin, yuanbao
+chatgpt, deepseek, doubao, gemini, grok, kimi, meta, mimo, minimax, qwen, wenxin, yuanbao, xunfei, stepfun, zhipu
 ```
 
-The system intentionally keeps unavailable or incomplete seats visible. A missing or blocked seat should not be hidden behind a "complete" badge.
+The system intentionally keeps unavailable or incomplete required seats visible. A missing or blocked required seat should not be hidden behind a "complete" badge. `xunfei`, `stepfun`, and `zhipu` are now first-class required seats and are part of the World Cup prediction pool hard gate.
 
 ## Directory Map
 
 ```text
 api/
   match-dates.js                # Vercel API: date index derived from match data
+  matches.js                    # Vercel API: match registry, scores, and market merge
   pool-meta.js                  # Vercel API: rules, behavior summary, journals, credit, reports
   pool/[...path].js             # Legacy/catch-all pool API handler
+  behavior/                     # Product-facing behavior projections
+  civilization/                 # Civilization / behavior-map projections
 
-pool-app-live-repair/
-  index.html                    # Current production frontend snapshot
-  commentary-log.html           # God-view / observer commentary page
-  ops-v2.html                   # V2 operations acceptance surface
-  api/                          # Vercel edge API snapshot used by the frontend
-  vercel.json                   # Deployment routing config
+index.html                      # Production SPA entry served at /
+commentary-log.html             # God-view / observer commentary page
+ops-v2.html                     # V2 operations acceptance surface
+vercel.json                     # Deployment routing config
+
+pool-app-live-repair.DEPRECATED/
+  DEPRECATED.md                 # Historical frontend snapshot only; do not edit for product work
 
 ops/
+  fixes/
+    proxy_diagnostic_and_fix.sh # Local proxy/Vercel network diagnostic helper
+    README.md
+  auto_sop.py                   # Pre/post orchestration facade
+  fetch_odds.py                 # Schedule, odds, and score sync wrapper
+  dispatch_seats.py             # Local AI Judge seat dispatcher
+  cron_setup.sh                 # Cron preview/installer for SOP phases
   generate_pred_invest_prompt_pack.py
   submit_pred_invest_bridge_run.py
   run_pred_invest_daily_sop.py
@@ -73,8 +84,16 @@ ops/
   generate_observer_ledger.py
   audit_pred_invest_product_health.py
   pool/
+    audit/
+      behavior_audit_engine.py
+      decision_tracer.py
+      pattern_influence_checker.py
+      replay_validator.py
+      causality_graph_builder.py
     behavior_journal.py
     credit_engine.py
+    pattern_compiler.py
+    chronicle_compiler.py
     god_report_v2.py
     prompt_context_builder.py
     rules_engine.py
@@ -92,13 +111,49 @@ data/pool/
   god_reports/                  # God-view report artifacts
   observer_ledgers/             # Third-party commentary / observer reports
   prompt_contexts/              # Prompt context snapshots per seat
+  behavior_patterns/            # Long-term per-seat behavioral pattern compression
+  behavior_chronicle/           # Lessons and run chronicle prompt-injection layer
   pred_invest/                  # Prompt packs, current-game artifacts, SOP outputs
   match_results/                # Score sync and known score registries
+  _archive/                     # Bulky rerun/dry-run/shadow artifacts, excluded from normal product reads
+
+docs/
+  API_CONTRACT.md               # Public API surface and fallback policy
+  FRONTEND_STRUCTURE.md         # Static SPA structure and migration notes
+  REPAIR_DIFF_REPORT.md         # Root-vs-legacy data inventory report
+  REPAIR_SUMMARY.md             # Latest structural repair verification summary
 
 tests/
   pool/                         # Engine-level tests
   test_*.py                     # API/data/SOP contract tests
 ```
+
+## Data Lifecycle
+
+`data/pool/` is the active product data root. Runtime code should read from this root first and should not read from `pool-app-live-repair.DEPRECATED/`.
+
+The active root keeps product artifacts only: rules, forecast receipts, investment receipts, credit/survival ledgers, settlements, seat journals, god ledgers, reports, prompt contexts, current-game artifacts, and score registries.
+
+Bulky development artifacts are moved under `data/pool/_archive/`:
+
+```text
+model output reruns
+single-seat rerun attempts
+shadow reruns
+dry-run artifacts
+```
+
+Append-only product logs are not truncated during cleanup:
+
+```text
+data/pool/seat_journals/
+data/pool/god_ledger/
+data/pool/credit_ledger/
+data/pool/survival_ledger/
+data/pool/settlements/
+```
+
+The `latest_*` pointers remain in active folders when they are used by the frontend or API.
 
 ## Daily SOP
 
@@ -110,6 +165,15 @@ python3 ops/run_pred_invest_daily_sop.py \
   --round run-15 \
   --write
 ```
+
+Automation facade:
+
+```bash
+python3 ops/auto_sop.py pre --date 2026-06-17 --round run-17 --write
+python3 ops/auto_sop.py post --date 2026-06-17 --round run-17 --write
+```
+
+Use `python3 ops/auto_sop.py dry-run --date 2026-06-17 --round run-17 --dispatch` to verify bridge payload generation without sending production decisions.
 
 Important outputs:
 
@@ -123,7 +187,28 @@ data/pool/god_ledger/runs/<run>.json
 data/pool/god_reports/<date>_<run>.md
 data/pool/seat_journals/<seat>/journal.jsonl
 data/pool/prompt_contexts/<run>/<seat>.json
+data/pool/behavior_patterns/index.json
+data/pool/behavior_chronicle/index.json
+data/pool/behavior_chronicle/runs/<run>.md
 ```
+
+## Deployment
+
+Vercel serves the root SPA from `index.html`. The legacy `pool-app-live-repair/` folder has been retired to `pool-app-live-repair.DEPRECATED/` and is retained only for historical comparison.
+
+The API fallback origin is controlled by:
+
+```text
+POOL_FALLBACK_ORIGIN
+```
+
+If unset, `api/pool-meta.js` and `api/pool/[...path].js` fall back to:
+
+```text
+https://pool-app-one.vercel.app
+```
+
+This fallback is only for missing legacy pool data. Product data should still be generated into `data/pool/` and served locally by the deployment whenever possible.
 
 ## Public API Contract
 
@@ -136,11 +221,127 @@ GET /api/pool/seats/:seatId/journal
 GET /api/pool/seats/:seatId/credit
 GET /api/pool/runs/:runId/god-report
 GET /api/pool/runs/:runId/market-snapshot
+GET /api/behavior/home
+GET /api/behavior/timeline/:runId
+GET /api/behavior/graph/:runId
+GET /api/behavior/agents/:runId
+GET /api/behavior/datacenter/:runId
+GET /api/behavior/production/:runId
+GET /api/behavior/audit/:runId
+GET /api/behavior/freeze/:runId
+GET /api/civilization/state/:runId
+GET /api/civilization/freeze/:runId
 GET /api/matches
 GET /api/match-dates
 ```
 
 These endpoints are for verifying product readiness and data continuity. They are not meant to expose raw private model traces.
+
+The `/api/behavior/*` endpoints are the product-facing behavior projection. They return behavior summary, timeline lanes, pattern graph, agent profiles, and data-center readiness without local filesystem paths or raw prompt traces.
+
+## Frontend Product Contract
+
+The production UI is a Behavior Civilization interface, not an odds or betting dashboard. The first screen is the Civilization Map: a pressure field + agent space + causality layer + behavior flow. It answers one product question: how agents form a behavioral civilization under economic pressure.
+
+The primary surface is locked to four behavior pages:
+
+```text
+1. Civilization Map         # pressure field, agent space, causality, behavior flow
+2. Civilization Timeline    # one behavior lane per model
+3. Behavior Graph           # top behavior patterns with evidence
+4. Agent Profile            # one model's behavior identity and drift
+```
+
+Schedule and market data remain a secondary surface. Credit, split receipts, god reports, and raw health checks are only exposed through the Data Center as product summaries. The Data Center must not show local filesystem paths, temporary filenames, or "open source file" style debug actions.
+
+Civilization Map data is generated as a product object:
+
+```text
+data/pool/civilization_state/latest.json
+data/pool/civilization_freeze/latest.json
+GET /api/civilization/state/:runId
+GET /api/civilization/freeze/:runId
+GET /api/behavior/civilization/:runId
+GET /api/behavior/civilizations/:runId
+GET /api/behavior/freeze/:runId
+GET /api/civilization/battle/:runId
+```
+
+The object exposes `pressure`, `agents`, `positions`, `drift`, `archetypes`, `behavior_flow`, and `causality`. It must not expose raw prompts, local filesystem paths, bridge recovery payloads, or temporary file names.
+
+The design-freeze object is the v1.0 production readiness manifest. It binds the production audit, deterministic replay, memory injection, pattern influence, append-only event stream, and Civilization Map UI into one verdict: `PRODUCTION_READY_BEHAVIOR_CIVILIZATION_ENGINE` or `NOT_READY_BEHAVIOR_CIVILIZATION_ENGINE`.
+
+The multi-civilization object upgrades the surface from agent-only observation to `AI Civilization Phase & War Laboratory`:
+
+```text
+data/pool/civilization_battle/latest.json
+GET /api/civilization/battle/:runId
+GET /api/behavior/civilizations/:runId
+```
+
+It groups agents into strategy civilizations, computes shared memory, civilization credit, risk profile, survival/performance metrics, pairwise interactions, headline battle, interaction graph, clash view, civilization timeline, drift engine, collapse signals, civilization state vectors, collapse predictions, evolution paths, fate curves, phase-transition states, civilization field projection, war simulations, and meta-strategy reading. It is still a product object: no raw bets, no local paths, no provider transcripts.
+
+The v9 multiverse-civilization physics layer treats civilizations as high-dimensional particles in a coupled universe field:
+
+```text
+energy, entropy, tension, cohesion, aggression, fragility, adaptation, memory_depth
+```
+
+Those variables feed five product-facing engines:
+
+```text
+phase_transition_engine     # Stable / Adaptive / Volatile / Critical / Expansion / Collapse
+civilization_field_engine   # x=entropy, y=tension, size=energy, motion=entropy+aggression+fragility
+civilization_war_engine     # resource/stability/strategy/collapse-war interactions
+war_phase_engine            # war interactions as phase-transition triggers
+civilization_meta_layer     # why a civilization shifts phase
+memory_dynamics_engine      # compresses history into reusable strategy pressure for the next run
+civilization_physics_core   # freezes the state vector, equations, loop, and production-ready verdict
+meta_civilization_engine    # clusters civilizations, detects systemic collapse waves, and projects migration paths
+civilization_genome_engine  # expresses risk/survival/aggression/memory/adaptation genes
+universe_engine             # projects civilizations into a universe field and evolution tree
+multiverse_engine           # computes cross-universe coupling, memory field, dominance cluster, and drift timeline
+```
+
+The public UI presents this as Civilization Phase Transition, Civilization Field Map, Civilization War Simulation, War Phase Triggers, Civilization Meta Layer, Memory Dynamics, Civilization Physics Lock, Meta-Civilization Layer, Civilization Genome Layer, Universe Civilization Field, and Multiverse Civilization Map. These are abstract behavior-civilization models, not real-world violence, gambling, or financial advice. The physics lock answers the product-readiness question: whether state vector, phase engine, war interaction, collapse prediction, memory dynamics, meta-civilization clustering, genome expression, universe field projection, multiverse coupling, audit, and replay are all present.
+
+The v9 production lock is:
+
+```text
+PRODUCTION_READY_MULTIVERSE_CIVILIZATION_PHYSICS_ENGINE
+```
+
+The final compact loop is:
+
+```text
+EVENTS
+  -> STATE UPDATE
+  -> MULTIVERSE COUPLING
+  -> PHASE TRANSITION
+  -> WAR DYNAMICS
+  -> COLLAPSE PREDICTION
+  -> MEMORY FIELD UPDATE
+  -> NEXT UNIVERSE STEP
+```
+
+The final multiverse equation is:
+
+```text
+dC/dt = Phi(interaction_field, memory_field, economic_constraints, cross_universe_coupling)
+```
+
+Its compact equations are product contracts, not scientific claims:
+
+```text
+dC/dt = f(pressure, memory, market, interaction_with_other_civilizations)
+phase_transition = entropy + tension - cohesion > threshold
+collapse_risk = entropy*0.3 + leverage*0.3 + fragility*0.4
+interaction(A,B) = A.energy - B.energy + A.aggression - B.cohesion
+memory = compress(events); patterns = extract(memory); strategy = update(patterns)
+Meta-Civilization = system of civilizations moving through phase space
+dC/dt = Phi(external_field, interaction(C_i,C_j), memory_field, economic_constraints)
+phenotype = f(genome, environment); stress_high => mutate(risk_gene)
+```
 
 ## Current Known Status
 
@@ -151,26 +352,33 @@ At the time of this snapshot:
 - Credit and survival ledgers exist.
 - God ledger has per-seat event records.
 - Match scores are partially backfilled into `/api/matches`.
-- The main unresolved seat-quality risk is Grok, which can be slow or incomplete.
-- The behavior pattern compression layer is not complete yet. That is the next architecture step.
+- Behavior memory, pattern graph, evolution trace, replay, and production audit artifacts exist.
+- `/api/behavior/audit/:runId` exposes the behavior-loop production verdict without local file paths.
+- The run-15 production audit checks behavior loop, prompt memory control, pattern participation, pattern-removal sensitivity, deterministic replay, causal trace completeness, credit/loan binding, and UI contract.
+- The audit kernel is split into focused modules under `ops/pool/audit/`, so decision tracing, pattern influence, replay validation, and causality graph generation can be tested independently.
+- The main residual evidence gap is provider self-report: some model receipts still do not explicitly include `memory_used`, so the audit can prove system-level injection/replay but future bridge runs should continue requiring explicit receipt fields.
+- The frontend is now served from root `index.html`, but it is still a large static single-file SPA. The next frontend architecture step is module extraction, not another parallel repair folder.
+- Behavior compiler, replay, pattern graph, and civilization projections have product artifacts. The remaining product-quality gap is longitudinal causal compression: proving over multiple future rounds that compressed memory changes model decisions, not merely that memory was injected.
+- Local proxy or DNS instability can still make local `curl` checks flaky. Use `ops/fixes/proxy_diagnostic_and_fix.sh diagnose` to separate local network failures from Vercel deployment failures.
 
 ## Next Architecture Step
 
-The next real product step is not more UI. It is a behavior-memory compiler:
+The next real product step is not more UI. It is strengthening provider-side self-report, longitudinal causal compression, and proof that memory changes future decisions:
 
 ```text
-seat_journals + settlements
-  -> behavior compiler
-  -> compiled behavior patterns
-  -> reusable lessons
-  -> next prompt context injection
+prompt memory injection
+  -> explicit model memory_used receipt
+  -> decision delta trace
+  -> settlement / credit effect
+  -> next-round strategy change proof
 ```
 
 Planned modules:
 
 ```text
-ops/pool/behavior_compiler.py
-data/pool/behavior_memory/compiled/<seat>.json
+strict receipt gate for memory_used
+cross-run behavior influence report
+provider-specific bridge repair for slow/incomplete seats
 data/pool/behavior_patterns/patterns.json
 data/pool/behavior_chronicle/runs/<run>.md
 ```

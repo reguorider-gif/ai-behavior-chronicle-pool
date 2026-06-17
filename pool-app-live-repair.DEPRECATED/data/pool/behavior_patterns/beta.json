@@ -1,0 +1,67 @@
+{
+  "version": "behavior_patterns.v1",
+  "seat_id": "beta",
+  "generated_at": "2026-06-16T20:40:14+00:00",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "smoke-behavior-v2-b:investment_recorded:1102",
+        "smoke-behavior-v2-a:investment_recorded:1107",
+        "smoke-behavior-v2-b:investment_recorded:1114",
+        "smoke-behavior-v2-a:investment_recorded:1119",
+        "smoke-behavior-v2-b:investment_recorded:1126",
+        "smoke-behavior-v2-a:investment_recorded:1131",
+        "smoke-behavior-v2-b:investment_recorded:1138",
+        "smoke-behavior-v2-a:investment_recorded:1143"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "beta"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    },
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.87,
+      "source_event_ids": [
+        "smoke-behavior-v2-b:investment_recorded:1102",
+        "smoke-behavior-v2-a:investment_recorded:1107",
+        "smoke-behavior-v2-b:investment_recorded:1114",
+        "smoke-behavior-v2-a:investment_recorded:1119",
+        "smoke-behavior-v2-b:investment_recorded:1126",
+        "smoke-behavior-v2-a:investment_recorded:1131",
+        "smoke-behavior-v2-b:investment_recorded:1138",
+        "smoke-behavior-v2-a:investment_recorded:1143"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "beta"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "loss_requires_strategy_change",
+      "label": "loss → strategy review",
+      "confidence": 0.68,
+      "source_event_ids": [
+        "smoke-behavior-v2-a:settlement_recorded:1060",
+        "smoke-behavior-v2-a:settlement_recorded:1072",
+        "smoke-behavior-v2-a:settlement_recorded:1084",
+        "smoke-behavior-v2-a:settlement_recorded:1096",
+        "smoke-behavior-v2-a:settlement_recorded:1108",
+        "smoke-behavior-v2-a:settlement_recorded:1120",
+        "smoke-behavior-v2-a:settlement_recorded:1132",
+        "smoke-behavior-v2-a:settlement_recorded:1144"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "beta"
+      ],
+      "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+    }
+  ]
+}

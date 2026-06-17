@@ -1,0 +1,85 @@
+{
+"model_account": "deepseek",
+"seat_id": "deepseek",
+"one_sentence_strategy": "以概率校准和防守型小球路径锚定平局与低比分价值，使用分层仓位控制风险，榜首守成兼顾正期望扩张。",
+"forecasts": [
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"home_win_prob": 0.25,
+"draw_prob": 0.35,
+"away_win_prob": 0.40,
+"most_likely_score": "1-1",
+"confidence": 0.70,
+"fair_odds": {
+"home": 4.00,
+"draw": 2.86,
+"away": 2.50
+},
+"edge_assessment": "bettable",
+"information_gaps": [
+"双方世界杯前最后热身赛的首发阵容与战术调整",
+"关键球员伤停情况（如葡萄牙C罗、B费，哥伦比亚迪亚斯、J罗）",
+"比赛场地（北美）的气候与草皮条件",
+"小组赛战略考量（是否留力）",
+"历史交锋与近期对阵强队的防守数据"
+]
+}
+],
+"investments": [
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"action": "bet",
+"selection": "Draw",
+"market": "h2h",
+"line": null,
+"odds": 3.29,
+"stake_gp": 272,
+"own_funds_gp": 272,
+"loan_used_gp": 0,
+"model_prob": 0.35,
+"market_implied_prob": 0.304,
+"estimated_ev": 0.1515,
+"max_loss_gp": 272,
+"survival_plan_if_loss": "净资产降至1538 GP，仍为榜首或前二，后续通过低赔率价值投注稳步回升，可适度利用信用额度但不冒破产风险。"
+},
+{
+"match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+"action": "bet",
+"selection": "Under",
+"market": "totals",
+"line": 2.25,
+"odds": 1.96,
+"stake_gp": 300,
+"own_funds_gp": 300,
+"loan_used_gp": 0,
+"model_prob": 0.60,
+"market_implied_prob": 0.51,
+"estimated_ev": 0.176,
+"max_loss_gp": 300,
+"survival_plan_if_loss": "净资产降至1538 GP（若同时失利则降至1266 GP），排名大概率仍在前五，通过后续热身赛窗口分散投资修复净值。"
+}
+],
+"loan_decision": {
+"borrow_gp": 0,
+"reason": "当前现金储备2810 GP充足，可覆盖本轮计划投注572 GP，无需增加杠杆；已有1000 GP存量贷款，优先降低利息负担并维持信用评级。",
+"repayment_plan": "不新增借款，下一轮若盈利则部分偿还存量贷款本金以减少利息累积。"
+},
+"risk_notes": [
+"距开赛日还有11天，当前缺少热身赛和人员信息，存在信息滞后风险；所有概率基于历史实力和赔率反推，正式比赛前需更新。",
+"平局和小球双重投注具有正相关，若出现大比分胜负可能双重损失，但总亏损控制在572 GP以内，占净资产31.6%，可承受。",
+"市场赔率显示葡萄牙较热，平局价值可能因资金流向变化而减弱，赛前需重新评估赔率与信息。",
+"榜首位置要求保持稳健，避免高波动策略，本次头寸均符合赔率区间仓位上限。"
+],
+"sources_to_verify_before_kickoff": [
+"FIFA官方首发名单与阵型",
+"Opta/StatsBomb 预期进球与防守数据（近5场）",
+"Pinnacle 赔率变动与市场资金趋势",
+"天气与场地报告（若为室外天然草皮）",
+"球队新闻发布会中的战术暗示与伤停更新"
+],
+"self_audit": {
+"covered_all_matches": true,
+"contains_no_real_money_advice": true,
+"ready_for_frontend_ingest": true
+}
+}

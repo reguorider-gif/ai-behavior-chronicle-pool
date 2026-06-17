@@ -1,0 +1,20 @@
+{
+  "version": "pipeline_results_from_explicit_scores.v1",
+  "source_policy": "explicit_result_file_plus_matches_api_score_registry",
+  "matches": [
+    {
+      "match_id": "M2",
+      "home_team": "Germany",
+      "away_team": "Curacao",
+      "score": "7-1",
+      "home_score": 7,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": null,
+      "source": "matches_api_score_registry",
+      "score_registry_applied": true
+    }
+  ]
+}

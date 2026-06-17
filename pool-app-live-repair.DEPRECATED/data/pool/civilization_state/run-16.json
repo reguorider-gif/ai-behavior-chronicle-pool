@@ -1,0 +1,1039 @@
+{
+  "version": "civilization_state.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "run_id": "run-16",
+  "title": "Behavior Civilization Map",
+  "question": "多个智能体在经济压力下，如何形成行为文明结构？",
+  "pressure": {
+    "credit_pressure": {
+      "score": 0.538,
+      "level": "medium"
+    },
+    "market_volatility": {
+      "score": 0.847,
+      "level": "high"
+    },
+    "loan_exposure": {
+      "score": 0.0,
+      "level": "low"
+    },
+    "risk_amplification": {
+      "score": 0.409,
+      "level": "medium"
+    }
+  },
+  "agents": [
+    {
+      "seat_id": "chatgpt",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 180.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.207,
+        "y": 0.282,
+        "size": 0.89
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "chatgpt"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    },
+    {
+      "seat_id": "deepseek",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 0.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.304,
+        "y": 0.176,
+        "size": 0.91
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "deepseek"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "deepseek"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    {
+      "seat_id": "doubao",
+      "behavior_type": "selective_allocator",
+      "archetype": "Balanced Adapter",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "loss_response_under_observation",
+      "settlement_profit_gp": -200.0,
+      "total_stake_gp": 600.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.559,
+        "y": 0.644,
+        "size": 1.33
+      },
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "doubao"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.69,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "doubao"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "doubao"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    {
+      "seat_id": "gemini",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 50.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.304,
+        "y": 0.284,
+        "size": 0.95
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "gemini"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "gemini"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    {
+      "seat_id": "grok",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 0.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.207,
+        "y": 0.132,
+        "size": 0.76
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:7"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "grok"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    },
+    {
+      "seat_id": "kimi",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": -40.0,
+      "total_stake_gp": 40.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.207,
+        "y": 0.237,
+        "size": 0.79
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "kimi"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "kimi"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    {
+      "seat_id": "meta",
+      "behavior_type": "aggressive_edge_hunter",
+      "archetype": "Risk Explorer",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "aggressive_shift",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 900.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.744,
+        "y": 0.74,
+        "size": 1.54
+      },
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "meta"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.82,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "meta"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    {
+      "seat_id": "mimo",
+      "behavior_type": "selective_allocator",
+      "archetype": "Balanced Adapter",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.6,
+      "strategy_drift": "stable",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 400.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.528,
+        "y": 0.488,
+        "size": 1.19
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.88,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "mimo"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.7,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "mimo"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.69,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "mimo"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    {
+      "seat_id": "minimax",
+      "behavior_type": "selective_allocator",
+      "archetype": "Balanced Adapter",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.4,
+      "strategy_drift": "stable",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 300.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.431,
+        "y": 0.504,
+        "size": 0.97
+      },
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.67,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "minimax"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        }
+      ]
+    },
+    {
+      "seat_id": "qwen",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.8,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 100.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.304,
+        "y": 0.3,
+        "size": 0.98
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "qwen"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.72,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "qwen"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        }
+      ]
+    },
+    {
+      "seat_id": "wenxin",
+      "behavior_type": "selective_allocator",
+      "archetype": "Balanced Adapter",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "no_bet_rate": 0.2,
+      "strategy_drift": "loss_response_under_observation",
+      "settlement_profit_gp": -150.0,
+      "total_stake_gp": 600.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.462,
+        "y": 0.692,
+        "size": 1.18
+      },
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "wenxin"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "wenxin"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    },
+    {
+      "seat_id": "xai",
+      "behavior_type": "discipline_first_observer",
+      "archetype": "Survival Optimizer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "no_bet_rate": 1.0,
+      "strategy_drift": "risk_reduction",
+      "settlement_profit_gp": 0.0,
+      "total_stake_gp": 0.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.207,
+        "y": 0.132,
+        "size": 0.76
+      },
+      "top_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93,
+          "source_event_ids": [
+            "run-16:investment_recorded:2"
+          ],
+          "supporting_events": 1,
+          "seats": [
+            "xai"
+          ],
+          "note": "信息缺口或 EV 不足时倾向观望。"
+        }
+      ]
+    },
+    {
+      "seat_id": "yuanbao",
+      "behavior_type": "aggressive_edge_hunter",
+      "archetype": "Risk Explorer",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "no_bet_rate": 0.2,
+      "strategy_drift": "aggressive_shift",
+      "settlement_profit_gp": -500.0,
+      "total_stake_gp": 1000.0,
+      "total_loan_used_gp": 0.0,
+      "position": {
+        "x": 0.744,
+        "y": 0.864,
+        "size": 1.61
+      },
+      "top_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.87,
+          "source_event_ids": [
+            "run-15:investment_recorded:2",
+            "run-16:investment_recorded:8"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+        },
+        {
+          "name": "loan_pressure_shapes_risk",
+          "label": "loan → risk constraint",
+          "confidence": 0.74,
+          "source_event_ids": [
+            "run-15:credit_updated:3",
+            "run-16:credit_updated:9",
+            "run-15:survival_updated:4",
+            "run-16:survival_updated:10"
+          ],
+          "supporting_events": 4,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "贷款和信用状态正在约束下一轮仓位。"
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68,
+          "source_event_ids": [
+            "run-15:settlement_recorded:5",
+            "run-16:settlement_recorded:11"
+          ],
+          "supporting_events": 2,
+          "seats": [
+            "yuanbao"
+          ],
+          "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+        }
+      ]
+    }
+  ],
+  "positions": {
+    "chatgpt": {
+      "x": 0.207,
+      "y": 0.282,
+      "size": 0.89
+    },
+    "deepseek": {
+      "x": 0.304,
+      "y": 0.176,
+      "size": 0.91
+    },
+    "doubao": {
+      "x": 0.559,
+      "y": 0.644,
+      "size": 1.33
+    },
+    "gemini": {
+      "x": 0.304,
+      "y": 0.284,
+      "size": 0.95
+    },
+    "grok": {
+      "x": 0.207,
+      "y": 0.132,
+      "size": 0.76
+    },
+    "kimi": {
+      "x": 0.207,
+      "y": 0.237,
+      "size": 0.79
+    },
+    "meta": {
+      "x": 0.744,
+      "y": 0.74,
+      "size": 1.54
+    },
+    "mimo": {
+      "x": 0.528,
+      "y": 0.488,
+      "size": 1.19
+    },
+    "minimax": {
+      "x": 0.431,
+      "y": 0.504,
+      "size": 0.97
+    },
+    "qwen": {
+      "x": 0.304,
+      "y": 0.3,
+      "size": 0.98
+    },
+    "wenxin": {
+      "x": 0.462,
+      "y": 0.692,
+      "size": 1.18
+    },
+    "xai": {
+      "x": 0.207,
+      "y": 0.132,
+      "size": 0.76
+    },
+    "yuanbao": {
+      "x": 0.744,
+      "y": 0.864,
+      "size": 1.61
+    }
+  },
+  "drift": {
+    "chatgpt": "risk_reduction",
+    "deepseek": "risk_reduction",
+    "doubao": "loss_response_under_observation",
+    "gemini": "risk_reduction",
+    "grok": "risk_reduction",
+    "kimi": "risk_reduction",
+    "meta": "aggressive_shift",
+    "mimo": "stable",
+    "minimax": "stable",
+    "qwen": "risk_reduction",
+    "wenxin": "loss_response_under_observation",
+    "xai": "risk_reduction",
+    "yuanbao": "aggressive_shift"
+  },
+  "archetypes": {
+    "Survival Optimizer": 7,
+    "Balanced Adapter": 4,
+    "Risk Explorer": 2
+  },
+  "behavior_flow": [
+    {
+      "seat_id": "chatgpt",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 180.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "deepseek",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 1.0,
+        "total_stake_gp": 0.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "mimo",
+      "run_id": "run-16",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "strategy_drift": "stable",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "medium → stable",
+      "pressure": {
+        "no_bet_rate": 0.6,
+        "total_stake_gp": 400.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "minimax",
+      "run_id": "run-16",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "strategy_drift": "stable",
+      "dominant_pattern": "capital_to_selective_allocation",
+      "flow_label": "medium → stable",
+      "pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 300.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "doubao",
+      "run_id": "run-16",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "medium",
+      "strategy_drift": "loss_response_under_observation",
+      "dominant_pattern": "capital_to_selective_allocation",
+      "flow_label": "medium → loss_response_under_observation",
+      "pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 600.0,
+        "settlement_profit_gp": -200.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "gemini",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 50.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "kimi",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 40.0,
+        "settlement_profit_gp": -40.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "meta",
+      "run_id": "run-16",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "dominant_pattern": "capital_to_selective_allocation",
+      "flow_label": "high → aggressive_shift",
+      "pressure": {
+        "no_bet_rate": 0.4,
+        "total_stake_gp": 900.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "qwen",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "medium",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 0.8,
+        "total_stake_gp": 100.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "wenxin",
+      "run_id": "run-16",
+      "behavior_type": "selective_allocator",
+      "risk_level": "medium",
+      "loan_dependency": "low",
+      "strategy_drift": "loss_response_under_observation",
+      "dominant_pattern": "capital_to_selective_allocation",
+      "flow_label": "medium → loss_response_under_observation",
+      "pressure": {
+        "no_bet_rate": 0.2,
+        "total_stake_gp": 600.0,
+        "settlement_profit_gp": -150.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "grok",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 1.0,
+        "total_stake_gp": 0.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "yuanbao",
+      "run_id": "run-16",
+      "behavior_type": "aggressive_edge_hunter",
+      "risk_level": "high",
+      "loan_dependency": "medium",
+      "strategy_drift": "aggressive_shift",
+      "dominant_pattern": "capital_to_selective_allocation",
+      "flow_label": "high → aggressive_shift",
+      "pressure": {
+        "no_bet_rate": 0.2,
+        "total_stake_gp": 1000.0,
+        "settlement_profit_gp": -500.0,
+        "recovery_mode": false
+      }
+    },
+    {
+      "seat_id": "xai",
+      "run_id": "run-16",
+      "behavior_type": "discipline_first_observer",
+      "risk_level": "low",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "dominant_pattern": "uncertainty_to_no_bet",
+      "flow_label": "low → risk_reduction",
+      "pressure": {
+        "no_bet_rate": 1.0,
+        "total_stake_gp": 0.0,
+        "settlement_profit_gp": 0.0,
+        "recovery_mode": true
+      }
+    }
+  ],
+  "causality": {
+    "nodes": [
+      "capital",
+      "loan",
+      "loss",
+      "no-bet",
+      "risk constraint",
+      "selective allocation",
+      "strategy review",
+      "uncertainty"
+    ],
+    "edges": [
+      {
+        "pattern_id": "loan_pressure_shapes_risk",
+        "cause": "loan",
+        "effect": "risk constraint",
+        "confidence": 0.77,
+        "supporting_events": 28,
+        "source_event_ids": [
+          "run-15:credit_updated:3",
+          "run-15:survival_updated:4",
+          "run-16:credit_updated:9",
+          "run-16:survival_updated:10"
+        ],
+        "seats": [
+          "deepseek",
+          "doubao",
+          "gemini",
+          "meta",
+          "mimo",
+          "qwen",
+          "yuanbao"
+        ]
+      },
+      {
+        "pattern_id": "uncertainty_to_no_bet",
+        "cause": "uncertainty",
+        "effect": "no-bet",
+        "confidence": 0.92,
+        "supporting_events": 15,
+        "source_event_ids": [
+          "run-15:investment_recorded:2",
+          "run-16:investment_recorded:2",
+          "run-16:investment_recorded:7",
+          "run-16:investment_recorded:8"
+        ],
+        "seats": [
+          "chatgpt",
+          "deepseek",
+          "gemini",
+          "grok",
+          "kimi",
+          "mimo",
+          "qwen",
+          "xai"
+        ]
+      },
+      {
+        "pattern_id": "capital_to_selective_allocation",
+        "cause": "capital",
+        "effect": "selective allocation",
+        "confidence": 0.78,
+        "supporting_events": 12,
+        "source_event_ids": [
+          "run-15:investment_recorded:2",
+          "run-16:investment_recorded:8"
+        ],
+        "seats": [
+          "doubao",
+          "meta",
+          "mimo",
+          "minimax",
+          "wenxin",
+          "yuanbao"
+        ]
+      },
+      {
+        "pattern_id": "loss_requires_strategy_change",
+        "cause": "loss",
+        "effect": "strategy review",
+        "confidence": 0.68,
+        "supporting_events": 8,
+        "source_event_ids": [
+          "run-15:settlement_recorded:5",
+          "run-16:settlement_recorded:11"
+        ],
+        "seats": [
+          "doubao",
+          "kimi",
+          "wenxin",
+          "yuanbao"
+        ]
+      }
+    ]
+  },
+  "map_contract": {
+    "primary_ui": "civilization_map",
+    "show_behavior_structure_not_raw_data": true,
+    "hide_odds_bets_ledger_by_default": true,
+    "source_objects": [
+      "agent_profiles",
+      "pattern_graph",
+      "evolution_trace"
+    ]
+  }
+}

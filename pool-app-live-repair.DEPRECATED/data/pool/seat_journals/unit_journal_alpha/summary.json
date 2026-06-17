@@ -1,0 +1,47 @@
+{
+  "seat_id": "unit_journal_alpha",
+  "updated_at": "2026-06-15T21:03:13+00:00",
+  "last_run_id": "unit-run",
+  "runs_seen": [
+    "unit-run"
+  ],
+  "event_counts": {
+    "self_review_recorded": 1,
+    "account_snapshot": 1
+  },
+  "recent_events": [
+    {
+      "event_type": "self_review_recorded",
+      "run_id": "unit-run",
+      "seat_id": "unit_journal_alpha",
+      "self_review": {
+        "what_i_learned": "keep memory"
+      },
+      "ts": "2026-06-15T21:03:13+00:00"
+    },
+    {
+      "balance_gp": 1100,
+      "event_type": "account_snapshot",
+      "net_worth_gp": 1050,
+      "outstanding_loan_gp": 50,
+      "run_id": "unit-run",
+      "seat_id": "unit_journal_alpha",
+      "ts": "2026-06-15T21:03:13+00:00"
+    }
+  ],
+  "last_self_review": {
+    "what_i_learned": "keep memory"
+  },
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {},
+  "credit_score": 600,
+  "credit_grade": "B",
+  "credit_delta": 0,
+  "balance_gp": 1100,
+  "outstanding_loan_gp": 50,
+  "accrued_interest_gp": 0,
+  "net_worth_gp": 1050,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

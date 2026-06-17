@@ -1,0 +1,61 @@
+{
+  "date": "2026-06-15",
+  "run_id": "smoke-behavior-v2-b",
+  "privacy": "anonymous_market_only_no_seat_choices",
+  "matches": [
+    {
+      "match_id": "SMOKE-M1",
+      "date": "2026-06-15",
+      "home_team": "Alpha FC",
+      "away_team": "Beta FC",
+      "kickoff_at": "2026-06-15T12:00:00Z",
+      "markets": [
+        {
+          "market": "h2h",
+          "selection": "home",
+          "odds": 1.8,
+          "source": "fixture"
+        },
+        {
+          "market": "h2h",
+          "selection": "draw",
+          "odds": 3.4,
+          "source": "fixture"
+        },
+        {
+          "market": "h2h",
+          "selection": "away",
+          "odds": 4.2,
+          "source": "fixture"
+        }
+      ]
+    },
+    {
+      "match_id": "SMOKE-M2",
+      "date": "2026-06-15",
+      "home_team": "Gamma FC",
+      "away_team": "Delta FC",
+      "kickoff_at": "2026-06-15T15:00:00Z",
+      "markets": [
+        {
+          "market": "h2h",
+          "selection": "home",
+          "odds": 2.2,
+          "source": "fixture"
+        },
+        {
+          "market": "h2h",
+          "selection": "draw",
+          "odds": 3.1,
+          "source": "fixture"
+        },
+        {
+          "market": "h2h",
+          "selection": "away",
+          "odds": 3.0,
+          "source": "fixture"
+        }
+      ]
+    }
+  ]
+}

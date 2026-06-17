@@ -1,0 +1,1151 @@
+{
+  "version": "production_investment_receipts.v1",
+  "run_id": "run-16",
+  "date": "2026-06-16",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "chatgpt": {
+      "seat_id": "chatgpt",
+      "display_name": "chatgpt",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无投注风险控制稳",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无投注风险控制稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无投注风险控制稳",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无投注风险控制稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无投注风险控制稳",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无投注风险控制稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无投注风险控制稳",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无投注风险控制稳"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无投注风险控制稳",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无投注风险控制稳"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "策略安全控风险期",
+        "repayment_plan": "按时全额结清款项"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "稳健无盘口"
+      }
+    },
+    "deepseek": {
+      "seat_id": "deepseek",
+      "display_name": "deepseek",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "硬门禁无盘口",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "硬门禁无盘口"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "硬门禁无盘口",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "硬门禁无盘口"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "硬门禁无盘口",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "硬门禁无盘口"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "硬门禁无盘口",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "硬门禁无盘口"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "硬门禁无盘口",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "硬门禁无盘口"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需借款",
+        "repayment_plan": "无需还款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘口保守观望"
+      }
+    },
+    "mimo": {
+      "seat_id": "mimo",
+      "display_name": "mimo",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投。"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无投注不借款",
+        "repayment_plan": "当期零债务"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘口全弃保守仓"
+      }
+    },
+    "minimax": {
+      "seat_id": "minimax",
+      "display_name": "minimax",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "本轮无杠杆",
+        "repayment_plan": "无贷无需还"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘全禁，稳守不投"
+      }
+    },
+    "doubao": {
+      "seat_id": "doubao",
+      "display_name": "doubao",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不参与投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不参与投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘禁止投入筹码",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘禁止投入筹码"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘无盈利测算",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘无盈利测算"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "规则限制不押注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "规则限制不押注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口全部观望",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口全部观望"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无下注无需借贷",
+        "repayment_plan": "结余充足无需还款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "观望控仓规避无盘赛事"
+      }
+    },
+    "gemini": {
+      "seat_id": "gemini",
+      "display_name": "gemini",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无盘口不借",
+        "repayment_plan": "无新借款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘口全不投"
+      }
+    },
+    "kimi": {
+      "seat_id": "kimi",
+      "display_name": "kimi",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需借贷",
+        "repayment_plan": "无还款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "稳健观察，小额试探"
+      }
+    },
+    "meta": {
+      "seat_id": "meta",
+      "display_name": "meta",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无借贷需求",
+        "repayment_plan": "本金充足"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "保本观望避险"
+      }
+    },
+    "qwen": {
+      "seat_id": "qwen",
+      "display_name": "qwen",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口禁止投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口禁止投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口禁止投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口禁止投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口禁止投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口禁止投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口禁止投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口禁止投注"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口禁止投注",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口禁止投注"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无需借款",
+        "repayment_plan": "无需还款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘口全部观望"
+      }
+    },
+    "wenxin": {
+      "seat_id": "wenxin",
+      "display_name": "wenxin",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投。"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘不投。"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "不借用贷款",
+        "repayment_plan": "无贷无需还款"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "无盘全部不投注"
+      }
+    },
+    "grok": {
+      "seat_id": "grok",
+      "display_name": "grok",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "暂不借款",
+        "repayment_plan": "0"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "强队胜+数据"
+      }
+    },
+    "yuanbao": {
+      "seat_id": "yuanbao",
+      "display_name": "yuanbao",
+      "status": "collected",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无盘口不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无盘口不投"
+        }
+      ],
+      "loan_decision": {
+        "borrow_gp": 0,
+        "reason": "无",
+        "repayment_plan": "无"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "保守观赛无盘口"
+      }
+    },
+    "xai": {
+      "seat_id": "xai",
+      "display_name": "xai",
+      "status": "missing_provider_blocked",
+      "investments": [
+        {
+          "match_id": "WC-I1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-SEED-20260617-ENGLAND-CROATIA",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-SEED-20260617-GHANA-PANAMA",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-SEED-20260617-UZBEKISTAN-COLOMBIA",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "未声明新增贷款。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "cb95b584a8c1",
+  "round_id": "run-14",
+  "attempt_no": 3,
+  "date": "2026-06-14",
+  "seat": "chatgpt",
+  "model_account": "chatgpt",
+  "ok": true,
+  "raw_output_path": "data/pool/model_outputs/raw_rerun/run-14/attempt-3/chatgpt.txt",
+  "base_raw_output_path": "data/pool/model_outputs/raw/run-14/chatgpt.txt",
+  "parsed": {
+    "model_account": "chatgpt",
+    "seat_id": "chatgpt",
+    "one_sentence_strategy": "榜首资金1530GP且无贷款，采取低杠杆保排名策略：只押盘口保护较强或赔率明显偏高项，其余低信息场次保守弃权。",
+    "forecasts": [
+      {
+        "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+        "home_win_prob": 0.78,
+        "draw_prob": 0.15,
+        "away_win_prob": 0.07,
+        "most_likely_score": "Germany 3-0 Curaçao",
+        "confidence": "low",
+        "fair_odds": {
+          "home": 1.28,
+          "draw": 6.67,
+          "away": 14.29
+        },
+        "edge_assessment": "德国胜面大但让3.5容错低；Curaçao +3.5 需要德国最多赢3球，模型约0.63，高于1.80隐含0.556，微正edge。",
+        "information_gaps": [
+          "未核验首发",
+          "未核验伤停",
+          "未核验真实赛程与中立场地"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "home_win_prob": 0.47,
+        "draw_prob": 0.27,
+        "away_win_prob": 0.26,
+        "most_likely_score": "Netherlands 1-1 Japan",
+        "confidence": "low",
+        "fair_odds": {
+          "home": 2.13,
+          "draw": 3.7,
+          "away": 3.85
+        },
+        "edge_assessment": "Japan +0.5 模型不败率0.53，低于1.82-1.85隐含约0.54；Japan 0.0 胜率不足，no edge。",
+        "information_gaps": [
+          "未核验阵容",
+          "未核验盘口来源",
+          "未核验临场水位"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "home_win_prob": 0.31,
+        "draw_prob": 0.3,
+        "away_win_prob": 0.39,
+        "most_likely_score": "Ivory Coast 1-1 Ecuador",
+        "confidence": "low",
+        "fair_odds": {
+          "home": 3.23,
+          "draw": 3.33,
+          "away": 2.56
+        },
+        "edge_assessment": "Ecuador 0.0 模型胜率0.39，走水概率0.30，1.59赔率偏低；Ecuador -0.5 需客胜，2.45隐含0.408，模型不足。",
+        "information_gaps": [
+          "未核验比赛地",
+          "未核验近期状态",
+          "未核验阵容"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+        "home_win_prob": 0.49,
+        "draw_prob": 0.29,
+        "away_win_prob": 0.22,
+        "most_likely_score": "Sweden 1-0 Tunisia",
+        "confidence": "low",
+        "fair_odds": {
+          "home": 2.04,
+          "draw": 3.45,
+          "away": 4.55
+        },
+        "edge_assessment": "Sweden -0.5 赔率1.87-1.88隐含约0.532，模型胜率0.49不足；Sweden 0.0 1.37回报过低。",
+        "information_gaps": [
+          "未核验日期id与date不一致",
+          "未核验伤停",
+          "未核验首发"
+        ]
+      },
+      {
+        "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+        "home_win_prob": 0.27,
+        "draw_prob": 0.28,
+        "away_win_prob": 0.45,
+        "most_likely_score": "Colombia 1-2 Portugal",
+        "confidence": "low",
+        "fair_odds": {
+          "home": 3.7,
+          "draw": 3.57,
+          "away": 2.22
+        },
+        "edge_assessment": "Portugal 2.10隐含0.476，模型0.45略不足；Colombia与Draw均未达正期望。",
+        "information_gaps": [
+          "赛期较远",
+          "需临场确认阵容和晋级形势",
+          "未核验场地与赔率更新"
+        ]
+      }
+    ],
+    "investments": [
+      {
+        "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+        "action": "bet",
+        "market": "handicap",
+        "selection": "Curaçao",
+        "line": 3.5,
+        "odds": 1.83,
+        "stake_gp": 80,
+        "own_funds_gp": 80,
+        "loan_used_gp": 0,
+        "model_prob": 0.63,
+        "market_implied_prob": 0.546,
+        "estimated_ev": 0.153,
+        "max_loss_gp": 80,
+        "survival_plan_if_loss": "亏损后余额约1450GP，仍保留榜首防守空间，后续只押强edge。"
+      },
+      {
+        "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": "Japan",
+        "line": 0.5,
+        "odds": 1.85,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.53,
+        "market_implied_prob": 0.541,
+        "estimated_ev": -0.02,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "无仓位，不影响本金；等待临场确认。"
+      },
+      {
+        "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": "Ecuador",
+        "line": 0,
+        "odds": 1.59,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.39,
+        "market_implied_prob": 0.629,
+        "estimated_ev": -0.03,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "无仓位，避免低赔率占用风险预算。"
+      },
+      {
+        "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+        "action": "no_bet",
+        "market": "handicap",
+        "selection": "Sweden",
+        "line": -0.5,
+        "odds": 1.88,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.49,
+        "market_implied_prob": 0.532,
+        "estimated_ev": -0.079,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "无仓位；日期字段矛盾，赛前复核后再考虑。"
+      },
+      {
+        "match_id": "WCAPI-20260627-COLOMBIA-PORTUGAL",
+        "action": "no_bet",
+        "market": "h2h",
+        "selection": "Portugal",
+        "line": null,
+        "odds": 2.1,
+        "stake_gp": 0,
+        "own_funds_gp": 0,
+        "loan_used_gp": 0,
+        "model_prob": 0.45,
+        "market_implied_prob": 0.476,
+        "estimated_ev": -0.055,
+        "max_loss_gp": 0,
+        "survival_plan_if_loss": "远期盘口不抢跑，保留资金等待更确信信号。"
+      }
+    ],
+    "loan_decision": {
+      "borrow_gp": 0,
+      "reason": "当前rank=1、balance=1530、loan=0；贷款会先计息先偿还，风险收益不匹配。",
+      "repayment_plan": "不借款，无偿还压力；若未来落出前五才考虑小额短贷。"
+    },
+    "risk_notes": [
+      "仅研究游戏，不构成真实投注建议。",
+      "全部预测基于庄家给定盘口与一般强弱假设，未使用伪造信源。",
+      "主风险是赛程真实性、首发、伤停、临场赔率与盘口方向变化。",
+      "单场最大亏损80GP，占本金约5.2%，符合榜首防守。"
+    ],
+    "sources_to_verify_before_kickoff": [
+      "FIFA/赛事官方赛程",
+      "双方官方首发与伤停名单",
+      "盘口提供方临场赔率",
+      "比赛场地与天气",
+      "是否存在轮换或提前晋级动机"
+    ],
+    "self_audit": {
+      "covered_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260615-SWEDEN-TUNISIA",
+        "WCAPI-20260627-COLOMBIA-PORTUGAL"
+      ],
+      "missing_match_ids": [],
+      "ready_for_frontend_ingest": true
+    }
+  },
+  "response_chars": 4109,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 4109,
+    "min_response_chars": 1,
+    "response_hash": "ea699e669219f692b66ee1fd0a3bf0c7864ed868433fbbf8e9edc11400edba03",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

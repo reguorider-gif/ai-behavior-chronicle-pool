@@ -1,0 +1,24 @@
+# Behavior Summary - 2026-06-16 run-16
+
+- 规则版本：PRED_INVEST_CREDIT_SURVIVE_V2
+- 行为日志：可查看
+- 信用账本：可查看
+- 预测/投资分账：可查看
+- no-bet：合法动作
+- Recovery Mode：已接入
+- seat_journals：13
+- prompt_contexts：13
+- behavior_memory：13
+- agent_profiles：13
+- pattern_graph：4
+- evolution_trace：13
+- civilization_state：13 agents
+- civilization_battle：3 civilizations / 3 interactions
+- behavior_replay：77 events / 13 seats
+- production kernel：155 events / ready=False
+- civilization freeze：NOT_READY_BEHAVIOR_CIVILIZATION_ENGINE
+- forecast_receipts：13
+- investment_receipts：13
+- valid seats：12/12
+- blocked seats：none
+- god_report_v2：generated

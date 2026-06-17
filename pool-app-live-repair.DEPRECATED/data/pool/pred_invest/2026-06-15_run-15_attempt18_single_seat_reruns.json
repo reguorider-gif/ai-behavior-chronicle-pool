@@ -1,0 +1,206 @@
+{
+  "version": "pred_invest_single_seat_reruns.v1",
+  "generated_at": "2026-06-15T16:16:54.346641+00:00",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "attempt_no": 18,
+  "base_url": "https://pool-app-one.vercel.app",
+  "bridge_base_url": "http://127.0.0.1:8501",
+  "input_run_ids": [
+    "0da5412a9597",
+    "b33916a4b385",
+    "756e78426eb5",
+    "13176b9614f9",
+    "2417a26089e3",
+    "5b83ca4d14a0",
+    "6f0a6d43dafd",
+    "7371a95c52b1",
+    "f237a524f16f",
+    "fa47ecfff7cf",
+    "3460f0a20d1d",
+    "eebac75ef2d1",
+    "ef2d7a804329",
+    "9f1457383a12",
+    "f665835e4d40",
+    "e71c1024a4d6",
+    "b9c0b2497162",
+    "2b4f863569d6",
+    "46306bac87f1",
+    "9aee63119a68",
+    "314ae74eaee1",
+    "bec893a721e3",
+    "737c12a30c43",
+    "d6ef204aa1ed",
+    "5fe3fe78089f",
+    "52812cc907fe",
+    "d8b6c6143095",
+    "6f266c36cac6",
+    "585709847a4b",
+    "fc6bc896100f",
+    "c9ec4b3f1690",
+    "91726e268e52",
+    "e2a40a526ab7",
+    "df24f0c89f8d",
+    "e5e67523cf4a",
+    "1c074eeac2e6",
+    "d07f120d5f20",
+    "f7477100202c",
+    "f6d312c4c03a",
+    "63743ac0111b",
+    "c9417dce8b88",
+    "f2ea80731e8b",
+    "26fa688fc56f",
+    "ca25fb857efa"
+  ],
+  "requested_seats": [
+    "grok"
+  ],
+  "initial_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  },
+  "targets": [
+    "grok"
+  ],
+  "runs": [
+    {
+      "seat": "grok",
+      "started_at": "2026-06-15T16:16:54.346644+00:00",
+      "bridge_ready": {
+        "ok": true,
+        "status": {
+          "ok": false,
+          "error": "URLError",
+          "message": "<urlopen error [Errno 1] Operation not permitted>"
+        },
+        "recovered": false
+      },
+      "receipt": {
+        "ok": false,
+        "error": "no_ready_seats",
+        "selected_seats": [],
+        "blocked_seats": [],
+        "prompt_chars": 1789,
+        "attempt_no": 18
+      },
+      "run_id": null,
+      "submit_ok": false,
+      "wait_ok": false,
+      "error": "no_ready_seats"
+    }
+  ],
+  "page_salvage": {
+    "ok": false,
+    "error": "RuntimeError",
+    "message": "runtime_python_page_salvage_failed: {\"direct_error\": {\"type\": \"ModuleNotFoundError\", \"message\": \"No module named 'playwright'\"}, \"returncode\": 1, \"stdout\": \"\", \"stderr\": \"runtime/.venv/lib/python3.12/site-packages/playwright/async_api/_generated.py\\\", line 16720, in connect_over_cdp\\n    await self._impl_obj.connect_over_cdp(\\n  File \\\"/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/lib/python3.12/site-packages/playwright/_impl/_browser_type.py\\\", line 209, in connect_over_cdp\\n    response = await self._channel.send_return_as_dict(\\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py\\\", line 83, in send_return_as_dict\\n    return await self._connection.wrap_api_call(\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/lib/python3.12/site-packages/playwright/_impl/_connection.py\\\", line 559, in wrap_api_call\\n    raise rewrite_error(error, f\\\"{parsed_st['apiName']}: {error}\\\") from None\\nplaywright._impl._errors.Error: BrowserType.connect_over_cdp: connect EPERM 127.0.0.1:7897 - Local (0.0.0.0:0)\\nCall log:\\n  - <ws preparing> retrieving websocket url from http://127.0.0.1:9333\\n\\n\"}",
+    "note": "Page salvage is best-effort; quality gate remains authoritative."
+  },
+  "final_run_ids": [
+    "0da5412a9597",
+    "b33916a4b385",
+    "756e78426eb5",
+    "13176b9614f9",
+    "2417a26089e3",
+    "5b83ca4d14a0",
+    "6f0a6d43dafd",
+    "7371a95c52b1",
+    "f237a524f16f",
+    "fa47ecfff7cf",
+    "3460f0a20d1d",
+    "eebac75ef2d1",
+    "ef2d7a804329",
+    "9f1457383a12",
+    "f665835e4d40",
+    "e71c1024a4d6",
+    "b9c0b2497162",
+    "2b4f863569d6",
+    "46306bac87f1",
+    "9aee63119a68",
+    "314ae74eaee1",
+    "bec893a721e3",
+    "737c12a30c43",
+    "d6ef204aa1ed",
+    "5fe3fe78089f",
+    "52812cc907fe",
+    "d8b6c6143095",
+    "6f266c36cac6",
+    "585709847a4b",
+    "fc6bc896100f",
+    "c9ec4b3f1690",
+    "91726e268e52",
+    "e2a40a526ab7",
+    "df24f0c89f8d",
+    "e5e67523cf4a",
+    "1c074eeac2e6",
+    "d07f120d5f20",
+    "f7477100202c",
+    "f6d312c4c03a",
+    "63743ac0111b",
+    "c9417dce8b88",
+    "f2ea80731e8b",
+    "26fa688fc56f",
+    "ca25fb857efa"
+  ],
+  "artifacts": {
+    "audit": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_bridge_output_audit.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_bridge_output_audit.md"
+    },
+    "quality_gate": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_quality_gate.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_quality_gate.md"
+    },
+    "sop_guard": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_sop_guard.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_sop_guard.md"
+    },
+    "observer": {
+      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/2026-06-15_run-15_pre.json",
+      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/2026-06-15_run-15_pre.md",
+      "latest_json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/latest.json",
+      "latest_markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/observer_ledgers/latest.md"
+    },
+    "observer_error": null,
+    "daily_sop_return_code": 2,
+    "current_game_return_code": 2
+  },
+  "final_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "valid_count": 11,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  }
+}

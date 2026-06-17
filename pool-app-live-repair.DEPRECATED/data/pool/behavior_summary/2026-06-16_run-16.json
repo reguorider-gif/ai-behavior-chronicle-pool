@@ -1,0 +1,136 @@
+{
+  "ok": false,
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "date": "2026-06-16",
+  "run_id": "run-16",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "operational_mode": "production_pred_invest_sop",
+  "public_frontend_contract": {
+    "rule_version_label": "规则版本：PRED_INVEST_CREDIT_SURVIVE_V2",
+    "seat_journal_label": "行为日志：可查看",
+    "credit_ledger_label": "信用账本：可查看",
+    "forecast_investment_label": "预测/投资分账：可查看",
+    "no_bet_label": "no-bet：合法动作",
+    "recovery_label": "Recovery Mode：已接入"
+  },
+  "features": [
+    "Seat Journal",
+    "Credit",
+    "Loan Limit",
+    "Recovery Mode",
+    "forecast_receipts",
+    "investment_receipts",
+    "Behavior Memory",
+    "Pattern Graph",
+    "Evolution Trace",
+    "Behavior Replay",
+    "no-bet",
+    "god_report_v2"
+  ],
+  "counts": {
+    "seat_count": 13,
+    "valid_seat_count": 12,
+    "missing_seat_count": 1,
+    "required_match_count": 5,
+    "forecast_receipt_count": 13,
+    "investment_receipt_count": 13,
+    "prompt_context_count": 13,
+    "seat_journal_count": 13,
+    "behavior_memory_count": 13,
+    "agent_profile_count": 13,
+    "pattern_count": 4,
+    "evolution_trace_count": 13,
+    "civilization_agent_count": 13,
+    "civilization_count": 3,
+    "civilization_interaction_count": 3,
+    "replay_event_count": 77,
+    "replay_seat_count": 13,
+    "production_event_count": 155,
+    "production_kernel_ready": 0,
+    "production_audit_passed": 4,
+    "civilization_freeze_ready": 0,
+    "god_report_seat_count": 13,
+    "god_report_event_count": 78
+  },
+  "separation": {
+    "forecast_receipts_exists": true,
+    "investment_receipts_exists": true,
+    "forecast_and_investment_are_separate": true
+  },
+  "production_kernel": {
+    "kernel_version": "behavior_kernel_v1",
+    "append_only_event_sourcing": true,
+    "deterministic_replay": true,
+    "memory_isolation": false,
+    "audit_layer": true,
+    "readiness": {
+      "ok": false,
+      "event_sourcing": "pass",
+      "replay": "pass",
+      "memory_isolation": "fail",
+      "audit": "pass"
+    }
+  },
+  "production_audit": {
+    "verdict": "PARTIAL_PRODUCTION_READY",
+    "checks": {
+      "behavior_loop": "partial",
+      "prompt_control": "fail",
+      "pattern_participates": "partial",
+      "pattern_removal_changes_behavior": "pass",
+      "deterministic_replay": "pass",
+      "causal_trace_complete": "partial",
+      "credit_loan_behavior_binding": "pass",
+      "behavior_ui_contract": "pass"
+    },
+    "causality_graph": {
+      "node_count": 43,
+      "edge_count": 50,
+      "graph_hash": "ae622031d30be70d185dc1c1c144c06327df6fcec17ab996977d962a15214dd9",
+      "ref": "data/pool/behavior_audits/run-16.causality_graph.json"
+    }
+  },
+  "civilization_freeze": {
+    "engine_version": "AI_BEHAVIORAL_CIVILIZATION_ENGINE_V1",
+    "final_status": "NOT_READY_BEHAVIOR_CIVILIZATION_ENGINE",
+    "ready": false,
+    "system_definition": "Behavior Civilization Simulation System"
+  },
+  "artifact_refs": {
+    "seat_journals": "data/pool/seat_journals/",
+    "prompt_contexts": "data/pool/prompt_contexts/run-16/",
+    "behavior_memory": "data/pool/behavior_memory/compiled/",
+    "pattern_graph": "data/pool/pattern_graph/latest.json",
+    "agent_profiles": "data/pool/agent_profiles/latest.json",
+    "evolution_trace": "data/pool/evolution_traces/latest.json",
+    "civilization_state": "data/pool/civilization_state/latest.json",
+    "civilization_battle": "data/pool/civilization_battle/latest.json",
+    "civilization_freeze": "data/pool/civilization_freeze/latest.json",
+    "behavior_replay": "data/pool/replay/runs/run-16.json",
+    "behavior_production_contract": "data/pool/behavior_summary/production_contract.json",
+    "behavior_kernel_manifest": "data/pool/data_lake/kernels/behavior_kernel_v1.json",
+    "behavior_run_manifest": "data/pool/data_lake/runs/run-16.json",
+    "behavior_production_audit": "data/pool/behavior_audits/run-16.json",
+    "behavior_causality_graph": "data/pool/behavior_audits/run-16.causality_graph.json",
+    "forecast_receipts": "data/pool/forecast_receipts/run-16.json",
+    "investment_receipts": "data/pool/investment_receipts/run-16.json",
+    "credit_ledger": "data/pool/credit_ledger/run-16.json",
+    "survival_ledger": "data/pool/survival_ledger/run-16.json",
+    "god_ledger": "data/pool/god_ledger/runs/run-16.json",
+    "god_report_v2_json": "data/pool/god_reports/2026-06-16_run-16.json",
+    "god_report_v2_md": "data/pool/god_reports/2026-06-16_run-16.md",
+    "behavior_summary": "data/pool/behavior_summary/latest.json"
+  },
+  "readiness": {
+    "god_report_v2_generated": true,
+    "behavior_summary_readable": true,
+    "public_frontend_minimum_markers": [
+      "规则版本：PRED_INVEST_CREDIT_SURVIVE_V2",
+      "行为日志：可查看",
+      "信用账本：可查看",
+      "预测/投资分账：可查看"
+    ],
+    "publish_complete_badge_allowed": false,
+    "missing_or_blocked_seats": []
+  }
+}

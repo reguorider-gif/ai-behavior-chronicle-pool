@@ -1,0 +1,22 @@
+{
+  "version": "memory_isolation_audit.v1",
+  "run_id": "run-15",
+  "generated_at": "2026-06-16T12:00:33+00:00",
+  "checked_prompt_contexts": 12,
+  "required_prompt_contexts": 12,
+  "ok": true,
+  "violations": [],
+  "policy": {
+    "agent_private_memory": "own_history_only",
+    "public_memory": [
+      "anonymous_market_snapshot",
+      "aggregated_pattern_summary",
+      "rules"
+    ],
+    "forbidden": [
+      "other_agent_private_journals",
+      "other_agent_current_choices",
+      "raw_provider_transcripts"
+    ]
+  }
+}

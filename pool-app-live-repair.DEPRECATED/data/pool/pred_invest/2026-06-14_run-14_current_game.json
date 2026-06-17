@@ -1,0 +1,1723 @@
+{
+  "version": "pred_invest_current_game.v2",
+  "generated_at": "2026-06-14T23:29:09+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "verdict": "NOT_READY",
+  "rules": {
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "forecast_required_for_every_match": true,
+    "investment_optional_no_bet_allowed": true,
+    "credit_controls_loan": true,
+    "settlement_repay_before_ranking": true,
+    "stake_caps_by_odds": true
+  },
+  "source_paths": {
+    "daily_sop": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_prompt_pack.json",
+    "shadow_rerun": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_shadow_rerun.json",
+    "quality_gate": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_quality_gate.json",
+    "strict_god_report": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-14_god_report_strict.json"
+  },
+  "scoreboard": {
+    "models": 12,
+    "forecast_matches": 10,
+    "matches_with_odds": 10,
+    "existing_bets": 44,
+    "existing_decisions": 44,
+    "existing_bets_source": "strict_god_report",
+    "allowed": 0,
+    "warned": 0,
+    "rejected": 0,
+    "models_without_bets": [
+      "grok"
+    ],
+    "original_stake_total_gp": 2590.0,
+    "rule_converted_stake_total_gp": 2590.0,
+    "bridge_valid_seats": 11,
+    "bridge_required_seats": 12,
+    "bridge_frontend_badge": "11/12 部分回收",
+    "bridge_publish_allowed": false
+  },
+  "matches": [
+    {
+      "match_id": "WC-C1",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T17:00:00Z",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.5,
+          "odds": 1.54,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.91,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.93,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.87,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.91,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 0.5,
+          "odds": 2.37,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.93,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.98,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.9,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.95,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.5,
+          "odds": 1.52,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Scotland",
+          "line": -1.5,
+          "odds": 2.51,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-D2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T20:00:00Z",
+      "home_team": "Australia",
+      "away_team": "Turkey",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 1.5,
+          "odds": 1.42,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.2,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.23,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.05,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.14,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.23,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.02,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.16,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.01,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 1.5,
+          "odds": 1.38,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Turkey",
+          "line": -1.5,
+          "odds": 2.92,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-C2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T23:00:00Z",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.5,
+          "odds": 2.88,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.21,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.24,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.85,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.5,
+          "odds": 1.63,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.24,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.92,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.2,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.88,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.5,
+          "odds": 2.9,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Morocco",
+          "line": 1.5,
+          "odds": 1.43,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-B2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-14T02:00:00Z",
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.25,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.3,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.32,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.3,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.0,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.18,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.32,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.08,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 2.0,
+          "odds": 1.74,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.04,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.2,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Switzerland",
+          "line": -1.5,
+          "odds": 1.66,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T17:00:00Z",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.8,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.8,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.25,
+          "odds": 2.05,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.88,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.92,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.25,
+          "odds": 2.0,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.85,
+          "provider": "TAB"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T20:00:00Z",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.0,
+          "odds": 2.87,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.82,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.9,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.78,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.89,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 1.5,
+          "odds": 1.25,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Netherlands",
+          "line": 0.0,
+          "odds": 1.43,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T23:00:00Z",
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.59,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.62,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 1.98,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.33,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 2.06,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.27,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 2.02,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -1.5,
+          "odds": 5.0,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ivory Coast",
+          "line": 0.0,
+          "odds": 2.4,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-15T02:00:00Z",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": 0.0,
+          "odds": 1.37,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.87,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.87,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.86,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.95,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.85,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.9,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -1.5,
+          "odds": 3.6,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Tunisia",
+          "line": 0.0,
+          "odds": 3.17,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-H1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-14T00:00:00Z",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Spain",
+          "odds": 1.08
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 10.0
+        },
+        {
+          "market": "h2h",
+          "selection": "Cape Verde",
+          "odds": 29.0
+        }
+      ]
+    },
+    {
+      "match_id": "WC-I1",
+      "date": "2026-06-16",
+      "kickoff_at": "2026-06-14T00:00:00Z",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "France",
+          "odds": 1.35
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 4.8
+        },
+        {
+          "market": "h2h",
+          "selection": "Senegal",
+          "odds": 8.5
+        }
+      ]
+    }
+  ],
+  "missing_data": {
+    "matches_without_odds": [],
+    "missing_models": [],
+    "sop_errors": [
+      "score_sync_overdue:WC-C1,WC-D2,WC-C2,WC-B2,WC-H1,WC-I1"
+    ],
+    "sop_warnings": [
+      "no_existing_bets_to_shadow_audit_bridge_run_required",
+      "bet_receipts_missing:unknown",
+      "sop_guard:publish_blocked_by_quality_gate:11/12",
+      "quality_gate_partial:11/12"
+    ],
+    "required_coverage": {
+      "required_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "included_required_match_ids": [
+        "WCAPI-20260614-GERMANY-CURA-AO",
+        "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "WCAPI-20260615-SWEDEN-TUNISIA"
+      ],
+      "missing_required_match_ids": [],
+      "source": "required_match_snapshot:2026-06-14_run-14_required_match_snapshot.json"
+    },
+    "bridge_needs_rerun": [
+      "grok"
+    ],
+    "bridge_rerun_queue": [
+      {
+        "seat": "grok",
+        "mode": "provider_quota_blocked",
+        "prompt_mode": "wait_for_quota_reset",
+        "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+        "last_run_id": "page_salvage:grok",
+        "response_chars": 3812,
+        "issues": [
+          "provider_quota_limited"
+        ],
+        "last_errors": [
+          {
+            "run_id": "8a96116c10f0",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "0acbbca288fc",
+            "action": "raw_result_error",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          },
+          {
+            "run_id": "0acbbca288fc",
+            "action": "seat_timeout",
+            "reason": "slow_response_pending",
+            "response_chars": 0
+          }
+        ]
+      }
+    ]
+  },
+  "quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "publish_allowed": false,
+    "frontend_badge": "11/12 部分回收",
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "needs_rerun": [
+      "grok"
+    ]
+  },
+  "strict_match_consensus": [
+    {
+      "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "bet_count": 4,
+      "no_bet_count": 7,
+      "total_stake_gp": 590.0,
+      "top_selection": "handicap Curaçao 3.5",
+      "bets": [
+        {
+          "seat": "chatgpt",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 80.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "德国状态火热，让 3.5 胜率高，低风险"
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "3.5球让盘过深，德国近年世界杯对弱旅未必大胜，小注博取客队赢盘"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Curaçao 3.5",
+          "odds": 1.83,
+          "stake_gp": 10.0,
+          "loan_used_gp": 10,
+          "reason": "德国赢1-2球概率不低，难以击穿3.5球让盘，选择受让库拉索"
+        }
+      ],
+      "no_bet_seats": [
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "bet_count": 6,
+      "no_bet_count": 5,
+      "total_stake_gp": 755.0,
+      "top_selection": "handicap Japan 0.5",
+      "bets": [
+        {
+          "seat": "deepseek",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.89,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0,
+          "reason": null
+        },
+        {
+          "seat": "minimax",
+          "selection": "handicap Japan 0.0",
+          "odds": 2.87,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0,
+          "reason": "Implied 34.8% vs my 45% — positive EV on draw-no-bet at attractive 2.87."
+        },
+        {
+          "seat": "gemini",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0.0,
+          "reason": "Backing Japan to secure at least a draw against a potentially overvalued Netherlands squad."
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 250.0,
+          "loan_used_gp": 0,
+          "reason": "日本对欧洲强队近年战绩亮眼，+0.5盘口提供双重保护，重点配置"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 15.0,
+          "loan_used_gp": 15,
+          "reason": "预测平局，日本受让0.5可赢盘，赔率性价比合适"
+        },
+        {
+          "seat": "yuanbao",
+          "selection": "handicap Japan 0.5",
+          "odds": 1.85,
+          "stake_gp": 50.0,
+          "loan_used_gp": 50,
+          "reason": null
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "mimo",
+        "doubao",
+        "meta",
+        "qwen"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+      "bet_count": 3,
+      "no_bet_count": 8,
+      "total_stake_gp": 420.0,
+      "top_selection": "handicap Ecuador 0.0",
+      "bets": [
+        {
+          "seat": "doubao",
+          "selection": "handicap Ecuador 0.0",
+          "odds": 1.59,
+          "stake_gp": 300.0,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔南美硬实力强，平局返还，安全性高"
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Ecuador -0.5",
+          "odds": 2.45,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "厄瓜多尔世界杯经验与年轻化阵容具备冲击力，高赔博取独赢价值"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Ecuador 0.0",
+          "odds": 1.59,
+          "stake_gp": 20.0,
+          "loan_used_gp": 20,
+          "reason": "预测厄瓜多尔不败，匹配该盘口方向"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "minimax",
+        "gemini",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+      "bet_count": 5,
+      "no_bet_count": 6,
+      "total_stake_gp": 825.0,
+      "top_selection": "handicap Sweden -0.5",
+      "bets": [
+        {
+          "seat": "minimax",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 60.0,
+          "loan_used_gp": 0,
+          "reason": "Sweden to win outright; modest edge over bookmaker's implied 53.2%."
+        },
+        {
+          "seat": "doubao",
+          "selection": "handicap Sweden 0.0",
+          "odds": 1.37,
+          "stake_gp": 400.0,
+          "loan_used_gp": 0,
+          "reason": "瑞典攻防均衡，突尼斯进攻弱，不败概率极高"
+        },
+        {
+          "seat": "gemini",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 250.0,
+          "loan_used_gp": 0.0,
+          "reason": "Sweden's reliability against lower-ranked opposition justifies the investment."
+        },
+        {
+          "seat": "kimi",
+          "selection": "handicap Sweden -0.5",
+          "odds": 1.88,
+          "stake_gp": 100.0,
+          "loan_used_gp": 0,
+          "reason": "瑞典附加赛连胜状态正佳，突尼斯进攻手段有限，看好主队赢盘"
+        },
+        {
+          "seat": "wenxin",
+          "selection": "handicap Sweden 0.0",
+          "odds": 1.37,
+          "stake_gp": 15.0,
+          "loan_used_gp": 15,
+          "reason": "预测瑞典赢球，匹配盘口方向"
+        }
+      ],
+      "no_bet_seats": [
+        "chatgpt",
+        "deepseek",
+        "mimo",
+        "meta",
+        "qwen",
+        "yuanbao"
+      ]
+    }
+  ],
+  "model_summaries": [
+    {
+      "model_account": "chatgpt",
+      "display_name": "chatgpt",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 80.0,
+      "converted_stake_total_gp": 80.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 80,
+          "converted_stake_gp": 80,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap 0",
+          "odds": 1.59,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "deepseek",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 200.0,
+      "converted_stake_total_gp": 200.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.89,
+          "original_stake_gp": 200,
+          "converted_stake_gp": 200,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "",
+          "odds": null,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "mimo",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Netherlands handicap 0",
+          "odds": 1.0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ivory Coast handicap 0",
+          "odds": 1.0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap 0",
+          "odds": 1.0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "minimax",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 100.0,
+      "converted_stake_total_gp": 100.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao +3.5 handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.0",
+          "odds": 2.87,
+          "original_stake_gp": 40,
+          "converted_stake_gp": 40,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador 0.0 handicap 0.0",
+          "odds": 1.59,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 60,
+          "converted_stake_gp": 60,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "doubao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 1100.0,
+      "converted_stake_total_gp": 1100.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 400,
+          "converted_stake_gp": 400,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap 0.0",
+          "odds": 1.59,
+          "original_stake_gp": 300,
+          "converted_stake_gp": 300,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap 0.0",
+          "odds": 1.37,
+          "original_stake_gp": 400,
+          "converted_stake_gp": 400,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "gemini",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 450.0,
+      "converted_stake_total_gp": 450.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 0.0,
+          "converted_stake_gp": 0.0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap -0.5",
+          "odds": 2.45,
+          "original_stake_gp": 0.0,
+          "converted_stake_gp": 0.0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 250.0,
+          "converted_stake_gp": 250.0,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "kimi",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 550.0,
+      "converted_stake_total_gp": 550.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 250,
+          "converted_stake_gp": 250,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap -0.5",
+          "odds": 2.45,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 100,
+          "converted_stake_gp": 100,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "meta",
+      "display_name": "meta",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao +3.5 handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan +0.5 handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador 0 handicap 0.0",
+          "odds": 1.59,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden -0.5 handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "qwen",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 0.0,
+      "converted_stake_total_gp": 0.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "none none 0",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "none none 0",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "none none 0",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "none none 0",
+          "odds": 0,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "wenxin",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 60.0,
+      "converted_stake_total_gp": 60.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 10,
+          "converted_stake_gp": 10,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 15,
+          "converted_stake_gp": 15,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap 0.0",
+          "odds": 1.59,
+          "original_stake_gp": 20,
+          "converted_stake_gp": 20,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap 0.0",
+          "odds": 1.37,
+          "original_stake_gp": 15,
+          "converted_stake_gp": 15,
+          "status": "bet",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "yuanbao",
+      "rank": null,
+      "loan_terms": {},
+      "bet_count": 4,
+      "allowed": null,
+      "warned": null,
+      "rejected": null,
+      "original_stake_total_gp": 50.0,
+      "converted_stake_total_gp": 50.0,
+      "required_next_action": "strict_report_validated_decision",
+      "bets": [
+        {
+          "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+          "pick": "Curaçao handicap 3.5",
+          "odds": 1.83,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+          "pick": "Japan handicap 0.5",
+          "odds": 1.85,
+          "original_stake_gp": 50,
+          "converted_stake_gp": 50,
+          "status": "bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+          "pick": "Ecuador handicap -0.5",
+          "odds": 2.45,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        },
+        {
+          "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+          "pick": "Sweden handicap -0.5",
+          "odds": 1.88,
+          "original_stake_gp": 0,
+          "converted_stake_gp": 0,
+          "status": "no_bet",
+          "warnings": []
+        }
+      ]
+    }
+  ],
+  "audit_rows": [],
+  "caveat": "This is a V2-rule shadow rerun over accepted run receipts. It does not claim the 12 external models have already reanswered under PRED-INVEST-CREDIT-SURVIVE V2."
+}

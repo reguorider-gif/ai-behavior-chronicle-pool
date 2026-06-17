@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import pathlib
 import sys
 from typing import Any
@@ -20,29 +21,24 @@ from pred_invest_rules import RULE_VERSION, gp
 from pred_invest_sop_guard import build_guard, write_guard
 from run_pred_invest_shadow import build_shadow_report, write_outputs as write_shadow_outputs
 from run_daily_pool_pipeline import _merge_results_with_matches, _settle
+from pool.behavior_compiler import compile_all_behavior_memory
+from pool.behavior_audit import run_behavior_production_audit
 from pool.behavior_journal import update_seat_summary, write_seat_run
+from pool.behavior_production_kernel import run_behavior_production_kernel
+from pool.behavior_replay import build_replay_for_run
+from pool.chronicle_compiler import compile_all_lessons, generate_run_chronicle
+from pool.civilization_freeze import build_civilization_freeze_manifest
 from pool.god_report_v2 import generate_god_report
 from pool.io_utils import append_jsonl, now_iso, read_jsonl, write_json
+from pool.pattern_compiler import compile_all_patterns
 from pool.paths import DATA_ROOT
+from pool.rules_engine import load_rule_version, n as rule_number
+from pred_invest_seat_registry import PRODUCTION_SEATS, REQUIRED_SEAT_COUNT, canonical_seat_id
 import sync_pred_invest_scores
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
-PRODUCTION_SEATS = [
-    "chatgpt",
-    "deepseek",
-    "mimo",
-    "minimax",
-    "doubao",
-    "gemini",
-    "kimi",
-    "meta",
-    "qwen",
-    "wenxin",
-    "grok",
-    "yuanbao",
-]
 
 
 def read_json(path: pathlib.Path) -> dict[str, Any]:
@@ -75,7 +71,7 @@ def operational_contract() -> dict[str, Any]:
             "repay_interest_and_principal_before_ranking",
             "apply_top5_daily_rewards_and_stage_rewards",
             "apply_bottom3_penalties_or_forced_debt",
-            "build_full_match_prompt_pack_for_12_models",
+            f"build_full_match_prompt_pack_for_{REQUIRED_SEAT_COUNT}_models",
             "collect_forecast_and_investment_receipts",
             "run_quality_gate",
             "targeted_rerun_only_missing_or_invalid_seats",
@@ -83,18 +79,28 @@ def operational_contract() -> dict[str, Any]:
             "publish_frontend_only_when_gate_allows",
         ],
         "hard_gates": {
-            "prompt_pack_models": 12,
+            "prompt_pack_models": REQUIRED_SEAT_COUNT,
             "all_required_matches_in_prompt_pack": True,
             "forecast_required_for_every_match": True,
             "investment_row_required_for_every_match": True,
             "targeted_rerun_not_full_rerun": True,
-            "frontend_complete_badge_requires_12_valid_seats": True,
+            "frontend_complete_badge_requires_all_valid_seats": REQUIRED_SEAT_COUNT,
         },
     }
 
 
 def match_with_odds_count(pack: dict[str, Any]) -> int:
     return sum(1 for match in pack.get("matches") or [] if match.get("market_snapshot"))
+
+
+def match_ids_without_odds(pack: dict[str, Any]) -> list[str]:
+    missing: list[str] = []
+    for match in pack.get("matches") or []:
+        if not isinstance(match, dict):
+            continue
+        if not match.get("market_snapshot"):
+            missing.append(str(match.get("match_id") or match.get("id") or "unknown"))
+    return missing
 
 
 def strict_decision_state(date: str, round_id: str) -> dict[str, Any]:
@@ -135,18 +141,21 @@ def strict_decision_state(date: str, round_id: str) -> dict[str, Any]:
 def validate(pack: dict[str, Any], shadow: dict[str, Any], decision_state: dict[str, Any]) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
-    if pack.get("models") != 12:
-        errors.append(f"prompt_pack_models_not_12:{pack.get('models')}")
+    if pack.get("models") != REQUIRED_SEAT_COUNT:
+        errors.append(f"prompt_pack_models_not_{REQUIRED_SEAT_COUNT}:{pack.get('models')}")
     if pack.get("match_count", 0) <= 0:
         errors.append("prompt_pack_has_no_matches")
+    missing_odds = match_ids_without_odds(pack)
     if match_with_odds_count(pack) <= 0:
         errors.append("prompt_pack_has_no_odds")
+    elif missing_odds:
+        errors.append("prompt_pack_missing_odds_for_matches:" + ",".join(missing_odds))
     required = pack.get("required_coverage") if isinstance(pack.get("required_coverage"), dict) else {}
     missing_required = required.get("missing_required_match_ids") if isinstance(required.get("missing_required_match_ids"), list) else []
     if missing_required:
         errors.append("required_matches_missing_from_prompt_pack:" + ",".join(str(item) for item in missing_required))
-    if shadow.get("models") != 12:
-        errors.append(f"shadow_models_not_12:{shadow.get('models')}")
+    if shadow.get("models") != REQUIRED_SEAT_COUNT:
+        errors.append(f"shadow_models_not_{REQUIRED_SEAT_COUNT}:{shadow.get('models')}")
     if shadow.get("missing_or_unavailable_models"):
         errors.append("missing_models:" + ",".join(shadow["missing_or_unavailable_models"]))
     strict_available = decision_state.get("available") and decision_state.get("decision_count", 0) > 0
@@ -157,6 +166,45 @@ def validate(pack: dict[str, Any], shadow: dict[str, Any], decision_state: dict[
     if shadow.get("summary", {}).get("warned", 0) > shadow.get("summary", {}).get("allowed", 0):
         warnings.append("most_existing_bets_need_stake_cap_or_forecast_fields")
     return errors, warnings
+
+
+def provider_error_summary(meta: dict[str, Any]) -> str:
+    if not isinstance(meta, dict):
+        return "missing_meta"
+    parts: list[str] = []
+    error = str(meta.get("error") or "")
+    if error:
+        parts.append(error.split("\n", 1)[0][:90])
+    for key, label in (
+        ("curl_system_fallback", "system"),
+        ("curl_direct_fallback", "direct"),
+        ("curl_proxy_fallback", "proxy"),
+        ("cache_fallback", "cache"),
+    ):
+        payload = meta.get(key) if isinstance(meta.get(key), dict) else {}
+        detail = str(payload.get("error") or "")
+        if detail:
+            parts.append(f"{label}:{detail.split(chr(10), 1)[0][:80]}")
+    for key, label in (
+        ("curl_system_fallback_error", "system"),
+        ("curl_direct_fallback_error", "direct"),
+        ("curl_proxy_fallback_error", "proxy"),
+        ("cache_fallback_error", "cache"),
+    ):
+        detail = str(meta.get(key) or "")
+        if detail:
+            parts.append(f"{label}:{detail.split(chr(10), 1)[0][:80]}")
+    return " | ".join(parts) or "unknown"
+
+
+def append_provider_warnings(pack: dict[str, Any], score_sync: dict[str, Any], warnings: list[str]) -> None:
+    market_meta = pack.get("market_source_meta") if isinstance(pack.get("market_source_meta"), dict) else {}
+    odds_meta = market_meta.get("the_odds_api") if isinstance(market_meta.get("the_odds_api"), dict) else {}
+    if odds_meta and odds_meta.get("configured") and not odds_meta.get("ok"):
+        warnings.append("the_odds_api_live_odds_unavailable:" + provider_error_summary(odds_meta))
+    score_meta = score_sync.get("external_score_source") if isinstance(score_sync.get("external_score_source"), dict) else {}
+    if score_meta.get("transport") == "cache_fallback":
+        warnings.append("the_odds_api_scores_using_cache:" + provider_error_summary(score_meta))
 
 
 def strict_method_lines(decision_state: dict[str, Any]) -> list[str]:
@@ -217,6 +265,7 @@ def strict_investment_receipts(decision_state: dict[str, Any]) -> dict[str, Any]
 def _seat_order_from_sources(pack: dict[str, Any], shadow: dict[str, Any], decision_state: dict[str, Any]) -> list[str]:
     seen: set[str] = set()
     ordered: list[str] = []
+    required = set(PRODUCTION_SEATS)
     for source_rows in (
         pack.get("prompts") or [],
         shadow.get("models_detail") or [],
@@ -227,8 +276,8 @@ def _seat_order_from_sources(pack: dict[str, Any], shadow: dict[str, Any], decis
         for row in source_rows:
             if not isinstance(row, dict):
                 continue
-            seat_id = str(row.get("model_account") or row.get("seat") or "").lower()
-            if seat_id and seat_id not in seen:
+            seat_id = canonical_seat_id(row.get("seat") or row.get("model_account"))
+            if seat_id and seat_id in required and seat_id not in seen:
                 seen.add(seat_id)
                 ordered.append(seat_id)
     for seat_id in PRODUCTION_SEATS:
@@ -240,12 +289,13 @@ def _seat_order_from_sources(pack: dict[str, Any], shadow: dict[str, Any], decis
 
 def _index_by_seat(rows: list[dict[str, Any]], *keys: str) -> dict[str, dict[str, Any]]:
     indexed: dict[str, dict[str, Any]] = {}
+    required = set(PRODUCTION_SEATS)
     for row in rows:
         if not isinstance(row, dict):
             continue
         for key in keys:
-            seat_id = str(row.get(key) or "").lower()
-            if seat_id:
+            seat_id = canonical_seat_id(row.get(key))
+            if seat_id and seat_id in required:
                 indexed[seat_id] = row
                 break
     return indexed
@@ -351,9 +401,20 @@ def _god_event_once(run_id: str, event_type: str, payload: dict[str, Any], seat_
     _append_once(path, identity, row)
 
 
+def _receipt_credit_delta(valid: bool) -> float:
+    if valid:
+        return 0
+    rule = load_rule_version(RULE_VERSION)
+    delta_rule = rule.get("credit_delta") if isinstance(rule.get("credit_delta"), dict) else {}
+    return rule_number(
+        delta_rule.get("missing_or_invalid_receipt"),
+        rule_number(delta_rule.get("wrong_forecast"), -10),
+    )
+
+
 def _credit_row(seat_id: str, run_id: str, shadow_row: dict[str, Any], valid: bool, reason: str) -> dict[str, Any]:
     terms = shadow_row.get("loan_terms") if isinstance(shadow_row.get("loan_terms"), dict) else {}
-    credit_delta = 0 if valid else -8
+    credit_delta = _receipt_credit_delta(valid)
     score = float(terms.get("credit_score") or 600) + credit_delta
     grade = terms.get("credit_grade") or ("B" if score >= 600 else "C")
     details: list[dict[str, Any]] = []
@@ -485,7 +546,9 @@ def build_production_artifacts(
 
         if write:
             context_path = DATA_ROOT / "prompt_contexts" / round_id / f"{seat_id}.json"
-            write_json(context_path, {
+            full_context = prompt_row.get("prompt_context") if isinstance(prompt_row.get("prompt_context"), dict) else {}
+            full_context = {
+                **full_context,
                 "run_id": round_id,
                 "date": date,
                 "seat_id": seat_id,
@@ -495,7 +558,9 @@ def build_production_artifacts(
                 "loan_terms": prompt_row.get("loan_terms") or shadow_row.get("loan_terms") or {},
                 "required_match_ids": required_match_ids,
                 "source": "production_pred_invest_daily_sop",
-            })
+                "behavior_memory_required": True,
+            }
+            write_json(context_path, full_context)
             _event_once(seat_id, round_id, "prompt_context_recorded", {"prompt_context_path": str(context_path.relative_to(ROOT))})
             _event_once(seat_id, round_id, "forecast_recorded", {"forecasts": forecasts, "status": forecast_seats[seat_id]["status"]})
             _event_once(seat_id, round_id, "investment_recorded", {"investments": investments, "loan_decision": loan_decision, "status": investment_seats[seat_id]["status"]})
@@ -541,13 +606,80 @@ def build_production_artifacts(
         write_json(DATA_ROOT / "credit_ledger" / f"{round_id}.json", credit_ledger)
         write_json(DATA_ROOT / "survival_ledger" / f"{round_id}.json", survival_ledger)
         _god_event_once(round_id, "production_artifacts_generated", {"counts": counts, "settlement_trigger": settlement_trigger})
+        behavior_kernel = compile_all_behavior_memory(seat_ids, run_id=round_id, write=write)
+        pattern_index = compile_all_patterns(seat_ids, write=write)
+        chronicle_index = compile_all_lessons(seat_ids, write=write)
+        run_chronicle = generate_run_chronicle(date, round_id, seat_ids, write=write)
+        counts["behavior_memory_count"] = behavior_kernel.get("seat_count", 0)
+        counts["agent_profile_count"] = len((behavior_kernel.get("agent_profiles") or {}).get("seats") or {})
+        counts["pattern_count"] = len((behavior_kernel.get("pattern_graph") or {}).get("top_patterns") or [])
+        counts["compiled_pattern_count"] = pattern_index.get("pattern_count", 0)
+        counts["chronicle_lesson_count"] = chronicle_index.get("lesson_count", 0)
+        counts["run_chronicle_highlight_count"] = len(run_chronicle.get("highlights") or [])
+        counts["evolution_trace_count"] = len((behavior_kernel.get("evolution_trace") or {}).get("traces") or [])
+        counts["civilization_agent_count"] = len((behavior_kernel.get("civilization_state") or {}).get("agents") or [])
+        counts["civilization_count"] = len((behavior_kernel.get("civilization_battle") or {}).get("civilizations") or [])
+        counts["civilization_interaction_count"] = len((behavior_kernel.get("civilization_battle") or {}).get("interactions") or [])
+        replay = build_replay_for_run(round_id, seat_ids, write=write)
+        counts["replay_event_count"] = replay.get("event_count", 0)
+        counts["replay_seat_count"] = replay.get("seat_count", 0)
         god_report = generate_god_report(date, round_id)
+        production_contract = run_behavior_production_kernel(round_id, seat_ids)
+        production_audit = run_behavior_production_audit(round_id, seat_ids)
+        civilization_freeze = build_civilization_freeze_manifest(
+            round_id,
+            production_contract=production_contract,
+            production_audit=production_audit,
+            civilization_state=behavior_kernel.get("civilization_state") or {},
+            civilization_battle=behavior_kernel.get("civilization_battle") or {},
+            write=write,
+        )
+        counts["production_event_count"] = production_contract.get("event_count", 0)
+        counts["production_kernel_ready"] = 1 if (production_contract.get("readiness") or {}).get("ok") else 0
+        counts["production_audit_passed"] = production_audit.get("status", {}).get("passed", 0)
+        counts["civilization_freeze_ready"] = 1 if civilization_freeze.get("ready") else 0
     else:
         god_report = {"seat_count": len(seat_ids), "event_count": 0}
+        production_contract = {}
+        production_audit = {}
+        civilization_freeze = build_civilization_freeze_manifest(round_id, write=False)
+        behavior_kernel = compile_all_behavior_memory(seat_ids, run_id=round_id, write=write)
+        pattern_index = compile_all_patterns(seat_ids, write=write)
+        chronicle_index = compile_all_lessons(seat_ids, write=write)
+        run_chronicle = generate_run_chronicle(date, round_id, seat_ids, write=write)
+        counts["behavior_memory_count"] = behavior_kernel.get("seat_count", 0)
+        counts["agent_profile_count"] = len((behavior_kernel.get("agent_profiles") or {}).get("seats") or {})
+        counts["pattern_count"] = len((behavior_kernel.get("pattern_graph") or {}).get("top_patterns") or [])
+        counts["compiled_pattern_count"] = pattern_index.get("pattern_count", 0)
+        counts["chronicle_lesson_count"] = chronicle_index.get("lesson_count", 0)
+        counts["run_chronicle_highlight_count"] = len(run_chronicle.get("highlights") or [])
+        counts["evolution_trace_count"] = len((behavior_kernel.get("evolution_trace") or {}).get("traces") or [])
+        counts["civilization_agent_count"] = len((behavior_kernel.get("civilization_state") or {}).get("agents") or [])
+        counts["civilization_count"] = len((behavior_kernel.get("civilization_battle") or {}).get("civilizations") or [])
+        counts["civilization_interaction_count"] = len((behavior_kernel.get("civilization_battle") or {}).get("interactions") or [])
+        replay = build_replay_for_run(round_id, seat_ids, write=write)
+        counts["replay_event_count"] = replay.get("event_count", 0)
+        counts["replay_seat_count"] = replay.get("seat_count", 0)
 
     artifact_refs = {
         "seat_journals": "data/pool/seat_journals/",
         "prompt_contexts": f"data/pool/prompt_contexts/{round_id}/",
+        "behavior_memory": "data/pool/behavior_memory/compiled/",
+        "behavior_patterns": "data/pool/behavior_patterns/",
+        "behavior_chronicle": "data/pool/behavior_chronicle/",
+        "run_chronicle": f"data/pool/behavior_chronicle/runs/{round_id}.md",
+        "pattern_graph": "data/pool/pattern_graph/latest.json",
+        "agent_profiles": "data/pool/agent_profiles/latest.json",
+        "evolution_trace": "data/pool/evolution_traces/latest.json",
+        "civilization_state": "data/pool/civilization_state/latest.json",
+        "civilization_battle": "data/pool/civilization_battle/latest.json",
+        "civilization_freeze": "data/pool/civilization_freeze/latest.json",
+        "behavior_replay": f"data/pool/replay/runs/{round_id}.json",
+        "behavior_production_contract": "data/pool/behavior_summary/production_contract.json",
+        "behavior_kernel_manifest": f"data/pool/data_lake/kernels/behavior_kernel_v1.json",
+        "behavior_run_manifest": f"data/pool/data_lake/runs/{round_id}.json",
+        "behavior_production_audit": f"data/pool/behavior_audits/{round_id}.json",
+        "behavior_causality_graph": f"data/pool/behavior_audits/{round_id}.causality_graph.json",
         "forecast_receipts": f"data/pool/forecast_receipts/{round_id}.json",
         "investment_receipts": f"data/pool/investment_receipts/{round_id}.json",
         "credit_ledger": f"data/pool/credit_ledger/{round_id}.json",
@@ -572,12 +704,31 @@ def build_production_artifacts(
             "no_bet_label": "no-bet：合法动作",
             "recovery_label": "Recovery Mode：已接入",
         },
-        "features": ["Seat Journal", "Credit", "Loan Limit", "Recovery Mode", "forecast_receipts", "investment_receipts", "no-bet", "god_report_v2"],
+        "features": ["Seat Journal", "Credit", "Loan Limit", "Recovery Mode", "forecast_receipts", "investment_receipts", "Behavior Memory", "Behavior Chronicle", "Pattern Graph", "Evolution Trace", "Behavior Replay", "no-bet", "god_report_v2"],
         "counts": {**counts, "god_report_seat_count": god_report.get("seat_count", 0), "god_report_event_count": god_report.get("event_count", 0)},
         "separation": {
             "forecast_receipts_exists": True,
             "investment_receipts_exists": True,
             "forecast_and_investment_are_separate": True,
+        },
+        "production_kernel": {
+            "kernel_version": production_contract.get("kernel_version"),
+            "append_only_event_sourcing": production_contract.get("append_only_event_sourcing"),
+            "deterministic_replay": production_contract.get("deterministic_replay"),
+            "memory_isolation": production_contract.get("memory_isolation"),
+            "audit_layer": production_contract.get("audit_layer"),
+            "readiness": production_contract.get("readiness") or {},
+        },
+        "production_audit": {
+            "verdict": (production_audit.get("status") or {}).get("verdict"),
+            "checks": (production_audit.get("status") or {}).get("checks") or {},
+            "causality_graph": production_audit.get("causality_graph") or {},
+        },
+        "civilization_freeze": {
+            "engine_version": civilization_freeze.get("engine_version"),
+            "final_status": civilization_freeze.get("final_status"),
+            "ready": civilization_freeze.get("ready"),
+            "system_definition": civilization_freeze.get("system_definition"),
         },
         "artifact_refs": artifact_refs,
         "readiness": {
@@ -607,9 +758,20 @@ def build_production_artifacts(
             "- Recovery Mode：已接入",
             f"- seat_journals：{counts['seat_journal_count']}",
             f"- prompt_contexts：{counts['prompt_context_count']}",
+            f"- behavior_memory：{counts['behavior_memory_count']}",
+            f"- behavior_patterns：{counts.get('compiled_pattern_count', 0)}",
+            f"- behavior_chronicle：{counts.get('chronicle_lesson_count', 0)} lessons / {counts.get('run_chronicle_highlight_count', 0)} highlights",
+            f"- agent_profiles：{counts['agent_profile_count']}",
+            f"- pattern_graph：{counts['pattern_count']}",
+            f"- evolution_trace：{counts['evolution_trace_count']}",
+            f"- civilization_state：{counts['civilization_agent_count']} agents",
+            f"- civilization_battle：{counts['civilization_count']} civilizations / {counts['civilization_interaction_count']} interactions",
+            f"- behavior_replay：{counts['replay_event_count']} events / {counts['replay_seat_count']} seats",
+            f"- production kernel：{counts.get('production_event_count', 0)} events / ready={bool(counts.get('production_kernel_ready'))}",
+            f"- civilization freeze：{civilization_freeze.get('final_status') or 'missing'}",
             f"- forecast_receipts：{counts['forecast_receipt_count']}",
             f"- investment_receipts：{counts['investment_receipt_count']}",
-            f"- valid seats：{valid_count}/12",
+            f"- valid seats：{valid_count}/{REQUIRED_SEAT_COUNT}",
             f"- blocked seats：{', '.join(sorted(missing_reason_by_seat)) or 'none'}",
             f"- god_report_v2：{'generated' if behavior['readiness']['god_report_v2_generated'] else 'missing'}",
         ]
@@ -779,7 +941,7 @@ def markdown(report: dict[str, Any]) -> str:
         "",
         f"- verdict: **{report['verdict']}**",
         f"- rule: {report.get('operational_contract', {}).get('rule_version')}",
-        f"- prompt models: {pack['models']}/12",
+        f"- prompt models: {pack['models']}/{REQUIRED_SEAT_COUNT}",
         f"- forecast matches: {pack['match_count']}",
         f"- required coverage: {len((pack.get('required_coverage') or {}).get('included_required_match_ids') or [])}/{len((pack.get('required_coverage') or {}).get('required_match_ids') or [])}",
         f"- matches with odds: {report['matches_with_odds']}",
@@ -842,10 +1004,10 @@ def markdown(report: dict[str, Any]) -> str:
         "",
         "## Production Artifacts",
         "",
-        f"- seat journals: {artifact_counts.get('seat_journal_count', 0)}/12",
-        f"- prompt contexts: {artifact_counts.get('prompt_context_count', 0)}/12",
-        f"- forecast receipts: {artifact_counts.get('forecast_receipt_count', 0)}/12",
-        f"- investment receipts: {artifact_counts.get('investment_receipt_count', 0)}/12",
+        f"- seat journals: {artifact_counts.get('seat_journal_count', 0)}/{REQUIRED_SEAT_COUNT}",
+        f"- prompt contexts: {artifact_counts.get('prompt_context_count', 0)}/{REQUIRED_SEAT_COUNT}",
+        f"- forecast receipts: {artifact_counts.get('forecast_receipt_count', 0)}/{REQUIRED_SEAT_COUNT}",
+        f"- investment receipts: {artifact_counts.get('investment_receipt_count', 0)}/{REQUIRED_SEAT_COUNT}",
         f"- valid / blocked seats: {artifact_counts.get('valid_seat_count', 0)} / {artifact_counts.get('missing_seat_count', 0)}",
         f"- god report seats/events: {artifacts.get('god_report_seat_count', 0)} / {artifacts.get('god_report_event_count', 0)}",
         f"- blocked: {', '.join(artifacts.get('missing_or_blocked_seats') or []) or 'none'}",
@@ -891,7 +1053,9 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 def main(argv: list[str]) -> int:
     args = parse_args(argv)
-    pack = build_prompt_pack(args.date, args.round_id, args.base_url)
+    if args.write:
+        os.environ.setdefault("PRED_INVEST_WRITE_PROVIDER_CACHE", "1")
+    pack = build_prompt_pack(args.date, args.round_id, args.base_url, write_contexts=args.write)
     shadow = build_shadow_report(args.date, args.round_id, args.base_url)
     decision_state = strict_decision_state(args.date, args.round_id)
     score_sync = sync_pred_invest_scores.build_sync()
@@ -899,6 +1063,7 @@ def main(argv: list[str]) -> int:
         score_sync["paths"] = sync_pred_invest_scores.write_sync(score_sync)
     settlement_trigger = build_settlement_stage(args.round_id, pack, decision_state, score_sync, shadow, write=args.write)
     errors, warnings = validate(pack, shadow, decision_state)
+    append_provider_warnings(pack, score_sync, warnings)
     overdue_scores = score_sync_overdue()
     if overdue_scores:
         errors.append("score_sync_overdue:" + ",".join(str(row.get("match_id")) for row in overdue_scores[:12]))

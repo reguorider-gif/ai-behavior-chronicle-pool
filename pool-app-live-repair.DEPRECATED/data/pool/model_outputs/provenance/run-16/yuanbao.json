@@ -1,0 +1,41 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_export.v1",
+  "run_id": "51f065f1cb10",
+  "round_id": "run-16",
+  "date": "2026-06-16",
+  "seat": "yuanbao",
+  "model_account": "yuanbao",
+  "ok": true,
+  "method": null,
+  "raw_output_path": "data/pool/model_outputs/raw/run-16/yuanbao.txt",
+  "parsed": {
+    "world_cup_opening": "2026-06-11 A组首轮墨西哥 vs 南非",
+    "key_indicators_to_track": [
+      "各队伤病名单",
+      "热身赛进球转化率",
+      "新任主教练战术倾向"
+    ]
+  },
+  "response_chars": 2917,
+  "execution_validity": {
+    "policy_version": "required-web-seat-v1",
+    "required": true,
+    "valid": true,
+    "submitted": true,
+    "accepted": true,
+    "marker_found": false,
+    "marker_closed": false,
+    "matches_question": true,
+    "prompt_echo": false,
+    "polluted": false,
+    "page_busy": false,
+    "response_chars": 2917,
+    "min_response_chars": 1,
+    "response_hash": "5231a6f37de7ddcbee9208fe663769a0f1f0dbad4a8c176e85794d604bbbc3c8",
+    "capture_mode": "",
+    "prompt_id": "",
+    "attempts": 0,
+    "source": "web_bridge",
+    "reason": "valid"
+  }
+}

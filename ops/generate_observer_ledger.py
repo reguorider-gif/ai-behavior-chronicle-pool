@@ -19,6 +19,7 @@ import urllib.request
 from collections import Counter, defaultdict
 from typing import Any
 
+from pred_invest_seat_registry import REQUIRED_SEAT_COUNT
 
 BASE_URL = "https://pool-app-one.vercel.app"
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -660,7 +661,7 @@ def build_comic_story(
         title = "模型们学会不赌了"
     if ledger.get("phase") == "post":
         title = "模型们迎来赛后清算"
-    coverage = f"{quality.get('quality_gate_valid_count') or board.get('models')}/12"
+    coverage = f"{quality.get('quality_gate_valid_count') or board.get('models')}/{REQUIRED_SEAT_COUNT}"
     subtitle = (
         f"{coverage} 有效 · {len(actual_bets)} 笔下注 · {len(no_bets)} 次观望 · "
         f"总投入 {gp(board.get('total_stake_gp'))}"
@@ -765,7 +766,7 @@ def build_comic_story(
                 "bullets": [
                     f"待补席位：{', '.join(rerun) if rerun else 'none'}",
                     f"数据缺口：{len(gaps)} 项",
-                    "硬门禁：不到 12/12，不允许显示为全量完成报告。",
+                    f"硬门禁：不到 {REQUIRED_SEAT_COUNT}/{REQUIRED_SEAT_COUNT}，不允许显示为全量完成报告。",
                 ],
                 "commentary": (
                     "这部分必须保留在解说里：它不是剧情装饰，而是产品可信度。"
@@ -949,7 +950,7 @@ def markdown_report(ledger: dict[str, Any]) -> str:
         "",
         "## 记分牌",
         "",
-        f"- 席位覆盖：{board['models']}/12",
+        f"- 席位覆盖：{board['models']}/{REQUIRED_SEAT_COUNT}",
         f"- 下注/结算：{board['accepted_bets']} accepted · {board['settled_bets']} settled",
         f"- 命中/失手：{board['winning_bets']} / {board['losing_bets']}",
         f"- 总投入：{gp(board['total_stake_gp'])}",

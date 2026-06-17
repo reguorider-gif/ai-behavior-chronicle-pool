@@ -1,0 +1,2842 @@
+{
+  "version": "pred_invest_current_game.v1",
+  "generated_at": "2026-06-14T07:25:47+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-13",
+  "verdict": "READY",
+  "rules": {
+    "forecast_required_for_every_match": true,
+    "investment_optional_no_bet_allowed": true,
+    "credit_controls_loan": true,
+    "settlement_repay_before_ranking": true,
+    "stake_caps_by_odds": true
+  },
+  "source_paths": {
+    "daily_sop": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-13_daily_sop.json",
+    "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-13_prompt_pack.json",
+    "shadow_rerun": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-14_run-13_shadow_rerun.json"
+  },
+  "scoreboard": {
+    "models": 12,
+    "forecast_matches": 10,
+    "matches_with_odds": 10,
+    "existing_bets": 48,
+    "allowed": 5,
+    "warned": 43,
+    "rejected": 0,
+    "models_without_bets": 0,
+    "original_stake_total_gp": 11525.9,
+    "rule_converted_stake_total_gp": 8119.68
+  },
+  "matches": [
+    {
+      "match_id": "WC-C1",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T17:00:00Z",
+      "home_team": "Haiti",
+      "away_team": "Scotland",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.5,
+          "odds": 1.54,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.91,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.93,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.87,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.91,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 0.5,
+          "odds": 2.37,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.93,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.98,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.9,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.0,
+          "odds": 1.95,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Haiti",
+          "line": 1.5,
+          "odds": 1.52,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Scotland",
+          "line": -1.5,
+          "odds": 2.51,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-D2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T20:00:00Z",
+      "home_team": "Australia",
+      "away_team": "Turkey",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 1.5,
+          "odds": 1.42,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.2,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.23,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.05,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.14,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.23,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.02,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.5,
+          "odds": 2.16,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 0.75,
+          "odds": 2.01,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Australia",
+          "line": 1.5,
+          "odds": 1.38,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Turkey",
+          "line": -1.5,
+          "odds": 2.92,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-C2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-13T23:00:00Z",
+      "home_team": "Brazil",
+      "away_team": "Morocco",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.5,
+          "odds": 2.88,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.21,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.24,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.2,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.85,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.5,
+          "odds": 1.63,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.24,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.92,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.0,
+          "odds": 2.2,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -0.75,
+          "odds": 1.88,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Brazil",
+          "line": -1.5,
+          "odds": 2.9,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Morocco",
+          "line": 1.5,
+          "odds": 1.43,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-B2",
+      "date": "2026-06-13",
+      "kickoff_at": "2026-06-14T02:00:00Z",
+      "home_team": "Qatar",
+      "away_team": "Switzerland",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.25,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.3,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.32,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.3,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.0,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.18,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.32,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.08,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 2.0,
+          "odds": 1.74,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.75,
+          "odds": 2.04,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Qatar",
+          "line": 1.5,
+          "odds": 2.2,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Switzerland",
+          "line": -1.5,
+          "odds": 1.66,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T17:00:00Z",
+      "home_team": "Germany",
+      "away_team": "Curaçao",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.8,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.8,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.25,
+          "odds": 2.05,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.81,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.88,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.92,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.25,
+          "odds": 2.0,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.83,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Curaçao",
+          "line": 3.5,
+          "odds": 1.85,
+          "provider": "TAB"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T20:00:00Z",
+      "home_team": "Netherlands",
+      "away_team": "Japan",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.0,
+          "odds": 2.87,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.82,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.81,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.85,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.9,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.78,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 0.5,
+          "odds": 1.89,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Japan",
+          "line": 1.5,
+          "odds": 1.25,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Netherlands",
+          "line": 0.0,
+          "odds": 1.43,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-14T23:00:00Z",
+      "home_team": "Ivory Coast",
+      "away_team": "Ecuador",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.59,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": 0.0,
+          "odds": 1.62,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 1.98,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.33,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.45,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 2.06,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.5,
+          "odds": 2.27,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -0.25,
+          "odds": 2.02,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ecuador",
+          "line": -1.5,
+          "odds": 5.0,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Ivory Coast",
+          "line": 0.0,
+          "odds": 2.4,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+      "date": "2026-06-14",
+      "kickoff_at": "2026-06-15T02:00:00Z",
+      "home_team": "Sweden",
+      "away_team": "Tunisia",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": 0.0,
+          "odds": 1.37,
+          "provider": "1xBet"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "BetAnything"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "BetOnline.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.87,
+          "provider": "BetUS"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.87,
+          "provider": "Bovada"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.86,
+          "provider": "GTbets"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.88,
+          "provider": "LowVig.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.95,
+          "provider": "Matchbook"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.85,
+          "provider": "MyBookie.ag"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -0.5,
+          "odds": 1.9,
+          "provider": "Pinnacle"
+        },
+        {
+          "market": "handicap",
+          "selection": "Sweden",
+          "line": -1.5,
+          "odds": 3.6,
+          "provider": "PlayUp"
+        },
+        {
+          "market": "handicap",
+          "selection": "Tunisia",
+          "line": 0.0,
+          "odds": 3.17,
+          "provider": "1xBet"
+        }
+      ]
+    },
+    {
+      "match_id": "WC-H1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-14T00:00:00Z",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "Spain",
+          "odds": 1.08
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 10.0
+        },
+        {
+          "market": "h2h",
+          "selection": "Cape Verde",
+          "odds": 29.0
+        }
+      ]
+    },
+    {
+      "match_id": "WC-I1",
+      "date": "2026-06-16",
+      "kickoff_at": "2026-06-14T00:00:00Z",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "status": "scheduled",
+      "available_markets": [],
+      "market_snapshot": [
+        {
+          "market": "h2h",
+          "selection": "France",
+          "odds": 1.35
+        },
+        {
+          "market": "h2h",
+          "selection": "Draw",
+          "odds": 4.8
+        },
+        {
+          "market": "h2h",
+          "selection": "Senegal",
+          "odds": 8.5
+        }
+      ]
+    }
+  ],
+  "missing_data": {
+    "matches_without_odds": [],
+    "missing_models": [],
+    "sop_errors": [],
+    "sop_warnings": [
+      "most_existing_bets_need_stake_cap_or_forecast_fields"
+    ]
+  },
+  "model_summaries": [
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 1,
+      "loan_terms": {
+        "credit_score": 737.2,
+        "credit_grade": "A",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1530.0,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 1224.0,
+        "available_loan_gp": 1224.0,
+        "base_interest_rate": 0.07,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 17.7,
+          "net_worth_health_proxy": 51.5,
+          "ranking_proxy": 48.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 1,
+      "warned": 3,
+      "rejected": 0,
+      "original_stake_total_gp": 1750.0,
+      "converted_stake_total_gp": 1304.5,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 430.0,
+          "converted_stake_gp": 382.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 382.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 620.0,
+          "converted_stake_gp": 229.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 229.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 310.0,
+          "converted_stake_gp": 310.0,
+          "status": "allowed",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 390.0,
+          "converted_stake_gp": 382.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 382.5 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 2,
+      "loan_terms": {
+        "credit_score": 544.5,
+        "credit_grade": "C",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 135.0,
+        "outstanding_loan_gp": 1000.0,
+        "max_loan_gp": 27.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": 0.18,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -101.2,
+          "net_worth_health_proxy": -18.2,
+          "ranking_proxy": 44.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 1500.0,
+      "converted_stake_total_gp": 121.5,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland moneyline",
+          "odds": 1.57,
+          "original_stake_gp": 500.0,
+          "converted_stake_gp": 33.75,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 33.8 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Turkey handicap -1.5",
+          "odds": 2.92,
+          "original_stake_gp": 400.0,
+          "converted_stake_gp": 20.25,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 20.2 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 300.0,
+          "converted_stake_gp": 33.75,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 33.8 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland moneyline",
+          "odds": 1.23,
+          "original_stake_gp": 300.0,
+          "converted_stake_gp": 33.75,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 33.8 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 3,
+      "loan_terms": {
+        "credit_score": 635.2,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 710.0,
+        "outstanding_loan_gp": 300.0,
+        "max_loan_gp": 355.0,
+        "available_loan_gp": 55.0,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -35.3,
+          "net_worth_health_proxy": 10.5,
+          "ranking_proxy": 40.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 1200.0,
+      "converted_stake_total_gp": 710.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland moneyline",
+          "odds": 1.57,
+          "original_stake_gp": 350.0,
+          "converted_stake_gp": 177.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 177.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 300.0,
+          "converted_stake_gp": 177.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 177.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland moneyline",
+          "odds": 1.23,
+          "original_stake_gp": 300.0,
+          "converted_stake_gp": 177.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 177.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Turkey handicap -0.5",
+          "odds": 1.71,
+          "original_stake_gp": 250.0,
+          "converted_stake_gp": 177.5,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 177.5 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 4,
+      "loan_terms": {
+        "credit_score": 651.6,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 647.8,
+        "outstanding_loan_gp": 0.0,
+        "max_loan_gp": 323.9,
+        "available_loan_gp": 323.9,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -11.7,
+          "net_worth_health_proxy": 7.4,
+          "ranking_proxy": 36.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 1040.0,
+      "converted_stake_total_gp": 647.8,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland moneyline",
+          "odds": 1.57,
+          "original_stake_gp": 280.0,
+          "converted_stake_gp": 161.95,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 161.9 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 220.0,
+          "converted_stake_gp": 161.95,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 161.9 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 260.0,
+          "converted_stake_gp": 161.95,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 161.9 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland handicap -1.75",
+          "odds": 1.87,
+          "original_stake_gp": 280.0,
+          "converted_stake_gp": 161.95,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 161.9 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "loan_terms": {
+        "credit_score": 501.9,
+        "credit_grade": "C",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 41.9,
+        "outstanding_loan_gp": 300.0,
+        "max_loan_gp": 8.38,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": 0.18,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -127.2,
+          "net_worth_health_proxy": -22.9,
+          "ranking_proxy": 32.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 741.9,
+      "converted_stake_total_gp": 41.88,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland moneyline",
+          "odds": 1.44,
+          "original_stake_gp": 185.0,
+          "converted_stake_gp": 10.47,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 10.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 185.0,
+          "converted_stake_gp": 10.47,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 10.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 185.0,
+          "converted_stake_gp": 10.47,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 10.5 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland handicap -1.5",
+          "odds": 1.66,
+          "original_stake_gp": 186.9,
+          "converted_stake_gp": 10.47,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 10.5 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 6,
+      "loan_terms": {
+        "credit_score": 382.1,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -776.0,
+        "outstanding_loan_gp": 1000.0,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -205.9,
+          "net_worth_health_proxy": -60.0,
+          "ranking_proxy": 28.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 724.0,
+      "converted_stake_total_gp": 724.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 124.0,
+          "converted_stake_gp": 124.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 7,
+      "loan_terms": {
+        "credit_score": 404.0,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -2925.0,
+        "outstanding_loan_gp": 3925.0,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -180.0,
+          "net_worth_health_proxy": -60.0,
+          "ranking_proxy": 24.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 1000.0,
+      "converted_stake_total_gp": 1000.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland moneyline",
+          "odds": 1.23,
+          "original_stake_gp": 400.0,
+          "converted_stake_gp": 400.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland handicap -1.5",
+          "odds": 2.51,
+          "original_stake_gp": 300.0,
+          "converted_stake_gp": 300.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Turkey handicap -1.5",
+          "odds": 2.92,
+          "original_stake_gp": 100.0,
+          "converted_stake_gp": 100.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 8,
+      "loan_terms": {
+        "credit_score": 696.3,
+        "credit_grade": "B",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": 1385.0,
+        "outstanding_loan_gp": 15.0,
+        "max_loan_gp": 692.5,
+        "available_loan_gp": 677.5,
+        "base_interest_rate": 0.11,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": 12.0,
+          "net_worth_health_proxy": 44.2,
+          "ranking_proxy": 20.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 4,
+      "warned": 0,
+      "rejected": 0,
+      "original_stake_total_gp": 510.0,
+      "converted_stake_total_gp": 510.0,
+      "required_next_action": "现有投注在新规则下可进入投资账本，但仍需补全 forecast 概率校准字段。",
+      "bets": [
+        {
+          "match_id": "WC-C1",
+          "pick": "Scotland moneyline",
+          "odds": 1.57,
+          "original_stake_gp": 150.0,
+          "converted_stake_gp": 150.0,
+          "status": "allowed",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Turkey handicap -0.5",
+          "odds": 1.71,
+          "original_stake_gp": 150.0,
+          "converted_stake_gp": 150.0,
+          "status": "allowed",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil moneyline",
+          "odds": 1.69,
+          "original_stake_gp": 130.0,
+          "converted_stake_gp": 130.0,
+          "status": "allowed",
+          "warnings": []
+        },
+        {
+          "match_id": "WC-B2",
+          "pick": "Switzerland handicap -1.5",
+          "odds": 1.66,
+          "original_stake_gp": 80.0,
+          "converted_stake_gp": 80.0,
+          "status": "allowed",
+          "warnings": []
+        }
+      ]
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 9,
+      "loan_terms": {
+        "credit_score": 412.7,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -3655.0,
+        "outstanding_loan_gp": 5155.0,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -163.3,
+          "net_worth_health_proxy": -60.0,
+          "ranking_proxy": 16.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 510.0,
+      "converted_stake_total_gp": 510.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 130.0,
+          "converted_stake_gp": 130.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 130.0,
+          "converted_stake_gp": 130.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 130.0,
+          "converted_stake_gp": 130.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 120.0,
+          "converted_stake_gp": 120.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 10,
+      "loan_terms": {
+        "credit_score": 361.0,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -586.0,
+        "outstanding_loan_gp": 486.0,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -216.7,
+          "net_worth_health_proxy": -54.3,
+          "ranking_proxy": 12.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 950.0,
+      "converted_stake_total_gp": 950.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 250.0,
+          "converted_stake_gp": 250.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 250.0,
+          "converted_stake_gp": 250.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 250.0,
+          "converted_stake_gp": 250.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "xai",
+      "display_name": "xAI",
+      "rank": 11,
+      "loan_terms": {
+        "credit_score": 362.9,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -401.5,
+        "outstanding_loan_gp": 201.5,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -220.0,
+          "net_worth_health_proxy": -45.1,
+          "ranking_proxy": 8.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 800.0,
+      "converted_stake_total_gp": 800.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 180.0,
+          "converted_stake_gp": 180.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 220.0,
+          "converted_stake_gp": 220.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 220.0,
+          "converted_stake_gp": 220.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 180.0,
+          "converted_stake_gp": 180.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 12,
+      "loan_terms": {
+        "credit_score": 350.0,
+        "credit_grade": "D",
+        "credit_basis": "proxy_pending_forecast_ledger",
+        "net_worth_gp": -644.0,
+        "outstanding_loan_gp": 344.0,
+        "max_loan_gp": 0.0,
+        "available_loan_gp": 0.0,
+        "base_interest_rate": null,
+        "components": {
+          "forecast_accuracy": "pending",
+          "probability_calibration": "pending",
+          "risk_control_proxy": -223.3,
+          "net_worth_health_proxy": -57.2,
+          "ranking_proxy": 4.0
+        }
+      },
+      "bet_count": 4,
+      "allowed": 0,
+      "warned": 4,
+      "rejected": 0,
+      "original_stake_total_gp": 800.0,
+      "converted_stake_total_gp": 800.0,
+      "required_next_action": "现有投注可作为投资方向参考，但需要按赔率仓位上限降额。",
+      "bets": [
+        {
+          "match_id": "WC-B2",
+          "pick": "Qatar handicap 1.5",
+          "odds": 2.25,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C2",
+          "pick": "Brazil handicap -1.5",
+          "odds": 2.88,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-C1",
+          "pick": "Haiti handicap 1.5",
+          "odds": 1.54,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        },
+        {
+          "match_id": "WC-D2",
+          "pick": "Australia handicap 1.5",
+          "odds": 1.42,
+          "original_stake_gp": 200.0,
+          "converted_stake_gp": 200.0,
+          "status": "cap_warning",
+          "warnings": [
+            "超过赔率仓位上限：允许上限 0 GP。"
+          ]
+        }
+      ]
+    }
+  ],
+  "audit_rows": [
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 1,
+      "credit_grade": "A",
+      "credit_score": 737.2,
+      "net_worth_gp": 1530.0,
+      "available_loan_gp": 1224.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 430.0,
+      "converted_stake_gp": 382.5,
+      "stake_cap_gp": 382.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 382.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 1,
+      "credit_grade": "A",
+      "credit_score": 737.2,
+      "net_worth_gp": 1530.0,
+      "available_loan_gp": 1224.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 620.0,
+      "converted_stake_gp": 229.5,
+      "stake_cap_gp": 229.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 229.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 1,
+      "credit_grade": "A",
+      "credit_score": 737.2,
+      "net_worth_gp": 1530.0,
+      "available_loan_gp": 1224.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 310.0,
+      "converted_stake_gp": 310.0,
+      "stake_cap_gp": 382.5,
+      "status": "allowed",
+      "status_label": "可入账",
+      "warnings": [],
+      "rationale": ""
+    },
+    {
+      "model_account": "chatgpt",
+      "display_name": "ChatGPT",
+      "rank": 1,
+      "credit_grade": "A",
+      "credit_score": 737.2,
+      "net_worth_gp": 1530.0,
+      "available_loan_gp": 1224.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 390.0,
+      "converted_stake_gp": 382.5,
+      "stake_cap_gp": 382.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 382.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 2,
+      "credit_grade": "C",
+      "credit_score": 544.5,
+      "net_worth_gp": 135.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.57,
+      "original_stake_gp": 500.0,
+      "converted_stake_gp": 33.75,
+      "stake_cap_gp": 33.75,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 33.8 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 2,
+      "credit_grade": "C",
+      "credit_score": 544.5,
+      "net_worth_gp": 135.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Turkey",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.92,
+      "original_stake_gp": 400.0,
+      "converted_stake_gp": 20.25,
+      "stake_cap_gp": 20.25,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 20.2 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 2,
+      "credit_grade": "C",
+      "credit_score": 544.5,
+      "net_worth_gp": 135.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 300.0,
+      "converted_stake_gp": 33.75,
+      "stake_cap_gp": 33.75,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 33.8 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "deepseek",
+      "display_name": "DeepSeek",
+      "rank": 2,
+      "credit_grade": "C",
+      "credit_score": 544.5,
+      "net_worth_gp": 135.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.23,
+      "original_stake_gp": 300.0,
+      "converted_stake_gp": 33.75,
+      "stake_cap_gp": 33.75,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 33.8 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 3,
+      "credit_grade": "B",
+      "credit_score": 635.2,
+      "net_worth_gp": 710.0,
+      "available_loan_gp": 55.0,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.57,
+      "original_stake_gp": 350.0,
+      "converted_stake_gp": 177.5,
+      "stake_cap_gp": 177.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 177.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 3,
+      "credit_grade": "B",
+      "credit_score": 635.2,
+      "net_worth_gp": 710.0,
+      "available_loan_gp": 55.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 300.0,
+      "converted_stake_gp": 177.5,
+      "stake_cap_gp": 177.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 177.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 3,
+      "credit_grade": "B",
+      "credit_score": 635.2,
+      "net_worth_gp": 710.0,
+      "available_loan_gp": 55.0,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.23,
+      "original_stake_gp": 300.0,
+      "converted_stake_gp": 177.5,
+      "stake_cap_gp": 177.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 177.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "mimo",
+      "display_name": "MiMo",
+      "rank": 3,
+      "credit_grade": "B",
+      "credit_score": 635.2,
+      "net_worth_gp": 710.0,
+      "available_loan_gp": 55.0,
+      "match_id": "WC-D2",
+      "selection": "Turkey",
+      "market": "handicap",
+      "line": -0.5,
+      "odds": 1.71,
+      "original_stake_gp": 250.0,
+      "converted_stake_gp": 177.5,
+      "stake_cap_gp": 177.5,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 177.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 4,
+      "credit_grade": "B",
+      "credit_score": 651.6,
+      "net_worth_gp": 647.8,
+      "available_loan_gp": 323.9,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.57,
+      "original_stake_gp": 280.0,
+      "converted_stake_gp": 161.95,
+      "stake_cap_gp": 161.95,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 161.9 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 4,
+      "credit_grade": "B",
+      "credit_score": 651.6,
+      "net_worth_gp": 647.8,
+      "available_loan_gp": 323.9,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 220.0,
+      "converted_stake_gp": 161.95,
+      "stake_cap_gp": 161.95,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 161.9 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 4,
+      "credit_grade": "B",
+      "credit_score": 651.6,
+      "net_worth_gp": 647.8,
+      "available_loan_gp": 323.9,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 260.0,
+      "converted_stake_gp": 161.95,
+      "stake_cap_gp": 161.95,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 161.9 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "minimax",
+      "display_name": "MiniMax",
+      "rank": 4,
+      "credit_grade": "B",
+      "credit_score": 651.6,
+      "net_worth_gp": 647.8,
+      "available_loan_gp": 323.9,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "handicap",
+      "line": -1.75,
+      "odds": 1.87,
+      "original_stake_gp": 280.0,
+      "converted_stake_gp": 161.95,
+      "stake_cap_gp": 161.95,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 161.9 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "credit_grade": "C",
+      "credit_score": 501.9,
+      "net_worth_gp": 41.9,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.44,
+      "original_stake_gp": 185.0,
+      "converted_stake_gp": 10.47,
+      "stake_cap_gp": 10.47,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 10.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "credit_grade": "C",
+      "credit_score": 501.9,
+      "net_worth_gp": 41.9,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 185.0,
+      "converted_stake_gp": 10.47,
+      "stake_cap_gp": 10.47,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 10.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "credit_grade": "C",
+      "credit_score": 501.9,
+      "net_worth_gp": 41.9,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 185.0,
+      "converted_stake_gp": 10.47,
+      "stake_cap_gp": 10.47,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 10.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "doubao",
+      "display_name": "豆包",
+      "rank": 5,
+      "credit_grade": "C",
+      "credit_score": 501.9,
+      "net_worth_gp": 41.9,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 1.66,
+      "original_stake_gp": 186.9,
+      "converted_stake_gp": 10.47,
+      "stake_cap_gp": 10.47,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 10.5 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 6,
+      "credit_grade": "D",
+      "credit_score": 382.1,
+      "net_worth_gp": -776.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 124.0,
+      "converted_stake_gp": 124.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 6,
+      "credit_grade": "D",
+      "credit_score": 382.1,
+      "net_worth_gp": -776.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 6,
+      "credit_grade": "D",
+      "credit_score": 382.1,
+      "net_worth_gp": -776.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "gemini",
+      "display_name": "Gemini",
+      "rank": 6,
+      "credit_grade": "D",
+      "credit_score": 382.1,
+      "net_worth_gp": -776.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 7,
+      "credit_grade": "D",
+      "credit_score": 404.0,
+      "net_worth_gp": -2925.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.23,
+      "original_stake_gp": 400.0,
+      "converted_stake_gp": 400.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 7,
+      "credit_grade": "D",
+      "credit_score": 404.0,
+      "net_worth_gp": -2925.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.51,
+      "original_stake_gp": 300.0,
+      "converted_stake_gp": 300.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 7,
+      "credit_grade": "D",
+      "credit_score": 404.0,
+      "net_worth_gp": -2925.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "kimi",
+      "display_name": "Kimi",
+      "rank": 7,
+      "credit_grade": "D",
+      "credit_score": 404.0,
+      "net_worth_gp": -2925.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Turkey",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.92,
+      "original_stake_gp": 100.0,
+      "converted_stake_gp": 100.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 8,
+      "credit_grade": "B",
+      "credit_score": 696.3,
+      "net_worth_gp": 1385.0,
+      "available_loan_gp": 677.5,
+      "match_id": "WC-C1",
+      "selection": "Scotland",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.57,
+      "original_stake_gp": 150.0,
+      "converted_stake_gp": 150.0,
+      "stake_cap_gp": 346.25,
+      "status": "allowed",
+      "status_label": "可入账",
+      "warnings": [],
+      "rationale": ""
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 8,
+      "credit_grade": "B",
+      "credit_score": 696.3,
+      "net_worth_gp": 1385.0,
+      "available_loan_gp": 677.5,
+      "match_id": "WC-D2",
+      "selection": "Turkey",
+      "market": "handicap",
+      "line": -0.5,
+      "odds": 1.71,
+      "original_stake_gp": 150.0,
+      "converted_stake_gp": 150.0,
+      "stake_cap_gp": 346.25,
+      "status": "allowed",
+      "status_label": "可入账",
+      "warnings": [],
+      "rationale": ""
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 8,
+      "credit_grade": "B",
+      "credit_score": 696.3,
+      "net_worth_gp": 1385.0,
+      "available_loan_gp": 677.5,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "moneyline",
+      "line": null,
+      "odds": 1.69,
+      "original_stake_gp": 130.0,
+      "converted_stake_gp": 130.0,
+      "stake_cap_gp": 346.25,
+      "status": "allowed",
+      "status_label": "可入账",
+      "warnings": [],
+      "rationale": ""
+    },
+    {
+      "model_account": "meta",
+      "display_name": "Meta AI",
+      "rank": 8,
+      "credit_grade": "B",
+      "credit_score": 696.3,
+      "net_worth_gp": 1385.0,
+      "available_loan_gp": 677.5,
+      "match_id": "WC-B2",
+      "selection": "Switzerland",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 1.66,
+      "original_stake_gp": 80.0,
+      "converted_stake_gp": 80.0,
+      "stake_cap_gp": 346.25,
+      "status": "allowed",
+      "status_label": "可入账",
+      "warnings": [],
+      "rationale": ""
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 9,
+      "credit_grade": "D",
+      "credit_score": 412.7,
+      "net_worth_gp": -3655.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 130.0,
+      "converted_stake_gp": 130.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 9,
+      "credit_grade": "D",
+      "credit_score": 412.7,
+      "net_worth_gp": -3655.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 130.0,
+      "converted_stake_gp": 130.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 9,
+      "credit_grade": "D",
+      "credit_score": 412.7,
+      "net_worth_gp": -3655.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 130.0,
+      "converted_stake_gp": 130.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "qwen",
+      "display_name": "通义",
+      "rank": 9,
+      "credit_grade": "D",
+      "credit_score": 412.7,
+      "net_worth_gp": -3655.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 120.0,
+      "converted_stake_gp": 120.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 10,
+      "credit_grade": "D",
+      "credit_score": 361.0,
+      "net_worth_gp": -586.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 10,
+      "credit_grade": "D",
+      "credit_score": 361.0,
+      "net_worth_gp": -586.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 250.0,
+      "converted_stake_gp": 250.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 10,
+      "credit_grade": "D",
+      "credit_score": 361.0,
+      "net_worth_gp": -586.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 250.0,
+      "converted_stake_gp": 250.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "wenxin",
+      "display_name": "文心",
+      "rank": 10,
+      "credit_grade": "D",
+      "credit_score": 361.0,
+      "net_worth_gp": -586.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 250.0,
+      "converted_stake_gp": 250.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "xai",
+      "display_name": "xAI",
+      "rank": 11,
+      "credit_grade": "D",
+      "credit_score": 362.9,
+      "net_worth_gp": -401.5,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 180.0,
+      "converted_stake_gp": 180.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "xai",
+      "display_name": "xAI",
+      "rank": 11,
+      "credit_grade": "D",
+      "credit_score": 362.9,
+      "net_worth_gp": -401.5,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 220.0,
+      "converted_stake_gp": 220.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "xai",
+      "display_name": "xAI",
+      "rank": 11,
+      "credit_grade": "D",
+      "credit_score": 362.9,
+      "net_worth_gp": -401.5,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 220.0,
+      "converted_stake_gp": 220.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "xai",
+      "display_name": "xAI",
+      "rank": 11,
+      "credit_grade": "D",
+      "credit_score": 362.9,
+      "net_worth_gp": -401.5,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 180.0,
+      "converted_stake_gp": 180.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 12,
+      "credit_grade": "D",
+      "credit_score": 350.0,
+      "net_worth_gp": -644.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-B2",
+      "selection": "Qatar",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 2.25,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 12,
+      "credit_grade": "D",
+      "credit_score": 350.0,
+      "net_worth_gp": -644.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C2",
+      "selection": "Brazil",
+      "market": "handicap",
+      "line": -1.5,
+      "odds": 2.88,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 12,
+      "credit_grade": "D",
+      "credit_score": 350.0,
+      "net_worth_gp": -644.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-C1",
+      "selection": "Haiti",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.54,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    },
+    {
+      "model_account": "yuanbao",
+      "display_name": "元宝",
+      "rank": 12,
+      "credit_grade": "D",
+      "credit_score": 350.0,
+      "net_worth_gp": -644.0,
+      "available_loan_gp": 0.0,
+      "match_id": "WC-D2",
+      "selection": "Australia",
+      "market": "handicap",
+      "line": 1.5,
+      "odds": 1.42,
+      "original_stake_gp": 200.0,
+      "converted_stake_gp": 200.0,
+      "stake_cap_gp": 0.0,
+      "status": "cap_warning",
+      "status_label": "需降额",
+      "warnings": [
+        "超过赔率仓位上限：允许上限 0 GP。"
+      ],
+      "rationale": ""
+    }
+  ],
+  "caveat": "This is a new-rule shadow rerun over accepted run receipts. It does not claim the 12 external models have already reanswered under PRED-INVEST v1."
+}

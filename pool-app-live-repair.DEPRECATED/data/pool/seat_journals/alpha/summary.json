@@ -1,0 +1,217 @@
+{
+  "seat_id": "alpha",
+  "updated_at": "2026-06-16T20:40:14+00:00",
+  "last_run_id": "smoke-behavior-v2-b",
+  "runs_seen": [
+    "smoke-behavior-v2-a",
+    "smoke-behavior-v2-b"
+  ],
+  "event_counts": {
+    "self_review_recorded": 195,
+    "forecast_recorded": 195,
+    "investment_recorded": 195,
+    "settlement_recorded": 99,
+    "credit_updated": 195,
+    "account_snapshot": 195,
+    "debt_service_recorded": 79
+  },
+  "recent_events": [
+    {
+      "accrued_interest_gp": 0.0,
+      "balance_after_debt_service_gp": 1096.0,
+      "balance_before_gp": 1000.0,
+      "event_type": "debt_service_recorded",
+      "interest_due_gp": 0.0,
+      "interest_paid_gp": 0.0,
+      "net_worth_gp": 1096.0,
+      "new_loan_used_gp": 0.0,
+      "outstanding_loan_gp": 0.0,
+      "principal_repaid_gp": 0.0,
+      "ranking_basis": "net_worth_after_settlement_interest_and_principal_repayment",
+      "run_id": "smoke-behavior-v2-a",
+      "seat_id": "alpha",
+      "settlement_profit_gp": 96.0,
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "credit_delta": 24,
+      "credit_grade": "B",
+      "credit_score": 624.0,
+      "details": [
+        {
+          "actual": "home",
+          "delta": 12,
+          "expected": "home",
+          "match_id": "SMOKE-M1"
+        },
+        {
+          "actual": "draw",
+          "delta": 12,
+          "expected": "draw",
+          "match_id": "SMOKE-M2"
+        }
+      ],
+      "event_type": "credit_updated",
+      "run_id": "smoke-behavior-v2-a",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "accrued_interest_gp": 0.0,
+      "balance_gp": 1096.0,
+      "event_type": "account_snapshot",
+      "net_worth_gp": 1096.0,
+      "outstanding_loan_gp": 0.0,
+      "run_id": "smoke-behavior-v2-a",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "event_type": "self_review_recorded",
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "self_review": {
+        "risk_commitment": "仓位不超过净值四分之一。",
+        "strategy_change_this_round": "继续优先低波动选择。",
+        "what_i_did_last_round": "上轮主胜小仓位命中，no-bet 纪律保持。",
+        "what_i_learned": "轻边际可以下注，但不需要贷款。"
+      },
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "event_type": "forecast_recorded",
+      "forecasts": [
+        {
+          "away_win_prob": 0.18,
+          "confidence": 0.68,
+          "draw_prob": 0.25,
+          "edge_assessment": "bettable",
+          "forecast_rationale": "延续上轮判断，但降低信心。",
+          "home_win_prob": 0.57,
+          "information_gaps": [
+            "fresh lineup"
+          ],
+          "match_id": "SMOKE-M1",
+          "most_likely_score": "2-1"
+        },
+        {
+          "away_win_prob": 0.3,
+          "confidence": 0.53,
+          "draw_prob": 0.35,
+          "edge_assessment": "no_edge",
+          "forecast_rationale": "平衡局，不强下注。",
+          "home_win_prob": 0.35,
+          "information_gaps": [
+            "fitness"
+          ],
+          "match_id": "SMOKE-M2",
+          "most_likely_score": "1-1"
+        }
+      ],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "event_type": "investment_recorded",
+      "investments": [
+        {
+          "action": "bet",
+          "estimated_ev": 0.03,
+          "if_loss_survival_plan": "止损复盘。",
+          "loan_used_gp": 0,
+          "market": "h2h",
+          "market_implied_prob": 0.56,
+          "match_id": "SMOKE-M1",
+          "max_loss_gp": 100,
+          "model_estimated_prob": 0.57,
+          "odds": 1.8,
+          "selection": "home",
+          "stake_gp": 100,
+          "why_bet_or_no_bet": "仍有轻微边际，降低仓位。"
+        },
+        {
+          "action": "no_bet",
+          "estimated_ev": 0,
+          "if_loss_survival_plan": "保留资金。",
+          "loan_used_gp": 0,
+          "market": "",
+          "market_implied_prob": 0.32,
+          "match_id": "SMOKE-M2",
+          "max_loss_gp": 0,
+          "model_estimated_prob": 0.35,
+          "odds": 0,
+          "selection": "",
+          "stake_gp": 0,
+          "why_bet_or_no_bet": "没有足够优势。"
+        }
+      ],
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "credit_delta": 0,
+      "credit_grade": "B",
+      "credit_score": 624.0,
+      "details": [],
+      "event_type": "credit_updated",
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    },
+    {
+      "accrued_interest_gp": 0,
+      "balance_gp": 1000,
+      "event_type": "account_snapshot",
+      "net_worth_gp": 1000.0,
+      "outstanding_loan_gp": 0,
+      "run_id": "smoke-behavior-v2-b",
+      "seat_id": "alpha",
+      "ts": "2026-06-16T20:40:14+00:00"
+    }
+  ],
+  "last_self_review": {
+    "risk_commitment": "仓位不超过净值四分之一。",
+    "strategy_change_this_round": "继续优先低波动选择。",
+    "what_i_did_last_round": "上轮主胜小仓位命中，no-bet 纪律保持。",
+    "what_i_learned": "轻边际可以下注，但不需要贷款。"
+  },
+  "last_forecasts": [],
+  "last_investments": [],
+  "last_settlement": {
+    "profit_gp": 96.0,
+    "run_id": "smoke-behavior-v2-a",
+    "seat_id": "alpha",
+    "settled": [
+      {
+        "line": null,
+        "loan_used_gp": 0.0,
+        "market": "h2h",
+        "match_id": "SMOKE-M1",
+        "odds": 1.8,
+        "payout_gp": 216.0,
+        "profit_gp": 96.0,
+        "score": "2-0",
+        "seat_id": "alpha",
+        "selection": "home",
+        "stake_gp": 120.0,
+        "status": "win"
+      },
+      {
+        "action": "no_bet",
+        "match_id": "SMOKE-M2",
+        "profit_gp": 0
+      }
+    ]
+  },
+  "credit_score": 624.0,
+  "credit_grade": "B",
+  "credit_delta": 0,
+  "balance_gp": 1000,
+  "outstanding_loan_gp": 0,
+  "accrued_interest_gp": 0,
+  "net_worth_gp": 1000.0,
+  "recovery_mode": false,
+  "strategy_drift_note": ""
+}

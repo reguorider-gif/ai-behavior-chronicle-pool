@@ -1,0 +1,85 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "event": {
+    "event_id": "run-16:chatgpt:0:prompt_context_recorded",
+    "run_id": "run-16",
+    "seat_id": "chatgpt",
+    "timestamp": "2026-06-16T12:01:03+00:00",
+    "event_type": "prompt_context_recorded",
+    "action": "context",
+    "outcome": "prompt_context_recorded",
+    "risk_shift": "information_update",
+    "state_before": {
+      "seat_id": "chatgpt",
+      "balance_gp": 1000.0,
+      "credit_score": 657.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        }
+      ],
+      "recent_memory": []
+    },
+    "state_after": {
+      "seat_id": "chatgpt",
+      "balance_gp": 1000.0,
+      "credit_score": 657.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "low",
+      "behavior_type": "discipline_first_observer",
+      "loan_dependency": "low",
+      "strategy_drift": "risk_reduction",
+      "active_patterns": [
+        {
+          "name": "uncertainty_to_no_bet",
+          "label": "uncertainty → no-bet",
+          "confidence": 0.93
+        }
+      ],
+      "recent_memory": []
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": true
+      },
+      "memory_summary": {
+        "behavior_type": "discipline_first_observer",
+        "risk_level": "low",
+        "loan_dependency": "low",
+        "dominant_pattern": "uncertainty_to_no_bet"
+      },
+      "decision": "prompt_context_recorded"
+    },
+    "counterfactual": {
+      "question": "这个事件如何影响下一轮？",
+      "alternative": "下一轮 prompt 必须引用该事件，并说明是否改变仓位、贷款或 no-bet 策略。",
+      "expected_effect": "让行为记忆产生可检验的因果影响。"
+    },
+    "source_event": {
+      "event_type": "prompt_context_recorded",
+      "status": null,
+      "forecast_count": 0,
+      "investment_count": 0
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-16-chatgpt-0-prompt_context_recorded.json"
+  }
+}

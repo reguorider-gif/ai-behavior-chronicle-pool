@@ -10,51 +10,17 @@ from __future__ import annotations
 
 import argparse
 import json
-import urllib.error
-import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import pred_invest_quality_gate
+from pool.io_utils import http_json
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
-LOCAL_HOSTS = {"127.0.0.1", "localhost", "::1"}
-
-
-def _is_local_url(url: str) -> bool:
-    return (urllib.parse.urlparse(url).hostname or "").lower() in LOCAL_HOSTS
-
-
-def _http_json(url: str, payload: dict[str, Any] | None = None, timeout: int = 30) -> dict[str, Any]:
-    headers = {"Accept": "application/json"}
-    data = None
-    if payload is not None:
-        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-        headers["Content-Type"] = "application/json"
-    request = urllib.request.Request(url, data=data, headers=headers, method="POST" if payload is not None else "GET")
-    try:
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({})) if _is_local_url(url) else urllib.request
-        with opener.open(request, timeout=timeout) as response:
-            raw = response.read().decode("utf-8", errors="replace")
-            try:
-                return json.loads(raw)
-            except Exception:
-                return {"ok": False, "error": "non_json_response", "raw": raw[:1000], "status": response.status}
-    except urllib.error.HTTPError as exc:
-        raw = exc.read().decode("utf-8", errors="replace")
-        try:
-            body = json.loads(raw)
-        except Exception:
-            body = {"raw": raw[:1000]}
-        body.setdefault("ok", False)
-        body.setdefault("status", exc.code)
-        return body
-    except Exception as exc:
-        return {"ok": False, "error": type(exc).__name__, "message": str(exc)}
+REQUIRED_SEAT_COUNT = len(pred_invest_quality_gate.REQUIRED_SEATS)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -93,7 +59,7 @@ def _bridge_check(
     stuck_seconds: float,
     recovery_reason: str,
 ) -> dict[str, Any]:
-    status = _http_json(f"{base_url.rstrip('/')}/api/bridge/status", timeout=45)
+    status = http_json(f"{base_url.rstrip('/')}/api/bridge/status", timeout=45)
     busy = bool(status.get("busy") or (status.get("bridge_run") or {}).get("busy"))
     active_run_id = status.get("active_run_id") or (status.get("bridge_run") or {}).get("run_id")
     elapsed = status.get("elapsed_sec")
@@ -115,8 +81,8 @@ def _bridge_check(
     }
     if busy and recover_stuck and elapsed_f >= stuck_seconds:
         payload = {"run_id": active_run_id, "reason": recovery_reason}
-        recovery = _http_json(f"{base_url.rstrip('/')}/api/bridge/recover", payload=payload, timeout=45)
-        after = _http_json(f"{base_url.rstrip('/')}/api/bridge/status", timeout=45)
+        recovery = http_json(f"{base_url.rstrip('/')}/api/bridge/recover", payload=payload, timeout=45)
+        after = http_json(f"{base_url.rstrip('/')}/api/bridge/status", timeout=45)
         after_busy = bool(after.get("busy") or (after.get("bridge_run") or {}).get("busy"))
         result.update({
             "ok": bool(after.get("available", True)) and not after_busy,
@@ -178,8 +144,8 @@ def build_guard(
             warnings.append(f"publish_blocked_by_quality_gate:{gate.get('valid_count')}/{gate.get('required_seat_count')}")
         prompt_models = gate.get("prompt_pack_models")
         prompt_matches = gate.get("prompt_pack_match_count")
-        if prompt_models != 12:
-            errors.append(f"prompt_pack_models_not_12:{prompt_models}")
+        if prompt_models != REQUIRED_SEAT_COUNT:
+            errors.append(f"prompt_pack_models_not_{REQUIRED_SEAT_COUNT}:{prompt_models}")
         if not prompt_matches:
             errors.append("prompt_pack_has_no_matches")
 
@@ -255,7 +221,7 @@ def build_guard(
             "status": gate.get("status") if gate else None,
             "publish_allowed": gate.get("publish_allowed") if gate else False,
             "valid_count": gate.get("valid_count") if gate else 0,
-            "required_seat_count": gate.get("required_seat_count") if gate else 12,
+            "required_seat_count": gate.get("required_seat_count") if gate else REQUIRED_SEAT_COUNT,
             "valid_seats": gate.get("valid_seats") if gate else [],
             "needs_rerun": gate.get("needs_rerun") if gate else [],
             "rerun_queue": gate.get("rerun_queue") if gate else [],

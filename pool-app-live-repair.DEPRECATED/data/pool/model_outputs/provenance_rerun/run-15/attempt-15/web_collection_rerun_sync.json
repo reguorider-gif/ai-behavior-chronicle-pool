@@ -1,0 +1,46 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "d07f120d5f20",
+  "round_id": "run-15",
+  "attempt_no": 15,
+  "date": "2026-06-15",
+  "exported_at": "2026-06-15T12:31:59.664632+00:00",
+  "observed_models": [
+    "yuanbao"
+  ],
+  "exported_outputs": 0,
+  "invalid_outputs": [
+    {
+      "seat_id": "yuanbao",
+      "seat": "yuanbao",
+      "response_chars": 0,
+      "ok": false,
+      "reason": "empty_response",
+      "execution_validity": {
+        "policy_version": "required-web-seat-v1",
+        "required": true,
+        "valid": false,
+        "submitted": true,
+        "accepted": false,
+        "marker_found": false,
+        "marker_closed": false,
+        "matches_question": false,
+        "prompt_echo": false,
+        "polluted": false,
+        "page_busy": false,
+        "response_chars": 0,
+        "min_response_chars": 1,
+        "response_hash": null,
+        "capture_mode": "",
+        "prompt_id": "AIJUDGE-yuanbao-1781526610651737000",
+        "attempts": 2,
+        "source": "web_bridge",
+        "reason": "slow_response_pending"
+      }
+    }
+  ],
+  "rows": [],
+  "dropbox": null,
+  "ingest": null,
+  "pipeline": null
+}

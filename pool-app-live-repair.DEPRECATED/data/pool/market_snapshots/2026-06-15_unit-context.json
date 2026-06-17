@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-15",
+  "run_id": "unit-context",
+  "privacy": "anonymous_market_only_no_seat_choices",
+  "matches": [
+    {
+      "match_id": "CTX-M1",
+      "date": "2026-06-15",
+      "home_team": "Alpha FC",
+      "away_team": "Beta FC",
+      "kickoff_at": null,
+      "markets": []
+    }
+  ]
+}

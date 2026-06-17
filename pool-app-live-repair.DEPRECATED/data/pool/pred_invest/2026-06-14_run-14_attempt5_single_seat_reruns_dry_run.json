@@ -1,0 +1,41 @@
+{
+  "version": "pred_invest_single_seat_reruns.v1",
+  "generated_at": "2026-06-14T23:20:09.311574+00:00",
+  "date": "2026-06-14",
+  "round_id": "run-14",
+  "attempt_no": 5,
+  "base_url": "https://pool-app-one.vercel.app",
+  "bridge_base_url": "http://127.0.0.1:8501",
+  "input_run_ids": [
+    "run-14"
+  ],
+  "requested_seats": [
+    "grok"
+  ],
+  "initial_quality_gate": {
+    "status": "PARTIAL_NOT_READY",
+    "valid_count": 4,
+    "required_seat_count": 12,
+    "valid_seats": [
+      "doubao",
+      "gemini",
+      "kimi",
+      "minimax"
+    ],
+    "needs_rerun": [
+      "chatgpt",
+      "deepseek",
+      "grok",
+      "meta",
+      "mimo",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ]
+  },
+  "targets": [
+    "grok"
+  ],
+  "runs": [],
+  "dry_run": true
+}

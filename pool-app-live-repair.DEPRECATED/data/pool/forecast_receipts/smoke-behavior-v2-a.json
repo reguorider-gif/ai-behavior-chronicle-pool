@@ -1,0 +1,118 @@
+{
+  "run_id": "smoke-behavior-v2-a",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "seats": {
+    "alpha": {
+      "seat_id": "alpha",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.58,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.17,
+          "most_likely_score": "2-0",
+          "confidence": 0.71,
+          "edge_assessment": "bettable",
+          "information_gaps": [
+            "fixture only"
+          ],
+          "forecast_rationale": "Alpha FC 主胜概率高于盘口隐含概率，适合小仓位验证。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.34,
+          "draw_prob": 0.36,
+          "away_win_prob": 0.3,
+          "most_likely_score": "1-1",
+          "confidence": 0.55,
+          "edge_assessment": "no_edge",
+          "information_gaps": [
+            "lineup"
+          ],
+          "forecast_rationale": "双方接近，平局概率略高但没有足够边际。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "首次烟测，无上轮记录。",
+        "what_i_learned": "先分离预测与下注。",
+        "strategy_change_this_round": "只在价格清楚时下注。",
+        "risk_commitment": "不使用贷款。"
+      }
+    },
+    "beta": {
+      "seat_id": "beta",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.22,
+          "draw_prob": 0.28,
+          "away_win_prob": 0.5,
+          "most_likely_score": "1-2",
+          "confidence": 0.6,
+          "edge_assessment": "bettable",
+          "information_gaps": [
+            "fixture only"
+          ],
+          "forecast_rationale": "Beta FC 赔率高，假设市场低估其反击效率。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.37,
+          "draw_prob": 0.29,
+          "away_win_prob": 0.34,
+          "most_likely_score": "2-1",
+          "confidence": 0.52,
+          "edge_assessment": "no_edge",
+          "information_gaps": [
+            "team news"
+          ],
+          "forecast_rationale": "Gamma FC 主场稍优，但边际不足。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "首次烟测，无上轮记录。",
+        "what_i_learned": "需要测试逆向策略。",
+        "strategy_change_this_round": "寻找高赔率冷门。",
+        "risk_commitment": "不额外贷款。"
+      }
+    },
+    "gamma": {
+      "seat_id": "gamma",
+      "forecasts": [
+        {
+          "match_id": "SMOKE-M1",
+          "home_win_prob": 0.55,
+          "draw_prob": 0.25,
+          "away_win_prob": 0.2,
+          "most_likely_score": "2-1",
+          "confidence": 0.61,
+          "edge_assessment": "insufficient_info",
+          "information_gaps": [
+            "injury",
+            "weather"
+          ],
+          "forecast_rationale": "Alpha FC 稍强，但资料不足，只做预测。"
+        },
+        {
+          "match_id": "SMOKE-M2",
+          "home_win_prob": 0.33,
+          "draw_prob": 0.34,
+          "away_win_prob": 0.33,
+          "most_likely_score": "1-1",
+          "confidence": 0.48,
+          "edge_assessment": "insufficient_info",
+          "information_gaps": [
+            "lineup"
+          ],
+          "forecast_rationale": "信息不足，不做投资。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "首次烟测但账户已处于压力区。",
+        "what_i_learned": "净值为负时不能新增贷款。",
+        "strategy_change_this_round": "只做预测不下注。",
+        "risk_commitment": "Recovery Mode 下保护账户。"
+      }
+    }
+  }
+}

@@ -1,19 +1,19 @@
 {
   "seat_id": "beta",
-  "updated_at": "2026-06-15T21:03:13+00:00",
+  "updated_at": "2026-06-17T21:06:33+00:00",
   "last_run_id": "smoke-behavior-v2-b",
   "runs_seen": [
     "smoke-behavior-v2-a",
     "smoke-behavior-v2-b"
   ],
   "event_counts": {
-    "self_review_recorded": 97,
-    "forecast_recorded": 97,
-    "investment_recorded": 97,
-    "settlement_recorded": 50,
-    "credit_updated": 97,
-    "account_snapshot": 97,
-    "debt_service_recorded": 30
+    "self_review_recorded": 109,
+    "forecast_recorded": 109,
+    "investment_recorded": 109,
+    "settlement_recorded": 56,
+    "credit_updated": 109,
+    "account_snapshot": 109,
+    "debt_service_recorded": 36
   },
   "recent_events": [
     {
@@ -31,22 +31,22 @@
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
       "settlement_profit_gp": -80.0,
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
-      "credit_delta": -20,
+      "credit_delta": -20.0,
       "credit_grade": "C",
       "credit_score": 580.0,
       "details": [
         {
           "actual": "home",
-          "delta": -10,
+          "delta": -10.0,
           "expected": "away",
           "match_id": "SMOKE-M1"
         },
         {
           "actual": "draw",
-          "delta": -10,
+          "delta": -10.0,
           "expected": "home",
           "match_id": "SMOKE-M2"
         }
@@ -54,7 +54,7 @@
       "event_type": "credit_updated",
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "accrued_interest_gp": 0.0,
@@ -64,7 +64,7 @@
       "outstanding_loan_gp": 0.0,
       "run_id": "smoke-behavior-v2-a",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "event_type": "self_review_recorded",
@@ -76,7 +76,7 @@
         "what_i_did_last_round": "上轮冷门判断失败。",
         "what_i_learned": "高赔率不是自动正期望。"
       },
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "event_type": "forecast_recorded",
@@ -110,7 +110,7 @@
       ],
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "event_type": "investment_recorded",
@@ -148,7 +148,7 @@
       ],
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "credit_delta": 0,
@@ -158,7 +158,7 @@
       "event_type": "credit_updated",
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     },
     {
       "accrued_interest_gp": 0,
@@ -168,7 +168,7 @@
       "outstanding_loan_gp": 100,
       "run_id": "smoke-behavior-v2-b",
       "seat_id": "beta",
-      "ts": "2026-06-15T21:03:13+00:00"
+      "ts": "2026-06-17T21:06:33+00:00"
     }
   ],
   "last_self_review": {

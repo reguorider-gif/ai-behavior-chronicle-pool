@@ -30,6 +30,8 @@ MATCH_RESULTS_PATH = ROOT / "data" / "pool" / "match_results" / "latest_known_sc
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from ops.pool.prompt_context_builder import build_market_snapshot, build_prompt_context
+
 SEAT_DISPLAY_NAMES = {
     "chatgpt": "ChatGPT",
     "deepseek": "DeepSeek",
@@ -371,7 +373,7 @@ def build_prompt(
     }
 
 
-def build_prompt_pack(date: str, round_id: str, base_url: str = BASE_URL) -> dict[str, Any]:
+def build_prompt_pack(date: str, round_id: str, base_url: str = BASE_URL, *, write_contexts: bool = False) -> dict[str, Any]:
     source_warning = None
     try:
         runtime = fetch_json(api_url(base_url, "/api/pool/runtime-summary", date=date, round_id=round_id))
@@ -402,6 +404,27 @@ def build_prompt_pack(date: str, round_id: str, base_url: str = BASE_URL) -> dic
     settled_ids = settled_match_ids()
     required = required_matches(date, settled_ids=settled_ids)
     matches = merge_required_matches(match_pool(runtime, date, include_fallback=False, settled_ids=settled_ids), required)
+    compact_matches = [compact_match(match, match_odds) for match in matches]
+    prompt_context_status = {"written": False, "count": 0, "seats": []}
+    if write_contexts:
+        accounts_by_seat = {account_key(account): account for account in accounts if account_key(account)}
+        market_context = build_market_snapshot(date, round_id, compact_matches, write=True)
+        written_seats: list[str] = []
+        for account in accounts:
+            seat_id = account_key(account)
+            if not seat_id:
+                continue
+            build_prompt_context(
+                date,
+                round_id,
+                seat_id,
+                accounts=accounts_by_seat,
+                matches=compact_matches,
+                market_snapshot=market_context,
+                write=True,
+            )
+            written_seats.append(seat_id)
+        prompt_context_status = {"written": True, "count": len(written_seats), "seats": written_seats}
     prompts = [build_prompt(account, matches, date, round_id, match_odds) for account in accounts]
     return {
         "version": "pred_invest_prompt_pack.v2",
@@ -431,8 +454,9 @@ def build_prompt_pack(date: str, round_id: str, base_url: str = BASE_URL) -> dic
         "settled_match_filter_count": len(settled_ids),
         "match_count": len(matches),
         "required_coverage": required_coverage(matches, required),
+        "prompt_contexts": prompt_context_status,
         "models": len(prompts),
-        "matches": [compact_match(match, match_odds) for match in matches],
+        "matches": compact_matches,
         "prompts": prompts,
         "rules": {
             "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",

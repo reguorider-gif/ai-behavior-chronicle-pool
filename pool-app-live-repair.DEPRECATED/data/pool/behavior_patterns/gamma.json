@@ -1,0 +1,27 @@
+{
+  "version": "behavior_patterns.v1",
+  "seat_id": "gamma",
+  "generated_at": "2026-06-16T20:40:14+00:00",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "smoke-behavior-v2-b:investment_recorded:1102",
+        "smoke-behavior-v2-a:investment_recorded:1107",
+        "smoke-behavior-v2-b:investment_recorded:1114",
+        "smoke-behavior-v2-a:investment_recorded:1119",
+        "smoke-behavior-v2-b:investment_recorded:1126",
+        "smoke-behavior-v2-a:investment_recorded:1131",
+        "smoke-behavior-v2-b:investment_recorded:1138",
+        "smoke-behavior-v2-a:investment_recorded:1143"
+      ],
+      "supporting_events": 8,
+      "seats": [
+        "gamma"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    }
+  ]
+}

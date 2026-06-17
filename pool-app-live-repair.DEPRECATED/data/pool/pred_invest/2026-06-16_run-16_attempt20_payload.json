@@ -1,0 +1,39 @@
+{
+  "question": "AI_JUDGE_RERUN_MARKER:POOL_RUN_16_ATTEMPT_20_CHATGPT_DOUBAO_GROK_KIMI_MIMO_MINIMAX_QWEN_WENXIN_YUANBAO_132118_\n[PRED_INVEST_RECEIPT_ONLY]\ndate=2026-06-16 round=run-16 product=worldcup_pool\nanswer_contract: compact_line_receipt\n不要复述题目，不要 JSON，不要 Markdown，不要解释，只输出 PRED_INVEST_RECEIPT 行协议。\n研究游戏，不是真实投注建议。当前席位：chatgpt, doubao, grok, kimi, mimo, minimax, qwen, wenxin, yuanbao。\n账号：qwen rank3 bal1500.0 net1100.0 loan400.0 creditB;yuanbao rank4 bal1500.0 net1000.0 loan500.0 creditB;doubao rank5 bal1400.0 net1100.0 loan300.0 creditB;mimo rank7 bal1200.0 net900.0 loan300.0 creditB;chatgpt rank8 bal1000.0 net1000.0 loan0.0 creditB;kimi rank9 bal1000.0 net1000.0 loan0.0 creditB;minimax rank10 bal1000.0 net1000.0 loan0.0 creditB;wenxin rank11 bal1000.0 net1000.0 loan0.0 creditB;grok rank12 bal1000.0 net1000.0 loan0.0 creditB\n赛事：\nM|WCAPI-20260627-COLOMBIA-PORTUGAL|Colombia vs Portugal|h2h:Colombia:-@3.48;h2h:Draw:-@3.29\n必须覆盖：WCAPI-20260627-COLOMBIA-PORTUGAL\n规则：每个 match_id 必须同时出现在 forecasts 与 investments；可 no_bet，但不能缺行。贷款会先计息偿还再排名；前五奖励，末三罚款。\n身份硬门禁：每个网页模型只能代表自己的 seat 输出；seat_id 必须是当前网页对应 seat；model_account 必须按映射填写；映射={\"chatgpt\": \"chatgpt\", \"doubao\": \"doubao\", \"grok\": \"xai\", \"kimi\": \"kimi\", \"mimo\": \"mimo\", \"minimax\": \"minimax\", \"qwen\": \"qwen\", \"wenxin\": \"wenxin\", \"yuanbao\": \"yuanbao\"}。禁止沿用旧会话身份，禁止输出空字符串身份。\n\n输出要求：\n- 第一行必须是 PRED_INVEST_RECEIPT。\n- 总长度必须控制在 900 字以内；不要长分析。\n- 必须严格按以下格式逐行输出，不能增加其他行；不下注也必须写 B 行。\n  PRED_INVEST_RECEIPT\n  model_account=你的账号\n  seat_id=你的席位\n  strategy=12字内策略\n  F|match_id|home/draw/away|比分|0-100|bet/no_bet/lean|信息缺口\n  B|match_id|bet/no_bet|moneyline/handicap/total/none|selection|line|odds|stake_gp|loan_used_gp|8字理由\n  LOAN|borrow_gp|8字理由|8字还款\n  RISK|风险1;风险2\n  AUDIT|逗号连接全部match_id||true\n- no_bet 示例：B|WC-EXAMPLE|no_bet|none|none|none|0|0|0|无边不投。\n- F 行必须刚好 1 条，且覆盖全部 match_id。\n- B 行必须刚好 1 条，且覆盖全部 match_id；禁止只写下注比赛。\n- AUDIT 第一栏必须等于 WCAPI-20260627-COLOMBIA-PORTUGAL；第二栏必须留空；第三栏必须 true。",
+  "mode": "strategic",
+  "engine": "web",
+  "seat_config": {
+    "selected": [
+      "chatgpt",
+      "doubao",
+      "grok",
+      "kimi",
+      "mimo",
+      "minimax",
+      "qwen",
+      "wenxin",
+      "yuanbao"
+    ],
+    "partial_policy": "allow",
+    "round2_policy": "all_valid_first_round"
+  },
+  "round2_policy": "all_valid_first_round",
+  "report_style": "audit",
+  "answer_contract": {
+    "kind": "sports_worldcup_pool_prediction_complete_answer",
+    "response_format": "compact_line_receipt",
+    "structured_json_required": false,
+    "required_top_level_fields": [
+      "model_account",
+      "seat_id",
+      "one_sentence_strategy",
+      "forecasts",
+      "investments",
+      "loan_decision",
+      "risk_notes",
+      "self_audit"
+    ],
+    "min_required_response_chars": 0,
+    "reason": "pred_invest_compact_receipt_required"
+  }
+}

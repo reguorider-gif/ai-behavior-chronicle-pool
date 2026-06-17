@@ -1,0 +1,34 @@
+{
+  "version": "memory_isolation_audit.v1",
+  "run_id": "run-16",
+  "generated_at": "2026-06-16T20:18:40+00:00",
+  "checked_prompt_contexts": 13,
+  "required_prompt_contexts": 13,
+  "ok": false,
+  "violations": [
+    {
+      "seat_id": "grok",
+      "type": "cross_seat_private_leakage",
+      "other_seats": [
+        "xai"
+      ]
+    },
+    {
+      "seat_id": "xai",
+      "type": "missing_behavior_kernel_memory"
+    }
+  ],
+  "policy": {
+    "agent_private_memory": "own_history_only",
+    "public_memory": [
+      "anonymous_market_snapshot",
+      "aggregated_pattern_summary",
+      "rules"
+    ],
+    "forbidden": [
+      "other_agent_private_journals",
+      "other_agent_current_choices",
+      "raw_provider_transcripts"
+    ]
+  }
+}

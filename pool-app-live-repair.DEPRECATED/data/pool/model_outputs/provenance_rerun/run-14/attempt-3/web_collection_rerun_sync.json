@@ -1,0 +1,90 @@
+{
+  "version": "ai_judge_desktop_worldcup_pool_rerun_export.v1",
+  "run_id": "cf4a4f780080",
+  "round_id": "run-14",
+  "attempt_no": 3,
+  "date": "2026-06-14",
+  "exported_at": "2026-06-14T18:05:32.991521+00:00",
+  "observed_models": [
+    "yuanbao"
+  ],
+  "exported_outputs": 1,
+  "invalid_outputs": [],
+  "rows": [
+    {
+      "seat_id": "yuanbao",
+      "raw_output_path": "data/pool/model_outputs/raw_rerun/run-14/attempt-3/yuanbao.txt",
+      "base_raw_output_path": "data/pool/model_outputs/raw/run-14/yuanbao.txt",
+      "source_file": "data/pool/model_outputs/provenance_rerun/run-14/attempt-3/yuanbao.json",
+      "response_chars": 3838
+    }
+  ],
+  "dropbox": {
+    "version": "ai_judge_desktop_worldcup_pool_export.v1",
+    "generated_at": "2026-06-14T18:05:32.939302+00:00",
+    "round_id": "run-14",
+    "source": "ai_judge_web_bridge_targeted_rerun_merge",
+    "status": "ready_for_ingest",
+    "outputs_expected": 1,
+    "outputs_found": 2,
+    "outputs_missing": 0,
+    "found_files": [
+      "chatgpt",
+      "yuanbao"
+    ],
+    "missing_files": [],
+    "missing_models": [],
+    "empty_files": [],
+    "blocked": [],
+    "required_blocked": [],
+    "optional_blocked": [],
+    "message": "Targeted rerun merged 1 model output(s); 2/1 required outputs are now available.",
+    "next_action": "ingest",
+    "last_targeted_rerun_merge": {
+      "merged_models": [
+        "yuanbao"
+      ],
+      "merged_at": "2026-06-14T18:05:32.939339+00:00"
+    }
+  },
+  "ingest": {
+    "ok": false,
+    "returncode": 2,
+    "command": [
+      "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/bin/python",
+      "ops/rerun_failed_seats.py",
+      "--round",
+      "run-14",
+      "--ingest",
+      "--input-dir",
+      "data/pool/model_outputs/raw_rerun/run-14/attempt-3"
+    ],
+    "stdout": "",
+    "stderr": "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/bin/python: can't open file '/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/ops/rerun_failed_seats.py': [Errno 2] No such file or directory\n",
+    "started_at": "2026-06-14T18:05:32.940151+00:00",
+    "finished_at": "2026-06-14T18:05:32.966636+00:00"
+  },
+  "pipeline": {
+    "ok": false,
+    "returncode": 2,
+    "command": [
+      "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/bin/python",
+      "ops/run_daily_pool_pipeline.py",
+      "--date",
+      "2026-06-14",
+      "--round",
+      "run-14",
+      "--odds-provider",
+      "the_odds_api",
+      "--reuse-existing-odds",
+      "--skip-browser",
+      "--continue-on-warning",
+      "--deploy"
+    ],
+    "stdout": "",
+    "stderr": "/Users/audimacmini/Library/Application Support/AI Judge/user-app-support/runtime/.venv/bin/python: can't open file '/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/ops/run_daily_pool_pipeline.py': [Errno 2] No such file or directory\n",
+    "started_at": "2026-06-14T18:05:32.966861+00:00",
+    "finished_at": "2026-06-14T18:05:32.991337+00:00",
+    "allowed_blocked": false
+  }
+}

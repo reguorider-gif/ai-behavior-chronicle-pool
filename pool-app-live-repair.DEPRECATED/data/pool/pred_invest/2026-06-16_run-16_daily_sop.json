@@ -1,0 +1,1009 @@
+{
+  "version": "pred_invest_daily_sop.v2",
+  "date": "2026-06-16",
+  "round_id": "run-16",
+  "operational_contract": {
+    "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+    "surface_policy": {
+      "public_frontend": "show_matches_bets_rankings_commentary_and_health",
+      "data_center": "show_only_user_or_referee_useful_status",
+      "hidden_internal_details": [
+        "full_prompt_text",
+        "bridge_recovery_payloads",
+        "raw_model_outputs",
+        "internal_sop_explainers",
+        "smoke_fixture_pages"
+      ]
+    },
+    "daily_sequence": [
+      "sync_finished_match_results",
+      "sync_next_match_odds",
+      "settle_finished_matches",
+      "repay_interest_and_principal_before_ranking",
+      "apply_top5_daily_rewards_and_stage_rewards",
+      "apply_bottom3_penalties_or_forced_debt",
+      "build_full_match_prompt_pack_for_12_models",
+      "collect_forecast_and_investment_receipts",
+      "run_quality_gate",
+      "targeted_rerun_only_missing_or_invalid_seats",
+      "generate_god_view_report_and_observer_ledger",
+      "publish_frontend_only_when_gate_allows"
+    ],
+    "hard_gates": {
+      "prompt_pack_models": 12,
+      "all_required_matches_in_prompt_pack": true,
+      "forecast_required_for_every_match": true,
+      "investment_row_required_for_every_match": true,
+      "targeted_rerun_not_full_rerun": true,
+      "frontend_complete_badge_requires_12_valid_seats": true
+    }
+  },
+  "verdict": "PARTIAL_NOT_READY",
+  "errors": [],
+  "warnings": [
+    "sop_guard:publish_blocked_by_quality_gate:10/12",
+    "quality_gate_partial:10/12"
+  ],
+  "score_sync_overdue": [],
+  "score_sync": {
+    "version": "pred_invest_score_sync.v1",
+    "generated_at": "2026-06-16T22:52:45.994620+00:00",
+    "alignment_path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_match_data_alignment_audit.json",
+    "source_policy": "import_only_rows_with_explicit_score; never_use_model_forecast_as_result",
+    "known_score_count": 17,
+    "pending_score_count": 0,
+    "manual_backfill_count": 4,
+    "manual_backfill_path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/manual_trusted_backfill.json",
+    "known_scores": [
+      {
+        "match_id": "WC-A1",
+        "home_team": "Mexico",
+        "away_team": "South Africa",
+        "score": "2-0",
+        "home_score": 2,
+        "away_score": 0,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-11T19:00:00Z",
+        "matchday_hk": "2026-06-12",
+        "source": "match_data_alignment_audit",
+        "source_date_query": "2026-06-11",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-A2",
+        "home_team": "South Korea",
+        "away_team": "Czech Republic",
+        "score": "2-1",
+        "home_score": 2,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-12T02:00:00Z",
+        "matchday_hk": "2026-06-12",
+        "source": "match_data_alignment_audit",
+        "source_date_query": "2026-06-11",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-B1",
+        "home_team": "Canada",
+        "away_team": "Bosnia & Herzegovina",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-12T19:00:00Z",
+        "matchday_hk": "2026-06-13",
+        "source": "match_data_alignment_audit",
+        "source_date_query": "2026-06-12",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-D1",
+        "home_team": "USA",
+        "away_team": "Paraguay",
+        "score": "4-1",
+        "home_score": 4,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-13T01:00:00Z",
+        "matchday_hk": "2026-06-13",
+        "source": "match_data_alignment_audit",
+        "source_date_query": "2026-06-12",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-I1",
+        "home_team": "France",
+        "away_team": "Senegal",
+        "score": "3-1",
+        "home_score": 3,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-16T19:00:00Z",
+        "matchday_hk": "2026-06-17",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-16",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "home_team": "Belgium",
+        "away_team": "Egypt",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T19:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "home_team": "Saudi Arabia",
+        "away_team": "Uruguay",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T22:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "home_team": "Iran",
+        "away_team": "New Zealand",
+        "score": "2-2",
+        "home_score": 2,
+        "away_score": 2,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-16T01:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-B2",
+        "home_team": "Qatar",
+        "away_team": "Switzerland",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-13T19:04:00Z",
+        "matchday_hk": "2026-06-14",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "26634922d3f78c146440816023e40de8",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WC-C2",
+        "home_team": "Brazil",
+        "away_team": "Morocco",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-13T22:04:00Z",
+        "matchday_hk": "2026-06-14",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "f6c8748a16516e0998f95de14235432a",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WC-C1",
+        "home_team": "Haiti",
+        "away_team": "Scotland",
+        "score": "0-1",
+        "home_score": 0,
+        "away_score": 1,
+        "outcome": "away",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-14T01:00:00Z",
+        "matchday_hk": "2026-06-14",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "5ae41a06735c926eeb7f74006933adce",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WC-D2",
+        "home_team": "Australia",
+        "away_team": "Turkey",
+        "score": "2-0",
+        "home_score": 2,
+        "away_score": 0,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-14T04:00:00Z",
+        "matchday_hk": "2026-06-14",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "564084f52cc9f1abcc18187c168a7cdc",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WCAPI-20260614-GERMANY-CURA-AO",
+        "home_team": "Germany",
+        "away_team": "Curaçao",
+        "score": "7-1",
+        "home_score": 7,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-14T17:01:00Z",
+        "matchday_hk": "2026-06-15",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "d79edbd6aaeb578d33e313446b18d333",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WCAPI-20260614-NETHERLANDS-JAPAN",
+        "home_team": "Netherlands",
+        "away_team": "Japan",
+        "score": "2-2",
+        "home_score": 2,
+        "away_score": 2,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-14T20:00:00Z",
+        "matchday_hk": "2026-06-15",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "32ec06abda2398ac41501c86eb9aa376",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WCAPI-20260614-IVORY-COAST-ECUADOR",
+        "home_team": "Ivory Coast",
+        "away_team": "Ecuador",
+        "score": "1-0",
+        "home_score": 1,
+        "away_score": 0,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-14T23:03:00Z",
+        "matchday_hk": "2026-06-15",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "05752bb341e197001387b64f3a06b9b2",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
+        "home_team": "Sweden",
+        "away_team": "Tunisia",
+        "score": "5-1",
+        "home_score": 5,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T02:00:00Z",
+        "matchday_hk": "2026-06-15",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "b55f9569de3f4d731bc5537ff5ff43e4",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      },
+      {
+        "match_id": "WC-H1",
+        "home_team": "Spain",
+        "away_team": "Cape Verde",
+        "score": "0-0",
+        "home_score": 0,
+        "away_score": 0,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T16:01:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "the_odds_api_scores",
+        "source_date_query": null,
+        "provider_event_id": "c54f00b11925751d2b62988775c6c239",
+        "provider_last_update": "2026-06-15T19:16:10Z"
+      }
+    ],
+    "pending_score_backfill": [],
+    "blocking_pending_score_count": 0,
+    "external_score_source": {
+      "source": "the_odds_api_scores",
+      "sport_key": "soccer_fifa_world_cup",
+      "configured": true,
+      "ok": false,
+      "error": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "row_count": 0,
+      "mapped_settled_count": 0,
+      "mapped_pending_count": 0
+    },
+    "output_dates": [
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17"
+    ],
+    "paths": {
+      "match_results:2026-06-11": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-11.json",
+      "match_results:2026-06-12": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-12.json",
+      "match_results:2026-06-13": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-13.json",
+      "match_results:2026-06-16": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-16.json",
+      "match_results:2026-06-17": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-17.json",
+      "match_results:2026-06-15": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-15.json",
+      "match_results:2026-06-14": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-14.json",
+      "latest_known_scores": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/latest_known_scores.json",
+      "pending_score_backfill": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/pending_score_backfill.json",
+      "score_sync_json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_score_sync.json",
+      "score_sync_markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_score_sync.md"
+    }
+  },
+  "settlement_trigger": {
+    "status": "partially_settled",
+    "source": "strict_god_report+score_sync+/api/matches",
+    "positive_bet_count": 25,
+    "settled_bets": 7,
+    "pending_bets": 18,
+    "pending_match_ids": [
+      "WC-SEED-20260617-ENGLAND-CROATIA",
+      "WC-SEED-20260617-GHANA-PANAMA",
+      "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+      "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+    ],
+    "total_stake_gp": 1170.0,
+    "total_payout_gp": 1708.2,
+    "total_profit_gp": 538.2,
+    "roi": 0.46,
+    "account_updates_written": 10,
+    "path": "data/pool/settlements/run-16.json"
+  },
+  "production_artifacts": {
+    "version": "production_artifact_writer.v1",
+    "counts": {
+      "seat_count": 12,
+      "valid_seat_count": 10,
+      "missing_seat_count": 2,
+      "required_match_count": 5,
+      "forecast_receipt_count": 12,
+      "investment_receipt_count": 12,
+      "prompt_context_count": 12,
+      "seat_journal_count": 12,
+      "behavior_memory_count": 12,
+      "agent_profile_count": 12,
+      "pattern_count": 4,
+      "evolution_trace_count": 12,
+      "civilization_agent_count": 12,
+      "civilization_count": 3,
+      "civilization_interaction_count": 3,
+      "replay_event_count": 72,
+      "replay_seat_count": 12,
+      "production_event_count": 155,
+      "production_kernel_ready": 1,
+      "production_audit_passed": 8,
+      "civilization_freeze_ready": 1
+    },
+    "artifact_refs": {
+      "seat_journals": "data/pool/seat_journals/",
+      "prompt_contexts": "data/pool/prompt_contexts/run-16/",
+      "behavior_memory": "data/pool/behavior_memory/compiled/",
+      "pattern_graph": "data/pool/pattern_graph/latest.json",
+      "agent_profiles": "data/pool/agent_profiles/latest.json",
+      "evolution_trace": "data/pool/evolution_traces/latest.json",
+      "civilization_state": "data/pool/civilization_state/latest.json",
+      "civilization_battle": "data/pool/civilization_battle/latest.json",
+      "civilization_freeze": "data/pool/civilization_freeze/latest.json",
+      "behavior_replay": "data/pool/replay/runs/run-16.json",
+      "behavior_production_contract": "data/pool/behavior_summary/production_contract.json",
+      "behavior_kernel_manifest": "data/pool/data_lake/kernels/behavior_kernel_v1.json",
+      "behavior_run_manifest": "data/pool/data_lake/runs/run-16.json",
+      "behavior_production_audit": "data/pool/behavior_audits/run-16.json",
+      "behavior_causality_graph": "data/pool/behavior_audits/run-16.causality_graph.json",
+      "forecast_receipts": "data/pool/forecast_receipts/run-16.json",
+      "investment_receipts": "data/pool/investment_receipts/run-16.json",
+      "credit_ledger": "data/pool/credit_ledger/run-16.json",
+      "survival_ledger": "data/pool/survival_ledger/run-16.json",
+      "god_ledger": "data/pool/god_ledger/runs/run-16.json",
+      "god_report_v2_json": "data/pool/god_reports/2026-06-16_run-16.json",
+      "god_report_v2_md": "data/pool/god_reports/2026-06-16_run-16.md",
+      "behavior_summary": "data/pool/behavior_summary/latest.json"
+    },
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "mimo",
+      "minimax",
+      "wenxin",
+      "yuanbao"
+    ],
+    "missing_or_blocked_seats": [
+      "grok",
+      "qwen"
+    ],
+    "seat_statuses": {
+      "chatgpt": "collected",
+      "deepseek": "collected",
+      "mimo": "collected",
+      "minimax": "collected",
+      "doubao": "collected",
+      "gemini": "collected",
+      "kimi": "collected",
+      "meta": "collected",
+      "qwen": "missing_provider_blocked",
+      "wenxin": "collected",
+      "grok": "missing_provider_blocked",
+      "yuanbao": "collected"
+    },
+    "god_report_seat_count": 13,
+    "god_report_event_count": 78
+  },
+  "matches_with_odds": 5,
+  "current_decision_source": {
+    "available": true,
+    "source": "strict_god_report",
+    "path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_god_report_strict.json",
+    "decision_count": 50,
+    "positive_bet_count": 25,
+    "stake_total_gp": 3892.0,
+    "valid_count": 10,
+    "required_seat_count": 12,
+    "publish_allowed": false,
+    "needs_rerun": [
+      "grok",
+      "qwen"
+    ],
+    "valid_seats": [
+      "chatgpt",
+      "deepseek",
+      "mimo",
+      "minimax",
+      "doubao",
+      "gemini",
+      "kimi",
+      "meta",
+      "wenxin",
+      "yuanbao"
+    ]
+  },
+  "latest_betting_method": [
+    "- chatgpt：保守主胜分散布局；下注 5 单 / 决策 5 条，投入 92 GP，借款 0 GP。",
+    "- deepseek：以预测覆盖全部赛事，但仅在实时信息充分且存在明确正期望时才会投注，当前阶段观望为主。；下注 0 单 / 决策 5 条，投入 0 GP，借款 0 GP。",
+    "- mimo：结构化行协议回执；下注 3 单 / 决策 5 条，投入 500 GP，借款 0 GP。",
+    "- minimax：低风险种子赛保守下注；下注 3 单 / 决策 5 条，投入 450 GP，借款 0 GP。",
+    "- doubao：稳势低赔择优布局；下注 0 单 / 决策 5 条，投入 0 GP，借款 0 GP。",
+    "- gemini：分散防守反击策略；下注 4 单 / 决策 5 条，投入 1,000 GP，借款 0 GP。",
+    "- kimi：稳健跟盘，小额分散；下注 5 单 / 决策 5 条，投入 700 GP，借款 0 GP。",
+    "- meta：Low\nrisk\npreservation:\nforecast\nall\nmatches,\nno\nbets\ndue\nto\nC-grade\ncredit\n+\n800gp\ndebt\n+\nlack\nof\nreal-time\nsquad\ndata,\navoid\npenalties\nand\nwait\nfor\nclear\nedge.；下注 0 单 / 决策 5 条，投入 0 GP，借款 0 GP。",
+    "- wenxin：择优投注控制风险；下注 3 单 / 决策 5 条，投入 450 GP，借款 0 GP。",
+    "- yuanbao：稳强队，博冷门；下注 2 单 / 决策 5 条，投入 700 GP，借款 300 GP。",
+    "- 待补席位：grok, qwen"
+  ],
+  "prompt_pack": {
+    "models": 12,
+    "match_count": 5,
+    "required_coverage": {
+      "required_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "included_required_match_ids": [
+        "WC-I1",
+        "WC-SEED-20260617-ENGLAND-CROATIA",
+        "WC-SEED-20260617-GHANA-PANAMA",
+        "WC-SEED-20260617-PORTUGAL-CONGO-DR",
+        "WC-SEED-20260617-UZBEKISTAN-COLOMBIA"
+      ],
+      "missing_required_match_ids": []
+    },
+    "path": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_prompt_pack.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_prompt_pack.md",
+      "required_match_snapshot": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_required_match_snapshot.json"
+    }
+  },
+  "shadow_rerun": {
+    "models": 12,
+    "receipt_missing": true,
+    "receipt_missing_reason": "bet_receipts_not_available_for_round",
+    "total_existing_bets": 0,
+    "summary": {
+      "allowed": 0,
+      "warned": 0,
+      "rejected": 0,
+      "models_without_bets": 12
+    },
+    "models_detail": [
+      {
+        "model_account": "deepseek",
+        "display_name": "deepseek",
+        "rank": 1,
+        "loan_terms": {
+          "credit_score": 745.6,
+          "credit_grade": "A",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1810.0,
+          "outstanding_loan_gp": 1000.0,
+          "max_loan_gp": 1448.0,
+          "available_loan_gp": 448.0,
+          "base_interest_rate": 0.07,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 17.6,
+            "net_worth_health_proxy": 60.0,
+            "ranking_proxy": 48.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "gemini",
+        "display_name": "gemini",
+        "rank": 2,
+        "loan_terms": {
+          "credit_score": 645.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 850.0,
+          "outstanding_loan_gp": 1000.0,
+          "max_loan_gp": 425.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -36.5,
+            "net_worth_health_proxy": 17.5,
+            "ranking_proxy": 44.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "qwen",
+        "display_name": "qwen",
+        "rank": 3,
+        "loan_terms": {
+          "credit_score": 674.7,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1100.0,
+          "outstanding_loan_gp": 400.0,
+          "max_loan_gp": 550.0,
+          "available_loan_gp": 150.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -15.3,
+            "net_worth_health_proxy": 30.0,
+            "ranking_proxy": 40.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "yuanbao",
+        "display_name": "yuanbao",
+        "rank": 4,
+        "loan_terms": {
+          "credit_score": 657.7,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 500.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -23.3,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 36.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "doubao",
+        "display_name": "doubao",
+        "rank": 5,
+        "loan_terms": {
+          "credit_score": 669.6,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1100.0,
+          "outstanding_loan_gp": 300.0,
+          "max_loan_gp": 550.0,
+          "available_loan_gp": 250.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -12.4,
+            "net_worth_health_proxy": 30.0,
+            "ranking_proxy": 32.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "meta",
+        "display_name": "meta",
+        "rank": 6,
+        "loan_terms": {
+          "credit_score": 597.8,
+          "credit_grade": "C",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 600.0,
+          "outstanding_loan_gp": 800.0,
+          "max_loan_gp": 120.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": 0.18,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -55.2,
+            "net_worth_health_proxy": 5.0,
+            "ranking_proxy": 28.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "mimo",
+        "display_name": "mimo",
+        "rank": 7,
+        "loan_terms": {
+          "credit_score": 640.7,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 900.0,
+          "outstanding_loan_gp": 300.0,
+          "max_loan_gp": 450.0,
+          "available_loan_gp": 150.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -23.3,
+            "net_worth_health_proxy": 20.0,
+            "ranking_proxy": 24.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "chatgpt",
+        "display_name": "chatgpt",
+        "rank": 8,
+        "loan_terms": {
+          "credit_score": 665.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 20.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "kimi",
+        "display_name": "kimi",
+        "rank": 9,
+        "loan_terms": {
+          "credit_score": 661.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 16.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "minimax",
+        "display_name": "minimax",
+        "rank": 10,
+        "loan_terms": {
+          "credit_score": 657.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 12.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "wenxin",
+        "display_name": "wenxin",
+        "rank": 11,
+        "loan_terms": {
+          "credit_score": 653.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 8.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "grok",
+        "display_name": "grok",
+        "rank": 11,
+        "loan_terms": {
+          "credit_score": 653.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 8.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      }
+    ],
+    "path": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_shadow_rerun.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_shadow_rerun.md"
+    }
+  },
+  "automation_guard": {
+    "status": "PARTIAL_NOT_READY",
+    "ok_to_start_new_run": true,
+    "ok_to_publish_frontend": false,
+    "bridge": {
+      "busy": false,
+      "active_run_id": null,
+      "elapsed_seconds": 0.0,
+      "can_start_new_run": true,
+      "recovered": false,
+      "recovery": null
+    },
+    "quality_gate": {
+      "status": "PARTIAL_NOT_READY",
+      "publish_allowed": false,
+      "valid_count": 10,
+      "required_seat_count": 12,
+      "valid_seats": [
+        "chatgpt",
+        "deepseek",
+        "doubao",
+        "gemini",
+        "kimi",
+        "meta",
+        "mimo",
+        "minimax",
+        "wenxin",
+        "yuanbao"
+      ],
+      "needs_rerun": [
+        "grok",
+        "qwen"
+      ],
+      "rerun_queue": [
+        {
+          "seat": "grok",
+          "mode": "provider_quota_blocked",
+          "prompt_mode": "wait_for_quota_reset",
+          "reason": "供应商额度限制，页面未生成当前轮答案；不能继续普通补跑，需额度恢复后单席重试。",
+          "last_run_id": null,
+          "response_chars": 0,
+          "issues": [
+            "no_captured_response"
+          ],
+          "last_errors": [
+            {
+              "run_id": "207f01bb1cea",
+              "action": "raw_result_error",
+              "reason": "provider_quota_limited",
+              "response_chars": 0
+            }
+          ]
+        },
+        {
+          "seat": "qwen",
+          "mode": "fresh_chat_marker_required",
+          "prompt_mode": "ultra_compact",
+          "reason": "未捕获当前轮答案或页面仍停留旧上下文，必须新会话/新 marker 重投。",
+          "last_run_id": null,
+          "response_chars": 0,
+          "issues": [
+            "no_captured_response"
+          ],
+          "last_errors": [
+            {
+              "run_id": "37110a93d7e6",
+              "action": "seat_timeout",
+              "reason": "slow_response_pending",
+              "response_chars": 19
+            },
+            {
+              "run_id": "37110a93d7e6",
+              "action": "seat_timeout",
+              "reason": "slow_response_pending",
+              "response_chars": 19
+            },
+            {
+              "run_id": "37110a93d7e6",
+              "action": "seat_timeout",
+              "reason": "slow_response_pending",
+              "response_chars": 19
+            }
+          ]
+        }
+      ],
+      "provider_blocked_seats": [
+        "grok"
+      ],
+      "rerunnable_seats": [
+        "qwen"
+      ],
+      "source": "artifact"
+    },
+    "recommended_actions": [
+      "供应商阻塞席位 grok 暂停普通补跑；额度/慢响应恢复后使用 --force-provider-blocked 做单席重试。",
+      "只补跑 rerunnable_seats 中的缺席席位，不重跑已合格席位。",
+      "前端和日报必须标记 PARTIAL_NOT_READY，不得显示完整结论。"
+    ],
+    "path": {
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_sop_guard.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-16_run-16_sop_guard.md"
+    }
+  }
+}

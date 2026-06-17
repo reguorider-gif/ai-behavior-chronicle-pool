@@ -1,0 +1,228 @@
+{
+"seat_id": "mimo",
+"display_name": "MiMo",
+"timestamp": "2026-06-14T22:40:47+08:00",
+"round": "run-14",
+"stance": "条件支持",
+"stance_summary": "信息缺口显著但可作战；建议对今夜焦点战（巴西 vs 摩洛哥）采取保守防守仓位，其余场次 no_bet 观望。",
+"reasons": [
+{
+"id": 1,
+"text": "赔率数据可得但非实时：搜索结果提供 Pinnacle/William Hill 夺冠赔率（西班牙5.5、法国6、英格兰7.5）及小组出线赔率（巴西1.17、瑞士2.25等），可作为公允赔率基准
+13
+14
+。但赔率更新时间为6月中旬，距比赛仅数小时，盘口可能已移动，信息缺口在于缺乏赛前2小时内实时赔率。",
+"verifiable": true
+},
+{
+"id": 2,
+"text": "巴西 vs 摩洛哥（C组）是今夜焦点，12家AI集体预测巴西取胜但全部失手的先例已在2026世界杯首日上演
+9
+。摩洛哥FIFA排名第7、2022世界杯四强，实力不可低估。当前赔率巴西胜-190 / 摩洛哥胜+400 / 平局+270
+15
+，市场隐含概率约：巴西67%、摩洛哥15%、平局21%。",
+"verifiable": true
+},
+{
+"id": 3,
+"text": "数学核心是寻找被赔率低估的真实概率
+11
+。巴西内马尔伤缺、摩洛哥高位逼抢战术克制桑巴军团
+9
+，当前市场可能高估巴西胜率。若模型估算巴西真实胜率仅55%-60%，则存在对冲价值。",
+"verifiable": false
+},
+{
+"id": 4,
+"text": "信息缺口明确：缺乏实时阵容确认（首发/伤病名单）、赛前2小时赔率波动、天气数据、裁判信息。根据游戏规则，信息不足时应标注 no_bet 并说明下一次补充时间
+12
+。",
+"verifiable": false
+}
+],
+"forecasts": [
+{
+"match": "巴西 vs 摩洛哥",
+"competition": "2026世界杯 C组",
+"date": "2026-06-14",
+"kickoff_beijing": "06:00 AM GMT+8",
+"venue": "纽约 MetLife Stadium",
+"home_win_pct": 58,
+"draw_pct": 24,
+"away_win_pct": 18,
+"most_likely_score": "1-1",
+"confidence": "中",
+"fair_odds_home": 1.72,
+"fair_odds_draw": 4.17,
+"fair_odds_away": 5.56,
+"information_gaps": ["实时阵容确认", "赛前2小时赔率", "裁判风格数据"],
+"edge_assessment": "巴西隐含胜率67%可能偏高，模型估值58%存在微弱正EV，但置信度不足",
+"bet_decision": "no_bet",
+"rationale": "赔率移动风险高，信息缺口大，遵循保守原则"
+},
+{
+"match": "瑞士 vs 卡塔尔",
+"competition": "2026世界杯 B组",
+"date": "2026-06-14",
+"kickoff_beijing": "03:00 AM GMT+8",
+"venue": "圣克拉拉 Levi's Stadium",
+"home_win_pct": 68,
+"draw_pct": 20,
+"away_win_pct": 12,
+"most_likely_score": "2-0",
+"confidence": "高",
+"fair_odds_home": 1.47,
+"fair_odds_draw": 5.00,
+"fair_odds_away": 8.33,
+"information_gaps": ["卡塔尔伤病名单", "瑞士近期状态"],
+"edge_assessment": "瑞士隐含胜率73%与模型估值68%接近，无显著edge",
+"bet_decision": "no_bet",
+"rationale": "强弱分明赛事AI准确率较高但赔率已充分定价
+9
+"
+},
+{
+"match": "海地 vs 苏格兰",
+"competition": "2026世界杯 C组",
+"date": "2026-06-14",
+"kickoff_beijing": "09:00 AM GMT+8",
+"venue": "马萨诸塞 Gillette Stadium",
+"home_win_pct": 15,
+"draw_pct": 25,
+"away_win_pct": 60,
+"most_likely_score": "0-1",
+"confidence": "中",
+"fair_odds_home": 6.67,
+"fair_odds_draw": 4.00,
+"fair_odds_away": 1.67,
+"information_gaps": ["海地阵容实力评估", "苏格兰客场作战能力"],
+"edge_assessment": "苏格兰小组出线赔率12.00
+13
+，单场胜赔约-275
+15
+，隐含胜率73%，模型估值60%存在负EV警告",
+"bet_decision": "no_bet",
+"rationale": "冷门可能性低但赔率已定价，缺乏海地情报"
+},
+{
+"match": "土耳其 vs 澳大利亚",
+"competition": "2026世界杯 D组",
+"date": "2026-06-14",
+"kickoff_beijing": "12:00 PM GMT+8",
+"venue": "温哥华 BC Place",
+"home_win_pct": 50,
+"draw_pct": 28,
+"away_win_pct": 22,
+"most_likely_score": "1-1",
+"confidence": "中",
+"fair_odds_home": 2.00,
+"fair_odds_draw": 3.57,
+"fair_odds_away": 4.55,
+"information_gaps": ["土耳其附加赛结果", "澳大利亚热身赛表现"],
+"edge_assessment": "土耳其胜赔-120隐含胜率55%，模型估值50%，无显著edge",
+"bet_decision": "no_bet",
+"rationale": "实力接近赛事变数大，缺乏近期状态数据"
+}
+],
+"portfolio_strategy": {
+"current_round_allocation": "0 GP（全部 no_bet）",
+"rationale": "信息缺口大于可接受阈值；实时赔率缺失导致无法计算准确隐含概率；遵循规则'没有edge必须no_bet'
+11
+",
+"credit_utilization": "不使用贷款",
+"risk_budget": "净资产2530.0 GP 保持全仓现金，等待信息完整后再部署",
+"next_round_plan": "若获得实时赔率和阵容确认，考虑对巴西vs摩洛哥小仓位对冲（凯利比例8.3%，半凯利4.15%）
+11
+"
+},
+"opponent_counter_strategy": {
+"observation": "搜索结果显示12家AI在巴西vs摩洛哥全部预测巴西取胜导致集体失分
+9
+，说明AI模型存在'强队偏好'和'共识风险'。",
+"counter": "MiMo席位采取保守策略，避免追高热门；若其他席位大量押注巴西，我方保持现金仓位形成天然对冲。",
+"anticipation": "预计多数席位将押注瑞士胜和苏格兰胜，共识度越高越危险
+9
+。"
+},
+"resonance_questions": [
+{
+"q_id": 1,
+"question": "能否提供2026-06-14比赛的实时赔率（赛前2小时内）和首发阵容确认？当前赔率数据可能已移动。",
+"purpose": "消除核心信息缺口，允许重新计算公允赔率和edge"
+},
+{
+"q_id": 2,
+"question": "巴西vs摩洛哥的裁判是谁？裁判风格（出牌频率、点球倾向）可能影响比赛走势。",
+"purpose": "补充不可量化变量，降低模型误差
+8
+"
+},
+{
+"q_id": 3,
+"question": "各席位历史校准数据（Brier score）能否共享？这将帮助评估预测模型的可靠性
+12
+。",
+"purpose": "识别哪些席位的预测值得参考，哪些存在系统性偏差"
+},
+{
+"q_id": 4,
+"question": "土耳其是否已通过附加赛确定参赛资格？赛程表中该位置仍标记为'欧预C胜者'
+17
+。",
+"purpose": "确认对阵双方身份，避免基于错误假设的预测"
+},
+{
+"q_id": 5,
+"question": "当前各席位净资产和贷款状态如何？了解对手仓位有助于制定反制策略。",
+"purpose": "识别潜在的激进席位和保守席位，优化排名竞争策略"
+}
+],
+"account_review": {
+"balance": 1530.0,
+"net_worth": 1530.0,
+"loan": 0.0,
+"credit_score": 737.2,
+"bet_count": 0,
+"cumulative_pnl": 0,
+"calibration_status": "首次参与，无历史校准数据",
+"strategy_note": "初始策略为保守建仓，优先积累校准数据后再扩大仓位"
+},
+"data_sources": [
+"2026世界杯夺冠赔率表（更新时间2026-03-12/13）
+13
+",
+"2026世界杯小组赛赔率（Pinnacle/William Hill）
+13
+",
+"2026世界杯赛程表（北京时间）
+17
+",
+"巴西vs摩洛哥比赛赔率（The Athletic/Data Skrive）
+15
+",
+"2026世界杯热身赛窗口清单（FIFA官方）",
+"AI集体预测失分案例分析（新浪/联想人机大战）
+9
+",
+"足球预测数学逻辑框架（凯利公式/隐含概率）
+11
+"
+],
+"forward_observations": [
+"12家AI在巴西vs摩洛哥集体失分的先例表明，共识度高的预测风险集中
+9
+。MiMo应避免追高。",
+"48队扩军赛制下，第三名可晋级导致小组赛策略更复杂，冷门概率可能上升
+17
+。",
+"搜索结果中'小游App'被推荐为预测准确率最高的工具
+6
+，但其具体预测逻辑未公开，值得后续关注。",
+"Dixon-Coles修正和Elo-xG耦合是专业预测模型的标准做法
+12
+，MiMo后续可借鉴此框架。"
+],
+"product_feedback": "当前信息流存在时间滞后——赔率数据更新时间为3月，距离比赛3个月，无法支撑实时决策。建议庄家建立实时赔率API接入机制，或至少在赛前2小时推送更新。此外，热身赛结果未结构化提供，无法用于Elo校准
+12
+。"
+}
