@@ -3,17 +3,21 @@ from __future__ import annotations
 from typing import Any
 
 from .behavior_journal import load_recent_seat_events, load_seat_summary
+from .chronicle_compiler import compile_lessons
 from .credit_engine import calculate_loan_limit
 from .io_utils import read_json, write_json
+from .memory_injector import inject_behavior_memory
 from .paths import DATA_ROOT
 from .rules_engine import RULE_VERSION, load_rule_version, n
 from .survival_engine import apply_recovery_constraints, calculate_net_worth
 
 
-def build_market_snapshot(date: str, run_id: str, matches: list[dict[str, Any]]) -> dict[str, Any]:
+def build_market_snapshot(date: str, run_id: str, matches: list[dict[str, Any]], *, write: bool = True) -> dict[str, Any]:
     rows = []
     for match in matches:
         markets = match.get("markets") if isinstance(match.get("markets"), list) else []
+        if not markets and isinstance(match.get("market_snapshot"), list):
+            markets = match.get("market_snapshot") or []
         rows.append({
             "match_id": match.get("match_id"),
             "date": match.get("date"),
@@ -28,7 +32,8 @@ def build_market_snapshot(date: str, run_id: str, matches: list[dict[str, Any]])
         "privacy": "anonymous_market_only_no_seat_choices",
         "matches": rows,
     }
-    write_json(DATA_ROOT / "market_snapshots" / f"{date}_{run_id}.json", snapshot)
+    if write:
+        write_json(DATA_ROOT / "market_snapshots" / f"{date}_{run_id}.json", snapshot)
     return snapshot
 
 
@@ -57,10 +62,11 @@ def build_prompt_context(
     accounts: dict[str, dict[str, Any]] | None = None,
     matches: list[dict[str, Any]] | None = None,
     market_snapshot: dict[str, Any] | None = None,
+    write: bool = True,
 ) -> dict[str, Any]:
     rule = load_rule_version(rule_version)
     matches = matches if matches is not None else read_json(DATA_ROOT / "market_snapshots" / f"{date}_{run_id}.json", {"matches": []}).get("matches", [])
-    market_snapshot = market_snapshot or build_market_snapshot(date, run_id, matches)
+    market_snapshot = market_snapshot or build_market_snapshot(date, run_id, matches, write=write)
     account = _account_for_seat(seat_id, accounts)
     loan_terms = calculate_loan_limit(seat_id, n(account.get("net_worth_gp")))
     recovery = apply_recovery_constraints(seat_id, account)
@@ -97,5 +103,34 @@ def build_prompt_context(
             "allowed_external_context": ["current_rules", "anonymous_market_snapshot", "own_history"],
         },
     }
-    write_json(DATA_ROOT / "prompt_contexts" / run_id / f"{seat_id}.json", context)
+    context = inject_behavior_memory(context, seat_id)
+    chronicle_path = DATA_ROOT / "behavior_chronicle" / seat_id / "lessons.json"
+    chronicle = read_json(chronicle_path, {}) if chronicle_path.exists() else {}
+    if not chronicle.get("lessons"):
+        chronicle = compile_lessons(seat_id, write=True)
+    private_context = dict(context.get("private_context") or {})
+    public_context = dict(context.get("public_context") or {})
+    output_contract = dict(public_context.get("output_contract") or {})
+    output_contract["behavior_chronicle_required_fields"] = [
+        "chronicle_used",
+        "chronicle_not_used_reason",
+        "chronicle_strategy_adjustment",
+    ]
+    public_context["output_contract"] = output_contract
+    if chronicle:
+        private_context["behavior_chronicle"] = {
+            "version": chronicle.get("version"),
+            "lesson_count": chronicle.get("lesson_count"),
+            "lessons": (chronicle.get("lessons") or [])[:8],
+            "prompt_injection": chronicle.get("prompt_injection"),
+            "source": f"behavior_chronicle/{seat_id}/lessons.json",
+        }
+    public_context["has_behavior_chronicle"] = bool(chronicle)
+    context = {
+        **context,
+        "public_context": public_context,
+        "private_context": private_context,
+    }
+    if write:
+        write_json(DATA_ROOT / "prompt_contexts" / run_id / f"{seat_id}.json", context)
     return context

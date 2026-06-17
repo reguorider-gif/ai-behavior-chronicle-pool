@@ -23,7 +23,8 @@ class PoolDataApiContractTest(unittest.TestCase):
         self.assertEqual(germany["status"], "settled")
         self.assertTrue(germany["score_registry_applied"])
 
-        self.assertGreaterEqual(summary["audit"]["score_registry_appended"], 1)
+        self.assertGreaterEqual(summary["audit"]["score_registry_applied"], 1)
+        self.assertGreaterEqual(summary["audit"]["score_registry_rows"], 1)
 
 
 if __name__ == "__main__":
