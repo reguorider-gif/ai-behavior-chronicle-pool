@@ -211,6 +211,45 @@ def required_matches(date: str | None = None, settled_ids: set[str] | None = Non
     return filtered
 
 
+def frozen_required_match_snapshot(date: str, round_id: str) -> list[dict[str, Any]]:
+    """Return a run-specific historical match contract when one is frozen.
+
+    Daily pre-match generation should skip settled matches. Historical
+    acceptance/replay runs are different: they must rebuild the exact original
+    run contract even after score backfill marks those matches settled.
+    """
+
+    snapshot_path = OUT_DIR / f"{date}_{round_id}_required_match_snapshot.json"
+    payload = read_json(snapshot_path)
+    rows = payload.get("matches") if isinstance(payload, dict) else []
+    if not isinstance(rows, list):
+        return []
+    return [row for row in rows if isinstance(row, dict) and match_id(row)]
+
+
+def hydrate_frozen_match_markets(matches: list[dict[str, Any]], date: str, round_id: str) -> list[dict[str, Any]]:
+    if not matches:
+        return matches
+    by_id: dict[str, dict[str, Any]] = {}
+    for rel in (f"{date}_{round_id}_current_game.json", "latest_current_game.json"):
+        payload = read_json(OUT_DIR / rel)
+        if payload.get("date") not in (None, "", date) and payload.get("round_id") not in (None, "", round_id):
+            continue
+        for row in payload.get("matches") or []:
+            if isinstance(row, dict) and match_id(row):
+                by_id.setdefault(match_id(row), row)
+    hydrated: list[dict[str, Any]] = []
+    for row in matches:
+        merged = dict(row)
+        source = by_id.get(match_id(row)) or {}
+        if not merged.get("market_snapshot") and source.get("market_snapshot"):
+            merged["market_snapshot"] = source["market_snapshot"]
+        if not merged.get("available_markets") and source.get("available_markets"):
+            merged["available_markets"] = source["available_markets"]
+        hydrated.append(merged)
+    return hydrated
+
+
 def merge_required_matches(matches: list[dict[str, Any]], required: list[dict[str, Any]]) -> list[dict[str, Any]]:
     merged = list(matches)
     seen = {match_id(match) for match in merged if match_id(match)}
@@ -402,8 +441,13 @@ def build_prompt_pack(date: str, round_id: str, base_url: str = BASE_URL, *, wri
     match_odds = odds_by_match(odds_snapshot)
     accounts = active_accounts(runtime)
     settled_ids = settled_match_ids()
-    required = required_matches(date, settled_ids=settled_ids)
-    matches = merge_required_matches(match_pool(runtime, date, include_fallback=False, settled_ids=settled_ids), required)
+    frozen_required = frozen_required_match_snapshot(date, round_id)
+    if frozen_required:
+        required = hydrate_frozen_match_markets(frozen_required, date, round_id)
+        matches = required
+    else:
+        required = required_matches(date, settled_ids=settled_ids)
+        matches = merge_required_matches(match_pool(runtime, date, include_fallback=False, settled_ids=settled_ids), required)
     compact_matches = [compact_match(match, match_odds) for match in matches]
     prompt_context_status = {"written": False, "count": 0, "seats": []}
     if write_contexts:

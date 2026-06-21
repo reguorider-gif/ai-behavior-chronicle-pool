@@ -1,0 +1,1227 @@
+{
+  "version": "behavior_pattern_index.v1",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "pattern_catalog": [
+    "home_bias",
+    "upset_aversion",
+    "confidence_calibration",
+    "high_odds_exposure",
+    "loss_chasing",
+    "stake_volatility",
+    "no_bet_quality",
+    "recovery_compliance",
+    "loan_discipline",
+    "bankrupt_approach",
+    "strategy_adaptation",
+    "error_correction"
+  ],
+  "required_pattern_fields": [
+    "source_event_ids",
+    "evidence_count",
+    "confidence",
+    "outcome_correlation"
+  ],
+  "seat_count": 15,
+  "pattern_count": 40,
+  "seats": {
+    "chatgpt": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "chatgpt",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "chatgpt",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.81,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "chatgpt",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "chatgpt",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "deepseek": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "deepseek",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "deepseek",
+          "category": "discipline",
+          "claim": "不下注纪律明显：5/5 个投资动作选择 no-bet。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.9,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "home_bias",
+          "canonical_pattern_id": "home_bias",
+          "seat_id": "deepseek",
+          "category": "forecast_bias",
+          "claim": "主队倾向明显：3/5 次预测偏向主队。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": 0.0,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "deepseek",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "mimo": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "mimo",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "mimo",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "mimo",
+          "category": "discipline",
+          "claim": "不下注纪律明显：3/5 个投资动作选择 no-bet。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "stake_concentration",
+          "canonical_pattern_id": "stake_volatility",
+          "seat_id": "mimo",
+          "category": "portfolio_risk",
+          "claim": "仓位集中：最大单注占总下注 50%。",
+          "evidence_count": 1,
+          "sample_size": 2,
+          "confidence": 0.675,
+          "outcome_correlation": -0.18,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "mimo",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "minimax": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "minimax",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "minimax",
+          "category": "calibration",
+          "claim": "高置信低信息：4 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.74,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "minimax",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "doubao": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "doubao",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "doubao",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "doubao",
+          "category": "calibration",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.68,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "gemini": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "gemini",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "longshot_seeking",
+          "canonical_pattern_id": "high_odds_exposure",
+          "seat_id": "gemini",
+          "category": "risk_preference",
+          "claim": "高赔率搜索：1/1 个下注动作赔率不低于 3.5，仓位占比 100%。",
+          "evidence_count": 1,
+          "sample_size": 1,
+          "confidence": 0.82,
+          "outcome_correlation": -0.12,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "home_bias",
+          "canonical_pattern_id": "home_bias",
+          "seat_id": "gemini",
+          "category": "forecast_bias",
+          "claim": "主队倾向明显：4/5 次预测偏向主队。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.81,
+          "outcome_correlation": 0.0,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "gemini",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.81,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "gemini",
+          "category": "calibration",
+          "claim": "高置信低信息：5 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.8,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "favorite_bias",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "gemini",
+          "category": "forecast_bias",
+          "claim": "热门倾向明显：3/5 次把最高概率压到 58% 以上。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.684,
+          "outcome_correlation": 0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮需要说明热门判断是否来自真实信号，而不是默认追随强队。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "kimi": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "kimi",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "kimi",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.81,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "kimi",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "kimi",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "meta": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "meta",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "meta",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "meta",
+          "category": "calibration",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.68,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "qwen": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "qwen",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "qwen",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 5,
+          "confidence": 0.81,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "qwen",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "qwen",
+          "category": "calibration",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 3,
+          "sample_size": 5,
+          "confidence": 0.68,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "wenxin": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "wenxin",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "wenxin",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "wenxin",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "grok": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "grok",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 5,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "grok",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.9,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "grok",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "yuanbao": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "yuanbao",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 6,
+      "patterns": [
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "yuanbao",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 5,
+          "sample_size": 5,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "stake_concentration",
+          "canonical_pattern_id": "stake_volatility",
+          "seat_id": "yuanbao",
+          "category": "portfolio_risk",
+          "claim": "仓位集中：最大单注占总下注 50%。",
+          "evidence_count": 1,
+          "sample_size": 4,
+          "confidence": 0.675,
+          "outcome_correlation": -0.18,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "high_confidence_low_information",
+          "canonical_pattern_id": "error_correction",
+          "seat_id": "yuanbao",
+          "category": "calibration",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "evidence_count": 1,
+          "sample_size": 5,
+          "confidence": 0.56,
+          "outcome_correlation": -0.25,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "xunfei": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "xunfei",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 5,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "xunfei",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.9,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "xunfei",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "stepfun": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "stepfun",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 5,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "stepfun",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.9,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "stepfun",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    },
+    "zhipu": {
+      "version": "behavior_pattern_compiler.v1",
+      "seat_id": "zhipu",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "pattern_catalog": [
+        "home_bias",
+        "upset_aversion",
+        "confidence_calibration",
+        "high_odds_exposure",
+        "loss_chasing",
+        "stake_volatility",
+        "no_bet_quality",
+        "recovery_compliance",
+        "loan_discipline",
+        "bankrupt_approach",
+        "strategy_adaptation",
+        "error_correction"
+      ],
+      "required_pattern_fields": [
+        "source_event_ids",
+        "evidence_count",
+        "confidence",
+        "outcome_correlation"
+      ],
+      "event_count": 5,
+      "patterns": [
+        {
+          "pattern_id": "uncertainty_to_no_bet",
+          "canonical_pattern_id": "no_bet_quality",
+          "seat_id": "zhipu",
+          "category": "discipline",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.9,
+          "outcome_correlation": 0.15,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ],
+          "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        },
+        {
+          "pattern_id": "draw_avoidance",
+          "canonical_pattern_id": "upset_aversion",
+          "seat_id": "zhipu",
+          "category": "forecast_bias",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "evidence_count": 4,
+          "sample_size": 4,
+          "confidence": 0.72,
+          "outcome_correlation": -0.05,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ],
+          "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "detected_at": "2026-06-21T21:42:55+00:00"
+        }
+      ]
+    }
+  },
+  "top_patterns": [
+    {
+      "pattern_id": "upset_aversion",
+      "source_pattern_ids": [
+        "draw_avoidance",
+        "favorite_bias"
+      ],
+      "category": "forecast_bias",
+      "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+      "seats": [
+        "chatgpt",
+        "doubao",
+        "gemini",
+        "grok",
+        "kimi",
+        "meta",
+        "mimo",
+        "minimax",
+        "qwen",
+        "stepfun",
+        "wenxin",
+        "xunfei",
+        "yuanbao",
+        "zhipu"
+      ],
+      "evidence_count": 64,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ],
+      "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+      "confidence": 0.717
+    },
+    {
+      "pattern_id": "no_bet_quality",
+      "source_pattern_ids": [
+        "uncertainty_to_no_bet"
+      ],
+      "category": "discipline",
+      "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+      "seats": [
+        "chatgpt",
+        "deepseek",
+        "gemini",
+        "grok",
+        "kimi",
+        "mimo",
+        "qwen",
+        "stepfun",
+        "xunfei",
+        "zhipu"
+      ],
+      "evidence_count": 40,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "recommendation": "保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+      "confidence": 0.846
+    },
+    {
+      "pattern_id": "error_correction",
+      "source_pattern_ids": [
+        "high_confidence_low_information"
+      ],
+      "category": "calibration",
+      "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+      "seats": [
+        "chatgpt",
+        "deepseek",
+        "doubao",
+        "gemini",
+        "kimi",
+        "meta",
+        "mimo",
+        "minimax",
+        "qwen",
+        "wenxin",
+        "yuanbao"
+      ],
+      "evidence_count": 24,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ],
+      "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+      "confidence": 0.631
+    },
+    {
+      "pattern_id": "home_bias",
+      "source_pattern_ids": [
+        "home_bias"
+      ],
+      "category": "forecast_bias",
+      "claim": "主队倾向明显：3/5 次预测偏向主队。",
+      "seats": [
+        "deepseek",
+        "gemini"
+      ],
+      "evidence_count": 7,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ],
+      "recommendation": "下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+      "confidence": 0.765
+    },
+    {
+      "pattern_id": "stake_volatility",
+      "source_pattern_ids": [
+        "stake_concentration"
+      ],
+      "category": "portfolio_risk",
+      "claim": "仓位集中：最大单注占总下注 50%。",
+      "seats": [
+        "mimo",
+        "yuanbao"
+      ],
+      "evidence_count": 2,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "recommendation": "下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+      "confidence": 0.675
+    },
+    {
+      "pattern_id": "high_odds_exposure",
+      "source_pattern_ids": [
+        "longshot_seeking"
+      ],
+      "category": "risk_preference",
+      "claim": "高赔率搜索：1/1 个下注动作赔率不低于 3.5，仓位占比 100%。",
+      "seats": [
+        "gemini"
+      ],
+      "evidence_count": 1,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "recommendation": "下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。",
+      "confidence": 0.82
+    }
+  ]
+}

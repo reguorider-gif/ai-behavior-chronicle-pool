@@ -5,6 +5,18 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "p": "Spain 3-0 Cape Verde",
+      "score": 0.92,
+      "confidence": 0.88,
+      "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
+      "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。",
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "Spain 3-0 Cape Verde",
+      "most_likely_score": 0.92
+    },
+    {
       "match_id": "WC-K1",
       "p": "Portugal 2-1 Colombia",
       "score": 0.55,
@@ -51,21 +63,23 @@
       "source": "strict_god_report",
       "model_estimated_prob": "Draw 1-1",
       "most_likely_score": 0.3
-    },
-    {
-      "match_id": "WC-H1",
-      "p": "Spain 3-0 Cape Verde",
-      "score": 0.92,
-      "confidence": 0.88,
-      "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
-      "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。",
-      "status": "collected",
-      "source": "strict_god_report",
-      "model_estimated_prob": "Spain 3-0 Cape Verde",
-      "most_likely_score": 0.92
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "bet",
+      "market": "h2h",
+      "selection": "Spain",
+      "line": null,
+      "odds": 1.08,
+      "stake_gp": 40.0,
+      "loan_used_gp": 0.0,
+      "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+    },
     {
       "match_id": "WC-K1",
       "action": "no_bet",
@@ -121,20 +135,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": " handicap让球数未明示，市场赔率分歧严重（3.34 vs 1.83），两队近期无验证数据，无投注条件。"
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "bet",
-      "market": "h2h",
-      "selection": "Spain",
-      "line": null,
-      "odds": 1.08,
-      "stake_gp": 40.0,
-      "loan_used_gp": 0.0,
-      "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
     }
   ],
   "credit": {
@@ -148,24 +148,24 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 661.0,
+    "credit_score": 657.7,
     "credit_grade": "B",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 500.0,
-    "available_loan_gp": 500.0,
+    "loan_limit_gp": 480.0,
+    "available_loan_gp": 480.0,
     "outstanding_loan_gp": 0.0,
     "interest_rate": 0.11
   },
   "survival": {
     "seat_id": "kimi",
-    "balance_gp": 960.0,
+    "balance_gp": 920.0,
     "outstanding_loan_gp": 0.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 960.0,
+    "net_worth_gp": 920.0,
     "recovery_mode": false,
     "freeze_new_loan": false,
-    "loan_limit_gp": 500.0,
-    "available_loan_gp": 500.0,
+    "loan_limit_gp": 480.0,
+    "available_loan_gp": 480.0,
     "allowed_actions": [
       "forecast",
       "bet",

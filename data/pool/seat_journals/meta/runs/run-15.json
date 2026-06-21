@@ -5,6 +5,20 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "p": "home",
+      "score": "3-0",
+      "confidence": 88,
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "赔率过低"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "3-0"
+    },
+    {
       "match_id": "WC-K1",
       "p": "home",
       "score": "2-1",
@@ -59,23 +73,23 @@
       "source": "strict_god_report",
       "model_estimated_prob": "home",
       "most_likely_score": "1-0"
-    },
-    {
-      "match_id": "WC-H1",
-      "p": "home",
-      "score": "3-0",
-      "confidence": 88,
-      "edge_assessment": "no_bet",
-      "information_gaps": [
-        "赔率过低"
-      ],
-      "status": "collected",
-      "source": "strict_god_report",
-      "model_estimated_prob": "home",
-      "most_likely_score": "3-0"
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "赔率过低弃投",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "赔率过低弃投"
+    },
     {
       "match_id": "WC-K1",
       "action": "bet",
@@ -131,20 +145,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": "伊朗防守稳健"
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "no_bet",
-      "market": "none",
-      "selection": "none",
-      "line": "none",
-      "odds": 0,
-      "stake_gp": 0.0,
-      "loan_used_gp": 0.0,
-      "reason": "赔率过低弃投",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": "赔率过低弃投"
     }
   ],
   "credit": {
@@ -158,34 +158,34 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 597.8,
-    "credit_grade": "C",
+    "credit_score": 379.7,
+    "credit_grade": "D",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 120.0,
+    "loan_limit_gp": 0.0,
     "available_loan_gp": 0.0,
     "outstanding_loan_gp": 800.0,
-    "interest_rate": 0.18
+    "interest_rate": null
   },
   "survival": {
     "seat_id": "meta",
-    "balance_gp": 456.0,
-    "outstanding_loan_gp": 0.0,
+    "balance_gp": 0.0,
+    "outstanding_loan_gp": 544.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 456.0,
-    "recovery_mode": false,
-    "freeze_new_loan": false,
-    "loan_limit_gp": 120.0,
+    "net_worth_gp": -544.0,
+    "recovery_mode": true,
+    "freeze_new_loan": true,
+    "loan_limit_gp": 0.0,
     "available_loan_gp": 0.0,
     "allowed_actions": [
       "forecast",
-      "bet",
-      "no_bet"
+      "no_bet",
+      "small_recovery_bet"
     ]
   },
   "settlement": {
     "seat_id": "meta",
     "run_id": "run-15",
-    "profit_gp": 0.0,
+    "profit_gp": -200.0,
     "settled": [
       {
         "match_id": "WC-H1",
@@ -193,9 +193,51 @@
         "profit_gp": 0
       },
       {
+        "seat_id": "meta",
+        "match_id": "WC-K1",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "line": "none",
+        "odds": 1.75,
+        "stake_gp": 400.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 700.0,
+        "profit_gp": 300.0,
+        "status": "win",
+        "score": "2-1"
+      },
+      {
+        "seat_id": "meta",
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "market": "handicap",
+        "selection": "Belgium",
+        "line": "-1.5",
+        "odds": 2.81,
+        "stake_gp": 300.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 0.0,
+        "profit_gp": -300.0,
+        "status": "lose",
+        "score": "1-1"
+      },
+      {
         "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
         "action": "no_bet",
         "profit_gp": 0
+      },
+      {
+        "seat_id": "meta",
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "market": "handicap",
+        "selection": "Iran",
+        "line": "-0.5",
+        "odds": 1.83,
+        "stake_gp": 200.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 0.0,
+        "profit_gp": -200.0,
+        "status": "lose",
+        "score": "2-2"
       }
     ]
   }

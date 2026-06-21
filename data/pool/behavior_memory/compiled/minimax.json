@@ -1,0 +1,84 @@
+{
+  "version": "behavior_memory.v1",
+  "seat_id": "minimax",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "event_count": 6,
+  "runs_seen": [
+    "run-15"
+  ],
+  "profile": {
+    "behavior_type": "selective_allocator",
+    "risk_level": "medium",
+    "loan_dependency": "low",
+    "no_bet_rate": 0.4,
+    "strategy_drift": "stable",
+    "bet_count": 3,
+    "forecast_count": 5,
+    "total_stake_gp": 300.0,
+    "total_loan_used_gp": 0.0,
+    "settlement_profit_gp": 0.0,
+    "credit_grade": "B",
+    "credit_score": 657.0,
+    "recovery_mode": false
+  },
+  "top_patterns": [
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.67,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "supporting_events": 1,
+      "seats": [
+        "minimax"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    }
+  ],
+  "recent_timeline_events": [
+    {
+      "event_id": "run-15:forecast_recorded:1",
+      "run_id": "run-15",
+      "action": "forecast",
+      "outcome": "5 forecasts",
+      "risk_shift": "information_gathering"
+    },
+    {
+      "event_id": "run-15:investment_recorded:2",
+      "run_id": "run-15",
+      "action": "investment",
+      "outcome": "3 bet / 2 no-bet",
+      "risk_shift": "selective_risk"
+    },
+    {
+      "event_id": "run-15:credit_updated:3",
+      "run_id": "run-15",
+      "action": "credit",
+      "outcome": "B",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-15:survival_updated:4",
+      "run_id": "run-15",
+      "action": "survival",
+      "outcome": "normal",
+      "risk_shift": "constraint_update"
+    },
+    {
+      "event_id": "run-15:settlement_recorded:5",
+      "run_id": "run-15",
+      "action": "settlement",
+      "outcome": "+0 GP",
+      "risk_shift": "neutral"
+    }
+  ],
+  "memory_contract": {
+    "must_reference_in_next_decision": true,
+    "required_output_fields": [
+      "memory_used",
+      "memory_not_used_reason",
+      "strategy_change_from_memory"
+    ]
+  }
+}

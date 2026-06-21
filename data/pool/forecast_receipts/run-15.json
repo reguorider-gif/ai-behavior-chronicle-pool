@@ -10,6 +10,20 @@
       "status": "collected",
       "forecasts": [
         {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 88,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "客胜缺盘"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
+        {
           "match_id": "WC-K1",
           "p": "home",
           "score": "2-1",
@@ -64,20 +78,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "2-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "3-0",
-          "confidence": 88,
-          "edge_assessment": "lean",
-          "information_gaps": [
-            "客胜缺盘"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "3-0"
         }
       ],
       "self_review": {
@@ -92,6 +92,27 @@
       "display_name": "deepseek",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "home_win_prob": 0.85,
+          "draw_prob": 0.1,
+          "away_win_prob": 0.05,
+          "most_likely_score": "2-0",
+          "confidence": 0.9,
+          "fair_odds": {
+            "home": 1.18,
+            "draw": 10.0,
+            "away": 20.0
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "西班牙首发轮换幅度（核心是否休息）",
+            "佛得角近期防守组织及反击质量",
+            "比赛场地和天气对技术流传控的影响"
+          ],
+          "status": "collected",
+          "source": "strict_god_report"
+        },
         {
           "match_id": "WC-K1",
           "home_win_prob": 0.48,
@@ -176,27 +197,6 @@
           ],
           "status": "collected",
           "source": "strict_god_report"
-        },
-        {
-          "match_id": "WC-H1",
-          "home_win_prob": 0.85,
-          "draw_prob": 0.1,
-          "away_win_prob": 0.05,
-          "most_likely_score": "2-0",
-          "confidence": 0.9,
-          "fair_odds": {
-            "home": 1.18,
-            "draw": 10.0,
-            "away": 20.0
-          },
-          "edge_assessment": "no_bet",
-          "information_gaps": [
-            "西班牙首发轮换幅度（核心是否休息）",
-            "佛得角近期防守组织及反击质量",
-            "比赛场地和天气对技术流传控的影响"
-          ],
-          "status": "collected",
-          "source": "strict_god_report"
         }
       ],
       "self_review": {
@@ -211,6 +211,20 @@
       "display_name": "mimo",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "Spain",
+          "score": "3-0",
+          "confidence": 95,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "赔率1.08无价值边缘"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "Spain",
+          "most_likely_score": "3-0"
+        },
         {
           "match_id": "WC-K1",
           "p": "Portugal",
@@ -266,20 +280,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "Iran",
           "most_likely_score": "1-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "Spain",
-          "score": "3-0",
-          "confidence": 95,
-          "edge_assessment": "no_bet",
-          "information_gaps": [
-            "赔率1.08无价值边缘"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "Spain",
-          "most_likely_score": "3-0"
         }
       ],
       "self_review": {
@@ -294,6 +294,20 @@
       "display_name": "minimax",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 92,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "主力轮换仍碾压"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
         {
           "match_id": "WC-K1",
           "p": "home",
@@ -349,20 +363,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "2-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "3-0",
-          "confidence": 92,
-          "edge_assessment": "lean",
-          "information_gaps": [
-            "主力轮换仍碾压"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "3-0"
         }
       ],
       "self_review": {
@@ -377,6 +377,20 @@
       "display_name": "doubao",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 85,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无明显漏洞"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
         {
           "match_id": "WC-K1",
           "p": "home",
@@ -432,20 +446,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "2-1"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "2-0",
-          "confidence": 85,
-          "edge_assessment": "bet",
-          "information_gaps": [
-            "无明显漏洞"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "2-0"
         }
       ],
       "self_review": {
@@ -460,6 +460,25 @@
       "display_name": "gemini",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "home_win_prob": 0.89,
+          "draw_prob": 0.08,
+          "away_win_prob": 0.03,
+          "most_likely_score": "3-0",
+          "confidence": 0.92,
+          "fair_odds": {
+            "home": 1.12,
+            "draw": 12.5,
+            "away": 33.33
+          },
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "Cape Verde squad rotation and travel fatigue data"
+          ],
+          "status": "collected",
+          "source": "strict_god_report"
+        },
         {
           "match_id": "WC-K1",
           "home_win_prob": 0.52,
@@ -536,25 +555,6 @@
           ],
           "status": "collected",
           "source": "strict_god_report"
-        },
-        {
-          "match_id": "WC-H1",
-          "home_win_prob": 0.89,
-          "draw_prob": 0.08,
-          "away_win_prob": 0.03,
-          "most_likely_score": "3-0",
-          "confidence": 0.92,
-          "fair_odds": {
-            "home": 1.12,
-            "draw": 12.5,
-            "away": 33.33
-          },
-          "edge_assessment": "no_bet",
-          "information_gaps": [
-            "Cape Verde squad rotation and travel fatigue data"
-          ],
-          "status": "collected",
-          "source": "strict_god_report"
         }
       ],
       "self_review": {
@@ -569,6 +569,18 @@
       "display_name": "kimi",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "Spain 3-0 Cape Verde",
+          "score": 0.92,
+          "confidence": 0.88,
+          "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
+          "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "Spain 3-0 Cape Verde",
+          "most_likely_score": 0.92
+        },
         {
           "match_id": "WC-K1",
           "p": "Portugal 2-1 Colombia",
@@ -616,18 +628,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "Draw 1-1",
           "most_likely_score": 0.3
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "Spain 3-0 Cape Verde",
-          "score": 0.92,
-          "confidence": 0.88,
-          "edge_assessment": "西班牙实力碾压，赔率1.08无价值，但胜率高，适合极小注保本。",
-          "information_gaps": "佛得角近期热身赛表现未知，西班牙轮换幅度未知。",
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "Spain 3-0 Cape Verde",
-          "most_likely_score": 0.92
         }
       ],
       "self_review": {
@@ -642,6 +642,20 @@
       "display_name": "meta",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "3-0",
+          "confidence": 88,
+          "edge_assessment": "no_bet",
+          "information_gaps": [
+            "赔率过低"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "3-0"
+        },
         {
           "match_id": "WC-K1",
           "p": "home",
@@ -697,20 +711,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "1-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "3-0",
-          "confidence": 88,
-          "edge_assessment": "no_bet",
-          "information_gaps": [
-            "赔率过低"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "3-0"
         }
       ],
       "self_review": {
@@ -725,6 +725,20 @@
       "display_name": "qwen",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 80,
+          "edge_assessment": "lean",
+          "information_gaps": [
+            "无缺口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
         {
           "match_id": "WC-K1",
           "p": "home",
@@ -780,20 +794,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "1-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "2-0",
-          "confidence": 80,
-          "edge_assessment": "lean",
-          "information_gaps": [
-            "无缺口"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "2-0"
         }
       ],
       "self_review": {
@@ -808,6 +808,20 @@
       "display_name": "wenxin",
       "status": "collected",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "",
+          "confidence": 80,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无缺口"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": ""
+        },
         {
           "match_id": "WC-K1",
           "p": "home",
@@ -863,20 +877,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": ""
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "",
-          "confidence": 80,
-          "edge_assessment": "bet",
-          "information_gaps": [
-            "无缺口"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": ""
         }
       ],
       "self_review": {
@@ -888,9 +888,24 @@
     },
     "grok": {
       "seat_id": "grok",
-      "display_name": "xAI",
+      "display_name": "xAI Grok",
       "status": "missing_provider_blocked",
       "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+          ],
+          "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+        },
         {
           "match_id": "WC-K1",
           "status": "missing_provider_blocked",
@@ -965,6 +980,20 @@
       "status": "collected",
       "forecasts": [
         {
+          "match_id": "WC-H1",
+          "p": "home",
+          "score": "2-0",
+          "confidence": 95,
+          "edge_assessment": "bet",
+          "information_gaps": [
+            "无"
+          ],
+          "status": "collected",
+          "source": "strict_god_report",
+          "model_estimated_prob": "home",
+          "most_likely_score": "2-0"
+        },
+        {
           "match_id": "WC-K1",
           "p": "home",
           "score": "1-0",
@@ -1019,20 +1048,6 @@
           "source": "strict_god_report",
           "model_estimated_prob": "home",
           "most_likely_score": "2-0"
-        },
-        {
-          "match_id": "WC-H1",
-          "p": "home",
-          "score": "2-0",
-          "confidence": 95,
-          "edge_assessment": "bet",
-          "information_gaps": [
-            "无"
-          ],
-          "status": "collected",
-          "source": "strict_god_report",
-          "model_estimated_prob": "home",
-          "most_likely_score": "2-0"
         }
       ],
       "self_review": {
@@ -1040,6 +1055,270 @@
         "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
         "strategy_change_this_round": "稳胆为主辅让球",
         "risk_commitment": "冷门平局"
+      }
+    },
+    "xunfei": {
+      "seat_id": "xunfei",
+      "display_name": "科大讯飞",
+      "status": "missing_provider_blocked",
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "必须补 forecast；投资可 no-bet，但不能缺席判断。",
+        "risk_commitment": ""
+      }
+    },
+    "stepfun": {
+      "seat_id": "stepfun",
+      "display_name": "阶跃星辰",
+      "status": "missing_provider_blocked",
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "必须补 forecast；投资可 no-bet，但不能缺席判断。",
+        "risk_commitment": ""
+      }
+    },
+    "zhipu": {
+      "seat_id": "zhipu",
+      "display_name": "智谱清言",
+      "status": "missing_provider_blocked",
+      "forecasts": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "home_win_prob": null,
+          "draw_prob": null,
+          "away_win_prob": null,
+          "model_estimated_prob": null,
+          "most_likely_score": null,
+          "confidence": 0,
+          "edge_assessment": "missing",
+          "information_gaps": [
+            "本场预测缺失，需定向补跑。"
+          ],
+          "forecast_rationale": "本场预测缺失，需定向补跑。"
+        }
+      ],
+      "self_review": {
+        "what_i_did_last_round": "读取生产轮次记录；本轮以结构化预测/投资分账入库。",
+        "what_i_learned": "预测必须覆盖全赛程，投资可以 bet/no-bet，但不能缺席。",
+        "strategy_change_this_round": "必须补 forecast；投资可 no-bet，但不能缺席判断。",
+        "risk_commitment": ""
       }
     }
   }

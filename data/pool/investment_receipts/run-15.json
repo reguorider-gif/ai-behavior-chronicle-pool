@@ -10,6 +10,20 @@
       "status": "collected",
       "investments": [
         {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "赔率过低",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "赔率过低"
+        },
+        {
           "match_id": "WC-K1",
           "action": "bet",
           "market": "moneyline",
@@ -64,20 +78,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "线位缺失"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "market": "none",
-          "selection": "none",
-          "line": "none",
-          "odds": 0,
-          "stake_gp": 0.0,
-          "loan_used_gp": 0.0,
-          "reason": "赔率过低",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "赔率过低"
         }
       ],
       "loan_decision": {
@@ -97,6 +97,25 @@
       "display_name": "deepseek",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0.0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0.0,
+          "model_prob": 0.85,
+          "market_implied_prob": 0.926,
+          "estimated_ev": -0.076,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "不适用",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": ""
+        },
         {
           "match_id": "WC-K1",
           "action": "no_bet",
@@ -172,25 +191,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": ""
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "selection": null,
-          "market": null,
-          "line": null,
-          "odds": null,
-          "stake_gp": 0.0,
-          "own_funds_gp": 0,
-          "loan_used_gp": 0.0,
-          "model_prob": 0.85,
-          "market_implied_prob": 0.926,
-          "estimated_ev": -0.076,
-          "max_loss_gp": 0,
-          "survival_plan_if_loss": "不适用",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": ""
         }
       ],
       "loan_decision": {
@@ -210,6 +210,20 @@
       "display_name": "mimo",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "无边不投。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "无边不投。"
+        },
         {
           "match_id": "WC-K1",
           "action": "no_bet",
@@ -265,20 +279,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "小球易拖风险高。"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "market": "none",
-          "selection": "none",
-          "line": "none",
-          "odds": 0,
-          "stake_gp": 0.0,
-          "loan_used_gp": 0.0,
-          "reason": "无边不投。",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "无边不投。"
         }
       ],
       "loan_decision": {
@@ -298,6 +298,20 @@
       "display_name": "minimax",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "赔率过低不投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "赔率过低不投"
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -353,20 +367,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "让一球主胜"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "market": "none",
-          "selection": "none",
-          "line": "none",
-          "odds": 0,
-          "stake_gp": 0.0,
-          "loan_used_gp": 0.0,
-          "reason": "赔率过低不投",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "赔率过低不投"
         }
       ],
       "loan_decision": {
@@ -386,6 +386,20 @@
       "display_name": "doubao",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "Spain",
+          "line": "0",
+          "odds": 1.08,
+          "stake_gp": 200.0,
+          "loan_used_gp": 0.0,
+          "reason": "主队实力占优",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "主队实力占优"
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -441,20 +455,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "走势难判断"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "bet",
-          "market": "moneyline",
-          "selection": "Spain",
-          "line": "0",
-          "odds": 1.08,
-          "stake_gp": 200.0,
-          "loan_used_gp": 0.0,
-          "reason": "主队实力占优",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "主队实力占优"
         }
       ],
       "loan_decision": {
@@ -474,6 +474,25 @@
       "display_name": "gemini",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "selection": null,
+          "market": null,
+          "line": null,
+          "odds": null,
+          "stake_gp": 0.0,
+          "own_funds_gp": 0,
+          "loan_used_gp": 0.0,
+          "model_prob": 0.0,
+          "market_implied_prob": 0.0,
+          "estimated_ev": 0.0,
+          "max_loss_gp": 0,
+          "survival_plan_if_loss": "N/A",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": ""
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -549,25 +568,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": ""
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "selection": null,
-          "market": null,
-          "line": null,
-          "odds": null,
-          "stake_gp": 0.0,
-          "own_funds_gp": 0,
-          "loan_used_gp": 0.0,
-          "model_prob": 0.0,
-          "market_implied_prob": 0.0,
-          "estimated_ev": 0.0,
-          "max_loss_gp": 0,
-          "survival_plan_if_loss": "N/A",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": ""
         }
       ],
       "loan_decision": {
@@ -587,6 +587,20 @@
       "display_name": "kimi",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": null,
+          "odds": 1.08,
+          "stake_gp": 40.0,
+          "loan_used_gp": 0.0,
+          "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
+        },
         {
           "match_id": "WC-K1",
           "action": "no_bet",
@@ -642,20 +656,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": " handicap让球数未明示，市场赔率分歧严重（3.34 vs 1.83），两队近期无验证数据，无投注条件。"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "bet",
-          "market": "h2h",
-          "selection": "Spain",
-          "line": null,
-          "odds": 1.08,
-          "stake_gp": 40.0,
-          "loan_used_gp": 0.0,
-          "reason": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "西班牙胜率极高，极小注保本，赔率虽低但本金安全优先。若输则接受损失，不影响整体翻盘能力。"
         }
       ],
       "loan_decision": {
@@ -680,6 +680,20 @@
       "display_name": "meta",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "赔率过低弃投",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "赔率过低弃投"
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -735,20 +749,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "伊朗防守稳健"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "market": "none",
-          "selection": "none",
-          "line": "none",
-          "odds": 0,
-          "stake_gp": 0.0,
-          "loan_used_gp": 0.0,
-          "reason": "赔率过低弃投",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "赔率过低弃投"
         }
       ],
       "loan_decision": {
@@ -768,6 +768,20 @@
       "display_name": "qwen",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "no_bet",
+          "market": "none",
+          "selection": "none",
+          "line": "none",
+          "odds": 0,
+          "stake_gp": 0.0,
+          "loan_used_gp": 0.0,
+          "reason": "赔率过低",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "赔率过低"
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -823,20 +837,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "信息不足"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "no_bet",
-          "market": "none",
-          "selection": "none",
-          "line": "none",
-          "odds": 0,
-          "stake_gp": 0.0,
-          "loan_used_gp": 0.0,
-          "reason": "赔率过低",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "赔率过低"
         }
       ],
       "loan_decision": {
@@ -856,6 +856,20 @@
       "display_name": "wenxin",
       "status": "collected",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "h2h",
+          "selection": "Spain",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 150.0,
+          "loan_used_gp": 0.0,
+          "reason": "西班牙队实力碾压",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "西班牙队实力碾压"
+        },
         {
           "match_id": "WC-K1",
           "action": "bet",
@@ -911,20 +925,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "伊朗整体实力占优"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "bet",
-          "market": "h2h",
-          "selection": "Spain",
-          "line": "none",
-          "odds": 1.08,
-          "stake_gp": 150.0,
-          "loan_used_gp": 0.0,
-          "reason": "西班牙队实力碾压",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "西班牙队实力碾压"
         }
       ],
       "loan_decision": {
@@ -941,9 +941,23 @@
     },
     "grok": {
       "seat_id": "grok",
-      "display_name": "xAI",
+      "display_name": "xAI Grok",
       "status": "missing_provider_blocked",
       "investments": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+          "source": "quality_gate_missing_receipt"
+        },
         {
           "match_id": "WC-K1",
           "status": "missing_provider_blocked",
@@ -1018,6 +1032,20 @@
       "status": "collected",
       "investments": [
         {
+          "match_id": "WC-H1",
+          "action": "bet",
+          "market": "moneyline",
+          "selection": "home",
+          "line": "none",
+          "odds": 1.08,
+          "stake_gp": 500.0,
+          "loan_used_gp": 0.0,
+          "reason": "西班必胜",
+          "status": "collected",
+          "source": "strict_god_report",
+          "why_bet_or_no_bet": "西班必胜"
+        },
+        {
           "match_id": "WC-K1",
           "action": "bet",
           "market": "moneyline",
@@ -1072,20 +1100,6 @@
           "status": "collected",
           "source": "strict_god_report",
           "why_bet_or_no_bet": "主让安全"
-        },
-        {
-          "match_id": "WC-H1",
-          "action": "bet",
-          "market": "moneyline",
-          "selection": "home",
-          "line": "none",
-          "odds": 1.08,
-          "stake_gp": 500.0,
-          "loan_used_gp": 0.0,
-          "reason": "西班必胜",
-          "status": "collected",
-          "source": "strict_god_report",
-          "why_bet_or_no_bet": "西班必胜"
         }
       ],
       "loan_decision": {
@@ -1098,6 +1112,267 @@
         "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
         "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
         "next_round_adjustment": "稳胆为主辅让球"
+      }
+    },
+    "xunfei": {
+      "seat_id": "xunfei",
+      "display_name": "科大讯飞",
+      "status": "missing_provider_blocked",
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "未声明新增贷款。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      }
+    },
+    "stepfun": {
+      "seat_id": "stepfun",
+      "display_name": "阶跃星辰",
+      "status": "missing_provider_blocked",
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "未声明新增贷款。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      }
+    },
+    "zhipu": {
+      "seat_id": "zhipu",
+      "display_name": "智谱清言",
+      "status": "missing_provider_blocked",
+      "investments": [
+        {
+          "match_id": "WC-H1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WC-K1",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        },
+        {
+          "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+          "status": "missing_provider_blocked",
+          "action": "missing",
+          "market": "",
+          "selection": "",
+          "line": null,
+          "odds": null,
+          "stake_gp": 0,
+          "loan_used_gp": 0,
+          "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+          "reason": "本场投资动作缺失，需定向补跑。",
+          "source": "quality_gate_missing_receipt"
+        }
+      ],
+      "loan_decision": {
+        "request_loan_gp": 0,
+        "reason": "未声明新增贷款。"
+      },
+      "survival_plan": {
+        "current_net_worth_awareness": "按生产 SOP 账本读取净值和贷款压力。",
+        "if_all_bets_lose": "优先偿还利息和本金，再进入排名与惩罚计算。",
+        "if_recovery_mode_triggered": "净值小于等于 0 时进入重整，冻结新增高杠杆。",
+        "next_round_adjustment": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
       }
     }
   }

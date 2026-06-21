@@ -11,11 +11,26 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 from typing import Any
 
 from dispatch_seats import SeatDispatcher
 from fetch_odds import OddsFetcher
 from run_pred_invest_daily_sop import main as run_daily_sop
+
+
+ROOT = Path(__file__).resolve().parents[1]
+PRED_DIR = ROOT / "data" / "pool" / "pred_invest"
+
+
+def _read_daily_report(date: str, round_id: str) -> dict[str, Any]:
+    path = PRED_DIR / f"{date}_{round_id}_daily_sop.json"
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 
 class AutoSOP:
@@ -41,7 +56,17 @@ class AutoSOP:
         if write:
             argv.append("--write")
         code = run_daily_sop(argv)
-        return {"return_code": code, "ok": code == 0}
+        report = _read_daily_report(date, round_id)
+        hard_errors = report.get("errors") or []
+        process_ok = code == 0 or (report.get("verdict") == "PARTIAL_NOT_READY" and not hard_errors)
+        return {
+            "return_code": code,
+            "ok": process_ok,
+            "verdict": report.get("verdict"),
+            "errors": hard_errors,
+            "warnings": report.get("warnings") or [],
+            "publish_ready": report.get("verdict") == "READY",
+        }
 
     def phase_pre_match(
         self,

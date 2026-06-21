@@ -5,6 +5,20 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "p": "home",
+      "score": "2-0",
+      "confidence": 85,
+      "edge_assessment": "bet",
+      "information_gaps": [
+        "无明显漏洞"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-0"
+    },
+    {
       "match_id": "WC-K1",
       "p": "home",
       "score": "2-1",
@@ -59,23 +73,23 @@
       "source": "strict_god_report",
       "model_estimated_prob": "home",
       "most_likely_score": "2-1"
-    },
-    {
-      "match_id": "WC-H1",
-      "p": "home",
-      "score": "2-0",
-      "confidence": 85,
-      "edge_assessment": "bet",
-      "information_gaps": [
-        "无明显漏洞"
-      ],
-      "status": "collected",
-      "source": "strict_god_report",
-      "model_estimated_prob": "home",
-      "most_likely_score": "2-0"
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "bet",
+      "market": "moneyline",
+      "selection": "Spain",
+      "line": "0",
+      "odds": 1.08,
+      "stake_gp": 200.0,
+      "loan_used_gp": 0.0,
+      "reason": "主队实力占优",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "主队实力占优"
+    },
     {
       "match_id": "WC-K1",
       "action": "bet",
@@ -131,20 +145,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": "走势难判断"
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "bet",
-      "market": "moneyline",
-      "selection": "Spain",
-      "line": "0",
-      "odds": 1.08,
-      "stake_gp": 200.0,
-      "loan_used_gp": 0.0,
-      "reason": "主队实力占优",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": "主队实力占优"
     }
   ],
   "credit": {
@@ -158,24 +158,24 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 669.6,
-    "credit_grade": "B",
+    "credit_score": 589.4,
+    "credit_grade": "C",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 550.0,
-    "available_loan_gp": 250.0,
+    "loan_limit_gp": 113.4,
+    "available_loan_gp": 0.0,
     "outstanding_loan_gp": 300.0,
-    "interest_rate": 0.11
+    "interest_rate": 0.18
   },
   "survival": {
     "seat_id": "doubao",
-    "balance_gp": 867.0,
+    "balance_gp": 463.0,
     "outstanding_loan_gp": 0.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 867.0,
+    "net_worth_gp": 463.0,
     "recovery_mode": false,
     "freeze_new_loan": false,
-    "loan_limit_gp": 550.0,
-    "available_loan_gp": 250.0,
+    "loan_limit_gp": 113.4,
+    "available_loan_gp": 0.0,
     "allowed_actions": [
       "forecast",
       "bet",
@@ -185,7 +185,7 @@
   "settlement": {
     "seat_id": "doubao",
     "run_id": "run-15",
-    "profit_gp": -200.0,
+    "profit_gp": -50.0,
     "settled": [
       {
         "seat_id": "doubao",
@@ -202,9 +202,37 @@
         "score": "0-0"
       },
       {
+        "seat_id": "doubao",
+        "match_id": "WC-K1",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "line": "0",
+        "odds": 1.75,
+        "stake_gp": 200.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 350.0,
+        "profit_gp": 150.0,
+        "status": "win",
+        "score": "2-1"
+      },
+      {
         "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
         "action": "no_bet",
         "profit_gp": 0
+      },
+      {
+        "seat_id": "doubao",
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "market": "handicap",
+        "selection": "Uruguay",
+        "line": "0",
+        "odds": 2.24,
+        "stake_gp": 200.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 200.0,
+        "profit_gp": 0.0,
+        "status": "push",
+        "score": "1-1"
       },
       {
         "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",

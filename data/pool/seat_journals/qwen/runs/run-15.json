@@ -5,6 +5,20 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "p": "home",
+      "score": "2-0",
+      "confidence": 80,
+      "edge_assessment": "lean",
+      "information_gaps": [
+        "无缺口"
+      ],
+      "status": "collected",
+      "source": "strict_god_report",
+      "model_estimated_prob": "home",
+      "most_likely_score": "2-0"
+    },
+    {
       "match_id": "WC-K1",
       "p": "home",
       "score": "2-1",
@@ -59,23 +73,23 @@
       "source": "strict_god_report",
       "model_estimated_prob": "home",
       "most_likely_score": "1-0"
-    },
-    {
-      "match_id": "WC-H1",
-      "p": "home",
-      "score": "2-0",
-      "confidence": 80,
-      "edge_assessment": "lean",
-      "information_gaps": [
-        "无缺口"
-      ],
-      "status": "collected",
-      "source": "strict_god_report",
-      "model_estimated_prob": "home",
-      "most_likely_score": "2-0"
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "market": "none",
+      "selection": "none",
+      "line": "none",
+      "odds": 0,
+      "stake_gp": 0.0,
+      "loan_used_gp": 0.0,
+      "reason": "赔率过低",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": "赔率过低"
+    },
     {
       "match_id": "WC-K1",
       "action": "bet",
@@ -131,20 +145,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": "信息不足"
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "no_bet",
-      "market": "none",
-      "selection": "none",
-      "line": "none",
-      "odds": 0,
-      "stake_gp": 0.0,
-      "loan_used_gp": 0.0,
-      "reason": "赔率过低",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": "赔率过低"
     }
   ],
   "credit": {
@@ -158,24 +158,24 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 674.7,
+    "credit_score": 628.2,
     "credit_grade": "B",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 550.0,
-    "available_loan_gp": 150.0,
+    "loan_limit_gp": 328.0,
+    "available_loan_gp": 0.0,
     "outstanding_loan_gp": 400.0,
     "interest_rate": 0.11
   },
   "survival": {
     "seat_id": "qwen",
-    "balance_gp": 1056.0,
+    "balance_gp": 687.0,
     "outstanding_loan_gp": 0.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 1056.0,
+    "net_worth_gp": 687.0,
     "recovery_mode": false,
     "freeze_new_loan": false,
-    "loan_limit_gp": 550.0,
-    "available_loan_gp": 150.0,
+    "loan_limit_gp": 328.0,
+    "available_loan_gp": 0.0,
     "allowed_actions": [
       "forecast",
       "bet",
@@ -185,12 +185,26 @@
   "settlement": {
     "seat_id": "qwen",
     "run_id": "run-15",
-    "profit_gp": 0.0,
+    "profit_gp": 75.0,
     "settled": [
       {
         "match_id": "WC-H1",
         "action": "no_bet",
         "profit_gp": 0
+      },
+      {
+        "seat_id": "qwen",
+        "match_id": "WC-K1",
+        "market": "moneyline",
+        "selection": "Portugal",
+        "line": "0",
+        "odds": 1.75,
+        "stake_gp": 100.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 175.0,
+        "profit_gp": 75.0,
+        "status": "win",
+        "score": "2-1"
       },
       {
         "match_id": "WCAPI-20260615-BELGIUM-EGYPT",

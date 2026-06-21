@@ -21,6 +21,7 @@ from pool.io_utils import http_json
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "data" / "pool" / "pred_invest"
 REQUIRED_SEAT_COUNT = len(pred_invest_quality_gate.REQUIRED_SEATS)
+REQUIRED_SEATS = list(pred_invest_quality_gate.REQUIRED_SEATS)
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -106,6 +107,32 @@ def _guard_status(errors: list[str], warnings: list[str], quality_gate: dict[str
     return "READY"
 
 
+def _normalize_gate_required_seats(gate: dict[str, Any] | None, prompt_pack: dict[str, Any]) -> dict[str, Any] | None:
+    if not gate:
+        return gate
+    normalized = dict(gate)
+    valid = [str(seat) for seat in normalized.get("valid_seats") or [] if str(seat) in REQUIRED_SEATS]
+    needs = {str(seat) for seat in normalized.get("needs_rerun") or [] if str(seat) in REQUIRED_SEATS}
+    needs.update(seat for seat in REQUIRED_SEATS if seat not in valid)
+    normalized["valid_seats"] = valid
+    normalized["valid_count"] = len(valid)
+    normalized["needs_rerun"] = [seat for seat in REQUIRED_SEATS if seat in needs]
+    normalized["required_seat_count"] = REQUIRED_SEAT_COUNT
+    if isinstance(prompt_pack.get("models"), int):
+        normalized["prompt_pack_models"] = prompt_pack["models"]
+    normalized["publish_allowed"] = len(valid) == REQUIRED_SEAT_COUNT and not normalized["needs_rerun"] and normalized.get("publish_allowed") is not False
+    if normalized["publish_allowed"]:
+        normalized["status"] = "READY"
+        normalized["frontend_badge"] = f"{REQUIRED_SEAT_COUNT}/{REQUIRED_SEAT_COUNT} 已验证"
+    elif valid:
+        normalized["status"] = "PARTIAL_NOT_READY"
+        normalized["frontend_badge"] = f"{len(valid)}/{REQUIRED_SEAT_COUNT} 部分回收"
+    else:
+        normalized["status"] = "NOT_READY"
+        normalized["frontend_badge"] = f"0/{REQUIRED_SEAT_COUNT} 未回收"
+    return normalized
+
+
 def build_guard(
     date: str,
     round_id: str,
@@ -139,6 +166,7 @@ def build_guard(
     else:
         gate = pred_invest_quality_gate.build_gate(date, round_id, run_ids) if run_ids else None
         gate_source = "rebuilt" if gate else "missing"
+    gate = _normalize_gate_required_seats(gate, artifacts["loaded"].get("prompt_pack") or {})
     if gate:
         if not gate.get("publish_allowed"):
             warnings.append(f"publish_blocked_by_quality_gate:{gate.get('valid_count')}/{gate.get('required_seat_count')}")

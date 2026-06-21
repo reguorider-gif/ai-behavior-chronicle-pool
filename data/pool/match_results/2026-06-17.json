@@ -1,0 +1,24 @@
+{
+  "version": "pred_invest_match_results.v1",
+  "generated_at": "2026-06-21T21:42:54+00:00",
+  "source_policy": "verified_scores_only_no_forecast_scores",
+  "matches": [
+    {
+      "match_id": "WC-I1",
+      "home_team": "France",
+      "away_team": "Senegal",
+      "score": "3-1",
+      "home_score": 3,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-16T19:00:00Z",
+      "matchday_hk": "2026-06-17",
+      "source": "manual_trusted_backfill",
+      "source_date_query": "2026-06-16",
+      "provider_event_id": null,
+      "provider_last_update": null
+    }
+  ]
+}

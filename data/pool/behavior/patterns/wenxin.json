@@ -1,0 +1,33 @@
+{
+  "version": "behavior_patterns_compat.v1",
+  "run_id": "run-15",
+  "seat_id": "wenxin",
+  "patterns": [
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "confidence": 0.77,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "supporting_events": 1,
+      "seats": [
+        "wenxin"
+      ],
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。"
+    },
+    {
+      "name": "loss_requires_strategy_change",
+      "label": "loss → strategy review",
+      "confidence": 0.68,
+      "source_event_ids": [
+        "run-15:settlement_recorded:5"
+      ],
+      "supporting_events": 1,
+      "seats": [
+        "wenxin"
+      ],
+      "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。"
+    }
+  ]
+}

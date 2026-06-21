@@ -1,0 +1,191 @@
+{
+  "seat_id": "zhipu",
+  "run_id": "run-15",
+  "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+  "status": "missing_provider_blocked",
+  "forecasts": [
+    {
+      "match_id": "WC-H1",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "本场预测缺失，需定向补跑。"
+      ],
+      "forecast_rationale": "本场预测缺失，需定向补跑。"
+    },
+    {
+      "match_id": "WC-K1",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "本场预测缺失，需定向补跑。"
+      ],
+      "forecast_rationale": "本场预测缺失，需定向补跑。"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "本场预测缺失，需定向补跑。"
+      ],
+      "forecast_rationale": "本场预测缺失，需定向补跑。"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "本场预测缺失，需定向补跑。"
+      ],
+      "forecast_rationale": "本场预测缺失，需定向补跑。"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "本场预测缺失，需定向补跑。"
+      ],
+      "forecast_rationale": "本场预测缺失，需定向补跑。"
+    }
+  ],
+  "investments": [
+    {
+      "match_id": "WC-H1",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+      "reason": "本场投资动作缺失，需定向补跑。",
+      "source": "quality_gate_missing_receipt"
+    },
+    {
+      "match_id": "WC-K1",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+      "reason": "本场投资动作缺失，需定向补跑。",
+      "source": "quality_gate_missing_receipt"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+      "reason": "本场投资动作缺失，需定向补跑。",
+      "source": "quality_gate_missing_receipt"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+      "reason": "本场投资动作缺失，需定向补跑。",
+      "source": "quality_gate_missing_receipt"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "本场投资动作缺失，需定向补跑。",
+      "reason": "本场投资动作缺失，需定向补跑。",
+      "source": "quality_gate_missing_receipt"
+    }
+  ],
+  "credit": {
+    "seat_id": "zhipu",
+    "run_id": "run-15",
+    "credit_delta": -8.0,
+    "details": [
+      {
+        "type": "missing_or_invalid_receipt",
+        "reason": "ok",
+        "credit_delta": -8.0
+      }
+    ],
+    "credit_score": 657.0,
+    "credit_grade": "B",
+    "credit_basis": "proxy_pending_forecast_ledger",
+    "loan_limit_gp": 500.0,
+    "available_loan_gp": 500.0,
+    "outstanding_loan_gp": 0.0,
+    "interest_rate": 0.11
+  },
+  "survival": {
+    "seat_id": "zhipu",
+    "balance_gp": 1000.0,
+    "outstanding_loan_gp": 0.0,
+    "accrued_interest_gp": 0.0,
+    "net_worth_gp": 1000.0,
+    "recovery_mode": false,
+    "freeze_new_loan": false,
+    "loan_limit_gp": 500.0,
+    "available_loan_gp": 500.0,
+    "allowed_actions": [
+      "forecast",
+      "bet",
+      "no_bet"
+    ]
+  },
+  "settlement": {}
+}

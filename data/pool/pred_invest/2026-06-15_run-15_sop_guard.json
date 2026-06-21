@@ -1,6 +1,6 @@
 {
   "version": "pred_invest_sop_guard.v1",
-  "generated_at": "2026-06-15T20:26:20.331304+00:00",
+  "generated_at": "2026-06-21T21:42:55.328470+00:00",
   "date": "2026-06-15",
   "round_id": "run-15",
   "status": "PARTIAL_NOT_READY",
@@ -8,7 +8,7 @@
   "ok_to_publish_frontend": false,
   "errors": [],
   "warnings": [
-    "publish_blocked_by_quality_gate:11/12"
+    "publish_blocked_by_quality_gate:11/15"
   ],
   "bridge": {
     "busy": false,
@@ -22,7 +22,7 @@
     "status": "PARTIAL_NOT_READY",
     "publish_allowed": false,
     "valid_count": 11,
-    "required_seat_count": 12,
+    "required_seat_count": 15,
     "valid_seats": [
       "chatgpt",
       "deepseek",
@@ -37,7 +37,10 @@
       "yuanbao"
     ],
     "needs_rerun": [
-      "grok"
+      "grok",
+      "xunfei",
+      "stepfun",
+      "zhipu"
     ],
     "rerun_queue": [
       {
@@ -81,10 +84,10 @@
   "artifacts": {
     "missing": [],
     "paths": {
-      "prompt_pack": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
-      "current_game": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_current_game.json",
-      "quality_gate": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_quality_gate.json",
-      "strict_god_report": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json"
+      "prompt_pack": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
+      "current_game": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_current_game.json",
+      "quality_gate": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_quality_gate.json",
+      "strict_god_report": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json"
     }
   },
   "recommended_actions": [

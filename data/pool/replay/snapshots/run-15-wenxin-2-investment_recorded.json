@@ -1,0 +1,123 @@
+{
+  "version": "behavior_replay_snapshot.v1",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "event": {
+    "event_id": "run-15:wenxin:2:investment_recorded",
+    "run_id": "run-15",
+    "seat_id": "wenxin",
+    "timestamp": "2026-06-15T19:56:21+00:00",
+    "event_type": "investment_recorded",
+    "action": "investment",
+    "outcome": "4 bet / 1 no-bet · 600 GP",
+    "risk_shift": "selective_risk",
+    "state_before": {
+      "seat_id": "wenxin",
+      "balance_gp": 1000.0,
+      "credit_score": 653.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "medium",
+      "behavior_type": "selective_allocator",
+      "loan_dependency": "low",
+      "strategy_drift": "loss_response_under_observation",
+      "active_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        }
+      ],
+      "last_forecast_count": 5
+    },
+    "state_after": {
+      "seat_id": "wenxin",
+      "balance_gp": 1000.0,
+      "credit_score": 653.0,
+      "credit_grade": "B",
+      "outstanding_loan_gp": 0.0,
+      "accrued_interest_gp": 0.0,
+      "net_worth_gp": 1000.0,
+      "recovery_mode": false,
+      "risk_level": "medium",
+      "behavior_type": "selective_allocator",
+      "loan_dependency": "low",
+      "strategy_drift": "loss_response_under_observation",
+      "active_patterns": [
+        {
+          "name": "capital_to_selective_allocation",
+          "label": "capital → selective allocation",
+          "confidence": 0.77
+        },
+        {
+          "name": "loss_requires_strategy_change",
+          "label": "loss → strategy review",
+          "confidence": 0.68
+        }
+      ],
+      "recent_memory": [
+        {
+          "event_id": "run-15:forecast_recorded:1",
+          "run_id": "run-15",
+          "action": "forecast",
+          "outcome": "5 forecasts",
+          "risk_shift": "information_gathering"
+        },
+        {
+          "event_id": "run-15:investment_recorded:2",
+          "run_id": "run-15",
+          "action": "investment",
+          "outcome": "4 bet / 1 no-bet",
+          "risk_shift": "selective_risk"
+        }
+      ],
+      "last_forecast_count": 5,
+      "last_investment_count": 5,
+      "last_stake_gp": 600.0,
+      "last_loan_used_gp": 0.0
+    },
+    "decision_reconstruction": {
+      "prompt_available": true,
+      "prompt_summary": {
+        "market_count": 0,
+        "rule_version": "PRED_INVEST_CREDIT_SURVIVE_V2",
+        "memory_contract": false
+      },
+      "memory_summary": {
+        "behavior_type": "selective_allocator",
+        "risk_level": "medium",
+        "loan_dependency": "low",
+        "dominant_pattern": "capital_to_selective_allocation"
+      },
+      "decision": "bet WC-K1 h2h 150 GP"
+    },
+    "counterfactual": {
+      "question": "如果降低仓位会怎样？",
+      "alternative": "将 600 GP 投入拆成更小单位或保留现金。",
+      "expected_effect": "降低单场波动，增加后续回合生存能力。"
+    },
+    "source_event": {
+      "event_type": "investment_recorded",
+      "status": "collected",
+      "forecast_count": 0,
+      "investment_count": 5
+    },
+    "snapshot_ref": "data/pool/replay/snapshots/run-15-wenxin-2-investment_recorded.json"
+  }
+}

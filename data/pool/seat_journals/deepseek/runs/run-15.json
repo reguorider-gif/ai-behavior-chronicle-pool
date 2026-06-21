@@ -5,6 +5,27 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "home_win_prob": 0.85,
+      "draw_prob": 0.1,
+      "away_win_prob": 0.05,
+      "most_likely_score": "2-0",
+      "confidence": 0.9,
+      "fair_odds": {
+        "home": 1.18,
+        "draw": 10.0,
+        "away": 20.0
+      },
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "西班牙首发轮换幅度（核心是否休息）",
+        "佛得角近期防守组织及反击质量",
+        "比赛场地和天气对技术流传控的影响"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
       "match_id": "WC-K1",
       "home_win_prob": 0.48,
       "draw_prob": 0.29,
@@ -88,30 +109,28 @@
       ],
       "status": "collected",
       "source": "strict_god_report"
-    },
-    {
-      "match_id": "WC-H1",
-      "home_win_prob": 0.85,
-      "draw_prob": 0.1,
-      "away_win_prob": 0.05,
-      "most_likely_score": "2-0",
-      "confidence": 0.9,
-      "fair_odds": {
-        "home": 1.18,
-        "draw": 10.0,
-        "away": 20.0
-      },
-      "edge_assessment": "no_bet",
-      "information_gaps": [
-        "西班牙首发轮换幅度（核心是否休息）",
-        "佛得角近期防守组织及反击质量",
-        "比赛场地和天气对技术流传控的影响"
-      ],
-      "status": "collected",
-      "source": "strict_god_report"
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "selection": null,
+      "market": null,
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": 0.85,
+      "market_implied_prob": 0.926,
+      "estimated_ev": -0.076,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "不适用",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
     {
       "match_id": "WC-K1",
       "action": "no_bet",
@@ -187,25 +206,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": ""
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "no_bet",
-      "selection": null,
-      "market": null,
-      "line": null,
-      "odds": null,
-      "stake_gp": 0.0,
-      "own_funds_gp": 0,
-      "loan_used_gp": 0.0,
-      "model_prob": 0.85,
-      "market_implied_prob": 0.926,
-      "estimated_ev": -0.076,
-      "max_loss_gp": 0,
-      "survival_plan_if_loss": "不适用",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": ""
     }
   ],
   "credit": {
@@ -219,24 +219,24 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 745.6,
-    "credit_grade": "A",
+    "credit_score": 635.7,
+    "credit_grade": "B",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 1448.0,
-    "available_loan_gp": 448.0,
+    "loan_limit_gp": 370.0,
+    "available_loan_gp": 0.0,
     "outstanding_loan_gp": 1000.0,
-    "interest_rate": 0.07
+    "interest_rate": 0.11
   },
   "survival": {
     "seat_id": "deepseek",
-    "balance_gp": 1740.0,
+    "balance_gp": 630.0,
     "outstanding_loan_gp": 0.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 1740.0,
+    "net_worth_gp": 630.0,
     "recovery_mode": false,
     "freeze_new_loan": false,
-    "loan_limit_gp": 1448.0,
-    "available_loan_gp": 448.0,
+    "loan_limit_gp": 370.0,
+    "available_loan_gp": 0.0,
     "allowed_actions": [
       "forecast",
       "bet",

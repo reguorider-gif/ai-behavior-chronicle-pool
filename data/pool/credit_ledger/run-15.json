@@ -15,7 +15,7 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 665.0,
+      "credit_score": 685.0,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
       "loan_limit_gp": 500.0,
@@ -34,13 +34,13 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 745.6,
-      "credit_grade": "A",
+      "credit_score": 635.7,
+      "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 1448.0,
-      "available_loan_gp": 448.0,
+      "loan_limit_gp": 370.0,
+      "available_loan_gp": 0.0,
       "outstanding_loan_gp": 1000.0,
-      "interest_rate": 0.07
+      "interest_rate": 0.11
     },
     "mimo": {
       "seat_id": "mimo",
@@ -53,13 +53,13 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 640.7,
-      "credit_grade": "B",
+      "credit_score": 585.4,
+      "credit_grade": "C",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 450.0,
-      "available_loan_gp": 150.0,
+      "loan_limit_gp": 113.4,
+      "available_loan_gp": 0.0,
       "outstanding_loan_gp": 300.0,
-      "interest_rate": 0.11
+      "interest_rate": 0.18
     },
     "minimax": {
       "seat_id": "minimax",
@@ -72,7 +72,7 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 657.0,
+      "credit_score": 681.0,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
       "loan_limit_gp": 500.0,
@@ -91,13 +91,13 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 669.6,
-      "credit_grade": "B",
+      "credit_score": 589.4,
+      "credit_grade": "C",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 550.0,
-      "available_loan_gp": 250.0,
+      "loan_limit_gp": 113.4,
+      "available_loan_gp": 0.0,
       "outstanding_loan_gp": 300.0,
-      "interest_rate": 0.11
+      "interest_rate": 0.18
     },
     "gemini": {
       "seat_id": "gemini",
@@ -110,13 +110,13 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 645.0,
-      "credit_grade": "B",
+      "credit_score": 411.2,
+      "credit_grade": "D",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 425.0,
+      "loan_limit_gp": 0.0,
       "available_loan_gp": 0.0,
       "outstanding_loan_gp": 1000.0,
-      "interest_rate": 0.11
+      "interest_rate": null
     },
     "kimi": {
       "seat_id": "kimi",
@@ -129,11 +129,11 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 661.0,
+      "credit_score": 657.7,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 500.0,
-      "available_loan_gp": 500.0,
+      "loan_limit_gp": 480.0,
+      "available_loan_gp": 480.0,
       "outstanding_loan_gp": 0.0,
       "interest_rate": 0.11
     },
@@ -148,13 +148,13 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 597.8,
-      "credit_grade": "C",
+      "credit_score": 379.7,
+      "credit_grade": "D",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 120.0,
+      "loan_limit_gp": 0.0,
       "available_loan_gp": 0.0,
       "outstanding_loan_gp": 800.0,
-      "interest_rate": 0.18
+      "interest_rate": null
     },
     "qwen": {
       "seat_id": "qwen",
@@ -167,11 +167,11 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 674.7,
+      "credit_score": 628.2,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 550.0,
-      "available_loan_gp": 150.0,
+      "loan_limit_gp": 328.0,
+      "available_loan_gp": 0.0,
       "outstanding_loan_gp": 400.0,
       "interest_rate": 0.11
     },
@@ -186,26 +186,26 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 653.0,
+      "credit_score": 636.5,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
-      "loan_limit_gp": 500.0,
-      "available_loan_gp": 500.0,
+      "loan_limit_gp": 425.0,
+      "available_loan_gp": 425.0,
       "outstanding_loan_gp": 0.0,
       "interest_rate": 0.11
     },
     "grok": {
       "seat_id": "grok",
       "run_id": "run-15",
-      "credit_delta": -8,
+      "credit_delta": -8.0,
       "details": [
         {
           "type": "missing_or_invalid_receipt",
           "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
-          "credit_delta": -8
+          "credit_delta": -8.0
         }
       ],
-      "credit_score": 641.0,
+      "credit_score": 669.0,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
       "loan_limit_gp": 500.0,
@@ -224,12 +224,69 @@
           "credit_delta": 0
         }
       ],
-      "credit_score": 657.7,
+      "credit_score": 438.9,
+      "credit_grade": "D",
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "loan_limit_gp": 0.0,
+      "available_loan_gp": 0.0,
+      "outstanding_loan_gp": 500.0,
+      "interest_rate": null
+    },
+    "xunfei": {
+      "seat_id": "xunfei",
+      "run_id": "run-15",
+      "credit_delta": -8.0,
+      "details": [
+        {
+          "type": "missing_or_invalid_receipt",
+          "reason": "ok",
+          "credit_delta": -8.0
+        }
+      ],
+      "credit_score": 665.0,
       "credit_grade": "B",
       "credit_basis": "proxy_pending_forecast_ledger",
       "loan_limit_gp": 500.0,
-      "available_loan_gp": 0.0,
-      "outstanding_loan_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "interest_rate": 0.11
+    },
+    "stepfun": {
+      "seat_id": "stepfun",
+      "run_id": "run-15",
+      "credit_delta": -8.0,
+      "details": [
+        {
+          "type": "missing_or_invalid_receipt",
+          "reason": "ok",
+          "credit_delta": -8.0
+        }
+      ],
+      "credit_score": 661.0,
+      "credit_grade": "B",
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
+      "interest_rate": 0.11
+    },
+    "zhipu": {
+      "seat_id": "zhipu",
+      "run_id": "run-15",
+      "credit_delta": -8.0,
+      "details": [
+        {
+          "type": "missing_or_invalid_receipt",
+          "reason": "ok",
+          "credit_delta": -8.0
+        }
+      ],
+      "credit_score": 657.0,
+      "credit_grade": "B",
+      "credit_basis": "proxy_pending_forecast_ledger",
+      "loan_limit_gp": 500.0,
+      "available_loan_gp": 500.0,
+      "outstanding_loan_gp": 0.0,
       "interest_rate": 0.11
     }
   }

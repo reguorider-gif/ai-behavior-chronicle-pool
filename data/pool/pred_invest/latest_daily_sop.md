@@ -2,10 +2,10 @@
 
 - verdict: **PARTIAL_NOT_READY**
 - rule: PRED_INVEST_CREDIT_SURVIVE_V2
-- prompt models: 12/12
-- forecast matches: 4
-- required coverage: 0/0
-- matches with odds: 4
+- prompt models: 15/15
+- forecast matches: 5
+- required coverage: 5/5
+- matches with odds: 5
 - current structured decisions audited: 55
 - decision source: strict_god_report
 - receipt state: strict-report
@@ -18,25 +18,25 @@
 
 ## Warnings
 
-- sop_guard:publish_blocked_by_quality_gate:11/12
-- quality_gate_partial:11/12
+- sop_guard:publish_blocked_by_quality_gate:11/15
+- quality_gate_partial:11/15
 
 ## Settlement Trigger
 
-- status: partially_settled
+- status: settled
 - source: strict_god_report+score_sync+/api/matches
-- settled / positive / pending: 4 / 23 / 19
-- stake / payout / profit: 890 GP / 0 GP / -890 GP
+- settled / positive / pending: 23 / 23 / 0
+- stake / payout / profit: 4,170 GP / 3,416.5 GP / -753.5 GP
 - debt-service account updates: 11
-- pending matches: WC-K1, WCAPI-20260615-BELGIUM-EGYPT, WCAPI-20260615-SAUDI-ARABIA-URUGUAY, WCAPI-20260616-IRAN-NEW-ZEALAND
+- pending matches: none
 
 ## Automation Guard
 
 - guard status: PARTIAL_NOT_READY
 - bridge: idle
 - publish frontend: False
-- valid seats: 11/12
-- needs rerun: grok
+- valid seats: 11/15
+- needs rerun: grok, xunfei, stepfun, zhipu
 
 ## Guard Actions
 
@@ -45,12 +45,12 @@
 
 ## Production Artifacts
 
-- seat journals: 12/12
-- prompt contexts: 12/12
-- forecast receipts: 12/12
-- investment receipts: 12/12
-- valid / blocked seats: 11 / 1
-- god report seats/events: 12 / 72
+- seat journals: 15/15
+- prompt contexts: 15/15
+- forecast receipts: 15/15
+- investment receipts: 15/15
+- valid / blocked seats: 11 / 4
+- god report seats/events: 15 / 87
 - blocked: grok
 
 ## Latest Betting Method

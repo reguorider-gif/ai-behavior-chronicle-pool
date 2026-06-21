@@ -1,0 +1,102 @@
+{
+  "version": "pred_invest_required_match_snapshot.v1",
+  "date": "2026-06-15",
+  "round_id": "run-15",
+  "generated_at": "2026-06-21T20:20:00+00:00",
+  "source_policy": "frozen_original_run_contract_after_score_backfill",
+  "selection_policy": "original_run_15_required_matches",
+  "required_match_ids": [
+    "WC-H1",
+    "WC-K1",
+    "WCAPI-20260615-BELGIUM-EGYPT",
+    "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+    "WCAPI-20260616-IRAN-NEW-ZEALAND"
+  ],
+  "matches": [
+    {
+      "match_id": "WC-H1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T16:01:00Z",
+      "home_team": "Spain",
+      "away_team": "Cape Verde",
+      "status": "settled",
+      "score": "0-0",
+      "home_score": 0,
+      "away_score": 0,
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "original_current_game"
+    },
+    {
+      "match_id": "WC-K1",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T00:00:00Z",
+      "home_team": "Portugal",
+      "away_team": "Colombia",
+      "status": "settled",
+      "score": "2-1",
+      "home_score": 2,
+      "away_score": 1,
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "manual_trusted_backfill"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T19:00:00Z",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "status": "settled",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "manual_trusted_backfill"
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-15T22:03:00Z",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "status": "settled",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "manual_trusted_backfill"
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "date": "2026-06-15",
+      "kickoff_at": "2026-06-16T01:03:00Z",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "status": "settled",
+      "score": "2-2",
+      "home_score": 2,
+      "away_score": 2,
+      "available_markets": [
+        "h2h",
+        "handicap",
+        "total_goals"
+      ],
+      "market_source": "manual_trusted_backfill"
+    }
+  ]
+}

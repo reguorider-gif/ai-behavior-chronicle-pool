@@ -1,0 +1,35 @@
+{
+  "version": "behavior_chronicle_lessons.v1",
+  "seat_id": "wenxin",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "lesson_count": 2,
+  "lessons": [
+    {
+      "lesson_id": "wenxin:draw_avoidance",
+      "seat_id": "wenxin",
+      "type": "observe",
+      "pattern_id": "draw_avoidance",
+      "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+      "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+      "confidence": 0.72,
+      "evidence_count": 5,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    },
+    {
+      "lesson_id": "wenxin:high_confidence_low_information",
+      "seat_id": "wenxin",
+      "type": "avoid",
+      "pattern_id": "high_confidence_low_information",
+      "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+      "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+      "confidence": 0.56,
+      "evidence_count": 1,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    }
+  ],
+  "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+}

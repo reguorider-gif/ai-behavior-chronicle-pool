@@ -74,6 +74,7 @@ ops/
     proxy_diagnostic_and_fix.sh # Local proxy/Vercel network diagnostic helper
     README.md
   auto_sop.py                   # Pre/post orchestration facade
+  trigger_daily_run.py          # Manual one-day shortcut around auto_sop.py
   fetch_odds.py                 # Schedule, odds, and score sync wrapper
   dispatch_seats.py             # Local AI Judge seat dispatcher
   cron_setup.sh                 # Cron preview/installer for SOP phases
@@ -172,6 +173,18 @@ Automation facade:
 python3 ops/auto_sop.py pre --date 2026-06-17 --round run-17 --write
 python3 ops/auto_sop.py post --date 2026-06-17 --round run-17 --write
 ```
+
+Manual one-day shortcut:
+
+```bash
+python3 ops/trigger_daily_run.py --date 2026-06-15 --round run-15 --write
+python3 ops/trigger_daily_run.py --date 2026-06-15 --round run-15 --dispatch --dry-run
+```
+
+When `--dispatch` is used without `--seats`, `trigger_daily_run.py` defaults to
+the targeted recovery seats `grok,xunfei,stepfun,zhipu`. Each required
+production seat is initialized with `balance_gp=1000` and `credit_score=600`
+until a real receipt replaces the bootstrap state.
 
 Use `python3 ops/auto_sop.py dry-run --date 2026-06-17 --round run-17 --dispatch` to verify bridge payload generation without sending production decisions.
 

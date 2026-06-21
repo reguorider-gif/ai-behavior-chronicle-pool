@@ -1,0 +1,61 @@
+{
+  "version": "behavior_chronicle_lessons.v1",
+  "seat_id": "mimo",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "lesson_count": 4,
+  "lessons": [
+    {
+      "lesson_id": "mimo:draw_avoidance",
+      "seat_id": "mimo",
+      "type": "observe",
+      "pattern_id": "draw_avoidance",
+      "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+      "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+      "confidence": 0.72,
+      "evidence_count": 5,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    },
+    {
+      "lesson_id": "mimo:uncertainty_to_no_bet",
+      "seat_id": "mimo",
+      "type": "observe",
+      "pattern_id": "uncertainty_to_no_bet",
+      "claim": "不下注纪律明显：3/5 个投资动作选择 no-bet。",
+      "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+      "confidence": 0.72,
+      "evidence_count": 3,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ]
+    },
+    {
+      "lesson_id": "mimo:stake_concentration",
+      "seat_id": "mimo",
+      "type": "observe",
+      "pattern_id": "stake_concentration",
+      "claim": "仓位集中：最大单注占总下注 50%。",
+      "lesson": "继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+      "confidence": 0.675,
+      "evidence_count": 1,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ]
+    },
+    {
+      "lesson_id": "mimo:high_confidence_low_information",
+      "seat_id": "mimo",
+      "type": "avoid",
+      "pattern_id": "high_confidence_low_information",
+      "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+      "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+      "confidence": 0.56,
+      "evidence_count": 1,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    }
+  ],
+  "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+}

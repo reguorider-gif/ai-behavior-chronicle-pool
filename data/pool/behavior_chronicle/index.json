@@ -1,18 +1,245 @@
 {
   "version": "behavior_chronicle_index.v1",
-  "generated_at": "2026-06-17T21:06:33+00:00",
-  "seat_count": 1,
-  "lesson_count": 3,
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "seat_count": 15,
+  "lesson_count": 40,
   "seats": {
-    "unit_chronicle": {
+    "chatgpt": {
       "version": "behavior_chronicle_lessons.v1",
-      "seat_id": "unit_chronicle",
-      "generated_at": "2026-06-17T21:06:33+00:00",
+      "seat_id": "chatgpt",
+      "generated_at": "2026-06-21T21:42:55+00:00",
       "lesson_count": 3,
       "lessons": [
         {
-          "lesson_id": "unit_chronicle:longshot_seeking",
-          "seat_id": "unit_chronicle",
+          "lesson_id": "chatgpt:uncertainty_to_no_bet",
+          "seat_id": "chatgpt",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.81,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "chatgpt:draw_avoidance",
+          "seat_id": "chatgpt",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "chatgpt:high_confidence_low_information",
+          "seat_id": "chatgpt",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "deepseek": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "deepseek",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 3,
+      "lessons": [
+        {
+          "lesson_id": "deepseek:uncertainty_to_no_bet",
+          "seat_id": "deepseek",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：5/5 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.9,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "deepseek:home_bias",
+          "seat_id": "deepseek",
+          "type": "observe",
+          "pattern_id": "home_bias",
+          "claim": "主队倾向明显：3/5 次预测偏向主队。",
+          "lesson": "继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+          "confidence": 0.72,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "deepseek:high_confidence_low_information",
+          "seat_id": "deepseek",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "mimo": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "mimo",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 4,
+      "lessons": [
+        {
+          "lesson_id": "mimo:draw_avoidance",
+          "seat_id": "mimo",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "mimo:uncertainty_to_no_bet",
+          "seat_id": "mimo",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：3/5 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.72,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "mimo:stake_concentration",
+          "seat_id": "mimo",
+          "type": "observe",
+          "pattern_id": "stake_concentration",
+          "claim": "仓位集中：最大单注占总下注 50%。",
+          "lesson": "继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+          "confidence": 0.675,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "mimo:high_confidence_low_information",
+          "seat_id": "mimo",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "minimax": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "minimax",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "minimax:high_confidence_low_information",
+          "seat_id": "minimax",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：4 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.74,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "minimax:draw_avoidance",
+          "seat_id": "minimax",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "doubao": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "doubao",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "doubao:draw_avoidance",
+          "seat_id": "doubao",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "doubao:high_confidence_low_information",
+          "seat_id": "doubao",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.68,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "gemini": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "gemini",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 5,
+      "lessons": [
+        {
+          "lesson_id": "gemini:longshot_seeking",
+          "seat_id": "gemini",
           "type": "observe",
           "pattern_id": "longshot_seeking",
           "claim": "高赔率搜索：1/1 个下注动作赔率不低于 3.5，仓位占比 100%。",
@@ -20,37 +247,417 @@
           "confidence": 0.82,
           "evidence_count": 1,
           "source_event_ids": [
-            "unit-chronicle-run:investment_recorded:0"
+            "run-15:investment_recorded:2"
           ]
         },
         {
-          "lesson_id": "unit_chronicle:uncertainty_to_no_bet",
-          "seat_id": "unit_chronicle",
+          "lesson_id": "gemini:home_bias",
+          "seat_id": "gemini",
+          "type": "observe",
+          "pattern_id": "home_bias",
+          "claim": "主队倾向明显：4/5 次预测偏向主队。",
+          "lesson": "继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+          "confidence": 0.81,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "gemini:uncertainty_to_no_bet",
+          "seat_id": "gemini",
           "type": "observe",
           "pattern_id": "uncertainty_to_no_bet",
-          "claim": "不下注纪律明显：2/3 个投资动作选择 no-bet。",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
           "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
-          "confidence": 0.75,
-          "evidence_count": 2,
+          "confidence": 0.81,
+          "evidence_count": 4,
           "source_event_ids": [
-            "unit-chronicle-run:investment_recorded:0"
+            "run-15:investment_recorded:2"
           ]
         },
         {
-          "lesson_id": "unit_chronicle:loan_dependency",
-          "seat_id": "unit_chronicle",
-          "type": "observe",
-          "pattern_id": "loan_dependency",
-          "claim": "贷款依赖出现：累计贷款投注 200 GP，占投注暴露 40%。",
-          "lesson": "继续观察：下一轮必须先说明还款压力，再决定是否继续杠杆。",
-          "confidence": 0.66,
-          "evidence_count": 1,
+          "lesson_id": "gemini:high_confidence_low_information",
+          "seat_id": "gemini",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：5 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.8,
+          "evidence_count": 5,
           "source_event_ids": [
-            "unit-chronicle-run:investment_recorded:0"
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "gemini:favorite_bias",
+          "seat_id": "gemini",
+          "type": "observe",
+          "pattern_id": "favorite_bias",
+          "claim": "热门倾向明显：3/5 次把最高概率压到 58% 以上。",
+          "lesson": "继续观察：下一轮需要说明热门判断是否来自真实信号，而不是默认追随强队。",
+          "confidence": 0.684,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
           ]
         }
       ],
-      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须先说明还款压力，再决定是否继续杠杆。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮高赔率下注必须给出模型概率、盘口隐含概率和止损边界。\n- 继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "kimi": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "kimi",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 3,
+      "lessons": [
+        {
+          "lesson_id": "kimi:uncertainty_to_no_bet",
+          "seat_id": "kimi",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.81,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "kimi:draw_avoidance",
+          "seat_id": "kimi",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "kimi:high_confidence_low_information",
+          "seat_id": "kimi",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "meta": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "meta",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "meta:draw_avoidance",
+          "seat_id": "meta",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "meta:high_confidence_low_information",
+          "seat_id": "meta",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.68,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "qwen": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "qwen",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 3,
+      "lessons": [
+        {
+          "lesson_id": "qwen:uncertainty_to_no_bet",
+          "seat_id": "qwen",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/5 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.81,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "qwen:draw_avoidance",
+          "seat_id": "qwen",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "qwen:high_confidence_low_information",
+          "seat_id": "qwen",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：3 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.68,
+          "evidence_count": 3,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "wenxin": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "wenxin",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "wenxin:draw_avoidance",
+          "seat_id": "wenxin",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "wenxin:high_confidence_low_information",
+          "seat_id": "wenxin",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "grok": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "grok",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "grok:uncertainty_to_no_bet",
+          "seat_id": "grok",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.9,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "grok:draw_avoidance",
+          "seat_id": "grok",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "yuanbao": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "yuanbao",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 3,
+      "lessons": [
+        {
+          "lesson_id": "yuanbao:draw_avoidance",
+          "seat_id": "yuanbao",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 5,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        },
+        {
+          "lesson_id": "yuanbao:stake_concentration",
+          "seat_id": "yuanbao",
+          "type": "observe",
+          "pattern_id": "stake_concentration",
+          "claim": "仓位集中：最大单注占总下注 50%。",
+          "lesson": "继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。",
+          "confidence": 0.675,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "yuanbao:high_confidence_low_information",
+          "seat_id": "yuanbao",
+          "type": "avoid",
+          "pattern_id": "high_confidence_low_information",
+          "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+          "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+          "confidence": 0.56,
+          "evidence_count": 1,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n- 继续观察：下一轮必须解释集中仓位的边际优势，并给出组合层面最大损失。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "xunfei": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "xunfei",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "xunfei:uncertainty_to_no_bet",
+          "seat_id": "xunfei",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.9,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "xunfei:draw_avoidance",
+          "seat_id": "xunfei",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "stepfun": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "stepfun",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "stepfun:uncertainty_to_no_bet",
+          "seat_id": "stepfun",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.9,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "stepfun:draw_avoidance",
+          "seat_id": "stepfun",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+    },
+    "zhipu": {
+      "version": "behavior_chronicle_lessons.v1",
+      "seat_id": "zhipu",
+      "generated_at": "2026-06-21T21:42:55+00:00",
+      "lesson_count": 2,
+      "lessons": [
+        {
+          "lesson_id": "zhipu:uncertainty_to_no_bet",
+          "seat_id": "zhipu",
+          "type": "observe",
+          "pattern_id": "uncertainty_to_no_bet",
+          "claim": "不下注纪律明显：4/4 个投资动作选择 no-bet。",
+          "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+          "confidence": 0.9,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:investment_recorded:2"
+          ]
+        },
+        {
+          "lesson_id": "zhipu:draw_avoidance",
+          "seat_id": "zhipu",
+          "type": "observe",
+          "pattern_id": "draw_avoidance",
+          "claim": "平局规避明显：4 次预测没有一次主倾向为平，平均平局概率 0%。",
+          "lesson": "继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+          "confidence": 0.72,
+          "evidence_count": 4,
+          "source_event_ids": [
+            "run-15:forecast_recorded:1"
+          ]
+        }
+      ],
+      "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须显式评估平局基准概率，避免把平局系统性低估。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
     }
   }
 }

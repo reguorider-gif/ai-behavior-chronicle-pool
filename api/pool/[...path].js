@@ -1,5 +1,6 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
+const poolMetaHandler = require("../pool-meta.js");
 
 const ROOT = process.cwd();
 const POOL_ROOT = path.join(ROOT, "data", "pool");
@@ -324,6 +325,12 @@ function pathParts(req) {
   return [];
 }
 
+function poolMeta(req, res, query) {
+  req.query = { ...(req.query || {}), ...query };
+  delete req.query.path;
+  return poolMetaHandler(req, res);
+}
+
 async function proxyFallback(req, res, parts) {
   if (!FALLBACK_ORIGIN) {
     return send(res, 404, {
@@ -586,19 +593,26 @@ async function marketSnapshot(req, res, runId) {
 
 module.exports = async function handler(req, res) {
   const parts = pathParts(req);
+  if (parts[0] === "runtime-summary") return poolMeta(req, res, { type: "runtime-summary" });
+  if (parts[0] === "frontend-archives") return poolMeta(req, res, { type: "frontend-archives" });
+  if (parts[0] === "seat-archives" && parts[1] && parts[2]) {
+    return poolMeta(req, res, { type: "seat-archives", runId: parts[1], seatId: parts[2] });
+  }
+  if (parts[0] === "seats" && parts[2] === "journal") {
+    return poolMeta(req, res, { type: "seat-journal", seatId: parts[1] });
+  }
+  if (parts[0] === "seats" && parts[2] === "credit") {
+    return poolMeta(req, res, { type: "credit", seatId: parts[1] });
+  }
   if (parts[0] === "rules" && parts[1] === "current") return currentRules(res);
   if (parts[0] === "runs" && parts[2] === "behavior-summary") return behaviorSummary(res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "god-report") return godReport(req, res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "market-snapshot") return marketSnapshot(req, res, parts[1]);
-  if (parts[0] === "seats" && parts[2] === "journal") return seatJournal(req, res, parts[1]);
-  if (parts[0] === "seats" && parts[2] === "credit") return creditHistory(res, parts[1]);
   if (parts[0] === "seats" && parts[2] === "behavior-memory") return behaviorMemory(res, parts[1]);
   if (parts[0] === "seats" && parts[2] === "agent-profile") return agentProfile(res, parts[1]);
   if (parts[0] === "behavior-memory") return behaviorMemory(res, "");
   if (parts[0] === "pattern-graph") return patternGraph(res);
   if (parts[0] === "agent-profiles") return agentProfile(res, "");
-  if (parts[0] === "frontend-archives") return frontendArchives(res);
-  if (parts[0] === "seat-archives" && parts[1] && parts[2]) return seatArchive(req, res, parts[1], parts[2]);
   if (parts[0] === "pred_invest" && parts.length === 2) return predInvestArtifact(res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "evolution-trace") return evolutionTrace(res, parts[1]);
   if (parts[0] === "runs" && parts[2] === "behavior-replay") return behaviorReplay(res, parts[1]);

@@ -1,0 +1,83 @@
+{
+  "version": "pattern_graph.v1",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "run_id": "run-15",
+  "top_patterns": [
+    {
+      "name": "loan_pressure_shapes_risk",
+      "label": "loan → risk constraint",
+      "source_event_ids": [
+        "run-15:credit_updated:3",
+        "run-15:survival_updated:4"
+      ],
+      "seats": [
+        "deepseek",
+        "doubao",
+        "gemini",
+        "meta",
+        "mimo",
+        "qwen",
+        "yuanbao"
+      ],
+      "supporting_events": 14,
+      "note": "贷款和信用状态正在约束下一轮仓位。",
+      "confidence": 0.77
+    },
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "seats": [
+        "chatgpt",
+        "deepseek",
+        "gemini",
+        "grok",
+        "kimi",
+        "mimo",
+        "qwen",
+        "stepfun",
+        "xunfei",
+        "zhipu"
+      ],
+      "supporting_events": 10,
+      "note": "信息缺口或 EV 不足时倾向观望。",
+      "confidence": 0.93
+    },
+    {
+      "name": "capital_to_selective_allocation",
+      "label": "capital → selective allocation",
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "seats": [
+        "doubao",
+        "meta",
+        "mimo",
+        "minimax",
+        "wenxin",
+        "yuanbao"
+      ],
+      "supporting_events": 6,
+      "note": "有资金暴露，但仍需观察是否来自正期望而非排名压力。",
+      "confidence": 0.78
+    },
+    {
+      "name": "loss_requires_strategy_change",
+      "label": "loss → strategy review",
+      "source_event_ids": [
+        "run-15:settlement_recorded:5"
+      ],
+      "seats": [
+        "doubao",
+        "kimi",
+        "wenxin",
+        "yuanbao"
+      ],
+      "supporting_events": 4,
+      "note": "亏损后下一轮必须说明是否降杠杆或改变市场选择。",
+      "confidence": 0.68
+    }
+  ]
+}

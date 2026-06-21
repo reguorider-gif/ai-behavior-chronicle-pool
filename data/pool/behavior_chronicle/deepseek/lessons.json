@@ -1,0 +1,48 @@
+{
+  "version": "behavior_chronicle_lessons.v1",
+  "seat_id": "deepseek",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "lesson_count": 3,
+  "lessons": [
+    {
+      "lesson_id": "deepseek:uncertainty_to_no_bet",
+      "seat_id": "deepseek",
+      "type": "observe",
+      "pattern_id": "uncertainty_to_no_bet",
+      "claim": "不下注纪律明显：5/5 个投资动作选择 no-bet。",
+      "lesson": "继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。",
+      "confidence": 0.9,
+      "evidence_count": 5,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ]
+    },
+    {
+      "lesson_id": "deepseek:home_bias",
+      "seat_id": "deepseek",
+      "type": "observe",
+      "pattern_id": "home_bias",
+      "claim": "主队倾向明显：3/5 次预测偏向主队。",
+      "lesson": "继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。",
+      "confidence": 0.72,
+      "evidence_count": 3,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    },
+    {
+      "lesson_id": "deepseek:high_confidence_low_information",
+      "seat_id": "deepseek",
+      "type": "avoid",
+      "pattern_id": "high_confidence_low_information",
+      "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+      "lesson": "避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+      "confidence": 0.56,
+      "evidence_count": 1,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ]
+    }
+  ],
+  "prompt_injection": "行为通鉴经验（只来自你自己的历史）：\n必须规避：\n- 避免复现：下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。\n继续观察：\n- 继续观察：保留 no-bet 合法性，但必须说明信息缺口和机会成本。\n- 继续观察：下一轮必须说明主队优势来自盘口边际还是惯性偏好。\n本轮输出必须说明：哪些历史经验被采用，哪些被拒绝，以及原因。"
+}

@@ -1,0 +1,60 @@
+{
+  "version": "behavior_pattern_compiler.v1",
+  "seat_id": "wenxin",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "pattern_catalog": [
+    "home_bias",
+    "upset_aversion",
+    "confidence_calibration",
+    "high_odds_exposure",
+    "loss_chasing",
+    "stake_volatility",
+    "no_bet_quality",
+    "recovery_compliance",
+    "loan_discipline",
+    "bankrupt_approach",
+    "strategy_adaptation",
+    "error_correction"
+  ],
+  "required_pattern_fields": [
+    "source_event_ids",
+    "evidence_count",
+    "confidence",
+    "outcome_correlation"
+  ],
+  "event_count": 6,
+  "patterns": [
+    {
+      "pattern_id": "draw_avoidance",
+      "canonical_pattern_id": "upset_aversion",
+      "seat_id": "wenxin",
+      "category": "forecast_bias",
+      "claim": "平局规避明显：5 次预测没有一次主倾向为平，平均平局概率 0%。",
+      "evidence_count": 5,
+      "sample_size": 5,
+      "confidence": 0.72,
+      "outcome_correlation": -0.05,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ],
+      "recommendation": "下一轮必须显式评估平局基准概率，避免把平局系统性低估。",
+      "detected_at": "2026-06-21T21:42:55+00:00"
+    },
+    {
+      "pattern_id": "high_confidence_low_information",
+      "canonical_pattern_id": "error_correction",
+      "seat_id": "wenxin",
+      "category": "calibration",
+      "claim": "高置信低信息：1 条预测同时出现高置信和信息缺口。",
+      "evidence_count": 1,
+      "sample_size": 5,
+      "confidence": 0.56,
+      "outcome_correlation": -0.25,
+      "source_event_ids": [
+        "run-15:forecast_recorded:1"
+      ],
+      "recommendation": "下一轮信息缺口未补齐时，置信度必须降档，下注动作默认 no-bet。",
+      "detected_at": "2026-06-21T21:42:55+00:00"
+    }
+  ]
+}

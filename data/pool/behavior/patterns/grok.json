@@ -1,0 +1,20 @@
+{
+  "version": "behavior_patterns_compat.v1",
+  "run_id": "run-15",
+  "seat_id": "grok",
+  "patterns": [
+    {
+      "name": "uncertainty_to_no_bet",
+      "label": "uncertainty → no-bet",
+      "confidence": 0.93,
+      "source_event_ids": [
+        "run-15:investment_recorded:2"
+      ],
+      "supporting_events": 1,
+      "seats": [
+        "grok"
+      ],
+      "note": "信息缺口或 EV 不足时倾向观望。"
+    }
+  ]
+}

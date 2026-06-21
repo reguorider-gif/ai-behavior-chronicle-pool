@@ -22,7 +22,7 @@
       "repay_interest_and_principal_before_ranking",
       "apply_top5_daily_rewards_and_stage_rewards",
       "apply_bottom3_penalties_or_forced_debt",
-      "build_full_match_prompt_pack_for_12_models",
+      "build_full_match_prompt_pack_for_15_models",
       "collect_forecast_and_investment_receipts",
       "run_quality_gate",
       "targeted_rerun_only_missing_or_invalid_seats",
@@ -30,28 +30,30 @@
       "publish_frontend_only_when_gate_allows"
     ],
     "hard_gates": {
-      "prompt_pack_models": 12,
+      "prompt_pack_models": 15,
       "all_required_matches_in_prompt_pack": true,
       "forecast_required_for_every_match": true,
       "investment_row_required_for_every_match": true,
       "targeted_rerun_not_full_rerun": true,
-      "frontend_complete_badge_requires_12_valid_seats": true
+      "frontend_complete_badge_requires_all_valid_seats": 15
     }
   },
   "verdict": "PARTIAL_NOT_READY",
   "errors": [],
   "warnings": [
-    "sop_guard:publish_blocked_by_quality_gate:11/12",
-    "quality_gate_partial:11/12"
+    "sop_guard:publish_blocked_by_quality_gate:11/15",
+    "quality_gate_partial:11/15"
   ],
   "score_sync_overdue": [],
   "score_sync": {
     "version": "pred_invest_score_sync.v1",
-    "generated_at": "2026-06-15T20:26:20.305258+00:00",
-    "alignment_path": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_match_data_alignment_audit.json",
+    "generated_at": "2026-06-21T21:42:54+00:00",
+    "alignment_path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_match_data_alignment_audit.json",
     "source_policy": "import_only_rows_with_explicit_score; never_use_model_forecast_as_result",
-    "known_score_count": 13,
+    "known_score_count": 18,
     "pending_score_count": 0,
+    "manual_backfill_count": 5,
+    "manual_backfill_path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/manual_trusted_backfill.json",
     "known_scores": [
       {
         "match_id": "WC-A1",
@@ -118,6 +120,91 @@
         "matchday_hk": "2026-06-13",
         "source": "match_data_alignment_audit",
         "source_date_query": "2026-06-12",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-I1",
+        "home_team": "France",
+        "away_team": "Senegal",
+        "score": "3-1",
+        "home_score": 3,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-16T19:00:00Z",
+        "matchday_hk": "2026-06-17",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-16",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+        "home_team": "Belgium",
+        "away_team": "Egypt",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T19:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "home_team": "Saudi Arabia",
+        "away_team": "Uruguay",
+        "score": "1-1",
+        "home_score": 1,
+        "away_score": 1,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T22:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+        "home_team": "Iran",
+        "away_team": "New Zealand",
+        "score": "2-2",
+        "home_score": 2,
+        "away_score": 2,
+        "outcome": "draw",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-16T01:00:00Z",
+        "matchday_hk": "2026-06-16",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
+        "provider_event_id": null,
+        "provider_last_update": null
+      },
+      {
+        "match_id": "WC-K1",
+        "home_team": "Portugal",
+        "away_team": "Colombia",
+        "score": "2-1",
+        "home_score": 2,
+        "away_score": 1,
+        "outcome": "home",
+        "status": "settled",
+        "result_state": "finished",
+        "kickoff_at": "2026-06-15T00:00:00Z",
+        "matchday_hk": "2026-06-15",
+        "source": "manual_trusted_backfill",
+        "source_date_query": "2026-06-15",
         "provider_event_id": null,
         "provider_last_update": null
       },
@@ -282,7 +369,7 @@
       "sport_key": "soccer_fifa_world_cup",
       "configured": true,
       "ok": false,
-      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+      "error": "HTTP 401: {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n",
       "row_count": 0,
       "mapped_settled_count": 0,
       "mapped_pending_count": 0
@@ -293,55 +380,84 @@
       "2026-06-13",
       "2026-06-14",
       "2026-06-15",
-      "2026-06-16"
+      "2026-06-16",
+      "2026-06-17"
     ],
     "paths": {
-      "match_results:2026-06-11": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-11.json",
-      "match_results:2026-06-12": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-12.json",
-      "match_results:2026-06-13": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-13.json",
-      "match_results:2026-06-14": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-14.json",
-      "match_results:2026-06-15": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-15.json",
-      "match_results:2026-06-16": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/2026-06-16.json",
-      "latest_known_scores": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/latest_known_scores.json",
-      "pending_score_backfill": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/match_results/pending_score_backfill.json",
-      "score_sync_json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_score_sync.json",
-      "score_sync_markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/latest_score_sync.md"
+      "match_results:2026-06-11": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-11.json",
+      "match_results:2026-06-12": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-12.json",
+      "match_results:2026-06-13": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-13.json",
+      "match_results:2026-06-16": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-16.json",
+      "match_results:2026-06-17": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-17.json",
+      "match_results:2026-06-15": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-15.json",
+      "match_results:2026-06-14": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/2026-06-14.json",
+      "latest_known_scores": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/latest_known_scores.json",
+      "pending_score_backfill": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/match_results/pending_score_backfill.json",
+      "score_sync_json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_score_sync.json",
+      "score_sync_markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/latest_score_sync.md"
     }
   },
   "settlement_trigger": {
-    "status": "partially_settled",
+    "status": "settled",
     "source": "strict_god_report+score_sync+/api/matches",
     "positive_bet_count": 23,
-    "settled_bets": 4,
-    "pending_bets": 19,
-    "pending_match_ids": [
-      "WC-K1",
-      "WCAPI-20260615-BELGIUM-EGYPT",
-      "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
-      "WCAPI-20260616-IRAN-NEW-ZEALAND"
-    ],
-    "total_stake_gp": 890.0,
-    "total_payout_gp": 0.0,
-    "total_profit_gp": -890.0,
-    "roi": -1.0,
+    "settled_bets": 23,
+    "pending_bets": 0,
+    "pending_match_ids": [],
+    "total_stake_gp": 4170.0,
+    "total_payout_gp": 3416.5,
+    "total_profit_gp": -753.5,
+    "roi": -0.1807,
     "account_updates_written": 11,
     "path": "data/pool/settlements/run-15.json"
   },
   "production_artifacts": {
     "version": "production_artifact_writer.v1",
     "counts": {
-      "seat_count": 12,
+      "seat_count": 15,
       "valid_seat_count": 11,
-      "missing_seat_count": 1,
-      "required_match_count": 4,
-      "forecast_receipt_count": 12,
-      "investment_receipt_count": 12,
-      "prompt_context_count": 12,
-      "seat_journal_count": 12
+      "missing_seat_count": 4,
+      "required_match_count": 5,
+      "forecast_receipt_count": 15,
+      "investment_receipt_count": 15,
+      "prompt_context_count": 15,
+      "seat_journal_count": 15,
+      "behavior_memory_count": 15,
+      "agent_profile_count": 15,
+      "pattern_count": 4,
+      "compiled_pattern_count": 40,
+      "chronicle_lesson_count": 40,
+      "run_chronicle_highlight_count": 15,
+      "evolution_trace_count": 15,
+      "civilization_agent_count": 15,
+      "civilization_count": 3,
+      "civilization_interaction_count": 3,
+      "replay_event_count": 86,
+      "replay_seat_count": 15,
+      "production_event_count": 173,
+      "production_kernel_ready": 0,
+      "production_audit_passed": 4,
+      "civilization_freeze_ready": 0
     },
     "artifact_refs": {
       "seat_journals": "data/pool/seat_journals/",
       "prompt_contexts": "data/pool/prompt_contexts/run-15/",
+      "behavior_memory": "data/pool/behavior_memory/compiled/",
+      "behavior_patterns": "data/pool/behavior_patterns/",
+      "behavior_chronicle": "data/pool/behavior_chronicle/",
+      "run_chronicle": "data/pool/behavior_chronicle/runs/run-15.md",
+      "pattern_graph": "data/pool/pattern_graph/latest.json",
+      "agent_profiles": "data/pool/agent_profiles/latest.json",
+      "evolution_trace": "data/pool/evolution_traces/latest.json",
+      "civilization_state": "data/pool/civilization_state/latest.json",
+      "civilization_battle": "data/pool/civilization_battle/latest.json",
+      "civilization_freeze": "data/pool/civilization_freeze/latest.json",
+      "behavior_replay": "data/pool/replay/runs/run-15.json",
+      "behavior_production_contract": "data/pool/behavior_summary/production_contract.json",
+      "behavior_kernel_manifest": "data/pool/data_lake/kernels/behavior_kernel_v1.json",
+      "behavior_run_manifest": "data/pool/data_lake/runs/run-15.json",
+      "behavior_production_audit": "data/pool/behavior_audits/run-15.json",
+      "behavior_causality_graph": "data/pool/behavior_audits/run-15.causality_graph.json",
       "forecast_receipts": "data/pool/forecast_receipts/run-15.json",
       "investment_receipts": "data/pool/investment_receipts/run-15.json",
       "credit_ledger": "data/pool/credit_ledger/run-15.json",
@@ -379,16 +495,19 @@
       "qwen": "collected",
       "wenxin": "collected",
       "grok": "missing_provider_blocked",
-      "yuanbao": "collected"
+      "yuanbao": "collected",
+      "xunfei": "missing_provider_blocked",
+      "stepfun": "missing_provider_blocked",
+      "zhipu": "missing_provider_blocked"
     },
-    "god_report_seat_count": 12,
-    "god_report_event_count": 72
+    "god_report_seat_count": 15,
+    "god_report_event_count": 87
   },
-  "matches_with_odds": 4,
+  "matches_with_odds": 5,
   "current_decision_source": {
     "available": true,
     "source": "strict_god_report",
-    "path": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json",
+    "path": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_god_report_strict.json",
     "decision_count": 55,
     "positive_bet_count": 23,
     "stake_total_gp": 4170.0,
@@ -427,20 +546,32 @@
     "- 待补席位：grok"
   ],
   "prompt_pack": {
-    "models": 12,
-    "match_count": 4,
+    "models": 15,
+    "match_count": 5,
     "required_coverage": {
-      "required_match_ids": [],
-      "included_required_match_ids": [],
+      "required_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
+      "included_required_match_ids": [
+        "WC-H1",
+        "WC-K1",
+        "WCAPI-20260615-BELGIUM-EGYPT",
+        "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+        "WCAPI-20260616-IRAN-NEW-ZEALAND"
+      ],
       "missing_required_match_ids": []
     },
     "path": {
-      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
-      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.md"
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_prompt_pack.md"
     }
   },
   "shadow_rerun": {
-    "models": 12,
+    "models": 15,
     "receipt_missing": true,
     "receipt_missing_reason": "bet_receipts_not_available_for_round",
     "total_existing_bets": 0,
@@ -448,7 +579,7 @@
       "allowed": 0,
       "warned": 0,
       "rejected": 0,
-      "models_without_bets": 12
+      "models_without_bets": 15
     },
     "models_detail": [
       {
@@ -456,48 +587,20 @@
         "display_name": "deepseek",
         "rank": 1,
         "loan_terms": {
-          "credit_score": 745.6,
-          "credit_grade": "A",
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1810.0,
-          "outstanding_loan_gp": 1000.0,
-          "max_loan_gp": 1448.0,
-          "available_loan_gp": 448.0,
-          "base_interest_rate": 0.07,
-          "components": {
-            "forecast_accuracy": "pending",
-            "probability_calibration": "pending",
-            "risk_control_proxy": 17.6,
-            "net_worth_health_proxy": 60.0,
-            "ranking_proxy": 48.0
-          }
-        },
-        "bet_count": 0,
-        "allowed": 0,
-        "warned": 0,
-        "rejected": 0,
-        "audits": [],
-        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
-      },
-      {
-        "model_account": "gemini",
-        "display_name": "gemini",
-        "rank": 2,
-        "loan_terms": {
-          "credit_score": 645.0,
+          "credit_score": 635.7,
           "credit_grade": "B",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 850.0,
+          "net_worth_gp": 740.0,
           "outstanding_loan_gp": 1000.0,
-          "max_loan_gp": 425.0,
+          "max_loan_gp": 370.0,
           "available_loan_gp": 0.0,
           "base_interest_rate": 0.11,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": -36.5,
-            "net_worth_health_proxy": 17.5,
-            "ranking_proxy": 44.0
+            "risk_control_proxy": -44.3,
+            "net_worth_health_proxy": 12.0,
+            "ranking_proxy": 48.0
           }
         },
         "bet_count": 0,
@@ -510,134 +613,22 @@
       {
         "model_account": "qwen",
         "display_name": "qwen",
-        "rank": 3,
+        "rank": 2,
         "loan_terms": {
-          "credit_score": 674.7,
+          "credit_score": 628.2,
           "credit_grade": "B",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1100.0,
+          "net_worth_gp": 656.0,
           "outstanding_loan_gp": 400.0,
-          "max_loan_gp": 550.0,
-          "available_loan_gp": 150.0,
-          "base_interest_rate": 0.11,
-          "components": {
-            "forecast_accuracy": "pending",
-            "probability_calibration": "pending",
-            "risk_control_proxy": -15.3,
-            "net_worth_health_proxy": 30.0,
-            "ranking_proxy": 40.0
-          }
-        },
-        "bet_count": 0,
-        "allowed": 0,
-        "warned": 0,
-        "rejected": 0,
-        "audits": [],
-        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
-      },
-      {
-        "model_account": "yuanbao",
-        "display_name": "yuanbao",
-        "rank": 4,
-        "loan_terms": {
-          "credit_score": 657.7,
-          "credit_grade": "B",
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1000.0,
-          "outstanding_loan_gp": 500.0,
-          "max_loan_gp": 500.0,
+          "max_loan_gp": 328.0,
           "available_loan_gp": 0.0,
           "base_interest_rate": 0.11,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": -23.3,
-            "net_worth_health_proxy": 25.0,
-            "ranking_proxy": 36.0
-          }
-        },
-        "bet_count": 0,
-        "allowed": 0,
-        "warned": 0,
-        "rejected": 0,
-        "audits": [],
-        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
-      },
-      {
-        "model_account": "doubao",
-        "display_name": "doubao",
-        "rank": 5,
-        "loan_terms": {
-          "credit_score": 669.6,
-          "credit_grade": "B",
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1100.0,
-          "outstanding_loan_gp": 300.0,
-          "max_loan_gp": 550.0,
-          "available_loan_gp": 250.0,
-          "base_interest_rate": 0.11,
-          "components": {
-            "forecast_accuracy": "pending",
-            "probability_calibration": "pending",
-            "risk_control_proxy": -12.4,
-            "net_worth_health_proxy": 30.0,
-            "ranking_proxy": 32.0
-          }
-        },
-        "bet_count": 0,
-        "allowed": 0,
-        "warned": 0,
-        "rejected": 0,
-        "audits": [],
-        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
-      },
-      {
-        "model_account": "meta",
-        "display_name": "meta",
-        "rank": 6,
-        "loan_terms": {
-          "credit_score": 597.8,
-          "credit_grade": "C",
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 600.0,
-          "outstanding_loan_gp": 800.0,
-          "max_loan_gp": 120.0,
-          "available_loan_gp": 0.0,
-          "base_interest_rate": 0.18,
-          "components": {
-            "forecast_accuracy": "pending",
-            "probability_calibration": "pending",
-            "risk_control_proxy": -55.2,
-            "net_worth_health_proxy": 5.0,
-            "ranking_proxy": 28.0
-          }
-        },
-        "bet_count": 0,
-        "allowed": 0,
-        "warned": 0,
-        "rejected": 0,
-        "audits": [],
-        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
-      },
-      {
-        "model_account": "mimo",
-        "display_name": "mimo",
-        "rank": 7,
-        "loan_terms": {
-          "credit_score": 640.7,
-          "credit_grade": "B",
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 900.0,
-          "outstanding_loan_gp": 300.0,
-          "max_loan_gp": 450.0,
-          "available_loan_gp": 150.0,
-          "base_interest_rate": 0.11,
-          "components": {
-            "forecast_accuracy": "pending",
-            "probability_calibration": "pending",
-            "risk_control_proxy": -23.3,
-            "net_worth_health_proxy": 20.0,
-            "ranking_proxy": 24.0
+            "risk_control_proxy": -43.6,
+            "net_worth_health_proxy": 7.8,
+            "ranking_proxy": 44.0
           }
         },
         "bet_count": 0,
@@ -650,6 +641,146 @@
       {
         "model_account": "chatgpt",
         "display_name": "chatgpt",
+        "rank": 3,
+        "loan_terms": {
+          "credit_score": 685.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 40.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "minimax",
+        "display_name": "minimax",
+        "rank": 4,
+        "loan_terms": {
+          "credit_score": 681.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 36.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "grok",
+        "display_name": "xAI Grok",
+        "rank": 5,
+        "loan_terms": {
+          "credit_score": 677.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 32.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "xunfei",
+        "display_name": "科大讯飞",
+        "rank": 6,
+        "loan_terms": {
+          "credit_score": 673.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 28.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "stepfun",
+        "display_name": "阶跃星辰",
+        "rank": 7,
+        "loan_terms": {
+          "credit_score": 669.0,
+          "credit_grade": "B",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 1000.0,
+          "outstanding_loan_gp": 0.0,
+          "max_loan_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "base_interest_rate": 0.11,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": 0.0,
+            "net_worth_health_proxy": 25.0,
+            "ranking_proxy": 24.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "zhipu",
+        "display_name": "智谱清言",
         "rank": 8,
         "loan_terms": {
           "credit_score": 665.0,
@@ -680,19 +811,19 @@
         "display_name": "kimi",
         "rank": 9,
         "loan_terms": {
-          "credit_score": 661.0,
+          "credit_score": 657.7,
           "credit_grade": "B",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1000.0,
+          "net_worth_gp": 960.0,
           "outstanding_loan_gp": 0.0,
-          "max_loan_gp": 500.0,
-          "available_loan_gp": 500.0,
+          "max_loan_gp": 480.0,
+          "available_loan_gp": 480.0,
           "base_interest_rate": 0.11,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": 0.0,
-            "net_worth_health_proxy": 25.0,
+            "risk_control_proxy": -1.3,
+            "net_worth_health_proxy": 23.0,
             "ranking_proxy": 16.0
           }
         },
@@ -704,24 +835,52 @@
         "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
       },
       {
-        "model_account": "minimax",
-        "display_name": "minimax",
+        "model_account": "doubao",
+        "display_name": "doubao",
         "rank": 10,
         "loan_terms": {
-          "credit_score": 657.0,
-          "credit_grade": "B",
+          "credit_score": 589.4,
+          "credit_grade": "C",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1000.0,
-          "outstanding_loan_gp": 0.0,
-          "max_loan_gp": 500.0,
-          "available_loan_gp": 500.0,
-          "base_interest_rate": 0.11,
+          "net_worth_gp": 567.0,
+          "outstanding_loan_gp": 300.0,
+          "max_loan_gp": 113.4,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": 0.18,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": 0.0,
-            "net_worth_health_proxy": 25.0,
+            "risk_control_proxy": -46.0,
+            "net_worth_health_proxy": 3.4,
             "ranking_proxy": 12.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "mimo",
+        "display_name": "mimo",
+        "rank": 11,
+        "loan_terms": {
+          "credit_score": 585.4,
+          "credit_grade": "C",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": 567.0,
+          "outstanding_loan_gp": 300.0,
+          "max_loan_gp": 113.4,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": 0.18,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -46.0,
+            "net_worth_health_proxy": 3.4,
+            "ranking_proxy": 8.0
           }
         },
         "bet_count": 0,
@@ -734,22 +893,22 @@
       {
         "model_account": "wenxin",
         "display_name": "wenxin",
-        "rank": 11,
+        "rank": 12,
         "loan_terms": {
-          "credit_score": 653.0,
+          "credit_score": 636.5,
           "credit_grade": "B",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1000.0,
+          "net_worth_gp": 850.0,
           "outstanding_loan_gp": 0.0,
-          "max_loan_gp": 500.0,
-          "available_loan_gp": 500.0,
+          "max_loan_gp": 425.0,
+          "available_loan_gp": 425.0,
           "base_interest_rate": 0.11,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": 0.0,
-            "net_worth_health_proxy": 25.0,
-            "ranking_proxy": 8.0
+            "risk_control_proxy": -5.0,
+            "net_worth_health_proxy": 17.5,
+            "ranking_proxy": 4.0
           }
         },
         "bet_count": 0,
@@ -760,24 +919,80 @@
         "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
       },
       {
-        "model_account": "grok",
-        "display_name": "xAI",
-        "rank": 12,
+        "model_account": "gemini",
+        "display_name": "gemini",
+        "rank": 13,
         "loan_terms": {
-          "credit_score": 649.0,
-          "credit_grade": "B",
+          "credit_score": 411.2,
+          "credit_grade": "D",
           "credit_basis": "proxy_pending_forecast_ledger",
-          "net_worth_gp": 1000.0,
-          "outstanding_loan_gp": 0.0,
-          "max_loan_gp": 500.0,
-          "available_loan_gp": 500.0,
-          "base_interest_rate": 0.11,
+          "net_worth_gp": -260.0,
+          "outstanding_loan_gp": 1000.0,
+          "max_loan_gp": 0.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": null,
           "components": {
             "forecast_accuracy": "pending",
             "probability_calibration": "pending",
-            "risk_control_proxy": 0.0,
-            "net_worth_health_proxy": 25.0,
-            "ranking_proxy": 4.0
+            "risk_control_proxy": -170.8,
+            "net_worth_health_proxy": -38.0,
+            "ranking_proxy": 0.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "meta",
+        "display_name": "meta",
+        "rank": 14,
+        "loan_terms": {
+          "credit_score": 379.7,
+          "credit_grade": "D",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": -344.0,
+          "outstanding_loan_gp": 800.0,
+          "max_loan_gp": 0.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": null,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -198.1,
+            "net_worth_health_proxy": -42.2,
+            "ranking_proxy": 0.0
+          }
+        },
+        "bet_count": 0,
+        "allowed": 0,
+        "warned": 0,
+        "rejected": 0,
+        "audits": [],
+        "required_next_action": "必须补 forecast；投资可 no-bet，但不能缺席判断。"
+      },
+      {
+        "model_account": "yuanbao",
+        "display_name": "yuanbao",
+        "rank": 15,
+        "loan_terms": {
+          "credit_score": 438.9,
+          "credit_grade": "D",
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "net_worth_gp": -55.0,
+          "outstanding_loan_gp": 500.0,
+          "max_loan_gp": 0.0,
+          "available_loan_gp": 0.0,
+          "base_interest_rate": null,
+          "components": {
+            "forecast_accuracy": "pending",
+            "probability_calibration": "pending",
+            "risk_control_proxy": -153.3,
+            "net_worth_health_proxy": -27.8,
+            "ranking_proxy": 0.0
           }
         },
         "bet_count": 0,
@@ -789,8 +1004,8 @@
       }
     ],
     "path": {
-      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_shadow_rerun.json",
-      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_shadow_rerun.md"
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_shadow_rerun.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_shadow_rerun.md"
     }
   },
   "automation_guard": {
@@ -809,7 +1024,7 @@
       "status": "PARTIAL_NOT_READY",
       "publish_allowed": false,
       "valid_count": 11,
-      "required_seat_count": 12,
+      "required_seat_count": 15,
       "valid_seats": [
         "chatgpt",
         "deepseek",
@@ -824,7 +1039,10 @@
         "yuanbao"
       ],
       "needs_rerun": [
-        "grok"
+        "grok",
+        "xunfei",
+        "stepfun",
+        "zhipu"
       ],
       "rerun_queue": [
         {
@@ -870,8 +1088,8 @@
       "前端和日报必须标记 PARTIAL_NOT_READY，不得显示完整结论。"
     ],
     "path": {
-      "json": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_sop_guard.json",
-      "markdown": "/Users/audimacmini/Documents/Playground/.omx/ai-judge/pool-app/data/pool/pred_invest/2026-06-15_run-15_sop_guard.md"
+      "json": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_sop_guard.json",
+      "markdown": "/Users/audimacmini/github-export-ai-behavior-chronicle-pool/data/pool/pred_invest/2026-06-15_run-15_sop_guard.md"
     }
   }
 }

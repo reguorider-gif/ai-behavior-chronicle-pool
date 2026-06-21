@@ -1,20 +1,20 @@
 {
   "version": "behavior_production_audit.v1",
   "kernel_version": "behavior_kernel_v1",
-  "generated_at": "2026-06-17T21:06:33+00:00",
+  "generated_at": "2026-06-21T21:42:55+00:00",
   "run_id": "run-15",
-  "seat_count": 12,
+  "seat_count": 15,
   "status": {
-    "verdict": "PRODUCTION_READY",
-    "passed": 8,
+    "verdict": "PARTIAL_PRODUCTION_READY",
+    "passed": 4,
     "partial": 0,
     "checks": {
-      "behavior_loop": "pass",
-      "prompt_control": "pass",
-      "pattern_participates": "pass",
+      "behavior_loop": "fail",
+      "prompt_control": "fail",
+      "pattern_participates": "fail",
       "pattern_removal_changes_behavior": "pass",
       "deterministic_replay": "pass",
-      "causal_trace_complete": "pass",
+      "causal_trace_complete": "fail",
       "credit_loan_behavior_binding": "pass",
       "behavior_ui_contract": "pass"
     }
@@ -23,129 +23,340 @@
     "prompt_memory": {
       "version": "prompt_memory_verifier.v1",
       "run_id": "run-15",
-      "status": "pass",
-      "checked": 12,
-      "pass_count": 12,
-      "violations": [],
+      "status": "fail",
+      "checked": 15,
+      "pass_count": 0,
+      "violations": [
+        {
+          "seat_id": "chatgpt",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "chatgpt",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "chatgpt",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "deepseek",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "deepseek",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "deepseek",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "mimo",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "mimo",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "mimo",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "minimax",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "minimax",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "minimax",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "doubao",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "doubao",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "doubao",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "gemini",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "gemini",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "gemini",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "kimi",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "kimi",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "kimi",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "meta",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "meta",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "meta",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "qwen",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "qwen",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "qwen",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "wenxin",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "wenxin",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "wenxin",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "grok",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "grok",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "grok",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "yuanbao",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "yuanbao",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "yuanbao",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "xunfei",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "xunfei",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "xunfei",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "stepfun",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "stepfun",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "stepfun",
+          "type": "missing_required_memory_receipt_fields"
+        },
+        {
+          "seat_id": "zhipu",
+          "type": "missing_behavior_memory"
+        },
+        {
+          "seat_id": "zhipu",
+          "type": "memory_not_mandatory"
+        },
+        {
+          "seat_id": "zhipu",
+          "type": "missing_required_memory_receipt_fields"
+        }
+      ],
       "rows": [
         {
           "seat_id": "chatgpt",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 1,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "deepseek",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
-          "private_leakage": []
-        },
-        {
-          "seat_id": "doubao",
-          "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 3,
-          "must_consider_memory": true,
-          "required_fields_present": true,
-          "private_leakage": []
-        },
-        {
-          "seat_id": "gemini",
-          "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
-          "private_leakage": []
-        },
-        {
-          "seat_id": "grok",
-          "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 1,
-          "must_consider_memory": true,
-          "required_fields_present": true,
-          "private_leakage": []
-        },
-        {
-          "seat_id": "kimi",
-          "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
-          "private_leakage": []
-        },
-        {
-          "seat_id": "meta",
-          "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "mimo",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 3,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "minimax",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 1,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "doubao",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "gemini",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "kimi",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "meta",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "qwen",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "wenxin",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 2,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "grok",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         },
         {
           "seat_id": "yuanbao",
           "context_exists": true,
-          "kernel_version": "behavior_kernel_v1",
-          "has_behavior_memory": true,
-          "active_pattern_count": 3,
-          "must_consider_memory": true,
-          "required_fields_present": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "xunfei",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "stepfun",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
+          "private_leakage": []
+        },
+        {
+          "seat_id": "zhipu",
+          "context_exists": true,
+          "kernel_version": null,
+          "has_behavior_memory": false,
+          "active_pattern_count": 0,
+          "must_consider_memory": false,
+          "required_fields_present": false,
           "private_leakage": []
         }
       ]
@@ -154,82 +365,31 @@
       "version": "replay_validator.v1",
       "run_id": "run-15",
       "status": "pass",
-      "event_count": 71,
-      "seat_count": 12,
-      "snapshot_count": 71,
-      "input_hash": "03e296af8a99556943b0c86c60866743c28f2c3fff0c297389f2ea1d1edddaf7",
+      "event_count": 86,
+      "seat_count": 15,
+      "snapshot_count": 86,
+      "input_hash": "80cfba2c226b4f16af83fbbe49aeb90617dd3276ce38027eee8f34a762a20caa",
       "timeline_event_types": {
-        "credit_updated": 12,
-        "forecast_recorded": 12,
-        "investment_recorded": 12,
-        "prompt_context_recorded": 12,
+        "credit_updated": 15,
+        "forecast_recorded": 15,
+        "investment_recorded": 15,
+        "prompt_context_recorded": 15,
         "settlement_recorded": 11,
-        "survival_updated": 12
+        "survival_updated": 15
       },
       "replay_source_hash_matches": true
     },
     "influence": {
       "version": "pattern_influence_tracer.v1",
       "run_id": "run-15",
-      "status": "pass",
-      "influenced_count": 12,
+      "status": "fail",
+      "influenced_count": 0,
       "strong_evidence_count": 0,
-      "weak_evidence": [
-        {
-          "seat_id": "chatgpt",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "deepseek",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "doubao",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "gemini",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "grok",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "kimi",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "meta",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "mimo",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "minimax",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "qwen",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "wenxin",
-          "type": "provider_receipt_lacks_memory_self_report"
-        },
-        {
-          "seat_id": "yuanbao",
-          "type": "provider_receipt_lacks_memory_self_report"
-        }
-      ],
+      "weak_evidence": [],
       "rows": [
         {
           "seat_id": "chatgpt",
-          "context_patterns": [
-            "uncertainty_to_no_bet"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "uncertainty_to_no_bet"
           ],
@@ -237,15 +397,12 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
           "seat_id": "deepseek",
-          "context_patterns": [
-            "uncertainty_to_no_bet",
-            "loan_pressure_shapes_risk"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "uncertainty_to_no_bet"
           ],
@@ -253,96 +410,12 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
-        },
-        {
-          "seat_id": "doubao",
-          "context_patterns": [
-            "capital_to_selective_allocation",
-            "loan_pressure_shapes_risk",
-            "loss_requires_strategy_change"
-          ],
-          "replay_patterns": [
-            "capital_to_selective_allocation"
-          ],
-          "evolution_dominant_pattern": "capital_to_selective_allocation",
-          "memory_used_in_trace": true,
-          "investment_event_count": 1,
-          "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
-        },
-        {
-          "seat_id": "gemini",
-          "context_patterns": [
-            "uncertainty_to_no_bet",
-            "loan_pressure_shapes_risk"
-          ],
-          "replay_patterns": [
-            "uncertainty_to_no_bet"
-          ],
-          "evolution_dominant_pattern": "uncertainty_to_no_bet",
-          "memory_used_in_trace": true,
-          "investment_event_count": 1,
-          "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
-        },
-        {
-          "seat_id": "grok",
-          "context_patterns": [
-            "uncertainty_to_no_bet"
-          ],
-          "replay_patterns": [
-            "uncertainty_to_no_bet"
-          ],
-          "evolution_dominant_pattern": "uncertainty_to_no_bet",
-          "memory_used_in_trace": true,
-          "investment_event_count": 1,
-          "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
-        },
-        {
-          "seat_id": "kimi",
-          "context_patterns": [
-            "uncertainty_to_no_bet",
-            "loss_requires_strategy_change"
-          ],
-          "replay_patterns": [
-            "uncertainty_to_no_bet"
-          ],
-          "evolution_dominant_pattern": "uncertainty_to_no_bet",
-          "memory_used_in_trace": true,
-          "investment_event_count": 1,
-          "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
-        },
-        {
-          "seat_id": "meta",
-          "context_patterns": [
-            "capital_to_selective_allocation",
-            "loan_pressure_shapes_risk"
-          ],
-          "replay_patterns": [
-            "capital_to_selective_allocation"
-          ],
-          "evolution_dominant_pattern": "capital_to_selective_allocation",
-          "memory_used_in_trace": true,
-          "investment_event_count": 1,
-          "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
           "seat_id": "mimo",
-          "context_patterns": [
-            "uncertainty_to_no_bet",
-            "capital_to_selective_allocation",
-            "loan_pressure_shapes_risk"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "uncertainty_to_no_bet"
           ],
@@ -350,14 +423,12 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
           "seat_id": "minimax",
-          "context_patterns": [
-            "capital_to_selective_allocation"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "capital_to_selective_allocation"
           ],
@@ -365,15 +436,25 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
-          "seat_id": "qwen",
-          "context_patterns": [
-            "uncertainty_to_no_bet",
-            "loan_pressure_shapes_risk"
+          "seat_id": "doubao",
+          "context_patterns": [],
+          "replay_patterns": [
+            "capital_to_selective_allocation"
           ],
+          "evolution_dominant_pattern": "capital_to_selective_allocation",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "gemini",
+          "context_patterns": [],
           "replay_patterns": [
             "uncertainty_to_no_bet"
           ],
@@ -381,15 +462,51 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "kimi",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "meta",
+          "context_patterns": [],
+          "replay_patterns": [
+            "capital_to_selective_allocation"
+          ],
+          "evolution_dominant_pattern": "capital_to_selective_allocation",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "qwen",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
           "seat_id": "wenxin",
-          "context_patterns": [
-            "capital_to_selective_allocation",
-            "loss_requires_strategy_change"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "capital_to_selective_allocation"
           ],
@@ -397,16 +514,25 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "grok",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
         },
         {
           "seat_id": "yuanbao",
-          "context_patterns": [
-            "capital_to_selective_allocation",
-            "loan_pressure_shapes_risk",
-            "loss_requires_strategy_change"
-          ],
+          "context_patterns": [],
           "replay_patterns": [
             "capital_to_selective_allocation"
           ],
@@ -414,8 +540,47 @@
           "memory_used_in_trace": true,
           "investment_event_count": 1,
           "receipt_has_memory_self_report": false,
-          "influence_evidence": true,
-          "evidence_level": "medium"
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "xunfei",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "stepfun",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
+        },
+        {
+          "seat_id": "zhipu",
+          "context_patterns": [],
+          "replay_patterns": [
+            "uncertainty_to_no_bet"
+          ],
+          "evolution_dominant_pattern": "uncertainty_to_no_bet",
+          "memory_used_in_trace": true,
+          "investment_event_count": 1,
+          "receipt_has_memory_self_report": false,
+          "influence_evidence": false,
+          "evidence_level": "missing"
         }
       ]
     },
@@ -423,8 +588,8 @@
       "version": "pattern_removal_sensitivity.v1",
       "run_id": "run-15",
       "status": "pass",
-      "checked_decision_count": 12,
-      "changed_count": 12,
+      "checked_decision_count": 15,
+      "changed_count": 15,
       "rows": [
         {
           "seat_id": "chatgpt",
@@ -701,6 +866,75 @@
             "reason": "active pattern removed from deterministic counterfactual policy"
           },
           "behavior_changes_when_pattern_removed": true
+        },
+        {
+          "seat_id": "stepfun",
+          "event_id": "run-15:stepfun:2:investment_recorded",
+          "pattern_removed": "uncertainty_to_no_bet",
+          "observed_policy": {
+            "risk_shift": "risk_reduction",
+            "stake_gp": 0.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction"
+          },
+          "counterfactual_without_pattern": {
+            "risk_shift": "higher_exposure_candidate",
+            "stake_gp": 100.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction",
+            "reason": "removing uncertainty_to_no_bet removes the no-bet discipline constraint"
+          },
+          "behavior_changes_when_pattern_removed": true
+        },
+        {
+          "seat_id": "xunfei",
+          "event_id": "run-15:xunfei:2:investment_recorded",
+          "pattern_removed": "uncertainty_to_no_bet",
+          "observed_policy": {
+            "risk_shift": "risk_reduction",
+            "stake_gp": 0.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction"
+          },
+          "counterfactual_without_pattern": {
+            "risk_shift": "higher_exposure_candidate",
+            "stake_gp": 100.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction",
+            "reason": "removing uncertainty_to_no_bet removes the no-bet discipline constraint"
+          },
+          "behavior_changes_when_pattern_removed": true
+        },
+        {
+          "seat_id": "zhipu",
+          "event_id": "run-15:zhipu:2:investment_recorded",
+          "pattern_removed": "uncertainty_to_no_bet",
+          "observed_policy": {
+            "risk_shift": "risk_reduction",
+            "stake_gp": 0.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction"
+          },
+          "counterfactual_without_pattern": {
+            "risk_shift": "higher_exposure_candidate",
+            "stake_gp": 100.0,
+            "loan_used_gp": 0.0,
+            "investment_count": 4,
+            "risk_level": "low",
+            "strategy_drift": "risk_reduction",
+            "reason": "removing uncertainty_to_no_bet removes the no-bet discipline constraint"
+          },
+          "behavior_changes_when_pattern_removed": true
         }
       ]
     },
@@ -708,7 +942,7 @@
       "version": "behavior_diff_checker.v1",
       "run_id": "run-15",
       "status": "pass",
-      "shift_detected_count": 12,
+      "shift_detected_count": 15,
       "rows": [
         {
           "seat_id": "chatgpt",
@@ -735,81 +969,6 @@
           "decision_pressure": {
             "no_bet_rate": 1.0,
             "total_stake_gp": 0,
-            "settlement_profit_gp": 0.0,
-            "recovery_mode": false
-          },
-          "behavior_shift_detected": true
-        },
-        {
-          "seat_id": "doubao",
-          "behavior_type": "selective_allocator",
-          "risk_level": "medium",
-          "loan_dependency": "medium",
-          "strategy_drift": "loss_response_under_observation",
-          "dominant_pattern": "capital_to_selective_allocation",
-          "decision_pressure": {
-            "no_bet_rate": 0.4,
-            "total_stake_gp": 600.0,
-            "settlement_profit_gp": -200.0,
-            "recovery_mode": false
-          },
-          "behavior_shift_detected": true
-        },
-        {
-          "seat_id": "gemini",
-          "behavior_type": "discipline_first_observer",
-          "risk_level": "low",
-          "loan_dependency": "medium",
-          "strategy_drift": "risk_reduction",
-          "dominant_pattern": "uncertainty_to_no_bet",
-          "decision_pressure": {
-            "no_bet_rate": 0.8,
-            "total_stake_gp": 50.0,
-            "settlement_profit_gp": 0.0,
-            "recovery_mode": false
-          },
-          "behavior_shift_detected": true
-        },
-        {
-          "seat_id": "grok",
-          "behavior_type": "discipline_first_observer",
-          "risk_level": "low",
-          "loan_dependency": "low",
-          "strategy_drift": "risk_reduction",
-          "dominant_pattern": "uncertainty_to_no_bet",
-          "decision_pressure": {
-            "no_bet_rate": 1.0,
-            "total_stake_gp": 0,
-            "settlement_profit_gp": 0.0,
-            "recovery_mode": false
-          },
-          "behavior_shift_detected": true
-        },
-        {
-          "seat_id": "kimi",
-          "behavior_type": "discipline_first_observer",
-          "risk_level": "low",
-          "loan_dependency": "low",
-          "strategy_drift": "risk_reduction",
-          "dominant_pattern": "uncertainty_to_no_bet",
-          "decision_pressure": {
-            "no_bet_rate": 0.8,
-            "total_stake_gp": 40.0,
-            "settlement_profit_gp": -40.0,
-            "recovery_mode": false
-          },
-          "behavior_shift_detected": true
-        },
-        {
-          "seat_id": "meta",
-          "behavior_type": "aggressive_edge_hunter",
-          "risk_level": "high",
-          "loan_dependency": "medium",
-          "strategy_drift": "aggressive_shift",
-          "dominant_pattern": "capital_to_selective_allocation",
-          "decision_pressure": {
-            "no_bet_rate": 0.4,
-            "total_stake_gp": 900.0,
             "settlement_profit_gp": 0.0,
             "recovery_mode": false
           },
@@ -846,6 +1005,66 @@
           "behavior_shift_detected": true
         },
         {
+          "seat_id": "doubao",
+          "behavior_type": "selective_allocator",
+          "risk_level": "medium",
+          "loan_dependency": "medium",
+          "strategy_drift": "loss_response_under_observation",
+          "dominant_pattern": "capital_to_selective_allocation",
+          "decision_pressure": {
+            "no_bet_rate": 0.4,
+            "total_stake_gp": 600.0,
+            "settlement_profit_gp": -200.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "gemini",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "medium",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 0.8,
+            "total_stake_gp": 50.0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "kimi",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "low",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 0.8,
+            "total_stake_gp": 40.0,
+            "settlement_profit_gp": -40.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "meta",
+          "behavior_type": "aggressive_edge_hunter",
+          "risk_level": "high",
+          "loan_dependency": "medium",
+          "strategy_drift": "aggressive_shift",
+          "dominant_pattern": "capital_to_selective_allocation",
+          "decision_pressure": {
+            "no_bet_rate": 0.4,
+            "total_stake_gp": 900.0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
           "seat_id": "qwen",
           "behavior_type": "discipline_first_observer",
           "risk_level": "low",
@@ -876,6 +1095,21 @@
           "behavior_shift_detected": true
         },
         {
+          "seat_id": "grok",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "low",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 1.0,
+            "total_stake_gp": 0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
           "seat_id": "yuanbao",
           "behavior_type": "aggressive_edge_hunter",
           "risk_level": "high",
@@ -889,15 +1123,60 @@
             "recovery_mode": false
           },
           "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "xunfei",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "low",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 1.0,
+            "total_stake_gp": 0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "stepfun",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "low",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 1.0,
+            "total_stake_gp": 0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
+        },
+        {
+          "seat_id": "zhipu",
+          "behavior_type": "discipline_first_observer",
+          "risk_level": "low",
+          "loan_dependency": "low",
+          "strategy_drift": "risk_reduction",
+          "dominant_pattern": "uncertainty_to_no_bet",
+          "decision_pressure": {
+            "no_bet_rate": 1.0,
+            "total_stake_gp": 0,
+            "settlement_profit_gp": 0.0,
+            "recovery_mode": false
+          },
+          "behavior_shift_detected": true
         }
       ]
     },
     "causal_trace": {
       "version": "causal_trace_audit.v1",
       "run_id": "run-15",
-      "status": "pass",
-      "decision_event_count": 24,
-      "complete_chain_count": 24,
+      "status": "fail",
+      "decision_event_count": 30,
+      "complete_chain_count": 0,
       "rows": [
         {
           "seat_id": "chatgpt",
@@ -907,12 +1186,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "chatgpt",
@@ -922,12 +1201,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "deepseek",
@@ -937,12 +1216,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "deepseek",
@@ -952,12 +1231,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "doubao",
@@ -967,12 +1246,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "doubao",
@@ -982,12 +1261,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "gemini",
@@ -997,12 +1276,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "gemini",
@@ -1012,12 +1291,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "grok",
@@ -1027,12 +1306,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "grok",
@@ -1042,12 +1321,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "kimi",
@@ -1057,12 +1336,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "kimi",
@@ -1072,12 +1351,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "meta",
@@ -1087,12 +1366,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "meta",
@@ -1102,12 +1381,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "mimo",
@@ -1117,12 +1396,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "mimo",
@@ -1132,12 +1411,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "minimax",
@@ -1147,12 +1426,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "minimax",
@@ -1162,12 +1441,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "qwen",
@@ -1177,12 +1456,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "qwen",
@@ -1192,12 +1471,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "wenxin",
@@ -1207,12 +1486,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "wenxin",
@@ -1222,12 +1501,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "yuanbao",
@@ -1237,12 +1516,12 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
         },
         {
           "seat_id": "yuanbao",
@@ -1252,12 +1531,102 @@
           "has_state_after": true,
           "has_memory_summary": true,
           "has_dominant_pattern": true,
-          "has_memory_contract": true,
+          "has_memory_contract": false,
           "has_decision_text": true,
           "has_counterfactual": true,
           "has_source_event": true,
           "has_snapshot_ref": true,
-          "explanation_chain_complete": true
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "stepfun",
+          "event_id": "run-15:stepfun:1:forecast_recorded",
+          "event_type": "forecast_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "stepfun",
+          "event_id": "run-15:stepfun:2:investment_recorded",
+          "event_type": "investment_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "xunfei",
+          "event_id": "run-15:xunfei:1:forecast_recorded",
+          "event_type": "forecast_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "xunfei",
+          "event_id": "run-15:xunfei:2:investment_recorded",
+          "event_type": "investment_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "zhipu",
+          "event_id": "run-15:zhipu:1:forecast_recorded",
+          "event_type": "forecast_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
+        },
+        {
+          "seat_id": "zhipu",
+          "event_id": "run-15:zhipu:2:investment_recorded",
+          "event_type": "investment_recorded",
+          "has_state_before": true,
+          "has_state_after": true,
+          "has_memory_summary": true,
+          "has_dominant_pattern": true,
+          "has_memory_contract": false,
+          "has_decision_text": true,
+          "has_counterfactual": true,
+          "has_source_event": true,
+          "has_snapshot_ref": true,
+          "explanation_chain_complete": false
         }
       ]
     },
@@ -1265,8 +1634,8 @@
       "version": "credit_loan_behavior_audit.v1",
       "run_id": "run-15",
       "status": "pass",
-      "present_count": 12,
-      "behavior_bound_count": 12,
+      "present_count": 15,
+      "behavior_bound_count": 15,
       "rows": [
         {
           "seat_id": "chatgpt",
@@ -1296,8 +1665,46 @@
           "credit_detail_types": [
             "production_receipt_collected"
           ],
-          "loan_limit_gp": 1448.0,
-          "available_loan_gp": 448.0,
+          "loan_limit_gp": 370.0,
+          "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "mimo",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 113.4,
+          "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "minimax",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 500.0,
+          "available_loan_gp": 500.0,
           "outstanding_loan_gp": 0.0,
           "recovery_mode": false,
           "allowed_actions": [
@@ -1315,8 +1722,8 @@
           "credit_detail_types": [
             "production_receipt_collected"
           ],
-          "loan_limit_gp": 550.0,
-          "available_loan_gp": 250.0,
+          "loan_limit_gp": 113.4,
+          "available_loan_gp": 0.0,
           "outstanding_loan_gp": 0.0,
           "recovery_mode": false,
           "allowed_actions": [
@@ -1334,8 +1741,84 @@
           "credit_detail_types": [
             "production_receipt_collected"
           ],
-          "loan_limit_gp": 425.0,
+          "loan_limit_gp": 0.0,
           "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 310.0,
+          "recovery_mode": true,
+          "allowed_actions": [
+            "forecast",
+            "no_bet",
+            "small_recovery_bet"
+          ]
+        },
+        {
+          "seat_id": "kimi",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 480.0,
+          "available_loan_gp": 480.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "meta",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 0.0,
+          "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 544.0,
+          "recovery_mode": true,
+          "allowed_actions": [
+            "forecast",
+            "no_bet",
+            "small_recovery_bet"
+          ]
+        },
+        {
+          "seat_id": "qwen",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 328.0,
+          "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "wenxin",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": 0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "production_receipt_collected"
+          ],
+          "loan_limit_gp": 425.0,
+          "available_loan_gp": 425.0,
           "outstanding_loan_gp": 0.0,
           "recovery_mode": false,
           "allowed_actions": [
@@ -1348,7 +1831,7 @@
           "seat_id": "grok",
           "credit_present": true,
           "survival_present": true,
-          "credit_delta": -8,
+          "credit_delta": -8.0,
           "credit_basis": "proxy_pending_forecast_ledger",
           "credit_detail_types": [
             "missing_or_invalid_receipt"
@@ -1364,120 +1847,6 @@
           ]
         },
         {
-          "seat_id": "kimi",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 500.0,
-          "available_loan_gp": 500.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
-          "seat_id": "meta",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 120.0,
-          "available_loan_gp": 0.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
-          "seat_id": "mimo",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 450.0,
-          "available_loan_gp": 150.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
-          "seat_id": "minimax",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 500.0,
-          "available_loan_gp": 500.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
-          "seat_id": "qwen",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 550.0,
-          "available_loan_gp": 150.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
-          "seat_id": "wenxin",
-          "credit_present": true,
-          "survival_present": true,
-          "credit_delta": 0,
-          "credit_basis": "proxy_pending_forecast_ledger",
-          "credit_detail_types": [
-            "production_receipt_collected"
-          ],
-          "loan_limit_gp": 500.0,
-          "available_loan_gp": 500.0,
-          "outstanding_loan_gp": 0.0,
-          "recovery_mode": false,
-          "allowed_actions": [
-            "forecast",
-            "bet",
-            "no_bet"
-          ]
-        },
-        {
           "seat_id": "yuanbao",
           "credit_present": true,
           "survival_present": true,
@@ -1486,8 +1855,65 @@
           "credit_detail_types": [
             "production_receipt_collected"
           ],
-          "loan_limit_gp": 500.0,
+          "loan_limit_gp": 0.0,
           "available_loan_gp": 0.0,
+          "outstanding_loan_gp": 405.0,
+          "recovery_mode": true,
+          "allowed_actions": [
+            "forecast",
+            "no_bet",
+            "small_recovery_bet"
+          ]
+        },
+        {
+          "seat_id": "xunfei",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": -8.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "missing_or_invalid_receipt"
+          ],
+          "loan_limit_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "stepfun",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": -8.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "missing_or_invalid_receipt"
+          ],
+          "loan_limit_gp": 500.0,
+          "available_loan_gp": 500.0,
+          "outstanding_loan_gp": 0.0,
+          "recovery_mode": false,
+          "allowed_actions": [
+            "forecast",
+            "bet",
+            "no_bet"
+          ]
+        },
+        {
+          "seat_id": "zhipu",
+          "credit_present": true,
+          "survival_present": true,
+          "credit_delta": -8.0,
+          "credit_basis": "proxy_pending_forecast_ledger",
+          "credit_detail_types": [
+            "missing_or_invalid_receipt"
+          ],
+          "loan_limit_gp": 500.0,
+          "available_loan_gp": 500.0,
           "outstanding_loan_gp": 0.0,
           "recovery_mode": false,
           "allowed_actions": [
@@ -1500,9 +1926,9 @@
     }
   },
   "causality_graph": {
-    "node_count": 40,
-    "edge_count": 48,
-    "graph_hash": "da894e017282005226dae6eaa436ce97086b7970af9f68585339da63f4040a3a",
+    "node_count": 45,
+    "edge_count": 30,
+    "graph_hash": "f26dd9c410241d2b3a0b59bae3c19fdd3541ee76854d036842741f7ab285fc42",
     "ref": "data/pool/behavior_audits/run-15.causality_graph.json"
   }
 }

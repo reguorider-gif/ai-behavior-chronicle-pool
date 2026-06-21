@@ -1,6 +1,6 @@
 {
   "version": "pred_invest_match_results.v1",
-  "generated_at": "2026-06-15T20:26:20.310331+00:00",
+  "generated_at": "2026-06-21T21:42:54+00:00",
   "source_policy": "verified_scores_only_no_forecast_scores",
   "matches": [
     {
@@ -55,6 +55,23 @@
       "provider_last_update": "2026-06-15T19:16:10Z"
     },
     {
+      "match_id": "WC-K1",
+      "home_team": "Portugal",
+      "away_team": "Colombia",
+      "score": "2-1",
+      "home_score": 2,
+      "away_score": 1,
+      "outcome": "home",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-15T00:00:00Z",
+      "matchday_hk": "2026-06-15",
+      "source": "manual_trusted_backfill",
+      "source_date_query": "2026-06-15",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
       "match_id": "WCAPI-20260615-SWEDEN-TUNISIA",
       "home_team": "Sweden",
       "away_team": "Tunisia",
@@ -70,6 +87,57 @@
       "source_date_query": null,
       "provider_event_id": "b55f9569de3f4d731bc5537ff5ff43e4",
       "provider_last_update": "2026-06-15T19:16:10Z"
+    },
+    {
+      "match_id": "WCAPI-20260615-BELGIUM-EGYPT",
+      "home_team": "Belgium",
+      "away_team": "Egypt",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-15T19:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "source": "manual_trusted_backfill",
+      "source_date_query": "2026-06-15",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WCAPI-20260615-SAUDI-ARABIA-URUGUAY",
+      "home_team": "Saudi Arabia",
+      "away_team": "Uruguay",
+      "score": "1-1",
+      "home_score": 1,
+      "away_score": 1,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-15T22:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "source": "manual_trusted_backfill",
+      "source_date_query": "2026-06-15",
+      "provider_event_id": null,
+      "provider_last_update": null
+    },
+    {
+      "match_id": "WCAPI-20260616-IRAN-NEW-ZEALAND",
+      "home_team": "Iran",
+      "away_team": "New Zealand",
+      "score": "2-2",
+      "home_score": 2,
+      "away_score": 2,
+      "outcome": "draw",
+      "status": "settled",
+      "result_state": "finished",
+      "kickoff_at": "2026-06-16T01:00:00Z",
+      "matchday_hk": "2026-06-16",
+      "source": "manual_trusted_backfill",
+      "source_date_query": "2026-06-15",
+      "provider_event_id": null,
+      "provider_last_update": null
     }
   ]
 }

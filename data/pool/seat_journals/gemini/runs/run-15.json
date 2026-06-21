@@ -5,6 +5,25 @@
   "status": "collected",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "home_win_prob": 0.89,
+      "draw_prob": 0.08,
+      "away_win_prob": 0.03,
+      "most_likely_score": "3-0",
+      "confidence": 0.92,
+      "fair_odds": {
+        "home": 1.12,
+        "draw": 12.5,
+        "away": 33.33
+      },
+      "edge_assessment": "no_bet",
+      "information_gaps": [
+        "Cape Verde squad rotation and travel fatigue data"
+      ],
+      "status": "collected",
+      "source": "strict_god_report"
+    },
+    {
       "match_id": "WC-K1",
       "home_win_prob": 0.52,
       "draw_prob": 0.29,
@@ -80,28 +99,28 @@
       ],
       "status": "collected",
       "source": "strict_god_report"
-    },
-    {
-      "match_id": "WC-H1",
-      "home_win_prob": 0.89,
-      "draw_prob": 0.08,
-      "away_win_prob": 0.03,
-      "most_likely_score": "3-0",
-      "confidence": 0.92,
-      "fair_odds": {
-        "home": 1.12,
-        "draw": 12.5,
-        "away": 33.33
-      },
-      "edge_assessment": "no_bet",
-      "information_gaps": [
-        "Cape Verde squad rotation and travel fatigue data"
-      ],
-      "status": "collected",
-      "source": "strict_god_report"
     }
   ],
   "investments": [
+    {
+      "match_id": "WC-H1",
+      "action": "no_bet",
+      "selection": null,
+      "market": null,
+      "line": null,
+      "odds": null,
+      "stake_gp": 0.0,
+      "own_funds_gp": 0,
+      "loan_used_gp": 0.0,
+      "model_prob": 0.0,
+      "market_implied_prob": 0.0,
+      "estimated_ev": 0.0,
+      "max_loss_gp": 0,
+      "survival_plan_if_loss": "N/A",
+      "status": "collected",
+      "source": "strict_god_report",
+      "why_bet_or_no_bet": ""
+    },
     {
       "match_id": "WC-K1",
       "action": "bet",
@@ -177,25 +196,6 @@
       "status": "collected",
       "source": "strict_god_report",
       "why_bet_or_no_bet": ""
-    },
-    {
-      "match_id": "WC-H1",
-      "action": "no_bet",
-      "selection": null,
-      "market": null,
-      "line": null,
-      "odds": null,
-      "stake_gp": 0.0,
-      "own_funds_gp": 0,
-      "loan_used_gp": 0.0,
-      "model_prob": 0.0,
-      "market_implied_prob": 0.0,
-      "estimated_ev": 0.0,
-      "max_loss_gp": 0,
-      "survival_plan_if_loss": "N/A",
-      "status": "collected",
-      "source": "strict_god_report",
-      "why_bet_or_no_bet": ""
     }
   ],
   "credit": {
@@ -209,39 +209,53 @@
         "credit_delta": 0
       }
     ],
-    "credit_score": 645.0,
-    "credit_grade": "B",
+    "credit_score": 411.2,
+    "credit_grade": "D",
     "credit_basis": "proxy_pending_forecast_ledger",
-    "loan_limit_gp": 425.0,
+    "loan_limit_gp": 0.0,
     "available_loan_gp": 0.0,
     "outstanding_loan_gp": 1000.0,
-    "interest_rate": 0.11
+    "interest_rate": null
   },
   "survival": {
     "seat_id": "gemini",
-    "balance_gp": 740.0,
-    "outstanding_loan_gp": 0.0,
+    "balance_gp": 0.0,
+    "outstanding_loan_gp": 310.0,
     "accrued_interest_gp": 0.0,
-    "net_worth_gp": 740.0,
-    "recovery_mode": false,
-    "freeze_new_loan": false,
-    "loan_limit_gp": 425.0,
+    "net_worth_gp": -310.0,
+    "recovery_mode": true,
+    "freeze_new_loan": true,
+    "loan_limit_gp": 0.0,
     "available_loan_gp": 0.0,
     "allowed_actions": [
       "forecast",
-      "bet",
-      "no_bet"
+      "no_bet",
+      "small_recovery_bet"
     ]
   },
   "settlement": {
     "seat_id": "gemini",
     "run_id": "run-15",
-    "profit_gp": 0.0,
+    "profit_gp": -50.0,
     "settled": [
       {
         "match_id": "WC-H1",
         "action": "no_bet",
         "profit_gp": 0
+      },
+      {
+        "seat_id": "gemini",
+        "match_id": "WC-K1",
+        "market": "h2h",
+        "selection": "Draw",
+        "line": null,
+        "odds": 3.6,
+        "stake_gp": 50.0,
+        "loan_used_gp": 0.0,
+        "payout_gp": 0.0,
+        "profit_gp": -50.0,
+        "status": "lose",
+        "score": "2-1"
       },
       {
         "match_id": "WCAPI-20260615-BELGIUM-EGYPT",

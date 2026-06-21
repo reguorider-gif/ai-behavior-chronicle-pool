@@ -1,0 +1,83 @@
+{
+  "version": "memory_isolation_audit.v1",
+  "run_id": "run-15",
+  "generated_at": "2026-06-21T21:42:55+00:00",
+  "checked_prompt_contexts": 15,
+  "required_prompt_contexts": 15,
+  "ok": false,
+  "violations": [
+    {
+      "seat_id": "chatgpt",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "deepseek",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "mimo",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "minimax",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "doubao",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "gemini",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "kimi",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "meta",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "qwen",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "wenxin",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "grok",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "yuanbao",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "xunfei",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "stepfun",
+      "type": "missing_behavior_kernel_memory"
+    },
+    {
+      "seat_id": "zhipu",
+      "type": "missing_behavior_kernel_memory"
+    }
+  ],
+  "policy": {
+    "agent_private_memory": "own_history_only",
+    "public_memory": [
+      "anonymous_market_snapshot",
+      "aggregated_pattern_summary",
+      "rules"
+    ],
+    "forbidden": [
+      "other_agent_private_journals",
+      "other_agent_current_choices",
+      "raw_provider_transcripts"
+    ]
+  }
+}

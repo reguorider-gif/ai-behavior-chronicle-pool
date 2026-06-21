@@ -5,6 +5,21 @@
   "status": "missing_provider_blocked",
   "forecasts": [
     {
+      "match_id": "WC-H1",
+      "status": "missing_provider_blocked",
+      "home_win_prob": null,
+      "draw_prob": null,
+      "away_win_prob": null,
+      "model_estimated_prob": null,
+      "most_likely_score": null,
+      "confidence": 0,
+      "edge_assessment": "missing",
+      "information_gaps": [
+        "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+      ],
+      "forecast_rationale": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。"
+    },
+    {
       "match_id": "WC-K1",
       "status": "missing_provider_blocked",
       "home_win_prob": null,
@@ -67,6 +82,20 @@
   ],
   "investments": [
     {
+      "match_id": "WC-H1",
+      "status": "missing_provider_blocked",
+      "action": "missing",
+      "market": "",
+      "selection": "",
+      "line": null,
+      "odds": null,
+      "stake_gp": 0,
+      "loan_used_gp": 0,
+      "why_bet_or_no_bet": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+      "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
+      "source": "quality_gate_missing_receipt"
+    },
+    {
       "match_id": "WC-K1",
       "status": "missing_provider_blocked",
       "action": "missing",
@@ -126,15 +155,15 @@
   "credit": {
     "seat_id": "grok",
     "run_id": "run-15",
-    "credit_delta": -8,
+    "credit_delta": -8.0,
     "details": [
       {
         "type": "missing_or_invalid_receipt",
         "reason": "供应商慢响应或额度阻塞，未获得本轮合格结构化回执。",
-        "credit_delta": -8
+        "credit_delta": -8.0
       }
     ],
-    "credit_score": 641.0,
+    "credit_score": 669.0,
     "credit_grade": "B",
     "credit_basis": "proxy_pending_forecast_ledger",
     "loan_limit_gp": 500.0,

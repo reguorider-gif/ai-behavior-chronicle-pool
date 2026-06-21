@@ -4,7 +4,7 @@
 - status: **PARTIAL_NOT_READY**
 - bridge: idle
 - recovered bridge: False
-- quality gate: PARTIAL_NOT_READY (11/12)
+- quality gate: PARTIAL_NOT_READY (11/15)
 - quality gate source: artifact
 - publish frontend: False
 
@@ -14,11 +14,11 @@
 
 ## Warnings
 
-- publish_blocked_by_quality_gate:11/12
+- publish_blocked_by_quality_gate:11/15
 
 ## Needs Rerun
 
-- grok
+- grok, xunfei, stepfun, zhipu
 
 ## Recommended Actions
 

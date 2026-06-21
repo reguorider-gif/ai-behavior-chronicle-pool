@@ -396,6 +396,8 @@ async function runtimeSummary(req, res) {
     historical_ranking: ranking,
     active_models: ranking,
     active_models_count: REQUIRED_SEAT_COUNT,
+    model_count: REQUIRED_SEAT_COUNT,
+    required_seat_count: REQUIRED_SEAT_COUNT,
     quality_gate: quality,
     score_sync: {
       ok: Boolean(scoreSync.ok || scoreSync.version),
@@ -443,6 +445,7 @@ async function frontendArchives(res) {
     round_id: current.round_id || null,
     ...archiveBuckets(matches),
     artifacts,
+    archive_count: artifacts.length,
   });
 }
 
@@ -457,6 +460,7 @@ async function seatArchive(req, res, runId, seatId) {
   const survival = (survivalLedger.seats || {})[seatId] || {};
   const state = seatStateFromSources(seatId, {}, survival, credit, summary || {});
   const investments = Array.isArray(seatRun?.investments) ? seatRun.investments : [];
+  const forecasts = Array.isArray(seatRun?.forecasts) ? seatRun.forecasts : [];
   const loan = seatRun?.loan_decision && typeof seatRun.loan_decision === "object" ? seatRun.loan_decision : {};
   const status = seatRun?.status || (state.source === "initialized_required_seat" ? "initialized" : "available");
   if (!PRODUCTION_SEATS.includes(seatId)) {
@@ -479,6 +483,10 @@ async function seatArchive(req, res, runId, seatId) {
       credit_grade: state.credit_grade,
       recovery_mode: state.recovery_mode,
     },
+    forecasts,
+    investments,
+    forecast_count: forecasts.length,
+    investment_count: investments.length,
     loan_decision: {
       amount: loan.request_loan_gp || loan.borrow_gp || state.outstanding_loan_gp || 0,
       repayment_plan: loan.repayment_plan || "按 SOP 在排名前优先偿还利息和本金。",
@@ -596,6 +604,16 @@ async function seatJournal(req, res, seatId) {
         credit_grade: DEFAULT_CREDIT_GRADE,
         source: "api_initialized_required_seat",
       }],
+      entries: [{
+        ts: null,
+        seat_id: seatId,
+        event_type: "account_initialized",
+        balance_gp: DEFAULT_BALANCE_GP,
+        net_worth_gp: DEFAULT_BALANCE_GP,
+        credit_score: DEFAULT_CREDIT_SCORE,
+        credit_grade: DEFAULT_CREDIT_GRADE,
+        source: "api_initialized_required_seat",
+      }],
       artifact_ref: publicRef("seat_journals", seatId, "journal.jsonl"),
     });
   }
@@ -604,6 +622,7 @@ async function seatJournal(req, res, seatId) {
     seat_id: seatId,
     summary,
     events,
+    entries: events,
     artifact_ref: publicRef("seat_journals", seatId, "journal.jsonl"),
   });
 }
@@ -634,7 +653,21 @@ async function creditHistory(res, seatId) {
       source: "initialized_required_seat",
     });
   }
-  send(res, 200, { ok: true, seat_id: seatId, history: rows });
+  const latest = rows[rows.length - 1] || {};
+  send(res, 200, {
+    ok: true,
+    seat_id: seatId,
+    credit_score: latest.credit_score ?? null,
+    credit_grade: latest.credit_grade ?? null,
+    credit_delta: latest.credit_delta ?? null,
+    balance_gp: latest.balance_gp ?? latest.cash_gp ?? null,
+    net_worth_gp: latest.net_worth_gp ?? null,
+    loan_gp: latest.outstanding_loan_gp ?? latest.loan_gp ?? null,
+    outstanding_loan_gp: latest.outstanding_loan_gp ?? latest.loan_gp ?? null,
+    recovery_mode: latest.recovery_mode ?? false,
+    latest,
+    history: rows,
+  });
 }
 
 async function behaviorMemory(res, seatId) {

@@ -1,10 +1,10 @@
 # PRED-INVEST Score Sync
 
-- generated_at: 2026-06-15T20:26:20.305258+00:00
-- known scores imported: 13
+- generated_at: 2026-06-21T21:42:54+00:00
+- known scores imported: 18
 - pending score backfill: 0
 - blocking pending scores: 0
-- external source: {"source": "the_odds_api_scores", "sport_key": "soccer_fifa_world_cup", "configured": true, "ok": false, "error": "URLError: <urlopen error [Errno 1] Operation not permitted>", "row_count": 0, "mapped_settled_count": 0, "mapped_pending_count": 0}
+- external source: {"source": "the_odds_api_scores", "sport_key": "soccer_fifa_world_cup", "configured": true, "ok": false, "error": "HTTP 401: {\"message\":\"Usage quota has been reached. See usage plans at https://the-odds-api.com\",\"error_code\":\"OUT_OF_USAGE_CREDITS\",\"details_url\":\"https://the-odds-api.com/liveapi/guides/v4/api-error-codes.html#out-of-usage-credits\"}\n", "row_count": 0, "mapped_settled_count": 0, "mapped_pending_count": 0}
 - policy: import_only_rows_with_explicit_score; never_use_model_forecast_as_result
 
 ## Known Scores
@@ -13,6 +13,11 @@
 - WC-A2 · South Korea vs Czech Republic · 2-1
 - WC-B1 · Canada vs Bosnia & Herzegovina · 1-1
 - WC-D1 · USA vs Paraguay · 4-1
+- WC-I1 · France vs Senegal · 3-1
+- WCAPI-20260615-BELGIUM-EGYPT · Belgium vs Egypt · 1-1
+- WCAPI-20260615-SAUDI-ARABIA-URUGUAY · Saudi Arabia vs Uruguay · 1-1
+- WCAPI-20260616-IRAN-NEW-ZEALAND · Iran vs New Zealand · 2-2
+- WC-K1 · Portugal vs Colombia · 2-1
 - WC-B2 · Qatar vs Switzerland · 1-1
 - WC-C2 · Brazil vs Morocco · 1-1
 - WC-C1 · Haiti vs Scotland · 0-1
