@@ -253,6 +253,15 @@ function normalizeQualityGate(raw = {}) {
   };
 }
 
+function normalizeSeatCountText(value) {
+  if (typeof value !== "string") return value;
+  return value.replace(/(\d+)\/12\b/g, (_match, valid) => `${valid}/${REQUIRED_SEAT_COUNT}`);
+}
+
+function normalizeSeatCountList(values = []) {
+  return Array.isArray(values) ? values.map(normalizeSeatCountText) : [];
+}
+
 function seatStateFromSources(seat, currentRow = {}, survival = {}, credit = {}, summary = {}) {
   const base = initializedSeatState(seat);
   const loanTerms = currentRow.loan_terms && typeof currentRow.loan_terms === "object" ? currentRow.loan_terms : {};
@@ -386,8 +395,8 @@ async function runtimeSummary(req, res) {
     automation: {
       verdict: current.verdict || daily.verdict || "UNKNOWN",
       pipeline_status: quality.publish_allowed ? "ready" : "attention_required",
-      warnings: current.missing_data?.sop_warnings || daily.warnings || [],
-      errors: current.missing_data?.sop_errors || daily.errors || [],
+      warnings: normalizeSeatCountList(current.missing_data?.sop_warnings || daily.warnings || []),
+      errors: normalizeSeatCountList(current.missing_data?.sop_errors || daily.errors || []),
     },
     matches,
     archives: archiveBuckets(matches),
